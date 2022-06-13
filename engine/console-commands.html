@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Console commands - Anomaly Modding Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../meta/index.html"><strong aria-hidden="true">1.</strong> Meta</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../meta/links.html"><strong aria-hidden="true">1.1.</strong> Links</a></li><li class="chapter-item expanded "><a href="../meta/contributing/index.html"><strong aria-hidden="true">1.2.</strong> Contributing to this book</a></li></ol></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/installing-mo2.html"><strong aria-hidden="true">2.1.</strong> Installing MO2</a></li><li class="chapter-item expanded "><a href="../getting-started/addon-installers.html"><strong aria-hidden="true">2.2.</strong> Addon installers</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Addon compatibility</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> DLTX</div></li><li class="chapter-item expanded "><a href="../addon-compatibility/monkey-patching.html"><strong aria-hidden="true">3.2.</strong> Monkey patching</a></li></ol></li><li class="chapter-item expanded "><a href="../main-folders-and-files/index.html"><strong aria-hidden="true">4.</strong> Main Folders And Files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/index.html"><strong aria-hidden="true">4.1.</strong> File Formats</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/bump.html"><strong aria-hidden="true">4.1.1.</strong> .bump</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/dds.html"><strong aria-hidden="true">4.1.2.</strong> .dds</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/object.html"><strong aria-hidden="true">4.1.3.</strong> .object</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/omf.html"><strong aria-hidden="true">4.1.4.</strong> .omf</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/hom.html"><strong aria-hidden="true">4.1.5.</strong> .hom</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/efd.html"><strong aria-hidden="true">4.1.6.</strong> .efd</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/seq.html"><strong aria-hidden="true">4.1.7.</strong> .seq</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/thm.html"><strong aria-hidden="true">4.1.8.</strong> .thm</a></li></ol></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/index.html"><strong aria-hidden="true">4.2.</strong> Shaders List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/materials-list.html"><strong aria-hidden="true">4.2.1.</strong> Material Shaders List</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/shaders-list.html"><strong aria-hidden="true">4.2.2.</strong> Shaders List</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/compiler-shaders-list.html"><strong aria-hidden="true">4.2.3.</strong> Compiler Shaders List</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Configs</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/ltx-files.html"><strong aria-hidden="true">5.1.</strong> LTX files</a></li><li class="chapter-item expanded "><a href="../configs/xml-files.html"><strong aria-hidden="true">5.2.</strong> XML files</a></li><li class="chapter-item expanded "><a href="../configs/condlists.html"><strong aria-hidden="true">5.3.</strong> Condlists</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> Changing an item</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.5.</strong> Creating your own item</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.6.</strong> Dialogues</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Scripting</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Introduction to codebase</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Codestyle</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> General suggestions</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Callbacks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> Engine classes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.6.</strong> MCM</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.7.</strong> UI</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.8.</strong> Scripted dialogues</div></li></ol></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/index.html"><strong aria-hidden="true">7.</strong> Modding Tools And Resouces</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/modding-tools.html"><strong aria-hidden="true">7.1.</strong> Modding Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/thm-editor-by-valerok.html"><strong aria-hidden="true">7.1.1.</strong> THM Editor by Valerok</a></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/omf-editor-by-valerok.html"><strong aria-hidden="true">7.1.2.</strong> OMF Editor by Valerok</a></li></ol></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/index.html"><strong aria-hidden="true">7.2.</strong> Resources</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/audio.html"><strong aria-hidden="true">7.2.1.</strong> Audio</a></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/models-objects-locations.html"><strong aria-hidden="true">7.2.2.</strong> Models</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Modelling</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/index.html"><strong aria-hidden="true">8.1.</strong> Blender</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/blender-x-ray-addon-summary.html"><strong aria-hidden="true">8.1.1.</strong> Blender X-Ray Addon</a></li><li class="chapter-item expanded "><a href="../blender/addon-installation-and-setup.html"><strong aria-hidden="true">8.1.2.</strong> Addon installation and setup</a></li><li class="chapter-item expanded "><a href="../blender/creating-model-in-blender.html"><strong aria-hidden="true">8.1.3.</strong> Creating model in Blender</a></li><li class="chapter-item expanded "><a href="../blender/addon-settings-options/index.html"><strong aria-hidden="true">8.1.4.</strong> Advanced settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/addon-settings-options/pathes.html"><strong aria-hidden="true">8.1.4.1.</strong> Pathes</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../texturing/index.html"><strong aria-hidden="true">9.</strong> Texturing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../texturing/сreating-and-preparing-textures.html"><strong aria-hidden="true">9.1.</strong> Creating and preparing textures</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Map</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Why maps are bullshit</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> Compiling maps</div></li></ol></li><li class="chapter-item expanded "><a href="../engine/index.html"><strong aria-hidden="true">11.</strong> Engine</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../engine/console-commands.html" class="active"><strong aria-hidden="true">11.1.</strong> Console commands</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> Compiling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> Architecture</div></li></ol></li><li class="chapter-item expanded "><a href="../quests/index.html"><strong aria-hidden="true">12.</strong> Quests</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../quests/introduction.html"><strong aria-hidden="true">12.1.</strong> Introduction TO REDO</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> DON'T USE WTF</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anomaly Modding Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Igigog/anomaly-modding-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="console-commands"><a class="header" href="#console-commands">Console commands</a></h1>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
+<p>This section describes all console commands. 
+All the settings described below are stored in the file &quot;user&quot;.ltx. (You can read more about <a href="../main-folders-and-files/README.html">important files here</a>)</p>
+<h3 id="game"><a class="header" href="#game">Game</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>help</td><td>Outputs a list of console commands</td><td>-</td></tr>
+<tr><td>g_dead_body_collision</td><td>Enables collision for selected objects</td><td>full/actor_only/off</td></tr>
+<tr><td>g_game_difficulty</td><td>Selects the game difficulty</td><td></td></tr>
+<tr><td>g_god</td><td>Enables God Mode</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_hit_pwr_modif</td><td></td><td>0.500 - 3.000</td></tr>
+<tr><td>g_ironsights_zoom_factor</td><td>Zoom factor of the mechanical sight</td><td>1.000 - 2.000</td></tr>
+<tr><td>g_unlimitedammo</td><td>Enables Infinite Ammo Mode</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_use_tracers</td><td></td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_important_save</td><td>Saving at key points</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_autopickup</td><td>Enables the ability to pick up items automatically (not working)</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_always_active</td><td>The game will continue to work if the focus is not on it</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>demo_play</td><td>Plays the selected demo_record</td><td>&quot;name&quot; of demo</td></tr>
+<tr><td>demo_record</td><td></td><td></td></tr>
+<tr><td>demo_set_cam_position</td><td></td><td></td></tr>
+<tr><td>keypress_on_start</td><td>Whether to wait after loading a level to press the key to go into the game</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>load</td><td>Load specified save</td><td>save_name</td></tr>
+<tr><td>load_last_save</td><td>Load last save</td><td>-</td></tr>
+<tr><td>main_menu</td><td>Exit to the main menu</td><td>-</td></tr>
+<tr><td>quit</td><td>Exit to the desktop</td><td>-</td></tr>
+<tr><td>cl_cod_pickup_mode</td><td>Selecting items from the radius around the scope</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>disconnect</td><td>Ends the game</td><td>-</td></tr>
+<tr><td>time_factor</td><td>Ability to change the game time</td><td></td></tr>
+</tbody></table>
+<h4 id="actor"><a class="header" href="#actor">Actor</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>g_backrun</td><td>Backward running mode (not working)</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>head_bob_factor</td><td>Basic head bobbing factor</td><td>0 - 2</td></tr>
+</tbody></table>
+<h4 id="hud"><a class="header" href="#hud">HUD</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>g_simple_pda</td><td>???</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_3d_pda</td><td>Switching between 2D and 3D PDA modes</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>hud_weapon</td><td>Shows weapons and hands</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>hud_draw</td><td>Shows UI</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>hud_fov</td><td>FOV for HUD</td><td></td></tr>
+</tbody></table>
+<h4 id="ui"><a class="header" href="#ui">UI</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>cl_dynamiccrosshair</td><td>Dynamic Sight (not working из-за прицела ввиде точки)</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_crosshair_color</td><td>Changes the color of the crosshair</td><td>-(255,255,255,255) - (255,255,255,255)</td></tr>
+<tr><td>g_feel_grenade</td><td>&quot;Sensitivity&quot; grenade</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>hud_crosshair</td><td>Show crosshair</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>hud_crosshair_dist</td><td>Show distance under crosshair</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h4 id="debug"><a class="header" href="#debug">Debug</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>rs_stats</td><td>Display engine statistics on the screen</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>rs_cam_pos</td><td>Display camera coordinates (not working?)</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>list_actions</td><td>Display a list of active console commands</td><td>-</td></tr>
+<tr><td>bind_list</td><td>Display a list of commands assigned to the keys</td><td>-</td></tr>
+<tr><td>hud_info</td><td>(not working?)</td><td></td></tr>
+<tr><td>render_memory_stats</td><td>Output information about memory usage</td><td>-</td></tr>
+<tr><td>stat_memory</td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="control"><a class="header" href="#control">Control</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>bind</td><td>Assign a command to the button</td><td>Action, key prefixed with k (kLeft, etc.)</td></tr>
+<tr><td>mouse_invert</td><td>Inverts the mouse</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>mouse_sens</td><td>Mouse sensitivity</td><td>0.001 - 0.600</td></tr>
+<tr><td>mouse_sens_aim</td><td>Mouse sensitivity when aiming</td><td>0.500 - 2.000</td></tr>
+<tr><td>default_controls</td><td>Resets key settings to defaults</td><td>-</td></tr>
+<tr><td>wpn_aim_toggle</td><td>Aiming Mode</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_crouch_toggle</td><td>Sit/stand mode</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_sprint_toggle</td><td>Sprint mode</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>g_walk_toggle</td><td></td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h3 id="discord"><a class="header" href="#discord">Discord</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>discord_status</td><td>Displays status in Discord</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>discord_update_rate</td><td>Discord update rate</td><td>0.500 - 5.000</td></tr>
+</tbody></table>
+<h3 id="sound"><a class="header" href="#sound">Sound</a></h3>
+<h4 id="general-settings"><a class="header" href="#general-settings">General settings</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>snd_restart</td><td>Restart the sound engine</td><td>—</td></tr>
+<tr><td>snd_cache_size</td><td>Cache size</td><td>8 - 256</td></tr>
+<tr><td>snd_acceleration</td><td>APU resource utilization</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>snd_targets</td><td>Maximum number of channels</td><td>32 - 1024</td></tr>
+<tr><td>snd_device</td><td></td><td>OpenAL Soft</td></tr>
+</tbody></table>
+<h4 id="volume"><a class="header" href="#volume">Volume</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>snd_volume_eff</td><td>Volume of sounds</td><td>0.000 - 1.000</td></tr>
+<tr><td>snd_volume_music</td><td>Music volume</td><td>0.000 - 1.000</td></tr>
+<tr><td>g_dynamic_music</td><td></td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h4 id="effects"><a class="header" href="#effects">Effects</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>snd_efx</td><td>EAX sound effects</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h3 id="physics"><a class="header" href="#physics">Physics</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>ph_gravity</td><td>Gravity</td><td>0.000 - 1000.000</td></tr>
+<tr><td>ph_frequency</td><td>The more, the better the collision calculations</td><td>50.0000 - 200.0000</td></tr>
+<tr><td>ph_iterations</td><td>Number of iterations to calculate the dynamics</td><td>15 - 50</td></tr>
+</tbody></table>
+<h3 id="camera"><a class="header" href="#camera">Camera</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>cam_inert</td><td>Camera inertia</td><td></td></tr>
+<tr><td>cam_slide_inert</td><td></td><td></td></tr>
+<tr><td>fov</td><td>FOV for camera</td><td></td></tr>
+</tbody></table>
+<h3 id="graphics"><a class="header" href="#graphics">Graphics</a></h3>
+<h4 id="general-settings-1"><a class="header" href="#general-settings-1">General settings</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>_preset</td><td>Selecting a set of quality settings</td><td>Minimum/Low/Default/High/Extreme</td></tr>
+<tr><td>rs_screenmode</td><td>Resolution selection mode</td><td>Windowed/Fullscreen/Borderless/Windowed</td></tr>
+<tr><td>rs_v_sync</td><td>Vertical Sync</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>rs_refresh_60hz</td><td>Screen refresh rate 60 Hz</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h4 id="renders"><a class="header" href="#renders">Renders</a></h4>
+<h5 id="common-commands-for-all-renders"><a class="header" href="#common-commands-for-all-renders">Common commands for all renders</a></h5>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>renderer</td><td>Render type (old)</td><td></td></tr>
+<tr><td>rs_vis_distance</td><td>Visibility range</td><td>0.400 - 1.500</td></tr>
+<tr><td>r__actor_shadow</td><td></td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r__bloom_thresh</td><td></td><td></td></tr>
+<tr><td>r__bloom_weight</td><td></td><td></td></tr>
+<tr><td>r__clear_models_on_unload</td><td></td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r__color_grading</td><td></td><td></td></tr>
+<tr><td>r__detail_density</td><td></td><td>0.040 - 1.000</td></tr>
+<tr><td>r__detail_height</td><td></td><td></td></tr>
+<tr><td>r__detail_radius</td><td></td><td></td></tr>
+<tr><td>r__dtex_range</td><td></td><td>5.000 - 175.000</td></tr>
+<tr><td>r__enable_grass_shadow</td><td></td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r__exposure</td><td></td><td>0.500 - 4.000</td></tr>
+<tr><td>r__framelimit</td><td></td><td>0 - 500</td></tr>
+<tr><td>r__gamma</td><td></td><td>0.500 - 2.200</td></tr>
+<tr><td>r__geometry_lod</td><td></td><td>0.100 - 1.500</td></tr>
+<tr><td>r__lens_flares</td><td>the &quot;lens glow&quot; effect</td><td></td></tr>
+<tr><td>r__nightvision</td><td></td><td>0 - 3</td></tr>
+<tr><td>r__no_ram_textures</td><td></td><td>'on/off' or '1/0'off</td></tr>
+<tr><td>r__no_scale_on_fade</td><td></td><td></td></tr>
+<tr><td>r__optimize_dynamic_geom</td><td></td><td></td></tr>
+<tr><td>r__optimize_shadow_geom</td><td></td><td></td></tr>
+<tr><td>r__optimize_static_geom</td><td></td><td></td></tr>
+<tr><td>r__saturation</td><td></td><td></td></tr>
+<tr><td>r__supersample</td><td></td><td>1 - 8</td></tr>
+<tr><td>r__tf_aniso</td><td></td><td></td></tr>
+<tr><td>r__tf_mipbias</td><td></td><td></td></tr>
+<tr><td>r__use_precompiled_shaders</td><td></td><td></td></tr>
+<tr><td>r__wallmark_ttl</td><td>Wallmark Lifetime</td><td>1.000 - 600.000</td></tr>
+<tr><td>r_screenshot_mode</td><td>Screenshot in the selected format</td><td>jpg/png/tga</td></tr>
+</tbody></table>
+<h5 id="r1-dx8"><a class="header" href="#r1-dx8">R1 (DX8)</a></h5>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>r1_detail_textures</td><td>Detailed textures on static lighting</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r1_dlights</td><td>Dynamic light sources on static lighting</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r1_dlights_clip</td><td></td><td></td></tr>
+<tr><td>r1_fog_luminance</td><td></td><td></td></tr>
+<tr><td>r1_glows_per_frame</td><td></td><td></td></tr>
+<tr><td>r1_lmodel_lerp</td><td></td><td></td></tr>
+<tr><td>r1_pps_u</td><td></td><td></td></tr>
+<tr><td>r1_pps_v</td><td></td><td></td></tr>
+<tr><td>r1_software_skinning</td><td></td><td></td></tr>
+<tr><td>r1_ssa_lod_a</td><td></td><td></td></tr>
+<tr><td>r1_ssa_lod_b</td><td></td><td></td></tr>
+</tbody></table>
+<h5 id="r2-dx9"><a class="header" href="#r2-dx9">R2 (DX9)</a></h5>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>r2_aa</td><td>&quot;Pseudo-smoothing&quot; on dynamic lighting</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_aa_break</td><td>Distance at which the &quot;Pseudo-smoothing&quot; effect works</td><td></td></tr>
+<tr><td>r2_aa_kernel</td><td>The basic value of the &quot;Pseudo-smoothing&quot; effect</td><td></td></tr>
+<tr><td>r2_aa_weight</td><td></td><td></td></tr>
+<tr><td>r2_allow_r1_lights</td><td></td><td></td></tr>
+<tr><td>r2_detail_bump</td><td></td><td></td></tr>
+<tr><td>r2_dof</td><td></td><td></td></tr>
+<tr><td>r2_dof_enable</td><td></td><td></td></tr>
+<tr><td>r2_dof_radius</td><td></td><td></td></tr>
+<tr><td>r2_dof_sky</td><td></td><td></td></tr>
+<tr><td>r2_drops_control</td><td></td><td></td></tr>
+<tr><td>r2_exp_donttest_shad</td><td></td><td></td></tr>
+<tr><td>r2_gi</td><td>Global illumination</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_gi_clip</td><td>Global illumination effect range</td><td></td></tr>
+<tr><td>r2_gi_depth</td><td>Shadow depth of the global illumination effect</td><td></td></tr>
+<tr><td>r2_gi_photons</td><td>Number of rays to trace the global illumination effect</td><td></td></tr>
+<tr><td>r2_gi_refl</td><td>Reflectivity of global illumination effect surfaces</td><td></td></tr>
+<tr><td>r2_gloss_factor</td><td>Surface gloss level</td><td></td></tr>
+<tr><td>r2_gloss_min</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_fast</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_kernel_b</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_kernel_g</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_kernel_scale</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_speed</td><td></td><td></td></tr>
+<tr><td>r2_ls_bloom_threshold</td><td></td><td></td></tr>
+<tr><td>r2_ls_depth_bias</td><td></td><td></td></tr>
+<tr><td>r2_ls_depth_scale</td><td></td><td></td></tr>
+<tr><td>r2_ls_dsm_kernel</td><td></td><td></td></tr>
+<tr><td>r2_ls_psm_kernel</td><td></td><td></td></tr>
+<tr><td>r2_ls_squality</td><td></td><td></td></tr>
+<tr><td>r2_ls_ssm_kernel</td><td></td><td></td></tr>
+<tr><td>r2_mask_control</td><td></td><td></td></tr>
+<tr><td>r2_mblur</td><td>Blur effect in motion</td><td></td></tr>
+<tr><td>r2_mblur_enabled</td><td></td><td></td></tr>
+<tr><td>r2_parallax_h</td><td></td><td></td></tr>
+<tr><td>r2_qsync</td><td></td><td></td></tr>
+<tr><td>r2_shadow_cascede_old</td><td></td><td></td></tr>
+<tr><td>r2_slight_fade</td><td></td><td></td></tr>
+<tr><td>r2_smaa</td><td></td><td></td></tr>
+<tr><td>r2_soft_particles</td><td>Soft particles</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_soft_water</td><td>Soft Water</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_ss_sunshafts_length</td><td></td><td></td></tr>
+<tr><td>r2_ss_sunshafts_radius</td><td></td><td></td></tr>
+<tr><td>r2_ssa_lod_a</td><td>Level of detail of dynamic objects</td><td></td></tr>
+<tr><td>r2_ssa_lod_b</td><td>Level of detail of static objects</td><td></td></tr>
+<tr><td>r2_ssao</td><td>Screen space ambient occlusion effect quality</td><td></td></tr>
+<tr><td>r2_ssao_blur</td><td></td><td></td></tr>
+<tr><td>r2_ssao_half_data</td><td></td><td></td></tr>
+<tr><td>r2_ssao_hbao</td><td></td><td></td></tr>
+<tr><td>r2_ssao_hdao</td><td></td><td></td></tr>
+<tr><td>r2_ssao_mode</td><td></td><td></td></tr>
+<tr><td>r2_ssao_opt_data</td><td></td><td></td></tr>
+<tr><td>r2_steep_parallax</td><td></td><td></td></tr>
+<tr><td>r2_sun</td><td>Shadows from the sun</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_sun_depth_far_bias</td><td></td><td></td></tr>
+<tr><td>r2_sun_depth_far_scale</td><td></td><td></td></tr>
+<tr><td>r2_sun_depth_near_bias</td><td></td><td></td></tr>
+<tr><td>r2_sun_depth_near_scale</td><td></td><td></td></tr>
+<tr><td>r2_sun_details</td><td>Shadows of grass and other detailed objects</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_sun_far</td><td></td><td></td></tr>
+<tr><td>r2_sun_focus</td><td></td><td></td></tr>
+<tr><td>r2_sun_lumscale</td><td></td><td></td></tr>
+<tr><td>r2_sun_lumscale_amb</td><td></td><td></td></tr>
+<tr><td>r2_sun_lumscale_hemi</td><td></td><td></td></tr>
+<tr><td>r2_sun_near</td><td></td><td></td></tr>
+<tr><td>r2_sun_near_border</td><td></td><td></td></tr>
+<tr><td>r2_sun_quality</td><td></td><td></td></tr>
+<tr><td>r2_sun_tsm</td><td></td><td></td></tr>
+<tr><td>r2_sun_tsm_bias</td><td></td><td></td></tr>
+<tr><td>r2_sun_tsm_proj</td><td></td><td></td></tr>
+<tr><td>r2_sunshafts_min</td><td></td><td></td></tr>
+<tr><td>r2_sunshafts_mode</td><td></td><td></td></tr>
+<tr><td>r2_sunshafts_quality</td><td>Quality of the sun's rays</td><td></td></tr>
+<tr><td>r2_sunshafts_value</td><td></td><td></td></tr>
+<tr><td>r2_terrain_z_prepass</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_a</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_b</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_c</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_d</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_e</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_exposure</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_f</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_gamma</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_onoff</td><td></td><td></td></tr>
+<tr><td>r2_tnmp_w</td><td></td><td></td></tr>
+<tr><td>r2_tonemap</td><td></td><td></td></tr>
+<tr><td>r2_tonemap_adaptation</td><td></td><td></td></tr>
+<tr><td>r2_tonemap_amount</td><td></td><td></td></tr>
+<tr><td>r2_tonemap_lowlum</td><td></td><td></td></tr>
+<tr><td>r2_tonemap_middlegray</td><td></td><td></td></tr>
+<tr><td>r2_volumetric_lights</td><td>Volumetric light</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r2_wait_sleep</td><td></td><td></td></tr>
+<tr><td>r2_water_reflections</td><td></td><td></td></tr>
+<tr><td>r2_zfill</td><td></td><td></td></tr>
+<tr><td>r2_zfill_depth</td><td></td><td></td></tr>
+<tr><td>r2_terrain_z_prepass</td><td>Switching the &quot;Z-pass mode&quot;</td><td></td></tr>
+<tr><td>r2em</td><td></td><td></td></tr>
+</tbody></table>
+<h5 id="r3-dx10"><a class="header" href="#r3-dx10">R3 (DX10)</a></h5>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>r3_dynamic_wet_surfaces</td><td>Wet surfaces</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r3_dynamic_wet_surfaces_far</td><td></td><td></td></tr>
+<tr><td>r3_dynamic_wet_surfaces_near</td><td></td><td></td></tr>
+<tr><td>r3_dynamic_wet_surfaces_sm_res</td><td></td><td></td></tr>
+<tr><td>r3_minmax_sm</td><td></td><td></td></tr>
+<tr><td>r3_msaa</td><td></td><td></td></tr>
+<tr><td>r3_msaa_alphatest</td><td></td><td></td></tr>
+<tr><td>r3_use_dx10_1</td><td>Enables use of DX10.1</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r3_volumetric_smoke</td><td>Volumetric smoke</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h5 id="r4-dx11"><a class="header" href="#r4-dx11">R4 (DX11)</a></h5>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>r4_enable_tessellation</td><td>Tessellation</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>r4_wireframe</td><td>Displays the wireframe of dynamic models (not working)</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+<h4 id="brightness-contrast-gamma"><a class="header" href="#brightness-contrast-gamma">Brightness-Contrast-Gamma</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>rs_c_brightness</td><td>Brightness</td><td>0.500 - 1.500</td></tr>
+<tr><td>rs_c_contrast</td><td>Contrast</td><td>0.500 - 1.500</td></tr>
+<tr><td>rs_c_gamma</td><td>Gamma (not working)</td><td>0.500 - 1.500</td></tr>
+</tbody></table>
+<h4 id="video"><a class="header" href="#video">Video</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>vid_mode</td><td>Screen resolution</td><td>800x600/1024x768/1280x720/1280x1024/1366x768/1600x900/1680x1050/1920x1080</td></tr>
+<tr><td>vid_restart</td><td>Reboot the video engine</td><td>-</td></tr>
+</tbody></table>
+<h4 id="textures"><a class="header" href="#textures">Textures</a></h4>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>texture_lod</td><td>Texture detailing</td><td>0 - 4</td></tr>
+</tbody></table>
+<h3 id="ai"><a class="header" href="#ai">AI</a></h3>
+<table><thead><tr><th>Сommand</th><th>Command description</th><th>Command's argument</th></tr></thead><tbody>
+<tr><td>ai_aim_max_angle</td><td></td><td></td></tr>
+<tr><td>ai_aim_min_angle</td><td></td><td></td></tr>
+<tr><td>ai_aim_min_speed</td><td></td><td></td></tr>
+<tr><td>ai_aim_predict_time</td><td></td><td></td></tr>
+<tr><td>ai_aim_use_smooth_aim</td><td></td><td></td></tr>
+<tr><td>ai_die_in_anomaly</td><td>Enables NPCs to die in anomalies</td><td>'on/off' or '1/0'</td></tr>
+<tr><td>ai_use_old_vision</td><td></td><td></td></tr>
+<tr><td>ai_use_torch_dynamic_lights</td><td>Enables the use of flashlights by non-player characters (NPCs)</td><td>'on/off' or '1/0'</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../engine/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../quests/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../engine/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../quests/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

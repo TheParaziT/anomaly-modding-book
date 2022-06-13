@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Installing MO2 - Anomaly Modding Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../meta/index.html"><strong aria-hidden="true">1.</strong> Meta</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../meta/links.html"><strong aria-hidden="true">1.1.</strong> Links</a></li><li class="chapter-item expanded "><a href="../meta/contributing/index.html"><strong aria-hidden="true">1.2.</strong> Contributing to this book</a></li></ol></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/installing-mo2.html" class="active"><strong aria-hidden="true">2.1.</strong> Installing MO2</a></li><li class="chapter-item expanded "><a href="../getting-started/addon-installers.html"><strong aria-hidden="true">2.2.</strong> Addon installers</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Addon compatibility</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> DLTX</div></li><li class="chapter-item expanded "><a href="../addon-compatibility/monkey-patching.html"><strong aria-hidden="true">3.2.</strong> Monkey patching</a></li></ol></li><li class="chapter-item expanded "><a href="../main-folders-and-files/index.html"><strong aria-hidden="true">4.</strong> Main Folders And Files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/index.html"><strong aria-hidden="true">4.1.</strong> File Formats</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/bump.html"><strong aria-hidden="true">4.1.1.</strong> .bump</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/dds.html"><strong aria-hidden="true">4.1.2.</strong> .dds</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/object.html"><strong aria-hidden="true">4.1.3.</strong> .object</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/omf.html"><strong aria-hidden="true">4.1.4.</strong> .omf</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/hom.html"><strong aria-hidden="true">4.1.5.</strong> .hom</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/efd.html"><strong aria-hidden="true">4.1.6.</strong> .efd</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/seq.html"><strong aria-hidden="true">4.1.7.</strong> .seq</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/file-formats/thm.html"><strong aria-hidden="true">4.1.8.</strong> .thm</a></li></ol></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/index.html"><strong aria-hidden="true">4.2.</strong> Shaders List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/materials-list.html"><strong aria-hidden="true">4.2.1.</strong> Material Shaders List</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/shaders-list.html"><strong aria-hidden="true">4.2.2.</strong> Shaders List</a></li><li class="chapter-item expanded "><a href="../main-folders-and-files/shaders-list/compiler-shaders-list.html"><strong aria-hidden="true">4.2.3.</strong> Compiler Shaders List</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Configs</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/ltx-files.html"><strong aria-hidden="true">5.1.</strong> LTX files</a></li><li class="chapter-item expanded "><a href="../configs/xml-files.html"><strong aria-hidden="true">5.2.</strong> XML files</a></li><li class="chapter-item expanded "><a href="../configs/condlists.html"><strong aria-hidden="true">5.3.</strong> Condlists</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> Changing an item</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.5.</strong> Creating your own item</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.6.</strong> Dialogues</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Scripting</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Introduction to codebase</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Codestyle</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> General suggestions</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Callbacks</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> Engine classes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.6.</strong> MCM</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.7.</strong> UI</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.8.</strong> Scripted dialogues</div></li></ol></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/index.html"><strong aria-hidden="true">7.</strong> Modding Tools And Resouces</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/modding-tools.html"><strong aria-hidden="true">7.1.</strong> Modding Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/thm-editor-by-valerok.html"><strong aria-hidden="true">7.1.1.</strong> THM Editor by Valerok</a></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/modding-tools/omf-editor-by-valerok.html"><strong aria-hidden="true">7.1.2.</strong> OMF Editor by Valerok</a></li></ol></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/index.html"><strong aria-hidden="true">7.2.</strong> Resources</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/audio.html"><strong aria-hidden="true">7.2.1.</strong> Audio</a></li><li class="chapter-item expanded "><a href="../modding-tools-and-resources/resources/models-objects-locations.html"><strong aria-hidden="true">7.2.2.</strong> Models</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Modelling</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/index.html"><strong aria-hidden="true">8.1.</strong> Blender</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/blender-x-ray-addon-summary.html"><strong aria-hidden="true">8.1.1.</strong> Blender X-Ray Addon</a></li><li class="chapter-item expanded "><a href="../blender/addon-installation-and-setup.html"><strong aria-hidden="true">8.1.2.</strong> Addon installation and setup</a></li><li class="chapter-item expanded "><a href="../blender/creating-model-in-blender.html"><strong aria-hidden="true">8.1.3.</strong> Creating model in Blender</a></li><li class="chapter-item expanded "><a href="../blender/addon-settings-options/index.html"><strong aria-hidden="true">8.1.4.</strong> Advanced settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../blender/addon-settings-options/pathes.html"><strong aria-hidden="true">8.1.4.1.</strong> Pathes</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../texturing/index.html"><strong aria-hidden="true">9.</strong> Texturing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../texturing/сreating-and-preparing-textures.html"><strong aria-hidden="true">9.1.</strong> Creating and preparing textures</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Map</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> Why maps are bullshit</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> Compiling maps</div></li></ol></li><li class="chapter-item expanded "><a href="../engine/index.html"><strong aria-hidden="true">11.</strong> Engine</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../engine/console-commands.html"><strong aria-hidden="true">11.1.</strong> Console commands</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> Compiling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> Architecture</div></li></ol></li><li class="chapter-item expanded "><a href="../quests/index.html"><strong aria-hidden="true">12.</strong> Quests</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../quests/introduction.html"><strong aria-hidden="true">12.1.</strong> Introduction TO REDO</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> DON'T USE WTF</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anomaly Modding Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Igigog/anomaly-modding-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="installing-mo2"><a class="header" href="#installing-mo2">Installing MO2</a></h1>
+<p>This guide is meant to show you how to setup Mod Organizer 2 and how to mod Anomaly in a simple and easy way step by step.</p>
+<p>Made by <a href="https://www.blogger.com/profile/07678551170854762591">Starcry</a></p>
+<div style="text-align: center;">
+<p><img src="mo2-images/mo2anomaly.png" alt="Mod Organiser logo" /></p>
+</div>
+<h2 id="what-makes-mod-organizer-2-the-superior-mod-manager"><a class="header" href="#what-makes-mod-organizer-2-the-superior-mod-manager">What makes Mod Organizer 2 the superior mod manager?</a></h2>
+<ul>
+<li>
+<p>Installed addons never touch your original game files, instead they are injected into the game only when you boot it up by utilizing virtual file system.</p>
+</li>
+<li>
+<p>Mod list is easily manageable, unlike with JSGME you can update or make changes to any addons at any time, without the need of enabling/disabling.</p>
+</li>
+<li>
+<p>Shows you which mods are conflicting in details.</p>
+</li>
+</ul>
+<p>Important note: Many antivirus softwares will block MO2 and Anomaly files causing you to have strange crashes, the reliable solution is to scan your MO2 folder for safety, then set an antivirus exclusion to the entire MO2 folder (and to your Anomaly folder).</p>
+<h2 id="installation-and-instance-setup"><a class="header" href="#installation-and-instance-setup">Installation and instance setup</a></h2>
+<ol>
+<li><a href="https://github.com/Modorganizer2/modorganizer/releases">Download</a> the latest version of MO2
+(Scroll down, download the .exe and install it)</li>
+</ol>
+<div style="text-align: center;">
+<p><img src="mo2-images/0.png" alt="download page" /></p>
+</div>
+<ol start="2">
+<li>After getting this error and clicking &quot;OK&quot; select &quot;Create a portable instance&quot; and press next.</li>
+</ol>
+<div style="text-align: center;">
+<p><img src="mo2-images/error.png" alt="error" /></p>
+</div>
+<div style="text-align: center;">
+<p><img src="mo2-images/portable.png" alt="portable instance" /></p>
+</div>
+<ol start="3">
+<li>Click &quot;Browse...&quot; and select your S.T.A.L.K.E.R Anomaly folder, name the instance whatever you want and click next.</li>
+</ol>
+<p><text style="color: red"><strong>Note if you have an error when selecting the game directory</strong></text>: Sometimes MO2 won't detect the game if the directory isn't named &quot;S.T.A.L.K.E.R. Anomaly&quot;, in case your problem remains and you have Windows 7 try downloading and double clicking <a href="https://www.microsoft.com/en-us/download/details.aspx?id=47442">this Windows file</a>.</p>
+<div style="text-align: center;">
+<p><img src="mo2-images/newinstance.png" alt="Creating a new instance" /></p>
+</div>
+<ol start="4">
+<li>The next page will show you where you'r mods and other files for Anomaly mods will be stored, you can leave it as it is and click next.</li>
+</ol>
+<div style="text-align: center;">
+<p><img src="mo2-images/1.png" alt="Creating a new instance" /></p>
+</div>
+<ol start="5">
+<li>Click next again as linking an account to Nexus is not needed.</li>
+</ol>
+<div style="text-align: center;">
+<p><img src="mo2-images/2.png" alt="Creating a new instance" /></p>
+</div>
+<ol start="6">
+<li>After that you should see something like this.</li>
+</ol>
+<div style="text-align: center;">
+<p><img src="mo2-images/3.png" alt="Creating a new instance" /></p>
+</div>
+<ol start="7">
+<li>Congratulations, you paired MO2 with Anomaly successfully.
+After you click finish MO2 will start up.</li>
+</ol>
+<h2 id="small-tutorial"><a class="header" href="#small-tutorial">Small tutorial</a></h2>
+<p>After MO2 boots up you will get 2 popups, one is for an optional tutorial and the other one is for Nexus which we won't need.</p>
+<div style="text-align: center;">
+<p><img src="mo2-images/4.png" alt="Creating a new instance" /></p>
+</div>
+<p>In case you skipped the tutorial or didn't fully understand it here's a quick explanation of the most important features:</p>
+<ul>
+<li>
+<p><text style="color: red">Red</text> highlight shows what you need to click to install addons.</p>
+</li>
+<li>
+<p><text style="color: yellow">Yellow</text> highlight shows profiles, you can create how many you want and have different mods enabled on each of them.</p>
+</li>
+<li>
+<p><text style="color: green">Green</text> highlight shows your virtual game directory, this can be useful for checking which file is being used from which addon.</p>
+</li>
+<li>
+<p><text style="color: blue">Blue</text> highlight is used for starting the game, if you don't start your game with this button your mods won't be activated.</p>
+</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="mo2-images/5.png" alt="Creating a new instance" /></p>
+</div>
+<h2 id="guide-to-modding-and-solving-conflicts"><a class="header" href="#guide-to-modding-and-solving-conflicts">Guide to modding and solving conflicts</a></h2>
+<p>On the image below you can see how my MO2 looks, I have a little over 100 addons and a lot of conflicts.</p>
+<div style="text-align: center;">
+<p><img src="mo2-images/6.png" alt="Creating a new instance" /></p>
+</div>
+<p>After installing few addons you might notice these icons:</p>
+<ul>
+<li><img src="mo2-images/7.png" alt="Creating a new instance" /> This little lightning icon with a red minus next to it shows that the addon is being overwritten.</li>
+<li><img src="mo2-images/8.png" alt="Creating a new instance" /> A lightning icon with green plus means the addon is overwriting another addon.</li>
+<li><img src="mo2-images/9.png" alt="Creating a new instance" /> If you see both of these icons it means the addon is overwriting an addon and is being overwritten by one.</li>
+<li><img src="mo2-images/10.png" alt="Creating a new instance" /> And last is the grey icon, this icon is next to an addon which is being fully overwritten making it redundant.</li>
+</ul>
+<p>To make things work together you need to maintain a load order, that means that you can't just install addons and expect them to all work together, you can start by keeping your load order clean, make some separators (right-click into empty area) like I have in my load order <a href="https://imgur.com/a/6d29UzT">here</a>, after that you can install patches if needed. You can always ask about load orders in the addon-discussion channel.</p>
+<p>A good start would be <a href="https://www.moddb.com/mods/stalker-anomaly/addons/groks-anomaly-community-curated-add-ons-list">Grok's Community Curated Add-ons List for Anomaly 1.5.1</a>.</p>
+<h4 id="is-it-better-to-use-a-modpack-or-do-everything-yourself"><a class="header" href="#is-it-better-to-use-a-modpack-or-do-everything-yourself">Is it better to use a modpack or do everything yourself?</a></h4>
+<p>If you are new to modding you might think simply downloading a modpack is the best option, but that might not be the case as most of the time modpacks are the vision of the person who created it - meaning it might have features you won't like and it can be difficult to remove them, you also can't know if it works fine as it's all packed into one folder.</p>
+<p>Using a modpack will also mean you won't be able to get help from the community with your crashes as only the modpack creator knows what changes were made and you'll have to rely on them to help you. </p>
+<p>Most of the time modpacks aren't being updated frequently and it's near impossible to install any other addon with them.</p>
+<h2 id="solving-conflicts"><a class="header" href="#solving-conflicts">Solving conflicts</a></h2>
+<p>Most of the time it's pretty easy because most popular addons already have existing patches, for example if you wanted to install Boomsticks and Sharpsticks with JSRS you would put BaS first, then JSRS files and then the patch for JSRS that comes with BaS.</p>
+<h4 id="making-patches-yourself-not-recommended-for-beginners"><a class="header" href="#making-patches-yourself-not-recommended-for-beginners">Making patches yourself (Not recommended for beginners)</a></h4>
+<p>What if there is no patch available and the addons won't work together? You either have to choose which one you want or you can make a patch yourself, the best guide for that is <a href="https://www.moddb.com/mods/stalker-anomaly/addons/anomaly-modding-resource-compatibility-patching">Anomaly modding resource</a> made by community member Jack-it.</p>
+<h2 id="installing-addons-the-right-way"><a class="header" href="#installing-addons-the-right-way">Installing addons the right way</a></h2>
+<p>Remember that every addon you install needs to have only one gamedata folder, if you find an addon with many optional files you need to install it again every time and select only one gamedata.</p>
+<p>As you can see in the picture below I get a popup when trying to install JSRS because it has multiple files, select one and install it, then do it again with the second file (Applies for every addon).</p>
+<div style="text-align: center;">
+<p><img src="mo2-images/11.png" alt="Creating a new instance" /></p>
+</div>
+<p>In case you get this popup instead of the one above, you need to expand the filetree and have only option selected, after that you rightclick it and press &quot;set as stalker directory&quot;</p>
+<div style="text-align: center;">
+<p><img src="mo2-images/12.png" alt="Creating a new instance" /></p>
+</div>
+<div style="text-align: center;">
+<p><img src="mo2-images/13.png" alt="Creating a new instance" /></p>
+</div>
+<div style="text-align: center;">
+<p><img src="mo2-images/14.png" alt="Creating a new instance" /></p>
+</div>
+<p>In case MO2 crashes when clicking on &quot;manual&quot; addon installation add this text to file ModOrganizer.ini found in Modding/Mo2/: </p>
+<pre><code class="language-ini">[CompletedWindowTutorials]
+InstallDialog=true
+</code></pre>
+<h4 id="reporting-crashes"><a class="header" href="#reporting-crashes">Reporting crashes</a></h4>
+<p>Please ignore this if you are using a modpack and report any crashes to the modpack &quot;creator&quot;.</p>
+<p>If your game crashes and you don't know what caused it go to addon-discussion in Anomaly discord and post your load order along with a log from appdata/logs, it will be a text file named &quot;xray_username&quot;.</p>
+<h4 id="converting-from-jsgme-to-mod-organizer-2"><a class="header" href="#converting-from-jsgme-to-mod-organizer-2">Converting from JSGME to Mod Organizer 2</a></h4>
+<p>To do this you simply have to delete your &quot;gamedata&quot; folder (This will not delete your saves and MO2 will recreate the folder for you) and install the addons you had with MO2, if you don't want to reinstall them you can simply copy the contents of MODS folder to User/AppData/Local/ModOrganizer/Name of your instance/mods. </p>
+<p>If you installed addons manually you also need to delete your gamedata folder.</p>
+<h4 id="additional-info"><a class="header" href="#additional-info">Additional info</a></h4>
+<p>If you have any ideas what I should change, fix or add in this guide feel free to ping me on discord (Starcry#4447)</p>
+<p>Inspired by <a href="https://lazystalker.blogspot.com/2020/11/mod-organizer-2-stalker-anomaly-addons.html">lazy stalker guide</a>.</p>
+<p>Link to my patreon <a href="https://cdn.discordapp.com/attachments/831306141904404491/833351054707654706/provak.png">here ( ͡° ͜ʖ ͡°)</a>.</p>
+<p>Credits:</p>
+<pre><code>d_nan: did absolutely nothing
+Caesar_salad: also did absolutely nothing
+</code></pre>
+<div style="text-align: center;">
+<p><img src="mo2-images/fuckjsgme3.png" alt="Creating a new instance" /></p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../getting-started/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../getting-started/addon-installers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../getting-started/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../getting-started/addon-installers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
