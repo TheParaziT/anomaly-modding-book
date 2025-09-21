@@ -1,6 +1,6 @@
 import React, { JSX, useState } from 'react';
-// import authorsGlobal from 'js-yaml-loader!../../../blog/authors.yml';
-const authorsGlobal = {};
+// @ts-ignore
+import authorsGlobal from 'js-yaml-loader!../../../blog/authors.yml';
 import {
   FaGithub,
   FaTwitter,

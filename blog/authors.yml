@@ -127,15 +127,19 @@ redpandaprojects:
 
 kd:
   name: K.D.
+  image_url: /img/author-no-data.png
 
 nat_vac:
   name: NatVac
+  image_url: /img/author-no-data.png
 
 tdef:
   name: tdef
+  image_url: /img/author-no-data.png
 
 i_love_kfc:
   name: i-love-kfc
+  image_url: /img/author-no-data.png
 
 new_project_mod_team:
   name: New Project Mod Team
