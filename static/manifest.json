@@ -4,7 +4,7 @@
   "description": "Introductory book for S.T.A.L.K.E.R. Anomaly modding",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#25c2a0",
+  "theme_color": "#2e8555",
   "background_color": "#ffffff",
   "icons": [
     {
@@ -21,5 +21,14 @@
   ],
   "categories": ["education", "reference", "games"],
   "lang": "en",
-  "orientation": "portrait-primary"
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/img/logo.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ]
 }

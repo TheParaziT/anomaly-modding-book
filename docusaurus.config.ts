@@ -32,6 +32,7 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'warn',
+  onBrokenAnchors: 'warn',
   
   plugins: [
     'docusaurus-plugin-image-zoom',
@@ -138,15 +139,19 @@ const config: Config = {
     },
     
     metadata: [
-      {name: 'keywords', content: 'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools'},
-      {name: 'description', content: 'Comprehensive guide for S.T.A.L.K.E.R. Anomaly modding. Learn tools, techniques, and best practices for creating mods.'},
+      {name: 'keywords', content: 'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools, blender, sdk, scripting, lua, xray engine, monolith'},
+      {name: 'description', content: 'Comprehensive guide for S.T.A.L.K.E.R. Anomaly modding. Learn tools, techniques, and best practices for creating mods. Complete documentation for X-Ray Engine, Blender addons, SDK, and scripting.'},
       {name: 'author', content: 'Anomaly Modding Book Community'},
-      {name: 'robots', content: 'index, follow'},
+      {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
+      {name: 'theme-color', content: '#2e8555'},
       {property: 'og:type', content: 'website'},
+      {property: 'og:title', content: 'Anomaly Modding Book'},
+      {property: 'og:description', content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding'},
+      {property: 'og:image', content: 'https://anomaly-modding-book.netlify.app/img/logo.svg'},
       {property: 'og:image:width', content: '1200'},
       {property: 'og:image:height', content: '630'},
-      {property: 'og:image:alt', content: 'Anomaly Modding Book - S.T.A.L.K.E.R. Modding Guide'},
+      {property: 'og:image:alt', content: 'Anomaly Modding Book'},
       {property: 'og:site_name', content: 'Anomaly Modding Book'},
       {property: 'og:locale', content: 'en_US'},
     ],

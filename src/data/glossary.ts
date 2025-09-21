@@ -163,7 +163,7 @@ const glossaryData: GlossaryData = {
     },
     {
       id: "space-restrictor",
-      term: "Smart Terrain",
+      term: "Space Restrictor",
       definition: "An object that defines zones with special properties or restrictions in the game space.",
       category: "Technical Terms",
       related: []
@@ -438,6 +438,34 @@ const glossaryData: GlossaryData = {
       id: "particle-group",
       term: "Particle Group",
       definition: "Particle Effects Group. Stored in *.pg files.",
+      category: "Technical Terms",
+      related: []
+    },
+    {
+      id: "rigid-joint",
+      term: "Rigid Joint",
+      definition: "Joint type that completely restricts all transformations.",
+      category: "Technical Terms",
+      related: []
+    },
+    {
+      id: "xr-lc",
+      term: "xrLC",
+      definition: "Level Compiler.",
+      category: "Technical Terms",
+      related: []
+    },
+    {
+      id: "xr-ai",
+      term: "xrAI",
+      definition: "AI-Map Compiler.",
+      category: "Technical Terms",
+      related: []
+    },
+    {
+      id: "xr-do",
+      term: "xrDO",
+      definition: "Detail Object Compiler.",
       category: "Technical Terms",
       related: []
     },
