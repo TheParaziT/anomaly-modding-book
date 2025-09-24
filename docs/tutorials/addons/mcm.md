@@ -17,7 +17,7 @@ ___
 ## Before you start
 
 Oh hey, Igi here! As you'll see from these docs, setting up MCM takes a lot of somewhat arcane tables, and debugging MCM can be the biggest pain in the ass.
-To make my life quite a bit easier, I created [MCM Builder](https://www.moddb.com/mods/stalker-anomaly/addons/mcm-builder) - a modding tool to create MCM pages
+To make my life quite a bit easier, I created MCM Builder ([ModDB](https://www.moddb.com/mods/stalker-anomaly/addons/mcm-builder) | [GitHub](https://github.com/ProfLander/mcm-builder)) - a modding tool to create MCM pages
 in a clear object-oriented way. Really recommend to check it out. There are no docs for it, just check in the script what's available - it's very easy to read.
 
 This is how it looks like with MCM Builder:

@@ -442,7 +442,7 @@ table tbody tr + tr td {
   --sidebar-icon: url('https://api.iconify.design/mdi:map.svg');
 }
 .menu__link[href^='/docs/tutorials/materials'] {
-  --sidebar-icon: url('https://api.iconify.design/mdi:layers-triple.svg');
+  --sidebar-icon: url('https://api.iconify.design/icon-park-outline:material.svg');
 }
 .menu__link[href^='/docs/tutorials/models'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg');
@@ -482,7 +482,7 @@ table tbody tr + tr td {
   --sidebar-icon: url('https://api.iconify.design/mdi:file-code-outline.svg');
 }
 .menu__link[href^='/docs/references/materials'] {
-  --sidebar-icon: url('https://api.iconify.design/mdi:palette-swatch-variant.svg');
+  --sidebar-icon: url('https://api.iconify.design/icon-park-outline:material.svg');
 }
 .menu__link[href^='/docs/references/models'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:cube-outline.svg');
@@ -700,3 +700,80 @@ table tbody tr + tr td {
     display: none; /* hide Related on small screens */
   }
 }
+
+/* Breadcrumbs with icons */
+.breadcrumbs__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.breadcrumbs__link::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  background-color: currentColor;
+  opacity: 0.9;
+  mask: var(--crumb-icon, url('https://api.iconify.design/mdi:chevron-right.svg')) no-repeat center / contain;
+  -webkit-mask: var(--crumb-icon, url('https://api.iconify.design/mdi:chevron-right.svg')) no-repeat center / contain;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link::before {
+  --crumb-icon: url('https://api.iconify.design/mdi:file-document-outline.svg');
+}
+
+/* Map breadcrumbs by path roots */
+.breadcrumbs__link[href^='/docs'] { --crumb-icon: url('https://api.iconify.design/mdi:book-open-page-variant.svg'); }
+.breadcrumbs__link[href^='/blog'] { --crumb-icon: url('https://api.iconify.design/mdi:note-text-outline.svg'); }
+.breadcrumbs__link[href^='/glossary'] { --crumb-icon: url('https://api.iconify.design/mdi:book-outline.svg'); }
+
+/* Docs area specifics */
+.breadcrumbs__link[href^='/docs/getting-started'] { --crumb-icon: url('https://api.iconify.design/mdi:rocket-launch.svg'); }
+.breadcrumbs__link[href^='/docs/tutorials'] { --crumb-icon: url('https://api.iconify.design/mdi:teach.svg'); }
+.breadcrumbs__link[href^='/docs/references'] { --crumb-icon: url('https://api.iconify.design/mingcute:list-search-line.svg'); }
+.breadcrumbs__link[href^='/docs/modding-tools'] { --crumb-icon: url('https://api.iconify.design/mynaui:tool.svg'); }
+.breadcrumbs__link[href^='/docs/resources'] { --crumb-icon: url('https://api.iconify.design/carbon:software-resource.svg'); }
+.breadcrumbs__link[href^='/docs/engineapi'] { --crumb-icon: url('https://api.iconify.design/tabler:engine.svg'); }
+.breadcrumbs__link[href^='/docs/scriptingapi'] { --crumb-icon: url('https://api.iconify.design/mdi-light:script.svg'); }
+.breadcrumbs__link[href^='/docs/forcontributors'] { --crumb-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg'); }
+
+/* Do not show icon for the first (Home) breadcrumb */
+.breadcrumbs__item:first-child .breadcrumbs__link::before,
+.breadcrumbs__link[href='/']::before {
+  display: none;
+}
+
+/* Tags with icons (blog/docs tag links) */
+a[href*='/tags/'], .tag, .tag a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+a[href*='/tags/']::before, .tag::before, .tag a::before {
+  content: '';
+  width: 0.95rem;
+  height: 0.95rem;
+  display: inline-block;
+  background-color: currentColor;
+  opacity: 0.9;
+  mask: var(--tag-icon, url('https://api.iconify.design/mdi:tag-outline.svg')) no-repeat center / contain;
+  -webkit-mask: var(--tag-icon, url('https://api.iconify.design/mdi:tag-outline.svg')) no-repeat center / contain;
+}
+
+/* Common tag mappings by slug in URL */
+a[href*='/tags/sdk'], .tag a[href*='sdk'] { --tag-icon: url('https://api.iconify.design/mdi:application-brackets-outline.svg'); }
+a[href*='/tags/blender'], .tag a[href*='blender'] { --tag-icon: url('https://api.iconify.design/simple-icons:blender.svg'); }
+a[href*='/tags/ai'], .tag a[href*='ai'] { --tag-icon: url('https://api.iconify.design/mdi:robot-outline.svg'); }
+a[href*='/tags/models'], .tag a[href*='models'] { --tag-icon: url('https://api.iconify.design/mdi:cube-scan.svg'); }
+a[href*='/tags/game-material'], .tag a[href*='game-material'] { --tag-icon: url('https://api.iconify.design/icon-park-outline:material.svg'); }
+a[href*='/tags/textures'], .tag a[href*='textures'] { --tag-icon: url('https://api.iconify.design/mdi:image-multiple-outline.svg'); }
+a[href*='/tags/audio'], .tag a[href*='audio'] { --tag-icon: url('https://api.iconify.design/mdi:music.svg'); }
+a[href*='/tags/video'], .tag a[href*='video'] { --tag-icon: url('https://api.iconify.design/mdi:movie-open-play.svg'); }
+a[href*='/tags/config'], .tag a[href*='config'] { --tag-icon: url('https://api.iconify.design/mdi:file-cog.svg'); }
+a[href*='/tags/shader'], .tag a[href*='shader'] { --tag-icon: url('https://api.iconify.design/mdi:shader.svg'); }
+a[href*='/tags/scripting'], .tag a[href*='scripting'] { --tag-icon: url('https://api.iconify.design/mdi:code-tags.svg'); }
+a[href*='/tags/tools'], .tag a[href*='tools'] { --tag-icon: url('https://api.iconify.design/mynaui:tool.svg'); }
