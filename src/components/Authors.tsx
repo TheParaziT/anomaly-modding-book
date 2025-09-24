@@ -12,10 +12,10 @@ import {
   FaYoutube,
   FaDiscord,
   FaTelegram,
-  FaCopy
+  FaCopy,
 } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
-import { SiVk, SiModin} from 'react-icons/si';
+import { SiVk, SiModin } from 'react-icons/si';
 import type { AuthorsProps, Author } from '../types';
 
 const socialIconMap = {
@@ -30,20 +30,18 @@ const socialIconMap = {
   telegram: FaTelegram,
   moddb: SiModin,
   discord: FaDiscord,
-  youtube: FaYoutube
+  youtube: FaYoutube,
 };
 
 const sizeMap = {
   small: { icon: 16, image: 32 },
   medium: { icon: 20, image: 48 },
-  large: { icon: 24, image: 64 }
+  large: { icon: 24, image: 64 },
 };
 
 function normalizeSocialLink(platform: string, handleOrUrl: string): string {
-  const isAbsoluteUrl = 
-    handleOrUrl.startsWith('http://') || 
-    handleOrUrl.startsWith('https://');
-  
+  const isAbsoluteUrl = handleOrUrl.startsWith('http://') || handleOrUrl.startsWith('https://');
+
   if (isAbsoluteUrl) {
     return handleOrUrl;
   }
@@ -79,12 +77,11 @@ function normalizeSocialLink(platform: string, handleOrUrl: string): string {
   }
 }
 
-
-export default function Authors({ 
-  authors, 
+export default function Authors({
+  authors,
   size = 'medium',
   showTitle = true,
-  showDescription = false 
+  showDescription = false,
 }: AuthorsProps): JSX.Element {
   const [copiedUsername, setCopiedUsername] = useState<string | null>(null);
 
@@ -95,17 +92,13 @@ export default function Authors({
   };
 
   if (!authors || authors.length === 0) {
-    return (
-      <div style={{ marginTop: 20, marginBottom: 20 }}>
-        No authors found.
-      </div>
-    );
+    return <div style={{ marginTop: 20, marginBottom: 20 }}>No authors found.</div>;
   }
 
   const { icon: iconSize, image: imageSize } = sizeMap[size];
 
   const filteredAuthors = authors
-    .map((authorKey) => {
+    .map(authorKey => {
       const authorData = authorsGlobal[authorKey];
       if (!authorData) {
         console.warn(`Author key "${authorKey}" not found in authors.yml`);
@@ -119,11 +112,7 @@ export default function Authors({
     .filter(Boolean) as Author[];
 
   if (filteredAuthors.length === 0) {
-    return (
-      <div style={{ marginTop: 20, marginBottom: 20 }}>
-        No valid authors found.
-      </div>
-    );
+    return <div style={{ marginTop: 20, marginBottom: 20 }}>No valid authors found.</div>;
   }
 
   return (
@@ -145,16 +134,16 @@ export default function Authors({
                   height: imageSize,
                   borderRadius: '50%',
                   marginRight: '1rem',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
                 }}
               />
             )}
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: 'bold' }}>
                 {author.url ? (
-                  <a 
-                    href={author.url} 
-                    target="_blank" 
+                  <a
+                    href={author.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'none' }}
                   >
@@ -164,55 +153,58 @@ export default function Authors({
                   author.name
                 )}
               </div>
-              
+
               {showTitle && author.title && (
                 <div style={{ fontSize: '0.9em', color: '#666', marginBottom: '0.5rem' }}>
                   {author.title}
                 </div>
               )}
-              
+
               {showDescription && author.description && (
                 <div style={{ fontSize: '0.8em', color: '#888', marginBottom: '0.5rem' }}>
                   {author.description}
                 </div>
               )}
 
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                {author.socials && Object.entries(author.socials)
-                  .filter(([_, value]) => value && value !== '')
-                  .map(([platform, handleOrUrl]) => {
-                    const SocialIcon = socialIconMap[platform as keyof typeof socialIconMap] || FaLink;
-                    const normalizedUrl = normalizeSocialLink(platform, handleOrUrl as string);
-                    
-                    return (
-                      <a
-                        key={platform}
-                        href={normalizedUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`${author.name} on ${platform}`}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          width: iconSize + 8,
-                          height: iconSize + 8,
-                          borderRadius: '4px',
-                          color: 'inherit',
-                          transition: 'background-color 0.2s ease'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                        }}
-                      >
-                        <SocialIcon size={iconSize} />
-                      </a>
-                    );
-                  })
-                }
+              <div
+                style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}
+              >
+                {author.socials &&
+                  Object.entries(author.socials)
+                    .filter(([_, value]) => value && value !== '')
+                    .map(([platform, handleOrUrl]) => {
+                      const SocialIcon =
+                        socialIconMap[platform as keyof typeof socialIconMap] || FaLink;
+                      const normalizedUrl = normalizeSocialLink(platform, handleOrUrl as string);
+
+                      return (
+                        <a
+                          key={platform}
+                          href={normalizedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`${author.name} on ${platform}`}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: iconSize + 8,
+                            height: iconSize + 8,
+                            borderRadius: '4px',
+                            color: 'inherit',
+                            transition: 'background-color 0.2s ease',
+                          }}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                          }}
+                        >
+                          <SocialIcon size={iconSize} />
+                        </a>
+                      );
+                    })}
 
                 {author.discord_username && (
                   <button
@@ -230,30 +222,32 @@ export default function Authors({
                       color: 'inherit',
                       cursor: 'pointer',
                       position: 'relative',
-                      transition: 'background-color 0.2s ease'
+                      transition: 'background-color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => {
+                    onMouseEnter={e => {
                       e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
                     }}
-                    onMouseLeave={(e) => {
+                    onMouseLeave={e => {
                       e.currentTarget.style.backgroundColor = 'transparent';
                     }}
                   >
                     <FaDiscord size={iconSize} />
                     {copiedUsername === author.discord_username && (
-                      <span style={{
-                        position: 'absolute',
-                        top: '-25px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        background: '#333',
-                        color: '#fff',
-                        padding: '4px 8px',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        whiteSpace: 'nowrap',
-                        zIndex: 10
-                      }}>
+                      <span
+                        style={{
+                          position: 'absolute',
+                          top: '-25px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          background: '#333',
+                          color: '#fff',
+                          padding: '4px 8px',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          whiteSpace: 'nowrap',
+                          zIndex: 10,
+                        }}
+                      >
                         Copied!
                       </span>
                     )}

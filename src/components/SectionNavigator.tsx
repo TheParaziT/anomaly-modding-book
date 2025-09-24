@@ -15,10 +15,10 @@ interface SectionNavigatorProps {
   title?: string;
 }
 
-export default function SectionNavigator({ 
-  sections, 
+export default function SectionNavigator({
+  sections,
   currentSection,
-  title = "Navigate Sections"
+  title = 'Navigate Sections',
 }: SectionNavigatorProps): React.JSX.Element {
   const [activeSection, setActiveSection] = useState(currentSection);
 
@@ -30,7 +30,7 @@ export default function SectionNavigator({
     <div className="section-navigator">
       <h3 className="section-navigator__title">{title}</h3>
       <nav className="section-navigator__nav">
-        {sections.map((section) => (
+        {sections.map(section => (
           <Link
             key={section.id}
             className={`section-navigator__item ${
@@ -39,9 +39,7 @@ export default function SectionNavigator({
             to={section.href}
             onClick={() => setActiveSection(section.id)}
           >
-            {section.icon && (
-              <span className="section-navigator__icon">{section.icon}</span>
-            )}
+            {section.icon && <span className="section-navigator__icon">{section.icon}</span>}
             <div className="section-navigator__content">
               <h4 className="section-navigator__title">{section.title}</h4>
               {section.description && (

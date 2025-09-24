@@ -121,4 +121,3 @@ export type ComponentSize = 'small' | 'medium' | 'large';
 // MODULE DECLARATIONS
 // ============================================================================
 // Note: Module declarations should be in .d.ts files, not in regular .ts files
-

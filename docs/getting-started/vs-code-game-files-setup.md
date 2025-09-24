@@ -13,8 +13,6 @@ Here will talk about setting up VSCode similar programs to work with game files.
 Not all files can be configured because there are no extensions for their viewing, reading (for example preview .dds textures and others). Some files can only be opened with third-party applications!
 :::
 
-___
-
 ## Step 1: Installing VSCodium
 
 Just install [VSCodium](https://vscodium.com/)

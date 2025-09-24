@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -13,11 +13,11 @@ const config: Config = {
   url: 'https://anomaly-modding-book.netlify.app',
   baseUrl: '/',
   trailingSlash: false,
-  
+
   future: {
     v4: true,
   },
-  
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -28,32 +28,30 @@ const config: Config = {
       },
     },
   },
-  
+
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'warn',
   onBrokenAnchors: 'warn',
-  clientModules: [
-    './src/client/openGraphBridge.ts',
-  ],
-  
+  clientModules: ['./src/client/openGraphBridge.ts'],
+
   plugins: [
     'docusaurus-plugin-image-zoom',
     [
       '@docusaurus/plugin-pwa',
       {
         debug: false,
-        offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
-        ],
+        offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          {tagName: 'link', rel: 'icon', href: 'img/favicon.ico'},
-          {tagName: 'link', rel: 'manifest', href: 'manifest.json'},
-          {tagName: 'meta', name: 'theme-color', content: '#7bd21a'},
-          {tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes'},
-          {tagName: 'meta', name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent'},
+          { tagName: 'link', rel: 'icon', href: 'img/favicon.ico' },
+          { tagName: 'link', rel: 'manifest', href: 'manifest.json' },
+          { tagName: 'meta', name: 'theme-color', content: '#7bd21a' },
+          { tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes' },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'black-translucent',
+          },
         ],
       },
     ],
@@ -77,14 +75,14 @@ const config: Config = {
       },
     ],
   ],
-  
+
   themes: [
     '@docusaurus/theme-mermaid',
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ["en"],
+        language: ['en'],
         indexDocs: true,
         indexBlog: true,
         docsRouteBasePath: '/docs',
@@ -110,13 +108,13 @@ const config: Config = {
           priority: 0.5,
           ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
-          createSitemapItems: async (params) => {
-            const {defaultCreateSitemapItems, ...rest} = params;
+          createSitemapItems: async params => {
+            const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
-            return items.filter((item) => !item.url.includes('/page/'));
+            return items.filter(item => !item.url.includes('/page/'));
           },
         },
-        
+
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/TheParaziT/anomaly-modding-book/blob/main/',
@@ -125,7 +123,7 @@ const config: Config = {
           remarkPlugins: [],
           rehypePlugins: [],
         },
-        
+
         blog: {
           blogTitle: 'Anomaly Modding Blog',
           blogDescription: 'Latest news about S.T.A.L.K.E.R. Anomaly modding',
@@ -143,53 +141,71 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
           postsPerPage: 10,
         },
-        
+
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
-  
+
   themeConfig: {
     // Lightweight analytics hook (noop until env is set)
     metadata: [
-      {name: 'keywords', content: 'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools, blender, sdk, scripting, lua, xray engine, monolith'},
-      {name: 'description', content: 'Comprehensive guide for S.T.A.L.K.E.R. Anomaly modding. Learn tools, techniques, and best practices for creating mods. Complete documentation for X-Ray Engine, Blender addons, SDK, and scripting.'},
-      {name: 'author', content: 'Anomaly Modding Book Community'},
-      {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
-      {name: 'theme-color', content: '#7bd21a'},
-      {property: 'og:type', content: 'website'},
-      {property: 'og:title', content: 'Anomaly Modding Book'},
-      {property: 'og:description', content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding'},
-      {property: 'og:image', content: 'https://anomaly-modding-book.netlify.app/img/logo-dark.svg'},
-      {property: 'og:image:width', content: '1200'},
-      {property: 'og:image:height', content: '630'},
-      {property: 'og:image:alt', content: 'Anomaly Modding Book'},
-      {property: 'og:site_name', content: 'Anomaly Modding Book'},
-      {property: 'og:locale', content: 'en_US'},
+      {
+        name: 'keywords',
+        content:
+          'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools, blender, sdk, scripting, lua, xray engine, monolith',
+      },
+      {
+        name: 'description',
+        content:
+          'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
+      },
+      { name: 'author', content: 'Anomaly Modding Book Community' },
+      {
+        name: 'robots',
+        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { name: 'theme-color', content: '#7bd21a' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Anomaly Modding Book' },
+      {
+        property: 'og:description',
+        content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding',
+      },
+      {
+        property: 'og:image',
+        content: 'https://anomaly-modding-book.netlify.app/img/logo-dark.svg',
+      },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: 'Anomaly Modding Book' },
+      { property: 'og:site_name', content: 'Anomaly Modding Book' },
+      { property: 'og:locale', content: 'en_US' },
       // Optional analytics meta for CSP/nonce-based injectors
-      process.env.GTAG_ID ? {name: 'google-analytics-id', content: process.env.GTAG_ID} : undefined,
+      process.env.GTAG_ID
+        ? { name: 'google-analytics-id', content: process.env.GTAG_ID }
+        : undefined,
     ].filter(Boolean) as any,
     zoom: {
       selector: '.markdown :not(em) > img',
       background: {
         light: 'rgba(240, 240, 240, 0.9)',
-        dark: 'rgba(50, 50, 50, 0.9)'
+        dark: 'rgba(50, 50, 50, 0.9)',
       },
-      config: {
-      },
+      config: {},
     },
-    
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-    
+
     // removed duplicate metadata block (consolidated above)
-    
+
     navbar: {
       title: 'Anomaly Modding Book',
       logo: {
@@ -265,12 +281,13 @@ const config: Config = {
           className: 'navbar-item-with-icon navbar-forcontributors-item',
         },
         {
-          to: '/blog', 
-          label: 'Blog', 
-          position: 'left'},
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
+        },
       ],
     },
-    
+
     footer: {
       style: 'dark',
       logo: {
@@ -284,28 +301,28 @@ const config: Config = {
         {
           title: 'Learn',
           items: [
-            {label: 'Getting Started', to: '/docs/getting-started'},
-            {label: 'Glossary', to: '/glossary'},
-            {label: 'Tutorials', to: '/docs/tutorials'},
-            {label: 'References', to: '/docs/references'},
-            {label: 'Resources', to: '/docs/resources'},
-            {label: 'Modding Tools', to: '/docs/modding-tools'},
-            {label: 'Engine API', to: '/docs/engineapi'},
-            {label: 'Scripting API', to: '/docs/scriptingapi'},
+            { label: 'Getting Started', to: '/docs/getting-started' },
+            { label: 'Glossary', to: '/glossary' },
+            { label: 'Tutorials', to: '/docs/tutorials' },
+            { label: 'References', to: '/docs/references' },
+            { label: 'Resources', to: '/docs/resources' },
+            { label: 'Modding Tools', to: '/docs/modding-tools' },
+            { label: 'Engine API', to: '/docs/engineapi' },
+            { label: 'Scripting API', to: '/docs/scriptingapi' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'Discord', href: 'https://discord.gg/8Pu2ekQYg3'},
-            {label: 'GitHub', href: 'https://github.com/TheParaziT/anomaly-modding-book'},
-            {label: 'Contribute', to: '/docs/forcontributors'},
+            { label: 'Discord', href: 'https://discord.gg/8Pu2ekQYg3' },
+            { label: 'GitHub', href: 'https://github.com/TheParaziT/anomaly-modding-book' },
+            { label: 'Contribute', to: '/docs/forcontributors' },
           ],
         },
         {
           title: 'More',
           items: [
-            {label: 'Blog', to: '/blog'},
+            { label: 'Blog', to: '/blog' },
             {
               label: 'Netlify Status',
               href: 'https://status.netlify.com',
@@ -315,7 +332,7 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Anomaly Modding Book. Built with Docusaurus.`,
     },
-    
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
@@ -325,7 +342,7 @@ const config: Config = {
         {
           className: 'theme-code-block-highlighted-line',
           line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
+          block: { start: 'highlight-start', end: 'highlight-end' },
         },
       ],
     },
@@ -336,7 +353,7 @@ const config: Config = {
         autoCollapseCategories: true,
       },
     },
-    
+
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 5,

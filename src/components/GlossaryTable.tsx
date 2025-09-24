@@ -5,34 +5,35 @@ import type { GlossaryTerm, GlossaryData, GlossaryTableProps, SortConfig } from 
 const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [sortConfig, setSortConfig] = useState<SortConfig<GlossaryTerm>>({ 
-    key: 'term', 
-    direction: 'asc' 
+  const [sortConfig, setSortConfig] = useState<SortConfig<GlossaryTerm>>({
+    key: 'term',
+    direction: 'asc',
   });
 
   // Фильтрация и сортировка терминов
   const filteredAndSortedTerms = useMemo(() => {
     let filtered = data.terms;
-    
+
     // Фильтр по поисковому запросу
     if (searchTerm) {
-      filtered = filtered.filter(item => 
-        item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.definition.toLowerCase().includes(searchTerm.toLowerCase())
+      filtered = filtered.filter(
+        item =>
+          item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.definition.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    
+
     // Фильтр по категории
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(item => item.category === selectedCategory);
     }
-    
+
     // Сортировка
     if (sortConfig.key) {
       filtered = [...filtered].sort((a, b) => {
         const aValue = a[sortConfig.key] || '';
         const bValue = b[sortConfig.key] || '';
-        
+
         if (aValue < bValue) {
           return sortConfig.direction === 'asc' ? -1 : 1;
         }
@@ -42,7 +43,7 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
         return 0;
       });
     }
-    
+
     return filtered;
   }, [data.terms, searchTerm, selectedCategory, sortConfig]);
 
@@ -67,41 +68,49 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
           type="text"
           placeholder="Search terms..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}
           className="glossary-search"
         />
-        
+
         <select
           value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
+          onChange={e => setSelectedCategory(e.target.value)}
           className="glossary-filter"
         >
           <option value="all">All Categories</option>
           {data.categories.map(category => (
-            <option key={category} value={category}>{category}</option>
+            <option key={category} value={category}>
+              {category}
+            </option>
           ))}
         </select>
       </div>
-      
+
       <div className="glossary-stats">
         Showing {filteredAndSortedTerms.length} of {data.terms.length} terms
       </div>
-      
+
       <div className="glossary-table-container">
         <table className="glossary-table">
           <thead>
             <tr>
-              <th 
+              <th
                 onClick={() => handleSort('term')}
-                className={clsx('sortable', sortConfig.key === 'term' && `sort-${sortConfig.direction}`)}
+                className={clsx(
+                  'sortable',
+                  sortConfig.key === 'term' && `sort-${sortConfig.direction}`
+                )}
               >
                 Term
                 <span className="sort-indicator"></span>
               </th>
               <th>Definition</th>
-              <th 
+              <th
                 onClick={() => handleSort('category')}
-                className={clsx('sortable', sortConfig.key === 'category' && `sort-${sortConfig.direction}`)}
+                className={clsx(
+                  'sortable',
+                  sortConfig.key === 'category' && `sort-${sortConfig.direction}`
+                )}
               >
                 Category
                 <span className="sort-indicator"></span>
@@ -110,7 +119,7 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {filteredAndSortedTerms.map((item) => (
+            {filteredAndSortedTerms.map(item => (
               <tr key={item.id} id={item.id}>
                 <td className="glossary-term">
                   <a href={`#${item.id}`} className="term-anchor">
@@ -120,7 +129,7 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
                 <td className="glossary-definition">{item.definition}</td>
                 <td className="glossary-category">{item.category}</td>
                 <td className="glossary-actions">
-                  <button 
+                  <button
                     onClick={() => handleCopyLink(item.id)}
                     className="copy-link-button"
                     title="Copy link to this term"
@@ -132,11 +141,9 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
             ))}
           </tbody>
         </table>
-        
+
         {filteredAndSortedTerms.length === 0 && (
-          <div className="glossary-empty">
-            No terms found matching your criteria.
-          </div>
+          <div className="glossary-empty">No terms found matching your criteria.</div>
         )}
       </div>
     </div>

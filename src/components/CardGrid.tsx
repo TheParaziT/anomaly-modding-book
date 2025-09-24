@@ -2,13 +2,13 @@ import React from 'react';
 import UniversalCard from './UniversalCard';
 import type { CardGridProps } from '../types';
 
-export default function CardGrid({ 
-  children, 
+export default function CardGrid({
+  children,
   items = [],
-  columns = 3
+  columns = 3,
 }: CardGridProps): React.JSX.Element {
-  const columnClass = `col col--${12/columns}`;
-  
+  const columnClass = `col col--${12 / columns}`;
+
   return (
     <div className="card-grid">
       {children}

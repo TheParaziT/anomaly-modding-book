@@ -2,6 +2,13 @@
 
 ___
 
+<Authors
+  authors={["pavel_blend"]}
+  size="medium"
+  showTitle={true}
+  showDescription={true}
+/>
+
 ## About
 
 This page describes smoothing for mesh objects in the X-Ray engine

@@ -7,9 +7,9 @@ export default function UniversalCard({
   content,
   image,
   link,
-  linkText = "View Details",
+  linkText = 'View Details',
   internal = false,
-  className = "",
+  className = '',
 }: UniversalCardProps): React.JSX.Element {
   return (
     <div className={`universal-card card ${className}`}>

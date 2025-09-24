@@ -3,3 +3,5 @@
 ___
 
 ## About
+
+Primary save file extension

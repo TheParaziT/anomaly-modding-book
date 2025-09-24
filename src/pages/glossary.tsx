@@ -14,17 +14,16 @@ const GlossaryPage: React.FC = () => {
           <div className="col col--10 col--offset-1">
             <h1>Anomaly Modding Glossary</h1>
             <p className="glossary-intro">
-              This glossary defines key terms and concepts related to S.T.A.L.K.E.R. Anomaly modding. 
-              Use the search and filter options to find specific terms, or browse through all entries.
+              This glossary defines key terms and concepts related to S.T.A.L.K.E.R. Anomaly
+              modding. Use the search and filter options to find specific terms, or browse through
+              all entries.
             </p>
-            
+
             <GlossaryTable data={glossaryData} />
-            
+
             <div className="glossary-footer">
               <h2>How to Reference Terms</h2>
-              <p>
-                You can link directly to any term in this glossary using its ID. For example:
-              </p>
+              <p>You can link directly to any term in this glossary using its ID. For example:</p>
               <ul>
                 <li>
                   <a href="#anomaly">Anomaly</a> - <code>#anomaly</code>
@@ -37,7 +36,8 @@ const GlossaryPage: React.FC = () => {
                 </li>
               </ul>
               <p>
-                Use the copy link button (🔗) next to each term to easily copy a direct link to that term.
+                Use the copy link button (🔗) next to each term to easily copy a direct link to that
+                term.
               </p>
             </div>
           </div>

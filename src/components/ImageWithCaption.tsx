@@ -30,5 +30,3 @@ const ImageWithCaption: React.FC<ImageWithCaptionProps> = ({
 };
 
 export default ImageWithCaption;
-
-
