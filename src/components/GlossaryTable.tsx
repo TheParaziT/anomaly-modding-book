@@ -106,7 +106,6 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
                 Category
                 <span className="sort-indicator"></span>
               </th>
-              <th>Related Concepts</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -120,13 +119,6 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
                 </td>
                 <td className="glossary-definition">{item.definition}</td>
                 <td className="glossary-category">{item.category}</td>
-                <td className="glossary-related">
-                  {item.related && item.related.map((relatedTerm) => (
-                    <span key={relatedTerm.id} className="related-tag">
-                      <a href={`#${relatedTerm.id}`}>{relatedTerm.term}</a>
-                    </span>
-                  ))}
-                </td>
                 <td className="glossary-actions">
                   <button 
                     onClick={() => handleCopyLink(item.id)}

@@ -33,9 +33,39 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'warn',
   onBrokenAnchors: 'warn',
+  clientModules: [
+    './src/client/openGraphBridge.ts',
+  ],
   
   plugins: [
     'docusaurus-plugin-image-zoom',
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {tagName: 'link', rel: 'icon', href: 'img/favicon.ico'},
+          {tagName: 'link', rel: 'manifest', href: 'manifest.json'},
+          {tagName: 'meta', name: 'theme-color', content: '#7bd21a'},
+          {tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes'},
+          {tagName: 'meta', name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent'},
+        ],
+      },
+    ],
+    [
+      'docusaurus-graph',
+      {
+        docsDir: 'docs',
+        buildDir: 'build',
+        sourcesTag: 'sources',
+        referencesTag: 'references',
+      },
+    ],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -122,6 +152,26 @@ const config: Config = {
   ],
   
   themeConfig: {
+    // Lightweight analytics hook (noop until env is set)
+    metadata: [
+      {name: 'keywords', content: 'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools, blender, sdk, scripting, lua, xray engine, monolith'},
+      {name: 'description', content: 'Comprehensive guide for S.T.A.L.K.E.R. Anomaly modding. Learn tools, techniques, and best practices for creating mods. Complete documentation for X-Ray Engine, Blender addons, SDK, and scripting.'},
+      {name: 'author', content: 'Anomaly Modding Book Community'},
+      {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
+      {name: 'theme-color', content: '#7bd21a'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:title', content: 'Anomaly Modding Book'},
+      {property: 'og:description', content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding'},
+      {property: 'og:image', content: 'https://anomaly-modding-book.netlify.app/img/logo-dark.svg'},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {property: 'og:image:alt', content: 'Anomaly Modding Book'},
+      {property: 'og:site_name', content: 'Anomaly Modding Book'},
+      {property: 'og:locale', content: 'en_US'},
+      // Optional analytics meta for CSP/nonce-based injectors
+      process.env.GTAG_ID ? {name: 'google-analytics-id', content: process.env.GTAG_ID} : undefined,
+    ].filter(Boolean) as any,
     zoom: {
       selector: '.markdown :not(em) > img',
       background: {
@@ -138,29 +188,13 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     
-    metadata: [
-      {name: 'keywords', content: 'stalker, anomaly, modding, guide, tutorial, xray-engine, s.t.a.l.k.e.r, game development, modding tools, blender, sdk, scripting, lua, xray engine, monolith'},
-      {name: 'description', content: 'Comprehensive guide for S.T.A.L.K.E.R. Anomaly modding. Learn tools, techniques, and best practices for creating mods. Complete documentation for X-Ray Engine, Blender addons, SDK, and scripting.'},
-      {name: 'author', content: 'Anomaly Modding Book Community'},
-      {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
-      {name: 'theme-color', content: '#7bd21a'},
-      {property: 'og:type', content: 'website'},
-      {property: 'og:title', content: 'Anomaly Modding Book'},
-      {property: 'og:description', content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding'},
-      {property: 'og:image', content: 'https://anomaly-modding-book.netlify.app/img/logo.svg'},
-      {property: 'og:image:width', content: '1200'},
-      {property: 'og:image:height', content: '630'},
-      {property: 'og:image:alt', content: 'Anomaly Modding Book'},
-      {property: 'og:site_name', content: 'Anomaly Modding Book'},
-      {property: 'og:locale', content: 'en_US'},
-    ],
+    // removed duplicate metadata block (consolidated above)
     
     navbar: {
       title: 'Anomaly Modding Book',
       logo: {
         alt: 'Anomaly Modding Book Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-dark.svg',
         width: 32,
         height: 32,
         href: '/',
@@ -241,7 +275,7 @@ const config: Config = {
       style: 'dark',
       logo: {
         alt: 'Anomaly Modding Book',
-        src: 'img/logo.svg',
+        src: 'img/logo-light.svg',
         href: '/',
         width: 50,
         height: 50,

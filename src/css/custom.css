@@ -1,6 +1,5 @@
 :root {
-  /* S.T.A.L.K.E.R.-inspired palette (industrial dark + anomaly green accent) */
-  --ifm-color-primary: #7bd21a; /* radiation green */
+  --ifm-color-primary: #7bd21a;
   --ifm-color-primary-dark: #6ab215;
   --ifm-color-primary-darker: #5c9d12;
   --ifm-color-primary-darkest: #4a7c0e;
@@ -10,28 +9,28 @@
   --ifm-code-font-size: 95%;
   --ifm-button-border-width: 0;
   --ifm-background-color: transparent;
-  --docusaurus-collapse-button-bg: rgba(0, 0, 0, 0.0);
+  --docusaurus-collapse-button-bg: rgba(0, 0, 0, 0);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  
+
   --color-vk: #4a76a8;
   --color-telegram: #0088cc;
   --color-moddb: #ff6600;
   --color-discord: #5865f2;
-  
+
   --mobile-breakpoint: 768px;
   --tablet-breakpoint: 996px;
   --container-padding: 1rem;
-  
+
   /* Enhanced performance variables */
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.6;
   --ifm-font-weight-base: 400;
   --ifm-font-weight-bold: 600;
-  
+
   /* Animation improvements */
   --ifm-transition-fast: 0.2s ease-in-out;
   --ifm-transition-slow: 0.4s ease-in-out;
-  
+
   /* Enhanced shadows */
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -59,7 +58,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(123, 210, 26, 0.12);
 }
 
-/* Light theme tuning: softer backgrounds, keep anomaly accent */
 [data-theme='light'] {
   --ifm-color-primary: #5fb312;
   --ifm-color-primary-dark: #4a910e;
@@ -76,10 +74,9 @@
 /* Light hero theme */
 [data-theme='light'] .hero {
   background-image:
-    radial-gradient(900px 450px at 20% 0%, rgba(123, 210, 26, 0.10), transparent 70%),
+    radial-gradient(900px 450px at 20% 0%, rgba(123, 210, 26, 0.1), transparent 70%),
     radial-gradient(1100px 550px at 80% 20%, rgba(123, 210, 26, 0.06), transparent 70%),
-    linear-gradient(135deg, #f5f7f5 0%, #eef2ee 35%, #f7faf7 100%),
-    var(--amb-scanline);
+    linear-gradient(135deg, #f5f7f5 0%, #eef2ee 35%, #f7faf7 100%), var(--amb-scanline);
 }
 
 /* Site background: dark concrete + scanlines + noise */
@@ -97,10 +94,6 @@ html body {
   color: #e9ffe1;
 }
 
-.collapseSidebarButton_PEFL {
-  border: 0;
-}
-
 /* Scrollbar styling (Chromium/WebKit) */
 *::-webkit-scrollbar {
   width: 10px;
@@ -110,40 +103,58 @@ html body {
   background: rgba(255, 255, 255, 0.04);
 }
 *::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(123,210,26,0.55), rgba(123,210,26,0.35));
+  background: linear-gradient(180deg, rgba(123, 210, 26, 0.55), rgba(123, 210, 26, 0.35));
   border-radius: 8px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(123,210,26,0.75), rgba(123,210,26,0.5));
+  background: linear-gradient(180deg, rgba(123, 210, 26, 0.75), rgba(123, 210, 26, 0.5));
 }
 
 /* Cards and surfaces: subtle border + glow on hover */
-.card, .theme-doc-markdown, .markdown, .navbar, .footer, .menu__list-item, .pagination-nav__item {
+.card,
+.theme-doc-markdown,
+.markdown,
+.navbar,
+.footer,
+.menu__list-item,
+.pagination-nav__item {
   backdrop-filter: saturate(110%);
 }
 
-.card, .cardContainer, .theme-doc-toc-desktop, .theme-doc-sidebar-container, .navbar, .footer {
+.card,
+.cardContainer,
+.theme-doc-toc-desktop,
+.theme-doc-sidebar-container,
+.navbar,
+.footer {
   border: 1px solid rgba(123, 210, 26, 0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .card:hover {
   border-color: rgba(123, 210, 26, 0.25);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.35), 0 0 0 1px rgba(123, 210, 26, 0.12) inset;
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(123, 210, 26, 0.12) inset;
 }
 
 /* Buttons: industrial neon accent */
 .button.button--primary {
-  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
-  box-shadow: 0 6px 20px rgba(123, 210, 26, 0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 6px 20px rgba(123, 210, 26, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .button.button--primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(123, 210, 26, 0.38), inset 0 1px 0 rgba(255,255,255,0.08);
+  box-shadow:
+    0 10px 28px rgba(123, 210, 26, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.button.button--secondary, .button.button--outline {
+.button.button--secondary,
+.button.button--outline {
   border-color: rgba(123, 210, 26, 0.3);
 }
 
@@ -155,16 +166,24 @@ html body {
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
   display: inline-block;
-  
+
   &:hover {
     opacity: 1;
     transform: scale(1.1);
   }
-  
-  &.social-icon-vk:hover { color: var(--color-vk); }
-  &.social-icon-telegram:hover { color: var(--color-telegram); }
-  &.social-icon-moddb:hover { color: var(--color-moddb); }
-  &.social-icon-discord:hover { color: var(--color-discord); }
+
+  &.social-icon-vk:hover {
+    color: var(--color-vk);
+  }
+  &.social-icon-telegram:hover {
+    color: var(--color-telegram);
+  }
+  &.social-icon-moddb:hover {
+    color: var(--color-moddb);
+  }
+  &.social-icon-discord:hover {
+    color: var(--color-discord);
+  }
 }
 
 /* Links: subtle glow and dashed focus ring for accessibility */
@@ -198,19 +217,19 @@ table thead th {
 }
 
 table tbody tr + tr td {
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Admonitions: themed borders */
 .admonition {
   border-left: 4px solid rgba(123, 210, 26, 0.6);
-  background: linear-gradient(90deg, rgba(123,210,26,0.06), transparent 40%);
+  background: linear-gradient(90deg, rgba(123, 210, 26, 0.06), transparent 40%);
 }
 
 /* Pagination: active highlight */
 .pagination-nav__link--active,
 .pagination-nav__item--active .pagination-nav__link {
-  box-shadow: 0 0 0 1px rgba(123,210,26,0.4) inset;
+  box-shadow: 0 0 0 1px rgba(123, 210, 26, 0.4) inset;
 }
 
 .video-grid {
@@ -219,13 +238,13 @@ table tbody tr + tr td {
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 0 var(--container-padding);
-  
+
   @media (max-width: 996px) {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin: 1.5rem 0;
   }
-  
+
   @media (max-width: 768px) {
     gap: 0.75rem;
     margin: 1rem 0;
@@ -240,12 +259,12 @@ table tbody tr + tr td {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   padding-top: 56.25%;
-  
+
   [data-theme='dark'] & {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.05);
   }
-  
+
   @media (max-width: 768px) {
     border-radius: 8px;
   }
@@ -261,14 +280,16 @@ table tbody tr + tr td {
 }
 
 [data-theme='light'] {
-  img[src$='.svg'], .theme-aware-svg { 
-    filter: brightness(0.8); 
+  img[src$='.svg'],
+  .theme-aware-svg {
+    filter: brightness(0.8);
   }
 }
 
 [data-theme='dark'] {
-  img[src$='.svg'], .theme-aware-svg { 
-    filter: brightness(1.2); 
+  img[src$='.svg'],
+  .theme-aware-svg {
+    filter: brightness(1.2);
   }
 }
 
@@ -278,15 +299,17 @@ table tbody tr + tr td {
   gap: 0.5rem;
   padding: 0.5rem 0.8rem;
   border-radius: 4px;
-  transition: background var(--ifm-transition-fast), transform var(--ifm-transition-fast);
+  transition:
+    background var(--ifm-transition-fast),
+    transform var(--ifm-transition-fast);
   white-space: nowrap;
-  
+
   &:hover {
     background: rgba(123, 210, 26, 0.08);
     text-decoration: none;
     transform: translateY(-1px);
   }
-  
+
   &::before {
     content: '';
     width: 1.2rem;
@@ -298,25 +321,43 @@ table tbody tr + tr td {
     -webkit-mask: var(--icon-url) no-repeat center / contain;
     flex-shrink: 0;
   }
-  
+
   &:hover::before {
     background-color: var(--ifm-navbar-link-hover-color);
   }
-  
-  &.navbar-github-item { --icon-url: url('https://api.iconify.design/mdi:rocket-launch.svg'); }
-  &.navbar-glossary-item { --icon-url: url('https://api.iconify.design/mdi:book.svg'); }
-  &.navbar-tutorial-item { --icon-url: url('https://api.iconify.design/mdi:cast-tutorial.svg'); }
-  &.navbar-reference-item { --icon-url: url('https://api.iconify.design/mingcute:list-search-line.svg'); }
-  &.navbar-moddingtool-item { --icon-url: url('https://api.iconify.design/mynaui:tool.svg'); }
-  &.navbar-resource-item { --icon-url: url('https://api.iconify.design/carbon:software-resource.svg'); }
-  &.navbar-engineapi-item { --icon-url: url('https://api.iconify.design/tabler:engine.svg'); }
-  &.navbar-scriptingapi-item { --icon-url: url('https://api.iconify.design/mdi-light:script.svg'); }
-  &.navbar-forcontributors-item { --icon-url: url('https://api.iconify.design/ooui:user-contributions-rtl.svg'); }
-  
+
+  &.navbar-github-item {
+    --icon-url: url('https://api.iconify.design/mdi:rocket-launch.svg');
+  }
+  &.navbar-glossary-item {
+    --icon-url: url('https://api.iconify.design/mdi:book.svg');
+  }
+  &.navbar-tutorial-item {
+    --icon-url: url('https://api.iconify.design/mdi:cast-tutorial.svg');
+  }
+  &.navbar-reference-item {
+    --icon-url: url('https://api.iconify.design/mingcute:list-search-line.svg');
+  }
+  &.navbar-moddingtool-item {
+    --icon-url: url('https://api.iconify.design/mynaui:tool.svg');
+  }
+  &.navbar-resource-item {
+    --icon-url: url('https://api.iconify.design/carbon:software-resource.svg');
+  }
+  &.navbar-engineapi-item {
+    --icon-url: url('https://api.iconify.design/tabler:engine.svg');
+  }
+  &.navbar-scriptingapi-item {
+    --icon-url: url('https://api.iconify.design/mdi-light:script.svg');
+  }
+  &.navbar-forcontributors-item {
+    --icon-url: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
+  }
+
   @media (max-width: 996px) {
     padding: 0.4rem 0.6rem;
     font-size: 0.9rem;
-    
+
     &::before {
       width: 1rem;
       height: 1rem;
@@ -336,7 +377,10 @@ table tbody tr + tr td {
 }
 
 /* Headings with subtle stencil feel */
-.markdown h1, .markdown h2, .markdown h3, .hero__title {
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.hero__title {
   letter-spacing: 0.5px;
   text-transform: none;
 }
@@ -364,67 +408,165 @@ table tbody tr + tr td {
   display: inline-block;
   background-color: currentColor;
   opacity: 0.85;
-  mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg')) no-repeat center / contain;
-  -webkit-mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg')) no-repeat center / contain;
+  mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg')) no-repeat
+    center / contain;
+  -webkit-mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg'))
+    no-repeat center / contain;
   flex-shrink: 0;
 }
 
 /* Section-specific icons by path pattern */
-.menu__link[href^="/docs/getting-started"] { --sidebar-icon: url('https://api.iconify.design/mdi:rocket-launch.svg'); }
-.menu__link[href^="/docs/getting-started/mod-organizer"] { --sidebar-icon: url('https://api.iconify.design/mdi:folder-zip.svg'); }
-.menu__link[href^="/docs/getting-started/unpacking-game-files"] { --sidebar-icon: url('https://api.iconify.design/mdi:package-variant-closed.svg'); }
+.menu__link[href^='/docs/getting-started'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:rocket-launch.svg');
+}
+.menu__link[href^='/docs/getting-started/mod-organizer'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:folder-zip.svg');
+}
+.menu__link[href^='/docs/getting-started/unpacking-game-files'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:package-variant-closed.svg');
+}
 
-.menu__link[href^="/docs/tutorials"] { --sidebar-icon: url('https://api.iconify.design/mdi:teach.svg'); }
-.menu__link[href^="/docs/tutorials/animations"] { --sidebar-icon: url('https://api.iconify.design/mdi:animation-play.svg'); }
-.menu__link[href^="/docs/tutorials/audio-video"] { --sidebar-icon: url('https://api.iconify.design/mdi:movie-open-play.svg'); }
-.menu__link[href^="/docs/tutorials/configs"] { --sidebar-icon: url('https://api.iconify.design/mdi:cog.svg'); }
-.menu__link[href^="/docs/tutorials/mapping"] { --sidebar-icon: url('https://api.iconify.design/mdi:map.svg'); }
-.menu__link[href^="/docs/tutorials/materials"] { --sidebar-icon: url('https://api.iconify.design/mdi:layers-triple.svg'); }
-.menu__link[href^="/docs/tutorials/models"] { --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg'); }
-.menu__link[href^="/docs/tutorials/quests"] { --sidebar-icon: url('https://api.iconify.design/mdi:target-account.svg'); }
-.menu__link[href^="/docs/tutorials/scripting"] { --sidebar-icon: url('https://api.iconify.design/mdi:code-tags.svg'); }
-.menu__link[href^="/docs/tutorials/sdk"] { --sidebar-icon: url('https://api.iconify.design/mdi:application-brackets.svg'); }
-.menu__link[href^="/docs/tutorials/texturing"] { --sidebar-icon: url('https://api.iconify.design/mdi:image-edit.svg'); }
-.menu__link[href^="/docs/tutorials/addons"] { --sidebar-icon: url('https://api.iconify.design/mdi:puzzle-plus-outline.svg'); }
+.menu__link[href^='/docs/tutorials'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:teach.svg');
+}
+.menu__link[href^='/docs/tutorials/animations'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:animation-play.svg');
+}
+.menu__link[href^='/docs/tutorials/audio-video'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:movie-open-play.svg');
+}
+.menu__link[href^='/docs/tutorials/configs'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cog.svg');
+}
+.menu__link[href^='/docs/tutorials/mapping'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:map.svg');
+}
+.menu__link[href^='/docs/tutorials/materials'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:layers-triple.svg');
+}
+.menu__link[href^='/docs/tutorials/models'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg');
+}
+.menu__link[href^='/docs/tutorials/quests'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:target-account.svg');
+}
+.menu__link[href^='/docs/tutorials/scripting'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:code-tags.svg');
+}
+.menu__link[href^='/docs/tutorials/sdk'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:application-brackets.svg');
+}
+.menu__link[href^='/docs/tutorials/texturing'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:image-edit.svg');
+}
+.menu__link[href^='/docs/tutorials/addons'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:puzzle-plus-outline.svg');
+}
 
-.menu__link[href^="/docs/references"] { --sidebar-icon: url('https://api.iconify.design/mingcute:list-search-line.svg'); }
-.menu__link[href^="/docs/references/audio"] { --sidebar-icon: url('https://api.iconify.design/mdi:music.svg'); }
-.menu__link[href^="/docs/references/configs"] { --sidebar-icon: url('https://api.iconify.design/mdi:file-cog.svg'); }
-.menu__link[href^="/docs/references/engine"] { --sidebar-icon: url('https://api.iconify.design/mdi:engine-outline.svg'); }
-.menu__link[href^="/docs/references/engine/xray-coordinate-system"] { --sidebar-icon: url('https://api.iconify.design/streamline-flex:3d-coordinate-axis.svg'); }
-.menu__link[href^="/docs/references/file-formats"] { --sidebar-icon: url('https://api.iconify.design/mdi:file-code-outline.svg'); }
-.menu__link[href^="/docs/references/materials"] { --sidebar-icon: url('https://api.iconify.design/mdi:palette-swatch-variant.svg'); }
-.menu__link[href^="/docs/references/models"] { --sidebar-icon: url('https://api.iconify.design/mdi:cube-outline.svg'); }
-.menu__link[href^="/docs/references/shaders"] { --sidebar-icon: url('https://api.iconify.design/mdi:shader.svg'); }
-.menu__link[href^="/docs/references/scripting"] { --sidebar-icon: url('https://api.iconify.design/mdi:script-text-outline.svg'); }
+.menu__link[href^='/docs/references'] {
+  --sidebar-icon: url('https://api.iconify.design/mingcute:list-search-line.svg');
+}
+.menu__link[href^='/docs/references/audio'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:music.svg');
+}
+.menu__link[href^='/docs/references/configs'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:file-cog.svg');
+}
+.menu__link[href^='/docs/references/engine'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:engine-outline.svg');
+}
+.menu__link[href^='/docs/references/engine/xray-coordinate-system'] {
+  --sidebar-icon: url('https://api.iconify.design/streamline-flex:3d-coordinate-axis.svg');
+}
+.menu__link[href^='/docs/references/file-formats'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:file-code-outline.svg');
+}
+.menu__link[href^='/docs/references/materials'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:palette-swatch-variant.svg');
+}
+.menu__link[href^='/docs/references/models'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cube-outline.svg');
+}
+.menu__link[href^='/docs/references/shaders'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:shader.svg');
+}
+.menu__link[href^='/docs/references/scripting'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:script-text-outline.svg');
+}
 
-.menu__link[href^="/docs/modding-tools"] { --sidebar-icon: url('https://api.iconify.design/mynaui:tool.svg'); }
-.menu__link[href^="/docs/modding-tools/ai"] { --sidebar-icon: url('https://api.iconify.design/mdi:robot-outline.svg'); }
-.menu__link[href^="/docs/modding-tools/animations"] { --sidebar-icon: url('https://api.iconify.design/mdi:animation-outline.svg'); }
-.menu__link[href^="/docs/modding-tools/audio-video"] { --sidebar-icon: url('https://api.iconify.design/mdi:music-box-multiple.svg'); }
-.menu__link[href^="/docs/modding-tools/blender"] { --sidebar-icon: url('https://api.iconify.design/simple-icons:blender.svg'); }
-.menu__link[href^="/docs/modding-tools/coding"] { --sidebar-icon: url('https://api.iconify.design/mdi:code-parentheses.svg'); }
-.menu__link[href^="/docs/modding-tools/compilers"] { --sidebar-icon: url('https://api.iconify.design/mdi:tools.svg'); }
-.menu__link[href^="/docs/modding-tools/compressors"] { --sidebar-icon: url('https://api.iconify.design/mdi:archive.svg'); }
-.menu__link[href^="/docs/modding-tools/in-game-editors"] { --sidebar-icon: url('https://api.iconify.design/mdi:controller-classic-outline.svg'); }
-.menu__link[href^="/docs/modding-tools/models"] { --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg'); }
-.menu__link[href^="/docs/modding-tools/sdk"] { --sidebar-icon: url('https://api.iconify.design/mdi:application-brackets-outline.svg'); }
-.menu__link[href^="/docs/modding-tools/textures"] { --sidebar-icon: url('https://api.iconify.design/mdi:image-multiple-outline.svg'); }
-.menu__link[href^="/docs/modding-tools/weapons"] { --sidebar-icon: url('https://api.iconify.design/mdi:pistol.svg'); }
+.menu__link[href^='/docs/modding-tools'] {
+  --sidebar-icon: url('https://api.iconify.design/mynaui:tool.svg');
+}
+.menu__link[href^='/docs/modding-tools/ai'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:robot-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/animations'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:animation-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/audio-video'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:music-box-multiple.svg');
+}
+.menu__link[href^='/docs/modding-tools/blender'] {
+  --sidebar-icon: url('https://api.iconify.design/simple-icons:blender.svg');
+}
+.menu__link[href^='/docs/modding-tools/coding'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:code-parentheses.svg');
+}
+.menu__link[href^='/docs/modding-tools/compilers'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:tools.svg');
+}
+.menu__link[href^='/docs/modding-tools/compressors'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:archive.svg');
+}
+.menu__link[href^='/docs/modding-tools/in-game-editors'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:controller-classic-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/models'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg');
+}
+.menu__link[href^='/docs/modding-tools/sdk'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:application-brackets-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/textures'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:image-multiple-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/weapons'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:pistol.svg');
+}
 
-.menu__link[href^="/docs/resources"] { --sidebar-icon: url('https://api.iconify.design/carbon:software-resource.svg'); }
-.menu__link[href^="/docs/resources/assets"] { --sidebar-icon: url('https://api.iconify.design/mdi:package-variant.svg'); }
-.menu__link[href^="/docs/resources/audio"] { --sidebar-icon: url('https://api.iconify.design/mdi:music-note.svg'); }
-.menu__link[href^="/docs/resources/models"] { --sidebar-icon: url('https://api.iconify.design/mdi:cube.svg'); }
-.menu__link[href^="/docs/resources/rigs"] { --sidebar-icon: url('https://api.iconify.design/mdi:arm-flex-outline.svg'); }
-.menu__link[href^="/docs/resources/texturing"] { --sidebar-icon: url('https://api.iconify.design/mdi:palette-outline.svg'); }
+.menu__link[href^='/docs/resources'] {
+  --sidebar-icon: url('https://api.iconify.design/carbon:software-resource.svg');
+}
+.menu__link[href^='/docs/resources/assets'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:package-variant.svg');
+}
+.menu__link[href^='/docs/resources/audio'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:music-note.svg');
+}
+.menu__link[href^='/docs/resources/models'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cube.svg');
+}
+.menu__link[href^='/docs/resources/rigs'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:arm-flex-outline.svg');
+}
+.menu__link[href^='/docs/resources/texturing'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:palette-outline.svg');
+}
 
-.menu__link[href^="/docs/engineapi"] { --sidebar-icon: url('https://api.iconify.design/tabler:engine.svg'); }
-.menu__link[href^="/docs/scriptingapi"] { --sidebar-icon: url('https://api.iconify.design/mdi-light:script.svg'); }
-.menu__link[href^="/docs/forcontributors"] { --sidebar-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg'); }
+.menu__link[href^='/docs/engineapi'] {
+  --sidebar-icon: url('https://api.iconify.design/tabler:engine.svg');
+}
+.menu__link[href^='/docs/scriptingapi'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi-light:script.svg');
+}
+.menu__link[href^='/docs/forcontributors'] {
+  --sidebar-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
+}
 
 /* Glossary page */
-.menu__link[href^="/glossary"] { --sidebar-icon: url('https://api.iconify.design/mdi:book-open-page-variant-outline.svg'); }
+.menu__link[href^='/glossary'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:book-open-page-variant-outline.svg');
+}
 
 /* Glossary page styles */
 .glossary-container {
@@ -443,16 +585,29 @@ table tbody tr + tr td {
   margin: 1rem 0;
 }
 
-.glossary-search, .glossary-filter {
+.glossary-search,
+.glossary-filter {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(123,210,26,0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(123, 210, 26, 0.2);
   color: var(--ifm-font-color-base);
 }
 
-[data-theme='light'] .glossary-search, [data-theme='light'] .glossary-filter {
-  background: rgba(0,0,0,0.02);
+[data-theme='light'] .glossary-search,
+[data-theme='light'] .glossary-filter {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Dark theme refinements for glossary filter */
+[data-theme='dark'] .glossary-filter {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(123, 210, 26, 0.3);
+}
+[data-theme='dark'] .glossary-filter:focus {
+  outline: none;
+  border-color: rgba(123, 210, 26, 0.6);
+  box-shadow: 0 0 0 3px rgba(123, 210, 26, 0.2);
 }
 
 .glossary-stats {
@@ -463,9 +618,9 @@ table tbody tr + tr td {
 
 .glossary-table-container {
   overflow-x: auto;
-  border: 1px solid rgba(123,210,26,0.12);
+  border: 1px solid rgba(123, 210, 26, 0.12);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .glossary-table {
@@ -476,14 +631,14 @@ table tbody tr + tr td {
 .glossary-table thead th {
   position: sticky;
   top: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   z-index: 1;
   padding: 0.75rem;
 }
 
 [data-theme='light'] .glossary-table thead th {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .glossary-table td {
@@ -492,7 +647,7 @@ table tbody tr + tr td {
 }
 
 .glossary-table tbody tr:hover {
-  background: rgba(123,210,26,0.05);
+  background: rgba(123, 210, 26, 0.05);
 }
 
 .sortable {
@@ -505,8 +660,12 @@ table tbody tr + tr td {
   margin-left: 6px;
 }
 
-.sort-asc .sort-indicator::after { content: '▲'; }
-.sort-desc .sort-indicator::after { content: '▼'; }
+.sort-asc .sort-indicator::after {
+  content: '▲';
+}
+.sort-desc .sort-indicator::after {
+  content: '▼';
+}
 
 .term-anchor {
   font-weight: 600;
@@ -520,13 +679,13 @@ table tbody tr + tr td {
 .copy-link-button {
   padding: 0.35rem 0.55rem;
   border-radius: 6px;
-  border: 1px solid rgba(123,210,26,0.35);
+  border: 1px solid rgba(123, 210, 26, 0.35);
   background: transparent;
   cursor: pointer;
 }
 
 .copy-link-button:hover {
-  background: rgba(123,210,26,0.1);
+  background: rgba(123, 210, 26, 0.1);
 }
 
 .glossary-empty {
