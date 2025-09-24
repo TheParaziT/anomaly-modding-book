@@ -1,6 +1,6 @@
 import React, { JSX, useState } from 'react';
 // @ts-ignore
-import authorsGlobal from 'js-yaml-loader!../../../blog/authors.yml';
+import authorsGlobal from 'js-yaml-loader!../../blog/authors.yml';
 import {
   FaGithub,
   FaTwitter,
@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
 import { SiVk, SiModin} from 'react-icons/si';
-import type { AuthorsProps, Author } from '../../types';
+import type { AuthorsProps, Author } from '../types';
 
 const socialIconMap = {
   github: FaGithub,

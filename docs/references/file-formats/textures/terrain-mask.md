@@ -1,4 +1,4 @@
-# *terrain_map_name*_mask.dds
+# terrain_mask.dds
 
 ___
 

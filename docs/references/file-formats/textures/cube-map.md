@@ -1,4 +1,4 @@
-# *cube_map_name_*.dds
+# cube_map.dds
 
 ___
 

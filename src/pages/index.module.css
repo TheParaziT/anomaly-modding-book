@@ -3,8 +3,10 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  min-height: 80vh;
+  background:
+    radial-gradient(1000px 600px at 70% 0%, rgba(123, 210, 26, 0.12), transparent 70%),
+    linear-gradient(135deg, #0f1316 0%, #101416 35%, #0a0d0f 100%);
+  min-height: 70vh;
   display: flex;
   align-items: center;
 }

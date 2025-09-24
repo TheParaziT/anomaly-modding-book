@@ -7,7 +7,7 @@ const infimaClassName = 'alert alert--secondary';
 
 const defaultProps = {
   icon: <SuccessIcon />,
-  title: 'Шутка',
+  title: 'Success',
 };
 
 export default function AdmonitionTypeSuccess(props: Props): React.JSX.Element {

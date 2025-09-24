@@ -1,4 +1,4 @@
-# [*.dds (DirectDraw Surface)](https://en.wikipedia.org/wiki/DirectDraw_Surface)
+# *.dds (DirectDraw Surface)
 
 ___
 

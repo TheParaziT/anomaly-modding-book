@@ -144,7 +144,7 @@ const config: Config = {
       {name: 'author', content: 'Anomaly Modding Book Community'},
       {name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
-      {name: 'theme-color', content: '#2e8555'},
+      {name: 'theme-color', content: '#7bd21a'},
       {property: 'og:type', content: 'website'},
       {property: 'og:title', content: 'Anomaly Modding Book'},
       {property: 'og:description', content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding'},
