@@ -4,7 +4,7 @@ tags: [LUA]
 
 # Script Attachments
 
-____
+___
 
 <Authors
   authors={["lucy"]}
@@ -185,7 +185,7 @@ To get the current parent bone id you can use
 local bone_id = test_att:get_parent_bone()
 ```
 
-____
+___
 
 ## Attachment position, rotation and scale
 
@@ -238,7 +238,7 @@ test_att:set_origin(center)
 
 `get_center()` can be used to get the center position of an attachment model (also works on game objects).  
 
-____
+___
 
 ## Attachment model
 
@@ -304,7 +304,7 @@ local anm_length = test_att:play_motion("reload", false, 1)
 test_att:play_motion("idle", true, 1)
 ```
 
-____
+___
 
 ## Bone Callbacks
 
@@ -438,7 +438,7 @@ As mentioned before, you can tell the engine to keep existing bone callbacks in 
 lockpicker:set_model("path\\to\\other_lock", true)
 ```
 
-____
+___
 
 ## Miscellaneous
 

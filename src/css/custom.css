@@ -344,13 +344,13 @@ table tbody tr + tr td {
   &.navbar-resource-item {
     --icon-url: url('https://api.iconify.design/carbon:software-resource.svg');
   }
-  &.navbar-engineapi-item {
+  &.navbar-engine-api-item {
     --icon-url: url('https://api.iconify.design/tabler:engine.svg');
   }
-  &.navbar-scriptingapi-item {
+  &.navbar-scripting-api-item {
     --icon-url: url('https://api.iconify.design/mdi-light:script.svg');
   }
-  &.navbar-forcontributors-item {
+  &.navbar-for-contributors-item {
     --icon-url: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
   }
 
@@ -613,13 +613,13 @@ table tbody tr + tr td {
   --sidebar-icon: url('https://api.iconify.design/mdi:palette-outline.svg');
 }
 
-.menu__link[href^='/docs/engineapi'] {
+.menu__link[href^='/docs/engine-api'] {
   --sidebar-icon: url('https://api.iconify.design/tabler:engine.svg');
 }
-.menu__link[href^='/docs/scriptingapi'] {
+.menu__link[href^='/docs/scripting-api'] {
   --sidebar-icon: url('https://api.iconify.design/mdi-light:script.svg');
 }
-.menu__link[href^='/docs/forcontributors'] {
+.menu__link[href^='/docs/for-contributors'] {
   --sidebar-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
 }
 
@@ -813,13 +813,13 @@ table tbody tr + tr td {
 .breadcrumbs__link[href^='/docs/resources'] {
   --crumb-icon: url('https://api.iconify.design/carbon:software-resource.svg');
 }
-.breadcrumbs__link[href^='/docs/engineapi'] {
+.breadcrumbs__link[href^='/docs/engine-api'] {
   --crumb-icon: url('https://api.iconify.design/tabler:engine.svg');
 }
-.breadcrumbs__link[href^='/docs/scriptingapi'] {
+.breadcrumbs__link[href^='/docs/scripting-api'] {
   --crumb-icon: url('https://api.iconify.design/mdi-light:script.svg');
 }
-.breadcrumbs__link[href^='/docs/forcontributors'] {
+.breadcrumbs__link[href^='/docs/for-contributors'] {
   --crumb-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
 }
 

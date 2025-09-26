@@ -35,14 +35,14 @@
       "cwd": "${workspaceFolder}",
       "env": {
         "PORT": "3000",
-        "HOST": "0.0.0.0"
+        "HOST": "localhost"
       },
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
     },
     {
       "name": "Chrome: Debug localhost:3000",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
@@ -56,7 +56,6 @@
       "args": ["--runInBand", "--colors"],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "disableOptimisticBPs": true,
       "env": {
         "CI": "true"
       },
@@ -70,7 +69,6 @@
       "args": ["${fileBasename}", "--runInBand", "--colors"],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "disableOptimisticBPs": true,
       "env": {
         "CI": "true"
       },

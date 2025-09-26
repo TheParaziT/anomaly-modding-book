@@ -24,7 +24,7 @@ A terrain is a regular 3d model consisting of many polygons. They can have diffe
 - `Shader` – determines the appearance of this material
 
 <ImageWithCaption
-  src="./assets/images/surface.png"
+  src={require('./assets/images/surface.png').default}
   alt="Terrain settings in SDK Actor Editor"
   caption="Terrain settings in SDK Actor Editor."
 />

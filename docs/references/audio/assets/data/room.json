@@ -1,0 +1,14 @@
+{
+  "Size": "2.500",
+  "Diffusion": "1.000",
+  "Room": "0",
+  "RoomHF": "0",
+  "RoomRolloffFactor": "0.000",
+  "AirAbsorptionHF": "0.000",
+  "Reflections": "-1376",
+  "ReflectionsDelay": "0.006",
+  "Reverb": "0",
+  "ReverbDelay": "0.006",
+  "DecayTime": "1.00",
+  "DecayHFRatio": "0.200"
+}

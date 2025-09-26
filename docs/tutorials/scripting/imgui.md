@@ -5,7 +5,7 @@ description: Guide for using ImGui in scripting
 
 # ImGui
 
-____
+___
 
 <Authors
   authors={["lucy"]}
@@ -182,7 +182,7 @@ AddUniqueCall(window_overlay)
 
 ![ImGui Overlay](assets/images/imgui-overlay-example.png)
 
-____
+___
 
 ## Other UI elements
 
@@ -282,7 +282,7 @@ end
 
 ![ImGui Combobox](assets/images/imgui-combobox-example.png)
 
-____
+___
 
 ## Fonts
 
@@ -325,7 +325,7 @@ ImGui.BeginMenu(ImGui_Icon.WRENCH.." Hud Adjust")
 
 Check `imgui_helper.script` for a full list of icons!
 
-____
+___
 
 ## Styles and colors
 

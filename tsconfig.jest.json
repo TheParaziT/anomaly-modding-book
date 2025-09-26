@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["jest", "@testing-library/jest-dom"],
+    "paths": {
+      "@docusaurus/Link": ["test/__mocks__/DocusaurusLinkMock.tsx"]
+    }
+  },
+  "include": ["src/**/*", "jest.setup.ts", "test/**/*"]
+}
+
+

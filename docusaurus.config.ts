@@ -159,8 +159,7 @@ const config: Config = {
       },
       {
         name: 'description',
-        content:
-          'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
+        content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
       },
       { name: 'author', content: 'Anomaly Modding Book Community' },
       {
@@ -264,21 +263,21 @@ const config: Config = {
           sidebarId: 'engineapiSidebar',
           position: 'left',
           label: 'Engine API',
-          className: 'navbar-item-with-icon navbar-engineapi-item',
+          className: 'navbar-item-with-icon navbar-engine-api-item',
         },
         {
           type: 'docSidebar',
           sidebarId: 'scriptingapiSidebar',
           position: 'left',
           label: 'Scripting API',
-          className: 'navbar-item-with-icon navbar-scriptingapi-item',
+          className: 'navbar-item-with-icon navbar-scripting-api-item',
         },
         {
           type: 'docSidebar',
           sidebarId: 'forcontributorsSidebar',
           position: 'left',
           label: 'For Contributors',
-          className: 'navbar-item-with-icon navbar-forcontributors-item',
+          className: 'navbar-item-with-icon navbar-for-contributors-item',
         },
         {
           to: '/blog',
@@ -307,8 +306,8 @@ const config: Config = {
             { label: 'References', to: '/docs/references' },
             { label: 'Resources', to: '/docs/resources' },
             { label: 'Modding Tools', to: '/docs/modding-tools' },
-            { label: 'Engine API', to: '/docs/engineapi' },
-            { label: 'Scripting API', to: '/docs/scriptingapi' },
+            { label: 'Engine API', to: '/docs/engine-api' },
+            { label: 'Scripting API', to: '/docs/scripting-api' },
           ],
         },
         {
@@ -316,7 +315,7 @@ const config: Config = {
           items: [
             { label: 'Discord', href: 'https://discord.gg/8Pu2ekQYg3' },
             { label: 'GitHub', href: 'https://github.com/TheParaziT/anomaly-modding-book' },
-            { label: 'Contribute', to: '/docs/forcontributors' },
+            { label: 'Contribute', to: '/docs/for-contributors' },
           ],
         },
         {

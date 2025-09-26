@@ -1062,6 +1062,18 @@
     "referencedBy": []
   },
   {
+    "id": "skeletons-list",
+    "title": "Skeletons List",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
+    "id": "sound-environment-list",
+    "title": "Sound Environment List",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
     "id": "algoritm-of-logic",
     "title": "Algorithm of Logic",
     "linkTo": [],
@@ -1400,7 +1412,9 @@
   {
     "id": "anm",
     "title": ".anm (Animated Paths)",
-    "linkTo": [],
+    "linkTo": [
+      "creating-camera-animations"
+    ],
     "referencedBy": []
   },
   {
@@ -1794,6 +1808,12 @@
     "referencedBy": []
   },
   {
+    "id": "materials-list",
+    "title": "Game Materials List",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
     "id": "smoothing",
     "title": "Smoothing",
     "linkTo": [],
@@ -1808,6 +1828,18 @@
   {
     "id": "class-registrator",
     "title": "Class Registrator",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
+    "id": "compiler-shaders-list",
+    "title": "Compiler Shaders List",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
+    "id": "engine-shaders-list",
+    "title": "Engine Shaders List",
     "linkTo": [],
     "referencedBy": []
   },
@@ -1881,7 +1913,9 @@
     "id": "creating-camera-animations",
     "title": "Creating Camera Animations in Blender",
     "linkTo": [],
-    "referencedBy": []
+    "referencedBy": [
+      "anm"
+    ]
   },
   {
     "id": "creating-flyover-camera-animations-in-game",

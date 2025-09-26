@@ -4,7 +4,7 @@ tags: [LUA, 3D Animation]
 
 # Scripted Animations
 
-____
+___
 
 <Authors
   authors={["etherealstalkermodding"]}
@@ -58,7 +58,7 @@ These are camera animations with more possibilities: besides camera movements, t
 
 *.ppe files work similarly to .anm files - they’re separate and go to **anims/** folder as well.
 
-____
+___
 
 ## Practice
 
