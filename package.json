@@ -25,7 +25,7 @@
     "@dev0ph3r/netlify-plugin-discord": "^1.0.2",
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/plugin-ideal-image": "^3.8.1",
-    "@docusaurus/plugin-pwa": "^3.8.1",
+    "@docusaurus/plugin-pwa": "^3.9.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@docusaurus/theme-mermaid": "^3.8.1",
     "@easyops-cn/docusaurus-search-local": "^0.52.1",
