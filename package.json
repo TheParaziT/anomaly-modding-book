@@ -27,7 +27,7 @@
     "@docusaurus/plugin-ideal-image": "^3.8.1",
     "@docusaurus/plugin-pwa": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
-    "@docusaurus/theme-mermaid": "^3.8.1",
+    "@docusaurus/theme-mermaid": "^3.9.1",
     "@easyops-cn/docusaurus-search-local": "^0.52.1",
     "@iconify/react": "^6.0.2",
     "@mdx-js/react": "^3.0.0",
