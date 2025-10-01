@@ -12,7 +12,11 @@ ___
   <tbody>
     <tr>
       <td>Program Developer</td>
-      <td>Dmitriy Iassenev (GSC Game World)</td>
+      <td>        <Authors
+          authors={['gsc_game_world']}
+          size="small"
+          showTitle={false}
+        /></td>
     </tr>
     <tr>
       <td>Described Version</td>

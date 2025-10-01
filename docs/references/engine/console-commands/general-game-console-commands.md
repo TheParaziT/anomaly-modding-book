@@ -28,6 +28,6 @@ ___
 | disconnect | Ends the game | - |
 | time_factor | Ability to change the game time | 0.001 - 1000.0 |
 | flush |  | - |
-| clear_log | Clear console and [*.log](../../references/file-formats/general/log.md) file | - |
+| clear_log | Clear console and [*.log](../../../references/file-formats/general/log.md) file | - |
 | cfg_load | Load config file | - |
 | cfg_save | Save config file | - |

@@ -8,11 +8,28 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | Mortany (Original Author)ValeroK |
-| Described Version | [4.1](https://github.com/VaIeroK/OGF-tool/releases/tag/4.1) |
-| Discussion Forum | [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3549-ogfdmdetailsobj-editor-v41/) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['mortany', 'vaierok']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>[4.1](https://github.com/VaIeroK/OGF-tool/releases/tag/4.1)</td>
+    </tr>
+    <tr>
+      <td>Discussion Forum</td>
+      <td>
+        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3549-ogfdmdetailsobj-editor-v41/)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

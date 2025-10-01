@@ -87,12 +87,12 @@ These versions (SDK 0.4 and SDK 0.5/0.6) are not compatible with Anomaly!
 Versions of the SDK tools may differ depending on the version of the SDK itself
 :::
 
-- [Actor Editor](sdk/actor-editor/actor-editor.md)
+- [Actor Editor](sdk/actor-editor/README.mdx)
 - Dialog Editor
-- [Level Editor](sdk/level-editor/level-editor.md)
-- [Particle Editor](sdk/particle-editor/particle-editor.md)
+- [Level Editor](sdk/level-editor/README.md)
+- [Particle Editor](sdk/particle-editor/README.md)
 - Postprocess Editor
-- [ShaderEditor](sdk/shader-editor/shader-editor.md)
+- [ShaderEditor](sdk/shader-editor/README.md)
 - xrLC_net - Level compiler by machines connected to a local network
 
 ___
@@ -110,7 +110,7 @@ ___
 
 3D Packages that have compatibility/addons to work with X-Ray:
 
-- [Blender (With X-Ray Addon)](blender/blender-x-ray-addon-summary.md)
+- [Blender (With X-Ray Addon)](blender/README.mdx)
 
 - 3Ds Max with scripts
   - [Den Stash's Scripts](https://github.com/X-Ray-Engine-STALKER/xray_3ds_max_tools)
@@ -239,12 +239,12 @@ ___
 
 - [Universal ACDC](https://disk.yandex.ru/d/-GBYa8DxQv8MF) - Perl script, to unpack and pack all.spawn
   - [Universal ACDC by PSIget](https://github.com/PSIget/Universal-ACDC) - A modyfied ACDC version
-- [gamemtl_xr_cdc](https://disk.yandex.ru/d/hR79KfSn3PLtSK) - To decompile [gamemtl.xr](../references/main-folders-and-files/README.md#files)
-- [lanims_xr_cdc](https://disk.yandex.ru/d/qKhybMU-3PLtTj) - To decompile [lanims.xr](../references/main-folders-and-files/README.md#files)
-- [shaders_xr_cdc](https://disk.yandex.ru/d/RcMprj9W3PLtdj) - To decompile [shaders.xr](../references/main-folders-and-files/README.md#files)
-- [shaders_xrlc_xr_cdc](https://disk.yandex.ru/d/FoQnY1VV3PLteX) - To decompile [shaders.xrlc](../references/main-folders-and-files/README.md#files)
-- [senvironment_xr_cdc](https://disk.yandex.ru/d/jBnrr3Xg3PLtcc) - To decompile [senvironment.xrlc](../references/main-folders-and-files/README.md#files)
-- [particles_xr_cdc (Unpacking to binary files only)](https://disk.yandex.ru/d/LCkINfLw3PLtV5) - To decompile [particles.xrlc](../references/main-folders-and-files/README.md#files)
+- [gamemtl_xr_cdc](https://disk.yandex.ru/d/hR79KfSn3PLtSK) - To decompile gamemtl.xr
+- [lanims_xr_cdc](https://disk.yandex.ru/d/qKhybMU-3PLtTj) - To decompile lanims.xr
+- [shaders_xr_cdc](https://disk.yandex.ru/d/RcMprj9W3PLtdj) - To decompile shaders.xr
+- [shaders_xrlc_xr_cdc](https://disk.yandex.ru/d/FoQnY1VV3PLteX) - To decompile shaders.xrlc
+- [senvironment_xr_cdc](https://disk.yandex.ru/d/jBnrr3Xg3PLtcc) - To decompile senvironment.xrlc
+- [particles_xr_cdc (Unpacking to binary files only)](https://disk.yandex.ru/d/LCkINfLw3PLtV5) - To decompile particles.xrlc
 - [converter-level](https://disk.yandex.ru/d/czZSLCzT3UrDa5)
   - The program requires Old Version Active Perl **(at least version 5 and up to about version 5.24)** to be installed.
   - You also need [stkutils](https://disk.yandex.ru/d/nnjntzYZQv8sD) (put it in the folder with the script or in C:\Perl\lib)
@@ -253,13 +253,13 @@ ___
 
 ## Level Compilers
 
-- [Universal x64 level compilers](compilers/universal-x64-level-compilers.md) - Universal level compiler that supports the compilation format for games of all series and has many keys to compile
+- [Universal x64 level compilers](compilers/universal-x64-level-compilers.mdx) - Universal level compiler that supports the compilation format for games of all series and has many keys to compile
 
 ___
 
 ## .db | .xdb archivers
 
-- [xrCompress by i-love-kfc](compressors/xrcompress-by-i-love-kfc.md) - .db/.xdb archiver
+- [xrCompress by i-love-kfc](compressors//xrcompress-by-i-love-kfc.mdx) - .db/.xdb archiver
 
 ___
 

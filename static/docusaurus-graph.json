@@ -1194,8 +1194,8 @@
     "referencedBy": []
   },
   {
-    "id": "fluid-emmiter",
-    "title": "Fluid Emmiter",
+    "id": "fluid-emitter",
+    "title": "Fluid Emitter",
     "linkTo": [],
     "referencedBy": []
   },
@@ -1412,22 +1412,27 @@
   {
     "id": "anm",
     "title": ".anm (Animated Paths)",
-    "linkTo": [
-      "creating-camera-animations"
-    ],
-    "referencedBy": []
+    "linkTo": [],
+    "referencedBy": [
+      "creating-camera-animations",
+      "creating-hud-hands-animation-in-blender"
+    ]
   },
   {
     "id": "omf",
     "title": "*.omf",
     "linkTo": [],
-    "referencedBy": []
+    "referencedBy": [
+      "creating-hud-hands-animation-in-blender"
+    ]
   },
   {
     "id": "skl-skls",
     "title": "*.skl | \\*.skls",
     "linkTo": [],
-    "referencedBy": []
+    "referencedBy": [
+      "creating-hud-hands-animation-in-blender"
+    ]
   },
   {
     "id": "db",
@@ -1625,7 +1630,9 @@
     "id": "xrdemo",
     "title": "*.xrdemo",
     "linkTo": [],
-    "referencedBy": []
+    "referencedBy": [
+      "creating-flyover-camera-animations-in-game"
+    ]
   },
   {
     "id": "bones",
@@ -1635,7 +1642,7 @@
   },
   {
     "id": "dm",
-    "title": "dm",
+    "title": "*.dm",
     "linkTo": [],
     "referencedBy": []
   },
@@ -1912,21 +1919,27 @@
   {
     "id": "creating-camera-animations",
     "title": "Creating Camera Animations in Blender",
-    "linkTo": [],
-    "referencedBy": [
+    "linkTo": [
       "anm"
-    ]
+    ],
+    "referencedBy": []
   },
   {
     "id": "creating-flyover-camera-animations-in-game",
     "title": "Creating Camera Flyover in Game",
-    "linkTo": [],
+    "linkTo": [
+      "xrdemo"
+    ],
     "referencedBy": []
   },
   {
     "id": "creating-hud-hands-animation-in-blender",
     "title": "Creating HUD Hands Animation in Blender",
-    "linkTo": [],
+    "linkTo": [
+      "skl-skls",
+      "omf",
+      "anm"
+    ],
     "referencedBy": []
   },
   {

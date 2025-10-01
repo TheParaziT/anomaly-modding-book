@@ -14,9 +14,6 @@ Allows to setup various parameters of the selected object.
 All types of objects have different parameters. Depending on the type of selected object, the parameters will change.
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
   <TabItem value="sceneobject" label="Scene Object" default>
     <table>
@@ -877,8 +874,7 @@ import TabItem from '@theme/TabItem';
     </tr>
     <tr>
       <td colSpan={4}>
-        Ниже находятся названия обьектов в группе (Нажатием галочки по обьекту
-        делает его редактируемым в своей категории типа обьекта)
+        Ниже находятся названия обьектов в группе (Нажатием галочки по обьекту делает его редактируемым в своей категории типа обьекта)
       </td>
     </tr>
   </tbody>
@@ -988,7 +984,7 @@ import TabItem from '@theme/TabItem';
       <td />
     </tr>
     <tr>
-      <td rowSpan={3}>Aligment</td>
+      <td rowSpan={3}>Alignment</td>
       <td rowSpan={3} />
     </tr>
     <tr />

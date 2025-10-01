@@ -1,0 +1,420 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Видео фон */
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.videoElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.77777778vh; /* 16:9 aspect ratio */
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Плавное появление/затухание видео на фоне */
+.videoElementFaded {
+  opacity: 0.15;
+  animation: heroVideoPulse 18s ease-in-out infinite;
+}
+
+@keyframes heroVideoPulse {
+  0% {
+    opacity: 0.05;
+  }
+  20% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.05;
+  }
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 14, 16, 0.85) 0%,
+    rgba(8, 10, 12, 0.75) 35%,
+    rgba(10, 13, 15, 0.8) 100%
+  );
+  z-index: -1;
+}
+
+/* Индикатор загрузки */
+.videoLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.loadingSpinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(123, 210, 26, 0.3);
+  border-top: 3px solid rgba(123, 210, 26, 0.8);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Контент */
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heroLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Левая секция - Заголовок */
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  background: linear-gradient(135deg, #7bd21a 0%, #9af24a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(123, 210, 26, 0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.externalLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Правая секция - Карточки */
+.cardsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.navigationCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(123, 210, 26, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+}
+
+.navigationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(123, 210, 26, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.navigationCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(123, 210, 26, 0.4);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(123, 210, 26, 0.2) inset;
+}
+
+.navigationCard:hover::before {
+  opacity: 1;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+.cardDescription {
+  font-size: 0.8rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 1200px) {
+  .heroLayout {
+    gap: 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+  }
+
+  .navigationCard {
+    padding: 1.25rem 0.75rem;
+    min-height: 120px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .heroLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    max-width: none;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .heroLayout {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 300px;
+  }
+
+  .navigationCard {
+    padding: 1.25rem 0.75rem;
+    min-height: 100px;
+  }
+
+  .cardIcon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+
+  .externalLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .videoChangeButton {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .videoChangeIcon {
+    font-size: 1rem;
+  }
+
+  .videoIndicator {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .videoCounter {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .navigationCard {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .cardIcon {
+    font-size: 1.75rem;
+  }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleSection {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.cardsSection {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Специальные эффекты для карточек */
+.card1 {
+  animation-delay: 0.1s;
+}
+.card2 {
+  animation-delay: 0.2s;
+}
+.card3 {
+  animation-delay: 0.3s;
+}
+.card4 {
+  animation-delay: 0.4s;
+}
+.card5 {
+  animation-delay: 0.5s;
+}
+.card6 {
+  animation-delay: 0.6s;
+}
+.card7 {
+  animation-delay: 0.7s;
+}
+.card8 {
+  animation-delay: 0.8s;
+}
+
+.navigationCard {
+  animation: fadeInUp 0.6s ease-out both;
+}

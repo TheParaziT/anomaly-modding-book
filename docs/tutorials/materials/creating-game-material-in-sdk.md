@@ -9,7 +9,7 @@ ___
 
 ## About
 
-The Game Material defines the physical features of the surface. All material parameters can be viewed in [SDK Shader Editor](../../modding-tools/sdk/shader-editor/shader-editor.md). For example, let's create three different materials.
+The Game Material defines the physical features of the surface. All material parameters can be viewed in [SDK Shader Editor](../../modding-tools/sdk/shader-editor/README.md). For example, let's create three different materials.
 
 ## Creating Static Object material
 

@@ -43,13 +43,13 @@ const config: Config = {
         debug: false,
         offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          { tagName: 'link', rel: 'icon', href: 'img/favicon.ico' },
+          { tagName: 'link', rel: 'icon', href: 'img/test.ico' },
           { tagName: 'link', rel: 'manifest', href: 'manifest.json' },
           { tagName: 'meta', name: 'theme-color', content: '#7bd21a' },
-          { tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes' },
+          { tagName: 'meta', name: 'mobile-web-app-capable', content: 'yes' },
           {
             tagName: 'meta',
-            name: 'apple-mobile-web-app-status-bar-style',
+            name: 'mobile-web-app-status-bar-style',
             content: 'black-translucent',
           },
         ],
@@ -325,6 +325,11 @@ const config: Config = {
             {
               label: 'Netlify Status',
               href: 'https://status.netlify.com',
+            },
+            {
+              to: '/acknowledgment',
+              label: 'Acknowledgment',
+              position: 'right',
             },
           ],
         },

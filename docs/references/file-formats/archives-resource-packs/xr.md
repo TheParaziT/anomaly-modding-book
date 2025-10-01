@@ -10,5 +10,5 @@ ___
 
 ## Programs editing this file
 
-- [SDK Shader Editor](../../../modding-tools/sdk/shader-editor/shader-editor.md)
-- [SDK Particle Editor](../../../modding-tools/sdk/particle-editor/particle-editor.md)
+- [SDK Shader Editor](../../../modding-tools/sdk/shader-editor/README.md)
+- [SDK Particle Editor](../../../modding-tools/sdk/particle-editor/README.md)

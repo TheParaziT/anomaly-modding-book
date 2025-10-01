@@ -50,7 +50,7 @@ toolkit_r5 = 3, 1
 
 Defines list of items trader won't buy or price modifier of those he buys
 
-Accept a [condlist](../../condlists.md) of [sections](../../structure-of-files.md) of items. Those items should follow one these rules:
+Accept a [condlist](../../../../tutorials/configs/condlists.md) of [sections](../../structure-of-files.md) of items. Those items should follow one these rules:
 
 1. `jgut = 0.1` means trader will buy `jgut` item for 10% of it's price. Related [script](https://github.com/Tosox/STALKER-Anomaly-gamedata/blob/v1.5.2/gamedata/scripts/utils_item.script#L983)
 2. `toolkit_r5` means trader won't buy that item at all

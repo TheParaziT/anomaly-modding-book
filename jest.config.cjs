@@ -6,7 +6,9 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '^@docusaurus/Link$': '<rootDir>/test/__mocks__/DocusaurusLinkMock.tsx',
-    '^src/(.*)$': '<rootDir>/src/$1'
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '\\.(yml|yaml)$': '<rootDir>/test/__mocks__/yamlMock.js',
+    '^js-yaml-loader!(.*)$': '<rootDir>/$1'
   },
   testRegex: '.*\\.(test|spec)\\.(ts|tsx|js|jsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],

@@ -26,7 +26,7 @@ ___
 Motion Marks can be useful for creating marks in animations (e.g., enabling IK on NPC legs, marking the end of a reload animation, etc.).
 
 :::info
-In the [Blender X‑Ray Addon](../../modding-tools/blender/blender-x-ray-addon-summary.md), Motion Marks are implemented via [Custom Properties](https://docs.blender.org/manual/en/latest/files/custom_properties.html).
+In the [Blender X‑Ray Addon](../../modding-tools/blender/README.mdx), Motion Marks are implemented via [Custom Properties](https://docs.blender.org/manual/en/latest/files/custom_properties.html).
 To make an action include keyframes for this property, you need to animate the Custom Property itself.
 If the property’s value equals zero (or False) in a particular frame, that frame does not belong to the mark’s interval.
 For any other value, the keyframe falls within the mark interval.

@@ -6,9 +6,6 @@ ___
 
 Window with shader properties.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
   <TabItem value="engineshader" label="Engine Shader" default>
 <table>

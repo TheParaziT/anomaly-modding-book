@@ -10,11 +10,11 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
     direction: 'asc',
   });
 
-  // Фильтрация и сортировка терминов
+  // Filter and sort terms
   const filteredAndSortedTerms = useMemo(() => {
     let filtered = data.terms;
 
-    // Фильтр по поисковому запросу
+    // Filter by search query
     if (searchTerm) {
       filtered = filtered.filter(
         item =>
@@ -23,12 +23,12 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
       );
     }
 
-    // Фильтр по категории
+    // Filter by selected category
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(item => item.category === selectedCategory);
     }
 
-    // Сортировка
+    // Sorting
     if (sortConfig.key) {
       filtered = [...filtered].sort((a, b) => {
         const aValue = a[sortConfig.key] || '';
@@ -58,7 +58,7 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
   const handleCopyLink = (id: string) => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`;
     navigator.clipboard.writeText(url);
-    // Можно добавить уведомление об успешном копировании
+    // Optional: show a toast/notification on successful copy
   };
 
   return (

@@ -8,8 +8,6 @@ ___
 
 ## Related Videos
 
-import YouTubeVideo from '@site/src/components/YouTubeVideo';
-
 <div className="video-grid">
   <YouTubeVideo id="LcJtmbx1Xjc?si=1XevfsEHQHKvUIOK"/>
 </div>

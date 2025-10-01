@@ -56,8 +56,6 @@ offset_148: value_37 = 79.9762573242188
 
 ## Programs editing this file
 
-import UniversalCard from '@site/src/components/UniversalCard';
-
 <UniversalCard
   title="Evaluation Function Constructor"
   content="Program for creating evaluation functions."

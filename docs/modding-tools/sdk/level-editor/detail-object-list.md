@@ -4,7 +4,7 @@ ___
 
 ## About
 
-This window creates the relationships between the color slots ([terrain_mask](../../../../references/file-formats/textures/terrain-mask.md)) and [Detail Objects](../../../../glossary/glossary.html#detail-object).
+This window creates the relationships between the color slots ([terrain_mask](../../../references/file-formats/textures/terrain-mask.md)) and [Detail Objects](../../../../glossary/glossary.html#detail-object).
 
 ![alt text centered](./assets/images/detail-object-list.png)
 
@@ -25,7 +25,7 @@ Model of the selected Detail Object and its properties
 | + | Add an object to the list of Detail Objects |
 | - | Delete an object from the list of Detail Objects |
 | X | Clear the entire list of Detail Objects and color slots |
-| Load | Load [*.dti](../../../../references/file-formats/sdk/dti.md) file |
+| Load | Load [*.dti](../../../references/file-formats/sdk/dti.md) file |
 | Save | Save *.dti file |
 
 #### Detail Object Properties

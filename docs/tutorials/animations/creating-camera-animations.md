@@ -1,7 +1,7 @@
 ---
 tags: [Blender, 3D Animation]
 description: Guide for creating camera animations in Blender
-sources: anm
+references: anm
 ---
 
 # Creating Camera Animations in Blender

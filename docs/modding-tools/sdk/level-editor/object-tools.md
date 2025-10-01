@@ -1,5 +1,7 @@
 ---
 description: Level Editor Object tools documentation
+categories:
+  - "123"
 ---
 
 # Object Tools
@@ -13,9 +15,6 @@ Tools for working with the selected object type.
 :::note
 All types of objects have different sets of tools for working with them. Depending on the type of the selected object, the tools will change.
 :::
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="sceneobject" label="Scene Object" default>

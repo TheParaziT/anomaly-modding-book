@@ -75,7 +75,7 @@ Should be located in `configs/items/outfits/upgrades/` folder in a file that sta
 
 Let's start with an example first:
 
-```ini
+```ini title="up_ps5_3.ltx"
 [up_firsta_ps5_3]
 scheme_index            = 0, 0
 known                   = 1
@@ -165,7 +165,7 @@ Should be located in `configs/items/outfits/upgrades/` folder in a file that sta
 
 Let's start with an example first:
 
-```ini
+```ini title="up_ps5_3.ltx"
 [up_sect_firsta_ps5_3]:up_sect_prop_armor_5
 
 [up_sect_prop_armor_5]

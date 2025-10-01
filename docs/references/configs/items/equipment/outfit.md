@@ -21,7 +21,7 @@ ___
 | Parameter Name | Parameter Description | Example Value | Possible Parameters |
 |---|---|---|---|
 | GroupControlSection |  | spawn_group |  |
-| $spawn | Outfit Directory in the [Level Editor](../../../../modding-tools/sdk/level-editor/level-editor.md) | "outfit\cs_light_novice_outfit" |  |
+| $spawn | Outfit Directory in the [Level Editor](../../../../modding-tools/sdk/level-editor/README.md) | "outfit\cs_light_novice_outfit" |  |
 | cform | Skeleton model | skeleton | parameter for dynamic objects; necessary for correct creation of the skeleton model |
 | discovery_dependency | Outdated parameter used in early SoC builds. Needed for discovery or improvement after working with scientists |  |  |
 | class | Engine outfit class | EQU_STLK |  |

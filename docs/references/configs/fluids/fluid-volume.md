@@ -17,4 +17,4 @@ ___
 | ConfinementScale | Force “holding” the fluid within the volume boundaries (viscosity) | 0.06 | 0.0 - 1.0 |
 | Decay | Rate of exponential density decay | 0.994 | 0.9 - 0.999 |
 | GravityBuoyancy | Influence of gravity | 0.1 | -1.0 - 1.0 |
-| EmittersNum | Number of fluid sources ([emitters](fluid-emmiter.md)) | 2 | - |
+| EmittersNum | Number of fluid sources ([emitters](fluid-emitter.md)) | 2 | - |

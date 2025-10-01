@@ -32,7 +32,7 @@ Object Type.
 
 ### HQ Export
 
-Parameter which is similar to HQ Geometry parameter in [Actor Editor](../../sdk/actor-editor/actor-editor.md) from X-Ray SDK 0.7. If it is enabled, when exporting [*.object](../../../references/file-formats/models/object.md) file to [*.ogf](../../../references/file-formats/models/ogf.md) using Actor Editor, mesh optimization will not be used
+Parameter which is similar to HQ Geometry parameter in [Actor Editor](../../sdk/actor-editor/README.mdx) from X-Ray SDK 0.7. If it is enabled, when exporting [*.object](../../../references/file-formats/models/object.md) file to [*.ogf](../../../references/file-formats/models/ogf.md) using Actor Editor, mesh optimization will not be used
 
 ### LOD Reference
 

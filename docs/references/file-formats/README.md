@@ -14,7 +14,7 @@ This section describes the extensions that are found in the game files and the S
 | [*.pdb](../file-formats/general/pdb.md) |  |
 | [*.scop](../file-formats/general/scop.md) | Save file |
 | [*.scoc](../file-formats/general/scoc.md) | Save file |
-| [*.xrdemo](../file-formats/general/xrdemo.md) | Recording camera flyover (demo). Created in the game with a [console command](../../engine/console-commands/general-game-console-commands.md). |
+| [*.xrdemo](../file-formats/general/xrdemo.md) | Recording camera flyover (demo). Created in the game with a [console command](../engine/console-commands/general-game-console-commands.md). |
 | [*.ogm](../file-formats/audio-video/ogm.md) | The video format used by the game engine. |
 | [*.ogg](../file-formats/audio-video/ogg.md) | The sound format used by the game engine. |
 
@@ -87,7 +87,7 @@ This section describes the extensions that are found in the game files and the S
 | Extension | Description |
 |---|---|
 | [*.db](../file-formats/archives-resource-packs/db.md) | archive of game resources. Used in late builds and the final version of the game, has several options (db."number", db."letter"). |
-| [*.xr](../file-formats/archives-resource-packs/xr.md) | resource library. Contains resources such as particles, Engine Shaders, [Compile Shaders](../shaders/shaders-list/compiler-shaders-list.md). in a packed format. |
+| [*.xr](../file-formats/archives-resource-packs/xr.md) | resource library. Contains resources such as particles, Engine Shaders, [Compile Shaders](../shaders/compiler-shaders-list.md). in a packed format. |
 
 ## Game level
 

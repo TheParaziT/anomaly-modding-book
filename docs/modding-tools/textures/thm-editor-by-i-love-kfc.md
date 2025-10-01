@@ -8,10 +8,22 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | i-love-kfc |
-| Described Version | [1.5](https://gitlab.com/i-love-kfc/thm-editor/-/releases/1.5) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['i_love_kfc']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>[1.5](https://gitlab.com/i-love-kfc/thm-editor/-/releases/1.5)</td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

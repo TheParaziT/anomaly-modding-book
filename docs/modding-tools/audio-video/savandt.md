@@ -8,11 +8,26 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | NatVac |
-| Described Version | 1.1.7 |
-| Official Site | [Official Site](https://www.metacognix.com/files/stlkrsoc/) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={["nat_vac"]}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>1.1.7</td>
+    </tr>
+    <tr>
+      <td>Official Site</td>
+      <td>[Official Site](https://www.metacognix.com/files/stlkrsoc/)</td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

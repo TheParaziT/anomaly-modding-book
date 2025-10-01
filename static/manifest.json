@@ -13,7 +13,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/img/logo.svg",
+      "src": "/img/logo-dark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -25,7 +25,7 @@
   "scope": "/",
   "screenshots": [
     {
-      "src": "/img/logo.svg",
+      "src": "/img/logo-dark.svg",
       "sizes": "1280x720",
       "type": "image/svg+xml",
       "form_factor": "wide"

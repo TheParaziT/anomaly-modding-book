@@ -8,7 +8,7 @@ description: Tutorial for creating and configuring NPCs for quests
 ___
 
 <Authors
-  authors={["ghentuong","nltp_ashes", "igigog"]}
+  authors={["ghentuong","nltp_ashes","igigog"]}
   size="medium"
   showTitle={true}
   showDescription={true}

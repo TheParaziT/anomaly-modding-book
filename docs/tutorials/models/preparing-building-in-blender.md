@@ -9,7 +9,7 @@ ___
 ## Need to know
 
 - How to work in Blender
-- How to work with Blender [X-Ray Addon](../../modding-tools/blender/blender-x-ray-addon-summary.md)
+- How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Portal](../../glossary/glossary.html#portal) and [Sector](../../glossary/glossary.html#sector)
 

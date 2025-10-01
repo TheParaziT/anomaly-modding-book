@@ -2,6 +2,8 @@
 description: Documentation for DM file format
 ---
 
+# *.dm
+
 ___
 
 ## About
@@ -117,7 +119,7 @@ ___
 
 ## Programs editing this file
 
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.md)
+- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
 - [X-Ray Export Tool (Object Tool)](../../../modding-tools/models/xray-export-tool.md)
 - [SDK](../../../modding-tools/sdk/README.md)
 

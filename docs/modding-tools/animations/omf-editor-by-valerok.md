@@ -8,11 +8,28 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | Mortany ValeroK |
-| Described Version | [1.2](https://github.com/VaIeroK/Omf-Editor/releases/tag/1.2) |
-| Discussion Forum | [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3550-omf-editor-v12) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['mortany', 'vaierok']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>[1.2](https://github.com/VaIeroK/Omf-Editor/releases/tag/1.2)</td>
+    </tr>
+    <tr>
+      <td>Discussion Forum</td>
+      <td>
+        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3550-omf-editor-v12)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

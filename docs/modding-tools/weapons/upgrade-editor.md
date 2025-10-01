@@ -8,9 +8,18 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | Sin!Gunslinger Mod Team |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['gunslinger_mod_team']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

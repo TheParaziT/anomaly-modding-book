@@ -29,7 +29,7 @@ fancy_feature       = {=is_night()} true, false
 3. Name of the section in square brackets - this is referred in scripts as `section_name` or just `section`.
 4. Key-value pairs. Values may include comma-separated lists.
 5. Comments start with `;`.
-6. `fancy_feature` uses something called "condlist". Refer to [condlists manual](../../configs/condlists.md) to understand this bs.
+6. `fancy_feature` uses something called "condlist". Refer to [condlists manual](../../../tutorials/configs/condlists.md) to understand this bs.
 
 ___
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import UniversalCard from '../UniversalCard';
 
 describe('UniversalCard', () => {
   it('renders title and content', () => {
-    render(
+    const { getByRole, getByText } = render(
       <UniversalCard
         title="My Title"
         content="Some content"
@@ -13,12 +13,12 @@ describe('UniversalCard', () => {
       />
     );
 
-    expect(screen.getByRole('heading', { name: /my title/i })).toBeInTheDocument();
-    expect(screen.getByText(/some content/i)).toBeInTheDocument();
+    expect(getByRole('heading', { name: /my title/i })).toBeInTheDocument();
+    expect(getByText(/some content/i)).toBeInTheDocument();
   });
 
   it('renders external link as anchor', () => {
-    render(
+    const { getByRole } = render(
       <UniversalCard
         title="External"
         content="..."
@@ -28,12 +28,12 @@ describe('UniversalCard', () => {
       />
     );
 
-    const link = screen.getByRole('link', { name: /visit/i });
+    const link = getByRole('link', { name: /visit/i });
     expect(link).toHaveAttribute('href', 'https://example.com');
   });
 
   it('renders internal link using docusaurus Link', () => {
-    render(
+    const { getByRole } = render(
       <UniversalCard
         title="Internal"
         content="..."
@@ -43,7 +43,7 @@ describe('UniversalCard', () => {
       />
     );
 
-    const link = screen.getByRole('link', { name: /read/i });
+    const link = getByRole('link', { name: /read/i });
     expect(link).toHaveAttribute('href', '/docs/page');
   });
 });

@@ -1,5 +1,9 @@
 ---
 tags: [Blender, 3D Animation]
+references:
+  - skl-skls
+  - omf
+  - anm
 ---
 
 # Creating HUD Hands Animation in Blender
@@ -20,8 +24,6 @@ ___
 - Camera animations ([*.anm](../../references/file-formats/animations/anm.md), [*.omf](../../references/file-formats/animations/omf.md))
 
 ## Related Videos
-
-import YouTubeVideo from '@site/src/components/YouTubeVideo';
 
 <div className="video-grid">
   <YouTubeVideo id="HwTYYH5zLjo"/>

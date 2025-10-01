@@ -16,13 +16,13 @@ IX-Ray SDK is still under development! Some functions or buttons may not work!
 
 The SDK includes the following editors:
 
-- [Actor Editor](actor-editor/actor-editor.md)
-- [Image Editor](image-editor/image-editor.md)
+- [Actor Editor](actor-editor/README.mdx)
+- [Image Editor](image-editor/README.md)
 - Dialogue Editor
-- [Level Editor](level-editor/level-editor.md)
-- [Light Animations Editor](light-animations-editor/light-animations-editor.md)
-- [Minimap Editor](minimap-editor/minimap-editor.md)
-- [Particle Editor](particle-editor/particle-editor.md)
+- [Level Editor](level-editor/README.md)
+- [Light Animations Editor](light-animations-editor/README.md)
+- [Minimap Editor](minimap-editor/README.md)
+- [Particle Editor](particle-editor/README.md)
 - Postprocess Editor
-- [Shader Editor](shader-editor/shader-editor.md)
-- [Sound Editor](sound-editor/sound-editor.md)
+- [Shader Editor](shader-editor/README.md)
+- [Sound Editor](sound-editor/README.md)

@@ -26,7 +26,7 @@ ___
 
 ## Start
 
-Open [Level Editor](../../modding-tools/sdk/level-editor/level-editor.md).
+Open [Level Editor](../../modding-tools/sdk/level-editor/README.md).
 
 In the [Edit Mode](../../modding-tools/sdk/level-editor/edit-mode.md) window, select `Sound Env` ![alt text](../../../static/icons/sdk/circle.svg).
 

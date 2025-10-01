@@ -9,10 +9,16 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | V2V |
-| Described Version | 0.30 |
+<table>
+    <tr>
+        <td>Program Developer</td>
+        <td>V2V</td>
+    </tr>
+    <tr>
+        <td>Described Version</td>
+        <td>0.30</td>
+    </tr>
+</table>
 
 ___
 

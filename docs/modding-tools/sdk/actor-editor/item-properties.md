@@ -10,9 +10,6 @@ ___
 
 ![alt text](./assets/images/ae-ip-bones.png)
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
   <TabItem value="bones" label="Bones" default>
   <table>

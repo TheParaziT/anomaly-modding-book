@@ -22,7 +22,7 @@ To convert *.wav to \*.ogg with SDK setup, you need to drop the file into the `r
 If there is no `sounds` folder in `rawdata`, you can just create a folder.
 :::
 
-Open [Actor Editor](../../modding-tools/sdk/actor-editor/actor-editor.md) -> `Editors` -> `Sounds` -> [Sound Editor](../../modding-tools/sdk/sound-editor/sound-editor.md).
+Open [Actor Editor](../../modding-tools/sdk/actor-editor/README.mdx) -> `Editors` -> `Sounds` -> [Sound Editor](../../modding-tools/sdk/sound-editor/README.md).
 
 ![alt text centered](assets/images/setup-ogg-sdk.png)
 

@@ -48,7 +48,7 @@ ___
 
 ## Programs editing this file
 
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/blender-x-ray-addon-summary.md)
+- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
 - [SDK](../../../modding-tools/sdk/README.md)
 
 ___

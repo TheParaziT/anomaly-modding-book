@@ -12,9 +12,6 @@ ___
 
 ## Interface
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
   <TabItem value="file" label="File" default>
     <table>
@@ -197,7 +194,7 @@ import TabItem from '@theme/TabItem';
           <td rowSpan={7} />
           <td>Make All</td>
           <td>
-            Creates a [*.prj](../../../references/file-formats/game-levels/prj.md) precompilation file
+            Creates a *.prj precompilation file
           </td>
           <td>-</td>
           <td>-</td>

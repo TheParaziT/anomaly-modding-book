@@ -35,7 +35,7 @@ ___
 
 ## Programs editing this file
 
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.md)
+- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
 - [X-Ray Export Tool (Object Tool)](../../../modding-tools/models/xray-export-tool.md)
 - [Ogf Editor by ValeroK](../../../modding-tools/models/ogf-editor-by-valerok.md) - (Only as a converter!)
 - SDK

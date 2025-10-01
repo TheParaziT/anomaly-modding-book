@@ -1,10 +1,10 @@
 igigog:
-  name: Igor Anpilogov
+  name: Igigog
   title: Creator of Anomaly Modding Book
   image_url: https://github.com/Igigog.png
-  email: contact_github@igisaur.com
   socials:
     github: Igigog
+    email: contact_github@igisaur.com
 
 theparazit:
   name: TheParaziT
@@ -13,11 +13,50 @@ theparazit:
   socials:
     github: TheParaziT
 
+xottab-duty:
+  name: Xottab-DUTY
+  title: Open X-Ray project leader
+  image_url: https://github.com/Xottab-DUTY.png
+  discord_username: xottab_duty
+  socials:
+    github: Xottab-DUTY
+    linkedin: xottab-duty
+    youtube: Xottab_DUTY
+
+adi:
+  name: Adi
+  title: Designer
+  image_url: /img/author-no-data.png
+  socials:
+    telegram: MAKTPAXEP_178
+
 nltp_ashes:
   name: NLTP_ASHES
   image_url: https://github.com/nltp-ashes.png
   socials:
     github: nltp-ashes
+
+sergeant_rogers:
+  name: SergeantRogers
+  image_url: https://cdn.discordapp.com/avatars/505682964462567444/fd122e3b2bed8a41b5cc71c0466bd508.webp?.png
+  discord_username: sergeantrogers
+  socials:
+    youtube: https://www.youtube.com/@sgtrogers
+    x: mester3550
+
+forserx:
+  name: ForserX
+  image_url: https://github.com/ForserX.png
+  discord_username: forserx
+  socials:
+    github: ForserX
+
+mafiosi_ghost:
+  name: MafiosiGhost
+  image_url: https://github.com/MafiosiGhost.png
+  discord_username: letov_aka_mafiosighost
+  socials:
+    github: MafiosiGhost
 
 ravenascendant:
   name: RavenAscendant
@@ -42,6 +81,8 @@ ghentuong:
   image_url: https://github.com/GhenTuong.png
   socials:
     github: GhenTuong
+    x: GhenTuong
+    moddb: https://www.moddb.com/members/ghentuong/
 
 lucy:
   name: Lucy
@@ -107,6 +148,13 @@ vaierok:
   socials:
     github: VaIeroK
 
+sabulanis:
+  name: Sabulanis
+  title: Atmospheric game videos to relax, sleep and study
+  image_url: https://yt3.googleusercontent.com/XfrQgUp-yEzIwwf1rZ9N1vTY6d5oO3jYtsJPRppnuvBQ25VCwAjvvjvFdoMoOAGig_kfLUOnzg=s160-c-k-c0x00ffffff-no-rj
+  socials:
+    youtube: Sabulanis
+
 skyloaderr:
   name: SkyLoaderr
   image_url: https://github.com/SkyLoaderr.png
@@ -129,13 +177,17 @@ kd:
   name: K.D.
   image_url: /img/author-no-data.png
 
+bardak:
+  name: bardak
+  image_url: /img/author-no-data.png
+
 nat_vac:
   name: NatVac
   image_url: /img/author-no-data.png
 
 tdef:
   name: tdef
-  image_url: /img/author-no-data.png
+  image_url: https://cdn.discordapp.com/avatars/177851913998565376/3ec1148fce02ebfcd1239d2ff60c16d7.webp?.png
 
 i_love_kfc:
   name: i-love-kfc
@@ -167,6 +219,12 @@ ogsr_team:
   socials:
     github: https://github.com/OGSR
     youtube: https://www.youtube.com/@OGSR
+
+gunslinger_mod_team:
+  name: Gunslinger Mod Team
+  image_url: https://github.com/gunslingermod.png
+  socials:
+    github: https://github.com/gunslingermod
 
 gsc_game_world:
   name: GSC Game World

@@ -8,11 +8,28 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | i-love-kfc (Original Author)ValeroK |
-| Described Version | [1.1](https://github.com/VaIeroK/THM-Editor/releases/tag/1.1) |
-| Discussion Forum | [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3551-thm-editor-v10) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['i_love_kfc','vaierok']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>[1.1](https://github.com/VaIeroK/THM-Editor/releases/tag/1.1)</td>
+    </tr>
+    <tr>
+      <td>Discussion Forum</td>
+      <td>
+        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3551-thm-editor-v10)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

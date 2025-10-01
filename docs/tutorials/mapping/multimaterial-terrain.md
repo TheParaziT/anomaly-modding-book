@@ -23,11 +23,7 @@ A terrain is a regular 3d model consisting of many polygons. They can have diffe
 - `Game Mlt` - actually the material itself, which determines the sounds of footsteps on the given surface, bullet hits, etc.
 - `Shader` – determines the appearance of this material
 
-<ImageWithCaption
-  src={require('./assets/images/surface.png').default}
-  alt="Terrain settings in SDK Actor Editor"
-  caption="Terrain settings in SDK Actor Editor."
-/>
+![Alt text](./assets/images/surface.png)
 
 Also, a terrane has a texture, but it defines nothing more than its color in the game - it doesn't even have a bump. And, of course, this texture is common for all the materials in a given terrane. So there is no sense to dwell on it for a long time. Also in our analysis we will skip the Compile parameter.
 

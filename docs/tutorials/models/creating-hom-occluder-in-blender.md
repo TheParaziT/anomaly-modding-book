@@ -16,7 +16,7 @@ ___
 ## Need to know
 
 - How to work in Blender
-- How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.md)
+- How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Hierarchical Occluder Mesh](../../glossary/glossary.html#hierarchical-occluder-mesh)
 
@@ -50,11 +50,11 @@ In [X-Ray Engine: Material](../../modding-tools/blender/addon-panels/panel-mater
 
 ### Shader
 
-Any [Engine Shader](../../glossary/glossary.html#engine-shader) for Static Object ([list of all Engine Shaders](../../references/shaders/shaders-list/engine-shaders-list.md))
+Any [Engine Shader](../../glossary/glossary.html#engine-shader) for Static Object ([list of all Engine Shaders](../../references/shaders/engine-shaders-list.md))
 
 ### Compiler
 
-Any [Compiler Shader](../../glossary/glossary.html#compiler-shader) ([list of all Compiler Shaders](../../references/shaders/shaders-list/compiler-shaders-list.md))
+Any [Compiler Shader](../../glossary/glossary.html#compiler-shader) ([list of all Compiler Shaders](../../references/shaders/compiler-shaders-list.md))
 
 ### Material
 

@@ -14,7 +14,7 @@ Docusaurus provides a convenient author management system for your blog. This sy
 
 Open the `authors.yml` file in the `blog` directory and edit it.
 
-[List of all available data in the official Docosaurus documentation](https://docusaurus.io/docs/blog#global-authors).
+[List of all available data in the official Docusaurus documentation](https://docusaurus.io/docs/blog#global-authors).
 
 ### Custom data
 

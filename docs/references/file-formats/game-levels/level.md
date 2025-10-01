@@ -2,6 +2,8 @@
 description: Documentation for LEVEL file format
 ---
 
+# level
+
 ___
 
 ## About
@@ -192,7 +194,7 @@ ___
 
 ## Programs editing this file
 
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/blender-x-ray-addon-summary.md)
+- [Blender (X-Ray Addon)](../../../modding-tools/blender/)
 - [SDK](../../../modding-tools/sdk/README.md)
 
 ___

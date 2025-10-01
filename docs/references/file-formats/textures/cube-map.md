@@ -12,6 +12,6 @@ Cube Map
 
 ## Can be created by
 
-- [SDK Image Editor](../../../modding-tools/sdk/image-editor/image-editor.md)
+- [SDK Image Editor](../../../modding-tools/sdk/image-editor/README.md)
 - [NVIDIA Texture Tool](https://developer.nvidia.com/texture-tools-exporter)
 - Any photo editor

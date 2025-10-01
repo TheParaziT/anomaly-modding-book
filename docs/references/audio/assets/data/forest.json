@@ -1,15 +1,14 @@
 {
-    "Size": "38.000",
-    "Diffusion": "0.300",
-    "Room": "0",
-    "RoomHF": "0",
-    "RoomRolloffFactor": "0.000",
-    "AirAbsorptionHF": "0.000",
-    "Reflections": "-2560",
-    "ReflectionsDelay": "0.162",
-    "Reverb": "1",
-    "ReverbDelay": "0.088",
-    "DecayTime": "1.490",
-    "DecayHFRatio": "0.540"
-  }
-  
+  "Size": "38.000",
+  "Diffusion": "0.300",
+  "Room": "0",
+  "RoomHF": "0",
+  "RoomRolloffFactor": "0.000",
+  "AirAbsorptionHF": "0.000",
+  "Reflections": "-2560",
+  "ReflectionsDelay": "0.162",
+  "Reverb": "1",
+  "ReverbDelay": "0.088",
+  "DecayTime": "1.490",
+  "DecayHFRatio": "0.540"
+}

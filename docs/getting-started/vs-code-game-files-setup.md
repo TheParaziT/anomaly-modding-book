@@ -43,11 +43,11 @@ At the moment these are all the extensions that can be opened in VSCodium
 
 You need to install the following extensions:
 
-1. [audio-preview by sukumo28](https://marketplace.visualstudio.com/items?itemName=sukumo28.wav-preview) - provides more detailed data about the sound files. Needed for [*.ogg](../../references/file-formats/audio-video/ogg.md) files
+1. [audio-preview by sukumo28](https://marketplace.visualstudio.com/items?itemName=sukumo28.wav-preview) - provides more detailed data about the sound files. Needed for [*.ogg](../references/file-formats/audio-video/ogg.md) files
 
-2. [LTX Support by AziatkaVictor](https://marketplace.visualstudio.com/items?itemName=AziatkaVictor.ltx-support) - adds support for [*.ltx](../../references/file-formats/conf-script/ltx.md) files
+2. [LTX Support by AziatkaVictor](https://marketplace.visualstudio.com/items?itemName=AziatkaVictor.ltx-support) - adds support for [*.ltx](../references/file-formats/conf-script/ltx.md) files
    - extension can be configured, to do this in his settings need to specify the path to the scripts of the game
-   - [More About](../../modding-tools/coding/ltx-support.md)
+   - [More About](../modding-tools/coding/ltx-support.md)
 
 3. Two extensions for Lua. Needed for .script files:
    - [LUA by keyring](https://marketplace.visualstudio.com/items?itemName=keyring.Lua)
@@ -55,7 +55,7 @@ You need to install the following extensions:
 
    - You need a fully unpacked scripts folder to work. You also need to create a workspace for your project. Some files will always give error warnings (e.g. `lua_help` - This can be deleted or added to exceptions in the extension from yinfei)
 
-4. [Open in External App by YuTengjing](https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app) - ability to open the file in other applications. Needed for [*.ogf](../../references/file-formats/models/ogf.md), [*.object](../../references/file-formats/models/object.md), [.dm](../../references/file-formats/models/dm.md), [*.omf](../../references/file-formats/animations/omf.md), [*.dds](../../references/file-formats/textures/dds.md), [.thm](../../references/file-formats/textures/thm.md), [*.ogm](../../references/file-formats/audio-video/ogm.md) files
+4. [Open in External App by YuTengjing](https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app) - ability to open the file in other applications. Needed for [*.ogf](../references/file-formats/models/ogf.md), [*.object](../references/file-formats/models/object.md), [.dm](../references/file-formats/models/dm.md), [*.omf](../references/file-formats/animations/omf.md), [*.dds](../references/file-formats/textures/dds.md), [.thm](../references/file-formats/textures/thm.md), [*.ogm](../references/file-formats/audio-video/ogm.md) files
    - The extension can be configured by writing in `settings.json` in the `"openInExternalApp.openMapper": [` needed programs. Example:
 
     ```json title="settings.json"

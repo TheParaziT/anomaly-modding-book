@@ -9,11 +9,29 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | RedPandaProject (BearIvan and other) (Original Authors)ValeroK |
-| Described Version | [4.4](https://github.com/VaIeroK/XrayExportTool/releases/tag/4.4) |
-| Discussion Forum | [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3577-object-editor-v44/) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['redpandaprojects', 'vaierok']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>[4.4](https://github.com/VaIeroK/XrayExportTool/releases/tag/4.4)</td>
+    </tr>
+    <tr>
+      <td>Discussion Forum</td>
+      <td>
+        [Ap-pro forum
+        topic](https://ap-pro.ru/forums/topic/3577-object-editor-v44/)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

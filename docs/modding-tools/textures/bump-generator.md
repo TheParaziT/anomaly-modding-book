@@ -8,11 +8,30 @@ ___
 
 ## Info
 
-|  |  |
-|---|---|
-| Program Developer | i-love-kfc |
-| Described Version | [0.1](https://gitlab.com/i-love-kfc/bump-generator/-/releases/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B7) |
-| Discussion Forum | [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3740-bump-generator) |
+<table>
+  <tbody>
+    <tr>
+      <td>Program Developer</td>
+      <td><Authors
+          authors={['i_love_kfc']}
+          size="small"
+          showTitle={false}
+        /></td>
+    </tr>
+    <tr>
+      <td>Described Version</td>
+      <td>
+        [0.1](https://gitlab.com/i-love-kfc/bump-generator/-/releases/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B7)
+      </td>
+    </tr>
+    <tr>
+      <td>Discussion Forum</td>
+      <td>
+        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3740-bump-generator)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ___
 

@@ -44,7 +44,7 @@ Objective: To create a glossary of specific terms unique to the S.T.A.L.K.E.R. u
 4. Code blocks and file formats
 
     - Specify the language: Always specify the code language for syntax highlighting.
-    - File formats: When mentioning file extensions, use *. at the beginning.
+    - File formats: When mentioning file extensions, use `*.` at the beginning.
 
 5. Admonitions
 

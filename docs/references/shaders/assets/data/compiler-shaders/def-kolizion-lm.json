@@ -1,0 +1,10 @@
+{
+  "Translucency": "0.01",
+  "Ambient": "0.00",
+  "LM Density": "0.01",
+  "Collision": "True",
+  "Rendering": "False",
+  "OptimizeUV": "False",
+  "Vertex light": "False",
+  "Cast shadow": "False"
+}

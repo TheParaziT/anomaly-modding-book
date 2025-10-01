@@ -57,9 +57,6 @@ Window with settings and particle properties.
 
 Different Properties are used for Particle Effect and Particle Group
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
   <TabItem value="particleeffect" label="Particle Effect" default>
 <table>

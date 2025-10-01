@@ -23,7 +23,7 @@ ___
 
 - Any sound editor that supports *.ogg (But it won't write comments into the chunks!)
 - [Sound Attribute Viewer And Tweaker](../../../modding-tools/audio-video/savandt.md) or [OGG Editor](https://disk.yandex.ru/d/Dcyo0Nt3A3b5g)
-- [SDK Sound Editor](../../../modding-tools/sdk/sound-editor/sound-editor.md)
+- [SDK Sound Editor](../../../modding-tools/sdk/sound-editor/README.md)
 
 ## Sources
 

@@ -35,7 +35,7 @@ The section name should be unique for whole project.
 
 Depending on the context, values would have different requirements:
 
-[condlists](./condlists.md)
+[condlists](../../tutorials/configs/condlists.md)
 
 ```ini
 my_condlist_key = {-A -B} X, {-A +B} Y, Z
