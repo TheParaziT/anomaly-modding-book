@@ -1,3 +1,7 @@
+---
+title: Textures
+---
+
 # Textures
 
 ___

@@ -1,3 +1,7 @@
+---
+title: Game Materials List
+---
+
 # Game Materials List
 
 ___

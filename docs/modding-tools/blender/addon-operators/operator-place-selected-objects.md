@@ -1,3 +1,7 @@
+---
+title: Place Selected Objects
+---
+
 # Place Selected Objects
 
 ___

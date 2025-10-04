@@ -1,3 +1,7 @@
+---
+title: "*.seq (Sequence)"
+---
+
 # *.seq (Sequence)
 
 ___
@@ -48,14 +52,14 @@ The name of the file is set by the name of the assigned texture (without taking 
 If you don't write it, it will play in a normal circular loop
 - Playback speed (frames per second) (written before the list of textures)
 
-___
+## Programs
 
-## Programs editing this file
-
-- Any text editor
+<UniversalCard
+  title="Any text editor"
+/>
 
 ___
 
 ## Sources
 
-[Source](https://modfaq.ru/*.seq)
+[modfaq](https://modfaq.ru/*.seq)

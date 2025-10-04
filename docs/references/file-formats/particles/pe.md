@@ -1,5 +1,6 @@
 ---
 description: Documentation for PE (Particle Effect) file format
+title: "*.pe (Particle Effect)"
 ---
 
 # *.pe (Particle Effect)
@@ -10,8 +11,11 @@ ___
 
 Just a particle effect
 
-___
+## Programs
 
-## Programs editing this file
-
-- [SDK Particle Editor](../../../modding-tools/sdk/particle-editor/README.md)
+<UniversalCard
+  title="SDK Particle Editor"
+  content="Used to create particle effects (*.pe) or particle groups (*.pg)."
+  link="../../../modding-tools/sdk/particle-editor"
+  internal={true}
+/>

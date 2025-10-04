@@ -1,4 +1,5 @@
 ---
+title: Server and Game Objects
 tags: [LUA]
 description: Tutorial for server and game objects in scripting
 ---

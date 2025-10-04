@@ -1,3 +1,6 @@
+---
+title: Copy VertexB
+---
 # Copy VertexB
 
 ___

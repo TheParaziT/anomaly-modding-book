@@ -1,3 +1,8 @@
+---
+title: Render
+preview: /docs/modding-tools/sdk/level-editor/assets/images/render.png
+---
+
 # Render
 
 ___

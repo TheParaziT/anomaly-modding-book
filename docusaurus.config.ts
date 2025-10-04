@@ -43,7 +43,7 @@ const config: Config = {
         debug: false,
         offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          { tagName: 'link', rel: 'icon', href: 'img/test.ico' },
+          { tagName: 'link', rel: 'icon', href: 'img/favicon.ico' },
           { tagName: 'link', rel: 'manifest', href: 'manifest.json' },
           { tagName: 'meta', name: 'theme-color', content: '#7bd21a' },
           { tagName: 'meta', name: 'mobile-web-app-capable', content: 'yes' },
@@ -114,6 +114,7 @@ const config: Config = {
             return items.filter(item => !item.url.includes('/page/'));
           },
         },
+        debug: undefined,
 
         docs: {
           sidebarPath: './sidebars.ts',
@@ -203,7 +204,12 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
 
-    // removed duplicate metadata block (consolidated above)
+    announcementBar: {
+      id: 'notice',
+      content:
+        'Please keep in mind that the book is still being written, and the information provided here may not be accurate, or may not be provided at all!',
+      isCloseable: true,
+    },
 
     navbar: {
       title: 'Anomaly Modding Book',

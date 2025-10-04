@@ -1,3 +1,8 @@
+---
+title: Lightning Editor
+preview: /docs/modding-tools/in-game-editors/assets/images/lightning-editor.png
+---
+
 # Lightning Editor
 
 ___

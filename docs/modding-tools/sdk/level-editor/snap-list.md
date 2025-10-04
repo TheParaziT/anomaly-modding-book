@@ -1,5 +1,7 @@
 ---
 description: Level Editor Snap list documentation
+title: Snap List
+preview: /docs/modding-tools/sdk/level-editor/assets/images/snap-list.png
 ---
 
 # Snap List

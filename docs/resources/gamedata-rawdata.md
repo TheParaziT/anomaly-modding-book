@@ -1,5 +1,8 @@
 ---
-tags: [SDK, Texture]
+tags:
+    - SDK
+    - Texture
+title: Gamedata and Rawdata
 ---
 
 # Gamedata and Rawdata

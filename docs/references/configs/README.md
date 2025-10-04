@@ -1,3 +1,7 @@
+---
+title: Configs
+---
+
 # Configs
 
 ___

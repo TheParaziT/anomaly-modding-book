@@ -1,5 +1,8 @@
 ---
-tags: [Under Construction]
+tags:
+    - Under Construction
+title: Detectors HUD
+draft: true
 ---
 
 # Detectors HUD

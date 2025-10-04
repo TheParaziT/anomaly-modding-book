@@ -1,3 +1,7 @@
+---
+title: "*.script"
+---
+
 # *.script
 
 ___
@@ -30,8 +34,8 @@ end
 
 :::
 
-___
+## Programs
 
-## Programs editing this file
-
-- Any text editor
+<UniversalCard
+  title="Any text editor"
+/>

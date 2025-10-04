@@ -1,3 +1,7 @@
+---
+title: Select Vertices by Weights Count Operator
+---
+
 # Select Vertices by Weights Count Operator
 
 ___

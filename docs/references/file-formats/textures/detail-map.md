@@ -1,3 +1,7 @@
+---
+title: detail_map.dds
+---
+
 # detail_map.dds
 
 ___
@@ -6,14 +10,12 @@ ___
 
 Same as a regular [*.dds](dds.md) texture, needed as an extra map in a [*.thm](thm.md)
 
-___
-
 ## Technical information
 
 Overlaid on top of an existing texture, for more detail
 
-___
+## Programs
 
-## Programs editing this file
-
-- Any program that works with [*.dds](dds.md) files (Example: Paint.net or GIMP)
+<UniversalCard
+  title="Any texture editor"
+/>

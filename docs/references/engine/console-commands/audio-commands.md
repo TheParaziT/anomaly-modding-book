@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Audio Console Commands
+title: Audio
 ---
 
 # Audio

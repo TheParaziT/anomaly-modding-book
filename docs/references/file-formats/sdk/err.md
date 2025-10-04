@@ -1,5 +1,6 @@
 ---
-description: Documentation for ERR file format
+title: "*.err"
+description: Documentation for *.err file format
 ---
 
 # *.err
@@ -9,8 +10,6 @@ ___
 ## About
 
 Contains information about geometry errors during level compilation with xrLC.exe
-
-___
 
 ## Technical information
 
@@ -80,15 +79,28 @@ Block structure:
 |  | second vertex |
 |  | third vertex |
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 
 ## Sources
 
-[Source (Wayback Machine)](https://web.archive.org/web/20200918235831/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.err)
+[gameru (Wayback Machine)](https://web.archive.org/web/20200918235831/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.err)

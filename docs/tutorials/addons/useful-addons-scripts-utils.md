@@ -1,5 +1,6 @@
 ---
 description: Collection of useful addons, scripts and utilities
+title: Useful Addons, Scripts and Utils
 ---
 
 # Useful Addons, Scripts and Utils

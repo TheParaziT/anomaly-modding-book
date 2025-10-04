@@ -1,3 +1,9 @@
+---
+title: Fluid Emitter
+tags:
+    - LTX
+---
+
 # Fluid Emitter
 
 ___
@@ -5,8 +11,6 @@ ___
 ## About
 
 Configuration parameters for fluid emmiter
-
-___
 
 ## General
 

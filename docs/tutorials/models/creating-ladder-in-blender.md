@@ -1,19 +1,22 @@
 ---
-tags: [Blender, 3D Model]
+title: Creating Ladder in Blender
+tags:
+    - Blender
+    - 3D Model
+keywords:
+    - Ladder
 ---
 
 # Creating Ladder in Blender
 
 ___
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Game Material](../../glossary/glossary.html#game-material)
-
-___
 
 ## About
 

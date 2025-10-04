@@ -1,3 +1,7 @@
+---
+title: Custom Props
+---
+
 # Custom Props
 
 ___

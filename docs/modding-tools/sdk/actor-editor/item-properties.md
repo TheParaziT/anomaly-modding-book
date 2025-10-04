@@ -1,4 +1,5 @@
 ---
+title: Item Properties
 description: Actor Editor Item properties documentation
 ---
 

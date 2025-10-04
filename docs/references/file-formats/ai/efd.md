@@ -1,5 +1,6 @@
 ---
-description: Documentation for EFD (Evaluation Function Data) file format
+title: "*.efd"
+description: Documentation for *.efd file format
 ---
 
 # *.efd (Evaluation Function Data)

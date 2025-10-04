@@ -1,3 +1,7 @@
+---
+title: Remove Rig Operator
+---
+
 # Remove Rig Operator
 
 ___

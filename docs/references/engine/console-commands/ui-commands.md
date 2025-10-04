@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: UI Console Commands
+title: UI
 ---
 
 # UI

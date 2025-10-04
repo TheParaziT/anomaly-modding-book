@@ -1,3 +1,7 @@
+---
+title: cube_map.dds
+---
+
 # cube_map.dds
 
 ___
@@ -10,8 +14,22 @@ Cube Map
 
 ![alt text centered](assets/images/cubemap-coordinates.png)
 
-## Can be created by
+## Programs
 
-- [SDK Image Editor](../../../modding-tools/sdk/image-editor/README.md)
-- [NVIDIA Texture Tool](https://developer.nvidia.com/texture-tools-exporter)
-- Any photo editor
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "NVIDIA Texture Tool",
+      content: "The NVIDIA Texture Tools Exporter allows users to create highly compressed texture files - that stay small both on disk and in memory - directly from image sources using NVIDIA’s CUDA-accelerated Texture Tools 3.0 compressor technology.",
+      link: "https://developer.nvidia.com/texture-tools-exporter",
+      internal: false
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>

@@ -1,3 +1,7 @@
+---
+title: terrain_mask.dds
+---
+
 # terrain_mask.dds
 
 ___
@@ -6,6 +10,8 @@ ___
 
 A mask for [Detail Objects](../../../glossary/glossary.html#detail-object). Fills in the level according to its colors.
 
-## Programs editing this file
+## Programs
 
-- Any program that works with *.dds files (Example: Paint.net or GIMP)
+<UniversalCard
+  title="Any texture editor"
+/>

@@ -1,3 +1,8 @@
+---
+title: Transforms
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-transforms.png
+---
+
 # Transforms
 
 ___

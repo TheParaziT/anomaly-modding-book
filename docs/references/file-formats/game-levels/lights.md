@@ -1,3 +1,7 @@
+---
+title: "*.lights"
+---
+
 # *.lights
 
 ___

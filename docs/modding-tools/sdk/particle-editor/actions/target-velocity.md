@@ -1,5 +1,6 @@
 ---
 description: Target velocity action
+title: Target Velocity
 ---
 
 # Target Velocity

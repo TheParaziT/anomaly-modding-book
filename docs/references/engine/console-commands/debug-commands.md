@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Debug Console Commands
+title: Debug
 ---
 
 # Debug

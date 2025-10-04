@@ -1,3 +1,7 @@
+---
+title: Weapon HUD Editor
+---
+
 # Weapon HUD Editor
 
 ___

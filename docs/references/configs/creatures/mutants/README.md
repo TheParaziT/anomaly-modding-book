@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: General Mutant Configs
 ---
 
 # m_*mutant*.ltx

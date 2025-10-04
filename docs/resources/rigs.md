@@ -1,5 +1,7 @@
 ---
-tags: [3D Animation]
+tags:
+    - 3D Animation
+title: Rigs
 ---
 
 # Rigs

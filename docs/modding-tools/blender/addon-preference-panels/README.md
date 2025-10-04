@@ -1,3 +1,7 @@
+---
+title: Addon Preferences
+---
+
 # Addon Preferences
 
 ___

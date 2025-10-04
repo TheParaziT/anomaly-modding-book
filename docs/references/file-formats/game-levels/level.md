@@ -1,4 +1,5 @@
 ---
+title: level
 description: Documentation for LEVEL file format
 ---
 
@@ -9,8 +10,6 @@ ___
 ## About
 
 Contains all the essentials. This contains light sources, object descriptions, names of their corresponding textures and shaders, portals, and sectors.
-
-___
 
 ## Technical information
 
@@ -190,15 +189,28 @@ Zero texture is specified without the file name and consists only of the symbol 
 | Uncompressed block size (in bytes) | - | DWord(4) |
 | Description of Sectors | - | ???? |
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 
 ## Sources
 
-[Source (Wayback Machine)](https://web.archive.org/web/20220807151701/http://stalkerin.gameru.net/wiki/index.php?title=Level)
+[gameru (Wayback Machine)](https://web.archive.org/web/20220807151701/http://stalkerin.gameru.net/wiki/index.php?title=Level)

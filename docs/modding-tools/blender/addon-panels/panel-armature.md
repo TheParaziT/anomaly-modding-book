@@ -1,3 +1,8 @@
+---
+title: "X-Ray Engine: Armature"
+preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-armature.png
+---
+
 # X-Ray Engine: Armature
 
 ___

@@ -1,6 +1,8 @@
 ---
-tags: [Engine]
+tags:
+  - Engine
 description: List of command-line switches available for the engine
+title: Command-line Switches
 ---
 
 # Command-line Switches
@@ -25,7 +27,7 @@ ___
       <td>F1 - Help<br />F2 - Load test level<br />F7 - Start Anomaly debugger<br />Numpad 0 - Reload system_ini()</td>
     </tr>
     <tr>
-      <td>dbgdev</td>
+      <td>-dbgdev</td>
       <td>Enables extended debug</td>
       <td />
     </tr>

@@ -1,5 +1,7 @@
 ---
-tags: [LUA]
+tags:
+  - LUA
+title: Lua Debugger
 ---
 
 # Lua Debugger

@@ -1,12 +1,14 @@
-# *.hom (Hierarchical Occlusion Mapping)
+---
+title: "*.hom (Hierarchical Occlusion Mesh)"
+---
+
+# *.hom (Hierarchical Occlusion Mesh)
 
 ___
 
 ## About
 
 HOM is a geometry cutter, which is a mesh and is needed to increase performance. This file is created during level compilation.
-
-___
 
 ## Technical information
 
@@ -46,15 +48,28 @@ The polygon indices are not saved, but they can easily be generated, since all v
 
 The first triangle will be: 0, 1, 2, second: 3, 4, 5, third: 6, 7, 8, etc.
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 
 ## Sources
 
-[Source (Wayback Machine)](https://web.archive.org/web/20200918231330/http://stalkerin.gameru.net/wiki/index.php?title=Level.hom)
+[gameru (Wayback Machine)](https://web.archive.org/web/20200918231330/http://stalkerin.gameru.net/wiki/index.php?title=Level.hom)

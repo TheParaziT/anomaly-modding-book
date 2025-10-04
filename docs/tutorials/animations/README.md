@@ -1,3 +1,7 @@
+---
+title: Animations
+---
+
 # Animations
 
 ___

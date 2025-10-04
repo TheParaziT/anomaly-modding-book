@@ -1,5 +1,6 @@
 ---
 description: Class registrator documentation
+title: Class Registrator
 ---
 
 # Class Registrator

@@ -1,4 +1,5 @@
 ---
+title: Bump Generator
 tags: [Texture, Modding Tool]
 ---
 

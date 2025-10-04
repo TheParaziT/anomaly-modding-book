@@ -1,4 +1,5 @@
 ---
+title: Book Style Sheet
 description: Guidelines for writing and formatting articles consistently across the documentation
 ---
 

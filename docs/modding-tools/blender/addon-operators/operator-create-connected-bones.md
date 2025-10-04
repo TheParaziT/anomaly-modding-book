@@ -1,3 +1,7 @@
+---
+title: Create Connected Bones Operator
+---
+
 # Create Connected Bones Operator
 
 ___

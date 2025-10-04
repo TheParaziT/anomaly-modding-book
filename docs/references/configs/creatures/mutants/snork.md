@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_SNORK (Snork)
 ---
 
 # SM_SNORK (Snork)

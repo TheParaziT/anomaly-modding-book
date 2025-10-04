@@ -1,5 +1,8 @@
 ---
-tags: [Unfinished]
+title: Outfit Configs
+tags:
+    - Unfinished
+draft: true
 ---
 
 # Outfit

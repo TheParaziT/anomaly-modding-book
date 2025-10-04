@@ -1,3 +1,7 @@
+---
+title: Configuring VSCode-like Programs to Handle Game Files
+---
+
 # Configuring VSCode-like Programs to Handle Game Files
 
 ___

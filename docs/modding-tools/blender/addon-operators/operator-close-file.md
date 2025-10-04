@@ -1,3 +1,7 @@
+---
+title: Close File Operator
+---
+
 # Close File Operator
 
 ___

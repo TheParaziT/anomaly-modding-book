@@ -1,3 +1,7 @@
+---
+title: Particle Editor
+---
+
 # Particle Editor
 
 ___

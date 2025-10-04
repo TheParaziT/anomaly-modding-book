@@ -1,3 +1,8 @@
+---
+title: Motions Browser
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-motions-browser.png
+---
+
 # Motions Browser
 
 ___

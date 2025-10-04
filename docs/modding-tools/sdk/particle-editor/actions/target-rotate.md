@@ -1,5 +1,6 @@
 ---
 description: Target rotate action
+title: Target Rotate
 ---
 
 # Target Rotate

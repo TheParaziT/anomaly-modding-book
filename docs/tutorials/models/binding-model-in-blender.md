@@ -1,5 +1,8 @@
 ---
-tags: [Blender, 3D Model]
+title: Binding Model in Blender
+tags:
+  - Blender
+  - 3D Model
 ---
 
 # Binding Model in Blender
@@ -13,13 +16,11 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Dynamic Object](../../glossary/glossary.html#dynamic-object) and how to [Setup Dynamic Object in Blender](setup-dynamic-object-in-blender.md)
-
-___
 
 ## About
 
@@ -63,7 +64,7 @@ Bind the model to the skeleton can also be done in different ways:
 - `With Armature Deform` (`CTRL` + `P` -> `Armature Deform` -> Select the desired method) - Fast but not accurate method
 - With manual `Weight Paint` - Most accurate but time consuming
 - With [Data Transfer](https://docs.blender.org/manual/en/latest/modeling/modifiers/modify/data_transfer.html) Modifier
-- With third-party addons for Blender (Such as Auto Rig Pro or Voxel Heat Diffuse Skinning)
+- With third-party addons for Blender (Such as [Auto Rig Pro](https://superhivemarket.com/products/auto-rig-pro) or [Voxel Heat Diffuse Skinning](https://superhivemarket.com/products/voxel-heat-diffuse-skinning))
 
 I chose to bind via `Weight Paint`
 

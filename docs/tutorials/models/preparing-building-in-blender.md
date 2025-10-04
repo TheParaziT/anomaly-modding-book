@@ -1,4 +1,5 @@
 ---
+title: Preparing Building in Blender
 tags: [Blender, 3D Model]
 ---
 
@@ -6,14 +7,12 @@ tags: [Blender, 3D Model]
 
 ___
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Portal](../../glossary/glossary.html#portal) and [Sector](../../glossary/glossary.html#sector)
-
-___
 
 ## About
 

@@ -1,3 +1,7 @@
+---
+title: "*.dds (DirectDraw Surface)"
+---
+
 # *.dds (DirectDraw Surface)
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 DDS is most often used to store textures and is used in many 3D applications, as well as in modern 3D games. It allows you to store textures both in compressed and uncompressed form.
-
-___
 
 ## Technical information
 
@@ -32,6 +34,8 @@ ___
 
 ___
 
-## Programs editing this file
+## Programs
 
-- Any program that works with *.dds files (Example: Paint.net or GIMP)
+<UniversalCard
+  title="Any texture editor"
+/>

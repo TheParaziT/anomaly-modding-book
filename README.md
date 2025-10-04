@@ -34,4 +34,4 @@ Community:
 
 - [Anomaly Modding Book Discord ![Discord](https://img.shields.io/discord/1005783763877363722?label=Discord&logo=Discord)](https://discord.gg/8Pu2ekQYg3)
 
-- [Official Anomaly Discord ![Discord](https://img.shields.io/discord/1005783763877363722?label=Discord&logo=Discord)](https://discord.gg/c4RuJNs)
+- [Official Anomaly Discord ![Discord](https://img.shields.io/discord/456765861953536020?logo=Discord&label=Discord)](https://discord.gg/c4RuJNs)

@@ -1,6 +1,11 @@
 ---
-tags: [Blender, 3D Model]
+title: Creating SOM Occluder in Blender
+tags:
+  - Blender
+  - 3D Model
 description: Guide for creating SOM occluders in Blender
+keywords:
+  - SOM
 ---
 
 # Creating SOM Occluder in Blender
@@ -14,15 +19,13 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Sound Occluder Mesh](../../glossary/glossary.html#sound-occluder-mesh)
 - What is a [Game Material](../../glossary/glossary.html#game-material)
-
-___
 
 ## About
 

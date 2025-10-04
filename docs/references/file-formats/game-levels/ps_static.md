@@ -1,3 +1,7 @@
+---
+title: "*.ps_static"
+---
+
 # *.ps_static
 
 ___

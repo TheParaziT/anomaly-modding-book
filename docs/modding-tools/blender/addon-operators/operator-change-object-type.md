@@ -1,3 +1,8 @@
+---
+title: Change Object Type Operator
+preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-object-type.png
+---
+
 # Change Object Type Operator
 
 ___

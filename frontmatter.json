@@ -47,7 +47,7 @@
     }
   ],
   "frontMatter.framework.id": "docusaurus",
-  "frontMatter.content.publicFolder": "static",
+  "frontMatter.content.publicFolder": "[[workspace]]",
   "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.pageFolders": [
     {

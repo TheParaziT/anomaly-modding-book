@@ -1,3 +1,7 @@
+---
+title: "*.omf"
+---
+
 # *.omf
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 A specialized S.T.A.L.K.E.R. game format containing animations. This is a separate dedicated file used in conjunction with [*.ogf](../models/ogf.md) models. Was created in order to optimize process when some different models use the same list of animations.
-
-___
 
 ## Technical information
 
@@ -33,7 +35,7 @@ All the chunks following 0x0 contain animations.
 Description of the nested chunk that stores the animations
 The animation name comes first, which is a string ending with a null byte.
 Next is an unsigned 32-bit integer, which specifies the number of animation frames.
-The following data is the dice transforms. For each bone, rotation, movement, and flags are stored.
+The following data is the bone transforms. For each bone, rotation, movement, and flags are stored.
 Flags come first. Flags is an unsigned 8 bit integer.
 The first bit of this byte indicates if the movement is modifiable.
 If the bit is 1, then the movement has values throughout all frames.
@@ -136,16 +138,27 @@ for (i=0, i<partition_count, i++) {
 
 - [Stepped](https://help.autodesk.com/view/MOBPRO/2024/ENU/?guid=GUID-F263EE8F-70A4-4941-BD31-410C08EC101A)
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [OMF Editor by ValeroK](../../../modding-tools/animations/omf-editor-by-valerok.md)
-
-___
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "OMF Editor by ValeroK",
+      content: "Modified tool for working with *.omf format.",
+      link: "../../../modding-tools/animations/omf-editor-by-valerok",
+      internal: true
+    },
+  ]}
+/>
 
 ## Sources
 
-- [Source 1 (Wayback Machine)](https://web.archive.org/web/20200919000502/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.omf)
-- [Source 2](https://github.com/PavelBlend/blender-xray/wiki/Formats#omf)
+- [gameru (Wayback Machine)](https://web.archive.org/web/20200919000502/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.omf)
+- [Blender X-Ray Addon Wiki](https://github.com/PavelBlend/blender-xray/wiki/Formats#omf)

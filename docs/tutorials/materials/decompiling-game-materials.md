@@ -1,4 +1,5 @@
 ---
+title: Decompiling Game Materials
 tags: [Decompilation, Game Material, Shader]
 ---
 

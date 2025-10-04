@@ -1,4 +1,5 @@
 ---
+title: Anomaly MCM Documentation
 tags: [LUA]
 description: Anomaly MCM Documentation
 ---

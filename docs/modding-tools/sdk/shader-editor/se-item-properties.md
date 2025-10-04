@@ -1,3 +1,7 @@
+---
+title: Item Properties
+---
+
 # Item Properties
 
 ___

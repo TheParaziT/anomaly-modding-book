@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_BURER (Burer)
 ---
 
 # SM_BURER (Burer)

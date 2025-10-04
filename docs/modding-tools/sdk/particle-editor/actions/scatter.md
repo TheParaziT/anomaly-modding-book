@@ -1,3 +1,7 @@
+---
+title: Scatter
+---
+
 # Scatter
 
 ___

@@ -1,5 +1,6 @@
 ---
 description: References documentation
+title: References
 ---
 
 # References

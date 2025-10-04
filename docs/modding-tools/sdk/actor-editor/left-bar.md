@@ -1,5 +1,7 @@
 ---
 description: Actor Editor Left bar documentation
+title: Left Bar
+preview: /docs/modding-tools/sdk/actor-editor/assets/images/left-bar.png
 ---
 
 # Left Bar

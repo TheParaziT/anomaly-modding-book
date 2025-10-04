@@ -1,3 +1,7 @@
+---
+title: Binary Files
+---
+
 # Binary Files
 
 ___

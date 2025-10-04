@@ -1,4 +1,5 @@
 ---
+title: THM Editor
 tags: [Texture, Modding Tool]
 ---
 

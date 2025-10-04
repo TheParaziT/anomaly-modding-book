@@ -1,3 +1,7 @@
+---
+title: Quests
+---
+
 # Quests
 
 ___

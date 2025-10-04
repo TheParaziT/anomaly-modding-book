@@ -1,4 +1,5 @@
 ---
+title: Inventory Icons
 tags: [Texture, LTX]
 ---
 

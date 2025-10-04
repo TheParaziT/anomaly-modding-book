@@ -1,3 +1,7 @@
+---
+title: Avoid
+---
+
 # Avoid
 
 ___

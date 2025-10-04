@@ -1,5 +1,7 @@
 ---
-tags: [LTX]
+tags:
+    - LTX
+title: Condition Lists Tutorial
 ---
 
 # Condition Lists Tutorial

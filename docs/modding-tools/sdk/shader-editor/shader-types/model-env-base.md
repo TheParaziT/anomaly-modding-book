@@ -1,6 +1,5 @@
 ---
-tags: [LTX, XML, LUA]
-description: Comprehensive guide for creating and managing quests and tasks in the game
+title: "MODEL: env*base"
 ---
 
 # MODEL: env*base

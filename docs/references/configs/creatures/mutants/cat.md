@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_CAT_S (Cat)
 ---
 
 # SM_CAT_S (Cat)

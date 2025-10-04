@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_CONTR (Controller)
 ---
 
 # SM_CONTR (Controller)

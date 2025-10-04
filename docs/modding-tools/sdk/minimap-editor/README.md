@@ -1,5 +1,7 @@
 ---
 description: Minimap editor documentation
+title: Minimap Editor
+preview: /docs/modding-tools/sdk/minimap-editor/assets/images/minimap-editor.png
 ---
 
 # Minimap Editor

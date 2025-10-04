@@ -1,3 +1,7 @@
+---
+title: Link Bones Operator
+---
+
 # Link Bones Operator
 
 ___

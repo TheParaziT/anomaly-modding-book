@@ -8,7 +8,7 @@ export interface UniversalCardProps {
   title: string;
   content: string | ReactNode;
   image?: string;
-  link: string;
+  link?: string;
   linkText?: string;
   internal?: boolean;
   className?: string;

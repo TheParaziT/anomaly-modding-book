@@ -1,6 +1,9 @@
 ---
-tags: [LTX]
+title: Structure of Files
+tags:
+  - LTX
 description: Documentation of the structure of configuration files
+preview: /docs/references/configs/assets/images/structure-of-files-preview.png
 ---
 
 # Structure of Files

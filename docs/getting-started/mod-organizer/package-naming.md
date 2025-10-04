@@ -1,3 +1,7 @@
+---
+title: Package Naming Guidelines
+---
+
 # Package Naming Guidelines
 
 ___

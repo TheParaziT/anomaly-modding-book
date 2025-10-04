@@ -1,3 +1,7 @@
+---
+title: Level Editor
+---
+
 # Level Editor
 
 ___

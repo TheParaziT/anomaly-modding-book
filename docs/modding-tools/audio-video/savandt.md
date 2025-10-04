@@ -1,5 +1,10 @@
 ---
-tags: [Audio, Modding Tool]
+title: Sound Attribute Viewer And Tweaker
+description: Utility designed to simplify working with X-Ray Engine sound files in *.ogg format
+tags:
+  - Audio
+  - Modding Tool
+preview: /docs/modding-tools/audio-video/assets/images/savandt.png
 ---
 
 # Sound Attribute Viewer And Tweaker

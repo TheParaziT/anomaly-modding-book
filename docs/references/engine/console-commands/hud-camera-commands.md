@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: HUD Camera Console Commands
+title: HUD Camera
 ---
 
 # HUD Camera

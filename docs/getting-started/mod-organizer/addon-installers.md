@@ -1,3 +1,7 @@
+---
+title: Addon Installers
+---
+
 # Addon Installers
 
 ___

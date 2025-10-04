@@ -1,4 +1,5 @@
 ---
+title: Working Correctly With Icon Atlases
 tags: [Texture]
 ---
 

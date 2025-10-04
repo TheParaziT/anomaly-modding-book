@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: AI_PHANT (Phantom)
 ---
 
 # AI_PHANT (Phantom)

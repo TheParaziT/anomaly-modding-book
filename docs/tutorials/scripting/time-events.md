@@ -1,5 +1,7 @@
 ---
-tags: [LUA]
+title: Time Events
+tags:
+  - LUA
 ---
 
 # Time Events

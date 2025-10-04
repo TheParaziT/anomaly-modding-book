@@ -1,3 +1,7 @@
+---
+title: Explosion
+---
+
 # Explosion
 
 ___

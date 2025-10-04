@@ -1,3 +1,8 @@
+---
+title: Key Form
+preview: /docs/modding-tools/sdk/actor-editor/assets/images/key-form.png
+---
+
 # Key Form
 
 ___

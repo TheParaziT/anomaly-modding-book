@@ -1,3 +1,8 @@
+---
+title: Item Spawner
+preview: /docs/modding-tools/in-game-editors/assets/images/item-spawner.png
+---
+
 # Item Spawner
 
 ___

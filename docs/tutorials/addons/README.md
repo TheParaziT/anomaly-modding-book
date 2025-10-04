@@ -1,3 +1,7 @@
+---
+title: Addons
+---
+
 # Addons
 
 ___

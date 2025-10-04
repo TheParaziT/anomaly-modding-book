@@ -1,3 +1,7 @@
+---
+title: "LEVEL: lmap*(env^base)"
+---
+
 # LEVEL: lmap*(env^base)
 
 ___

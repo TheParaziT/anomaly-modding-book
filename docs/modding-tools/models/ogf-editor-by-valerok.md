@@ -1,4 +1,5 @@
 ---
+title: Modified OGF Editor by ValeroK
 tags: [3D Model, Modding Tool]
 ---
 

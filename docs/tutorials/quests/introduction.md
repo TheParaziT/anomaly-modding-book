@@ -1,4 +1,5 @@
 ---
+title: Introduction
 description: Introduction to quest creation and management in the game
 ---
 

@@ -1,3 +1,7 @@
+---
+title: "INTERNAL: gray-scale effect"
+---
+
 # INTERNAL: gray-scale effect
 
 ___

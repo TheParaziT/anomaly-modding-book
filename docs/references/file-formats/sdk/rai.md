@@ -1,5 +1,6 @@
 ---
 description: Documentation for RAI file format
+title: "*.rai"
 ---
 
 # *.rai
@@ -10,8 +11,11 @@ ___
 
 Used to store parameters for random placement of objects in the SDK Level Editor
 
-___
+## Programs
 
-## Programs editing this file
-
-- [SDK Level Editor](../../../modding-tools/sdk/level-editor/README.md)
+<UniversalCard
+  title="SDK Level Editor"
+  content="Level Editor is used to create locations."
+  link="../../../modding-tools/sdk/level-editor"
+  internal={true}
+/>

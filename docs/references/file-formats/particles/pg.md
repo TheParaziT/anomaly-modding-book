@@ -1,5 +1,6 @@
 ---
 description: Documentation for PG (Particle Group) file format
+title: "*.pg (Particle Group)"
 ---
 
 # *.pg (Particle Group)
@@ -10,8 +11,11 @@ ___
 
 Group of [*.pe](pe.md) particles
 
-___
+## Programs
 
-## Programs editing this file
-
-- [SDK Particle Editor](../../../modding-tools/sdk/particle-editor/README.md
+<UniversalCard
+  title="SDK Particle Editor"
+  content="Used to create particle effects (*.pe) or particle groups (*.pg)."
+  link="../../../modding-tools/sdk/particle-editor"
+  internal={true}
+/>

@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_DOG_S (Dog)
 ---
 
 # SM_DOG_S (Dog)

@@ -1,4 +1,5 @@
 ---
+title: Creating Sound Environment in SDK
 tags: [SDK, Audio]
 ---
 
@@ -13,12 +14,10 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in [SDK](../../modding-tools/sdk/README.md)
 - What is a [Sound Environment Object](../../glossary/glossary.html#sound-environment-object)
-
-___
 
 ## About
 

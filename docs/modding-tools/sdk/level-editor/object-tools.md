@@ -1,7 +1,6 @@
 ---
+title: Object Tools
 description: Level Editor Object tools documentation
-categories:
-  - "123"
 ---
 
 # Object Tools

@@ -1,4 +1,5 @@
 ---
+title: Creating HUD Hands Animation in Blender
 tags: [Blender, 3D Animation]
 references:
   - skl-skls
@@ -17,7 +18,7 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How working in Blender and creating animations
 - Skeleton animations ([*.skl](../../references/file-formats/animations/skl-skls.md), [*.skls](../../references/file-formats/animations/skl-skls.md), [*.omf](../../references/file-formats/animations/omf.md))

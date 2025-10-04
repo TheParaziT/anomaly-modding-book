@@ -1,4 +1,5 @@
 ---
+title: ImGui
 tags: [LUA]
 description: Guide for using ImGui in scripting
 ---

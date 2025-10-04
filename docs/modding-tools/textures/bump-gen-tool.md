@@ -1,5 +1,9 @@
 ---
-tags: [Texture, Modding Tool]
+tags:
+  - Texture
+  - Modding Tool
+title: Stalker Bump Gen Tool
+preview: /docs/modding-tools/textures/assets/images/bump-gen-tool.png
 ---
 
 # Stalker Bump Gen Tool

@@ -1,3 +1,7 @@
+---
+title: "*.s (Script Shader)"
+---
+
 # *.s (Script Shader)
 
 ___

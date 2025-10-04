@@ -1,3 +1,7 @@
+---
+title: Outfits
+---
+
 # Outfits
 
 ___

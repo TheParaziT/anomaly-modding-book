@@ -1,3 +1,7 @@
+---
+title: "LEVEL: trees/bushes"
+---
+
 # LEVEL: trees/bushes
 
 ___

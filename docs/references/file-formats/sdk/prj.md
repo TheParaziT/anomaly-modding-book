@@ -1,3 +1,7 @@
+---
+title: "*.prj (Project)"
+---
+
 # *.prj (Project)
 
 ___

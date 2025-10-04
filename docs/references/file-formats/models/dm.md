@@ -1,4 +1,5 @@
 ---
+title: "*.dm"
 description: Documentation for DM file format
 ---
 
@@ -9,8 +10,6 @@ ___
 ## About
 
 Effect of a dynamic weather environment (e.g., rain or lightning)
-
-___
 
 ## Technical information
 
@@ -115,17 +114,42 @@ The index structure:
 |---|---|
 | vertex index | H |
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [X-Ray Export Tool (Object Tool)](../../../modding-tools/models/xray-export-tool.md)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={4}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+    {
+      title: "X-Ray Export Tool (Object Tool)",
+      content: "Tool for fast editing and exporting raw S.T.A.L.K.E.R. formats.",
+      link: "../../../modding-tools/models/xray-export-tool",
+      internal: true
+    },
+    {
+      title: "Ogf Editor by ValeroK",
+      content: "Tool for working with *.ogf and \*.dm format.",
+      link: "../../../modding-tools/models/ogf-editor-by-valerok",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 
 ## Sources
 
-[Source 1 (Wayback Machine)](https://web.archive.org/web/20200918231136/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.dm)
-[Source 2](https://github.com/PavelBlend/blender-xray/wiki/Formats#dm)
+[gameru (Wayback Machine)](https://web.archive.org/web/20200918231136/http://stalkerin.gameru.net/wiki/index.php?title=%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_*.dm)
+
+[Blender X-Ray Addon Wiki](https://github.com/PavelBlend/blender-xray/wiki/Formats#dm)

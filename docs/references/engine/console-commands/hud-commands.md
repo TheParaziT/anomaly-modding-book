@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: HUD Console Commands
+title: HUD
 ---
 
 # HUD

@@ -1,3 +1,7 @@
+---
+title: "*.xml"
+---
+
 # *.xml
 
 ___
@@ -28,8 +32,8 @@ XML files are used to save text strings used for translation. All XML files are 
 
 :::
 
-___
+## Programs
 
-## Programs editing this file
-
-- Any text editor
+<UniversalCard
+  title="Any text editor"
+/>

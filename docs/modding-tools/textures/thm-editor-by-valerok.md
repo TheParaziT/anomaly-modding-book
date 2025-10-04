@@ -1,4 +1,5 @@
 ---
+title: Modified THM Editor by ValeroK
 tags: [Texture, Modding Tool]
 ---
 

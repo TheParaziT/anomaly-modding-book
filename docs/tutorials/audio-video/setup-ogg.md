@@ -1,5 +1,7 @@
 ---
-tags: [Audio]
+title: Setup *.ogg
+tags:
+    - Audio
 ---
 
 # Setup *.ogg

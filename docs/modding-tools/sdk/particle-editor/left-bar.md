@@ -1,3 +1,7 @@
+---
+title: Left Bar
+---
+
 # Left Bar
 
 ___

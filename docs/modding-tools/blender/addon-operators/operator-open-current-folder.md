@@ -1,3 +1,7 @@
+---
+title: Open Current Folder
+---
+
 # Open Current Folder
 
 ___

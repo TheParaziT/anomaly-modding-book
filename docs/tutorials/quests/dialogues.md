@@ -1,4 +1,5 @@
 ---
+title: Dialogues
 tags: [LTX, XML, LUA]
 description: Guide for creating and managing dialogues in quests
 ---

@@ -1,5 +1,8 @@
 ---
-tags: [LTX, Weapon]
+tags:
+    - LTX
+    - Weapon
+title: Weapon HUD
 ---
 
 # Weapon HUD

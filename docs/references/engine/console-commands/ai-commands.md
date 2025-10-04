@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: AI Console Commands
+title: AI
 ---
 
 # AI

@@ -1,3 +1,7 @@
+---
+title: Colorize Objects Operator
+---
+
 # Colorize Objects Operator
 
 ___

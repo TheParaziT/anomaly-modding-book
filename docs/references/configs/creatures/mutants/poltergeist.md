@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_POLTR (Poltergeist)
 ---
 
 # SM_POLTR (Poltergeist)

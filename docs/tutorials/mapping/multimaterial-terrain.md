@@ -1,4 +1,5 @@
 ---
+title: Multimaterial Terrain Guide
 tags: [SDK, Game Level]
 description: Guide for creating multimaterial terrain
 ---

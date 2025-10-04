@@ -1,3 +1,7 @@
+---
+title: Archives | Resources
+---
+
 # Archives | Resources
 
 ___

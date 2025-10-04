@@ -1,3 +1,7 @@
+---
+title: "*.ogf"
+---
+
 # *.ogf
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 Compiled 3D models for the game
-
-___
 
 ## Technical information
 
@@ -23,13 +25,37 @@ ___
 - A mesh can have only one UV map
 - Support for storing information about geometry simplification in the form of Slide Window Items
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [Ogf Editor by ValeroK](../../../modding-tools/models/ogf-editor-by-valerok.md)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={4}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+    {
+      title: "X-Ray Export Tool (Object Tool)",
+      content: "Tool for fast editing and exporting raw S.T.A.L.K.E.R. formats.",
+      link: "../../../modding-tools/models/xray-export-tool",
+      internal: true
+    },
+    {
+      title: "Ogf Editor by ValeroK",
+      content: "Tool for working with *.ogf and \*.dm format.",
+      link: "../../../modding-tools/models/ogf-editor-by-valerok",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 

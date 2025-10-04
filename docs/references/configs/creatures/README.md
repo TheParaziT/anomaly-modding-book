@@ -1,3 +1,7 @@
+---
+title: Creatures
+---
+
 # Creatures
 
 ___

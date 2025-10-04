@@ -1,3 +1,7 @@
+---
+title: "*.aimap"
+---
+
 # *.aimap
 
 ___

@@ -1,3 +1,7 @@
+---
+title: "INTERNAL: blur"
+---
+
 # INTERNAL: blur
 
 ___

@@ -1,3 +1,7 @@
+---
+title: "*.ltx"
+---
+
 # *.ltx
 
 ___
@@ -31,10 +35,20 @@ fancy_feature       = {=is_night()} true, false
 5. Comments start with `;`.
 6. `fancy_feature` uses something called "condlist". Refer to [condlists manual](../../../tutorials/configs/condlists.md) to understand this bs.
 
-___
+## Programs
 
-## Programs editing this file
-
-- Any text editor
-  - There are also extensions for VSCode for *.ltx ([LTX Support Extension by AziatkaVictor](https://marketplace.visualstudio.com/items?itemName=AziatkaVictor.ltx-support))
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Any text editor",
+    },
+    {
+      title: "LTX Support Extension by AziatkaVictor",
+      content: "Extension for Visual Studio Code, which adds support for logic syntax from S.T.A.L.K.E.R. Call of Pripyat.",
+      link: "../../../modding-tools/coding/ltx-support",
+      internal: true
+    },
+  ]}
+/>
   

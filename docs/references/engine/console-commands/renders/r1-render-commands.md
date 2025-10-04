@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: R1 Render Console Commands
+title: R1 Render
 ---
 
 # R1 Render

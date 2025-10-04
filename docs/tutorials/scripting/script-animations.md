@@ -1,4 +1,5 @@
 ---
+title: Scripted Animations
 tags: [LUA, 3D Animation]
 ---
 

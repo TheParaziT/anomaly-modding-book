@@ -1,3 +1,8 @@
+---
+title: Import
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-import.png
+---
+
 # Import
 
 ___

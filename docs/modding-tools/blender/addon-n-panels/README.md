@@ -1,3 +1,7 @@
+---
+title: N-Panel
+---
+
 # N-Panel
 
 ___

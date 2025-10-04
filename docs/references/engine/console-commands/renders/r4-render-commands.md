@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: R4 Render Console Commands
+title: R4 Render
 ---
 
 # R4 Render

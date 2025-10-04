@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_ZOMBI (Zombie)
 ---
 
 # SM_ZOMBI (Zombie)

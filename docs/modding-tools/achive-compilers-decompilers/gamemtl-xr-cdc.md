@@ -1,4 +1,5 @@
 ---
+title: gamemtl_xr_cdc
 tags: [Game Material, Modding Tool]
 ---
 

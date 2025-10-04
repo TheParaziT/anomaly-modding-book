@@ -1,5 +1,8 @@
 ---
-tags: [Under Construction]
+tags:
+    - Under Construction
+title: Flare
+draft: true
 ---
 
 # Flare

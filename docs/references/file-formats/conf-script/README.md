@@ -1,3 +1,7 @@
+---
+title: Configurations | Scripts
+---
+
 # Configurations | Scripts
 
 ___

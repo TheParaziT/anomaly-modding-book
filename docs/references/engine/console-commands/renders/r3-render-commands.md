@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: R3 Render Console Commands
+title: R3 Render
 ---
 
 # R3 Render

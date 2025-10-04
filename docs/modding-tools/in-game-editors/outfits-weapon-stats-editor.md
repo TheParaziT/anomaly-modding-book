@@ -1,6 +1,11 @@
 ---
-tags: [LTX, XML, LUA]
+tags:
+    - LTX
+    - XML
+    - LUA
 description: Comprehensive guide for creating and managing quests and tasks in the game
+title: Outfits/Weapon Stats Editor
+preview: /docs/modding-tools/in-game-editors/assets/images/outfits-stats-editor.png
 ---
 
 # Outfits/Weapon Stats Editor

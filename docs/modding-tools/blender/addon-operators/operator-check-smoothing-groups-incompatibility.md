@@ -1,3 +1,7 @@
+---
+title: Check Smoothing Groups Incompatibility
+---
+
 # Check Smoothing Groups Incompatibility
 
 ___

@@ -1,3 +1,7 @@
+---
+title: Smoothing
+---
+
 # Smoothing
 
 ___

@@ -1,4 +1,5 @@
 ---
+title: Creating Game Material in SDK
 tags: [SDK, Game Material, Shader]
 description: Tutorial for creating game materials in SDK
 ---

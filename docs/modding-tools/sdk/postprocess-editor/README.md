@@ -1,5 +1,6 @@
 ---
 description: Postprocess editor documentation
+title: Postprocess Editor
 ---
 
 # Postprocess Editor

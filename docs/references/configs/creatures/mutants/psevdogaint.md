@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_GIANT (Psevdogaint)
 ---
 
 # SM_GIANT (Psevdogaint)

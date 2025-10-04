@@ -1,3 +1,7 @@
+---
+title: Panels
+---
+
 # Panels
 
 ___

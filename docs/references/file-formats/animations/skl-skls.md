@@ -1,3 +1,7 @@
+---
+title: "*.skl | *.skls"
+---
+
 # *.skl | \*.skls
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 These files store skeleton animations. The format for storing animations in *.skl/\*.skls is similar to the format of animations embedded in [*.object](../models/object.md) files. Animations are stored in uncompressed form. Bone motion data are stored lossless when exported from a 3D editor. These formats are designed for X-Ray SDK. They are used as source files that are compiled into compressed formats for the game.
-
-___
 
 ## Technical information
 
@@ -25,15 +27,26 @@ ___
 - [Hermite](https://en.wikipedia.org/wiki/Hermite_interpolation)
 - [TCB](https://wiki.synfig.org/TCB)
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [SDK](../../../modding-tools/sdk/README.md)
-
-___
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ## Sources
 
-[Source](https://github.com/PavelBlend/blender-xray/wiki/Formats#skl--skls)
+[Blender X-Ray Addon Wiki](https://github.com/PavelBlend/blender-xray/wiki/Formats#skl--skls)

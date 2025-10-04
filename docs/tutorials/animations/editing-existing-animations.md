@@ -1,18 +1,19 @@
 ---
-tags: [Blender, 3D Animation]
+tags:
+   - Blender
+   - 3D Animation
+title: Editing Existing Animations in Blender
 ---
 
 # Editing Existing Animations in Blender
 
 ___
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How working in Blender and creating animations
 - Skeleton animations ([*.skl](../../references/file-formats/animations/skl-skls.md), [*.skls](../../references/file-formats/animations/skl-skls.md), [*.omf](../../references/file-formats/animations/omf.md))
 - Camera animations ([*.anm](../../references/file-formats/animations/anm.md))
-
-___
 
 ## Editing hud animations
 

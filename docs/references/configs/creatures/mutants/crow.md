@@ -1,5 +1,7 @@
 ---
-tags: [LTX]
+tags:
+    - LTX
+title: AI_Crow (Crow)
 ---
 
 # AI_Crow (Crow)

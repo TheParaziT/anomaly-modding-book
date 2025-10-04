@@ -1,3 +1,7 @@
+---
+title: "LEVEL: diffuse*base.aref"
+---
+
 # LEVEL: diffuse*base.aref
 
 ___

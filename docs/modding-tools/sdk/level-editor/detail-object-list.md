@@ -1,3 +1,7 @@
+---
+title: Detail Object List
+---
+
 # Detail Object List
 
 ___

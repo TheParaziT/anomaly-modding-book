@@ -1,3 +1,7 @@
+---
+title: "*.cform (Collision Form)"
+---
+
 # *.cform (Collision Form)
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 Contains a solid map structure. All tangible objects with materials live here. Because of this, the game knows with what sound and property objects should react when they are hit by bullets or walked on
-
-___
 
 ## Technical information
 
@@ -44,15 +46,28 @@ The BBox diagonal is represented by two vertices that have the same format as th
 | Material ID (14 bits) and flags in the two highest bits | 12 | Word(2) |
 | Sector number | 14 | Word(2) |
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 
 ## Sources
 
-[Source (Wayback Machine)](https://web.archive.org/web/20200919000210/http://stalkerin.gameru.net/wiki/index.php?title=Level.cform)
+[gameru (Wayback Machine)](https://web.archive.org/web/20200919000210/http://stalkerin.gameru.net/wiki/index.php?title=Level.cform)

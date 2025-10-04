@@ -1,3 +1,7 @@
+---
+title: Rename Actions
+---
+
 # Rename Actions
 
 ___

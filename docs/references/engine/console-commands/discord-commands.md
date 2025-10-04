@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Discord Console Commands
+title: Discord
 ---
 
 # Discord

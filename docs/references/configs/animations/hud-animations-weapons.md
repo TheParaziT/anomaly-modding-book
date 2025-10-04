@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: Weapon HUD
 ---
 
 # Weapon HUD

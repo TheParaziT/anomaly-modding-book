@@ -1,4 +1,5 @@
 ---
+title: Creating Door in Blender
 tags: [Blender, 3D Model]
 description: Tutorial for creating doors in Blender for the game
 ---
@@ -11,13 +12,11 @@ ___
 This article is under construction
 :::
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Dynamic Object](../../glossary/glossary.html#dynamic-object)
-
-___
 
 ## About
 

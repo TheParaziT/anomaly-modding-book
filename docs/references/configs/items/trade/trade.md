@@ -1,3 +1,7 @@
+---
+title: Trader Profile
+---
+
 # Trader Profile
 
 ___

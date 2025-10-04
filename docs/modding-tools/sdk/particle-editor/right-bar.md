@@ -1,4 +1,5 @@
 ---
+title: Right Bar
 description: Particle Editor Right bar documentation
 ---
 

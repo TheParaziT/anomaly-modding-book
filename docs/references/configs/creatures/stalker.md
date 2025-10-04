@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: m_*stalker*.ltx
 ---
 
 # m_*stalker*.ltx

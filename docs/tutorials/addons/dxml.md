@@ -1,6 +1,8 @@
 ---
-tags: [XML]
+tags:
+    - XML
 description: DXML Documentation
+title: DXML
 ---
 
 # DXML

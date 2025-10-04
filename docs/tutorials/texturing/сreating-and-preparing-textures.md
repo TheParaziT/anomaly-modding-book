@@ -1,4 +1,5 @@
 ---
+title: Creating and Preparing Textures
 tags: [Texture]
 ---
 

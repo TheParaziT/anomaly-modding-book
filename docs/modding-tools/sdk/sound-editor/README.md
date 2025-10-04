@@ -1,3 +1,8 @@
+---
+title: Sound Editor
+preview: /docs/modding-tools/sdk/sound-editor/assets/images/sound-editor.png
+---
+
 # Sound Editor
 
 ___

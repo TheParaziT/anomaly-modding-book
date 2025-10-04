@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Physics Console Commands
+title: Physics
 ---
 
 # Physics

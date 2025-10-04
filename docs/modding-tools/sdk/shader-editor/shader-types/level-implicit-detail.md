@@ -1,3 +1,7 @@
+---
+title: "LEVEL: implicit**detail"
+---
+
 # LEVEL: implicit**detail
 
 ___

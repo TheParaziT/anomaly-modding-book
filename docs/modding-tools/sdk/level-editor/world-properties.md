@@ -1,5 +1,6 @@
 ---
 description: Level Editor World properties documentation
+title: World Properties
 ---
 
 # World Properties

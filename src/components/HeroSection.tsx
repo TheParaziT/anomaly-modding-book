@@ -37,24 +37,6 @@ const backgroundVideos = [
     url: '/video/5.mp4',
     startTime: 10,
   },
-  {
-    id: 'stalker-ambience-6',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Yanov Kopachy',
-    url: '/video/6.mp4',
-    startTime: 10,
-  },
-  {
-    id: 'stalker-ambience-7',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Kordon Railroad Embankment',
-    url: '/video/7.mp4',
-    startTime: 10,
-  },
-  {
-    id: 'stalker-ambience-8',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Lab X-16',
-    url: '/video/8.mp4',
-    startTime: 10,
-  },
 ];
 
 // Navigation cards

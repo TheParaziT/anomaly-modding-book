@@ -1,3 +1,8 @@
+---
+title: Weather Editor
+preview: /docs/modding-tools/in-game-editors/assets/images/weather-editor.png
+---
+
 # Weather Editor
 
 ___

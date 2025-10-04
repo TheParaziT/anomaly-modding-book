@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Console Commands
+title: Console Commands
 ---
 
 

@@ -1,3 +1,7 @@
+---
+title: "*.details"
+---
+
 # *.details
 
 ___
@@ -5,8 +9,6 @@ ___
 ## About
 
 [Detailed Objects](../../../glossary/glossary.html#detail-object) on the level
-
-___
 
 ## Technical information
 
@@ -129,12 +131,25 @@ The maximum height of the slot (parallelepiped) is: 25.5 (0.1 * 255).
 
 The upper boundary of the slot is equal to: the lower boundary + the height of the slot.
 
-___
+## Programs
 
-## Programs editing this file
-
-- [Blender (X-Ray Addon)](../../../modding-tools/blender/README.mdx)
-- [SDK](../../../modding-tools/sdk/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "Blender X-Ray Addon",
+      content: "Blender X-Ray is an addon for the Blender that is designed to import/export 3D models and animations from S.T.A.L.K.E.R. (X-Ray Engine).",
+      link: "../../../modding-tools/blender",
+      internal: true
+    },
+    {
+      title: "IX-Ray SDK",
+      content: "SDK or Software Development Kit helped the developers of the original trilogy and the modders to develop the game itself.",
+      link: "../../../modding-tools/sdk",
+      internal: true
+    },
+  ]}
+/>
 
 ___
 

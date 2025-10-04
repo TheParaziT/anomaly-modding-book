@@ -1,3 +1,7 @@
+---
+title: Random Displase
+---
+
 # Random Displase
 
 ___

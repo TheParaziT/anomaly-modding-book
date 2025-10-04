@@ -1,4 +1,5 @@
 ---
+title: shaders_xrlc_xr_cdc
 tags: [Shaders, Modding Tool]
 ---
 

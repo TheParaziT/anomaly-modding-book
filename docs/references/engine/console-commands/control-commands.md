@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: Control Console Commands
+title: Control
 ---
 
 # Control

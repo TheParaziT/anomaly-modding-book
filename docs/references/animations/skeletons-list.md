@@ -1,3 +1,7 @@
+---
+title: Skeletons List
+---
+
 # Skeletons List
 
 ___

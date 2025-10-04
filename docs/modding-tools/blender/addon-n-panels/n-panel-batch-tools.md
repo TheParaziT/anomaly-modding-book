@@ -1,3 +1,8 @@
+---
+title: Batch Tools
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-batch-tools.png
+---
+
 # Batch Tools
 
 ___

@@ -1,3 +1,7 @@
+---
+title: Set Object Asset Author
+---
+
 # Set Object Asset Author
 
 ___

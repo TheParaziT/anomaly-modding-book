@@ -1,3 +1,7 @@
+---
+title: "*.dti (Detail Indices)"
+---
+
 # *.dti (Detail Indices)
 
 ___
@@ -6,8 +10,11 @@ ___
 
 Color and object mapping file. It is used when filling the location with grass.
 
-___
+## Programs
 
-## Programs editing this file
-
-- [SDK Level Editor](../../../modding-tools/sdk/level-editor/README.md)
+<UniversalCard
+  title="SDK Level Editor"
+  content="Level Editor is used to create locations."
+  link="../../../modding-tools/sdk/level-editor"
+  internal={true}
+/>

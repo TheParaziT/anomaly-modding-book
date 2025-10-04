@@ -1,3 +1,7 @@
+---
+title: "LEVEL: diffuse*base"
+---
+
 # LEVEL: diffuse*base
 
 ___

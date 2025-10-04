@@ -1,4 +1,5 @@
 ---
+title: Creating HOM Occluder in Blender
 tags: [Blender, 3D Model]
 ---
 
@@ -13,14 +14,12 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Static Object](../../glossary/glossary.html#static-object)
 - What is a [Hierarchical Occluder Mesh](../../glossary/glossary.html#hierarchical-occluder-mesh)
-
-___
 
 ## About
 

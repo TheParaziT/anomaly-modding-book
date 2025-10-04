@@ -1,3 +1,7 @@
+---
+title: "*.xr"
+---
+
 # *.xr
 
 ___
@@ -6,9 +10,22 @@ ___
 
 Resource library. Contains resources such as particles, shaders, etc. in packaged format
 
-___
+## Programs
 
-## Programs editing this file
-
-- [SDK Shader Editor](../../../modding-tools/sdk/shader-editor/README.md)
-- [SDK Particle Editor](../../../modding-tools/sdk/particle-editor/README.md)
+<CardGrid
+  columns={2}
+  items={[
+    {
+      title: "SDK Shader Editor",
+      content: "Used to create/edit shaders.",
+      link: "../../../modding-tools/sdk/shader-editor",
+      internal: true
+    },
+    {
+      title: "SDK Particle Editor",
+      content: "Used to create particle effects (*.pe) or particle groups (*.pg).",
+      link: "../../../modding-tools/sdk/particle-editor",
+      internal: true
+    },
+  ]}
+/>

@@ -1,3 +1,7 @@
+---
+title: Random Accel
+---
+
 # Random Accel
 
 ___

@@ -1,6 +1,8 @@
 ---
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: General Render Console Commands
+title: General Render
 ---
 
 # General Render

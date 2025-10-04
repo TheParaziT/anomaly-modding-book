@@ -1,3 +1,7 @@
+---
+title: Equipment
+---
+
 # Equipment
 
 ___

@@ -1,4 +1,5 @@
 ---
+title: Properties
 description: Level Editor Properties documentation
 ---
 

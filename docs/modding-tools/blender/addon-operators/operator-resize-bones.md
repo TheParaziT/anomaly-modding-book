@@ -1,3 +1,7 @@
+---
+title: Resize Bones Operator
+---
+
 # Resize Bones Operator
 
 ___

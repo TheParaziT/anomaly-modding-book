@@ -1,5 +1,9 @@
 ---
-tags: [LTX, Modding Tool]
+tags:
+  - LTX
+  - Modding Tool
+title: LTX Support
+preview: /docs/modding-tools/coding/assets/images/ltx-support-Title.gif
 ---
 
 # LTX Support

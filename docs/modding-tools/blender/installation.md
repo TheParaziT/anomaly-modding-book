@@ -1,4 +1,5 @@
 ---
+title: Installation
 description: Installation guide for Blender X-Ray addon
 ---
 

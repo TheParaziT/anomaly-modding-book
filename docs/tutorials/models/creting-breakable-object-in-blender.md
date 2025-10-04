@@ -1,6 +1,10 @@
 ---
-tags: [Blender, 3D Model]
+title: Creating Breakable Object in Blender
+tags:
+    - Blender
+    - 3D Model
 description: Guide for creating breakable objects in Blender
+draft: true
 ---
 
 # Creating Breakable Object in Blender
@@ -11,14 +15,12 @@ ___
 This article is under construction
 :::
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - What is a [Dynamic Object](../../glossary/glossary.html#dynamic-object)
 - What is a [Game Material](../../glossary/glossary.html#game-material)
-
-___
 
 ## About
 

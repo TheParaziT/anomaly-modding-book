@@ -1,3 +1,7 @@
+---
+title: Shader Editor
+---
+
 # Shader Editor
 
 ___

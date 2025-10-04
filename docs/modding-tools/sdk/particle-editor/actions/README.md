@@ -1,3 +1,7 @@
+---
+title: Actions
+---
+
 # Actions
 
 ___

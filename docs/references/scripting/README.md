@@ -1,3 +1,6 @@
+---
+title: Scripting
+---
 # Scripting
 
 ___

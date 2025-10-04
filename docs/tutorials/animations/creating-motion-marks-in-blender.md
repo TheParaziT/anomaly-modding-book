@@ -1,4 +1,5 @@
 ---
+title: Creating Motion Marks in Blender
 tags: [Blender, 3D Animation, SDK]
 ---
 
@@ -13,13 +14,11 @@ ___
   showDescription={true}
 />
 
-## Need to know
+## Need to know {#need-to-know}
 
 - How working in Blender and creating animations
 - What a Motion Marks
 - Skeleton animations ([*.skl](../../references/file-formats/animations/skl-skls.md), [*.skls](../../references/file-formats/animations/skl-skls.md), [*.omf](../../references/file-formats/animations/omf.md))
-
-___
 
 ## About
 

@@ -1,5 +1,7 @@
 ---
-tags: [Texture]
+tags:
+    - Texture
+title: Texturing
 ---
 
 # Texturing

@@ -1,5 +1,6 @@
 ---
 description: Documentation for GEOM file format
+title: "*.geom"
 ---
 
 # *.geom
@@ -12,8 +13,6 @@ ___
 
 Contains all visible map geometry. It contains all vertices with normals and coordinates for textures and indexes for building geometry, as well as synchronization.
 
-___
-
 ## Technical information
 
 ## The file consists of the following blocks
@@ -24,8 +23,6 @@ ___
 | [Vertex description](#vertex-description) | 9 |
 | [Indexes description](#indexes-description) | 10 |
 | [Synchronization description](#synchronization-description) | 11 |
-
-___
 
 ### Types of variables
 
@@ -237,4 +234,4 @@ ___
 
 ## Sources
 
-[Source (Wayback Machine)](https://web.archive.org/web/20200919002943/http://stalkerin.gameru.net/wiki/index.php?title=Level.geom)
+[gameru (Wayback Machine)](https://web.archive.org/web/20200919002943/http://stalkerin.gameru.net/wiki/index.php?title=Level.geom)

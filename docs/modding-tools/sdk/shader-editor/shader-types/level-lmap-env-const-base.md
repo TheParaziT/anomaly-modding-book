@@ -1,3 +1,7 @@
+---
+title: "LEVEL: (lmap+env*const)*base"
+---
+
 # LEVEL: (lmap+env*const)*base
 
 ___

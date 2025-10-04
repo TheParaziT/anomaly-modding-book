@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_BLOOD (Bloodsucker)
 ---
 
 # SM_BLOOD (Bloodsucker)

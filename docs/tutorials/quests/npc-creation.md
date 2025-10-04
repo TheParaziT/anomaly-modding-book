@@ -1,4 +1,5 @@
 ---
+title: NPC Creation
 tags: [LTX, XML, LUA]
 description: Tutorial for creating and configuring NPCs for quests
 ---

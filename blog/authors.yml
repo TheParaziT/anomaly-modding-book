@@ -30,6 +30,10 @@ adi:
   socials:
     telegram: MAKTPAXEP_178
 
+sin!:
+  name: Sin!
+  image_url: /img/author-no-data.png
+
 nltp_ashes:
   name: NLTP_ASHES
   image_url: https://github.com/nltp-ashes.png
@@ -63,7 +67,7 @@ ravenascendant:
   image_url: https://github.com/ravenascendant.png
   socials:
     github: ravenascendant
-  
+
 ishmaeel:
   name: Ishmaeel
   image_url: https://github.com/Ishmaeel.png

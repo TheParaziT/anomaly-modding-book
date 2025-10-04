@@ -1,5 +1,7 @@
 ---
 description: NPC Logic/Execute in-game editor
+title: NPC Logic/Execute
+preview: /docs/modding-tools/in-game-editors/assets/images/npc-logic-execute.png
 ---
 
 # NPC Logic/Execute

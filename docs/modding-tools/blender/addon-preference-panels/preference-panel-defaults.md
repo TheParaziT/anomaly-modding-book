@@ -1,3 +1,7 @@
+---
+title: Defaults
+---
+
 # Defaults
 
 ___

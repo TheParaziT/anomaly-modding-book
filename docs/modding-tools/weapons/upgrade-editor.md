@@ -1,4 +1,5 @@
 ---
+title: Upgrade Editor
 tags: [LTX, Modding Tool]
 ---
 

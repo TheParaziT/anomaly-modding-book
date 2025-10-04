@@ -1,3 +1,7 @@
+---
+title: "LEVEL: detail objects"
+---
+
 # LEVEL: detail objects
 
 ___

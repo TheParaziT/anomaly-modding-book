@@ -1,5 +1,7 @@
 ---
-tags: [Unfinished]
+tags:
+    - Unfinished
+title: SM_CHIMS (Chimera)
 ---
 
 # SM_CHIMS (Chimera)

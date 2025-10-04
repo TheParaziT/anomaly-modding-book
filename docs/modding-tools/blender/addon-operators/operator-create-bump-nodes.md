@@ -1,3 +1,7 @@
+---
+title: Create Bump Nodes Operator
+---
+
 # Create Bump Nodes Operator
 
 ___

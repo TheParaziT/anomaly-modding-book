@@ -1,3 +1,7 @@
+---
+title: "*.graph"
+---
+
 # *.graph
 
 ___

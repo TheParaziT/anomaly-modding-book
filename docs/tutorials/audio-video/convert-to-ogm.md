@@ -1,5 +1,7 @@
 ---
-tags: [Video]
+tags:
+    - Video
+title: Convert to *.ogm
 ---
 
 # Convert to *.ogm

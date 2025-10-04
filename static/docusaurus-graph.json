@@ -126,6 +126,12 @@
     "referencedBy": []
   },
   {
+    "id": "ogg-editor",
+    "title": "OGG Editor",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
     "id": "savandt",
     "title": "Sound Attribute Viewer And Tweaker",
     "linkTo": [],
@@ -577,7 +583,7 @@
   },
   {
     "id": "universal-x64-level-compilers",
-    "title": "Universal x64 level compilers",
+    "title": "Universal x64 Level Compilers",
     "linkTo": [],
     "referencedBy": []
   },
@@ -1074,7 +1080,7 @@
     "referencedBy": []
   },
   {
-    "id": "algoritm-of-logic",
+    "id": "algorithm-of-logic",
     "title": "Algorithm of Logic",
     "linkTo": [],
     "referencedBy": []
@@ -1544,7 +1550,7 @@
   },
   {
     "id": "hom",
-    "title": "*.hom (Hierarchical Occlusion Mapping)",
+    "title": "*.hom (Hierarchical Occlusion Mesh)",
     "linkTo": [],
     "referencedBy": []
   },
