@@ -1,5 +1,6 @@
 ---
 title: Avoid
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/avoid.gif
 ---
 
 # Avoid

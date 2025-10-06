@@ -1,5 +1,9 @@
 ---
 title: Update
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-update.png
+description: N-Panel to check for Blender X-Ray Addon updates
+tags:
+    - Blender
 ---
 
 # Update

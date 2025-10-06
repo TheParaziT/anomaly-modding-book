@@ -1,5 +1,6 @@
 ---
 title: "X-Ray Engine: Bone"
+preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-bone.png
 ---
 
 # X-Ray Engine: Bone

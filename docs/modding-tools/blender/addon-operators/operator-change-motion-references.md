@@ -1,5 +1,6 @@
 ---
 title: Change Motion References Operator
+preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-motion-reference.png
 ---
 
 # Change Motion References Operator

@@ -3,8 +3,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/adfee5b0-2c76-4fec-b389-26c38c0612fb/deploy-status)](https://app.netlify.com/projects/anomaly-modding-book/deploys)
 ![GitHub repo size](https://img.shields.io/github/repo-size/TheParaziT/anomaly-modding-book)
 
-
-
 # Anomaly Modding Book
 
 Introductory book for S.T.A.L.K.E.R. Anomaly modding

@@ -1,5 +1,6 @@
 ---
 title: Gravity
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/gravity.gif
 ---
 
 # Gravity

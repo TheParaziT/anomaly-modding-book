@@ -1,5 +1,6 @@
 ---
 title: Sink
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/sink.gif
 ---
 
 # Sink

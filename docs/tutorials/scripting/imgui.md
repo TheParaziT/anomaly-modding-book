@@ -1,7 +1,9 @@
 ---
 title: ImGui
-tags: [LUA]
+tags:
+    - LUA
 description: Guide for using ImGui in scripting
+preview: /docs/tutorials/scripting/assets/images/imgui-button-example.png
 ---
 
 # ImGui

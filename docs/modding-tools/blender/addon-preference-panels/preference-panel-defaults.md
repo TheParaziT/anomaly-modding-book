@@ -1,5 +1,6 @@
 ---
 title: Defaults
+preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Defaults.png
 ---
 
 # Defaults

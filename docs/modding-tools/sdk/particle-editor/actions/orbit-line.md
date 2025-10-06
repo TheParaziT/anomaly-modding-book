@@ -1,6 +1,7 @@
 ---
 description: Orbit line action
 title: Orbit Line
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/orbit-line.gif
 ---
 
 # Orbit Line

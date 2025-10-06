@@ -1,5 +1,6 @@
 ---
 title: "X-Ray Engine: Material"
+preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-material.png
 ---
 
 # X-Ray Engine: Material

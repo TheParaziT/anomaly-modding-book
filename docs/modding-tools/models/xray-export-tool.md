@@ -1,7 +1,10 @@
 ---
 title: Object Tool (or XRay Export Tool)
-tags: [3D Model, Modding Tool]
+tags:
+  - 3D Model
+  - Modding Tool
 description: Object Tool (or XRay Export Tool) for model export
+preview: /docs/modding-tools/models/assets/images/object-tool-by-valerok.png
 ---
 
 # Object Tool (or XRay Export Tool)

@@ -1,5 +1,6 @@
 ---
 title: Add
+preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-add.png
 ---
 
 # Add

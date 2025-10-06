@@ -1,5 +1,6 @@
 ---
 title: Shader Editor
+preview: /docs/modding-tools/sdk/shader-editor/assets/images/shader-editor.png
 ---
 
 # Shader Editor

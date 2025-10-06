@@ -1,5 +1,6 @@
 ---
 title: Custom Props
+preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Custom-props.png
 ---
 
 # Custom Props

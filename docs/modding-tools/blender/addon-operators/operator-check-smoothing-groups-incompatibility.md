@@ -1,5 +1,6 @@
 ---
 title: Check Smoothing Groups Incompatibility
+preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-check-smooth-groups-incompatibility.png
 ---
 
 # Check Smoothing Groups Incompatibility

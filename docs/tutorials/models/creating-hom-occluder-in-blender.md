@@ -1,6 +1,9 @@
 ---
 title: Creating HOM Occluder in Blender
-tags: [Blender, 3D Model]
+tags:
+  - Blender
+  - 3D Model
+preview: /docs/tutorials/models/assets/images/creating-hom-occluder-in-blender-result.png
 ---
 
 # Creating HOM Occluder in Blender

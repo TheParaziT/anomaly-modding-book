@@ -1,6 +1,9 @@
 ---
 title: Modified Omf Editor by ValeroK
-tags: [3D Animation, Modding Tool]
+tags:
+  - 3D Animation
+  - Modding Tool
+preview: /docs/modding-tools/animations/assets/images/omf-editor-by-valerok.png
 ---
 
 # Modified Omf Editor by ValeroK

@@ -1,5 +1,6 @@
 ---
 title: Target Color
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/target-color.gif
 ---
 
 # Target Color

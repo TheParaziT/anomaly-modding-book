@@ -1,6 +1,8 @@
 ---
 title: Working Correctly With Icon Atlases
-tags: [Texture]
+tags:
+  - Texture
+preview: /docs/tutorials/texturing/assets/images/properties.png
 ---
 
 # Working Correctly With Icon Atlases

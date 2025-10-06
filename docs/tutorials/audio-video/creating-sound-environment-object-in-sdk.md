@@ -1,6 +1,9 @@
 ---
 title: Creating Sound Environment in SDK
-tags: [SDK, Audio]
+tags:
+  - SDK
+  - Audio
+preview: /docs/tutorials/audio-video/assets/gifs/place-env.gif
 ---
 
 # Creating Sound Environment in SDK

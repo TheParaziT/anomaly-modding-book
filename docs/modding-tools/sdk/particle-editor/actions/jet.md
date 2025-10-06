@@ -1,5 +1,6 @@
 ---
 title: Jet
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/jet.gif
 ---
 
 # Jet

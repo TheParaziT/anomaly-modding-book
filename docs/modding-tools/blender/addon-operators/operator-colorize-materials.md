@@ -1,5 +1,6 @@
 ---
 title: Colorize Materials
+preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-colorize-materials.png
 ---
 
 # Colorize Materials

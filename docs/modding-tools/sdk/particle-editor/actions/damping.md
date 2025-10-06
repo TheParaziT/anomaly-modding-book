@@ -1,5 +1,6 @@
 ---
 title: Damping
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/damping.gif
 ---
 
 # Damping

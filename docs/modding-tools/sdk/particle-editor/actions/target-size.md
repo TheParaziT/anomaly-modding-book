@@ -1,5 +1,6 @@
 ---
 title: Target Size
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/target-size.gif
 ---
 
 # Target Size

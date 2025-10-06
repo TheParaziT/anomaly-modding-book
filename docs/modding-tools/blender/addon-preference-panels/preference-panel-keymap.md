@@ -1,5 +1,6 @@
 ---
 title: Keymap
+preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Keymap.png
 ---
 
 # Keymap

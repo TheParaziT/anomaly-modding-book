@@ -1,5 +1,6 @@
 ---
 title: Particle Editor
+preview: /docs/modding-tools/sdk/particle-editor/assets/images/particle-editor.png
 ---
 
 # Particle Editor

@@ -1,5 +1,6 @@
 ---
 title: Level Editor
+preview: /docs/modding-tools/sdk/level-editor/assets/images/level-editor.png
 ---
 
 # Level Editor

@@ -1,5 +1,6 @@
 ---
 title: "X-Ray Engine: Action"
+preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-action.png
 ---
 
 # X-Ray Engine: Action

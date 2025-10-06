@@ -1,6 +1,7 @@
 ---
 description: Target rotate action
 title: Target Rotate
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/target-rotate.gif
 ---
 
 # Target Rotate

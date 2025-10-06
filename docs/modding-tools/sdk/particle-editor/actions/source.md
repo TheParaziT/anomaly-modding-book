@@ -1,5 +1,6 @@
 ---
 title: Source
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/source-kill.gif
 ---
 
 # Source

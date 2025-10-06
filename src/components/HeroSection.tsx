@@ -8,34 +8,10 @@ import styles from './HeroSection.module.css';
 // Local background videos list
 const backgroundVideos = [
   {
-    id: 'stalker-ambience-1',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Generators',
-    url: '/video/1.mp4',
-    startTime: 10,
-  },
-  {
     id: 'stalker-ambience-2',
     title: 'S.T.A.L.K.E.R. CoC Atmosphere - Rostok Campfire',
     url: '/video/2.mp4',
-    startTime: 10,
-  },
-  {
-    id: 'stalker-ambience-3',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Agroprom Underground',
-    url: '/video/3.mp4',
-    startTime: 10,
-  },
-  {
-    id: 'stalker-ambience-4',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Jupiter Factory',
-    url: '/video/4.mp4',
-    startTime: 10,
-  },
-  {
-    id: 'stalker-ambience-5',
-    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Swamps Church',
-    url: '/video/5.mp4',
-    startTime: 10,
+    startTime: 0,
   },
 ];
 

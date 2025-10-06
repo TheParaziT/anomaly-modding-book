@@ -1,6 +1,9 @@
 ---
 title: Preparing Building in Blender
-tags: [Blender, 3D Model]
+tags:
+    - Blender
+    - 3D Model
+preview: /docs/tutorials/models/assets/images/creating-building-in-blender-result.png
 ---
 
 # Preparing Building in Blender

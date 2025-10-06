@@ -2,6 +2,7 @@
 title: Creating and Placing Group in SDK
 tags:
   - SDK
+preview: /docs/tutorials/sdk/assets/images/group-objects.png
 ---
 
 # Creating and Placing Group in SDK

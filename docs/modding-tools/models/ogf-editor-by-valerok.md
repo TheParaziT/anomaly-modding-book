@@ -1,6 +1,9 @@
 ---
 title: Modified OGF Editor by ValeroK
-tags: [3D Model, Modding Tool]
+tags:
+  - 3D Model
+  - Modding Tool
+preview: /docs/modding-tools/models/assets/images/ogf-editor-by-valerok.png
 ---
 
 # Modified OGF Editor by ValeroK

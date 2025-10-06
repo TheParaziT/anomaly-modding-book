@@ -1,6 +1,9 @@
 ---
 title: THM Editor
-tags: [Texture, Modding Tool]
+tags:
+  - Texture
+  - Modding Tool
+preview: /docs/modding-tools/textures/assets/images/thm-editor-by-i-love-kfc.png
 ---
 
 # THM Editor

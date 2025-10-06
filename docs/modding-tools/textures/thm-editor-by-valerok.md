@@ -1,6 +1,9 @@
 ---
 title: Modified THM Editor by ValeroK
-tags: [Texture, Modding Tool]
+tags:
+  - Texture
+  - Modding Tool
+preview: /docs/modding-tools/textures/assets/images/thm-editor-by-valerok.png
 ---
 
 # Modified THM Editor by ValeroK

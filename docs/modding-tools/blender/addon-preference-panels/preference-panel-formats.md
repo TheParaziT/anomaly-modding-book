@@ -1,5 +1,6 @@
 ---
 title: Formats
+preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Formats.png
 ---
 
 # Formats

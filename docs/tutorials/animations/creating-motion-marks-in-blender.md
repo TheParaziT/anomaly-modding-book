@@ -1,6 +1,10 @@
 ---
 title: Creating Motion Marks in Blender
-tags: [Blender, 3D Animation, SDK]
+tags:
+  - Blender
+  - 3D Animation
+  - SDK
+preview: /docs/tutorials/animations/assets/images/motion-marks-in-sdk.png
 ---
 
 # Creating Motion Marks in Blender

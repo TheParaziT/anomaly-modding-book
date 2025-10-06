@@ -1,5 +1,6 @@
 ---
 title: Orbit Point
+preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/orbit-point.gif
 ---
 
 # Orbit Point

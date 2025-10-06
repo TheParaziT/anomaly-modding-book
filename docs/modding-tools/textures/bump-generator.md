@@ -1,6 +1,9 @@
 ---
 title: Bump Generator
-tags: [Texture, Modding Tool]
+tags:
+  - Texture
+  - Modding Tool
+preview: /docs/modding-tools/textures/assets/images/bump-generator.png
 ---
 
 # Bump Generator
