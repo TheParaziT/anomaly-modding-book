@@ -27,7 +27,7 @@
     "preview": "npm run build && npm run serve"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.29.0",
+    "@babylonjs/core": "^8.30.3",
     "@babylonjs/loaders": "^8.29.0",
     "@dev0ph3r/netlify-plugin-discord": "^1.0.2",
     "@docusaurus/core": "^3.9.1",
