@@ -1,7 +1,9 @@
 ---
 title: General Console Commands
-tags: [Console Commands]
+tags:
+    - Console Commands
 description: General Console Commands
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # General

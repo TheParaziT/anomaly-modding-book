@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: AI Console Commands
 title: AI
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # AI

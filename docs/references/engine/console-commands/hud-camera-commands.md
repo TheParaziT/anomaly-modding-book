@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: HUD Camera Console Commands
 title: HUD Camera
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # HUD Camera

@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: HUD Console Commands
 title: HUD
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # HUD

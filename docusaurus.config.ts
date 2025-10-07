@@ -228,7 +228,7 @@ const config: Config = {
           sidebarId: 'gettingstartedSidebar',
           position: 'left',
           label: 'Getting Started',
-          className: 'navbar-item-with-icon navbar-github-item',
+          className: 'navbar-item-with-icon navbar-getting-started-item',
         },
         {
           to: '/glossary',
