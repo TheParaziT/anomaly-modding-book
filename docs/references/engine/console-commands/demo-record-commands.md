@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: Demo Console Commands
 title: Demo Record
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # Demo Record

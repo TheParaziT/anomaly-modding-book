@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: UI Console Commands
 title: UI
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # UI

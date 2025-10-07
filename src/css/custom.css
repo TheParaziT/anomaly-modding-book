@@ -350,7 +350,7 @@ table tbody tr + tr td {
     background-color: var(--ifm-navbar-link-hover-color);
   }
 
-  &.navbar-github-item {
+  &.navbar-getting-started-item {
     --icon-url: url('https://api.iconify.design/mdi:rocket-launch.svg');
   }
   &.navbar-glossary-item {

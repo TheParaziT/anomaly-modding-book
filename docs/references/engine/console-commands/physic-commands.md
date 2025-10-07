@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: Physics Console Commands
 title: Physics
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # Physics

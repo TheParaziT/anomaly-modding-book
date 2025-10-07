@@ -3,6 +3,7 @@ tags:
     - Console Commands
 description: R3 Render Console Commands
 title: R3 Render
+preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
 ---
 
 # R3 Render
