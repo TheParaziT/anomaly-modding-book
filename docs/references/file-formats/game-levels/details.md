@@ -8,7 +8,7 @@ ___
 
 ## About
 
-[Detailed Objects](../../../glossary/glossary.html#detail-object) on the level
+[Detailed Objects](../../../../glossary#detail-object) on the level
 
 ## Technical information
 

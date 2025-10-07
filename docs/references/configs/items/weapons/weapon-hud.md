@@ -17,7 +17,7 @@ ___
 
 | Parameter Name | Parameter Description | Example Value | Possible Parameters |
 |---|---|---|---|
-| item_visual | Weapon [hud model](../../../../glossary/glossary.html#_hud-model) | anomaly_weapons\wpn_akm\wpn_akm_hud.ogf | File path relative to the `gamedata\meshes` folder |
+| item_visual | Weapon [hud model](../../../../../glossary#hud) | anomaly_weapons\wpn_akm\wpn_akm_hud.ogf | File path relative to the `gamedata\meshes` folder |
 | attach_place_idx |  | 0 | 0 1 |
 | zoom_hide_crosshair | Hide crosshair when aiming | true | `true` or `1` or `on` - Yes `false` or `0` or `off` - No |
 

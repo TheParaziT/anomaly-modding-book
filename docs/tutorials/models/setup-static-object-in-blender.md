@@ -12,7 +12,7 @@ ___
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - Familiarize yourself with the limitations and capabilities of the format [*.object](../../references/file-formats/models/object.md) (because you may export to it more often than to [*.ogf](../../references/file-formats/models/ogf.md)) to avoid errors
-- Familiarize yourself with [Static Object](../../glossary/glossary.html#static-object) model type
+- Familiarize yourself with [Static Object](../../../../glossary#static-object) model type
 
 ## About
 

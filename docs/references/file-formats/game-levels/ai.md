@@ -10,4 +10,4 @@ ___
 
 AI location grid.
 
-Store [lvid](../../../glossary/glossary.html#lvid)'s
+Store [lvid](../../../../glossary#lvid)'s

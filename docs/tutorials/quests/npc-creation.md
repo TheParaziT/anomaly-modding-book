@@ -19,7 +19,7 @@ All the code for this article is available in the [examples folder](https://gith
 
 ## Configuration
 
-This guide uses [DLTX](../addons/dltx.md) heavily. I will assume some familiarity with DLTX concepts.
+This guide uses [DLTX](../addons/dltx.mdx) heavily. I will assume some familiarity with DLTX concepts.
 
 In this guide we'll create Barista - twin brother of Barkeep and love interest of Sidorovich. To keep it simple, we'll reuse most of the configuration of Barkeep.
 

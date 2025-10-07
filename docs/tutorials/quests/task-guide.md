@@ -42,7 +42,7 @@ For more complex tasks, you may also need to create custom squads of NPCs, for w
 - `gamedata/configs/gameplay/dialogs_my_task.xml`:  
    where your custom dialogs will be.
 
-Note that, to ensure maximum compatibility, it is highly discouraged to edit and redistribute modified vanilla files. Instead, you can use [DLTX](../addons/dltx.md) and [DXML](../addons/dxml.md) to modify those files at runtime, ensuring high compatibility with other addons.
+Note that, to ensure maximum compatibility, it is highly discouraged to edit and redistribute modified vanilla files. Instead, you can use [DLTX](../addons/dltx.mdx) and [DXML](../addons/dxml.md) to modify those files at runtime, ensuring high compatibility with other addons.
 
 ___
 
@@ -72,16 +72,16 @@ stage_complete          = 1
 ```
 
 - `title_functor`  
-  Name of a function (defined in `task_functor` namespace). This function will be used to display the name of your task in the PDA. See more in [IV.A.](task-guide.md#iva-task-title-functor).
+  Name of a function (defined in `task_functor` namespace). This function will be used to display the name of your task in the PDA. See more in [IV.A.](task-guide.md#task-title-functor).
 
 - `descr_functor`  
-  Name of a function (defined in `task_functor` namespace). This function will be used to display a description of the player's current objective in the PDA. See more in [IV.B.](task-guide.md#ivb-task-description-functor).
+  Name of a function (defined in `task_functor` namespace). This function will be used to display a description of the player's current objective in the PDA. See more in [IV.B.](task-guide.md#task-description-functor).
 
 - `target_functor`  
-  Name of a function (defined in `task_functor` namespace). This function will be used to place a marker on the player's objective in the PDA. See more in [IV.C.](task-guide.md#ivc-task-target-functor).
+  Name of a function (defined in `task_functor` namespace). This function will be used to place a marker on the player's objective in the PDA. See more in [IV.C.](task-guide.md#task-target-functor).
 
 - `status_functor`  
-  Name of a function (defined in `task_functor` namespace). This function will manage your task logic as a whole. It will be responsible for spawning objects, checking objective completion, progressing the task, etc. See more in [IV.D.](task-guide.md#ivd-task-status-functor).
+  Name of a function (defined in `task_functor` namespace). This function will manage your task logic as a whole. It will be responsible for spawning objects, checking objective completion, progressing the task, etc. See more in [IV.D.](task-guide.md#task-status-functor).
 
 - `icon`  
   ID of a texture description. This is the icon for the task that will be displayed in the PDA and in the dialogs.
@@ -154,7 +154,7 @@ You can replace the content of `% ... %` by any arrangement of the following :
   This will remove from player `value` points of goodwill with `faction` faction.  
   **You need to replace `value` with a number value and `faction` with the name of a faction.**
 
-This list is not exhaustive, and there is plenty more you can do. As you'll soon read in [II.B.2.](task-guide.md#iib2-task-lifecycle-in-script), you can even define your own functions to use in these condlists.
+This list is not exhaustive, and there is plenty more you can do. As you'll soon read in [II.B.2.](task-guide.md#task-lifecycle-in-script), you can even define your own functions to use in these condlists.
 
 ___
 

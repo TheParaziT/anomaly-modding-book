@@ -1,0 +1,18 @@
+.menu__link[href^='/docs/resources'] {
+  --sidebar-icon: url('https://api.iconify.design/carbon:software-resource.svg');
+}
+.menu__link[href^='/docs/resources/assets'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:package-variant.svg');
+}
+.menu__link[href^='/docs/resources/audio'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:music-note.svg');
+}
+.menu__link[href^='/docs/resources/models'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:cube.svg');
+}
+.menu__link[href^='/docs/resources/rigs'] {
+  --sidebar-icon: url('https://api.iconify.design/solar:bone-linear.svg');
+}
+.menu__link[href^='/docs/resources/texturing'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:palette-outline.svg');
+}

@@ -8,9 +8,21 @@ import styles from './HeroSection.module.css';
 // Local background videos list
 const backgroundVideos = [
   {
+    id: 'stalker-ambience-1',
+    title: 'S.T.A.L.K.E.R. LA Atmosphere - Pripyat Monolith',
+    url: '/video/1.mp4',
+    startTime: 0,
+  },
+  {
     id: 'stalker-ambience-2',
     title: 'S.T.A.L.K.E.R. CoC Atmosphere - Rostok Campfire',
     url: '/video/2.mp4',
+    startTime: 0,
+  },
+  {
+    id: 'stalker-ambience-3',
+    title: 'S.T.A.L.K.E.R. CoC Atmosphere - Dead City',
+    url: '/video/3.mp4',
     startTime: 0,
   },
 ];

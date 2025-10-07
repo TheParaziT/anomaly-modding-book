@@ -20,7 +20,7 @@ ___
 ## Need to know {#need-to-know}
 
 - How to work in [SDK](../../modding-tools/sdk/README.md)
-- What is a [Sound Environment Object](../../glossary/glossary.html#sound-environment-object)
+- What is a [Sound Environment Object](../../../../glossary#sound-environment-object)
 
 ## About
 

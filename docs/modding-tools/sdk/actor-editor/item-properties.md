@@ -231,31 +231,31 @@ ___
           <td rowSpan={5}>Joint type</td>
           <td>Rigid</td>
           <td>
-            <a href="../../../../glossary/glossary.html#rigid-joint">Rigid Joint</a>
+            <a href="../../../../glossary#rigid-joint">Rigid Joint</a>
           </td>
         </tr>
         <tr>
           <td>Cloth</td>
           <td>
-            <a href="../../../../glossary/glossary.html#cloth-joint">Cloth Joint</a>
+            <a href="../../../../glossary#cloth-joint">Cloth Joint</a>
           </td>
         </tr>
         <tr>
           <td>Joint</td>
           <td>
-            <a href="../../../../glossary/glossary.html#joint">Universal Joint</a>
+            <a href="../../../../glossary#joint">Universal Joint</a>
           </td>
         </tr>
         <tr>
           <td>Wheel [Steer-X/Roll-Z]</td>
           <td>
-            <a href="../../../../glossary/glossary.html#wheel-joint">Wheel Joint</a>
+            <a href="../../../../glossary#wheel-joint">Wheel Joint</a>
           </td>
         </tr>
         <tr>
           <td>Slider</td>
           <td>
-            <a href="../../../../glossary/glossary.html#slider-joint">
+            <a href="../../../../glossary#slider-joint">
               Slider Joint
             </a>
           </td>

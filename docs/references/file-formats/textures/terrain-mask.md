@@ -8,7 +8,7 @@ ___
 
 ## About
 
-A mask for [Detail Objects](../../../glossary/glossary.html#detail-object). Fills in the level according to its colors.
+A mask for [Detail Objects](../../../../glossary#detail-object). Fills in the level according to its colors.
 
 ## Programs
 

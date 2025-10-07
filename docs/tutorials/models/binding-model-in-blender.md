@@ -20,7 +20,7 @@ ___
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
-- What is a [Dynamic Object](../../glossary/glossary.html#dynamic-object) and how to [Setup Dynamic Object in Blender](setup-dynamic-object-in-blender.md)
+- What is a [Dynamic Object](../../../../glossary#dynamic-object) and how to [Setup Dynamic Object in Blender](setup-dynamic-object-in-blender.md)
 
 ## About
 

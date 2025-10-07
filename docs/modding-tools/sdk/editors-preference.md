@@ -133,9 +133,9 @@ Preferences across all editors
 
 | Button | Description |
 |---|---|
-| xrLC | Path to [xrLC](../../glossary/glossary.html#xr-lc) |
-| xrAI | Path to [xrAI](../../glossary/glossary.html#xr-ai) |
-| xrDO | Path to [xrDO](../../glossary/glossary.html#xr-do) |
+| xrLC | Path to [xrLC](../../../../glossary#xr-lc) |
+| xrAI | Path to [xrAI](../../../../glossary#xr-ai) |
+| xrDO | Path to [xrDO](../../../../glossary#xr-do) |
 
 ### Keyboard
 

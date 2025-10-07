@@ -91,4 +91,4 @@ ___
 - Refer to the [OMF Editor documentation](../../modding-tools/animations/omf-editor-by-valerok.md#about) for more information on how to use it
   - Usually you want to control [SDK Flags](../../modding-tools/animations/omf-editor-by-valerok.md#animation-options) for each specific animation
 
-Follow [Script Animation Guide](../scripting/script-animations.md#motions-1) to learn how to use your animation in the game
+Follow [Script Animation Guide](../scripting/script-animations.md#motions) to learn how to use your animation in the game

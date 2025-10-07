@@ -9,7 +9,7 @@ ___
 
 ## About
 
-This window creates the relationships between the color slots ([terrain_mask](../../../references/file-formats/textures/terrain-mask.md)) and [Detail Objects](../../../../glossary/glossary.html#detail-object).
+This window creates the relationships between the color slots ([terrain_mask](../../../references/file-formats/textures/terrain-mask.md)) and [Detail Objects](../../../../glossary#detail-object).
 
 ![alt text centered](./assets/images/detail-object-list.png)
 

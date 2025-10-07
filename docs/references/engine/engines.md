@@ -38,7 +38,7 @@ Community fork of the Monolith engine curated by demonized. This engine is encou
 
 ### Key Features
 
-- [DLTX](../../tutorials/addons/dltx.md) by MerelyMezz with edits and bugfixes by demonized
+- [DLTX](../../tutorials/addons/dltx.mdx) by MerelyMezz with edits and bugfixes by demonized
 - [DXML](../../tutorials/addons/dxml.md) by demonized
 - BaS engine edits by Mortan
 - Additional edits and bugfixes by demonized

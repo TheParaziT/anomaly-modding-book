@@ -19,8 +19,8 @@ This article is under construction
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
-- What is a [Dynamic Object](../../glossary/glossary.html#dynamic-object)
-- What is a [Game Material](../../glossary/glossary.html#game-material)
+- What is a [Dynamic Object](../../glossary#dynamic-object)
+- What is a [Game Material](../../glossary#game-material)
 
 ## About
 

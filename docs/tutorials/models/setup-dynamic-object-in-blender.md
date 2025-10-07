@@ -12,7 +12,7 @@ ___
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
 - Familiarize yourself with the limitations and capabilities of the format [*.object](../../references/file-formats/models/object.md) (because you may export to it more often than to [*.ogf](../../references/file-formats/models/ogf.md)) to avoid errors
-- Familiarize yourself with [Dynamic Object](../../glossary/glossary.html#dynamic-object) model type
+- Familiarize yourself with [Dynamic Object](../../../../glossary#dynamic-object) model type
 
 ## About
 
@@ -76,7 +76,7 @@ My model fits quite nicely into the Bone Shape.
 
 ![Model Bone Shape centered](assets/images/setup-dynamic-object-bone-shape.png)
 
-Next, choose [Rigid](../../glossary/glossary.html#rigid-joint) in `Joint Type`.
+Next, choose [Rigid](../../../../glossary#rigid-joint) in `Joint Type`.
 
 ## Surface
 
