@@ -25,8 +25,6 @@ ___
   </tbody>
 </table>
 
-___
-
 ## About
 
 ![alt text](assets/images/bump-gen-tool.png)

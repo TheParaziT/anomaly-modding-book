@@ -13,7 +13,7 @@ ___
   <tbody>
     <tr>
       <td>Program Developer</td>
-      <td>        <Authors
+      <td><Authors
           authors={['gsc_game_world']}
           size="small"
           showTitle={false}
@@ -25,8 +25,6 @@ ___
     </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 

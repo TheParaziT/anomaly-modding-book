@@ -1,4 +1,3 @@
-import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 import Authors from '@site/src/components/Authors';
 import ModelViewer from '@site/src/components/ModelViewer';

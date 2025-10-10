@@ -11,7 +11,7 @@ preview: /docs/modding-tools/audio-video/assets/images/savandt.png
 
 ___
 
-## Info
+## Info {#info}
 
 <table>
   <tbody>
@@ -33,8 +33,6 @@ ___
     </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 

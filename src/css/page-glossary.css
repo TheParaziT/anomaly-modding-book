@@ -1,0 +1,126 @@
+/* Glossary page styles */
+.glossary-container {
+  margin-top: 1rem;
+}
+
+.glossary-intro {
+  color: var(--ifm-font-color-secondary);
+}
+
+.glossary-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.glossary-search,
+.glossary-filter {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(123, 210, 26, 0.2);
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='light'] .glossary-search,
+[data-theme='light'] .glossary-filter {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Dark theme refinements for glossary filter */
+[data-theme='dark'] .glossary-filter {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(123, 210, 26, 0.3);
+}
+[data-theme='dark'] .glossary-filter:focus {
+  outline: none;
+  border-color: rgba(123, 210, 26, 0.6);
+  box-shadow: 0 0 0 3px rgba(123, 210, 26, 0.2);
+}
+
+.glossary-stats {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.glossary-table-container {
+  overflow-x: auto;
+  border: 1px solid rgba(123, 210, 26, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.glossary-table thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  padding: 0.75rem;
+}
+
+[data-theme='light'] .glossary-table thead th {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.glossary-table td {
+  vertical-align: top;
+  padding: 0.75rem;
+}
+
+.glossary-table tbody tr:hover {
+  background: rgba(123, 210, 26, 0.05);
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-indicator::after {
+  content: ' ';
+  margin-left: 6px;
+}
+
+.sort-asc .sort-indicator::after {
+  content: '▲';
+}
+.sort-desc .sort-indicator::after {
+  content: '▼';
+}
+
+.term-anchor {
+  font-weight: 600;
+}
+
+.copy-link-button {
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(123, 210, 26, 0.35);
+  background: transparent;
+  cursor: pointer;
+}
+
+.copy-link-button:hover {
+  background: rgba(123, 210, 26, 0.1);
+}
+
+.glossary-empty {
+  padding: 1rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .glossary-table thead th:nth-child(4),
+  .glossary-table tbody td:nth-child(4) {
+    display: none; /* hide Related on small screens */
+  }
+}

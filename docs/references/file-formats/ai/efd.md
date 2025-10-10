@@ -55,7 +55,7 @@ offset_144: value_36 = 49.9851608276367
 offset_148: value_37 = 79.9762573242188
 ```
 
-## Programs editing this file
+## Programs
 
 <UniversalCard
   title="Evaluation Function Constructor"

@@ -1,3 +1,4 @@
+/* HeroSection.module.css */
 .heroSection {
   position: relative;
   width: 100%;
@@ -23,13 +24,29 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 177.77777778vh; /* 16:9 aspect ratio */
-  height: 56.25vw; /* 16:9 aspect ratio */
+  width: 177.77777778vh;
+  height: 56.25vw;
   min-width: 100%;
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.videoElementFaded {
+  opacity: 1;
+}
+
+/* Мобильный фон */
+.mobileBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c0e10 0%, #080a0c 35%, #0a0d0f 100%);
 }
 
 .videoOverlay {
@@ -82,6 +99,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  padding: 1rem 0;
 }
 
 .heroLayout {
@@ -212,7 +230,7 @@
   line-height: 1.3;
 }
 
-/* Адаптивность */
+/* Tablet адаптация */
 @media screen and (max-width: 1200px) {
   .heroLayout {
     gap: 3rem;
@@ -235,6 +253,7 @@
   }
 }
 
+/* Mobile адаптация */
 @media screen and (max-width: 996px) {
   .heroLayout {
     grid-template-columns: 1fr;
@@ -248,6 +267,7 @@
 
   .heroSubtitle {
     max-width: none;
+    font-size: 1.1rem;
   }
 
   .cardsGrid {
@@ -255,17 +275,94 @@
     gap: 1rem;
     max-width: 500px;
   }
+
+  .externalLinks {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .heroSection {
     height: auto;
-    min-height: 500px;
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+
+  .heroContent {
+    align-items: flex-start;
+    padding: 2rem 0;
+  }
+
+  .heroLayout {
+    gap: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 400px;
+  }
+
+  .navigationCard {
+    padding: 1.5rem 1rem;
+    min-height: 100px;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .cardIcon {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .cardContent {
+    flex: 1;
+    gap: 0.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .externalLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .externalLinks .button {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .heroSection {
+    min-height: 100vh;
+    padding: 1.5rem 0;
   }
 
   .heroLayout {
     gap: 2rem;
-    padding: 0 1rem;
   }
 
   .heroTitle {
@@ -273,23 +370,17 @@
   }
 
   .heroSubtitle {
-    font-size: 1.1rem;
-  }
-
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    max-width: 300px;
+    font-size: 1rem;
   }
 
   .navigationCard {
-    padding: 1.25rem 0.75rem;
-    min-height: 100px;
+    padding: 1.25rem 1rem;
+    min-height: 90px;
+    gap: 0.75rem;
   }
 
   .cardIcon {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
   }
 
   .cardTitle {
@@ -297,51 +388,33 @@
   }
 
   .cardDescription {
-    font-size: 0.75rem;
-  }
-
-  .externalLinks {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .videoChangeButton {
-    top: 1rem;
-    right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .videoChangeIcon {
-    font-size: 1rem;
-  }
-
-  .videoIndicator {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .videoCounter {
     font-size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .heroTitle {
-    font-size: 1.75rem;
+/* Landscape mode for mobile */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .heroSection {
+    min-height: auto;
+    height: auto;
+    padding: 3rem 0;
   }
 
-  .heroSubtitle {
-    font-size: 1rem;
+  .heroContent {
+    padding: 1rem 0;
+  }
+
+  .heroLayout {
+    gap: 1.5rem;
   }
 
   .navigationCard {
-    padding: 1.25rem 0.75rem;
+    padding: 1rem 0.75rem;
+    min-height: 80px;
   }
 
   .cardIcon {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -393,4 +466,124 @@
 
 .navigationCard {
   animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Упрощенные анимации для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .navigationCard {
+    animation: fadeInUp 0.4s ease-out both;
+  }
+
+  /* Уменьшаем задержки для мобильных */
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8 {
+    animation-delay: 0.1s;
+  }
+}
+
+/* Улучшения для touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .navigationCard:hover {
+    transform: none;
+    border-color: rgba(123, 210, 26, 0.2);
+    box-shadow: none;
+  }
+
+  .navigationCard:active {
+    transform: scale(0.98);
+    background: rgba(123, 210, 26, 0.1);
+    border-color: rgba(123, 210, 26, 0.4);
+  }
+}
+
+/* Правая секция - Карточки в тёмной теме */
+[data-theme='dark'] .navigationCard {
+  background: rgba(255, 255, 255, 0.08); /* Чуть светлее фон */
+  border-color: rgba(123, 210, 26, 0.3); /* Более яркая граница */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .navigationCard:hover {
+  border-color: rgba(123, 210, 26, 0.5);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(123, 210, 26, 0.3) inset;
+}
+
+[data-theme='dark'] .navigationCard:hover::before {
+  opacity: 1;
+}
+
+[data-theme='dark'] .cardTitle {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .cardDescription {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Кнопки в тёмной теме */
+[data-theme='dark'] .externalLinks .button--outline.button--secondary {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .externalLinks .button--outline.button--secondary:hover {
+  border-color: rgba(123, 210, 26, 0.6);
+  background-color: rgba(123, 210, 26, 0.1);
+}
+
+/* Видео-оверлей в тёмной теме */
+[data-theme='dark'] .videoOverlay {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 14, 16, 0.92) 0%,
+    rgba(8, 10, 12, 0.85) 35%,
+    rgba(10, 13, 15, 0.9) 100%
+  );
+}
+
+/* HeroSection.module.css - Дополнения для иконок */
+
+/* Стили для Iconify иконок */
+.iconifyIcon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.navigationCard:hover .iconifyIcon {
+  filter: drop-shadow(0 4px 8px rgba(123, 210, 26, 0.4));
+}
+
+/* Плейсхолдер для загрузки иконок */
+.iconPlaceholder {
+  background: rgba(123, 210, 26, 0.2);
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Адаптивность для иконок в кнопках */
+@media screen and (max-width: 768px) {
+  .externalLinks .button .iconifyIcon {
+    width: 18px;
+    height: 18px;
+  }
 }

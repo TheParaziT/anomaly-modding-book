@@ -151,7 +151,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Lightweight analytics hook (noop until env is set)
     metadata: [
       {
         name: 'keywords',
@@ -321,7 +320,7 @@ const config: Config = {
           items: [
             { label: 'Discord', href: 'https://discord.gg/8Pu2ekQYg3' },
             { label: 'GitHub', href: 'https://github.com/TheParaziT/anomaly-modding-book' },
-            { label: 'Contribute', to: '/docs/for-contributors' },
+            { label: 'For Contributors', to: '/docs/for-contributors' },
           ],
         },
         {

@@ -1,3 +1,6 @@
+.menu__link[href^='/docs/for-contributors'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:handshake-outline.svg');
+}
 .menu__link[href^='/docs/for-contributors/book-structure'] {
   --sidebar-icon: url('https://api.iconify.design/hugeicons:structure-folder.svg');
 }
@@ -6,9 +9,6 @@
 }
 .menu__link[href^='/docs/for-contributors/creating-tag'] {
   --sidebar-icon: url('https://api.iconify.design/fluent:tag-add-24-filled.svg');
-}
-.menu__link[href^='/docs/for-contributors'] {
-  --sidebar-icon: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
 }
 .menu__link[href^='/docs/for-contributors/creating-author'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:user-add.svg');

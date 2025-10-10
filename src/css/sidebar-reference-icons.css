@@ -1,6 +1,9 @@
 .menu__link[href^='/docs/references'] {
   --sidebar-icon: url('https://api.iconify.design/mingcute:list-search-line.svg');
 }
+.menu__link[href^='/docs/animations'] {
+  --sidebar-icon: url('https://api.iconify.design/mdi:animation-play.svg');
+}
 .menu__link[href^='/docs/animations/skeletons-list'] {
   --sidebar-icon: url('https://api.iconify.design/game-icons:skeleton.svg');
 }
@@ -74,7 +77,7 @@
   --sidebar-icon: url('https://api.iconify.design/mdi:cube-outline.svg');
 }
 .menu__link[href^='/docs/references/shaders'] {
-  --sidebar-icon: url('https://api.iconify.design/arcticons:shadereditor.svg');
+  --sidebar-icon: url('https://api.iconify.design/file-icons:vertexshader.svg');
 }
 .menu__link[href^='/docs/references/scripting'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:script-text-outline.svg');

@@ -10,6 +10,7 @@
 .menu__link[href^='/docs/tutorials/animations/creating-motion-marks-in-blender'] {
   --sidebar-icon: url('https://api.iconify.design/subway:mark-1.svg');
 }
+
 .menu__link[href^='/docs/tutorials/audio-video'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:movie-open-play.svg');
 }
@@ -19,15 +20,19 @@
 .menu__link[href^='/docs/tutorials/audio-video/setup-ogg'] {
   --sidebar-icon: url('https://api.iconify.design/hugeicons:setup-01.svg');
 }
+
 .menu__link[href^='/docs/tutorials/configs'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:cog.svg');
 }
+
 .menu__link[href^='/docs/tutorials/mapping'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:map.svg');
 }
+
 .menu__link[href^='/docs/tutorials/materials'] {
   --sidebar-icon: url('https://api.iconify.design/icon-park-outline:material.svg');
 }
+
 .menu__link[href^='/docs/tutorials/models'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:cube-scan.svg');
 }
@@ -49,6 +54,7 @@
 .menu__link[href^='/docs/tutorials/models/preparing-building-in-blender'] {
   --sidebar-icon: url('https://api.iconify.design/teenyicons:building-outline.svg');
 }
+
 .menu__link[href^='/docs/tutorials/quests'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:target-account.svg');
 }
@@ -58,8 +64,12 @@
 .menu__link[href^='/docs/tutorials/quests/npc-creation'] {
   --sidebar-icon: url('https://api.iconify.design/game-icons:character.svg');
 }
+
 .menu__link[href^='/docs/tutorials/scripting'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:code-tags.svg');
+}
+.menu__link[href^='/docs/tutorials/scripting/imgui'] {
+  --sidebar-icon: url('https://api.iconify.design/carbon:gui-management.svg');
 }
 .menu__link[href^='/docs/tutorials/scripting/script-attachments'] {
   --sidebar-icon: url('https://api.iconify.design/tdesign:attach.svg');
@@ -67,6 +77,7 @@
 .menu__link[href^='/docs/tutorials/scripting/time-events'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:event-time.svg');
 }
+
 .menu__link[href^='/docs/tutorials/sdk'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:application-brackets.svg');
 }

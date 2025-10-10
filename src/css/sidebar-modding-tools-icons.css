@@ -1,5 +1,5 @@
 .menu__link[href^='/docs/modding-tools'] {
-  --sidebar-icon: url('https://api.iconify.design/mynaui:tool.svg');
+  --sidebar-icon: url('https://api.iconify.design/mdi:tools.svg');
 }
 .menu__link[href^='/docs/modding-tools/achive-compilers-decompilers'] {
   --sidebar-icon: url('https://api.iconify.design/fluent:archive-multiple-16-filled.svg');
@@ -8,7 +8,7 @@
   --sidebar-icon: url('https://api.iconify.design/mdi:robot-outline.svg');
 }
 .menu__link[href^='/docs/modding-tools/animations'] {
-  --sidebar-icon: url('https://api.iconify.design/mdi:animation-outline.svg');
+  --sidebar-icon: url('https://api.iconify.design/mdi:animation-play.svg');
 }
 .menu__link[href^='/docs/modding-tools/audio-video'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:music-box-multiple.svg');
@@ -42,6 +42,9 @@
 }
 .menu__link[href^='/docs/modding-tools/textures'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:image-multiple-outline.svg');
+}
+.menu__link[href^='/docs/modding-tools/textures/fonts-generator'] {
+  --sidebar-icon: url('https://api.iconify.design/qlementine-icons:font-16.svg');
 }
 .menu__link[href^='/docs/modding-tools/weapons'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:pistol.svg');

@@ -4,7 +4,7 @@
     "sidebars.js": "typescript"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
       "comments": "off",

@@ -1,4 +1,5 @@
-import React, { JSX, useState } from 'react';
+import type { JSX} from 'react';
+import React, { useState } from 'react';
 // @ts-ignore
 import authorsGlobal from 'js-yaml-loader!../../blog/authors.yml';
 import {
@@ -117,7 +118,6 @@ export default function Authors({
 
   return (
     <div style={{ marginTop: 20, marginBottom: 20 }}>
-      <b>Authors:</b>
       <div className="row">
         {filteredAuthors.map((author, index) => (
           <div

@@ -1,0 +1,18 @@
+{
+  "General": {
+    "Priority": "1",
+    "Strict sorting": "False"
+  },
+  "Base Texture": {
+    "Name": "act\\act_glass_universal",
+    "Transform": "$null"
+  },
+  "Environment map": {
+    "Name": "sky\\sky_5_cube",
+    "Transform": "Custom...",
+    "Custom Transform": {
+      "Mode": "Cube Reflection"
+    },
+    "Alpha-Blend": "False"
+  }
+}

@@ -19,10 +19,16 @@ ___
           showTitle={false}
         /></td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitHub](https://github.com/gunslingermod/upgrades_editor)</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>[DeepWiki](https://deepwiki.com/gunslingermod/upgrades_editor)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 

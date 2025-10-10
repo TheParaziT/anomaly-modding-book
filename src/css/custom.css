@@ -7,6 +7,11 @@
 @import url(sidebar-getting-started-icons.css);
 @import url(sidebar-for-contributors-icons.css);
 
+@import url(header-info.css);
+@import url(header-need-to-know.css);
+
+@import url(page-glossary.css);
+
 :root {
   --ifm-color-primary: #7bd21a;
   --ifm-color-primary-dark: #6ab215;
@@ -111,28 +116,7 @@ html body {
   background: linear-gradient(180deg, rgba(123, 210, 26, 0.75), rgba(123, 210, 26, 0.5));
 }
 
-h2#need-to-know {
-  color: var(--ifm-color-primary);
-}
 
-h2#need-to-know + ul {
-  background: rgba(123, 210, 26, 0.05);
-  border: 1px solid var(--ifm-color-primary-light);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: var(--ifm-global-shadow-lw);
-}
-
-h2#need-to-know + ul li a {
-  color: var(--ifm-color-primary-dark);
-  text-decoration: none;
-  transition: color var(--ifm-transition-fast);
-}
-
-h2#need-to-know + ul li a:hover {
-  color: var(--ifm-color-primary-lightest);
-  text-decoration: underline;
-}
 
 /* Cards and surfaces: subtle border + glow on hover */
 .card,
@@ -357,13 +341,13 @@ table tbody tr + tr td {
     --icon-url: url('https://api.iconify.design/mdi:book.svg');
   }
   &.navbar-tutorial-item {
-    --icon-url: url('https://api.iconify.design/mdi:cast-tutorial.svg');
+    --icon-url: url('https://api.iconify.design/mdi:teach.svg');
   }
   &.navbar-reference-item {
     --icon-url: url('https://api.iconify.design/mingcute:list-search-line.svg');
   }
   &.navbar-moddingtool-item {
-    --icon-url: url('https://api.iconify.design/mynaui:tool.svg');
+    --icon-url: url('https://api.iconify.design/mdi:tools.svg');
   }
   &.navbar-resource-item {
     --icon-url: url('https://api.iconify.design/carbon:software-resource.svg');
@@ -375,7 +359,7 @@ table tbody tr + tr td {
     --icon-url: url('https://api.iconify.design/mdi-light:script.svg');
   }
   &.navbar-for-contributors-item {
-    --icon-url: url('https://api.iconify.design/ooui:user-contributions-rtl.svg');
+    --icon-url: url('https://api.iconify.design/mdi:handshake-outline.svg');
   }
 
   @media (max-width: 996px) {
@@ -409,14 +393,6 @@ table tbody tr + tr td {
   text-transform: none;
 }
 
-/* Hero background enhancements (shared) */
-.hero {
-  background-image:
-    radial-gradient(800px 400px at 20% 0%, rgba(123, 210, 26, 0.12), transparent 70%),
-    radial-gradient(1000px 500px at 80% 20%, rgba(123, 210, 26, 0.08), transparent 70%),
-    var(--amb-scanline);
-}
-
 /* Sidebar icons for each page */
 .menu__link {
   position: relative;
@@ -437,133 +413,6 @@ table tbody tr + tr td {
   -webkit-mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg'))
     no-repeat center / contain;
   flex-shrink: 0;
-}
-
-/* Glossary page styles */
-.glossary-container {
-  margin-top: 1rem;
-}
-
-.glossary-intro {
-  color: var(--ifm-font-color-secondary);
-}
-
-.glossary-controls {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-.glossary-search,
-.glossary-filter {
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(123, 210, 26, 0.2);
-  color: var(--ifm-font-color-base);
-}
-
-[data-theme='light'] .glossary-search,
-[data-theme='light'] .glossary-filter {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-/* Dark theme refinements for glossary filter */
-[data-theme='dark'] .glossary-filter {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(123, 210, 26, 0.3);
-}
-[data-theme='dark'] .glossary-filter:focus {
-  outline: none;
-  border-color: rgba(123, 210, 26, 0.6);
-  box-shadow: 0 0 0 3px rgba(123, 210, 26, 0.2);
-}
-
-.glossary-stats {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 0.5rem;
-}
-
-.glossary-table-container {
-  overflow-x: auto;
-  border: 1px solid rgba(123, 210, 26, 0.12);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-.glossary-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.glossary-table thead th {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 1;
-  padding: 0.75rem;
-}
-
-[data-theme='light'] .glossary-table thead th {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.glossary-table td {
-  vertical-align: top;
-  padding: 0.75rem;
-}
-
-.glossary-table tbody tr:hover {
-  background: rgba(123, 210, 26, 0.05);
-}
-
-.sortable {
-  cursor: pointer;
-  user-select: none;
-}
-
-.sort-indicator::after {
-  content: ' ';
-  margin-left: 6px;
-}
-
-.sort-asc .sort-indicator::after {
-  content: '▲';
-}
-.sort-desc .sort-indicator::after {
-  content: '▼';
-}
-
-.term-anchor {
-  font-weight: 600;
-}
-
-.copy-link-button {
-  padding: 0.35rem 0.55rem;
-  border-radius: 6px;
-  border: 1px solid rgba(123, 210, 26, 0.35);
-  background: transparent;
-  cursor: pointer;
-}
-
-.copy-link-button:hover {
-  background: rgba(123, 210, 26, 0.1);
-}
-
-.glossary-empty {
-  padding: 1rem;
-  text-align: center;
-  opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-  .glossary-table thead th:nth-child(4),
-  .glossary-table tbody td:nth-child(4) {
-    display: none; /* hide Related on small screens */
-  }
 }
 
 /* Prevent SVG icons from appearing in code blocks */

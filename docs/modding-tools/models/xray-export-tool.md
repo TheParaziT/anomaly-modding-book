@@ -34,10 +34,12 @@ ___
         topic](https://ap-pro.ru/forums/topic/3577-object-editor-v44/)
       </td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitHub](https://github.com/VaIeroK/XrayExportTool)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -247,11 +249,3 @@ Shows Used Data file
 | Checkboxes | Description |
 |---|---|
 | LOD Path | Path to LOD |
-
-___
-
-## Sources
-
-[Original Source Code by RedPandaProject (BearIvan and other)](https://github.com/RedPandaProjects/XRayEngine)
-
-[Modified Source Code by ValeroK](https://github.com/VaIeroK/XrayExportTool)

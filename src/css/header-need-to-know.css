@@ -1,0 +1,22 @@
+h2#need-to-know {
+  color: var(--ifm-color-primary);
+}
+
+h2#need-to-know + ul {
+  background: rgba(123, 210, 26, 0.05);
+  border: 1px solid var(--ifm-color-primary-light);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+h2#need-to-know + ul li a {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  transition: color var(--ifm-transition-fast);
+}
+
+h2#need-to-know + ul li a:hover {
+  color: var(--ifm-color-primary-lightest);
+  text-decoration: underline;
+}

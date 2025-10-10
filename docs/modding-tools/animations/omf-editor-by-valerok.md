@@ -32,10 +32,12 @@ ___
         [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3550-omf-editor-v12)
       </td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitHub](https://github.com/VaIeroK/Omf-Editor)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -134,11 +136,3 @@ Modified tool for working with [*.omf](../../references/file-formats/animations/
 |---|---|
 | Real Time Lenght | Multiplies all visual timers by animation speed |
 | Ask for Overwrite | When merging animations will ask to overwrite each animation |
-
-___
-
-## Sources
-
-[Source code of Original Omf Editor by Mortany](https://github.com/mortany/omf_editor)
-
-[Source code of Modified Omf Editor by ValeroK](https://github.com/VaIeroK/Omf-Editor)

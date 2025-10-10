@@ -34,10 +34,12 @@ ___
         [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3740-bump-generator)
       </td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitLab](https://gitlab.com/i-love-kfc/bump-generator)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -65,9 +67,3 @@ Checkboxes
 | Checkboxes | Description |
 |---|---|
 | SOC Format thm | Generates SoC version *.thm file |
-
-___
-
-## Sources
-
-[Source Code](https://gitlab.com/i-love-kfc/bump-generator)

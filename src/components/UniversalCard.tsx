@@ -6,7 +6,7 @@ export default function UniversalCard({
   title,
   content,
   image,
-  link, // Этот пропс теперь опционален
+  link,
   linkText = 'View Details',
   internal = false,
   className = '',
@@ -24,7 +24,6 @@ export default function UniversalCard({
           {typeof content === 'string' ? <p>{content}</p> : content}
         </div>
       </div>
-      {/* Кнопка отображается только если указан link */}
       {link && (
         <div className="card__footer">
           {internal ? (

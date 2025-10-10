@@ -37,5 +37,3 @@ ___
 ## Technical part
 
 Script can be found in the file "`ui_debug_launcher.script`"
-
-```

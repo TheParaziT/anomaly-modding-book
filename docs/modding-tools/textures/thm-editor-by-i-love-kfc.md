@@ -26,10 +26,12 @@ ___
       <td>Described Version</td>
       <td>[1.5](https://gitlab.com/i-love-kfc/thm-editor/-/releases/1.5)</td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitLab](https://gitlab.com/i-love-kfc/thm-editor)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -169,9 +171,3 @@ Different shading algorithms
 | Detail name | Path to [Detail Map](../../references/file-formats/textures/detail-map.md) |
 | Bump name | Path to [Bump Map](../../references/file-formats/textures/bump.md) |
 | Normal Map name | Path to Normal Map |
-
-___
-
-## Sources
-
-[Source Code of Original THM Editor by i-love-kfc](https://gitlab.com/i-love-kfc/thm-editor/)

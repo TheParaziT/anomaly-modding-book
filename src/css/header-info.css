@@ -1,0 +1,95 @@
+/* Стиль для секции Info */
+h2#info {
+  color: var(--ifm-color-primary-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2#info + table {
+  background: rgba(123, 210, 26, 0.03);
+  border: 1px solid var(--ifm-color-primary-light);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0 2rem 0;
+  box-shadow: var(--ifm-global-shadow-lw);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+h2#info + table tbody {
+  display: table;
+  width: 100%;
+}
+
+h2#info + table tr {
+  border: none
+}
+
+h2#info + table tr:hover {
+  background-color: rgba(123, 210, 26, 0.05);
+}
+
+h2#info + table tr:last-child {
+  border-bottom: none;
+}
+
+h2#info + table td {
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+h2#info + table td:first-child {
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--ifm-color-primary-dark);
+  width: 30%;
+  min-width: 150px;
+}
+
+h2#info + table td:last-child {
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Стили для ссылок в таблице */
+h2#info + table a {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--ifm-transition-fast);
+}
+
+h2#info + table a:hover {
+  color: var(--ifm-color-primary-lightest);
+  text-decoration: underline;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  h2#info + table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  h2#info + table td:first-child {
+    width: 35%;
+    min-width: 120px;
+  }
+
+  h2#info + table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Темная тема */
+[data-theme='dark'] h2#info + table {
+  background: rgba(123, 210, 26, 0.05);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] h2#info + table tr:hover {
+  background-color: rgba(123, 210, 26, 0.08);
+}
+
+[data-theme='dark'] h2#info + table td:last-child {
+  color: var(--ifm-color-emphasis-300);
+}

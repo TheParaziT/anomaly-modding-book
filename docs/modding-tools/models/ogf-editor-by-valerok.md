@@ -32,10 +32,16 @@ ___
         [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3549-ogfdmdetailsobj-editor-v41/)
       </td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitHub](https://github.com/VaIeroK/OGF-tool)</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>[DeepWiki](https://deepwiki.com/VaIeroK/XrayExportTool)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -200,11 +206,3 @@ Specifies the path to the LOD model
 - #### View port
 
 Viewport
-
-___
-
-## Sources
-
-[Source Code of Original OGF Editor by Mortany](https://github.com/mortany/OGF-tool)
-
-[Source Code of Modified OGF Editor by ValeroK](https://github.com/VaIeroK/OGF-tool)

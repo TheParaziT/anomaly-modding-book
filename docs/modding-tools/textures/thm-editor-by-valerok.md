@@ -32,10 +32,16 @@ ___
         [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3551-thm-editor-v10)
       </td>
     </tr>
+    <tr>
+      <td>Source Code</td>
+      <td>[GitHub](https://github.com/VaIeroK/THM-Editor)</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>[DeepWiki](https://deepwiki.com/VaIeroK/THM-Editor)</td>
+    </tr>
   </tbody>
 </table>
-
-___
 
 ## About
 
@@ -180,11 +186,3 @@ Different shading algorithms
 | Detail name | Path to [Detail Map](../../references/file-formats/textures/detail-map.md) |
 | Bump name | Path to [Bump Map](../../references/file-formats/textures/bump.md) |
 | Normal Map name | Path to Normal Map |
-
-___
-
-## Sources
-
-[Source Code of Original THM Editor by i-love-kfc](https://gitlab.com/i-love-kfc/thm-editor/)
-
-[Source Code of Modified THM Editor by ValeroK](https://github.com/VaIeroK/THM-Editor)
