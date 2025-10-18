@@ -23,7 +23,7 @@ Dear ImGui is a bloat-free graphical user interface library for C++.
 It outputs optimized vertex buffers that you can render anytime in your 3D-pipeline-enabled application.  
 It is fast, portable, renderer agnostic, and self-contained (no external dependencies).  
 
-This guide explains how to use Anomaly's ImGui implementation (currently available only with Modded Exes), which can be used in Lua scripts.
+This guide explains how to use Anomaly's ImGui implementation (currently available only with [Modded Exes](https://github.com/themrdemonized/xray-monolith)), which can be used in Lua scripts.
 
 By default pressing F11 will show the ImGui overlay (a menu bar at the top of the screen).  
 The keybind can be changed in the settings.

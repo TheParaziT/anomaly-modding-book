@@ -146,6 +146,12 @@ mortany:
   socials:
     github: mortany
 
+aziatka_victor:
+  name: AziatkaVictor
+  image_url: https://github.com/AziatkaVictor.png
+  socials:
+    github: AziatkaVictor
+
 vaierok:
   name: VaIeroK
   image_url: https://github.com/VaIeroK.png

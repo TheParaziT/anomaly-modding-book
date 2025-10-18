@@ -12,7 +12,7 @@ references:
 ___
 
 <Authors
-  authors={["saloeater"]}
+  authors={["saloeater", "theparazit"]}
   size="medium"
   showTitle={true}
   showDescription={true}

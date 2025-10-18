@@ -10,6 +10,13 @@ preview: /docs/references/configs/assets/images/structure-of-files-preview.png
 
 ___
 
+<Authors
+  authors={["aziatka_victor"]}
+  size="medium"
+  showTitle={true}
+  showDescription={true}
+/>
+
 ## About
 
 The files may differ from each other, depending on their purpose, but they all have properties in common.

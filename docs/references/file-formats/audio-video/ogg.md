@@ -22,11 +22,25 @@ Sound format used by the game engine
 ## Programs
 
 <CardGrid
-  columns={4}
+  columns={2}
   items={[
     {
       title: "Any sound editor that supports *.ogg",
       content: "But it won't write comments into the chunks!",
+    },
+    {
+      title: "FFmpeg",
+      content: "A complete, cross-platform solution to record, convert and stream audio and video. But it won't write comments into the chunks!",
+      link: "https://www.ffmpeg.org/",
+      internal: false,
+      linkText: "Official Site",
+    },
+    {
+      title: "Blender",
+      content: "Blender is a free and open-source 3D computer graphics software tool. But it won't write comments into the chunks!",
+      link: "https://www.blender.org/",
+      internal: false,
+      linkText: "Official Site",
     },
     {
       title: "Sound Attribute Viewer And Tweaker",

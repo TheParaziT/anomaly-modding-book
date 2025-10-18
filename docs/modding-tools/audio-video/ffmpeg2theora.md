@@ -14,6 +14,7 @@ ___
 ## Info
 
 <table>
+<tbody>
     <tr>
         <td>Program Developer</td>
         <td>V2V</td>
@@ -22,9 +23,8 @@ ___
         <td>Described Version</td>
         <td>0.30</td>
     </tr>
+    </tbody>
 </table>
-
-___
 
 ## About
 

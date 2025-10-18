@@ -133,14 +133,14 @@ const glossaryData: GlossaryData = {
     },
     {
       id: 'gvid',
-      term: 'gvid (game_vertex_id)',
+      term: 'gvid (Game Vertex ID)',
       definition: 'Graph Point index.',
       category: 'Technical Terms',
       related: [],
     },
     {
       id: 'lvid',
-      term: 'lvid (level_vertex_id)',
+      term: 'lvid (Level Vertex ID)',
       definition: 'AI-Map node.',
       category: 'Technical Terms',
       related: [],

@@ -49,7 +49,7 @@ Objective: To create a glossary of specific terms unique to the S.T.A.L.K.E.R. u
 
 5. Admonitions
 
-    - Docusaurus provides convenient and stylish blocks for highlighting information.
+    - Docusaurus provides convenient and stylish blocks for highlighting information ([Read Docs](https://docusaurus.io/docs/markdown-features/admonitions)).
 
 6. Blank line
 
@@ -57,9 +57,11 @@ Objective: To create a glossary of specific terms unique to the S.T.A.L.K.E.R. u
 
 ## Tools
 
-To maintain a consistent style, use the Markdownlint extension.
+To maintain a consistent style, use the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extension.
 
 - Disabled rules:
   - MD033 (no-inline-html)
   - MD013 (line-length)
   - MD010 (no-hard-tabs)
+
+For convenient metadata editing, you can use [Front Matter CMS](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter).

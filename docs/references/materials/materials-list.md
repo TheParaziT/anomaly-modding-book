@@ -1,5 +1,6 @@
 ---
 title: Game Materials List
+draft: true
 ---
 
 # Game Materials List

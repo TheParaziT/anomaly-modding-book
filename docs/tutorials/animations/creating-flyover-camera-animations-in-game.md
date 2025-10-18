@@ -8,6 +8,13 @@ references: xrdemo
 
 ___
 
+<Authors
+  authors={["theparazit"]}
+  size="medium"
+  showTitle={true}
+  showDescription={true}
+/>
+
 ## Need to know {#need-to-know}
 
 - What is [*.xrdemo](../../references/file-formats/general/xrdemo.md)

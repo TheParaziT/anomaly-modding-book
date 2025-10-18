@@ -10,6 +10,9 @@
 .menu__link[href^='/docs/tutorials/animations/creating-motion-marks-in-blender'] {
   --sidebar-icon: url('https://api.iconify.design/subway:mark-1.svg');
 }
+.menu__link[href^='/docs/tutorials/animations/how-to-rig-in-blender'] {
+  --sidebar-icon: url('https://api.iconify.design/solar:bone-linear.svg');
+}
 
 .menu__link[href^='/docs/tutorials/audio-video'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:movie-open-play.svg');
@@ -17,7 +20,7 @@
 .menu__link[href^='/docs/tutorials/audio-video/convert-to-ogm'] {
   --sidebar-icon: url('https://api.iconify.design/streamline-plump:convert-pdf-1-solid.svg');
 }
-.menu__link[href^='/docs/tutorials/audio-video/setup-ogg'] {
+.menu__link[href^='/docs/tutorials/audio-video/convert-setup-ogg'] {
   --sidebar-icon: url('https://api.iconify.design/hugeicons:setup-01.svg');
 }
 
@@ -87,6 +90,9 @@
 
 .menu__link[href^='/docs/tutorials/texturing'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:image-edit.svg');
+}
+.menu__link[href^='/docs/tutorials/texturing/creating-cubemap-in-blender'] {
+  --sidebar-icon: url('https://api.iconify.design/f7:cube-fill.svg');
 }
 .menu__link[href^='/docs/tutorials/texturing/working-correctly-with-icon-atlases'] {
   --sidebar-icon: url('https://api.iconify.design/material-symbols:gallery-thumbnail-outline-rounded.svg');

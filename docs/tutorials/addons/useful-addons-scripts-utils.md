@@ -199,5 +199,23 @@ ___
         </div>
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>Imgui Debug Tools</strong>
+      </td>
+      <td>Anomaly xrs_debug_tools.script adaptation for modern ImGui.</td>
+      <td>
+        <div className="source-links">
+          <a href="https://github.com/SaloEater/Imgui-Debug-Tools" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <div className="source-links">
+          <a href="https://www.moddb.com/mods/stalker-anomaly/addons/imgui-debug-tools" target="_blank">
+            ModDB
+          </a>
+        </div>
+      </td>
+    </tr>
   </tbody>
 </table>

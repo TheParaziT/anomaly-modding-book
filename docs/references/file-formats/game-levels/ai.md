@@ -10,4 +10,4 @@ ___
 
 AI location grid.
 
-Store [lvid](../../../../glossary#lvid)'s
+Store [Level Vertex ID](../../../../glossary#lvid)'s

@@ -1,6 +1,6 @@
 ---
 title: Creating Tag
-description: Instructions for creating and managing tags in the documentation system
+description: Instructions for creating and managing tags in the documentation
 ---
 
 # Creating Tag

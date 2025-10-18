@@ -38,6 +38,10 @@ ___
       <td>Source Code</td>
       <td>[GitHub](https://github.com/VaIeroK/XrayExportTool)</td>
     </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>[DeepWiki](https://deepwiki.com/VaIeroK/XrayExportTool)</td>
+    </tr>
   </tbody>
 </table>
 

@@ -346,7 +346,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'lua',
-      additionalLanguages: ['lua', 'ini', 'bash', 'json', 'cpp'],
+      additionalLanguages: ['lua', 'ini', 'bash', 'json', 'cpp', 'bnf'],
       magicComments: [
         {
           className: 'theme-code-block-highlighted-line',

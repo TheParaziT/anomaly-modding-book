@@ -11,6 +11,13 @@ keywords:
 
 ___
 
+<Authors
+  authors={["theparazit"]}
+  size="medium"
+  showTitle={true}
+  showDescription={true}
+/>
+
 ## Need to know {#need-to-know}
 
 - How to work in Blender

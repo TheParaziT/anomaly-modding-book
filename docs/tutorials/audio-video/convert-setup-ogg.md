@@ -1,10 +1,10 @@
 ---
-title: Setup *.ogg
+title: Convert And Setup *.ogg
 tags:
     - Audio
 ---
 
-# Setup *.ogg
+# Convert And Setup *.ogg
 
 ___
 
@@ -12,7 +12,23 @@ ___
 
 [*.ogg](../../references/file-formats/audio-video/ogg.md) is a special sound format. It needs setup for proper playback in the game world and AI response.
 
-## Setup via SDK
+## Convert via Blender
+
+Blender has build in render in `Vorbis` codec.
+
+Open `Render` -> `Render Audio...` when in `Container` select `Ogg`. In `Codec` select `Vorbis`. Mixdown.
+
+## Convert via ffmpeg
+
+Creating using [ffmpeg](https://www.ffmpeg.org/).
+
+### Convert WAV to OGG
+
+```bash
+ffmpeg -i input.wav -c:a libvorbis -q:a 10 output.ogg
+```
+
+## Convert and setup via SDK
 
 :::note
 The sound file must be in the source *.wav format.

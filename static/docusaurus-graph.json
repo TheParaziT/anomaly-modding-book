@@ -1967,6 +1967,18 @@
     "referencedBy": []
   },
   {
+    "id": "how-to-rig-in-blender",
+    "title": "How to Rig in Blender",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
+    "id": "convert-setup-ogg",
+    "title": "Convert And Setup *.ogg",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
     "id": "convert-to-ogm",
     "title": "Convert to *.ogm",
     "linkTo": [],
@@ -1979,14 +1991,14 @@
     "referencedBy": []
   },
   {
-    "id": "setup-ogg",
-    "title": "Setup *.ogg",
+    "id": "condlists",
+    "title": "Condition Lists Tutorial",
     "linkTo": [],
     "referencedBy": []
   },
   {
-    "id": "condlists",
-    "title": "Condition Lists Tutorial",
+    "id": "creating-weather",
+    "title": "Creating Weather",
     "linkTo": [],
     "referencedBy": []
   },
@@ -2167,6 +2179,12 @@
   {
     "id": "сreating-and-placing-group-in-sdk",
     "title": "Creating and Placing Group in SDK",
+    "linkTo": [],
+    "referencedBy": []
+  },
+  {
+    "id": "creating-cubemap-in-blender",
+    "title": "Creating Cubemap in Blender",
     "linkTo": [],
     "referencedBy": []
   },
