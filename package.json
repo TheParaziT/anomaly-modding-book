@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@babylonjs/core": "^8.29.0",
-    "@babylonjs/loaders": "^8.29.0",
+    "@babylonjs/loaders": "^8.34.0",
     "@dev0ph3r/netlify-plugin-discord": "^1.0.2",
     "@docusaurus/core": "^3.9.1",
     "@docusaurus/plugin-debug": "^3.9.1",
