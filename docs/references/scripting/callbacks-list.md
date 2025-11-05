@@ -11,7 +11,9 @@ ___
 
 The following is a non-exhaustive list of callbacks available in Anomaly 1.5.2.
 
+:::info
 Technically, this should cover all the callbacks available in vanilla, but remember that addons (like the modded exes) can add additional callbacks too.
+:::
 
 ## Player
 
@@ -136,12 +138,12 @@ Technically, this should cover all the callbacks available in vanilla, but remem
 :::warning
 the following 2 callbacks will ALWAYS fire on level change/loaded save because the old data isn't saved for compatibility purpose
 it's up to the user to check for the case in which old level name/old game vertex is nil in their code if they want to use this
-:::
 
 ```lua
 * squad_on_after_game_vertex_change        Params: (<server_object>,<number>,<number>,<boolean>)
 * squad_on_after_level_change              Params: (<server_object>,<string>,<string>)
 ```
+:::
 
 ## Smart terrains
 

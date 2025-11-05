@@ -174,13 +174,6 @@ const config: Config = {
         property: 'og:description',
         content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding',
       },
-      {
-        property: 'og:image',
-        content: 'https://anomaly-modding-book.netlify.app/img/logo-dark.svg',
-      },
-      { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: 'Anomaly Modding Book' },
       { property: 'og:site_name', content: 'Anomaly Modding Book' },
       { property: 'og:locale', content: 'en_US' },
       // Optional analytics meta for CSP/nonce-based injectors
