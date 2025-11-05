@@ -27,8 +27,11 @@
     "preview": "npm run build && npm run serve"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.29.0",
-    "@babylonjs/loaders": "^8.29.0",
+    "@babylonjs/core": "^8.34.0",
+    "@babylonjs/gui": "^8.34.0",
+    "@babylonjs/inspector": "^8.34.0",
+    "@babylonjs/loaders": "^8.34.0",
+    "@babylonjs/materials": "^8.34.0",
     "@dev0ph3r/netlify-plugin-discord": "^1.0.2",
     "@docusaurus/core": "^3.9.1",
     "@docusaurus/plugin-debug": "^3.9.1",
@@ -47,7 +50,8 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
-    "wavesurfer.js": "^7.10.3"
+    "spectrogram": "^0.0.7",
+    "wavesurfer.js": "^7.11.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.1",
@@ -71,6 +75,7 @@
     "npm-check-updates": "^19.0.0",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.4",
+    "typedoc": "^0.28.14",
     "typescript": "~5.9.2",
     "yaml-loader": "^0.8.1"
   },

@@ -67,6 +67,7 @@ ravenascendant:
   image_url: https://github.com/ravenascendant.png
   socials:
     github: ravenascendant
+    moddb: ravenascendant
 
 ishmaeel:
   name: Ishmaeel
@@ -86,7 +87,7 @@ ghentuong:
   socials:
     github: GhenTuong
     x: GhenTuong
-    moddb: https://www.moddb.com/members/ghentuong/
+    moddb: ghentuong
 
 lucy:
   name: Lucy
@@ -106,7 +107,7 @@ hrusteckiy:
   discord_username: hrusteckiy
   socials:
     github: Hrusteckiy
-    website: https://amk-team.ru/forum/profile/57247-hrust/
+    amk: https://amk-team.ru/forum/profile/57247-hrust/
     vk: https://vk.com/hrusteckiy
 
 themrdemonized:
@@ -114,6 +115,7 @@ themrdemonized:
   image_url: https://github.com/themrdemonized.png
   socials:
     github: themrdemonized
+    moddb: themrdemonized
 
 saloeater:
   name: SaloEater
@@ -207,7 +209,7 @@ new_project_mod_team:
   name: New Project Mod Team
   image_url: https://sun9-39.userapi.com/s/v1/ig2/jhsbnNOyzTwEkEOCyzAH0OMArBe7p8W3QlvOtK-WoH9JrAWlQSIbdBkeJpXyfBd_M_AQSOczTJt0EqGs9VKLIGYv.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1000x1000&from=bu&cs=1000x0
   socials:
-    website: https://ap-pro.ru/forums/topic/1902-stalker-new-project
+    ap-pro: https://ap-pro.ru/forums/topic/1902-stalker-new-project
     vk: https://vk.com/stalker_new_project
     telegram: https://t.me/stalker_new_project
     discord: https://discord.gg/chZans7pUU
@@ -217,6 +219,7 @@ ix_ray_platform:
   name: IX-Ray Platform
   image_url: https://github.com/ixray-team.png
   socials:
+    ap-pro: https://ap-pro.ru/forums/topic/9280-ix-ray-platform
     vk: https://vk.com/ixray_platform
     discord: https://discord.gg/hWTbHxaYWz
     moddb: https://www.moddb.com/mods/ix-ray-platform

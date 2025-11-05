@@ -3,7 +3,7 @@ title: Creating SOM Occluder in Blender
 tags:
   - Blender
   - 3D Model
-description: Guide for creating SOM occluders in Blender
+description: Tutorial for creating SOM occluders in Blender
 keywords:
   - SOM
 ---

@@ -1,5 +1,6 @@
 ---
 title: "*.ogm (Ogg Media)"
+description: Video format used by the game engine
 ---
 
 # *.ogm (Ogg Media)

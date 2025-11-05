@@ -2,6 +2,8 @@
 tags:
     - Blender
 draft: true
+title: Creating Cubemap in Blender
+description: Tutorial how to creating Cubemap in Blender
 ---
 
 # Creating Cubemap in Blender

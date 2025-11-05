@@ -3,6 +3,7 @@ title: Creating and Placing Group in SDK
 tags:
   - SDK
 preview: /docs/tutorials/sdk/assets/images/group-objects.png
+description: Tutorial how to create adn place Groups in SDK
 ---
 
 # Creating and Placing Group in SDK

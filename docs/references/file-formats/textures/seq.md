@@ -1,5 +1,6 @@
 ---
 title: "*.seq (Sequence)"
+description: Text file that is used to create a simple animation texture, by recording a sequence of "frames" and a playback speed.
 ---
 
 # *.seq (Sequence)

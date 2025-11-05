@@ -1,6 +1,8 @@
 ---
 title: Callbacks
-tags: [LUA]
+tags:
+    - LUA
+description: Callbacks tutorial
 ---
 
 # Callbacks

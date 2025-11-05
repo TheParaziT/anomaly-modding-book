@@ -1,0 +1,27 @@
+/* Адаптация для темной темы */
+[data-theme='dark'] .wave-surfer-player {
+  --wave-color: rgba(123, 210, 26, 0.4);
+  --progress-color: var(--ifm-color-primary);
+  --cursor-color: var(--ifm-color-primary-light);
+}
+
+.wave-surfer-player button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Стили для спектрограммы */
+.wavesurfer-spectrogram {
+  margin: 12px 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wavesurfer-spectrogram canvas {
+  width: 100% !important;
+}
+
+/* Адаптация для темной темы */
+[data-theme='dark'] .wavesurfer-spectrogram {
+  filter: brightness(0.9) contrast(1.2);
+}

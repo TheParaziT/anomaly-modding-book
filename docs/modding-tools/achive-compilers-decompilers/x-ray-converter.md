@@ -38,8 +38,6 @@ ___
   </tbody>
 </table>
 
-___
-
 ## About
 
 Multifunctional utility for working with game and X-Ray SDK file formats.

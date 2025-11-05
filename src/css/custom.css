@@ -41,16 +41,6 @@
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --ifm-global-shadow-tl: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-
-  /* Background textures */
-  --amb-scanline: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 2px,
-    transparent 3px
-  );
-  --amb-noise: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');
 }
 
 [data-theme='dark'] {
@@ -77,23 +67,6 @@
     var(--amb-scanline);
 }
 
-/* Light hero theme */
-[data-theme='light'] .hero {
-  background-image:
-    radial-gradient(900px 450px at 20% 0%, rgba(123, 210, 26, 0.1), transparent 70%),
-    radial-gradient(1100px 550px at 80% 20%, rgba(123, 210, 26, 0.06), transparent 70%),
-    linear-gradient(135deg, #f5f7f5 0%, #eef2ee 35%, #f7faf7 100%), var(--amb-scanline);
-}
-
-/* Site background: dark concrete + scanlines + noise */
-html body {
-  background:
-    linear-gradient(180deg, rgba(12, 14, 16, 0.98), rgba(8, 10, 12, 0.98)),
-    radial-gradient(1200px 600px at 50% -10%, rgba(123, 210, 26, 0.06), transparent 60%),
-    var(--amb-scanline);
-  background-attachment: fixed, fixed, fixed;
-}
-
 /* Text selection */
 ::selection {
   background: rgba(123, 210, 26, 0.35);
@@ -115,8 +88,6 @@ html body {
 *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, rgba(123, 210, 26, 0.75), rgba(123, 210, 26, 0.5));
 }
-
-
 
 /* Cards and surfaces: subtle border + glow on hover */
 .card,
@@ -170,29 +141,6 @@ html body {
   border-color: rgba(123, 210, 26, 0.6);
 }
 
-.social-icon {
-  transition: all 0.2s ease-in-out;
-  opacity: 0.8;
-  display: inline-block;
-
-  &:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  &.social-icon-vk:hover {
-    color: var(--color-vk);
-  }
-  &.social-icon-telegram:hover {
-    color: var(--color-telegram);
-  }
-  &.social-icon-moddb:hover {
-    color: var(--color-moddb);
-  }
-  &.social-icon-discord:hover {
-    color: var(--color-discord);
-  }
-}
 
 /* Links: subtle glow and dashed focus ring for accessibility */
 a {

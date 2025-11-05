@@ -34,14 +34,14 @@ ___
 ## Beginning
 
 - Download the [Blender](https://www.blender.org/download/) and install it.
-- Download any set of hands from [discord](https://discord.com/channels/456765861953536020/883097205710389288/1071072858358431804)
+- Download any set of hands from [discord](https://discord.com/channels/456765861953536020/883097205710389288/1071072858358431804) or [Resources Pages](../../resources/rigs.md#hands-rig)
 - Download the [X-Ray Tools for Blender](https://github.com/PavelBlend/blender-xray/releases)
 - Install the X-Ray Tools for Blender by going to `Edit` > `Preferences` > `Add-ons` > top left > `Install from disk`
 - Install [OMF Editor](https://github.com/VaIeroK/Omf-Editor)
 
 ## Creating an animation
 
-- Open your hands .blend file in Blender
+- Open your hands *.blend file in Blender
 - To start you need to have opened `Dope Sheet` editor and `Action Editor` in it
 - If you need to use camera motion, follow the [Applying camera motion](#applying-camera-motion) section first
 - Make an animation, you can find any other Blender tutorials on how to animate
@@ -66,7 +66,7 @@ ___
 ### Preparing the scene
 
 - Create new Blender project
-- Import through `File` > `Import` > `X-Ray Game Object` any hands .ogf file, for example, any from `gamedata\meshes\anomaly_weapons\hands`
+- Import through `File` > `Import` > `X-Ray Game Object` any hands *.ogf file, for example, any from `gamedata\meshes\anomaly_weapons\hands`
 - Select the imported object
 - In `Properties` editor go to `Data` > `Bone Collections` > `Add Bone Collection`
 - In `3d Viewport` editor go to the `Pose Mode`
@@ -81,13 +81,13 @@ ___
 - Both SoC and CS/CoP formats worked for me and I haven't seen someone using `High Quality Motions` checkbox, so you can choose any of formats
 - Select `Export Mode`
   - Overwrite - obvious
-  - Add - adds the animation to the existing .omf file
+  - Add - adds the animation to the existing *.omf file
     - This also can be done via `3d Viewport` > `X-Ray` > `OMF Editor` > `Merge OMF`
 
 ### Managing the *.omf file
 
 - Open the OMF Editor
-- Open your .omf file
+- Open your *.omf file
 - Refer to the [OMF Editor documentation](../../modding-tools/animations/omf-editor-by-valerok.md#about) for more information on how to use it
   - Usually you want to control [SDK Flags](../../modding-tools/animations/omf-editor-by-valerok.md#animation-options) for each specific animation
 

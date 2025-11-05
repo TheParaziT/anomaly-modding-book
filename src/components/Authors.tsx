@@ -34,6 +34,20 @@ const socialIconMap = {
   youtube: FaYoutube,
 };
 
+// Добавляем поддержку локальных иконок
+const localIcons: Record<string, string> = {
+  'moddb': '/img/logo/moddb.png',
+  'ap-pro': '/img/logo/ap-pro.png', 
+  'amk': '/img/logo/amk.png',
+};
+
+// Добавляем информацию о размерах для локальных иконок
+const localIconSizes: Record<string, { width: number; height: number }> = {
+  'moddb': { width: 40, height: 40 },
+  'ap-pro': { width: 30, height: 30 },
+  'amk': { width: 40, height: 40 },
+};
+
 const sizeMap = {
   small: { icon: 16, image: 32 },
   medium: { icon: 20, image: 48 },
@@ -66,6 +80,10 @@ function normalizeSocialLink(platform: string, handleOrUrl: string): string {
       return `https://t.me/${handleOrUrl}`;
     case 'moddb':
       return `https://www.moddb.com/members/${handleOrUrl}`;
+    case 'ap-pro':
+      return `https://ap-pro.ru/${handleOrUrl}`;
+    case 'amk':
+      return `https://amk.com/${handleOrUrl}`;
     case 'discord':
       return handleOrUrl.startsWith('https://') ? handleOrUrl : `https://discord.gg/${handleOrUrl}`;
     case 'youtube':
@@ -76,6 +94,45 @@ function normalizeSocialLink(platform: string, handleOrUrl: string): string {
     default:
       return handleOrUrl;
   }
+}
+
+// Компонент для отображения иконки (React Icon или локальная)
+function SocialIcon({ 
+  platform, 
+  size 
+}: { 
+  platform: string; 
+  size: number; 
+}) {
+  const LocalIcon = socialIconMap[platform as keyof typeof socialIconMap];
+  const localIconPath = localIcons[platform];
+  const localIconSize = localIconSizes[platform];
+
+  if (localIconPath) {
+    // Для локальных иконок используем фиксированные размеры или переданный размер
+    const iconWidth = localIconSize?.width || size;
+    const iconHeight = localIconSize?.height || size;
+    
+    return (
+      <img 
+        src={localIconPath} 
+        alt={platform}
+        style={{ 
+          width: iconWidth,
+          height: iconHeight,
+          objectFit: 'contain', // Сохраняем пропорции без обрезки
+          flexShrink: 0, // Запрещаем сжатие
+          display: 'block' // Убираем лишние отступы
+        }}
+      />
+    );
+  }
+
+  if (LocalIcon) {
+    return <LocalIcon size={size} />;
+  }
+
+  return <FaLink size={size} />;
 }
 
 export default function Authors({
@@ -135,6 +192,7 @@ export default function Authors({
                   borderRadius: '50%',
                   marginRight: '1rem',
                   objectFit: 'cover',
+                  flexShrink: 0, // Запрещаем сжатие аватарки
                 }}
               />
             )}
@@ -167,15 +225,21 @@ export default function Authors({
               )}
 
               <div
-                style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}
+                style={{ 
+                  display: 'flex', 
+                  gap: '0.5rem', 
+                  flexWrap: 'wrap', 
+                  alignItems: 'center',
+                }}
               >
                 {author.socials &&
                   Object.entries(author.socials)
                     .filter(([_, value]) => value && value !== '')
                     .map(([platform, handleOrUrl]) => {
-                      const SocialIcon =
-                        socialIconMap[platform as keyof typeof socialIconMap] || FaLink;
                       const normalizedUrl = normalizeSocialLink(platform, handleOrUrl as string);
+                      const localIconSize = localIconSizes[platform];
+                      const iconWidth = localIconSize?.width || iconSize;
+                      const iconHeight = localIconSize?.height || iconSize;
 
                       return (
                         <a
@@ -188,11 +252,12 @@ export default function Authors({
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            width: iconSize + 8,
-                            height: iconSize + 8,
+                            width: iconWidth + 8,
+                            height: iconHeight + 8,
                             borderRadius: '4px',
                             color: 'inherit',
                             transition: 'background-color 0.2s ease',
+                            flexShrink: 0, // Запрещаем сжатие контейнера иконки
                           }}
                           onMouseEnter={e => {
                             e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
@@ -201,7 +266,7 @@ export default function Authors({
                             e.currentTarget.style.backgroundColor = 'transparent';
                           }}
                         >
-                          <SocialIcon size={iconSize} />
+                          <SocialIcon platform={platform} size={iconSize} />
                         </a>
                       );
                     })}
@@ -223,6 +288,7 @@ export default function Authors({
                       cursor: 'pointer',
                       position: 'relative',
                       transition: 'background-color 0.2s ease',
+                      flexShrink: 0,
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
