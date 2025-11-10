@@ -29,7 +29,7 @@
   "dependencies": {
     "@babylonjs/core": "^8.34.0",
     "@babylonjs/gui": "^8.34.0",
-    "@babylonjs/inspector": "^8.34.0",
+    "@babylonjs/inspector": "^8.36.1",
     "@babylonjs/loaders": "^8.34.0",
     "@babylonjs/materials": "^8.34.0",
     "@dev0ph3r/netlify-plugin-discord": "^1.0.2",
