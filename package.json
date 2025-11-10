@@ -27,7 +27,7 @@
     "preview": "npm run build && npm run serve"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.34.0",
+    "@babylonjs/core": "^8.36.1",
     "@babylonjs/gui": "^8.34.0",
     "@babylonjs/inspector": "^8.34.0",
     "@babylonjs/loaders": "^8.34.0",
