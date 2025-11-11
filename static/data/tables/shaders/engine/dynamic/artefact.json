@@ -1,0 +1,16 @@
+{
+  "General": {
+    "Priority": 1,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null
+  },
+  "Environment map": {
+    "Name": "sky\\sky_18_cube",
+    "Transform": "Custom...",
+    "Custom Transform": "Mode",
+    "Alpha-Blend": false
+  }
+}

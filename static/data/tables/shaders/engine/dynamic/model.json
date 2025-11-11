@@ -1,0 +1,13 @@
+{
+  "General": {
+    "Priority": 1,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null,
+    "Use alpha-channel": false,
+    "Alpha ref": 32,
+    "Tessellation": "NO_TESS"
+  }
+}

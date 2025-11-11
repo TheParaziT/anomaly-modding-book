@@ -1,0 +1,12 @@
+{
+  "General": {
+    "Priority": 1,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "sky\\sky_heli",
+    "Transform": "Custom...",
+    "Custom Transform": "Mode",
+    "Alpha-Blend": false
+  }
+}

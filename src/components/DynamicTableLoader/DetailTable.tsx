@@ -1,3 +1,4 @@
+// DetailTable.tsx
 import React, { useState, useEffect } from 'react';
 import styles from './table-styles.module.css';
 
@@ -6,14 +7,125 @@ interface DetailTableProps {
   basePath?: string;
 }
 
+interface TableData {
+  sections: Array<{
+    sectionName: string;
+    parameters: Array<{
+      parameter: string;
+      value: any;
+    }>;
+  }>;
+  isNested: boolean;
+}
+
 const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/tables' }) => {
-  const [parameters, setParameters] = useState<Record<string, string>>({});
+  const [tableData, setTableData] = useState<TableData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     loadTableData();
   }, [fileName, basePath]);
+
+  const processNestedData = (data: any): TableData => {
+    const sections: TableData['sections'] = [];
+    
+    for (const [sectionName, sectionData] of Object.entries(data)) {
+      if (typeof sectionData === 'object' && sectionData !== null && !Array.isArray(sectionData)) {
+        const parameters = Object.entries(sectionData).map(([parameter, value]) => ({
+          parameter,
+          value
+        }));
+        sections.push({
+          sectionName,
+          parameters
+        });
+      } else {
+        // Если это не объект, добавляем как отдельную секцию с одним параметром
+        sections.push({
+          sectionName,
+          parameters: [{
+            parameter: 'Value',
+            value: sectionData
+          }]
+        });
+      }
+    }
+    
+    return {
+      sections,
+      isNested: true
+    };
+  };
+
+  const processFlatData = (data: any): TableData => {
+    // Если данные - массив объектов
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === 'object') {
+      const columns = Array.from(
+        new Set(data.flatMap(item => Object.keys(item)))
+      );
+      
+      return {
+        sections: [{
+          sectionName: 'Data',
+          parameters: data.flatMap((item, index) => 
+            columns.map(column => ({
+              parameter: `${column} [${index}]`,
+              value: item[column]
+            }))
+          )
+        }],
+        isNested: false
+      };
+    }
+    
+    // Если данные - одиночный объект (key-value)
+    if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+      return {
+        sections: [{
+          sectionName: 'Parameters',
+          parameters: Object.entries(data).map(([parameter, value]) => ({
+            parameter,
+            value
+          }))
+        }],
+        isNested: false
+      };
+    }
+    
+    // Если данные - простой массив или примитив
+    return {
+      sections: [{
+        sectionName: 'Value',
+        parameters: Array.isArray(data) 
+          ? data.map((item, index) => ({
+              parameter: `Item ${index}`,
+              value: item
+            }))
+          : [{
+              parameter: 'Value',
+              value: data
+            }]
+      }],
+      isNested: false
+    };
+  };
+
+  const processData = (data: any): TableData => {
+    // Проверяем, является ли данные вложенным объектом (как в примере)
+    if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+      const values = Object.values(data);
+      const hasNestedObjects = values.some(value => 
+        typeof value === 'object' && value !== null && !Array.isArray(value)
+      );
+      
+      if (hasNestedObjects) {
+        return processNestedData(data);
+      }
+    }
+    
+    return processFlatData(data);
+  };
 
   const loadTableData = async () => {
     try {
@@ -25,32 +137,22 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
 
       const response = await fetch(fullPath);
 
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-
       if (!response.ok) {
         const errorText = await response.text();
-        console.log('Error response text:', errorText);
         throw new Error(`HTTP ${response.status}: ${response.statusText}. Response: ${errorText}`);
       }
 
       const contentType = response.headers.get('content-type');
-      console.log('Content-Type:', contentType);
-
       if (!contentType || !contentType.includes('application/json')) {
         const text = await response.text();
-        console.log('Non-JSON content received:', text.substring(0, 200));
         throw new Error(`JSON expected, received: ${contentType || 'unknown type'}`);
       }
 
       const data = await response.json();
       console.log('Data received:', data);
 
-      if (typeof data !== 'object' || data === null) {
-        throw new Error('Incorrect JSON data structure');
-      }
-
-      setParameters(data);
+      const processedData = processData(data);
+      setTableData(processedData);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown data loading error';
       console.error('Data loading error:', err);
@@ -58,6 +160,14 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const renderValue = (value: any): string => {
+    if (value === null) return 'null';
+    if (value === undefined) return 'undefined';
+    if (typeof value === 'boolean') return value ? 'true' : 'false';
+    if (typeof value === 'object') return JSON.stringify(value);
+    return String(value);
   };
 
   if (isLoading) {
@@ -96,30 +206,37 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
     );
   }
 
-  if (Object.keys(parameters).length === 0) {
+  if (!tableData || tableData.sections.length === 0) {
     return <div className={styles.detailNoData}>No data to display</div>;
   }
 
   return (
     <div className={styles.detailContainer}>
-      <div className={styles.detailTableWrapper}>
-        <table className={styles.detailTable}>
-          <thead>
-            <tr>
-              <th>Parameter</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(parameters).map(([key, value], index) => (
-              <tr key={key} className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
-                <td className={styles.detailParameterCell}>{key}</td>
-                <td className={styles.detailValueCell}>{String(value)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {tableData.sections.map((section, sectionIndex) => (
+        <div key={section.sectionName || sectionIndex} className={styles.detailSection}>
+          {tableData.isNested && (
+            <h3 className={styles.sectionTitle}>{section.sectionName}</h3>
+          )}
+          <div className={styles.detailTableWrapper}>
+            <table className={styles.detailTable}>
+              <thead>
+                <tr>
+                  <th className={styles.detailParameterCell}>Parameter</th>
+                  <th className={styles.detailValueCell}>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.parameters.map((param, paramIndex) => (
+                  <tr key={param.parameter} className={paramIndex % 2 === 0 ? styles.evenRow : styles.oddRow}>
+                    <td className={styles.detailParameterCell}>{param.parameter}</td>
+                    <td className={styles.detailValueCell}>{renderValue(param.value)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

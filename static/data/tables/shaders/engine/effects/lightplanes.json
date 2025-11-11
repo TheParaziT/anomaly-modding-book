@@ -1,0 +1,11 @@
+{
+  "General": {
+    "Priority": 3,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null,
+    "Tessellation": "NO_TESS"
+  }
+}

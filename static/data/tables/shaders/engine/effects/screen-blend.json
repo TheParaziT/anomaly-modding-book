@@ -1,0 +1,17 @@
+{
+  "General": {
+    "Priority": 1,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null,
+    "Blending": "BLEND (2r)",
+    "Texture clamp": true,
+    "Alpha ref": 1,
+    "Z-test": false,
+    "Z-write": false,
+    "Lighing": false,
+    "Fog": false
+  }
+}

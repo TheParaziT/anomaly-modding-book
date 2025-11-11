@@ -1,0 +1,29 @@
+{
+  "General": {
+    "Priority": 1,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null
+  },
+  "Detail map": {
+    "Name": "detail\\ground_asphalt_01",
+    "Transform": "Custom..."
+  },
+  "Custom Transform": {
+    "Mode": "TCM",
+    "Scale enabled": true,
+    "Scale U": "-",
+    "Scale V": "-",
+    "Rotate enabled": false,
+    "Rotate": "-",
+    "Scroll enabled": false,
+    "Scroll U": "-",
+    "Scroll V": "-",
+    "R2-R": "detail\\ground_grass_03",
+    "R2-G": "detail\\ground_asphalt_01",
+    "R2-B": "detail\\ground_earth_01",
+    "R2-A": "detail\\ground_mud_01"
+  }
+}

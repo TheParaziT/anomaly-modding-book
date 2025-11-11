@@ -1,0 +1,16 @@
+{
+  "General": {
+    "Priority": 2,
+    "Strict sorting": true
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": null
+  },
+  "Environment map": {
+    "Name": "sky\\sky_cube_cone",
+    "Transform": "Custom...",
+    "Mode": "Cube Reflection",
+    "Alpha-blend": true
+  }
+}

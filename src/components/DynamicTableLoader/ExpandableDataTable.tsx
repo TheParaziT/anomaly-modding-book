@@ -1,3 +1,4 @@
+// ExpandableDataTable.tsx
 import React, { useState, useEffect } from 'react';
 import styles from './table-styles.module.css';
 import DetailTable from './DetailTable';
@@ -9,12 +10,16 @@ interface DataItem {
   description: string;
   category?: string;
   preview?: string;
+  columns?: {
+    showCategory?: boolean;
+    showPreview?: boolean;
+  };
 }
 
 interface ExpandableDataTableProps {
   items: DataItem[];
   basePath?: string;
-  columns?: {
+  defaultColumns?: {
     showCategory?: boolean;
     showPreview?: boolean;
   };
@@ -23,19 +28,23 @@ interface ExpandableDataTableProps {
 const ExpandableDataTable: React.FC<ExpandableDataTableProps> = ({
   items,
   basePath = '/data/tables',
-  columns = { showCategory: false, showPreview: false },
+  defaultColumns = { showCategory: false, showPreview: false },
 }) => {
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
   const [hasCategory, setHasCategory] = useState<boolean>(false);
   const [hasPreview, setHasPreview] = useState<boolean>(false);
 
   useEffect(() => {
-    const categoryExists = items.some(item => item.category);
-    const previewExists = items.some(item => item.preview);
+    const categoryExists = items.some(item => 
+      item.category || (item.columns && item.columns.showCategory)
+    );
+    const previewExists = items.some(item => 
+      item.preview || (item.columns && item.columns.showPreview)
+    );
 
-    setHasCategory(columns.showCategory && categoryExists);
-    setHasPreview(columns.showPreview && previewExists);
-  }, [items, columns]);
+    setHasCategory(defaultColumns.showCategory || categoryExists);
+    setHasPreview(defaultColumns.showPreview || previewExists);
+  }, [items, defaultColumns]);
 
   const toggleRow = (id: string) => {
     if (expandedRow === id) {
@@ -46,10 +55,18 @@ const ExpandableDataTable: React.FC<ExpandableDataTableProps> = ({
   };
 
   const getColumnCount = () => {
-    let count = 3;
+    let count = 3; // Name, Description, Expand icon
     if (hasCategory) count++;
     if (hasPreview) count++;
     return count;
+  };
+
+  const shouldShowCategory = (item: DataItem) => {
+    return hasCategory && (item.category || (item.columns && item.columns.showCategory));
+  };
+
+  const shouldShowPreview = (item: DataItem) => {
+    return hasPreview && (item.preview || (item.columns && item.columns.showPreview));
   };
 
   return (
@@ -59,7 +76,7 @@ const ExpandableDataTable: React.FC<ExpandableDataTableProps> = ({
           <tr>
             <th className={styles.headerCell}>Name</th>
             <th className={styles.headerCell}>Description</th>
-            {hasCategory && <th className={styles.headerCell}>Shader Type</th>}
+            {hasCategory && <th className={styles.headerCell}>Category</th>}
             {hasPreview && <th className={styles.headerCell}>Preview</th>}
           </tr>
         </thead>
@@ -81,12 +98,12 @@ const ExpandableDataTable: React.FC<ExpandableDataTableProps> = ({
                   </div>
                 </td>
                 <td className={styles.dataDescriptionCell}>{item.description}</td>
-                {hasCategory && (
+                {shouldShowCategory(item) && (
                   <td className={styles.dataCategoryCell}>
                     {item.category && <span className={styles.categoryBadge}>{item.category}</span>}
                   </td>
                 )}
-                {hasPreview && (
+                {shouldShowPreview(item) && (
                   <td className={styles.dataPreviewCell}>
                     {item.preview && (
                       <img

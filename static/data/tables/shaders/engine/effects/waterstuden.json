@@ -1,0 +1,18 @@
+{
+  "General": {
+    "Priority": 2,
+    "Strict sorting": true
+  },
+  "Base Texture": {
+    "Name": "water\\water_studen",
+    "Transform": "Custom...",
+    "Custom Transform": "Mode",
+    "Blending": "SET",
+    "Texture clamp": false,
+    "Alpha ref": 0,
+    "Z-test": true,
+    "Z-write": true,
+    "Lighing": true,
+    "Fog": false
+  }
+}

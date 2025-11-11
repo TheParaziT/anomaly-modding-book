@@ -1,8 +1,8 @@
+/* table-styles.module.css - обновленные стили для вложенных структур */
 .dataTableContainer {
   width: 100%;
   overflow-x: auto;
   margin: 1.5rem 0;
-  border-radius: 8px;
   box-shadow: var(--table-shadow-light);
 }
 
@@ -12,10 +12,8 @@
 
 .dataTable {
   width: 100%;
-  background: var(--table-bg-light);
   display: table;
   border-collapse: collapse;
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -29,7 +27,6 @@
   text-align: left;
   font-weight: var(--ifm-font-weight-bold);
   color: var(--table-text-primary-light);
-  background: linear-gradient(to bottom, rgba(123, 210, 26, 0.03), transparent);
   border-bottom: 2px solid var(--table-border-light);
   position: relative;
   font-size: 0.95rem;
@@ -39,7 +36,6 @@
 [data-theme='dark'] .headerCell {
   color: var(--table-text-primary-dark);
   border-bottom-color: var(--table-border-dark);
-  background: linear-gradient(to bottom, rgba(123, 210, 26, 0.05), transparent);
 }
 
 /* Строки данных */
@@ -93,7 +89,7 @@
   transform: rotate(-90deg);
   display: inline-block;
   padding: 4px;
-  border-radius: 4px;
+  transition: transform 0.2s ease;
 }
 
 .expandIcon.rotated {
@@ -128,7 +124,6 @@
   max-width: 100px;
   max-height: 60px;
   object-fit: cover;
-  border-radius: 4px;
   box-shadow: var(--table-shadow-light);
   border: 1px solid var(--table-border-light);
 }
@@ -162,10 +157,32 @@
   border-top-color: var(--table-border-dark);
 }
 
+/* Секции в детальной таблице */
+.detailSection {
+  margin-bottom: 2rem;
+}
+
+.detailSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--table-text-primary-light);
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: var(--table-text-primary-dark);
+}
+
 .detailTableWrapper {
   overflow-x: auto;
-  border-radius: 6px;
   box-shadow: var(--table-shadow-light);
+  margin-bottom: 1rem;
 }
 
 [data-theme='dark'] .detailTableWrapper {
@@ -184,24 +201,24 @@
 }
 
 .detailTable th {
-  background: linear-gradient(to bottom, rgba(123, 210, 26, 0.1), rgba(123, 210, 26, 0.05));
   padding: 1rem 1.25rem;
   text-align: left;
   font-weight: var(--ifm-font-weight-bold);
   color: var(--table-text-primary-light);
   border-bottom: 1px solid var(--table-border-light);
+  word-break: break-word;
 }
 
 [data-theme='dark'] .detailTable th {
   color: var(--table-text-primary-dark);
   border-bottom-color: var(--table-border-dark);
-  background: linear-gradient(to bottom, rgba(123, 210, 26, 0.15), rgba(123, 210, 26, 0.08));
 }
 
 .detailTable td {
   padding: 0.75rem 1.25rem;
   vertical-align: middle;
   border-bottom: 1px solid var(--table-border-light);
+  word-break: break-word;
 }
 
 [data-theme='dark'] .detailTable td {
@@ -240,16 +257,11 @@
   font-size: 0.9em;
   width: 60%;
   color: var(--table-text-secondary-light);
-  background: rgba(0, 0, 0, 0.02);
-  border-radius: 4px;
-  border: 1px solid var(--table-border-light);
   word-break: break-word;
 }
 
 [data-theme='dark'] .detailValueCell {
   color: var(--table-text-secondary-dark);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--table-border-dark);
 }
 
 /* Состояния */
@@ -258,7 +270,6 @@
   text-align: center;
   color: var(--table-text-primary-light);
   background: var(--table-stripe-odd-light);
-  border-radius: 6px;
 }
 
 [data-theme='dark'] .detailLoading {
@@ -271,7 +282,6 @@
   background: var(--table-error-bg-light);
   color: var(--table-error-text-light);
   margin: 0;
-  border-radius: 6px;
   border-left: 4px solid var(--table-error-text-light);
 }
 
@@ -287,7 +297,6 @@
   color: var(--table-text-secondary-light);
   font-style: italic;
   background: var(--table-stripe-odd-light);
-  border-radius: 6px;
 }
 
 [data-theme='dark'] .detailNoData {
@@ -324,12 +333,21 @@
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
+/* Бейдж категории */
+.categoryBadge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .dataTableContainer {
     font-size: 0.9rem;
     margin: 1rem 0;
-    border-radius: 6px;
   }
 
   .headerCell,
@@ -349,6 +367,15 @@
 
   .detailContainer {
     padding: 1rem;
+  }
+
+  .detailSection {
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .detailTable th,
@@ -386,5 +413,28 @@
 
   .detailTableWrapper {
     margin: 0 -0.5rem;
+  }
+
+  .detailTable th,
+  .detailTable td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85em;
+  }
+
+  .detailParameterCell,
+  .detailValueCell {
+    width: auto;
+    display: block;
+  }
+
+  .detailTable tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--table-border-light);
+  }
+
+  .detailTable td {
+    display: block;
+    border-bottom: none;
   }
 }

@@ -1,0 +1,28 @@
+{
+  "General": {
+    "Priority": 2,
+    "Strict sorting": false
+  },
+  "Base Texture": {
+    "Name": "$base0",
+    "Transform": "Custom..."
+  },
+  "Custom Transform": {
+    "Mode": "TCM",
+    "Scale enabled": false,
+    "Scale U": "-",
+    "Scale V": "-",
+    "Rotate enabled": false,
+    "Rotate": "-",
+    "Scroll enabled": true,
+    "Scroll U": "-",
+    "Scroll V": "-",
+    "Blending": "BLEND",
+    "Texture clamp": false,
+    "Alpha ref": 32,
+    "Z-test": true,
+    "Z-write": false,
+    "Lighting": false,
+    "Fog": true
+  }
+}

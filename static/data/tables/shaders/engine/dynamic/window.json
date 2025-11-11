@@ -1,0 +1,12 @@
+{
+  "General": {
+    "Priority": 2,
+    "Strict sorting": true
+  },
+  "Base Texture": {
+    "Name": "sky\\sky_cube_weapons",
+    "Transform": null,
+    "Custom Transform": "Mode",
+    "Alpha-Blend": true
+  }
+}

@@ -1,6 +1,6 @@
 ---
 title: Compiler Shaders List
-description: List and description of the shaders in shaders_xrlc.xr file.
+description: List and description of Compile Shaders in shaders_xrlc.xr file.
 ---
 
 # Compiler Shaders List
