@@ -204,7 +204,7 @@ Window with shader properties.
   </tbody>
 </table>
   </TabItem>
-  <TabItem value="compilershader" label="Compiler Shader">
+  <TabItem value="compilershader" label="Compile Shader">
 <table>
   <thead>
     <tr>

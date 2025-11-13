@@ -1858,7 +1858,7 @@
   },
   {
     "id": "compiler-shaders-list",
-    "title": "Compiler Shaders List",
+    "title": "Compile Shaders List",
     "linkTo": [],
     "referencedBy": []
   },

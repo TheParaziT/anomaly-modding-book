@@ -5,6 +5,10 @@ tags:
   - Game Level
 description: Guide for creating multimaterial terrain
 preview: /docs/tutorials/mapping/assets/images/earth-grass-mix_example.png
+keywords:
+  - Game Material
+  - SDK
+  - Game Level
 ---
 
 # Multimaterial Terrain Guide

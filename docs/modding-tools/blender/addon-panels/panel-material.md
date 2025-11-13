@@ -29,7 +29,7 @@ Engine Shader. If in the addon settings is specified shader.xr file in the Engin
 
 ### Compile
 
-Compiler Shader. The compiler shader selection menu works similarly to the engine shader, but the shader_xrlc.xr file is specified in the Compile Shaders File parameter
+Compile Shader. The Compile Shader selection menu works similarly to the engine shader, but the shader_xrlc.xr file is specified in the Compile Shaders File parameter
 
 ### Material
 

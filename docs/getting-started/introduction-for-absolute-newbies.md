@@ -46,7 +46,7 @@ Object - исходный формат моделей, для работы в SD
 
 Game Material
 Engine Shader
-Compiler Shader
+Compile Shader
 
 Game Material 
 Определяет свойства материала (Упругость, проникновение звука, плавучесть, пробивную способность и прочее)
@@ -54,7 +54,7 @@ Game Material
 Engine Shader
 Как выглядит. Самое важное, для динамических обьектов требуются только шейдеры для динамических обьектов! 
 
-Compiler Shader
+Compile Shader
 Нужен для статической геометрии. 
 
 ### Animations | Skeleton

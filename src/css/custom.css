@@ -60,6 +60,10 @@
   --ifm-color-primary-light: #7bd21a;
 }
 
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
 [data-theme='light'] body {
   background:
     linear-gradient(180deg, rgba(246, 248, 246, 0.95), rgba(242, 244, 242, 0.95)),

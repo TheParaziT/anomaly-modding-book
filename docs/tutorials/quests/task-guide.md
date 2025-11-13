@@ -1,7 +1,12 @@
 ---
 title: Task Guide
-tags: [LTX, XML, LUA]
+tags:
+  - LTX
+  - XML
+  - LUA
 description: Comprehensive guide for creating and managing quests and tasks in the game
+keywords:
+  - Task
 ---
 
 # Task Guide

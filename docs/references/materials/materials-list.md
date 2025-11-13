@@ -1,6 +1,9 @@
 ---
 title: Game Materials List
 draft: true
+keywords:
+  - Game Material
+  - List
 ---
 
 # Game Materials List

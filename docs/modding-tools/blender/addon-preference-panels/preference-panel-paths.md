@@ -63,7 +63,7 @@ Path to `shaders.xr` file. Usually stored in `gamedata\shaders.xr`. This file co
 
 #### Compile Shader File
 
-Path to `shaders_xrlc.xr` file. Usually stored in `gamedata\shaders_xrlc.xr`. This file contains descriptions of settings used by the level geometry compiler (`xrLC.exe`). It specifies to the compiler the properties of the final game level geometry. The source geometry, depending on the compiler shader, may have no visible or collision tangible geometry, have a different way of storing lighting, etc. If this path references the `shaders_xrlc.xr` file, the Compile list at materials will be populated with shader names from that file and you can specify any compiler shader name from the list. Only shader names are read from the `shaders_xrlc.xr` file.
+Path to `shaders_xrlc.xr` file. Usually stored in `gamedata\shaders_xrlc.xr`. This file contains descriptions of settings used by the level geometry compiler (`xrLC.exe`). It specifies to the compiler the properties of the final game level geometry. The source geometry, depending on the Compile Shader, may have no visible or collision tangible geometry, have a different way of storing lighting, etc. If this path references the `shaders_xrlc.xr` file, the Compile list at materials will be populated with shader names from that file and you can specify any Compile Shader name from the list. Only shader names are read from the `shaders_xrlc.xr` file.
 
 #### Game Materials File
 

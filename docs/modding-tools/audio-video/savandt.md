@@ -5,6 +5,12 @@ tags:
   - Audio
   - Modding Tool
 preview: /docs/modding-tools/audio-video/assets/images/savandt.png
+keywords:
+  - ogg
+  - Sound
+  - Tweaker
+  - Viewer
+  - Modding Tool
 ---
 
 # Sound Attribute Viewer And Tweaker

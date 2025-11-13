@@ -1,9 +1,13 @@
 ---
 tags:
-    - Blender
-    - 3D Animation
+  - Blender
+  - 3D Animation
 title: How to Rig in Blender
 draft: true
+keywords:
+  - Blender
+  - Rigging
+  - 3D
 ---
 
 # How to Rig in Blender

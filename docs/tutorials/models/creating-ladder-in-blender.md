@@ -65,7 +65,7 @@ Choose any [Engine Shader](../../../../glossary#engine-shader) for Static Object
 
 #### Compiler
 
-Any [Compiler Shader](../../../../glossary#compiler-shader). ([list of all Compiler Shaders](../../references/shaders/compiler-shaders-list.md))
+Any [Compile Shader](../../../../glossary#compiler-shader). ([list of all Compile Shaders](../../references/shaders/compiler-shaders-list.md))
 
 #### Material
 

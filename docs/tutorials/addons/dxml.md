@@ -1,8 +1,13 @@
 ---
 tags:
     - XML
+    - DXML
 description: DXML Documentation
 title: DXML
+keywords:
+    - DXML
+    - XML
+    - Modded Exes
 ---
 
 # DXML

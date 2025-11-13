@@ -4,6 +4,9 @@ tags:
 description: UI Console Commands
 title: UI
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+keywords:
+    - Console Commands
+    - UI
 ---
 
 # UI

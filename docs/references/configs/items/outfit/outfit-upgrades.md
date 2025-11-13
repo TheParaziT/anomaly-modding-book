@@ -14,6 +14,13 @@ showTitle={true}
 showDescription={true}
 />
 
+<AuthorComment author="saloeater">
+  Этот комментарий был написан автором Иваном Ивановым. 
+  Компонент автоматически подтянет его аватар, имя и социальные ссылки из `authors.yml`.
+  
+  Поддерживается **Markdown** разметка и любые другие MDX компоненты!
+</AuthorComment>
+
 ## 1. Outfit's upgrade definition
 
 Each outfit can have a `upgrades` property that defines first upgrade column. Each item in this list means a new row of an upgrade column.

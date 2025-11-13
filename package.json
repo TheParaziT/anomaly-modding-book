@@ -57,6 +57,7 @@
     "@docusaurus/module-type-aliases": "^3.9.1",
     "@docusaurus/tsconfig": "^3.9.1",
     "@docusaurus/types": "^3.9.1",
+    "@iconify/react": "^6.0.2",
     "@playwright/test": "^1.55.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",

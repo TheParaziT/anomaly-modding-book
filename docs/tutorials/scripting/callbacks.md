@@ -9,6 +9,13 @@ description: Callbacks tutorial
 
 ___
 
+<Authors
+  authors={["igigog"]}
+  size="medium"
+  showTitle={true}
+  showDescription={true}
+/>
+
 ## I. INTRODUCTION
 
 Callbacks are a convenient and performant way to execute code when certain events occur.

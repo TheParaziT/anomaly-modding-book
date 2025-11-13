@@ -1,5 +1,9 @@
 ---
 title: Sound Environment List
+keywords:
+  - Environment
+  - Sound
+  - List
 ---
 
 # Sound Environment List

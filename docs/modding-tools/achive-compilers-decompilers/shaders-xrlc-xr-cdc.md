@@ -34,7 +34,7 @@ ___
 
 ## About
 
-Compiler, decompiler of archives (shaders_xrlc.xr) with Compiler Shaders.
+Compiler, decompiler of archives (shaders_xrlc.xr) with Compile Shaders.
 
 ### General
 
@@ -47,11 +47,11 @@ Compiler, decompiler of archives (shaders_xrlc.xr) with Compiler Shaders.
 | Key | Description |
 |---|---|
 | -d \<input_file>| Input file (shaders_xrlc.xr) |
-| -o \<outdir> |  Folder for saving decompiled Compiler Shaders in text form (*.ltx) |
+| -o \<outdir> |  Folder for saving decompiled Compile Shaders in text form (*.ltx) |
 
 ### Compilation mode
 
 | Key | Description |
 |---|---|
-| -c \<input_dir> | Folder with decompiled Compiler Shaders in text form (*.ltx) |
+| -c \<input_dir> | Folder with decompiled Compile Shaders in text form (*.ltx) |
 | -o \<outfile> | Output file |

@@ -1,6 +1,11 @@
 ---
-description: Class registrator documentation
 title: Class Registrator
+description: Class registrator documentation
+tags:
+    - LUA
+keywords:
+    - LUA
+    - Class Registrator
 ---
 
 # Class Registrator

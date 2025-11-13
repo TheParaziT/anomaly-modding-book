@@ -3,6 +3,11 @@ title: Working Correctly With Icon Atlases
 tags:
   - Texture
 preview: /docs/tutorials/texturing/assets/images/properties.png
+keywords:
+  - Atlas
+  - Icon
+  - Texture
+  - tga
 ---
 
 # Working Correctly With Icon Atlases
@@ -16,9 +21,9 @@ ___
   showDescription={true}
 />
 
-> Greetings, this is comrade Hrusteckiy - UI-programmer, whose work can be seen in the New Project, Last Fallout Overhaul, Oblivion, Hike, and many others, also made 100x100 icons for the original game. Noticed that many modders suffer from improper saving textures and work with them. This guide will make their life easier and teach them to do without mistakes (by the way, came to this myself through their own messes).
-
-___
+<AuthorComment author="hrusteckiy">
+Greetings, this is comrade Hrusteckiy - UI-programmer, whose work can be seen in the New Project, Last Fallout Overhaul, Oblivion, Hike, and many others, also made 100x100 icons for the original game. Noticed that many modders suffer from improper saving textures and work with them. This guide will make their life easier and teach them to do without mistakes (by the way, came to this myself through their own messes).
+</AuthorComment>
 
 ## Let's start with software
 

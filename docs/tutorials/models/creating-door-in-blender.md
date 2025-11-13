@@ -1,7 +1,14 @@
 ---
 title: Creating Door in Blender
-tags: [Blender, 3D Model]
+tags:
+    - Blender
+    - 3D Model
 description: Tutorial for creating doors in Blender for the game
+keywords:
+    - 3D
+    - Blender
+    - Door
+    - Bone
 ---
 
 # Creating Door in Blender

@@ -23,6 +23,7 @@ yarn-error.log*
 .cursor/
 .playwright-mcp/
 .idx
+.continue
 
 # Playwright
 node_modules/

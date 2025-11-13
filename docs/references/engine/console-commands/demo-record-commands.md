@@ -4,6 +4,9 @@ tags:
 description: Demo Console Commands
 title: Demo Record
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+keywords:
+    - Demo Record
+    - Console Commands
 ---
 
 # Demo Record

@@ -1,7 +1,13 @@
 ---
 title: NPC Creation
-tags: [LTX, XML, LUA]
+tags:
+  - LTX
+  - XML
+  - LUA
 description: Tutorial for creating and configuring NPCs for quests
+keywords:
+  - DLTX
+  - NPC
 ---
 
 # NPC Creation
@@ -310,6 +316,6 @@ han_yue_ling_squad                      ; add your NPC to the list
 
 Note that this method of spawning the NPC will not force the NPC to stay there, and you might need a script, or a logic scheme to force the NPC to stay at that smart terrain.
 
-___
-
+<AuthorComment author="nltp_ashes">
 I will make more advanced guides if there are enough modders who are interested.
+</AuthorComment>

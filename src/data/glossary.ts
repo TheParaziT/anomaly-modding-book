@@ -429,7 +429,7 @@ const glossaryData: GlossaryData = {
       id: 'compile-shader',
       term: 'Compile Shader',
       definition:
-        'Shader used by the Level Compiler. Specifies to the compiler the features of the final game level geometry. The source geometry, depending on the compiler shader, may have different features.',
+        'Shader used by the Level Compiler. Specifies to the compiler the features of the final game level geometry. The source geometry, depending on the Compile Shader, may have different features.',
       category: 'Technical Terms',
       related: [],
     },

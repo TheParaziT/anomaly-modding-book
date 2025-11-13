@@ -2,6 +2,8 @@
 title: Time Events
 tags:
   - LUA
+keywords:
+  - LUA
 ---
 
 # Time Events

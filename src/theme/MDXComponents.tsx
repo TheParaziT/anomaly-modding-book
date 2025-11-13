@@ -5,11 +5,13 @@ import UniversalCard from '@site/src/components/UniversalCard';
 import CardGrid from '@site/src/components/CardGrid';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import AuthorComment from '@site/src/components/AuthorComment';
 import type { MDXComponentsType } from '../types';
 
 export default {
   ...MDXComponents,
   Authors,
+  AuthorComment,
   YouTubeVideo,
   UniversalCard,
   Tabs,

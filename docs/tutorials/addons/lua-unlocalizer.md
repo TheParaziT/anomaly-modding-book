@@ -3,6 +3,11 @@ tags:
   - LUA
 description: Addons allows to unlocalize variables for lua environment, making them global to the script namespace
 title: Lua Variables Unlocalizer
+keywords:
+  - LUA
+  - Unlocalizer
+  - Variable
+  - Modded Exes
 ---
 
 # Lua Variables Unlocalizer

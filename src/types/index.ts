@@ -71,6 +71,18 @@ export interface AuthorsProps {
 }
 
 // ============================================================================
+// AUTHOR COMMENT TYPES
+// ============================================================================
+
+export interface AuthorCommentProps {
+  author: string;
+  children: ReactNode;
+  variant?: 'default' | 'highlighted' | 'minimal';
+  showSocials?: boolean;
+  className?: string;
+}
+
+// ============================================================================
 // GLOSSARY TYPES
 // ============================================================================
 
@@ -118,6 +130,12 @@ export interface SortConfig<T> {
 export type ComponentSize = 'small' | 'medium' | 'large';
 
 // ============================================================================
-// MODULE DECLARATIONS
+// COMPONENT EXPORTS
 // ============================================================================
-// Note: Module declarations should be in .d.ts files, not in regular .ts files
+
+export { default as Authors } from '../components/Authors';
+export { default as AuthorComment } from '../components/AuthorComment';
+export { default as UniversalCard } from '../components/UniversalCard';
+export { default as CardGrid } from '../components/CardGrid';
+export { default as YouTubeVideo } from '../components/YouTubeVideo';
+// Добавьте другие экспорты по мере необходимости
