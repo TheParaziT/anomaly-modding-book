@@ -1,7 +1,8 @@
 ---
 title: Mod Organizer
 preview: /docs/getting-started/mod-organizer/assets/mo2-images/mo2-preview.png
-draft: true
+image: /docs/getting-started/mod-organizer/assets/mo2-images/mo2-preview.png
+draft: false
 ---
 
 # Mod Organizer
