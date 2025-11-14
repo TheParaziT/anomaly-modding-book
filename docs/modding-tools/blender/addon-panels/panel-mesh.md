@@ -2,6 +2,8 @@
 title: X-Ray Engine Mesh
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-mesh.png
 draft: false
+tags:
+    - Blender
 ---
 
 # X-Ray Engine Mesh

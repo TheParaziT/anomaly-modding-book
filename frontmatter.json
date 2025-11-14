@@ -44,12 +44,6 @@
           "type": "categories"
         },
         {
-          "title": "authors",
-          "name": "Authors",
-          "type": "choice",
-          "choices": ["theparazit"]
-        },
-        {
           "title": "Hide Table Of Contents",
           "name": "hide_table_of_contents",
           "type": "boolean"
@@ -68,6 +62,93 @@
     {
       "title": "Docs",
       "path": "[[workspace]]/docs"
+    }
+  ],
+  "frontMatter.data.files": [
+    {
+      "id": "authors",
+      "title": "Authors",
+      "file": "[[workspace]]/blog/authors.json",
+      "fileType": "json",
+      "labelField": "name",
+      "singleEntry": false,
+      "schema": {
+        "title": "Authors",
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "image_url": {
+            "type": "string",
+            "title": "Image URL"
+          },
+          "website": {
+            "type": "string",
+            "title": "Website"
+          },
+          "socials": {
+            "type": "object",
+            "title": "Socials",
+            "properties": {
+              "github": {
+                "type": "string",
+                "title": "GitHub"
+              },
+              "email": {
+                "type": "string",
+                "title": "Email"
+              },
+              "linkedin": {
+                "type": "string",
+                "title": "Linkedin"
+              },
+              "youtube": {
+                "type": "string",
+                "title": "YouTube"
+              },
+              "telegram": {
+                "type": "string",
+                "title": "Telegram"
+              },
+              "x": {
+                "type": "string",
+                "title": "X"
+              },
+              "moddb": {
+                "type": "string",
+                "title": "ModDB"
+              },
+              "amk": {
+                "type": "string",
+                "title": "AMK"
+              },
+              "ap-pro": {
+                "type": "string",
+                "title": "AP-PRO"
+              },
+              "vk": {
+                "type": "string",
+                "title": "VK"
+              },
+              "discord_server": {
+                "type": "string",
+                "title": "Discord Server"
+              },
+              "discord_username": {
+                "type": "string",
+                "title": "Discord Username"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

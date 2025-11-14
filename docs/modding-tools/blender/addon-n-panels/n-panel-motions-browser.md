@@ -2,6 +2,8 @@
 title: Motions Browser
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-motions-browser.png
 draft: false
+tags:
+    - Blender
 ---
 
 # Motions Browser

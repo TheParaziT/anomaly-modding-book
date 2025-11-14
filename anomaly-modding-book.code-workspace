@@ -1,12 +1,11 @@
 {
-    "folders": [
-		{
-			"name": "Anomaly Modding Book",
-			"path": "."
-		}
-	],
-	"settings": {
-		"[markdown]": {
-		}
-	}
+  "folders": [
+    {
+      "name": "Anomaly Modding Book",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "[markdown]": {},
+  },
 }

@@ -2,6 +2,8 @@
 title: Export
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-export.png
 draft: false
+tags:
+    - Blender
 ---
 
 # Export

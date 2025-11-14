@@ -2,6 +2,8 @@
 title: "X-Ray Engine: Bone"
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-bone.png
 draft: false
+tags:
+    - Blender
 ---
 
 # X-Ray Engine: Bone

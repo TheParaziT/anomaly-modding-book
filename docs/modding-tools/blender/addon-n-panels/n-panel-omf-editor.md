@@ -2,6 +2,8 @@
 title: OMF Editor
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-omf-editor.png
 draft: false
+tags:
+    - Blender
 ---
 
 # OMF Editor

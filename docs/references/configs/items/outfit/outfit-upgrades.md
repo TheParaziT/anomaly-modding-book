@@ -2,6 +2,8 @@
 title: Outfit Upgrades
 description: Configuration documentation for outfit upgrades
 draft: false
+tags:
+    - LTX
 ---
 
 # Outfit Upgrades

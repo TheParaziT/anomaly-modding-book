@@ -2,6 +2,8 @@
 title: Import
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-import.png
 draft: false
+tags:
+    - Blender
 ---
 
 # Import

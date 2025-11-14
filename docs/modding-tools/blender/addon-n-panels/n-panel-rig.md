@@ -1,6 +1,8 @@
 ---
 title: Rig
 draft: false
+tags:
+    - Blender
 ---
 
 # Rig

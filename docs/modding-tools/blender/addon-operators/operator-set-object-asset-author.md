@@ -1,6 +1,8 @@
 ---
 title: Set Object Asset Author
 draft: false
+tags:
+    - Blender
 ---
 
 # Set Object Asset Author

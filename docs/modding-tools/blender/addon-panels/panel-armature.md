@@ -2,6 +2,8 @@
 title: "X-Ray Engine: Armature"
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-armature.png
 draft: false
+tags:
+  - Blender
 ---
 
 # X-Ray Engine: Armature

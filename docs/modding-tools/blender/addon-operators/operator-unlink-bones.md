@@ -1,6 +1,8 @@
 ---
 title: Unlink Bones Operator
 draft: false
+tags:
+    - Blender
 ---
 
 # Unlink Bones Operator

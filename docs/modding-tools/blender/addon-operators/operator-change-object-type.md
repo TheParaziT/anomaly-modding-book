@@ -2,6 +2,11 @@
 title: Change Object Type Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-object-type.png
 draft: false
+tags:
+    - Blender
+keywords:
+    - Blender
+    - Blender X-Ray
 ---
 
 # Change Object Type Operator

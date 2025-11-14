@@ -2,6 +2,11 @@
 title: Check Invalid Smooth Groups
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-check-invalid-smooth-groups.png
 draft: false
+tags:
+    - Blender
+keywords:
+    - Blender
+    - Blender X-Ray
 ---
 
 # Check Invalid Smooth Groups

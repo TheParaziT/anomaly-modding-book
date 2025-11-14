@@ -2,6 +2,8 @@
 title: "X-Ray Engine: Object"
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-object.png
 draft: false
+tags:
+  - Blender
 ---
 
 # X-Ray Engine: Object

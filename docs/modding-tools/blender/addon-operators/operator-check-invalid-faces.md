@@ -2,6 +2,8 @@
 title: Check Invalid Faces
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-check-invalid-faces.png
 draft: false
+tags:
+    - Blender
 ---
 
 # Check Invalid Faces

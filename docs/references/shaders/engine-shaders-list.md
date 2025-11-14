@@ -2,6 +2,8 @@
 title: Engine Shaders List
 description: List and description of the Engine Shaders in shaders.xr file.
 draft: false
+tags:
+  - Engine Shader
 ---
 
 # Engine Shaders List

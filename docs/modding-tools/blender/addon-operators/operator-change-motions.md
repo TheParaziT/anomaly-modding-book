@@ -1,6 +1,11 @@
 ---
 title: Change Motions Operator
 draft: false
+tags:
+    - Blender
+keywords:
+    - Blender
+    - Blender X-Ray
 ---
 
 # Change Motions Operator

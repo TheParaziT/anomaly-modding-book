@@ -2,6 +2,11 @@
 title: Change Motion References Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-motion-reference.png
 draft: false
+tags:
+    - Blender
+keywords:
+    - Blender
+    - Blender X-Ray
 ---
 
 # Change Motion References Operator
