@@ -1,6 +1,8 @@
 ---
 title: X-Ray Converter
-tags: [Modding Tool]
+tags:
+  - Modding Tool
+draft: false
 ---
 
 # X-Ray Converter

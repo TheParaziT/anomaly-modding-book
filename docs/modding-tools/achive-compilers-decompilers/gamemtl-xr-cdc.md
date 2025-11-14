@@ -1,6 +1,9 @@
 ---
 title: gamemtl_xr_cdc
-tags: [Game Material, Modding Tool]
+tags:
+  - Game Material
+  - Modding Tool
+draft: false
 ---
 
 # gamemtl_xr_cdc

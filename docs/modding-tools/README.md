@@ -1,7 +1,9 @@
 ---
 title: Modding Tools
-tags: [Modding Tool]
+tags:
+  - Modding Tool
 description: Comprehensive guide for creating and managing quests and tasks in the game
+draft: false
 ---
 
 # Modding Tools

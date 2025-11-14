@@ -4,6 +4,7 @@ tags:
   - Texture
   - Modding Tool
 preview: /docs/modding-tools/textures/assets/images/bump-generator.png
+draft: false
 ---
 
 # Bump Generator

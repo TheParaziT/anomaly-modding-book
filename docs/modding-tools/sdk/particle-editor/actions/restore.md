@@ -1,5 +1,6 @@
 ---
 title: Restore
+draft: false
 ---
 
 # Restore

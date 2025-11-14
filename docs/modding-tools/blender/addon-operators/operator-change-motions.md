@@ -1,5 +1,6 @@
 ---
 title: Change Motions Operator
+draft: false
 ---
 
 # Change Motions Operator

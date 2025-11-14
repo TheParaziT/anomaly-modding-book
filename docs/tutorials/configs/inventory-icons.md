@@ -4,6 +4,7 @@ tags:
   - Texture
   - LTX
 preview: /docs/tutorials/configs/assets/images/modding_book_icons_2.png
+draft: false
 ---
 
 # Inventory Icons

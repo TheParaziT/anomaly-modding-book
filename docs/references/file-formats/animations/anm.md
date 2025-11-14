@@ -1,5 +1,6 @@
 ---
 title: .anm (Animated Paths)
+draft: false
 ---
 
 # .anm (Animated Paths)

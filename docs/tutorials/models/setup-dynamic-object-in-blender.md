@@ -1,6 +1,9 @@
 ---
 title: Setup Dynamic Object in Blender
-tags: [Blender, 3D Model]
+tags:
+    - Blender
+    - 3D Model
+draft: false
 ---
 
 # Setup Dynamic Object in Blender

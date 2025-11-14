@@ -9,6 +9,7 @@ keywords:
     - Blender
     - Door
     - Bone
+draft: false
 ---
 
 # Creating Door in Blender

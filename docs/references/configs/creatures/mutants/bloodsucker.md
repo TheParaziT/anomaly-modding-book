@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_BLOOD (Bloodsucker)
+draft: false
 ---
 
 # SM_BLOOD (Bloodsucker)

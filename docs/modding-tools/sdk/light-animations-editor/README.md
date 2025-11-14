@@ -2,6 +2,7 @@
 description: Light animations editor documentation
 title: Light Animations Editor
 preview: /docs/modding-tools/sdk/light-animations-editor/assets/images/light-animations-editor.png
+draft: false
 ---
 
 # Light Animations Editor

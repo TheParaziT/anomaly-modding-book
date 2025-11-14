@@ -1,5 +1,6 @@
 ---
 title: "*.gtc"
+draft: false
 ---
 
 # *.gtc

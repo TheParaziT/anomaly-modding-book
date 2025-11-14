@@ -1,5 +1,6 @@
 ---
 title: Configuring VSCode-like Programs to Handle Game Files
+draft: false
 ---
 
 # Configuring VSCode-like Programs to Handle Game Files

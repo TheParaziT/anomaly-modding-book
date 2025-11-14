@@ -1,5 +1,6 @@
 ---
 title: Weapon HUD Editor
+draft: false
 ---
 
 # Weapon HUD Editor

@@ -1,5 +1,6 @@
 ---
 title: "*.thm"
+draft: false
 ---
 
 # *.thm

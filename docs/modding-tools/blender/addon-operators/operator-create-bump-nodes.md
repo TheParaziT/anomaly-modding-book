@@ -1,5 +1,6 @@
 ---
 title: Create Bump Nodes Operator
+draft: false
 ---
 
 # Create Bump Nodes Operator

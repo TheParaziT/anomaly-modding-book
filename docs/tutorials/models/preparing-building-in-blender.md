@@ -4,6 +4,7 @@ tags:
     - Blender
     - 3D Model
 preview: /docs/tutorials/models/assets/images/creating-building-in-blender-result.png
+draft: false
 ---
 
 # Preparing Building in Blender

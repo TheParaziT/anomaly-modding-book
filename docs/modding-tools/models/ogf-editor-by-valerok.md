@@ -4,6 +4,7 @@ tags:
   - 3D Model
   - Modding Tool
 preview: /docs/modding-tools/models/assets/images/ogf-editor-by-valerok.png
+draft: false
 ---
 
 # Modified OGF Editor by ValeroK

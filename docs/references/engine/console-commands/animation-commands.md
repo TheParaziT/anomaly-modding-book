@@ -4,6 +4,7 @@ tags:
 description: Animation-related console commands
 title: Animations
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+draft: false
 ---
 
 # Animations

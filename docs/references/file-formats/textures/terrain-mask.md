@@ -1,5 +1,6 @@
 ---
 title: terrain_mask.dds
+draft: false
 ---
 
 # terrain_mask.dds

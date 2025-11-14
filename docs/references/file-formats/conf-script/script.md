@@ -1,5 +1,6 @@
 ---
 title: "*.script"
+draft: false
 ---
 
 # *.script

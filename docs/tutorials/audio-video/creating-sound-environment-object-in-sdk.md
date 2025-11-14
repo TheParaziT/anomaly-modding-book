@@ -4,6 +4,7 @@ tags:
   - SDK
   - Audio
 preview: /docs/tutorials/audio-video/assets/gifs/place-env.gif
+draft: false
 ---
 
 # Creating Sound Environment in SDK

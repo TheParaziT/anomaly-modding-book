@@ -1,5 +1,6 @@
 ---
 title: cube_map.dds
+draft: false
 ---
 
 # cube_map.dds

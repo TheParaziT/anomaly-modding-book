@@ -1,5 +1,6 @@
 ---
 title: Resize Bones Operator
+draft: false
 ---
 
 # Resize Bones Operator

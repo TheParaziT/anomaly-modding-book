@@ -1,6 +1,7 @@
 ---
 title: Image Editor
 preview: /docs/modding-tools/sdk/image-editor/assets/images/image-editor.png
+draft: false
 ---
 
 # Image Editor

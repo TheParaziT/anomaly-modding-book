@@ -2,6 +2,7 @@
 tags:
     - 3D Animation
 title: Rigs
+draft: false
 ---
 
 # Rigs

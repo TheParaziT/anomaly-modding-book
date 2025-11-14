@@ -8,6 +8,7 @@ keywords:
   - Unlocalizer
   - Variable
   - Modded Exes
+draft: false
 ---
 
 # Lua Variables Unlocalizer

@@ -1,6 +1,10 @@
 ---
 title: Evaluation Function Constructor
-tags: [Alife, AI, Modding Tool]
+tags:
+  - Alife
+  - AI
+  - Modding Tool
+draft: false
 ---
 
 # Evaluation Function Constructor

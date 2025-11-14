@@ -1,5 +1,6 @@
 ---
 title: "INTERNAL: shadow projecting"
+draft: false
 ---
 
 # INTERNAL: shadow projecting

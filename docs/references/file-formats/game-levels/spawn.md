@@ -1,5 +1,6 @@
 ---
 title: "*.spawn"
+draft: false
 ---
 
 # *.spawn

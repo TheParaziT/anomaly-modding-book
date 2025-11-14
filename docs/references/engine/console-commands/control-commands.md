@@ -4,6 +4,7 @@ tags:
 description: Control Console Commands
 title: Control
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+draft: false
 ---
 
 # Control

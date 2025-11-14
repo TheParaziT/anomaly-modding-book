@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_GIANT (Psevdogaint)
+draft: false
 ---
 
 # SM_GIANT (Psevdogaint)

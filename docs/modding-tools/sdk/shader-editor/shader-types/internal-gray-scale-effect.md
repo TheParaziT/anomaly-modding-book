@@ -1,5 +1,6 @@
 ---
 title: "INTERNAL: gray-scale effect"
+draft: false
 ---
 
 # INTERNAL: gray-scale effect

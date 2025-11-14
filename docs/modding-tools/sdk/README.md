@@ -1,6 +1,7 @@
 ---
 title: IX-Ray SDK
 description: Documentation for the IX-Ray SDK modding tool
+draft: false
 ---
 
 # IX-Ray SDK

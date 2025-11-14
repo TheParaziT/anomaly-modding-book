@@ -1,6 +1,8 @@
 ---
 title: Compiling Game Level
-tags: [Level Compiler]
+tags:
+    - Level Compiler
+draft: false
 ---
 
 # Compiling Game Level

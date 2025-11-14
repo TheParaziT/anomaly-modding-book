@@ -1,5 +1,6 @@
 ---
 title: "*.snd_env"
+draft: false
 ---
 
 # *.snd_env

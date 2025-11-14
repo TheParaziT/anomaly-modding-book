@@ -4,6 +4,7 @@ tags:
   - 3D Animation
   - Modding Tool
 preview: /docs/modding-tools/animations/assets/images/omf-editor-by-valerok.png
+draft: false
 ---
 
 # Modified Omf Editor by ValeroK

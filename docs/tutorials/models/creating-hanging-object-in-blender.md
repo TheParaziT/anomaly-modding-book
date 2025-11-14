@@ -1,7 +1,10 @@
 ---
 title: Creating Hanging Object in Blender
-tags: [Blender, 3D Model]
+tags:
+    - Blender
+    - 3D Model
 description: Guide for creating hanging objects in Blender
+draft: false
 ---
 
 # Creating Hanging Object in Blender

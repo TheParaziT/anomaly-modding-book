@@ -1,5 +1,6 @@
 ---
 title: Trader Profile
+draft: false
 ---
 
 # Trader Profile

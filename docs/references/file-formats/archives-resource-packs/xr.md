@@ -1,5 +1,6 @@
 ---
 title: "*.xr"
+draft: false
 ---
 
 # *.xr

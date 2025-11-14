@@ -1,6 +1,7 @@
 ---
 title: Move
 preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/move.gif
+draft: false
 ---
 
 # Move

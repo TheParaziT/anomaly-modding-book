@@ -1,5 +1,6 @@
 ---
 title: "*.gs (Geometry Shader)"
+draft: false
 ---
 
 # *.gs (Geometry Shader)

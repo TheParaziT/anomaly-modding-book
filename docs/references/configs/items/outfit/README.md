@@ -1,5 +1,6 @@
 ---
 title: Outfits
+draft: false
 ---
 
 # Outfits

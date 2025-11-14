@@ -1,5 +1,6 @@
 ---
 title: Animations
+draft: false
 ---
 
 # Animations

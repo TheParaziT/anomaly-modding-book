@@ -1,6 +1,8 @@
 ---
 title: Script Attachments
-tags: [LUA]
+tags:
+    - LUA
+draft: false
 ---
 
 # Script Attachments

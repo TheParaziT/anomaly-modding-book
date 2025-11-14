@@ -1,6 +1,7 @@
 ---
 title: Left Bar
 preview: /docs/modding-tools/sdk/particle-editor/assets/images/pe-left-bar.png
+draft: false
 ---
 
 # Left Bar

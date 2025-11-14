@@ -1,5 +1,6 @@
 ---
 title: Random Accel
+draft: false
 ---
 
 # Random Accel

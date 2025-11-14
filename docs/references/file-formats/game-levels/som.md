@@ -1,5 +1,6 @@
 ---
 title: "*.som (Sound Occluder Mesh)"
+draft: false
 ---
 
 # *.som (Sound Occluder Mesh)

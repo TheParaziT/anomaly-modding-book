@@ -1,5 +1,6 @@
 ---
 title: Set Object Asset Author
+draft: false
 ---
 
 # Set Object Asset Author

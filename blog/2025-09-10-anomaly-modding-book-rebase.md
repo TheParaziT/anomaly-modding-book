@@ -4,6 +4,7 @@ authors:
     - theparazit
 hide_table_of_contents: false
 preview: /blog/anomaly-modding-book-rebase.png
+draft: false
 ---
 
 ![alt text](anomaly-modding-book-rebase.png)

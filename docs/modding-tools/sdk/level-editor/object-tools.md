@@ -1,6 +1,7 @@
 ---
 title: Object Tools
 description: Level Editor Object tools documentation
+draft: false
 ---
 
 # Object Tools

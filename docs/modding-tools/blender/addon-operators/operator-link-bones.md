@@ -1,5 +1,6 @@
 ---
 title: Link Bones Operator
+draft: false
 ---
 
 # Link Bones Operator

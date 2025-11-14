@@ -1,6 +1,7 @@
 ---
 title: Bounce
 preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/bounce.gif
+draft: false
 ---
 
 # Bounce

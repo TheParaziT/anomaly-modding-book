@@ -1,5 +1,6 @@
 ---
 title: Create X-Ray Material Operator
+draft: false
 ---
 
 # Create X-Ray Material Operator

@@ -1,5 +1,6 @@
 ---
 title: "*.ps (Pixel Shader)"
+draft: false
 ---
 
 # *.ps (Pixel Shader)

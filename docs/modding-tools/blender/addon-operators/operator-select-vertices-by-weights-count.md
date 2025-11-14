@@ -1,5 +1,6 @@
 ---
 title: Select Vertices by Weights Count Operator
+draft: false
 ---
 
 # Select Vertices by Weights Count Operator

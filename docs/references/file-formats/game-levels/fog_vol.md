@@ -1,5 +1,6 @@
 ---
 title: "*.fog_vol"
+draft: false
 ---
 
 # *.fog_vol

@@ -1,6 +1,8 @@
 ---
 title: lanims_xr_cdc
-tags: [Modding Tool]
+tags:
+  - Modding Tool
+draft: false
 ---
 
 # lanims_xr_cdc

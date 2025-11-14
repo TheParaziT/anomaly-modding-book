@@ -1,6 +1,7 @@
 ---
 description: Editor wire shader type
 title: Editor Wire
+draft: false
 ---
 
 # Editor Wire

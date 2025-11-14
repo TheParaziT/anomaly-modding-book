@@ -1,6 +1,7 @@
 ---
 title: Change Shader Parameters
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-shader-parameters.png
+draft: false
 ---
 
 # Change Shader Parameters

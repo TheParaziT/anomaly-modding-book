@@ -6,6 +6,7 @@ description: Anomaly MCM Documentation
 keywords:
   - MCM
   - Mod Configuration Menu
+draft: false
 ---
 
 # Anomaly MCM Documentation

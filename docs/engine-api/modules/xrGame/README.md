@@ -1,5 +1,6 @@
 ---
 title: xrGame
+draft: false
 ---
 
 # xrGame

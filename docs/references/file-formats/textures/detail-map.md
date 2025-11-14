@@ -1,5 +1,6 @@
 ---
 title: detail_map.dds
+draft: false
 ---
 
 # detail_map.dds

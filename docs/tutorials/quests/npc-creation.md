@@ -8,6 +8,7 @@ description: Tutorial for creating and configuring NPCs for quests
 keywords:
   - DLTX
   - NPC
+draft: false
 ---
 
 # NPC Creation

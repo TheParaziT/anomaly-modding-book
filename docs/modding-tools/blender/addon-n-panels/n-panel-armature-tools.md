@@ -1,6 +1,7 @@
 ---
 title: Armature Tools
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-armature-tools.png
+draft: false
 ---
 
 # Armature Tools

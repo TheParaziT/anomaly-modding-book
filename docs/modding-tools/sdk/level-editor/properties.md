@@ -1,6 +1,7 @@
 ---
 title: Properties
 description: Level Editor Properties documentation
+draft: false
 ---
 
 # Properties

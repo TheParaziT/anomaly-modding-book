@@ -1,6 +1,7 @@
 ---
 title: Add X-Ray Camera Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-add-x-ray-camera.png
+draft: false
 ---
 
 # Add X-Ray Camera Operator

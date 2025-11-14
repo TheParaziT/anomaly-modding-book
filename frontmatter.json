@@ -42,6 +42,17 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "authors",
+          "name": "Authors",
+          "type": "choice",
+          "choices": ["theparazit"]
+        },
+        {
+          "title": "Hide Table Of Contents",
+          "name": "hide_table_of_contents",
+          "type": "boolean"
         }
       ]
     }

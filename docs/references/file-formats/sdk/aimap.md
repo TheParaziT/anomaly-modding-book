@@ -1,5 +1,6 @@
 ---
 title: "*.aimap"
+draft: false
 ---
 
 # *.aimap

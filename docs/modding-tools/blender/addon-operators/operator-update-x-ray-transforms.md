@@ -1,5 +1,6 @@
 ---
 title: Update X-Ray Transforms Operator
+draft: false
 ---
 
 # Update X-Ray Transforms Operator

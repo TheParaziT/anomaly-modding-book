@@ -2,6 +2,7 @@
 title: Book Structure
 description: Description of the book structure and organization for contributors
 preview: /docs/for-contributors/assets/images/book-structure-preview.png
+draft: false
 ---
 
 # Book Structure

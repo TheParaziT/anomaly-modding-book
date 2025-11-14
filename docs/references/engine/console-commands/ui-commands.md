@@ -7,6 +7,7 @@ preview: /docs/references/engine/console-commands/assets/images/console-commands
 keywords:
     - Console Commands
     - UI
+draft: false
 ---
 
 # UI

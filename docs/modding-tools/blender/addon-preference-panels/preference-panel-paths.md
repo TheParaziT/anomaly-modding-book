@@ -1,5 +1,10 @@
 ---
 title: Paths
+tags:
+    - Blender
+keywords:
+    - Blender
+draft: false
 ---
 
 # Paths

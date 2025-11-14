@@ -1,5 +1,6 @@
 ---
 title: "*.log"
+draft: false
 ---
 
 # *.log

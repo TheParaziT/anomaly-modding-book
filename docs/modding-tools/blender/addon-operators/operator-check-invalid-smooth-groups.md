@@ -1,6 +1,7 @@
 ---
 title: Check Invalid Smooth Groups
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-check-invalid-smooth-groups.png
+draft: false
 ---
 
 # Check Invalid Smooth Groups

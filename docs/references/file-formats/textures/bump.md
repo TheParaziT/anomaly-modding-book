@@ -1,5 +1,6 @@
 ---
 title: "*_bump.dds"
+draft: false
 ---
 
 # *_bump.dds

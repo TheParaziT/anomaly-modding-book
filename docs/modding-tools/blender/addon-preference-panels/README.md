@@ -1,5 +1,6 @@
 ---
 title: Addon Preferences
+draft: false
 ---
 
 # Addon Preferences

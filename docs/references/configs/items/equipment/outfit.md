@@ -2,7 +2,7 @@
 title: Outfit Configs
 tags:
     - Unfinished
-draft: true
+draft: false
 ---
 
 # Outfit

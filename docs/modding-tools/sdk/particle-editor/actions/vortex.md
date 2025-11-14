@@ -1,6 +1,7 @@
 ---
 title: Vortex
 preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/vortex.gif
+draft: false
 ---
 
 # Vortex

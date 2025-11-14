@@ -4,6 +4,7 @@ tags:
   - Texture
   - Modding Tool
 preview: /docs/modding-tools/textures/assets/images/thm-editor-by-i-love-kfc.png
+draft: false
 ---
 
 # THM Editor

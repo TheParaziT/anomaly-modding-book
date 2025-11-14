@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: General Mutant Configs
+draft: false
 ---
 
 # m_*mutant*.ltx

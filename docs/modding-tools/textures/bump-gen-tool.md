@@ -4,6 +4,7 @@ tags:
   - Modding Tool
 title: Stalker Bump Gen Tool
 preview: /docs/modding-tools/textures/assets/images/bump-gen-tool.png
+draft: false
 ---
 
 # Stalker Bump Gen Tool

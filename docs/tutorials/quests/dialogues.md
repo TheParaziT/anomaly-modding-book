@@ -7,6 +7,7 @@ tags:
 description: Guide for creating and managing dialogues in quests
 keywords:
   - Dialogue
+draft: false
 ---
 
 # Dialogues

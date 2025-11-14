@@ -1,6 +1,7 @@
 ---
 title: Bone Node View
 preview: /docs/modding-tools/sdk/actor-editor/assets/images/bones-node-view.png
+draft: false
 ---
 
 # Bone Node View

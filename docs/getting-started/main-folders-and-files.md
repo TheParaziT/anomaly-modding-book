@@ -2,6 +2,7 @@
 title: Main Folders And Files
 description: Guide describing the purpose of key folders and files in the game directory structure
 preview: /docs/getting-started/assets/images/main-folder-and-files-preview.png
+draft: false
 ---
 
 # Main Folders And Files

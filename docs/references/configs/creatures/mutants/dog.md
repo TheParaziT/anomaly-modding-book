@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_DOG_S (Dog)
+draft: false
 ---
 
 # SM_DOG_S (Dog)

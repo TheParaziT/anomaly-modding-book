@@ -4,6 +4,7 @@ tags:
   - LTX
 description: Documentation of the structure of configuration files
 preview: /docs/references/configs/assets/images/structure-of-files-preview.png
+draft: false
 ---
 
 # Structure of Files

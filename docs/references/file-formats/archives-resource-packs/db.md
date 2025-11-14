@@ -1,5 +1,6 @@
 ---
 title: "*.db (DataBase)"
+draft: false
 ---
 
 # *.db (DataBase)

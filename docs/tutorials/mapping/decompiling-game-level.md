@@ -1,6 +1,10 @@
 ---
 title: Decompiling Game Level
-tags: [Blender, Game Level, Decompilation]
+tags:
+    - Blender
+    - Game Level
+    - Decompilation
+draft: false
 ---
 
 # Decompiling Game Level

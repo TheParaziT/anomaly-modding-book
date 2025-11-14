@@ -1,6 +1,9 @@
 ---
 title: Upgrade Editor
-tags: [LTX, Modding Tool]
+tags:
+  - LTX
+  - Modding Tool
+draft: false
 ---
 
 # Upgrade Editor

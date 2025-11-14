@@ -1,5 +1,6 @@
 ---
 title: Create Connected Bones Operator
+draft: false
 ---
 
 # Create Connected Bones Operator

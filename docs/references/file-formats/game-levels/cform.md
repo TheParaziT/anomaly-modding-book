@@ -1,5 +1,6 @@
 ---
 title: "*.cform (Collision Form)"
+draft: false
 ---
 
 # *.cform (Collision Form)

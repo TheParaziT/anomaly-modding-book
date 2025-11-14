@@ -5,6 +5,7 @@ tags:
   - Audio
   - Modding Tool
 preview: /docs/modding-tools/audio-video/assets/images/ogg-editor.png
+draft: false
 ---
 
 # OGG Editor

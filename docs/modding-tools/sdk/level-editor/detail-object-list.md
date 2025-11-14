@@ -1,6 +1,7 @@
 ---
 title: Detail Object List
 preview: /docs/modding-tools/sdk/level-editor/assets/images/detail-object-list.png
+draft: false
 ---
 
 # Detail Object List

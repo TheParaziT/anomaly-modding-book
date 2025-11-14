@@ -1,5 +1,6 @@
 ---
 title: Shader Types
+draft: false
 ---
 
 # Shader Types

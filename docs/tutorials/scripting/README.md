@@ -1,5 +1,6 @@
 ---
 title: Scripting
+draft: false
 ---
 
 # Scripting

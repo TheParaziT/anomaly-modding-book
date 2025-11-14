@@ -1,7 +1,10 @@
 ---
 title: Creating Camera Flyover in Game
-tags: [In-Game, Console Commands]
+tags:
+  - In-Game
+  - Console Commands
 references: xrdemo
+draft: false
 ---
 
 # Creating Camera Flyover in Game

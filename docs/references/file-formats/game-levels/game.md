@@ -1,5 +1,6 @@
 ---
 title: "*.game"
+draft: false
 ---
 
 # *.game

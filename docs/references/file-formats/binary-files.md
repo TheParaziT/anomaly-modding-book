@@ -1,5 +1,6 @@
 ---
 title: Binary Files
+draft: false
 ---
 
 # Binary Files

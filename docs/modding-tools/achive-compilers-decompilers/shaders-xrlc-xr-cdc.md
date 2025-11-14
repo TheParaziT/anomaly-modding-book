@@ -1,6 +1,9 @@
 ---
 title: shaders_xrlc_xr_cdc
-tags: [Shaders, Modding Tool]
+tags:
+  - Shaders
+  - Modding Tool
+draft: false
 ---
 
 # shaders_xrlc_xr_cdc

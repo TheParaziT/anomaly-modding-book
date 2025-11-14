@@ -1,10 +1,11 @@
 ---
 title: Fonts Generator
 tags:
-    - Texture
-    - Modding Tool
+  - Texture
+  - Modding Tool
 preview: /docs/modding-tools/textures/assets/images/fonts-generator.png
 description: Utility for creating fonts for X-Ray Engine (*.dds texture and *.ini config).
+draft: false
 ---
 
 # Fonts Generator

@@ -1,6 +1,7 @@
 ---
 title: Key Form
 preview: /docs/modding-tools/sdk/actor-editor/assets/images/key-form.png
+draft: false
 ---
 
 # Key Form

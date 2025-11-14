@@ -1,5 +1,6 @@
 ---
 title: "*.scop"
+draft: false
 ---
 
 # *.scop

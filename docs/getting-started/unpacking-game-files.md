@@ -1,7 +1,9 @@
 ---
 title: Unpacking Game Files
-tags: [Modding Tool]
+tags:
+    - Modding Tool
 description: Step-by-step guide for unpacking game files using the provided batch files
+draft: false
 ---
 
 # Unpacking Game Files

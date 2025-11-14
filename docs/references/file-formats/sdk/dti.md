@@ -1,5 +1,6 @@
 ---
 title: "*.dti (Detail Indices)"
+draft: false
 ---
 
 # *.dti (Detail Indices)

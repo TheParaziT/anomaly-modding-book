@@ -4,6 +4,7 @@ tags:
   - Texture
   - Modding Tool
 preview: /docs/modding-tools/textures/assets/images/thm-editor-by-valerok.png
+draft: false
 ---
 
 # Modified THM Editor by ValeroK

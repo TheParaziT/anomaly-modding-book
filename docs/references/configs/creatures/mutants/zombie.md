@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_ZOMBI (Zombie)
+draft: false
 ---
 
 # SM_ZOMBI (Zombie)

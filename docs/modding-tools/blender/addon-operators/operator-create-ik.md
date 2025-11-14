@@ -1,6 +1,7 @@
 ---
 title: Create IK Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-create-ik.png
+draft: false
 ---
 
 # Create IK Operator

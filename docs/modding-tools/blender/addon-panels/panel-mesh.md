@@ -1,6 +1,7 @@
 ---
 title: X-Ray Engine Mesh
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-mesh.png
+draft: false
 ---
 
 # X-Ray Engine Mesh

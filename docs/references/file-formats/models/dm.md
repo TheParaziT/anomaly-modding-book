@@ -1,6 +1,7 @@
 ---
 title: "*.dm"
 description: Documentation for DM file format
+draft: false
 ---
 
 # *.dm

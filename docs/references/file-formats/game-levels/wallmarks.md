@@ -1,5 +1,6 @@
 ---
 title: "*.wallmarks"
+draft: false
 ---
 
 # *.wallmarks

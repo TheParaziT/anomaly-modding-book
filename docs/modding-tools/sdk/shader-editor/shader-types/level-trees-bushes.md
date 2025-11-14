@@ -1,5 +1,6 @@
 ---
 title: "LEVEL: trees/bushes"
+draft: false
 ---
 
 # LEVEL: trees/bushes

@@ -1,5 +1,6 @@
 ---
 title: "*.prj (Project)"
+draft: false
 ---
 
 # *.prj (Project)

@@ -1,6 +1,7 @@
 ---
 title: Props Tools
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-props-tools.png
+draft: false
 ---
 
 # Props Tools

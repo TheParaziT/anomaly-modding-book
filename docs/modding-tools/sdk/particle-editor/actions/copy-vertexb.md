@@ -1,5 +1,6 @@
 ---
 title: Copy VertexB
+draft: false
 ---
 # Copy VertexB
 

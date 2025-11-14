@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_BURER (Burer)
+draft: false
 ---
 
 # SM_BURER (Burer)

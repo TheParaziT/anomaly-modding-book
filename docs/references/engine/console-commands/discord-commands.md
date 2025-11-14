@@ -4,6 +4,7 @@ tags:
 description: Discord Console Commands
 title: Discord
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+draft: false
 ---
 
 # Discord

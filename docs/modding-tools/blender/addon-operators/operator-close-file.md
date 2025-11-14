@@ -1,5 +1,6 @@
 ---
 title: Close File Operator
+draft: false
 ---
 
 # Close File Operator

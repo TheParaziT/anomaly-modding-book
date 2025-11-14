@@ -5,6 +5,7 @@ tags:
   - Modding Tool
 description: Object Tool (or XRay Export Tool) for model export
 preview: /docs/modding-tools/models/assets/images/object-tool-by-valerok.png
+draft: false
 ---
 
 # Object Tool (or XRay Export Tool)

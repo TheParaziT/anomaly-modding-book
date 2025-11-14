@@ -1,5 +1,6 @@
 ---
 title: "*.details"
+draft: false
 ---
 
 # *.details

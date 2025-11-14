@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: m_*stalker*.ltx
+draft: false
 ---
 
 # m_*stalker*.ltx

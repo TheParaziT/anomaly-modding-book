@@ -1,10 +1,13 @@
 ---
 title: Creating HUD Hands Animation in Blender
-tags: [Blender, 3D Animation]
+tags:
+  - Blender
+  - 3D Animation
 references:
   - skl-skls
   - omf
   - anm
+draft: false
 ---
 
 # Creating HUD Hands Animation in Blender

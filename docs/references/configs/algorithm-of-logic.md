@@ -3,6 +3,7 @@ tags:
     - LTX
 title: Algorithm of Logic
 preview: /docs/references/configs/assets/images/algorithm-of-logic-preview.png
+draft: false
 ---
 
 # Algorithm of Logic

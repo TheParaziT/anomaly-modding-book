@@ -4,6 +4,7 @@ authors:
     - theparazit
 hide_table_of_contents: false
 preview: /blog/gog-stalker-anomaly.png
+draft: false
 ---
 
 ![alt text](gog-stalker-anomaly.png)

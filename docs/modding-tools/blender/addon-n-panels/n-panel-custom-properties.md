@@ -1,6 +1,7 @@
 ---
 title: Custom Properties
 preview: /docs/modding-tools/blender/addon-n-panels/assets/images/n-panel-custom-properties.png
+draft: false
 ---
 
 # Custom Properties

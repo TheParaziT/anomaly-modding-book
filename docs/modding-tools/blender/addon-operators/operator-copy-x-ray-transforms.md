@@ -1,5 +1,6 @@
 ---
 title: Copy X-Ray Transforms Operators
+draft: false
 ---
 
 # Copy X-Ray Transforms Operators

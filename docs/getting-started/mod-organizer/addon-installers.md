@@ -1,5 +1,6 @@
 ---
 title: Addon Installers
+draft: false
 ---
 
 # Addon Installers

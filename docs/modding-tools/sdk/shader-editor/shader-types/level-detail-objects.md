@@ -1,5 +1,6 @@
 ---
 title: "LEVEL: detail objects"
+draft: false
 ---
 
 # LEVEL: detail objects

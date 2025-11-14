@@ -4,6 +4,7 @@ tags:
 description: Debug Console Commands
 title: Debug
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+draft: false
 ---
 
 # Debug

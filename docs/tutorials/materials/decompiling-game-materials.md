@@ -1,6 +1,10 @@
 ---
 title: Decompiling Game Materials
-tags: [Decompilation, Game Material, Shader]
+tags:
+    - Decompilation
+    - Game Material
+    - Shader
+draft: false
 ---
 
 # Decompiling Game Materials

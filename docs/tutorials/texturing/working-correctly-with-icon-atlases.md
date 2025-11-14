@@ -8,6 +8,7 @@ keywords:
   - Icon
   - Texture
   - tga
+draft: false
 ---
 
 # Working Correctly With Icon Atlases

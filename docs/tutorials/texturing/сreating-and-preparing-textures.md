@@ -1,6 +1,8 @@
 ---
 title: Creating and Preparing Textures
-tags: [Texture]
+tags:
+  - Texture
+draft: false
 ---
 
 # Creating and Preparing Textures

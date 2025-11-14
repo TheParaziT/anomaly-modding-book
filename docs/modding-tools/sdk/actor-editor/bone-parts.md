@@ -1,6 +1,7 @@
 ---
 title: Bone Parts
 preview: /docs/modding-tools/sdk/actor-editor/assets/images/bone-parts.png
+draft: false
 ---
 
 # Bone Parts

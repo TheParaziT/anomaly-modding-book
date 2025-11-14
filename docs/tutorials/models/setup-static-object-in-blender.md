@@ -1,6 +1,9 @@
 ---
 title: Setup Static Object in Blender
-tags: [Blender, 3D Model]
+tags:
+    - Blender
+    - 3D Model
+draft: false
 ---
 
 # Setup Static Object in Blender

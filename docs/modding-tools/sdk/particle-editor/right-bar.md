@@ -2,6 +2,7 @@
 title: Right Bar
 description: Particle Editor Right bar documentation
 preview: /docs/modding-tools/sdk/particle-editor/assets/images/pe-right-bar.png
+draft: false
 ---
 
 # Right Bar

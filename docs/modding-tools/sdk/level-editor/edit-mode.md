@@ -1,6 +1,7 @@
 ---
 title: Edit Mode
 preview: /docs/modding-tools/sdk/level-editor/assets/images/edit-mode.png
+draft: false
 ---
 
 # Edit Mode

@@ -1,5 +1,6 @@
 ---
 title: "*.object"
+draft: false
 ---
 
 # *.object

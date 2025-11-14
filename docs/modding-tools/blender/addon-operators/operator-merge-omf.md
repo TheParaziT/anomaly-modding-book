@@ -1,5 +1,6 @@
 ---
 title: Merge OMF Operator
+draft: false
 ---
 
 # Merge OMF Operator

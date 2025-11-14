@@ -1,6 +1,7 @@
 ---
 title: Change Userdata Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-change-userdata.png
+draft: false
 ---
 
 # Change Userdata Operator

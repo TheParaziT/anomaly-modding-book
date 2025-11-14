@@ -1,5 +1,6 @@
 ---
 title: "LEVEL: (lmap+env*const)*base"
+draft: false
 ---
 
 # LEVEL: (lmap+env*const)*base

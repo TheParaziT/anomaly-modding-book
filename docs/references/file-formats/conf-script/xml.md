@@ -1,5 +1,6 @@
 ---
 title: "*.xml"
+draft: false
 ---
 
 # *.xml

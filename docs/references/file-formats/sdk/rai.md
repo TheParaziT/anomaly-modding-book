@@ -1,6 +1,7 @@
 ---
 description: Documentation for RAI file format
 title: "*.rai"
+draft: false
 ---
 
 # *.rai

@@ -1,5 +1,6 @@
 ---
 title: "*.geomx"
+draft: false
 ---
 
 # *.geomx

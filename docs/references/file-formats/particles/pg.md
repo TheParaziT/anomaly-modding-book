@@ -1,6 +1,7 @@
 ---
-description: Documentation for PG (Particle Group) file format
+description: Documentation for  (Particle Group) file format
 title: "*.pg (Particle Group)"
+draft: false
 ---
 
 # *.pg (Particle Group)

@@ -1,5 +1,6 @@
 ---
 title: Panels
+draft: false
 ---
 
 # Panels

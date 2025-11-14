@@ -1,5 +1,6 @@
 ---
 title: Weapon
+draft: false
 ---
 
 # Weapon

@@ -1,5 +1,6 @@
 ---
 title: "*.part"
+draft: false
 ---
 
 # *.part

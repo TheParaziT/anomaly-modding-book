@@ -1,10 +1,14 @@
 ---
 title: Creating Ladder in Blender
 tags:
-    - Blender
-    - 3D Model
+  - 3D Model
+  - Blender
+  - Game Material
 keywords:
-    - Ladder
+  - Blender
+  - Ladder
+  - Game Material
+draft: false
 ---
 
 # Creating Ladder in Blender

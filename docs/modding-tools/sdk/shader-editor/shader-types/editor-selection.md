@@ -1,5 +1,6 @@
 ---
 title: "EDITOR: selection"
+draft: false
 ---
 
 # EDITOR: selection

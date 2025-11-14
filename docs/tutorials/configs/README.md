@@ -1,5 +1,6 @@
 ---
 title: Configs
+draft: false
 ---
 
 # Configs

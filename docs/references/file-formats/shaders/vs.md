@@ -1,5 +1,6 @@
 ---
 title: "*.vs (Vertex Shader)"
+draft: false
 ---
 
 # *.vs (Vertex Shader)

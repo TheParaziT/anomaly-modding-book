@@ -1,5 +1,6 @@
 ---
 title: "*.hs (Hull Shader)"
+draft: false
 ---
 
 # *.hs (Hull Shader)

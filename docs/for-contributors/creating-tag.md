@@ -1,6 +1,7 @@
 ---
 title: Creating Tag
 description: Instructions for creating and managing tags in the documentation
+draft: false
 ---
 
 # Creating Tag

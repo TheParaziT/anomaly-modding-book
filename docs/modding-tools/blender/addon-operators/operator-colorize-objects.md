@@ -1,6 +1,7 @@
 ---
 title: Colorize Objects Operator
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-colorize-objects.png
+draft: false
 ---
 
 # Colorize Objects Operator

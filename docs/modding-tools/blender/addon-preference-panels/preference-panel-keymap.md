@@ -1,6 +1,9 @@
 ---
 title: Keymap
 preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Keymap.png
+tags:
+    - Blender
+draft: false
 ---
 
 # Keymap

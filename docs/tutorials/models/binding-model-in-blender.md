@@ -4,6 +4,7 @@ tags:
   - Blender
   - 3D Model
 description: Tutorial how to bind models in Blender
+draft: false
 ---
 
 # Binding Model in Blender

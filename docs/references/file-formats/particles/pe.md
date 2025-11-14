@@ -1,6 +1,7 @@
 ---
 description: Documentation for PE (Particle Effect) file format
 title: "*.pe (Particle Effect)"
+draft: false
 ---
 
 # *.pe (Particle Effect)

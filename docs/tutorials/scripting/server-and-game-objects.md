@@ -1,7 +1,9 @@
 ---
 title: Server and Game Objects
-tags: [LUA]
+tags:
+    - LUA
 description: Tutorial for server and game objects in scripting
+draft: false
 ---
 
 # Server and Game Objects

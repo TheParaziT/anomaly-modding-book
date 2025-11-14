@@ -4,6 +4,10 @@ keywords:
   - Environment
   - Sound
   - List
+tags:
+  - Audio
+  - SDK
+draft: false
 ---
 
 # Sound Environment List

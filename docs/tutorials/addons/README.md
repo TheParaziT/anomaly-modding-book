@@ -1,5 +1,6 @@
 ---
 title: Addons
+draft: false
 ---
 
 # Addons

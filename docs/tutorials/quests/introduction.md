@@ -1,6 +1,7 @@
 ---
 title: Introduction
 description: Introduction to quest creation and management in the game
+draft: false
 ---
 
 # Introduction TO REDO

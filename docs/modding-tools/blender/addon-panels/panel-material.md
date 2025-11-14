@@ -1,6 +1,15 @@
 ---
 title: "X-Ray Engine: Material"
 preview: /docs/modding-tools/blender/addon-panels/assets/images/panel-material.png
+tags:
+    - Game Material
+    - Blender
+keywords:
+    - Blender
+    - Engine Shader
+    - Game Material
+    - Compile Shader
+draft: false
 ---
 
 # X-Ray Engine: Material

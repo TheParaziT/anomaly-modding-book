@@ -1,5 +1,6 @@
 ---
 title: "*.dds (DirectDraw Surface)"
+draft: false
 ---
 
 # *.dds (DirectDraw Surface)

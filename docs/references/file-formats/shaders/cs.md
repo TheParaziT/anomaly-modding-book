@@ -1,5 +1,6 @@
 ---
 title: "*.cs (Compute shader)"
+draft: false
 ---
 
 # *.cs (Compute shader)

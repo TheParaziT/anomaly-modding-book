@@ -1,5 +1,6 @@
 ---
 title: "*.scoc"
+draft: false
 ---
 
 # *.scoc

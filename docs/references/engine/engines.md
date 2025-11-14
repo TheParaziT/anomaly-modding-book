@@ -3,6 +3,7 @@ tags:
     - Engine
 description: Documentation for the X-Ray Monolith Engine used in Anomaly
 title: Engine
+draft: false
 ---
 
 # Engine (X-Ray "Monolith" Engine)

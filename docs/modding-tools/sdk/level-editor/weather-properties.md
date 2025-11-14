@@ -1,6 +1,7 @@
 ---
 title: Weather Properties
 preview: /docs/modding-tools/sdk/level-editor/assets/images/weather-properties.png
+draft: false
 ---
 
 # Weather Properties

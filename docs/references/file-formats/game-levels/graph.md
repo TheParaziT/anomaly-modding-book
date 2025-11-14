@@ -1,5 +1,6 @@
 ---
 title: "*.graph"
+draft: false
 ---
 
 # *.graph

@@ -1,5 +1,6 @@
 ---
 title: Rename Actions
+draft: false
 ---
 
 # Rename Actions

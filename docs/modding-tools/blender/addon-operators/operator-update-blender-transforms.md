@@ -1,5 +1,6 @@
 ---
 title: Update Blender Transforms Operator
+draft: false
 ---
 
 # Update Blender Transforms Operator

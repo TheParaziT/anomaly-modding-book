@@ -1,5 +1,6 @@
 ---
 title: "*.bones"
+draft: false
 ---
 
 # *.bones

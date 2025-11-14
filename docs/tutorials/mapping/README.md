@@ -1,5 +1,6 @@
 ---
 title: Mapping
+draft: false
 ---
 
 # Mapping

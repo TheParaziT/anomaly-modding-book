@@ -1,6 +1,9 @@
 ---
 title: Others
 preview: /docs/modding-tools/blender/addon-preference-panels/assets/images/Others.png
+tags:
+    - Blender
+draft: false
 ---
 
 # Others

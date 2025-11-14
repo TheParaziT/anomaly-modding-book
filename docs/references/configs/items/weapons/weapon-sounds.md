@@ -3,6 +3,7 @@ tags:
     - LTX
     - Weapon
 title: Weapon Sounds
+draft: false
 ---
 
 # Weapon Sounds

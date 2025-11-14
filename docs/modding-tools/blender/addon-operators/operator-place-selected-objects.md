@@ -1,5 +1,6 @@
 ---
 title: Place Selected Objects
+draft: false
 ---
 
 # Place Selected Objects

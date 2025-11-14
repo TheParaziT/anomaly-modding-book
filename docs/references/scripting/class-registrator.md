@@ -6,6 +6,7 @@ tags:
 keywords:
     - LUA
     - Class Registrator
+draft: false
 ---
 
 # Class Registrator

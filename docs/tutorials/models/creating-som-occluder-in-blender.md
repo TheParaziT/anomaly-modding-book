@@ -7,6 +7,8 @@ description: Tutorial for creating SOM occluders in Blender
 keywords:
   - SOM
   - Sound
+  - Hierarchical Occlusion Mapping
+draft: false
 ---
 
 # Creating SOM Occluder in Blender

@@ -1,5 +1,6 @@
 ---
 title: Textures
+draft: false
 ---
 
 # Textures

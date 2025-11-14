@@ -1,6 +1,7 @@
 ---
 title: Contributing
 description: Comprehensive guide for contributors on how to contribute to the project using different methods
+draft: false
 ---
 
 # Contributing

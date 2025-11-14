@@ -2,6 +2,7 @@
 title: Item Properties
 description: Actor Editor Item properties documentation
 preview: /docs/modding-tools/sdk/actor-editor/assets/images/ae-ip-bones.png
+draft: false
 ---
 
 # Item Properties

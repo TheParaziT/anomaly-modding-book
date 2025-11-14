@@ -1,5 +1,6 @@
 ---
 title: Equipment
+draft: false
 ---
 
 # Equipment

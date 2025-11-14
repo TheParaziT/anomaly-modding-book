@@ -7,6 +7,7 @@ preview: /docs/references/engine/console-commands/assets/images/console-commands
 keywords:
     - Demo Record
     - Console Commands
+draft: false
 ---
 
 # Demo Record

@@ -2,6 +2,7 @@
 tags:
     - Texture
 title: Texturing
+draft: false
 ---
 
 # Texturing

@@ -1,6 +1,8 @@
 ---
 title: Audio
-tags: [Audio]
+tags:
+  - Audio
+draft: false
 ---
 
 # Audio

@@ -1,6 +1,7 @@
 ---
 title: Creating Author
 description: Guide for creating and managing author profiles in the documentation
+draft: false
 ---
 
 # Creating Author

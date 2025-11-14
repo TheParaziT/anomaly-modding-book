@@ -1,6 +1,9 @@
 ---
 title: Scripted Animations
-tags: [LUA, 3D Animation]
+tags:
+    - LUA
+    - 3D Animation
+draft: false
 ---
 
 # Scripted Animations

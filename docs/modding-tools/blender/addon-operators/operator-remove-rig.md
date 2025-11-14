@@ -1,5 +1,6 @@
 ---
 title: Remove Rig Operator
+draft: false
 ---
 
 # Remove Rig Operator

@@ -7,6 +7,7 @@ tags:
 description: Comprehensive guide for creating and managing quests and tasks in the game
 keywords:
   - Task
+draft: false
 ---
 
 # Task Guide

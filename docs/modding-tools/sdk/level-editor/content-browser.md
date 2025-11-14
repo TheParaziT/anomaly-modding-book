@@ -2,6 +2,7 @@
 description: Level Editor Content browser documentation
 title: Content Browser
 preview: /docs/modding-tools/sdk/level-editor/assets/images/content-browser.png
+draft: false
 ---
 
 # Content Browser

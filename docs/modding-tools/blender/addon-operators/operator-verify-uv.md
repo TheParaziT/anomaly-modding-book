@@ -1,6 +1,7 @@
 ---
 title: Verify UV
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-verify-uv.png
+draft: false
 ---
 
 # Verify UV

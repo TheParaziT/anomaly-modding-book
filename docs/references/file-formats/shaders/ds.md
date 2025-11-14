@@ -1,5 +1,6 @@
 ---
 title: "*.ds (Domain Shader)"
+draft: false
 ---
 
 # *.ds (Domain Shader)

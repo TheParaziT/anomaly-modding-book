@@ -1,5 +1,6 @@
 ---
 title: Smoothing
+draft: false
 ---
 
 # Smoothing

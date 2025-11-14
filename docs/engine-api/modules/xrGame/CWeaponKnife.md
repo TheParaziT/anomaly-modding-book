@@ -1,5 +1,6 @@
 ---
 title: CWeaponKnife
+draft: false
 ---
 
 # CWeaponKnife

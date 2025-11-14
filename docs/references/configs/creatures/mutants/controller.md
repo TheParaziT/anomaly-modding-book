@@ -2,6 +2,7 @@
 tags:
     - Unfinished
 title: SM_CONTR (Controller)
+draft: false
 ---
 
 # SM_CONTR (Controller)

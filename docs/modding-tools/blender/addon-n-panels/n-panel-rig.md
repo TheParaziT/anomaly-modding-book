@@ -1,5 +1,6 @@
 ---
 title: Rig
+draft: false
 ---
 
 # Rig

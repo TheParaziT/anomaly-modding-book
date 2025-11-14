@@ -1,5 +1,6 @@
 ---
 title: Fluid
+draft: false
 ---
 
 # Fluid

@@ -6,6 +6,10 @@ keywords:
   - SDK
   - Shaders
   - List
+tags:
+  - SDK
+  - Shaders
+draft: false
 ---
 
 # Compile Shaders List
@@ -151,7 +155,7 @@ import ExpandableDataTable from '@site/src/components/DynamicTableLoader/Expanda
       id: "default-lm03-ghost",
       fileName: "default-lm03-ghost.json",
       title: "default-lm03-ghost",
-      description: "Lightmap shader (density 0.50) without collision, with rendering, UV optimization, shadow casting",
+      description: "Lightmap shader (density 0.30) without collision, with rendering, UV optimization, shadow casting",
     },
     {
       id: "default-lm03-smooth",

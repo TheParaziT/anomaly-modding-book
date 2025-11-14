@@ -4,6 +4,7 @@ tags:
 description: HUD Console Commands
 title: HUD
 preview: /docs/references/engine/console-commands/assets/images/console-commands-preview.png
+draft: false
 ---
 
 # HUD

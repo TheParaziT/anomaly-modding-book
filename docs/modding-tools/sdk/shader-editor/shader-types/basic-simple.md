@@ -1,6 +1,7 @@
 ---
 description: Basic simple shader type
 title: Basic Simple
+draft: false
 ---
 
 # Basic Simple

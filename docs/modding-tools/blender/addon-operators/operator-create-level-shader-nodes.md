@@ -1,6 +1,7 @@
 ---
 title: Create Level Shader Nodes
 preview: /docs/modding-tools/blender/addon-operators/assets/images/operator-create-level-shader-nodes.png
+draft: false
 ---
 
 # Create Level Shader Nodes

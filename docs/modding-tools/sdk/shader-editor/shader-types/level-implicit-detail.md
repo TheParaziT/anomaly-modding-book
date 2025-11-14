@@ -1,5 +1,6 @@
 ---
 title: "LEVEL: implicit**detail"
+draft: false
 ---
 
 # LEVEL: implicit**detail

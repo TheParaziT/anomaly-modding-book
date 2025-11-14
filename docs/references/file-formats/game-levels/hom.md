@@ -1,8 +1,9 @@
 ---
-title: "*.hom (Hierarchical Occlusion Mesh)"
+title: "*.hom (Hierarchical Occluder Mesh)"
+draft: false
 ---
 
-# *.hom (Hierarchical Occlusion Mesh)
+# *.hom (Hierarchical Occluder Mesh)
 
 ___
 

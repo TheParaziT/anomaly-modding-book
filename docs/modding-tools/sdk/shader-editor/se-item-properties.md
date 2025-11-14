@@ -1,5 +1,15 @@
 ---
 title: Item Properties
+tags:
+  - SDK
+keywords:
+  - Compile Shader
+  - Engine Shader
+  - Game Material
+  - Game Material Pairs
+  - SDK
+  - Sound Environment
+draft: false
 ---
 
 # Item Properties

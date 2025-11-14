@@ -1,5 +1,6 @@
 ---
 title: "*.ogf"
+draft: false
 ---
 
 # *.ogf

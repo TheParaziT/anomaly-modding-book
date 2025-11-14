@@ -1,6 +1,8 @@
 ---
 title: Models
-tags: [3D Model]
+tags:
+    - 3D Model
+draft: false
 ---
 
 # Models

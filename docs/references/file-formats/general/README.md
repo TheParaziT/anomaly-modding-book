@@ -1,5 +1,6 @@
 ---
 title: General
+draft: false
 ---
 
 # General

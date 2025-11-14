@@ -1,6 +1,7 @@
 ---
 description: Documentation for GEOM file format
 title: "*.geom"
+draft: false
 ---
 
 # *.geom

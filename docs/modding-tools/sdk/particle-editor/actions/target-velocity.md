@@ -2,6 +2,7 @@
 description: Target velocity action
 title: Target Velocity
 preview: /docs/modding-tools/sdk/particle-editor/actions/assets/gifs/target-velocity.gif
+draft: false
 ---
 
 # Target Velocity

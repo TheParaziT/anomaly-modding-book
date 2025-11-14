@@ -1,6 +1,7 @@
 ---
 title: "*.err"
 description: Documentation for *.err file format
+draft: false
 ---
 
 # *.err

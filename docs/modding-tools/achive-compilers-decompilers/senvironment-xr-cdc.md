@@ -1,6 +1,9 @@
 ---
 title: senvironment_xr_cdc
-tags: [Audio, Modding Tool]
+tags:
+  - Audio
+  - Modding Tool
+draft: false
 ---
 
 # senvironment_xr_cdc

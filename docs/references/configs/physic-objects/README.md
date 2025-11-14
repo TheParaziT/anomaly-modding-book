@@ -1,5 +1,6 @@
 ---
 title: Physic Object
+draft: false
 ---
 
 # Physic Object
