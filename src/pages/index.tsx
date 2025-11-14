@@ -11,7 +11,6 @@ export default function Home(): ReactNode {
       description="Introductory book for S.T.A.L.K.E.R. Anomaly modding"
     >
       <HeroSection />
-      <head><meta name="google-site-verification" content="rCCq8pjOM03lh4gKsuTn5ybHKjZF2CX4NZacbsv72qE" /></head>
       <main></main>
     </Layout>
   );

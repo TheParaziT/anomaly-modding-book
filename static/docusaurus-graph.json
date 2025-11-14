@@ -1562,7 +1562,7 @@
   },
   {
     "id": "hom",
-    "title": "*.hom (Hierarchical Occlusion Mesh)",
+    "title": "*.hom (Hierarchical Occluder Mesh)",
     "linkTo": [],
     "referencedBy": []
   },

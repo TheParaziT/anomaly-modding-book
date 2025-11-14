@@ -139,7 +139,7 @@ const config: Config = {
           editUrl: 'https://github.com/TheParaziT/anomaly-modding-book/blob/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onUntruncatedBlogPosts: 'ignore',
           postsPerPage: 10,
         },
 
@@ -161,6 +161,7 @@ const config: Config = {
         name: 'description',
         content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
       },
+      { name: 'google-site-verification', content: 'rCCq8pjOM03lh4gKsuTn5ybHKjZF2CX4NZacbsv72qE' },
       { name: 'author', content: 'Anomaly Modding Book Community' },
       {
         name: 'robots',

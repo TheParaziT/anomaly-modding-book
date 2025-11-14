@@ -5,6 +5,7 @@ authors:
 hide_table_of_contents: false
 preview: /blog/gog-stalker-anomaly.png
 draft: false
+date: 2025-09-02T06:22:53.000Z
 ---
 
 ![alt text](gog-stalker-anomaly.png)

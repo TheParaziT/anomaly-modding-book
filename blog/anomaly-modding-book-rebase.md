@@ -5,6 +5,7 @@ authors:
 hide_table_of_contents: false
 preview: /blog/anomaly-modding-book-rebase.png
 draft: false
+date: 2025-09-10T06:33:10.000Z
 ---
 
 ![alt text](anomaly-modding-book-rebase.png)
