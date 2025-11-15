@@ -152,7 +152,6 @@ const config: Config = {
         content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
       },
       { name: 'google-site-verification', content: 'rCCq8pjOM03lh4gKsuTn5ybHKjZF2CX4NZacbsv72qE' },
-      { name: 'author', content: 'Anomaly Modding Book Community' },
       {
         name: 'robots',
         content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
@@ -163,33 +162,13 @@ const config: Config = {
       // Facebook Meta Tags
       { property: 'og:url', content: 'https://anomaly-modding-book.netlify.app/' },
       { property: 'og:type', content: 'article' },
-      { property: 'og:title', content: 'Anomaly Modding Book' },
-      {
-        property: 'og:description',
-        content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding',
-      },
       { property: 'og:site_name', content: 'Anomaly Modding Book' },
       { property: 'og:locale', content: 'en_US' },
-      {
-        name: 'og:image',
-        content:
-          'https://opengraph.b-cdn.net/production/images/67798c12-ed3b-45f7-93db-4c8a4229281e.png?token=we2TsdY7iQXHlQt9d9Q6hKy9pbQ8W2QuFj3-qanlRjE&height=600&width=1200&expires=33299177630',
-      },
 
       // Twitter Meta Tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:domain', content: 'anomaly-modding-book.netlify.app' },
       { property: 'twitter:url', content: 'https://anomaly-modding-book.netlify.app/' },
-      { name: 'twitter:title', content: 'Anomaly Modding Book' },
-      {
-        name: 'twitter:description',
-        content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding',
-      },
-      {
-        name: 'twitter:image',
-        content:
-          'https://opengraph.b-cdn.net/production/images/67798c12-ed3b-45f7-93db-4c8a4229281e.png?token=we2TsdY7iQXHlQt9d9Q6hKy9pbQ8W2QuFj3-qanlRjE&height=600&width=1200&expires=33299177630',
-      },
     ].filter(Boolean) as any,
     zoom: {
       selector: '.markdown :not(em) > img',
