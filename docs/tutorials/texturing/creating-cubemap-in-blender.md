@@ -4,6 +4,11 @@ tags:
 draft: true
 title: Creating Cubemap in Blender
 description: Tutorial how to creating Cubemap in Blender
+preview: /docs/tutorials/texturing/assets/images/creating-cubemap-in-blender-scene.png
+image: /docs/tutorials/texturing/assets/images/creating-cubemap-in-blender-scene.png
+keywords:
+    - Blender
+    - CubeMap
 ---
 
 # Creating Cubemap in Blender
@@ -26,7 +31,7 @@ Cubmaps can be created in different ways (addons, procedural textures or HDRi ma
 :::
 
 :::info
-In X-rays, Сubemaps are based on six projections arranged in a specific order, where:
+In X-Ray, Сubemaps are based on six projections arranged in a specific order, where:
 
 ![alt text centered](assets/images/cubemap-coordinates.png)
 :::

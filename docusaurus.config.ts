@@ -33,7 +33,6 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'warn',
   onBrokenAnchors: 'warn',
-  clientModules: ['./src/client/openGraphBridge.ts'],
 
   plugins: [
     'docusaurus-plugin-image-zoom',
@@ -53,15 +52,6 @@ const config: Config = {
             content: 'black-translucent',
           },
         ],
-      },
-    ],
-    [
-      'docusaurus-graph',
-      {
-        docsDir: 'docs',
-        buildDir: 'build',
-        sourcesTag: 'sources',
-        referencesTag: 'references',
       },
     ],
     [
@@ -162,25 +152,23 @@ const config: Config = {
         content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding.',
       },
       { name: 'google-site-verification', content: 'rCCq8pjOM03lh4gKsuTn5ybHKjZF2CX4NZacbsv72qE' },
-      { name: 'author', content: 'Anomaly Modding Book Community' },
       {
         name: 'robots',
         content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
       },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { name: 'theme-color', content: '#7bd21a' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'Anomaly Modding Book' },
-      {
-        property: 'og:description',
-        content: 'Introductory book for S.T.A.L.K.E.R. Anomaly modding',
-      },
+
+      // Facebook Meta Tags
+      { property: 'og:url', content: 'https://anomaly-modding-book.netlify.app/' },
+      { property: 'og:type', content: 'article' },
       { property: 'og:site_name', content: 'Anomaly Modding Book' },
       { property: 'og:locale', content: 'en_US' },
-      // Optional analytics meta for CSP/nonce-based injectors
-      process.env.GTAG_ID
-        ? { name: 'google-analytics-id', content: process.env.GTAG_ID }
-        : undefined,
+
+      // Twitter Meta Tags
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:domain', content: 'anomaly-modding-book.netlify.app' },
+      { property: 'twitter:url', content: 'https://anomaly-modding-book.netlify.app/' },
     ].filter(Boolean) as any,
     zoom: {
       selector: '.markdown :not(em) > img',

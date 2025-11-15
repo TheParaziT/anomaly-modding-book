@@ -8,13 +8,11 @@ module.exports = {
     '^@docusaurus/Link$': '<rootDir>/test/__mocks__/DocusaurusLinkMock.tsx',
     '^src/(.*)$': '<rootDir>/src/$1',
     '\\.(yml|yaml)$': '<rootDir>/test/__mocks__/yamlMock.js',
-    '^js-yaml-loader!(.*)$': '<rootDir>/$1'
+    '^js-yaml-loader!(.*)$': '<rootDir>/$1',
   },
   testRegex: '.*\\.(test|spec)\\.(ts|tsx|js|jsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.jest.json' }]
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.jest.json' }],
   },
 };
-
-

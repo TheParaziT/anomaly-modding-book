@@ -4,6 +4,8 @@ description: Configuration documentation for outfit upgrades
 draft: false
 tags:
     - LTX
+keywords:
+    - "*.ltx"
 ---
 
 # Outfit Upgrades
@@ -16,13 +18,6 @@ size="medium"
 showTitle={true}
 showDescription={true}
 />
-
-<AuthorComment author="saloeater">
-  Этот комментарий был написан автором Иваном Ивановым. 
-  Компонент автоматически подтянет его аватар, имя и социальные ссылки из `authors.yml`.
-  
-  Поддерживается **Markdown** разметка и любые другие MDX компоненты!
-</AuthorComment>
 
 ## 1. Outfit's upgrade definition
 

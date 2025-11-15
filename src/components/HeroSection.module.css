@@ -210,6 +210,16 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+.cardIconImage {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.navigationCard:hover .cardIconImage {
+  filter: drop-shadow(0 4px 8px rgba(123, 210, 26, 0.4));
+  transform: scale(1.1);
+}
+
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -504,8 +514,8 @@
 
 /* Правая секция - Карточки в тёмной теме */
 [data-theme='dark'] .navigationCard {
-  background: rgba(255, 255, 255, 0.08); /* Чуть светлее фон */
-  border-color: rgba(123, 210, 26, 0.3); /* Более яркая граница */
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(123, 210, 26, 0.3);
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -547,43 +557,4 @@
     rgba(8, 10, 12, 0.85) 35%,
     rgba(10, 13, 15, 0.9) 100%
   );
-}
-
-/* HeroSection.module.css - Дополнения для иконок */
-
-/* Стили для Iconify иконок */
-.iconifyIcon {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  transition: all 0.3s ease;
-}
-
-.navigationCard:hover .iconifyIcon {
-  filter: drop-shadow(0 4px 8px rgba(123, 210, 26, 0.4));
-}
-
-/* Плейсхолдер для загрузки иконок */
-.iconPlaceholder {
-  background: rgba(123, 210, 26, 0.2);
-  border-radius: 4px;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
-
-/* Адаптивность для иконок в кнопках */
-@media screen and (max-width: 768px) {
-  .externalLinks .button .iconifyIcon {
-    width: 18px;
-    height: 18px;
-  }
 }

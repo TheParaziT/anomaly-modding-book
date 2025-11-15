@@ -1,0 +1,13 @@
+.cardGrid {
+  margin: 2rem 0;
+}
+
+.cardColumn {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 996px) {
+  .cardColumn {
+    margin-bottom: 1.5rem;
+  }
+}

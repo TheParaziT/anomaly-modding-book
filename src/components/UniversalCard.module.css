@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--ifm-transition-fast);
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow-md);
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardImage {
+  height: 160px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardBody {
+  flex: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: var(--ifm-font-weight-bold);
+  margin: 0 0 0.75rem 0;
+  color: var(--ifm-heading-color);
+}
+
+.cardContent {
+  flex: 1;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+.cardContent p {
+  margin: 0;
+}
+
+.cardFooter {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.cardLink {
+  color: var(--ifm-color-primary);
+  font-weight: var(--ifm-font-weight-semibold);
+  transition: var(--ifm-transition-fast);
+}
+
+.card:hover .cardLink {
+  color: var(--ifm-color-primary-dark);
+}
