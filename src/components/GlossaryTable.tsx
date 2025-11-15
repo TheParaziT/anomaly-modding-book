@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import clsx from 'clsx';
 import type { GlossaryTerm, GlossaryData, GlossaryTableProps, SortConfig } from '../types';
+import styles from './GlossaryTable.module.css';
 
 const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,25 +10,25 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
     direction: 'asc',
   });
 
-  // Filter and sort terms
   const filteredAndSortedTerms = useMemo(() => {
     let filtered = data.terms;
 
-    // Filter by search query
+    // Apply search filter
     if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(
         item =>
-          item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.definition.toLowerCase().includes(searchTerm.toLowerCase())
+          item.term.toLowerCase().includes(searchLower) ||
+          item.definition.toLowerCase().includes(searchLower)
       );
     }
 
-    // Filter by selected category
+    // Apply category filter
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(item => item.category === selectedCategory);
     }
 
-    // Sorting
+    // Apply sorting
     if (sortConfig.key) {
       filtered = [...filtered].sort((a, b) => {
         const aValue = a[sortConfig.key] || '';
@@ -48,34 +48,33 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
   }, [data.terms, searchTerm, selectedCategory, sortConfig]);
 
   const handleSort = (key: keyof GlossaryTerm) => {
-    let direction: 'asc' | 'desc' = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
+    setSortConfig(prev => ({
+      key,
+      direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc',
+    }));
   };
 
   const handleCopyLink = (id: string) => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`;
     navigator.clipboard.writeText(url);
-    // Optional: show a toast/notification on successful copy
+    // You could add a toast notification here
   };
 
   return (
-    <div className="glossary-container">
-      <div className="glossary-controls">
+    <div className={styles.glossaryContainer}>
+      <div className={styles.glossaryControls}>
         <input
           type="text"
           placeholder="Search terms..."
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
-          className="glossary-search"
+          className={styles.searchInput}
         />
 
         <select
           value={selectedCategory}
           onChange={e => setSelectedCategory(e.target.value)}
-          className="glossary-filter"
+          className={styles.categoryFilter}
         >
           <option value="all">All Categories</option>
           {data.categories.map(category => (
@@ -86,52 +85,48 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
         </select>
       </div>
 
-      <div className="glossary-stats">
+      <div className={styles.glossaryStats}>
         Showing {filteredAndSortedTerms.length} of {data.terms.length} terms
       </div>
 
-      <div className="glossary-table-container">
-        <table className="glossary-table">
+      <div className={styles.tableContainer}>
+        <table className={styles.glossaryTable}>
           <thead>
             <tr>
               <th
                 onClick={() => handleSort('term')}
-                className={clsx(
-                  'sortable',
-                  sortConfig.key === 'term' && `sort-${sortConfig.direction}`
-                )}
+                className={`${styles.sortableHeader} ${sortConfig.key === 'term' ? styles[sortConfig.direction] : ''}`}
               >
                 Term
-                <span className="sort-indicator"></span>
+                <span className={styles.sortIndicator}></span>
               </th>
               <th>Definition</th>
               <th
                 onClick={() => handleSort('category')}
-                className={clsx(
-                  'sortable',
-                  sortConfig.key === 'category' && `sort-${sortConfig.direction}`
-                )}
+                className={`${styles.sortableHeader} ${sortConfig.key === 'category' ? styles[sortConfig.direction] : ''}`}
               >
                 Category
-                <span className="sort-indicator"></span>
+                <span className={styles.sortIndicator}></span>
               </th>
-              <th>Actions</th>
+              <th className={styles.actionsHeader}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredAndSortedTerms.map(item => (
-              <tr key={item.id} id={item.id}>
-                <td className="glossary-term">
-                  <a href={`#${item.id}`} className="term-anchor">
+              <tr key={item.id} id={item.id} className={styles.tableRow}>
+                <td className={styles.termCell}>
+                  <a href={`#${item.id}`} className={styles.termLink}>
                     {item.term}
                   </a>
                 </td>
-                <td className="glossary-definition">{item.definition}</td>
-                <td className="glossary-category">{item.category}</td>
-                <td className="glossary-actions">
+                <td className={styles.definitionCell}>{item.definition}</td>
+                <td className={styles.categoryCell}>
+                  {item.category && <span className={styles.categoryTag}>{item.category}</span>}
+                </td>
+                <td className={styles.actionsCell}>
                   <button
                     onClick={() => handleCopyLink(item.id)}
-                    className="copy-link-button"
+                    className={styles.copyButton}
                     title="Copy link to this term"
                   >
                     🔗
@@ -143,7 +138,7 @@ const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
         </table>
 
         {filteredAndSortedTerms.length === 0 && (
-          <div className="glossary-empty">No terms found matching your criteria.</div>
+          <div className={styles.emptyState}>No terms found matching your criteria.</div>
         )}
       </div>
     </div>

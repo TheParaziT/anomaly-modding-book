@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
 
 interface SectionItem {
@@ -15,40 +15,48 @@ interface SectionNavigatorProps {
   title?: string;
 }
 
-export default function SectionNavigator({
+const SectionNavigator: React.FC<SectionNavigatorProps> = ({
   sections,
   currentSection,
   title = 'Navigate Sections',
-}: SectionNavigatorProps): React.JSX.Element {
-  const [activeSection, setActiveSection] = useState(currentSection);
-
-  useEffect(() => {
-    setActiveSection(currentSection);
-  }, [currentSection]);
-
+}) => {
   return (
-    <div className="section-navigator">
-      <h3 className="section-navigator__title">{title}</h3>
-      <nav className="section-navigator__nav">
+    <div style={{ 
+      border: '1px solid var(--ifm-color-emphasis-200)',
+      borderRadius: '8px',
+      padding: '1.5rem',
+      margin: '1.5rem 0'
+    }}>
+      <h3>{title}</h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         {sections.map(section => (
           <Link
             key={section.id}
-            className={`section-navigator__item ${
-              activeSection === section.id ? 'section-navigator__item--active' : ''
-            }`}
             to={section.href}
-            onClick={() => setActiveSection(section.id)}
+            style={{
+              display: 'block',
+              padding: '1rem',
+              border: `2px solid ${currentSection === section.id ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-200)'}`,
+              borderRadius: '6px',
+              textDecoration: 'none',
+              transition: 'var(--ifm-transition-fast)',
+              background: currentSection === section.id ? 'var(--ifm-color-primary)' : 'transparent',
+              color: currentSection === section.id ? 'white' : 'var(--ifm-font-color-base)'
+            }}
           >
-            {section.icon && <span className="section-navigator__icon">{section.icon}</span>}
-            <div className="section-navigator__content">
-              <h4 className="section-navigator__title">{section.title}</h4>
-              {section.description && (
-                <p className="section-navigator__description">{section.description}</p>
-              )}
+            <div style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>
+              {section.title}
             </div>
+            {section.description && (
+              <div style={{ fontSize: '0.9rem', opacity: 0.8 }}>
+                {section.description}
+              </div>
+            )}
           </Link>
         ))}
-      </nav>
+      </div>
     </div>
   );
-}
+};
+
+export default SectionNavigator;

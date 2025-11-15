@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 // ============================================================================
-// CORE COMPONENT TYPES
+// CORE TYPES
 // ============================================================================
 
 export interface UniversalCardProps {
@@ -56,11 +56,11 @@ export interface AuthorData {
   image_url: string;
   socials?: AuthorSocials;
   description?: string;
+  discord_username?: string;
 }
 
 export interface Author extends AuthorData {
   key: string;
-  discord_username?: string;
 }
 
 export interface AuthorsProps {
@@ -69,10 +69,6 @@ export interface AuthorsProps {
   showTitle?: boolean;
   showDescription?: boolean;
 }
-
-// ============================================================================
-// AUTHOR COMMENT TYPES
-// ============================================================================
 
 export interface AuthorCommentProps {
   author: string;
@@ -109,11 +105,34 @@ export interface GlossaryTableProps {
 }
 
 // ============================================================================
-// THEME TYPES
+// TABLE TYPES
 // ============================================================================
 
-export interface MDXComponentsType {
-  [key: string]: React.ComponentType<any>;
+export interface DataItem {
+  id: string;
+  fileName: string;
+  title: string;
+  description: string;
+  category?: string;
+  preview?: string;
+  columns?: {
+    showCategory?: boolean;
+    showPreview?: boolean;
+  };
+}
+
+export interface ExpandableDataTableProps {
+  items: DataItem[];
+  basePath?: string;
+  defaultColumns?: {
+    showCategory?: boolean;
+    showPreview?: boolean;
+  };
+}
+
+export interface DetailTableProps {
+  fileName: string;
+  basePath?: string;
 }
 
 // ============================================================================
@@ -130,12 +149,9 @@ export interface SortConfig<T> {
 export type ComponentSize = 'small' | 'medium' | 'large';
 
 // ============================================================================
-// COMPONENT EXPORTS
+// THEME TYPES
 // ============================================================================
 
-export { default as Authors } from '../components/Authors';
-export { default as AuthorComment } from '../components/AuthorComment';
-export { default as UniversalCard } from '../components/UniversalCard';
-export { default as CardGrid } from '../components/CardGrid';
-export { default as YouTubeVideo } from '../components/YouTubeVideo';
-// Добавьте другие экспорты по мере необходимости
+export interface MDXComponentsType {
+  [key: string]: React.ComponentType<any>;
+}

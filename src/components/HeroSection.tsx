@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
+import Icon from './Icon';
 import styles from './HeroSection.module.css';
 
 // Local background videos list
@@ -27,124 +28,72 @@ const backgroundVideos = [
   },
 ];
 
-// Navigation cards
+// Navigation cards with Iconify icons
 const navigationCards = [
   {
     title: 'Getting Started',
     description: 'Begin your journey',
-    iconifyUrl: 'https://api.iconify.design/mdi:rocket-launch.svg',
+    icon: 'mdi:rocket-launch',
     href: '/docs/getting-started/',
     color: 'primary',
   },
   {
     title: 'Glossary',
     description: 'Glossary',
-    iconifyUrl: 'https://api.iconify.design/mdi:book.svg',
+    icon: 'mdi:book',
     href: '/glossary',
     color: 'secondary',
   },
   {
     title: 'Tutorials',
     description: 'Step-by-step guides',
-    iconifyUrl: 'https://api.iconify.design/mdi:teach.svg',
+    icon: 'mdi:teach',
     href: '/docs/tutorials/',
     color: 'secondary',
   },
   {
     title: 'Modding Tools',
     description: 'Essential software',
-    iconifyUrl: 'https://api.iconify.design/mdi:tools.svg',
+    icon: 'mdi:tools',
     href: '/docs/modding-tools/',
     color: 'secondary',
   },
   {
     title: 'References',
     description: 'Technical documentation',
-    iconifyUrl: 'https://api.iconify.design/mingcute:list-search-line.svg',
+    icon: 'mingcute:list-search-line',
     href: '/docs/references/',
     color: 'secondary',
   },
   {
     title: 'Resources',
     description: 'Assets and materials',
-    iconifyUrl: 'https://api.iconify.design/carbon:software-resource.svg',
+    icon: 'carbon:software-resource',
     href: '/docs/resources/',
     color: 'secondary',
   },
   {
     title: 'Engine API',
     description: 'Engine documentation',
-    iconifyUrl: 'https://api.iconify.design/tabler:engine.svg',
+    icon: 'tabler:engine',
     href: '/docs/engine-api/',
     color: 'secondary',
   },
   {
     title: 'Scripting API',
     description: 'Scripting reference',
-    iconifyUrl: 'https://api.iconify.design/mdi-light:script.svg',
+    icon: 'mdi-light:script',
     href: '/docs/scripting-api/',
     color: 'secondary',
   },
   {
     title: 'For Contributors',
     description: 'Help improve the book',
-    iconifyUrl: 'https://api.iconify.design/mdi:handshake-outline.svg',
+    icon: 'mdi:handshake-outline',
     href: '/docs/for-contributors/',
     color: 'secondary',
   },
 ];
-
-// Icon component using Iconify CDN
-interface IconifyIconProps {
-  url: string;
-  width?: number | string;
-  height?: number | string;
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const IconifyIcon: React.FC<IconifyIconProps> = ({
-  url,
-  width = 24,
-  height = 24,
-  className,
-  style,
-}) => {
-  const [svgContent, setSvgContent] = useState<string>('');
-
-  useEffect(() => {
-    const fetchIcon = async () => {
-      try {
-        const response = await fetch(url);
-        if (response.ok) {
-          const svgText = await response.text();
-          setSvgContent(svgText);
-        }
-      } catch (error) {
-        console.warn('Failed to load icon:', url, error);
-      }
-    };
-
-    fetchIcon();
-  }, [url]);
-
-  if (!svgContent) {
-    return (
-      <div
-        className={clsx(styles.iconPlaceholder, className)}
-        style={{ width, height, ...style }}
-      />
-    );
-  }
-
-  return (
-    <div
-      className={className}
-      style={{ width, height, ...style }}
-      dangerouslySetInnerHTML={{ __html: svgContent }}
-    />
-  );
-};
 
 const HeroSection: React.FC = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -219,24 +168,14 @@ const HeroSection: React.FC = () => {
                   className="button button--outline button--secondary"
                   href="https://github.com/TheParaziT/anomaly-modding-book"
                 >
-                  <IconifyIcon
-                    url="https://api.iconify.design/mdi:github.svg"
-                    width={20}
-                    height={20}
-                    style={{ marginRight: '8px' }}
-                  />
+                  <Icon icon="mdi:github" size={20} style={{ marginRight: '8px' }} />
                   GitHub
                 </Link>
                 <Link
                   className="button button--outline button--secondary"
                   href="https://discord.gg/8Pu2ekQYg3"
                 >
-                  <IconifyIcon
-                    url="https://api.iconify.design/mdi:discord.svg"
-                    width={20}
-                    height={20}
-                    style={{ marginRight: '8px' }}
-                  />
+                  <Icon icon="ic:baseline-discord" size={20} style={{ marginRight: '8px' }} />
                   Discord
                 </Link>
               </div>
@@ -252,12 +191,7 @@ const HeroSection: React.FC = () => {
                     className={clsx(styles.navigationCard, styles[`card${index + 1}`])}
                   >
                     <div className={styles.cardIcon}>
-                      <IconifyIcon
-                        url={card.iconifyUrl}
-                        width={32}
-                        height={32}
-                        className={styles.iconifyIcon}
-                      />
+                      <Icon icon={card.icon} size={32} className={styles.cardIconImage} />
                     </div>
                     <div className={styles.cardContent}>
                       <h3 className={styles.cardTitle}>{card.title}</h3>

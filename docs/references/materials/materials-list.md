@@ -4,8 +4,10 @@ draft: false
 keywords:
   - Game Material
   - List
+  - "*.xr"
 tags:
   - Game Material
+description: List and description of the Game Materials in gamemtl.xr file.
 ---
 
 # Game Materials List
@@ -18,7 +20,7 @@ This section contains a list and description of the Game Materials that are avai
 
 ## Static Object materials
 
-import ExpandableDataTable from '@site/src/components/DynamicTableLoader/ExpandableDataTable';
+import ExpandableDataTable from '@site/src/components/ExpandableDataTable';
 
 <ExpandableDataTable 
   basePath="/data/tables/materials/static/"
@@ -54,9 +56,9 @@ import ExpandableDataTable from '@site/src/components/DynamicTableLoader/Expanda
       description: "",
     },
     {
-      id: "concreate",
-      fileName: "concreate.json",
-      title: "concreate",
+      id: "concrete",
+      fileName: "concrete.json",
+      title: "concrete",
       description: "",
     },
     {

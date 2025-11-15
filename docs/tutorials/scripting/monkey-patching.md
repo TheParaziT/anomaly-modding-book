@@ -3,6 +3,10 @@ title: Monkey Patching
 tags:
     - LUA
 draft: false
+keywords:
+    - LUA
+    - Script
+    - Monkey Patch
 ---
 
 # Monkey Patching

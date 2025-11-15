@@ -5,6 +5,10 @@ tags:
 description: Guide for using ImGui in scripting
 preview: /docs/tutorials/scripting/assets/images/imgui-button-example.png
 draft: false
+categories: []
+keywords:
+    - ImGui
+    - Script
 ---
 
 # ImGui

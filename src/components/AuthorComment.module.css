@@ -1,47 +1,38 @@
-/* Основные стили контейнера */
-.containerDefault {
+.container {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  transition: var(--ifm-transition-fast);
+}
+
+.container.default {
   background: var(--ifm-background-surface-color);
   border-left: 4px solid var(--ifm-color-primary);
   padding: 1rem;
-  margin: 1.5rem 0;
-  border-radius: 0 8px 8px 0;
-  transition: var(--ifm-transition-fast);
   box-shadow: var(--ifm-global-shadow-lw);
 }
 
-.containerDefault:hover {
-  box-shadow: var(--ifm-global-shadow-md);
-}
-
-.containerHighlighted {
+.container.highlighted {
   background: rgba(123, 210, 26, 0.05);
   border: 2px solid var(--ifm-color-primary);
   padding: 1.25rem;
-  margin: 1.5rem 0;
-  border-radius: 12px;
-  transition: var(--ifm-transition-fast);
   box-shadow: var(--ifm-global-shadow-md);
 }
 
-.containerHighlighted:hover {
-  box-shadow: var(--ifm-global-shadow-tl);
-  background: rgba(123, 210, 26, 0.08);
-}
-
-.containerMinimal {
+.container.minimal {
   background: transparent;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   padding: 1rem 0;
-  margin: 1rem 0;
-  border-radius: 0;
-  transition: var(--ifm-transition-fast);
 }
 
-.containerMinimal:hover {
+.container.default:hover,
+.container.highlighted:hover {
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.container.minimal:hover {
   border-bottom-color: var(--ifm-color-primary);
 }
 
-/* Заголовок с информацией об авторе */
 .header {
   display: flex;
   align-items: flex-start;
@@ -56,12 +47,6 @@
   object-fit: cover;
   flex-shrink: 0;
   border: 2px solid var(--ifm-color-emphasis-200);
-  transition: var(--ifm-transition-fast);
-}
-
-.containerDefault:hover .avatar,
-.containerHighlighted:hover .avatar {
-  border-color: var(--ifm-color-primary-light);
 }
 
 .authorInfo {
@@ -80,7 +65,6 @@
 .authorName {
   font-size: 1.1rem;
   color: var(--ifm-heading-color);
-  font-weight: var(--ifm-font-weight-bold);
   margin: 0;
 }
 
@@ -90,15 +74,12 @@
   background: var(--ifm-color-emphasis-100);
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
-  font-weight: var(--ifm-font-weight-base);
   white-space: nowrap;
 }
 
-/* Социальные ссылки */
 .socialLinks {
   display: flex;
-  gap: 0.375rem;
-  align-items: center;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -106,12 +87,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
   color: var(--ifm-color-emphasis-600);
   transition: var(--ifm-transition-fast);
-  background: var(--ifm-color-emphasis-100);
 }
 
 .socialLink:hover {
@@ -121,128 +101,69 @@
   transform: translateY(-1px);
 }
 
-.socialIcon {
-  width: 16px;
-  height: 16px;
-}
-
-.socialIconImage {
-  object-fit: contain;
-  border-radius: 2px;
-}
-
-/* Цвета для специфичных платформ */
-.socialLink[title*="vk"]:hover {
-  color: var(--color-vk);
-}
-
-.socialLink[title*="telegram"]:hover {
-  color: var(--color-telegram);
-}
-
-.socialLink[title*="moddb"]:hover {
-  color: var(--color-moddb);
-}
-
-.socialLink[title*="discord"]:hover {
-  color: var(--color-discord);
-}
-
-/* Контент комментария */
 .contentWithAvatar {
   margin-left: calc(48px + 0.75rem);
-  padding-left: 0;
 }
 
 .content {
   margin-left: 0;
-  padding-left: 0.5rem;
 }
 
 .commentText {
   line-height: var(--ifm-line-height-base);
   color: var(--ifm-font-color-base);
-  font-size: var(--ifm-font-size-base);
 }
 
-.containerMinimal .commentText {
+.container.minimal .commentText {
   color: var(--ifm-color-emphasis-800);
 }
 
-/* Сообщение об ошибке */
 .authorNotFound {
   background: #fff3cd;
   border: 1px solid #ffeaa7;
   padding: 1rem;
-  margin: 1rem 0;
   border-radius: 4px;
   color: #856404;
 }
 
-/* Адаптивность */
+/* Responsive */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .avatar {
     width: 40px;
     height: 40px;
   }
-  
+
   .contentWithAvatar {
     margin-left: 0;
-    padding-left: 0;
   }
-  
+
   .nameRow {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
-  
+
   .authorName {
     font-size: 1rem;
   }
-  
-  .containerDefault,
-  .containerHighlighted {
-    padding: 0.875rem;
-    margin: 1.25rem 0;
-  }
 }
 
-/* Темная тема */
-[data-theme='dark'] .containerDefault {
-  background: var(--ifm-background-surface-color);
-  border-left-color: var(--ifm-color-primary);
-}
-
-[data-theme='dark'] .containerHighlighted {
+/* Dark theme */
+[data-theme='dark'] .container.highlighted {
   background: rgba(123, 210, 26, 0.08);
-  border-color: var(--ifm-color-primary);
 }
 
-[data-theme='dark'] .containerMinimal {
+[data-theme='dark'] .container.minimal {
   border-bottom-color: var(--ifm-color-emphasis-200);
-}
-
-[data-theme='dark'] .containerMinimal:hover {
-  border-bottom-color: var(--ifm-color-primary-light);
 }
 
 [data-theme='dark'] .authorTitle {
   background: var(--ifm-color-emphasis-200);
   color: var(--ifm-color-emphasis-800);
-}
-
-[data-theme='dark'] .socialLink {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-600);
-}
-
-[data-theme='dark'] .socialLink:hover {
-  background: var(--ifm-color-emphasis-300);
 }

@@ -1,24 +1,23 @@
 import React from 'react';
 import UniversalCard from './UniversalCard';
 import type { CardGridProps } from '../types';
+import styles from './CardGrid.module.css';
 
-export default function CardGrid({
-  children,
-  items = [],
-  columns = 3,
-}: CardGridProps): React.JSX.Element {
+const CardGrid: React.FC<CardGridProps> = ({ children, items = [], columns = 3 }) => {
   const columnClass = `col col--${12 / columns}`;
 
   return (
-    <div className="card-grid">
+    <div className={styles.cardGrid}>
       {children}
       <div className="row">
         {items.map((item, index) => (
-          <div key={index} className={`${columnClass} margin-bottom--lg`}>
+          <div key={index} className={`${columnClass} ${styles.cardColumn}`}>
             <UniversalCard {...item} />
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default CardGrid;

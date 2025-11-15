@@ -1,15 +1,20 @@
 import React from 'react';
 import type { YouTubeVideoProps } from '../types';
+import styles from './YouTubeVideo.module.css';
 
-export default function YouTubeVideo({ id, title }: YouTubeVideoProps) {
+const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ id, title }) => {
   return (
-    <div className="video-container">
+    <div className={styles.videoContainer}>
       <iframe
-        className="responsive-iframe"
+        className={styles.responsiveIframe}
         src={`https://www.youtube.com/embed/${id}`}
+        title={title}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      ></iframe>
+        loading="lazy"
+      />
     </div>
   );
-}
+};
+
+export default YouTubeVideo;

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import GlossaryTable from '@site/src/components/GlossaryTable';
 import glossaryData from '@site/src/data/glossary';
+import type { GlossaryData } from '../types';
 
 const GlossaryPage: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const GlossaryPage: React.FC = () => {
               all entries.
             </p>
 
-            <GlossaryTable data={glossaryData} />
+            <GlossaryTable data={glossaryData as GlossaryData} />
           </div>
         </div>
       </div>

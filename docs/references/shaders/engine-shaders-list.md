@@ -14,7 +14,7 @@ ___
 
 This section contains a list and description of the shaders that are available in the `shaders.xr` file.
 
-import ExpandableDataTable from '@site/src/components/DynamicTableLoader/ExpandableDataTable';
+import ExpandableDataTable from '@site/src/components/ExpandableDataTable';
 
 ### Debug
 

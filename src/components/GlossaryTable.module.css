@@ -1,0 +1,171 @@
+.glossaryContainer {
+  margin: 2rem 0;
+}
+
+.glossaryControls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.categoryFilter {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.glossaryStats {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.glossaryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: var(--ifm-transition-fast);
+}
+
+.sortableHeader:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.sortableHeader.asc .sortIndicator::after {
+  content: '↑';
+}
+
+.sortableHeader.desc .sortIndicator::after {
+  content: '↓';
+}
+
+.sortIndicator {
+  margin-left: 0.5rem;
+}
+
+.glossaryTable th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: var(--ifm-font-weight-semibold);
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  transition: var(--ifm-transition-fast);
+}
+
+.tableRow:hover {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.glossaryTable td {
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.termCell {
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.termLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.termLink:hover {
+  text-decoration: underline;
+}
+
+.definitionCell {
+  line-height: 1.5;
+}
+
+.categoryCell {
+  white-space: nowrap;
+}
+
+.categoryTag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.actionsCell {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: var(--ifm-transition-fast);
+}
+
+.copyButton:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.emptyState {
+  padding: 3rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glossaryControls {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    min-width: auto;
+  }
+
+  .glossaryTable th,
+  .glossaryTable td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .categoryTag {
+    font-size: 0.75rem;
+  }
+}

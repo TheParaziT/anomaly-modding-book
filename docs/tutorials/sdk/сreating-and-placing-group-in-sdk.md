@@ -5,6 +5,10 @@ tags:
 preview: /docs/tutorials/sdk/assets/images/group-objects.png
 description: Tutorial how to create adn place Groups in SDK
 draft: false
+categories:
+  - Group
+  - SDK
+  - "*.group"
 ---
 
 # Creating and Placing Group in SDK

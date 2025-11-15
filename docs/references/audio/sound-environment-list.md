@@ -18,7 +18,7 @@ ___
 
 Contains settings for different sound zones in `senvironment.xr` file.
 
-import ExpandableDataTable from '@site/src/components/DynamicTableLoader/ExpandableDataTable';
+import ExpandableDataTable from '@site/src/components/ExpandableDataTable';
 
 ### Debug
 

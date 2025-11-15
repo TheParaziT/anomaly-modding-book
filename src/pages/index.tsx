@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HeroSection from '../components/HeroSection';
+import React from 'react';
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();

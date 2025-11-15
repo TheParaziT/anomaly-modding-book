@@ -33,7 +33,6 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'warn',
   onBrokenAnchors: 'warn',
-  clientModules: ['./src/client/openGraphBridge.ts'],
 
   plugins: [
     'docusaurus-plugin-image-zoom',
@@ -53,15 +52,6 @@ const config: Config = {
             content: 'black-translucent',
           },
         ],
-      },
-    ],
-    [
-      'docusaurus-graph',
-      {
-        docsDir: 'docs',
-        buildDir: 'build',
-        sourcesTag: 'sources',
-        referencesTag: 'references',
       },
     ],
     [
