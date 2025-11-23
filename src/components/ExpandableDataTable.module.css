@@ -217,6 +217,12 @@ table {
   margin-top: 0.5rem;
 }
 
+/* Улучшенная видимость для скринридеров */
+.detailTable th[scope='col'],
+.detailTable th[scope='row'] {
+  font-weight: bold;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .headerCell,

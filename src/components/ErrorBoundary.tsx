@@ -1,3 +1,4 @@
+// ErrorBoundary.tsx
 import React from 'react';
 
 interface ErrorBoundaryState {
@@ -10,20 +11,67 @@ interface ErrorBoundaryProps {
   fallback?: React.ComponentType<{ error: Error }>;
 }
 
+/**
+ * Компонент-перехватчик ошибок для безопасной обработки сбоев в дочерних компонентах
+ * 
+ * @component
+ * @class
+ * 
+ * @example
+ * ```tsx
+ * // Базовое использование
+ * <ErrorBoundary>
+ *   <UnstableComponent />
+ * </ErrorBoundary>
+ * 
+ * // С кастомным fallback компонентом
+ * <ErrorBoundary fallback={CustomErrorFallback}>
+ *   <UnstableComponent />
+ * </ErrorBoundary>
+ * ```
+ * 
+ * @param {ErrorBoundaryProps} props - Свойства компонента
+ * @param {React.ReactNode} props.children - Дочерние компоненты для отслеживания ошибок
+ * @param {React.ComponentType<{ error: Error }>} [props.fallback] - Кастомный компонент для отображения при ошибке
+ * 
+ * @extends React.Component<ErrorBoundaryProps, ErrorBoundaryState>
+ */
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  /**
+   * @constructor
+   * @param {ErrorBoundaryProps} props - Свойства компонента
+   */
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
 
+  /**
+   * Статический метод для обновления состояния при возникновении ошибки
+   * 
+   * @static
+   * @param {Error} error - Объект ошибки
+   * @returns {ErrorBoundaryState} Новое состояние компонента
+   */
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { hasError: true, error };
   }
 
+  /**
+   * Метод жизненного цикла для логирования ошибок
+   * 
+   * @param {Error} error - Объект ошибки
+   * @param {React.ErrorInfo} errorInfo - Информация об ошибке
+   */
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('Error caught by boundary:', error, errorInfo);
   }
 
+  /**
+   * Метод рендеринга компонента
+   * 
+   * @returns {JSX.Element} Дочерние компоненты или fallback UI при ошибке
+   */
   render() {
     if (this.state.hasError) {
       if (this.props.fallback) {

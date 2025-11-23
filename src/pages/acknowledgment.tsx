@@ -1,7 +1,19 @@
+// acknowledgment.tsx
 import React from 'react';
 import Layout from '@theme/Layout';
 import Authors from '../components/Authors';
 
+/**
+ * Страница благодарностей и признаний - отображает благодарности контрибьюторам, используемым инструментам и ресурсам
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <AcknowledgmentPage />
+ * ```
+ * 
+ * @returns {JSX.Element} Страница благодарностей
+ */
 const AcknowledgmentPage: React.FC = () => {
   return (
     <Layout

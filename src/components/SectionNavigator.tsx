@@ -1,3 +1,4 @@
+// SectionNavigator.tsx
 import React from 'react';
 import Link from '@docusaurus/Link';
 
@@ -15,6 +16,29 @@ interface SectionNavigatorProps {
   title?: string;
 }
 
+/**
+ * Навигационный компонент для перехода между разделами документации
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <SectionNavigator
+ *   sections={[
+ *     { id: 'intro', title: 'Введение', href: '/docs/intro', description: 'Начало работы' },
+ *     { id: 'tutorials', title: 'Туториалы', href: '/docs/tutorials' }
+ *   ]}
+ *   currentSection="intro"
+ *   title="Навигация по разделам"
+ * />
+ * ```
+ * 
+ * @param {SectionNavigatorProps} props - Свойства компонента
+ * @param {SectionItem[]} props.sections - Массив разделов для навигации
+ * @param {string} [props.currentSection] - ID текущего активного раздела
+ * @param {string} [props.title="Navigate Sections"] - Заголовок навигатора
+ * 
+ * @returns {JSX.Element} Навигационный компонент разделов
+ */
 const SectionNavigator: React.FC<SectionNavigatorProps> = ({
   sections,
   currentSection,

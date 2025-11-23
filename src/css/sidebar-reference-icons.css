@@ -13,6 +13,9 @@
 .menu__link[href^='/docs/references/configs'] {
   --sidebar-icon: url('https://api.iconify.design/mdi:file-cog.svg');
 }
+.menu__link[href^='/docs/references/crash-list'] {
+  --sidebar-icon: url('https://api.iconify.design/ant-design:alert-outlined.svg');
+}
 .menu__link[href^='/docs/references/configs/fluids'] {
   --sidebar-icon: url('https://api.iconify.design/tabler:chart-bubble-filled.svg');
 }

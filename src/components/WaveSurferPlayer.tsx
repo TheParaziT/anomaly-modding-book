@@ -1,3 +1,4 @@
+// WaveSurferPlayer.tsx
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import Icon from './Icon';
@@ -12,6 +13,31 @@ interface WaveSurferPlayerProps {
   progressColor?: string;
 }
 
+/**
+ * Продвинутый аудио-плеер с визуализацией волновой формы на основе WaveSurfer.js
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <WaveSurferPlayer
+ *   audioUrl="/audio/sample.mp3"
+ *   height={100}
+ *   showVolumeControl={true}
+ *   showSpeedControl={true}
+ * />
+ * ```
+ * 
+ * @param {WaveSurferPlayerProps} props - Свойства компонента
+ * @param {string} props.audioUrl - URL аудио файла для воспроизведения
+ * @param {boolean} [props.showSpectrogramByDefault=false] - Показывать спектрограмму по умолчанию
+ * @param {boolean} [props.showVolumeControl=true] - Показывать контроль громкости
+ * @param {boolean} [props.showSpeedControl=true] - Показывать контроль скорости воспроизведения
+ * @param {number} [props.height=128] - Высота волновой формы
+ * @param {string} [props.waveColor="rgba(123, 210, 26, 0.3)"] - Цвет волновой формы
+ * @param {string} [props.progressColor="var(--ifm-color-primary)"] - Цвет прогресса воспроизведения
+ * 
+ * @returns {JSX.Element} Аудио плеер с визуализацией
+ */
 const WaveSurferPlayer: React.FC<WaveSurferPlayerProps> = ({
   audioUrl,
   showSpectrogramByDefault = false,

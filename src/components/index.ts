@@ -1,3 +1,22 @@
+// index.ts
+/**
+ * Главный файл экспорта компонентов UI библиотеки
+ * 
+ * @module Components
+ * 
+ * @description
+ * Этот файл экспортирует все основные компоненты UI библиотеки для S.T.A.L.K.E.R. моддинг документации.
+ * 
+ * @example
+ * ```tsx
+ * // Импорт отдельных компонентов
+ * import { UniversalCard, HeroSection, Authors } from './components';
+ * 
+ * // Импорт всех компонентов
+ * import * as Components from './components';
+ * ```
+ */
+
 // Component exports
 export { default as Authors } from './Authors';
 export { default as AuthorComment } from './AuthorComment';

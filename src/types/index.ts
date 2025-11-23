@@ -155,3 +155,5 @@ export type ComponentSize = 'small' | 'medium' | 'large';
 export interface MDXComponentsType {
   [key: string]: React.ComponentType<any>;
 }
+
+export * from './hero';

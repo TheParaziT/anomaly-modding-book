@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -26,7 +26,7 @@ const backgroundVideos = [
     url: '/video/3.mp4',
     startTime: 0,
   },
-];
+] as const;
 
 // Navigation cards with Iconify icons
 const navigationCards = [
@@ -93,13 +93,34 @@ const navigationCards = [
     href: '/docs/for-contributors/',
     color: 'secondary',
   },
-];
+] as const;
 
+/**
+ * Hero Section Component - главная секция с видео-фоном и навигационными карточками
+ *
+ * @example
+ * ```tsx
+ * <HeroSection />
+ * ```
+ *
+ * @component
+ * @category Core Components
+ */
 const HeroSection: React.FC = () => {
   const { siteConfig } = useDocusaurusContext();
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Вместо const currentVideo = backgroundVideos[currentVideoIndex];
+  const currentVideo = backgroundVideos[currentVideoIndex]!; // Используем non-null assertion
+
+  // Или с проверкой
+  if (!currentVideo) {
+    console.error('Current video is undefined');
+    return null; // или fallback UI
+  }
 
   // Detect mobile devices
   useEffect(() => {
@@ -118,7 +139,13 @@ const HeroSection: React.FC = () => {
     setCurrentVideoIndex(randomIndex);
   }, []);
 
-  const currentVideo = backgroundVideos[currentVideoIndex];
+  // Handle video loaded event
+  const handleVideoLoaded = useRef(() => {
+    if (videoRef.current && currentVideo) {
+      videoRef.current.currentTime = currentVideo.startTime;
+      setIsVideoLoaded(true);
+    }
+  });
 
   return (
     <section className={styles.heroSection}>
@@ -126,6 +153,7 @@ const HeroSection: React.FC = () => {
       <div className={styles.videoBackground}>
         {!isMobile ? (
           <video
+            ref={videoRef}
             className={clsx(styles.videoElement, isVideoLoaded && styles.videoElementFaded)}
             src={currentVideo.url}
             title={currentVideo.title}
@@ -133,11 +161,7 @@ const HeroSection: React.FC = () => {
             muted
             loop
             playsInline
-            onLoadedData={e => {
-              const video = e.target as HTMLVideoElement;
-              video.currentTime = currentVideo.startTime;
-              setIsVideoLoaded(true);
-            }}
+            onLoadedData={handleVideoLoaded.current}
           />
         ) : (
           // Fallback for mobile - static gradient background

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import authorsGlobal from 'js-yaml-loader!../../blog/authors.yml';
 import { normalizeSocialLink, sizeMap } from '../utils/iconifyUtils';
 import SocialIcon from './SocialIcon';
-import Icon from './Icon';
 import type { AuthorsProps, Author } from '../types';
 import styles from './Authors.module.css';
 
@@ -37,14 +36,21 @@ const Authors: React.FC<AuthorsProps> = ({
   }, [authors]);
 
   if (filteredAuthors.length === 0) {
-    return <div className={styles.emptyState}>No authors found.</div>;
+    return (
+      <div className={styles.emptyState}>
+        No authors found.
+      </div>
+    );
   }
 
   return (
     <div className={styles.authorsContainer}>
       <div className="row">
-        {filteredAuthors.map(author => (
-          <div key={author.key} className="col col--6">
+        {filteredAuthors.map((author) => (
+          <div
+            key={author.key}
+            className="col col--6"
+          >
             <div className={styles.authorCard}>
               {author.image_url && (
                 <img
@@ -54,7 +60,7 @@ const Authors: React.FC<AuthorsProps> = ({
                   style={{ width: imageSize, height: imageSize }}
                 />
               )}
-
+              
               <div className={styles.authorInfo}>
                 <div className={styles.authorName}>
                   {author.url ? (
@@ -80,25 +86,24 @@ const Authors: React.FC<AuthorsProps> = ({
                 )}
 
                 <div className={styles.socialLinks}>
-                  {author.socials &&
-                    Object.entries(author.socials)
-                      .filter(([_, value]) => value && value !== '')
-                      .map(([platform, handleOrUrl]) => {
-                        const normalizedUrl = normalizeSocialLink(platform, handleOrUrl as string);
-
-                        return (
-                          <a
-                            key={platform}
-                            href={normalizedUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title={`${author.name} on ${platform}`}
-                            className={styles.socialLink}
-                          >
-                            <SocialIcon platform={platform} size={iconSize} />
-                          </a>
-                        );
-                      })}
+                  {author.socials && Object.entries(author.socials)
+                    .filter(([_, value]) => value && value !== '')
+                    .map(([platform, handleOrUrl]) => {
+                      const normalizedUrl = normalizeSocialLink(platform, handleOrUrl as string);
+                      
+                      return (
+                        <a
+                          key={platform}
+                          href={normalizedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`${author.name} on ${platform}`}
+                          className={styles.socialLink}
+                        >
+                          <SocialIcon platform={platform} size={iconSize} />
+                        </a>
+                      );
+                    })}
 
                   {author.discord_username && (
                     <button

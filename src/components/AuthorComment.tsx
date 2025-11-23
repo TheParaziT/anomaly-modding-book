@@ -1,3 +1,4 @@
+
 import React from 'react';
 // @ts-ignore
 import authorsGlobal from 'js-yaml-loader!../../blog/authors.yml';

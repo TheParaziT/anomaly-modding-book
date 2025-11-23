@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import { buildFilePath, validateFileResponse, safeJsonParse } from '../utils/fileUtils';
 import { formatTime } from '../utils/stringUtils';
 import LoadingSpinner from './LoadingSpinner';
@@ -16,10 +17,14 @@ interface TableData {
   isNested: boolean;
 }
 
+
 const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/tables' }) => {
   const [tableData, setTableData] = useState<TableData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const tableRef = useRef<HTMLTableElement>(null);
+  const retryButtonRef = useRef<HTMLButtonElement>(null);
+
 
   const processNestedData = (data: any): TableData => {
     const sections: TableData['sections'] = [];
@@ -108,6 +113,78 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
     return processFlatData(data);
   };
 
+  /**
+   * Обработчик клавиатурных событий для таблицы
+   */
+  const handleTableKeyDown = (e: React.KeyboardEvent<HTMLTableElement>) => {
+    const table = tableRef.current;
+    if (!table) return;
+
+    const focusedElement = document.activeElement;
+    const cells = Array.from(table.querySelectorAll('td, th'));
+    const currentIndex = cells.indexOf(focusedElement as HTMLElement);
+
+    switch (e.key) {
+      case 'ArrowRight':
+        e.preventDefault();
+        if (currentIndex < cells.length - 1) {
+          (cells[currentIndex + 1] as HTMLElement).focus();
+        }
+        break;
+
+      case 'ArrowLeft':
+        e.preventDefault();
+        if (currentIndex > 0) {
+          (cells[currentIndex - 1] as HTMLElement).focus();
+        }
+        break;
+
+      case 'ArrowDown':
+        e.preventDefault();
+        const nextRowIndex = currentIndex + 2; // +2 чтобы пропустить заголовок
+        if (nextRowIndex < cells.length) {
+          (cells[nextRowIndex] as HTMLElement).focus();
+        }
+        break;
+
+      case 'ArrowUp':
+        e.preventDefault();
+        const prevRowIndex = currentIndex - 2;
+        if (prevRowIndex >= 0) {
+          (cells[prevRowIndex] as HTMLElement).focus();
+        }
+        break;
+
+      case 'Home':
+        e.preventDefault();
+        if (e.ctrlKey) {
+          (cells[0] as HTMLElement).focus(); // Первая ячейка
+        } else {
+          // Первая ячейка текущей строки
+          const currentRow = focusedElement?.closest('tr');
+          if (currentRow) {
+            const firstCell = currentRow.querySelector('td, th');
+            (firstCell as HTMLElement)?.focus();
+          }
+        }
+        break;
+
+      case 'End':
+        e.preventDefault();
+        if (e.ctrlKey) {
+          (cells[cells.length - 1] as HTMLElement).focus(); // Последняя ячейка
+        } else {
+          // Последняя ячейка текущей строки
+          const currentRow = focusedElement?.closest('tr');
+          if (currentRow) {
+            const rowCells = Array.from(currentRow.querySelectorAll('td, th'));
+            (rowCells[rowCells.length - 1] as HTMLElement)?.focus();
+          }
+        }
+        break;
+    }
+  };
+
   const loadTableData = async () => {
     try {
       setIsLoading(true);
@@ -141,6 +218,13 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
     return String(value);
   };
 
+  // Автофокус на кнопке retry при ошибке
+  useEffect(() => {
+    if (error && retryButtonRef.current) {
+      retryButtonRef.current.focus();
+    }
+  }, [error]);
+
   useEffect(() => {
     loadTableData();
   }, [fileName, basePath]);
@@ -151,14 +235,23 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
 
   if (error) {
     return (
-      <div className={styles.detailError}>
+      <div className={styles.detailError} role="alert" aria-live="polite">
         <p>
           <strong>Error loading data:</strong> {error}
         </p>
         <p className={styles.errorDetails}>
           File: {basePath}/{fileName}
         </p>
-        <button onClick={loadTableData} className={styles.retryButton}>
+        <button
+          ref={retryButtonRef}
+          onClick={loadTableData}
+          className={styles.retryButton}
+          onKeyDown={e => {
+            if (e.key === 'Escape') {
+              e.stopPropagation(); // Предотвращаем закрытие родительской таблицы
+            }
+          }}
+        >
           Try Again
         </button>
       </div>
@@ -166,20 +259,53 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
   }
 
   if (!tableData || tableData.sections.length === 0) {
-    return <div className={styles.detailNoData}>No data available to display</div>;
+    return (
+      <div className={styles.detailNoData} role="status" aria-live="polite">
+        No data available to display
+      </div>
+    );
   }
 
   return (
-    <div className={styles.detailContainer}>
+    <div className={styles.detailContainer} role="region" aria-label="Detailed data table">
       {tableData.sections.map((section, sectionIndex) => (
         <div key={section.sectionName || sectionIndex} className={styles.detailSection}>
-          {tableData.isNested && <h3 className={styles.sectionTitle}>{section.sectionName}</h3>}
+          {tableData.isNested && (
+            <h3
+              className={styles.sectionTitle}
+              tabIndex={0} // Делаем заголовок фокусируемым
+            >
+              {section.sectionName}
+            </h3>
+          )}
           <div className={styles.detailTableWrapper}>
-            <table className={styles.detailTable}>
+            <table
+              ref={tableRef}
+              className={styles.detailTable}
+              onKeyDown={handleTableKeyDown}
+              role="grid"
+              aria-label={
+                tableData.isNested ? `Parameters for ${section.sectionName}` : 'Data parameters'
+              }
+            >
               <thead>
-                <tr>
-                  <th className={styles.detailParameterCell}>Parameter</th>
-                  <th className={styles.detailValueCell}>Value</th>
+                <tr role="row">
+                  <th
+                    className={styles.detailParameterCell}
+                    scope="col"
+                    role="columnheader"
+                    tabIndex={0}
+                  >
+                    Parameter
+                  </th>
+                  <th
+                    className={styles.detailValueCell}
+                    scope="col"
+                    role="columnheader"
+                    tabIndex={0}
+                  >
+                    Value
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -187,9 +313,14 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
                   <tr
                     key={`${param.parameter}-${paramIndex}`}
                     className={paramIndex % 2 === 0 ? styles.evenRow : styles.oddRow}
+                    role="row"
                   >
-                    <td className={styles.detailParameterCell}>{param.parameter}</td>
-                    <td className={styles.detailValueCell}>{renderValue(param.value)}</td>
+                    <td className={styles.detailParameterCell} role="gridcell" tabIndex={0}>
+                      {param.parameter}
+                    </td>
+                    <td className={styles.detailValueCell} role="gridcell" tabIndex={0}>
+                      {renderValue(param.value)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -197,6 +328,12 @@ const DetailTable: React.FC<DetailTableProps> = ({ fileName, basePath = '/data/t
           </div>
         </div>
       ))}
+
+      {/* Скрытые инструкции для скринридеров */}
+      <div className={styles.visuallyHidden} aria-live="polite">
+        Use arrow keys to navigate through table cells. Ctrl+Home to go to first cell, Ctrl+End to
+        go to last cell.
+      </div>
     </div>
   );
 };
