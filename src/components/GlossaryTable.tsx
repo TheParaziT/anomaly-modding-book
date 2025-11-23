@@ -1,22 +1,7 @@
-// GlossaryTable.tsx
 import React, { useState, useMemo } from 'react';
 import type { GlossaryTerm, GlossaryData, GlossaryTableProps, SortConfig } from '../types';
 import styles from './GlossaryTable.module.css';
 
-/**
- * Интерактивная таблица глоссария с поиском, фильтрацией и сортировкой
- * 
- * @component
- * @example
- * ```tsx
- * <GlossaryTable data={glossaryData} />
- * ```
- * 
- * @param {GlossaryTableProps} props - Свойства компонента
- * @param {GlossaryData} props.data - Данные глоссария
- * 
- * @returns {JSX.Element} Таблица глоссария
- */
 const GlossaryTable: React.FC<GlossaryTableProps> = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');

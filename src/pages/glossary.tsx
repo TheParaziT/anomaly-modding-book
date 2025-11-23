@@ -1,63 +1,28 @@
-// glossary.ts
-import { GlossaryData } from '../types/glossary';
+import React from 'react';
+import Layout from '@theme/Layout';
+import GlossaryTable from '@site/src/components/GlossaryTable';
+import glossaryData from '@site/src/data/glossary';
+import type { GlossaryData } from '../types';
 
-/**
- * Данные глоссария для S.T.A.L.K.E.R. моддинга - содержит термины, определения и категории
- * 
- * @constant
- * @type {GlossaryData}
- * 
- * @property {string[]} categories - Категории терминов
- * @property {GlossaryTerm[]} terms - Массив терминов глоссария
- * 
- * @example
- * ```ts
- * import glossaryData from './glossary';
- * 
- * console.log(glossaryData.categories); // ['Game Concepts', 'Technical Terms', ...]
- * console.log(glossaryData.terms[0].term); // 'Anomaly'
- * ```
- */
-const glossaryData: GlossaryData = {
-  categories: ['Game Concepts', 'Technical Terms', 'Modding Terminology', 'Engine Components'],
-  terms: [
-    {
-      id: 'anomaly',
-      term: 'Anomaly',
-      definition:
-        'A zone with unusual physical properties that can be hazardous to humans. Anomalies often contain artifacts and can damage or kill stalkers who enter them.',
-      category: 'Game Concepts',
-      related: [
-        { id: 'artifact', term: 'Artifact' },
-        { id: 'emission', term: 'Emission' },
-      ],
-    },
-    {
-      id: 'artifact',
-      term: 'Artifact',
-      definition:
-        "An object formed in anomalies that possesses unusual properties. Artifacts can be sold or used to enhance a stalker's abilities.",
-      category: 'Game Concepts',
-      related: [{ id: 'anomaly', term: 'Anomaly' }],
-    },
-    {
-      id: 'xray-engine',
-      term: 'X-Ray Engine',
-      definition:
-        "The game engine used by the S.T.A.L.K.E.R. series. It's known for its advanced AI system called A-Life and its dynamic world simulation.",
-      category: 'Technical Terms',
-      related: [],
-    },
-    {
-      id: 'alife',
-      term: 'A-Life',
-      definition:
-        "The artificial life system in S.T.A.L.K.E.R. that controls NPC behavior and world events independently of the player's actions.",
-      category: 'Technical Terms',
-      related: [{ id: 'xray-engine', term: 'X-Ray Engine' }],
-    },
-    // ... остальные термины
-  ],
+const GlossaryPage: React.FC = () => {
+  return (
+    <Layout title="Glossary" description="Glossary of S.T.A.L.K.E.R. modding terms and concepts">
+      <div className="container margin-vert--lg">
+        <div className="row">
+          <div className="col col--10 col--offset-1">
+            <h1>Anomaly Modding Glossary</h1>
+            <p className="glossary-intro">
+              This glossary defines key terms and concepts related to S.T.A.L.K.E.R. Anomaly
+              modding. Use the search and filter options to find specific terms, or browse through
+              all entries.
+            </p>
+
+            <GlossaryTable data={glossaryData as GlossaryData} />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
-export default glossaryData;
+export default GlossaryPage;
