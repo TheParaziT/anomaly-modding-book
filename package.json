@@ -41,7 +41,7 @@
     "js-yaml-loader": "^1.2.2",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react-dom": "^19.2.3",
     "spectrogram": "^0.0.7",
     "typedoc-plugin-mdn-links": "^5.0.10",
     "typedoc-plugin-rename-defaults": "^0.7.3",
