@@ -37,7 +37,7 @@ ___
 ## Beginning
 
 - Download the [Blender](https://www.blender.org/download/) and install it.
-- Download any set of hands from [discord](https://discord.com/channels/456765861953536020/883097205710389288/1071072858358431804) or [Resources Pages](../../resources/rigs.md#hands-rig)
+- Download any set of hands from [Discord](https://discord.com/channels/456765861953536020/883097205710389288/1071072858358431804) or [Resources Pages](../../resources/rigs.md#hands-rig)
 - Download the [X-Ray Tools for Blender](https://github.com/PavelBlend/blender-xray/releases)
 - Install the X-Ray Tools for Blender by going to `Edit` > `Preferences` > `Add-ons` > top left > `Install from disk`
 - Install [OMF Editor](https://github.com/VaIeroK/Omf-Editor)

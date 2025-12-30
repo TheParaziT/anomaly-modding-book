@@ -24,19 +24,19 @@ ___
 
 ## Basics
 
-Dear ImGui is a bloat-free graphical user interface library for C++.  
+Dear ImGui is a bloat-free graphical user interface library for [C++](https://en.wikipedia.org/wiki/C%2B%2B).  
 It outputs optimized vertex buffers that you can render anytime in your 3D-pipeline-enabled application.  
 It is fast, portable, renderer agnostic, and self-contained (no external dependencies).  
 
 This guide explains how to use Anomaly's ImGui implementation (currently available only with [Modded Exes](https://github.com/themrdemonized/xray-monolith)), which can be used in Lua scripts.
 
-By default pressing F11 will show the ImGui overlay (a menu bar at the top of the screen).  
+By default pressing `F11` will show the ImGui overlay (a menu bar at the top of the screen).  
 The keybind can be changed in the settings.
 
 When the ImGui overlay is shown, the mouse cursor will change and the game will no longer react to any input.  
 
-Pressing Esc or F11 will hide it again - you can also transfer the input back to the game without closing the overlay by double clicking anywhere outside of existing ImGui windows.  
-In this case, pressing F11 will bring the input back to the ImGui overlay.
+Pressing `Esc` or `F11` will hide it again - you can also transfer the input back to the game without closing the overlay by double clicking anywhere outside of existing ImGui windows.  
+In this case, pressing `F11` will bring the input back to the ImGui overlay.
 
 Some resources to get you started on ImGui:
 

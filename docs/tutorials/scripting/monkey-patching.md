@@ -20,7 +20,7 @@ ___
   showDescription={true}
 />
 
-All code snippets used in the guide are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+> All code snippets used in the guide are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 
 This guide is specifically written for modding [Anomaly](https://www.moddb.com/mods/stalker-anomaly). Much of it will apply with minor changes to any S.T.A.L.K.E.R. modding. The concept is not limited to S.T.A.L.K.E.R. or even lua, Minecraft modding makes extensive use of monkey patching in Java.
 

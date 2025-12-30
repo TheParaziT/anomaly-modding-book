@@ -87,7 +87,7 @@ Thus we conclude that there are no unnecessary mask channels in the shader, all 
 And now we're ready to understand why the X-Ray engine allows you to assign only 4 materials to a terrane - because one material can only smoothly transition into 3 other materials. After all, if the grass is rendered through the G channel, it can only transition to the
 the remaining RBA channels - there are no others. And if we could set the color of the mask through which the detail-texture will be rendered (for example, yellow or blue), then we could use more materials and create more combinations of them with each other. But in the classic version we are limited to only four mask channels and, accordingly, four terrane materials. And these are already, apparently, limitations independent of the engine. And in general, this is a story from a parallel universe....
 
-___
+## Limitation Bypass
 
 Now let's try to understand how we can "legally" bypass this limitation. To understand the text below you must understand exactly how the standard terrane rendering system works and how terrane shaders are organized.
 
