@@ -31,6 +31,9 @@ import WaybackMachineIcon from "@site/static/img/logo/wayback-machine.svg";
 import OpenGLIcon from "@site/static/img/logo/opengl.svg";
 import MicrosoftLearnIcon from "@site/static/img/logo/microsoft.svg";
 import NVidiaIcon from "@site/static/img/logo/nvidia.svg";
+import AMBIcon from "@site/static/img/logo/book.svg";
+import GimpIcon from "@site/static/img/logo/gimp.svg";
+import AdobePhotoshopIcon from "@site/static/img/logo/adobe-photoshop.svg";
 
 // Функция для определения типа ссылки
 const getIconInfo = (
@@ -125,12 +128,21 @@ const getIconInfo = (
     if (hostname.includes("nvidia.com")) {
       return { Icon: NVidiaIcon, alt: "NVidia" };
     }
+    if (hostname.includes("marketplace.visualstudio.com")) {
+      return { Icon: MicrosoftLearnIcon, alt: "Microsoft Marketplace" };
+    }
+    if (hostname.includes("gimp.org")) {
+      return { Icon: GimpIcon, alt: "Gimp" };
+    }
+    if (hostname.includes("adobe.com")) {
+      return { Icon: AdobePhotoshopIcon, alt: "Adobe Photoshop" };
+    }
 
     // Для всех остальных внешних ссылок — общая иконка
     return { Icon: DefaultExternalIcon, alt: "External link" };
   } catch {
     // Если href не является абсолютным URL, считаем ссылку внутренней
-    return { Icon: null, alt: "" };
+    return { Icon: AMBIcon, alt: "Anomaly Modding Book" };
   }
 };
 

@@ -1,3 +1,10 @@
+---
+title: GitHub Release Workflow
+keywords:
+  - GitHub
+  - Workflow
+---
+
 # GitHub Release Workflow
 
 ___

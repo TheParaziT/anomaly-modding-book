@@ -20,3 +20,7 @@ Anyway, the whole programming thing is kinda hard, so feel free to ask questions
 Starting here I will assume you know lua. You read the book from start to end and became a master of this programming language. Or at least you know the difference between `if` and `while`.
 
 Oh, by the way, code editor. I like [Codium](https://vscodium.com/), but I know RavenAscendant uses [Notepad++](https://notepad-plus-plus.org/downloads/) like some old man. For the first couple of scripts you'll be fine with either, choose for yourself.
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
