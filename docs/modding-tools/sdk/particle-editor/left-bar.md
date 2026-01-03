@@ -18,8 +18,8 @@ Window with the list of particles in the file particles.xr
 
 |  |  |
 |---|---|
-| Add Group | Create Particle Group |
-| Add Particle | Create Particle Effect |
+| Add Group | Create <GlossaryTerm termId="particle-group">Particle Group</GlossaryTerm> |
+| Add Particle | Create <GlossaryTerm termId="particle-effect">Particle Effect</GlossaryTerm> |
 | Clone | Clone selected |
 | Remove | Remove selected |
 | Items | Items list |

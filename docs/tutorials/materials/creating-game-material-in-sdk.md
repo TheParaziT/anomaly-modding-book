@@ -22,7 +22,7 @@ For this example, I'll create the material of a thick concrete wall.
 
 Go into the Shader Editor.
 
-Click `Create` -> Select `Static`. This will create a new material for the [Static Object](../../../../glossary#static-object).
+Click `Create` -> Select `Static`. This will create a new material for the <GlossaryTerm termId="static-object">Static Object</GlossaryTerm>.
 
 Now we can rename the material. Right click on the material -> `Rename`.
 
@@ -55,7 +55,7 @@ Next, we need to determine the material parameters we need. I chose these ([para
 
 ## Creating breakable material
 
-A breakable material must be created for a [Dynamic Object](../../../../glossary#dynamic-object). To create a Breakable object, see this tutorial.
+A breakable material must be created for a <GlossaryTerm termId="dynamic-object">Dynamic Object</GlossaryTerm>. To create a Breakable object, see this tutorial.
 
 Click `Create` -> Select `Dynamic`.
 

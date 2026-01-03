@@ -222,27 +222,6 @@ const glossaryData: GlossaryData = {
       related: [],
     },
     {
-      id: 'xrai',
-      term: 'xrAI',
-      definition: 'AI-Map Compiler.',
-      category: 'Technical Terms',
-      related: [],
-    },
-    {
-      id: 'xrdo',
-      term: 'xrDO',
-      definition: 'Detail Object Compiler.',
-      category: 'Technical Terms',
-      related: [],
-    },
-    {
-      id: 'xrlc',
-      term: 'xrLC',
-      definition: 'Level Compiler.',
-      category: 'Technical Terms',
-      related: [],
-    },
-    {
       id: 'game-material',
       term: 'Game Material',
       definition: 'Responsible for the physical feature of the surface (friction, damping, etc.).',

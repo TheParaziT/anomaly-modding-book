@@ -30,12 +30,12 @@ If enabled the object is a root object.
 
 Object Type.
 
-- `Static` - [Static](/glossary#static-object) (Level geometry).
-- `Dynamic` - [Dynamic](../../../../glossary#dynamic-object) (Object with a skeleton).
-- `Progressive Dynamic` - [Dynamic](../../../../../../glossary#progressive-meshes) with levels of detail (in game, the object will change the number of polygons, depending on the distance to the game camera)
-- `HOM` - Level geometry cutoff (used to create [*.hom](../../../references/file-formats/game-levels/hom.md) files)
-- `Multiple Usage` - [Multiple used objects](../../../../../../glossary#multiply-usage-object) (trees, transportation, rocks, etc.)
-- `Sound Occluder` - Level sound cutoff (used to create [*.som](../../../references/file-formats/game-levels/som.md) files)
+- `Static` - <GlossaryTerm termId="static-object">Static Object</GlossaryTerm> (Level geometry).
+- `Dynamic` - <GlossaryTerm termId="dynamic-object">Dynamic Object</GlossaryTerm> (Object with a skeleton).
+- `Progressive Dynamic` - <GlossaryTerm termId="progressive-meshes">Dynamic</GlossaryTerm> with levels of detail (in game, the object will change the number of polygons, depending on the distance to the game camera)
+- `HOM` - <GlossaryTerm termId="hierarchical-occluder-mesh">Hierarchical Occluder Mesh</GlossaryTerm> (used to create [*.hom](../../../references/file-formats/game-levels/hom.md) files)
+- `Multiple Usage` - <GlossaryTerm termId="multiply-usage-object">Multiple Usage Objects</GlossaryTerm> (trees, transportation, rocks, etc.)
+- `Sound Occluder` - <GlossaryTerm termId="sound-occluder-mesh">Sound Occluder Mesh</GlossaryTerm> (used to create [*.som](../../../references/file-formats/game-levels/som.md) files)
 - `Custom` - Customizable (object type is implemented in the form of flags, so this type has the ability to specify each flag arbitrarily)
 
 ### HQ Export

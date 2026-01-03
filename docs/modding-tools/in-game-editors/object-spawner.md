@@ -16,7 +16,7 @@ Spawns sections of physical objects or living creatures
 
 Similar to [Item Spawner](item-spawner.md) but has its own tools
 
-- `Spawn at smart terrain` - allows you to spawn a selected section at a certain level and [smart terrain](../../../../glossary#smart-terrain)
+- `Spawn at smart terrain` - allows you to spawn a selected section at a certain level and <GlossaryTerm termId="smart-terrain">smart terrain</GlossaryTerm>
 - `Spawn at cursor` - the same as in [Item Spawner](item-spawner.md)
 - `Spawn at player` - spawns the selected section directly on the player's coordinates
 

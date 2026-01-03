@@ -232,33 +232,31 @@ ___
           <td rowSpan={5}>Joint type</td>
           <td>Rigid</td>
           <td>
-            <a href="../../../../glossary#rigid-joint">Rigid Joint</a>
+            <GlossaryTerm termId="rigid-joint">Rigid Joint</GlossaryTerm>
           </td>
         </tr>
         <tr>
           <td>Cloth</td>
           <td>
-            <a href="../../../../glossary#cloth-joint">Cloth Joint</a>
+            <GlossaryTerm termId="cloth">Cloth Joint</GlossaryTerm>
           </td>
         </tr>
         <tr>
           <td>Joint</td>
           <td>
-            <a href="../../../../glossary#joint">Universal Joint</a>
+            <GlossaryTerm termId="joint">Universal Joint</GlossaryTerm>
           </td>
         </tr>
         <tr>
           <td>Wheel [Steer-X/Roll-Z]</td>
           <td>
-            <a href="../../../../glossary#wheel-joint">Wheel Joint</a>
+            <GlossaryTerm termId="wheel">Wheel Joint</GlossaryTerm>
           </td>
         </tr>
         <tr>
           <td>Slider</td>
           <td>
-            <a href="../../../../glossary#slider-joint">
-              Slider Joint
-            </a>
+            <GlossaryTerm termId="slider">Slider Joint</GlossaryTerm>
           </td>
         </tr>
         <tr>

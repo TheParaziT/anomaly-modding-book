@@ -15,8 +15,8 @@ ___
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
-- What is a [Static Object](../../../../glossary#static-object)
-- What is a [Portal](../../../../glossary#portal) and [Sector](../../../../glossary#sector)
+- What is a <GlossaryTerm termId="static-object">Static Object</GlossaryTerm>
+- What is a <GlossaryTerm termId="portal">Portal</GlossaryTerm> and <GlossaryTerm termId="sector">Sector</GlossaryTerm>
 
 ## About
 

@@ -14,7 +14,7 @@ ___
 
 [*.ogg](../../references/file-formats/audio-video/ogg.md) is a special sound format. It needs setup for proper playback in the game world and AI response.
 
-## Convert via Blender
+## Render via Blender
 
 Blender has build in render in `Vorbis` codec.
 

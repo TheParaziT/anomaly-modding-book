@@ -9,7 +9,7 @@ ___
 
 ## About
 
-[Detailed Objects](../../../../glossary#detail-object) on the level
+<GlossaryTerm termId="detail-object">Detail Objects</GlossaryTerm> on the level
 
 ## Technical information
 

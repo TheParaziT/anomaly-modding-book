@@ -76,6 +76,81 @@ body {
   background: rgba(123, 210, 26, 0.35);
   color: #e9ffe1;
 }
+/* Стили для терминов глоссария */
+.glossary-term {
+  position: relative;
+  display: inline;
+  cursor: help;
+  transition: all 0.2s ease;
+  border-bottom: 1px dotted var(--ifm-color-primary);
+}
+
+.glossary-term:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.glossary-term:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-bottom-style: solid;
+}
+
+.glossary-term-tooltip {
+  animation: fadeIn 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .glossary-term-tooltip {
+    width: 280px !important;
+    font-size: 13px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* На мобильных показываем тултип по клику */
+  .glossary-term {
+    border-bottom-style: solid;
+  }
+}
+
+/* Темная тема */
+[data-theme='dark'] .glossary-term-tooltip {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Исправление для параграфов */
+p .glossary-term {
+  display: inline;
+  position: relative;
+}
+
+p .glossary-term-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+
+/* Улучшенная работа с длинными терминами */
+.glossary-term br {
+  display: none;
+}
 
 /* Scrollbar styling (Chromium/WebKit) */
 *::-webkit-scrollbar {

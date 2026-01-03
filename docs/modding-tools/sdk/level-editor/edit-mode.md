@@ -23,20 +23,20 @@ Window with all object types
 
 | Name | Description |
 |---|---|
-| Scene Object | [Scene Objects (Static, Dynamic & etc)](../../../../glossary#scene-object) |
-| Light | [Light sources](../../../../glossary#light-source-object) |
-| Sound Source | [Sound sources](../../../../glossary#sound-source-object) |
-| Sound Env | [Sound environments](../../../../glossary#sound-environment-object) |
-| Glow | [Glow objects](../../../../glossary#glow-object) |
+| Scene Object | <GlossaryTerm termId="scene-object">Scene Object</GlossaryTerm> |
+| Light | <GlossaryTerm termId="light-source-object">Light sources</GlossaryTerm> |
+| Sound Source | <GlossaryTerm termId="sound-source-object">Sound sources</GlossaryTerm> |
+| Sound Env | <GlossaryTerm termId="sound-environment-object">Sound environments</GlossaryTerm> |
+| Glow | <GlossaryTerm termId="glow-object">Glow objects</GlossaryTerm> |
 | Shape | Shape object |
 | Spawn Element | Spawn elements |
-| Way Points | [Way Points](../../../../glossary#way-point) |
-| Sector | [Sectors](../../../../glossary#sector) |
-| Portal | [Portals](../../../../glossary#portal) |
+| Way Points | <GlossaryTerm termId="way-point">Way Points</GlossaryTerm> |
+| Sector | <GlossaryTerm termId="sector">Sectors</GlossaryTerm> |
+| Portal | <GlossaryTerm termId="portal">Portals</GlossaryTerm> |
 | Group | Objects in groups |
 | Static Particles | Static particles |
-| Detail Objects | [Detail objects](../../../../glossary#detail-object) |
-| AI Map | [AI Map](../../../../glossary#ai-map) |
+| Detail Objects | <GlossaryTerm termId="detail-object">Detail objects</GlossaryTerm> |
+| AI Map | <GlossaryTerm termId="ai-map">AI-Map</GlossaryTerm> |
 | Wallmarks | Wallmarks |
-| Fog Volumes | [Fog volumes](../../../../glossary#fog-volume-object) |
+| Fog Volumes | <GlossaryTerm termId="fog-volume-object">Fog volumes</GlossaryTerm> |
 | Puddles | Puddles (IX-Ray Engine only feature!) |

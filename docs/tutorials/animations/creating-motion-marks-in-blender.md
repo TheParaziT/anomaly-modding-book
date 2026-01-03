@@ -23,7 +23,7 @@ ___
 ## Need to know {#need-to-know}
 
 - How working in Blender and creating animations
-- What a Motion Marks
+- What a <GlossaryTerm termId="motion-mark">Motion Marks</GlossaryTerm>
 - Skeleton animations ([*.skl](../../references/file-formats/animations/skl-skls.md), [*.skls](../../references/file-formats/animations/skl-skls.md), [*.omf](../../references/file-formats/animations/omf.md))
 
 ## About

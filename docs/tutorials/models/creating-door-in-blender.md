@@ -24,7 +24,7 @@ This article is under construction
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
-- What is a [Dynamic Object](../../../../glossary#dynamic-object)
+- What is a <GlossaryTerm termId="dynamic-object">Dynamic Object</GlossaryTerm>
 
 ## About
 

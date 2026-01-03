@@ -14,7 +14,7 @@ ___
 
 ## About
 
-This panel contains parameters and operators, which are necessary to customize the position and rotation of [*_hud models](../../../../glossary#hud) of weapons in the game. It is also possible to customize the position and rotation for aiming. To properly customize the transformations, you need to use the `X-Ray` Camera, which can be added using the [Add X-Ray Camera](../addon-operators/operator-add-x-ray-camera.md) operator. To customize the weapon transformations, you need to move and rotate the `root` object of the weapon `hud`-model, and to customize the transformations for aiming, you need to add a parent object to the `root` object of the `hud`-model, and move and rotate this object (the weapon will have a double displacement and rotation due to its transformations and transformations of the parent)
+This panel contains parameters and operators, which are necessary to customize the position and rotation of <GlossaryTerm termId="hud">*_hud models</GlossaryTerm> of weapons in the game. It is also possible to customize the position and rotation for aiming. To properly customize the transformations, you need to use the `X-Ray` Camera, which can be added using the [Add X-Ray Camera](../addon-operators/operator-add-x-ray-camera.md) operator. To customize the weapon transformations, you need to move and rotate the `root` object of the weapon `hud`-model, and to customize the transformations for aiming, you need to add a parent object to the `root` object of the `hud`-model, and move and rotate this object (the weapon will have a double displacement and rotation due to its transformations and transformations of the parent)
 
 ## Position Parameter
 

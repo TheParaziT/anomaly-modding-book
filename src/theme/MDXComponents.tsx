@@ -7,6 +7,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AuthorComment from '@site/src/components/AuthorComment';
 import CustomLink from '@site/src/components/CustomLink';
+import GlossaryTerm from '@site/src/components/GlossaryTerm';
+
 import type { MDXComponentsType } from '../components';
 
 export default {
@@ -18,5 +20,6 @@ export default {
   Tabs,
   TabItem,
   CardGrid,
+  GlossaryTerm,
   a: CustomLink,
 } as MDXComponentsType;

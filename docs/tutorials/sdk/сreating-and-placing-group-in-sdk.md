@@ -33,7 +33,7 @@ Groups in the SDK are useful because you can combine several types of objects in
 
 ## Creating group
 
-For example, let's make a group of a [Static Object](../../../../glossary#static-object), its [HOM Occluder](../../../../glossary#hierarchical-occluder-mesh), a [Sound Source](../../../../glossary#sound-source-object) and a [Light Source](../../../../glossary#light-source-object).
+For example, let's make a group of a <GlossaryTerm termId="static-object">Static Object</GlossaryTerm>, its <GlossaryTerm termId="hierarchical-occluder-mesh">HOM Occluder</GlossaryTerm>, a <GlossaryTerm termId="sound-source-object">Sound Source</GlossaryTerm> and a <GlossaryTerm termId="light-source-object">Light Source</GlossaryTerm>.
 
 Open [Level Editor](../../modding-tools/sdk/level-editor/README.md).
 

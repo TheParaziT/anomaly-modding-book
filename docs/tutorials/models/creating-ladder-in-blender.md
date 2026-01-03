@@ -26,8 +26,8 @@ ___
 
 - How to work in Blender
 - How to work with Blender [X-Ray Addon](../../modding-tools/blender/README.mdx)
-- What is a [Static Object](../../../../glossary#static-object)
-- What is a [Game Material](../../../../glossary#game-material)
+- What is a <GlossaryTerm termId="static-object">Static Object</GlossaryTerm>
+- What is a <GlossaryTerm termId="game-material">Game Material</GlossaryTerm>
 
 ## About
 
@@ -65,15 +65,15 @@ In [X-Ray Engine: Material](../../modding-tools/blender/addon-panels/panel-mater
 
 #### Shader
 
-Choose any [Engine Shader](../../../../glossary#engine-shader) for Static Object. ([list of all Engine Shaders](../../references/shaders/engine-shaders-list.md))
+Choose any <GlossaryTerm termId="engine-shader">Engine Shader</GlossaryTerm> for Static Object. ([list of all Engine Shaders](../../references/shaders/engine-shaders-list.md))
 
 #### Compiler
 
-Any [Compile Shader](../../../../glossary#compiler-shader). ([list of all Compile Shaders](../../references/shaders/compiler-shaders-list.md))
+Any <GlossaryTerm termId="compile-shader">Compile Shader</GlossaryTerm>. ([list of all Compile Shaders](../../references/shaders/compiler-shaders-list.md))
 
 #### Material
 
-Select a suitable [Game Material](../../../../glossary#game-material) that has the `Climable` flag checked. Example `materials/fake_ladder`. ([list of all Game Materials](../../references/materials/materials-list.md))
+Select a suitable <GlossaryTerm termId="game-material">Game Material</GlossaryTerm> that has the `Climable` flag checked. Example `materials/fake_ladder`. ([list of all Game Materials](../../references/materials/materials-list.md))
 
 ### Example 2
 
