@@ -152,6 +152,14 @@ p .glossary-term-tooltip {
   display: none;
 }
 
+@media (display-mode: picture-in-picture) {
+  .pip-button-container,
+  .pipButton,
+  button[aria-label*="PiP"] {
+    display: none !important;
+  }
+}
+
 /* Scrollbar styling (Chromium/WebKit) */
 *::-webkit-scrollbar {
   width: 10px;

@@ -1,0 +1,14 @@
+/* src/components/PiPButton.module.css */
+.pipButton {
+  background-color: #25c2a0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pipButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
