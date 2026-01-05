@@ -31,7 +31,6 @@ ___
 
 ## CDeimos
 
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | CDeimos:__init__                                               |     |
@@ -157,6 +156,8 @@ ___
 
 ## Cwound_manager
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | Cwound_manager:__init__                                        |     |
@@ -171,6 +172,8 @@ ___
 | Cwound_manager:update                                          |     |
 
 ## DynamicNewsManager
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -261,12 +264,16 @@ ___
 
 ## DynamicPhantom
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | DynamicPhantom:__init__                                        |     |
 | DynamicPhantom:net_destroy                                     |     |
 
 ## ItemProcessor
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -280,6 +287,8 @@ ___
 | ItemProcessor:update                                           |     |
 
 ## LightEditor
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -338,12 +347,16 @@ ___
 
 ## PPEffector
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | PPEffector:__init__                                            |     |
 | PPEffector:process                                             |     |
 
 ## PatrolManager
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -361,6 +374,8 @@ ___
 
 ## Phantom
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | Phantom:__init__                                               |     |
@@ -375,12 +390,18 @@ ___
 
 ## PhantomManager
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | PhantomManager:__init__                                        |     |
 | PhantomManager:add_phantom                                     |     |
 | PhantomManager:remove_phantom                                  |     |
 | PhantomManager:spawn_phantom                                   |     |
+
+## PsyAntenna
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -396,14 +417,29 @@ ___
 | PsyAntenna:update_psy_hit                                      |     |
 | PsyAntenna:update_sound                                        |     |
 
+##  UI3D_Anomaly
+
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UI3D_Anomaly:__finalize__                                      |     |
 | UI3D_Anomaly:__init__                                          |     |
 | UI3D_Anomaly:Update                                            |     |
+
+## UI3D_RF
+
+##
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | UI3D_RF:__finalize__                                           |     |
 | UI3D_RF:__init__                                               |     |
 | UI3D_RF:Update                                                 |     |
+
+## UIBelt
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -413,6 +449,10 @@ ___
 | UIBelt:InitControls                                            |     |
 | UIBelt:Refresh                                                 |     |
 | UIBelt:Update                                                  |     |
+
+## UICellContainer
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -434,7 +474,9 @@ ___
 | UICellContainer:GetCell_SEC                                    |     |
 | UICellContainer:GetCell_Selected                               |     |
 | UICellContainer:GetID                                          |     |
-| UICellContainer:GetObj                                         |     |
+| UICellContainer:GetObj 
+##
+                                        |     |
 | UICellContainer:GetSortMethod                                  |     |
 | UICellContainer:Grow                                           |     |
 | UICellContainer:InitControls                                   |     |
@@ -472,6 +514,10 @@ ___
 | UICellContainer:UpdateItem                                     |     |
 | UICellContainer:__init__                                       |     |
 
+## UICellItem
+
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICellItem:AddChild                                            |     |
@@ -502,6 +548,13 @@ ___
 | UICellItem:Show                                                |     |
 | UICellItem:Update                                              |     |
 | UICellItem:__init__                                            |     |
+
+## UICellProperties
+
+##
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | UICellProperties:__finalize__                                  |     |
 | UICellProperties:__init__                                      |     |
 | UICellProperties:AddItemToList                                 |     |
@@ -514,8 +567,17 @@ ___
 | UICellProperties:OnListItemDbClicked                           |     |
 | UICellProperties:Reset                                         |     |
 | UICellProperties:Update                                        |     |
+
+## UICellProperties_item
+
+##
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | UICellProperties_item:__finalize__                             |     |
 | UICellProperties_item:__init__                                 |     |
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -537,12 +599,16 @@ ___
 | UICompanionInv:SetMsg                                          |     |
 | UICompanionInv:Update                                          |     |
 
+## UICompanionList
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICompanionList:__finalize__                                   |     |
 | UICompanionList:__init__                                       |     |
 | UICompanionList:InitControls                                   |     |
 | UICompanionList:Update                                         |     |
+
+## UICook
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -566,6 +632,8 @@ ___
 | UICook:Reset                                                   |     |
 | UICook:Update                                                  |     |
 
+## UICreateStash
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICreateStash:__finalize__                                     |     |
@@ -577,6 +645,8 @@ ___
 | UICreateStash:OnKeyboard                                       |     |
 | UICreateStash:Reset                                            |     |
 | UICreateStash:Update                                           |     |
+
+## UIDebugMain
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -598,6 +668,8 @@ ___
 | UIDebugMain:SendOutput                                         |     |
 | UIDebugMain:SendOutputList                                     |     |
 
+## UIDebug_Executer
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIDebug_Executer:__finalize__                                  |     |
@@ -613,6 +685,8 @@ ___
 | UIDebug_Executer:SetMsg                                        |     |
 | UIDebug_Executer:Update                                        |     |
 
+## UIDebug_FactionSwitch
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIDebug_FactionSwitch:__finalize__                             |     |
@@ -622,6 +696,8 @@ ___
 | UIDebug_FactionSwitch:OnButton_Faction                         |     |
 | UIDebug_FactionSwitch:OnKeyboard                               |     |
 | UIDebug_FactionSwitch:Reset                                    |     |
+
+## UIDebug_ItemSpawn
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -643,6 +719,8 @@ ___
 | UIDebug_ItemSpawn:Setup                                        |     |
 | UIDebug_ItemSpawn:Spawn                                        |     |
 | UIDebug_ItemSpawn:Update                                       |     |
+
+## UIDebug_ObjSpawn
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -666,6 +744,8 @@ ___
 | UIDebug_ObjSpawn:Spawn                                         |     |
 | UIDebug_ObjSpawn:Update                                        |     |
 
+## UIHint
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIHint:__init__                                                |     |
@@ -674,6 +754,8 @@ ___
 | UIHint:Show                                                    |     |
 | UIHint:Update                                                  |     |
 
+## UIIndicators
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIIndicators:__finalize__                                      |     |
@@ -681,6 +763,8 @@ ___
 | UIIndicators:Clear                                             |     |
 | UIIndicators:InitControls                                      |     |
 | UIIndicators:Update                                            |     |
+
+## UIInfoItem
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -697,6 +781,8 @@ ___
 | UIInfoItem:Sync_Y                                              |     |
 | UIInfoItem:Update                                              |     |
 
+## UIInfoUpgr
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIInfoUpgr:__init__                                            |     |
@@ -709,6 +795,8 @@ ___
 | UIInfoUpgr:Sync_H                                              |     |
 | UIInfoUpgr:Sync_Y                                              |     |
 | UIInfoUpgr:Update                                              |     |
+ 
+## UIInventory
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -835,6 +923,8 @@ ___
 | UIInventory:npc_on_use                                         |     |
 | UIInventory:physic_object_on_use_callback                      |     |
 
+## UIItemEditor
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIItemEditor:Close                                             |     |
@@ -945,6 +1035,8 @@ ___
 | UIItemEditor:__finalize__                                      |     |
 | UIItemEditor:__init__                                          |     |
 
+## UIItemSheet
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIItemSheet:__finalize__                                       |     |
@@ -964,6 +1056,8 @@ ___
 | UIItemSheet:Reset                                              |     |
 | UIItemSheet:Update                                             |     |
 
+## UILightControl
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UILightControl:__finalize__                                    |     |
@@ -973,6 +1067,8 @@ ___
 | UILightControl:InitControls                                    |     |
 | UILightControl:OnKeyboard                                      |     |
 | UILightControl:Update                                          |     |
+
+## UILoadDialog
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -992,6 +1088,8 @@ ___
 | UILoadDialog:SelectNextItem                                    |     |
 | UILoadDialog:load_game_internal                                |     |
 
+## UIMapKit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIMapKit:__finalize__                                          |     |
@@ -1003,6 +1101,11 @@ ___
 | UIMapKit:OnNext                                                |     |
 | UIMapKit:OnPrevious                                            |     |
 | UIMapKit:Reset                                                 |     |
+
+## UIMutantLoot
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | UIMutantLoot:__finalize__                                      |     |
 | UIMutantLoot:__init__                                          |     |
 | UIMutantLoot:Close                                             |     |
@@ -1018,7 +1121,9 @@ ___
 | UIMutantLoot:SetMutantImage                                    |     |
 | UIMutantLoot:SetMutantState                                    |     |
 | UIMutantLoot:Update                                            |     |
-|
+
+## UINewGame
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UINewGame:__finalize__                                         |     |
@@ -1132,6 +1237,8 @@ ___
 | UINewGame:UpdateMap                                            |     |
 | UINewGame:UpdateMoney                                          |     |
 
+## UINumpad
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UINumpad:__finalize__                                          |     |
@@ -1154,6 +1261,8 @@ ___
 | UINumpad:OnButton_backspace_clicked                            |     |
 | UINumpad:OnButton_c_clicked                                    |     |
 | UINumpad:OnKeyboard                                            |     |
+ 
+## UIOptions
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1205,6 +1314,8 @@ ___
 | UIOptions:Update                                               |     |
 | UIOptions:UpdatePending                                        |     |
 
+## UIRecipe
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIRecipe:__finalize__                                          |     |
@@ -1229,6 +1340,8 @@ ___
 | UIRepair:Reset                                                 |     |
 | UIRepair:Update                                                |     |
 
+## UISaveDialog
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UISaveDialog:__finalize__                                      |     |
@@ -1246,6 +1359,8 @@ ___
 | UISaveDialog:SaveFile                                          |     |
 | UISaveDialog:delete_selected_file                              |     |
 
+## UISleep
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UISleep:__finalize__                                           |     |
@@ -1260,6 +1375,8 @@ ___
 | UISleep:TestAndShow                                            |     |
 | UISleep:Update                                                 |     |
 
+## UIWheelAmmo
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIWheelAmmo:__finalize__                                       |     |
@@ -1273,6 +1390,8 @@ ___
 | UIWheelAmmo:SwitchNextAmmo                                     |     |
 | UIWheelAmmo:Update                                             |     |
 
+## UIWheelCompanion
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIWheelCompanion:__finalize__                                  |     |
@@ -1284,6 +1403,8 @@ ___
 | UIWheelCompanion:Order                                         |     |
 | UIWheelCompanion:Reset                                         |     |
 | UIWheelCompanion:Update                                        |     |
+
+## UIWorkshop
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1297,6 +1418,8 @@ ___
 | UIWorkshop:OnButton_state                                      |     |
 | UIWorkshop:OnButton_upgrade                                    |     |
 | UIWorkshop:Reset                                               |     |
+
+## UIWorkshopCraft
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1316,6 +1439,8 @@ ___
 | UIWorkshopCraft:Update                                         |     |
 | UIWorkshopCraft:UpdateItem                                     |     |
 
+## UIWorkshopRepair
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIWorkshopRepair:__finalize__                                  |     |
@@ -1333,6 +1458,11 @@ ___
 | UIWorkshopRepair:Reset                                         |     |
 | UIWorkshopRepair:Update                                        |     |
 | UIWorkshopRepair:UpdateToolkits                                |     |
+
+## UIWorkshopState
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | UIWorkshopState:__finalize__                                   |     |
 | UIWorkshopState:__init__                                       |     |
 | UIWorkshopState:Close                                          |     |
@@ -1340,6 +1470,8 @@ ___
 | UIWorkshopState:InitControls                                   |     |
 | UIWorkshopState:OnKeyboard                                     |     |
 | UIWorkshopState:Reset                                          |     |
+
+## UIWorkshopUpgrade
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1361,6 +1493,8 @@ ___
 | UIWorkshopUpgrade:SetkitInfo                                   |     |
 | UIWorkshopUpgrade:Update                                       |     |
 | UIWorkshopUpgrade:Upgrade                                      |     |
+
+## WeatherEditor
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1421,6 +1555,8 @@ ___
 | WeatherEditor:__init__                                         |     |
 
 
+## WeatherManager
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | WeatherManager:Print                                           |     |
@@ -1449,6 +1585,8 @@ ___
 | WeatherManager:set_brightness_boosts                           |     |
 | WeatherManager:stop_meteorites                                 |     |
 | WeatherManager:update                                          |     |
+
+## WpnHudEditor
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1536,6 +1674,8 @@ ___
 | WpnHudEditor:__finalize__                                      |     |
 | WpnHudEditor:__init__                                          |     |
 
+## XmlParser
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | XmlParser:FromXmlString                                        |     |
@@ -1544,12 +1684,16 @@ ___
 | XmlParser:ToXmlString                                          |     |
 | XmlParser:loadFile                                             |     |
 
+## action_abuse_hit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_abuse_hit:__init__                                      |     |
 | action_abuse_hit:execute                                       |     |
 | action_abuse_hit:finalize                                      |     |
 | action_abuse_hit:initialize                                    |     |
+
+## action_animpoint
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1558,6 +1702,8 @@ ___
 | action_animpoint:finalize                                      |     |
 | action_animpoint:initialize                                    |     |
 | action_animpoint:net_destroy                                   |     |
+
+## action_beh
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1574,6 +1720,8 @@ ___
 | action_beh:next_waypoint_index                                 |     |
 | action_beh:set_desired_target                                  |     |
 | action_beh:set_state                                           |     |
+
+## action_car
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1600,9 +1748,13 @@ ___
 | action_car:update                                              |     |
 | action_car:walk_arrival_callback                               |     |
 
+## action_close_combat
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_close_combat:evaluate                                   |     |
+
+## action_commander
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1615,6 +1767,11 @@ ___
 | action_commander:formation_callback                            |     |
 | action_commander:initialize                                    |     |
 | action_commander:net_destroy                                   |     |
+
+##  action_companion_activity
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | action_companion_activity:__init__                             |     |
 | action_companion_activity:beh_wait_simple                      |     |
 | action_companion_activity:beh_walk_simple                      |     |
@@ -1622,6 +1779,8 @@ ___
 | action_companion_activity:finalize                             |     |
 | action_companion_activity:initialize                           |     |
 
+## action_cover
+ 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_cover:__init__                                          |     |
@@ -1630,6 +1789,8 @@ ___
 | action_cover:finalize                                          |     |
 | action_cover:initialize                                        |     |
 | action_cover:position_riched                                   |     |
+
+## action_cutscene
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1640,12 +1801,16 @@ ___
 | action_cutscene:update                                         |     |
 | action_cutscene:zone_enter                                     |     |
 
+## action_danger:
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_danger:__init__                                         |     |
 | action_danger:execute                                          |     |
 | action_danger:finalize                                         |     |
 | action_danger:initialize                                       |     |
+
+## action_door
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1664,6 +1829,8 @@ ___
 | action_door:update                                             |     |
 | action_door:use_callback                                       |     |
 
+## action_facer
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_facer:__init__                                          |     |
@@ -1672,6 +1839,8 @@ ___
 | action_facer:finalize                                          |     |
 | action_facer:initialize                                        |     |
 
+## action_fight_close
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_fight_close:__init__                                    |     |
@@ -1679,10 +1848,20 @@ ___
 | action_fight_close:finalize                                    |     |
 | action_fight_close:hit_callback                                |     |
 | action_fight_close:initialize                                  |     |
+
+## action_fight_far
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | action_fight_far:__init__                                      |     |
 | action_fight_far:execute                                       |     |
 | action_fight_far:finalize                                      |     |
 | action_fight_far:initialize                                    |     |
+
+## action_fight_from_cover
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | action_fight_from_cover:__init__                               |     |
 | action_fight_from_cover:execute                                |     |
 | action_fight_from_cover:finalize                               |     |
@@ -1691,12 +1870,16 @@ ___
 | action_fight_from_cover:try_go_cover                           |     |
 | action_fight_from_cover:try_to_strafe                          |     |
 
+## action_go_to_pos
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_go_to_pos:__init__                                      |     |
 | action_go_to_pos:execute                                       |     |
 | action_go_to_pos:finalize                                      |     |
 | action_go_to_pos:initialize                                    |     |
+
+## action_help_wounded
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1705,12 +1888,16 @@ ___
 | action_help_wounded:finalize                                   |     |
 | action_help_wounded:initialize                                 |     |
 
+## action_hit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_hit:__init__                                            |     |
 | action_hit:hit_callback                                        |     |
 | action_hit:reset_scheme                                        |     |
 | action_hit:update                                              |     |
+
+## action_idle
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1721,9 +1908,13 @@ ___
 | action_idle:update                                             |     |
 | action_idle:use_callback                                       |     |
 
+## action_kill_wounded
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_kill_wounded:begin_kill_wounded                         |     |
+
+## action_light
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1731,6 +1922,8 @@ ___
 | action_light:check_stalker                                     |     |
 | action_light:reset_scheme                                      |     |
 | action_light:update                                            |     |
+
+## action_look_around
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1741,12 +1934,16 @@ ___
 | action_look_around:initialize                                  |     |
 | action_look_around:reset                                       |     |
 
+## action_meet_wait
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_meet_wait:__init__                                      |     |
 | action_meet_wait:execute                                       |     |
 | action_meet_wait:finalize                                      |     |
 | action_meet_wait:initialize                                    |     |
+
+## action_mgun
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1763,6 +1960,8 @@ ___
 | action_mgun:set_signal                                         |     |
 | action_mgun:update                                             |     |
 
+## action_no_weapon
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_no_weapon:__init__                                      |     |
@@ -1772,12 +1971,16 @@ ___
 | action_no_weapon:zone_enter                                    |     |
 | action_no_weapon:zone_leave                                    |     |
 
+## action_npc_vs_box
+ 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_npc_vs_box:__init__                                     |     |
 | action_npc_vs_box:execute                                      |     |
 | action_npc_vs_box:finalize                                     |     |
 | action_npc_vs_box:initialize                                   |     |
+
+## action_npc_vs_heli
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1789,11 +1992,15 @@ ___
 | action_npc_vs_heli:try_go_cover                                |     |
 | action_npc_vs_heli:try_to_strafe                               |     |
 
+## action_oscillator
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_oscillator:__init__                                     |     |
 | action_oscillator:reset_scheme                                 |     |
 | action_oscillator:update                                       |     |
+
+## action_particle
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1804,6 +2011,8 @@ ___
 | action_particle:update                                         |     |
 | action_particle:update_mode_1                                  |     |
 | action_particle:update_mode_2                                  |     |
+
+## action_patrol
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1825,6 +2034,8 @@ ___
 | action_patrol:reset_scheme                                     |     |
 | action_patrol:scan                                             |     |
 
+## action_point_campfire
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_point_campfire:__init__                                 |     |
@@ -1835,12 +2046,16 @@ ___
 | action_point_campfire:initialize                               |     |
 | action_point_campfire:position_riched                          |     |
 
+## action_post_combat_wait
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_post_combat_wait:__init__                               |     |
 | action_post_combat_wait:execute                                |     |
 | action_post_combat_wait:finalize                               |     |
 | action_post_combat_wait:initialize                             |     |
+
+## action_postprocess
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1850,10 +2065,14 @@ ___
 | action_postprocess:update                                      |     |
 | action_postprocess:update_hit                                  |     |
 
+## action_process_death
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_process_death:__init__                                  |     |
 | action_process_death:death_callback                            |     |
+
+## action_process_enemy
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1862,10 +2081,14 @@ ___
 | action_process_enemy:hit_callback                              |     |
 | action_process_enemy:trader_enemy_callback                     |     |
 
+## action_process_hit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_process_hit:__init__                                    |     |
 | action_process_hit:hit_callback                                |     |
+
+## action_psy_antenna
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1878,6 +2101,8 @@ ___
 | action_psy_antenna:zone_enter                                  |     |
 | action_psy_antenna:zone_leave                                  |     |
 
+## action_radio_in_heli
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_radio_in_heli:__init__                                  |     |
@@ -1886,12 +2111,16 @@ ___
 | action_radio_in_heli:initialize                                |     |
 | action_radio_in_heli:try_go_cover                              |     |
 
+## action_reach_animpoint
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_reach_animpoint:__init__                                |     |
 | action_reach_animpoint:execute                                 |     |
 | action_reach_animpoint:finalize                                |     |
 | action_reach_animpoint:initialize                              |     |
+
+## action_reach_task_location
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1906,6 +2135,8 @@ ___
 | action_reach_task_location:single_execute                      |     |
 | action_reach_task_location:soldier_execute                     |     |
 
+## action_remark_activity
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_remark_activity:__init__                                |     |
@@ -1917,6 +2148,8 @@ ___
 | action_remark_activity:time_callback                           |     |
 | action_remark_activity:update                                  |     |
 
+## action_search_corpse
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_search_corpse:__init__                                  |     |
@@ -1924,12 +2157,16 @@ ___
 | action_search_corpse:finalize                                  |     |
 | action_search_corpse:initialize                                |     |
 
+## action_shoot
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_shoot:__init__                                          |     |
 | action_shoot:execute                                           |     |
 | action_shoot:finalize                                          |     |
 | action_shoot:initialize                                        |     |
+
+## action_sleeper_activity
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1941,6 +2178,8 @@ ___
 | action_sleeper_activity:finalize                               |     |
 | action_sleeper_activity:initialize                             |     |
 | action_sleeper_activity:reset_scheme                           |     |
+
+## action_smartcover_activity
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1955,6 +2194,8 @@ ___
 | action_smartcover_activity:position_riched                     |     |
 | action_smartcover_activity:target_selector                     |     |
 
+## action_stalker_panic
+ 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_stalker_panic:__init__                                  |     |
@@ -1967,6 +2208,8 @@ ___
 | action_stalker_panic:try_to_strafe                             |     |
 | action_stalker_panic:try_to_strafe_behind_enemy                |     |
 
+## action_steal_up
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_steal_up:__init__                                       |     |
@@ -1974,10 +2217,14 @@ ___
 | action_steal_up:finalize                                       |     |
 | action_steal_up:initialize                                     |     |
 
+## action_teleport
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_teleport:__init__                                       |     |
 | action_teleport:update                                         |     |
+
+## action_timer
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -1986,12 +2233,16 @@ ___
 | action_timer:save                                              |     |
 | action_timer:update                                            |     |
 
+## action_verso
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_verso:__init__                                          |     |
 | action_verso:execute                                           |     |
 | action_verso:finalize                                          |     |
 | action_verso:initialize                                        |     |
+
+## action_walker_activity
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2005,12 +2256,16 @@ ___
 | action_walker_activity:reset_scheme                            |     |
 | action_walker_activity:update                                  |     |
 
+## action_wounded
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_wounded:__init__                                        |     |
 | action_wounded:execute                                         |     |
 | action_wounded:finalize                                        |     |
 | action_wounded:initialize                                      |     |
+
+## action_zombie_go_to_dange
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2021,6 +2276,8 @@ ___
 | action_zombie_go_to_danger:initialize                          |     |
 | action_zombie_go_to_danger:set_state                           |     |
 
+## action_zombie_shoot
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | action_zombie_shoot:__init__                                   |     |
@@ -2030,6 +2287,8 @@ ___
 | action_zombie_shoot:hit_callback                               |     |
 | action_zombie_shoot:initialize                                 |     |
 | action_zombie_shoot:set_state                                  |     |
+
+## actor_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2043,6 +2302,8 @@ ___
 | actor_binder:save_state                                        |     |
 | actor_binder:update                                            |     |
 
+## actor_detector
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | actor_detector:__init__                                        |     |
@@ -2051,6 +2312,8 @@ ___
 | actor_detector:load                                            |     |
 | actor_detector:save                                            |     |
 | actor_detector:update                                          |     |
+
+## actor_proxy
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2062,6 +2325,8 @@ ___
 | actor_proxy:init                                               |     |
 | actor_proxy:net_destroy                                        |     |
 | actor_proxy:net_spawn                                          |     |
+
+## actor_sound
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2079,12 +2344,16 @@ ___
 | actor_sound:select_next_sound                                  |     |
 | actor_sound:stop                                               |     |
 
+## act_gather_itm
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | act_gather_itm:__init__                                        |     |
 | act_gather_itm:execute                                         |     |
 | act_gather_itm:finalize                                        |     |
 | act_gather_itm:initialize                                      |     |
+
+## act_kill_wounded
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2094,133 +2363,287 @@ ___
 | act_kill_wounded:initialize                                    |     |
 | act_kill_wounded:reset                                         |     |
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | act_state_mgr_animation_start:__init__                         |     |
 | act_state_mgr_animation_start:execute                          |     |
 | act_state_mgr_animation_start:finalize                         |     |
 | act_state_mgr_animation_start:initialize                       |     |
+
+## ct_state_mgr_animation_stop
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_animation_stop:__init__                          |     |
 | act_state_mgr_animation_stop:execute                           |     |
 | act_state_mgr_animation_stop:finalize                          |     |
 | act_state_mgr_animation_stop:initialize                        |     |
+
+## act_state_mgr_animstate_start
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_animstate_start:__init__                         |     |
 | act_state_mgr_animstate_start:execute                          |     |
 | act_state_mgr_animstate_start:finalize                         |     |
 | act_state_mgr_animstate_start:initialize                       |     |
+
+## act_state_mgr_animstate_stop
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_animstate_stop:__init__                          |     |
 | act_state_mgr_animstate_stop:execute                           |     |
 | act_state_mgr_animstate_stop:finalize                          |     |
 | act_state_mgr_animstate_stop:initialize                        |     |
+
+## act_state_mgr_bodystate_crouch
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_bodystate_crouch:__init__                        |     |
 | act_state_mgr_bodystate_crouch:execute                         |     |
 | act_state_mgr_bodystate_crouch:finalize                        |     |
 | act_state_mgr_bodystate_crouch:initialize                      |     |
+
+## act_state_mgr_bodystate_crouch_danger
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_bodystate_crouch_danger:__init__                 |     |
 | act_state_mgr_bodystate_crouch_danger:execute                  |     |
 | act_state_mgr_bodystate_crouch_danger:finalize                 |     |
 | act_state_mgr_bodystate_crouch_danger:initialize               |     |
+
+## act_state_mgr_bodystate_standing
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_bodystate_standing:__init__                      |     |
 | act_state_mgr_bodystate_standing:execute                       |     |
 | act_state_mgr_bodystate_standing:finalize                      |     |
 | act_state_mgr_bodystate_standing:initialize                    |     |
+
+## act_state_mgr_bodystate_standing_free
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_bodystate_standing_free:__init__                 |     |
 | act_state_mgr_bodystate_standing_free:execute                  |     |
 | act_state_mgr_bodystate_standing_free:finalize                 |     |
 | act_state_mgr_bodystate_standing_free:initialize               |     |
+
+## act_state_mgr_direction_search
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_direction_search:__init__                        |     |
 | act_state_mgr_direction_search:execute                         |     |
 | act_state_mgr_direction_search:finalize                        |     |
 | act_state_mgr_direction_search:initialize                      |     |
+
+## act_state_mgr_direction_turn
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_direction_turn:__init__                          |     |
 | act_state_mgr_direction_turn:execute                           |     |
 | act_state_mgr_direction_turn:finalize                          |     |
 | act_state_mgr_direction_turn:initialize                        |     |
 | act_state_mgr_direction_turn:turn                              |     |
+
+## act_state_mgr_end
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_end:__init__                                     |     |
 | act_state_mgr_end:execute                                      |     |
 | act_state_mgr_end:finalize                                     |     |
 | act_state_mgr_end:initialize                                   |     |
+
+## act_state_mgr_locked
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_locked:__init__                                  |     |
 | act_state_mgr_locked:execute                                   |     |
 | act_state_mgr_locked:finalize                                  |     |
 | act_state_mgr_locked:initialize                                |     |
+
+## act_state_mgr_mental_danger
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_mental_danger:__init__                           |     |
 | act_state_mgr_mental_danger:execute                            |     |
 | act_state_mgr_mental_danger:finalize                           |     |
 | act_state_mgr_mental_danger:initialize                         |     |
+
+## act_state_mgr_mental_free
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_mental_free:__init__                             |     |
 | act_state_mgr_mental_free:execute                              |     |
 | act_state_mgr_mental_free:finalize                             |     |
 | act_state_mgr_mental_free:initialize                           |     |
+
+## act_state_mgr_mental_panic
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_mental_panic:__init__                            |     |
 | act_state_mgr_mental_panic:execute                             |     |
 | act_state_mgr_mental_panic:finalize                            |     |
 | act_state_mgr_mental_panic:initialize                          |     |
+
+## act_state_mgr_movement_run
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_run:__init__                            |     |
 | act_state_mgr_movement_run:execute                             |     |
 | act_state_mgr_movement_run:finalize                            |     |
 | act_state_mgr_movement_run:initialize                          |     |
+
+## act_state_mgr_movement_run_search
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_run_search:__init__                     |     |
 | act_state_mgr_movement_run_search:execute                      |     |
 | act_state_mgr_movement_run_search:finalize                     |     |
 | act_state_mgr_movement_run_search:initialize                   |     |
+
+## act_state_mgr_movement_run_turn
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_run_turn:__init__                       |     |
 | act_state_mgr_movement_run_turn:execute                        |     |
 | act_state_mgr_movement_run_turn:finalize                       |     |
 | act_state_mgr_movement_run_turn:initialize                     |     |
+
+## act_state_mgr_movement_stand
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_stand:__init__                          |     |
 | act_state_mgr_movement_stand:execute                           |     |
 | act_state_mgr_movement_stand:finalize                          |     |
 | act_state_mgr_movement_stand:initialize                        |     |
+
+## act_state_mgr_movement_stand_search
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_stand_search:__init__                   |     |
 | act_state_mgr_movement_stand_search:execute                    |     |
 | act_state_mgr_movement_stand_search:finalize                   |     |
 | act_state_mgr_movement_stand_search:initialize                 |     |
+
+## act_state_mgr_movement_stand_turn
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_stand_turn:__init__                     |     |
 | act_state_mgr_movement_stand_turn:execute                      |     |
 | act_state_mgr_movement_stand_turn:finalize                     |     |
 | act_state_mgr_movement_stand_turn:initialize                   |     |
+
+## act_state_mgr_movement_walk
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_walk:__init__                           |     |
 | act_state_mgr_movement_walk:execute                            |     |
 | act_state_mgr_movement_walk:finalize                           |     |
 | act_state_mgr_movement_walk:initialize                         |     |
+
+## act_state_mgr_movement_walk_search
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_walk_search:__init__                    |     |
 | act_state_mgr_movement_walk_search:execute                     |     |
 | act_state_mgr_movement_walk_search:finalize                    |     |
 | act_state_mgr_movement_walk_search:initialize                  |     |
+
+## act_state_mgr_movement_walk_turn
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_movement_walk_turn:__init__                      |     |
 | act_state_mgr_movement_walk_turn:execute                       |     |
 | act_state_mgr_movement_walk_turn:finalize                      |     |
 | act_state_mgr_movement_walk_turn:initialize                    |     |
+
+## act_state_mgr_smartcover_enter
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_smartcover_enter:__init__                        |     |
 | act_state_mgr_smartcover_enter:execute                         |     |
 | act_state_mgr_smartcover_enter:finalize                        |     |
 | act_state_mgr_smartcover_enter:initialize                      |     |
+
+## act_state_mgr_smartcover_exit
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_smartcover_exit:__init__                         |     |
 | act_state_mgr_smartcover_exit:execute                          |     |
 | act_state_mgr_smartcover_exit:finalize                         |     |
 | act_state_mgr_smartcover_exit:initialize                       |     |
+
+## act_state_mgr_to_idle
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_to_idle:__init__                                 |     |
 | act_state_mgr_to_idle:execute                                  |     |
 | act_state_mgr_to_idle:finalize                                 |     |
 | act_state_mgr_to_idle:initialize                               |     |
+
+## act_state_mgr_weapon_drop
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_weapon_drop:__init__                             |     |
 | act_state_mgr_weapon_drop:execute                              |     |
 | act_state_mgr_weapon_drop:finalize                             |     |
 | act_state_mgr_weapon_drop:initialize                           |     |
+
+## act_state_mgr_weapon_none
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_weapon_none:__init__                             |     |
 | act_state_mgr_weapon_none:execute                              |     |
 | act_state_mgr_weapon_none:finalize                             |     |
 | act_state_mgr_weapon_none:initialize                           |     |
+
+## act_state_mgr_weapon_strapp
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_weapon_strapp:__init__                           |     |
 | act_state_mgr_weapon_strapp:execute                            |     |
 | act_state_mgr_weapon_strapp:finalize                           |     |
 | act_state_mgr_weapon_strapp:initialize                         |     |
+
+## act_state_mgr_weapon_unstrapp
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | act_state_mgr_weapon_unstrapp:__init__                         |     |
 | act_state_mgr_weapon_unstrapp:execute                          |     |
 | act_state_mgr_weapon_unstrapp:finalize                         |     |
 | act_state_mgr_weapon_unstrapp:initialize                       |     |
+
+## act_turn_on_campfire
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2228,6 +2651,8 @@ ___
 | act_turn_on_campfire:execute                                   |     |
 | act_turn_on_campfire:finalize                                  |     |
 | act_turn_on_campfire:initialize                                |     |
+
+## animpoint
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2242,6 +2667,8 @@ ___
 | animpoint:stop                                                 |     |
 | animpoint:update                                               |     |
 
+## anim_ui
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | anim_ui:__finalize__                                           |     |
@@ -2253,6 +2680,8 @@ ___
 | anim_ui:OnQuit                                                 |     |
 | anim_ui:OnStartAnim                                            |     |
 | anim_ui:Update                                                 |     |
+
+## animation
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2268,6 +2697,8 @@ ___
 | animation:update_anim                                          |     |
 | animation:weapon_slot                                          |     |
 
+## anomaly_field_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | anomaly_field_binder:__init__                                  |     |
@@ -2278,6 +2709,8 @@ ___
 | anomaly_field_binder:reload                                    |     |
 | anomaly_field_binder:set_enable                                |     |
 | anomaly_field_binder:update                                    |     |
+
+## anomaly_zone_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2301,6 +2734,8 @@ ___
 | anomaly_zone_binder:turn_on                                    |     |
 | anomaly_zone_binder:update                                     |     |
 
+## arena_zone_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | arena_zone_binder:__init__                                     |     |
@@ -2312,12 +2747,16 @@ ___
 | arena_zone_binder:purge_items                                  |     |
 | arena_zone_binder:save                                         |     |
 
+## artefact_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | artefact_binder:__init__                                       |     |
 | artefact_binder:net_destroy                                    |     |
 | artefact_binder:net_spawn                                      |     |
 | artefact_binder:update                                         |     |
+
+## body_state
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2327,6 +2766,8 @@ ___
 | body_state:set_state                                           |     |
 | body_state:transanim                                           |     |
 | body_state:weapon_slot                                         |     |
+
+## bridge_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2342,6 +2783,8 @@ ___
 | bridge_binder:save                                             |     |
 | bridge_binder:update                                           |     |
 
+## cam_effector_set
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | cam_effector_set:__init__                                      |     |
@@ -2349,6 +2792,8 @@ ___
 | cam_effector_set:start_effect                                  |     |
 | cam_effector_set:stop_effect                                   |     |
 | cam_effector_set:update                                        |     |
+
+## camp_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2362,6 +2807,8 @@ ___
 | camp_binder:save                                               |     |
 | camp_binder:update                                             |     |
 
+## campfire_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | campfire_binder:__init__                                       |     |
@@ -2371,6 +2818,8 @@ ___
 | campfire_binder:reload                                         |     |
 | campfire_binder:update                                         |     |
 | campfire_binder:use_campfire                                   |     |
+
+## car_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2387,6 +2836,8 @@ ___
 | car_binder:update                                              |     |
 | car_binder:use_callback                                        |     |
 
+## cfg_file
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | cfg_file:ClearValue                                            |     |
@@ -2399,6 +2850,8 @@ ___
 | cfg_file:SetValue                                              |     |
 | cfg_file:__init__                                              |     |
 
+## codepad
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | codepad:__init__                                               |     |
@@ -2407,6 +2860,8 @@ ___
 | codepad:reset_scheme                                           |     |
 | codepad:update                                                 |     |
 | codepad:use_callback                                           |     |
+
+## container_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2419,6 +2874,8 @@ ___
 | container_binder:reload                                        |     |
 | container_binder:save                                          |     |
 | container_binder:update                                        |     |
+
+## context_item
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2435,6 +2892,8 @@ ___
 | context_menu:OnListItemDbClicked                               |     |
 | context_menu:Update                                            |     |
 
+## context_props
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | context_props:__finalize__                                     |     |
@@ -2450,12 +2909,16 @@ ___
 | context_props:Reset                                            |     |
 | context_props:Update                                           |     |
 
+## crowkiller
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | crowkiller:__init__                                            |     |
 | crowkiller:check_for_spawn_new_crow                            |     |
 | crowkiller:reset_scheme                                        |     |
 | crowkiller:update                                              |     |
+
+## crow_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2470,6 +2933,8 @@ ___
 | crow_binder:save                                               |     |
 | crow_binder:update                                             |     |
 | crow_binder:use_callback                                       |     |
+
+## debug_ui
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2523,9 +2988,17 @@ ___
 | debug_ui:Update                                                |     |
 | debug_ui:spawn_section                                         |     |
 | debug_ui:spawn_squad                                           |     |
+
+## debug_ui_advanced
+
 | debug_ui_advanced:__finalize__                                 |     |
 | debug_ui_advanced:__init__                                     |     |
 | debug_ui_advanced:InitControls                                 |     |
+
+## debug_ui_attach
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | debug_ui_attach:__finalize__                                   |     |
 | debug_ui_attach:__init__                                       |     |
 | debug_ui_attach:OnAttach                                       |     |
@@ -2542,18 +3015,40 @@ ___
 | debug_ui_attach:On_fld_attach_x                                |     |
 | debug_ui_attach:On_fld_attach_y                                |     |
 | debug_ui_attach:On_fld_attach_z                                |     |
+
+## debug_ui_editor
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | debug_ui_editor:__finalize__                                   |     |
 | debug_ui_editor:__init__                                       |     |
 | debug_ui_editor:InitControls                                   |     |
+
+## debug_ui_hud
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | debug_ui_hud:__finalize__                                      |     |
 | debug_ui_hud:__init__                                          |     |
 | debug_ui_hud:InitControls                                      |     |
+
+## debug_ui_object
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | debug_ui_object:__finalize__                                   |     |
 | debug_ui_object:__init__                                       |     |
 | debug_ui_object:InitControls                                   |     |
+
+## debug_ui_spawner
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | debug_ui_spawner:__finalize__                                  |     |
 | debug_ui_spawner:__init__                                      |     |
 | debug_ui_spawner:InitControls                                  |     |
+
+## device_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2570,6 +3065,8 @@ ___
 | device_binder:save                                             |     |
 | device_binder:update                                           |     |
 
+## oor_binder_labx8
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | door_binder_labx8:__init__                                     |     |
@@ -2584,6 +3081,8 @@ ___
 | door_binder_labx8:save                                         |     |
 | door_binder_labx8:update                                       |     |
 | door_binder_labx8:use_callback                                 |     |
+
+## dynamo_hand_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2601,10 +3100,14 @@ ___
 | dynamo_hand_binder:sound_particle_fastcall                     |     |
 | dynamo_hand_binder:update                                      |     |
 
+## eat_medkit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | eat_medkit:__init__                                            |     |
 | eat_medkit:update                                              |     |
+
+## evaluator Functions
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2703,17 +3206,23 @@ ___
 | evaluator_wounded_exist:evaluate                               |     |
 | evaluator_wounded_exist:find_valid_target                      |     |
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | eva_gather_itm:__init__                                        |     |
 | eva_gather_itm:evaluate                                        |     |
 | eva_gather_itm:find_valid_item                                 |     |
 
+##
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | eva_kill_wounded:__init__                                      |     |
 | eva_kill_wounded:evaluate                                      |     |
 | eva_kill_wounded:find_target                                   |     |
+
+##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2810,11 +3319,15 @@ ___
 | eva_turn_on_campfire:evaluate                                  |     |
 | eva_turn_on_campfire:find_valid_target                         |     |
 
+## faction_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | faction_binder:__init__                                        |     |
 | faction_binder:net_spawn                                       |     |
 | faction_binder:update                                          |     |
+
+## fake_monster
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2826,6 +3339,8 @@ ___
 | fake_monster:set_positions                                     |     |
 | fake_monster:update                                            |     |
 
+## freeplay_dialog
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | freeplay_dialog:__init__                                       |     |
@@ -2833,6 +3348,8 @@ ___
 | freeplay_dialog:OnMsgOk                                        |     |
 | freeplay_dialog:OnMsgYes                                       |     |
 | freeplay_dialog:Show                                           |     |
+
+## generic_light_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2848,6 +3365,8 @@ ___
 | generic_light_binder:save                                      |     |
 | generic_light_binder:update                                    |     |
 | generic_light_binder:use_callback                              |     |
+
+## generic_object_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2870,6 +3389,8 @@ ___
 | generic_object_binder:use_kick                                 |     |
 | generic_object_binder:waypoint_callback                        |     |
 
+## generic_physics_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | generic_physics_binder:__init__                                |     |
@@ -2885,10 +3406,14 @@ ___
 | generic_physics_binder:update                                  |     |
 | generic_physics_binder:use_callback                            |     |
 
+## gwr_wpn_m98_binde
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | gwr_wpn_m98_binder:__init__                                    |     |
 | gwr_wpn_m98_binder:update                                      |     |
+ 
+## heli_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2904,6 +3429,8 @@ ___
 | heli_binder:reload                                             |     |
 | heli_binder:save                                               |     |
 | heli_binder:update                                             |     |
+
+## heli_combat
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2932,6 +3459,8 @@ ___
 | heli_combat:update_custom_data_settings                        |     |
 | heli_combat:waypoint_callback                                  |     |
 
+## heli_fire
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | heli_fire:__init__                                             |     |
@@ -2942,6 +3471,8 @@ ___
 | heli_fire:update_enemy_arr                                     |     |
 | heli_fire:update_enemy_state                                   |     |
 | heli_fire:update_hit                                           |     |
+
+## heli_fly
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2955,10 +3486,14 @@ ___
 | heli_fly:set_block_flook                                       |     |
 | heli_fly:set_look_point                                        |     |
 
+## heli_look
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | heli_look:__init__                                             |     |
 | heli_look:calc_look_point                                      |     |
+
+## heli_move
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -2973,6 +3508,8 @@ ___
 | heli_move:update_path_by_logic                                 |     |
 | heli_move:waypoint_callback                                    |     |
 
+## hud_tool
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | hud_tool:__init__                                              |     |
@@ -2981,6 +3518,8 @@ ___
 | hud_tool:display                                               |     |
 | hud_tool:export                                                |     |
 | hud_tool:set_header                                            |     |
+
+## ini_file_ex
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3000,6 +3539,8 @@ ___
 | ini_file_ex:section_exist                                      |     |
 | ini_file_ex:w_value                                            |     |
 
+## item_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | item_binder:__init__                                           |     |
@@ -3010,6 +3551,8 @@ ___
 | item_binder:reload                                             |     |
 | item_binder:save                                               |     |
 | item_binder:update                                             |     |
+
+## lchanger_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3023,15 +3566,21 @@ ___
 | lchanger_binder:save                                           |     |
 | lchanger_binder:update                                         |     |
 
+## list_element
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | list_element:__finalize__                                      |     |
 | list_element:__init__                                          |     |
 
+## load_item
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | load_item:__finalize__                                         |     |
 | load_item:__init__                                             |     |
+
+## looped_sound
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3046,6 +3595,8 @@ ___
 | looped_sound:save_state                                        |     |
 | looped_sound:set_volume                                        |     |
 | looped_sound:stop                                              |     |
+
+## main_menu
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3079,6 +3630,8 @@ ___
 | main_menu:Update                                               |     |
 | main_menu:on_localization_change                               |     |
 
+## mob_camp
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_camp:__init__                                              |     |
@@ -3090,16 +3643,22 @@ ___
 | mob_camp:select_state                                          |     |
 | mob_camp:update                                                |     |
 
+## mob_combat
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_combat:__init__                                            |     |
 | mob_combat:combat_callback                                     |     |
+
+## mob_death
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_death:__init__                                             |     |
 | mob_death:death_callback                                       |     |
 
+
+##  mob_home
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3108,17 +3667,23 @@ ___
 | mob_home:reset_scheme                                          |     |
 | mob_home:update                                                |     |
 
+## mob_jump
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_jump:__init__                                              |     |
 | mob_jump:reset_scheme                                          |     |
 | mob_jump:update                                                |     |
 
+## mob_remark
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_remark:__init__                                            |     |
 | mob_remark:reset_scheme                                        |     |
 | mob_remark:update                                              |     |
+
+## mob_trade
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3129,6 +3694,8 @@ ___
 | mob_trade:start_trade                                          |     |
 | mob_trade:storage_trade_section                                |     |
 | mob_trade:update                                               |     |
+
+## mob_trader
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3144,6 +3711,8 @@ ___
 | mob_trader:update                                              |     |
 | mob_trader:use_callback                                        |     |
 
+## mob_walker
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | mob_walker:__init__                                            |     |
@@ -3155,6 +3724,8 @@ ___
 | mob_walker:update_movement_state                               |     |
 | mob_walker:update_standing_state                               |     |
 | mob_walker:waypoint_callback                                   |     |
+
+## motivator_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3178,6 +3749,8 @@ ___
 | motivator_binder:take_item_from_box                            |     |
 | motivator_binder:update                                        |     |
 | motivator_binder:use_callback                                  |     |
+
+## move_mgr
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3203,6 +3776,8 @@ ___
 | move_mgr:validate_paths                                        |     |
 | move_mgr:waypoint_callback                                     |     |
 
+## msg_box_ui
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | msg_box_ui:InitCallBacks                                       |     |
@@ -3212,6 +3787,8 @@ ___
 | msg_box_ui:OnMsgOk                                             |     |
 | msg_box_ui:__finalize__                                        |     |
 | msg_box_ui:__init__                                            |     |
+
+## multi_choice
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3225,6 +3802,8 @@ ___
 | multi_choice:OnKeyboard                                        |     |
 | multi_choice:OnListItemClicked                                 |     |
 | multi_choice:OnListItemDbClicked                               |     |
+
+## npc_sound
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3243,6 +3822,8 @@ ___
 | npc_sound:select_next_sound                                    |     |
 | npc_sound:stop                                                 |     |
 
+## object_sound
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | object_sound:__init__                                          |     |
@@ -3258,11 +3839,15 @@ ___
 | object_sound:select_next_sound                                 |     |
 | object_sound:stop                                              |     |
 
+## opt_controls
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | opt_controls:__finalize__                                      |     |
 | opt_controls:__init__                                          |     |
 | opt_controls:InitControls                                      |     |
+
+## pda_contacts_tab
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3272,9 +3857,16 @@ ___
 | pda_contacts_tab:SaveCheckBoxSettings                          |     |
 | pda_contacts_tab:Update                                        |     |
 
+## pda_encyclopedia_entry
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | pda_encyclopedia_entry:__init__                                |     |
+
+## pda_encyclopedia_tab
+
+| Method Name                                                    |     |
+| -------------------------------------------------------------- | --- |
 | pda_encyclopedia_tab:__finalize__                              |     |
 | pda_encyclopedia_tab:__init__                                  |     |
 | pda_encyclopedia_tab:InitArticles                              |     |
@@ -3286,9 +3878,13 @@ ___
 | pda_encyclopedia_tab:SelectArticle                             |     |
 | pda_encyclopedia_tab:SelectCategory                            |     |
 
+## pda_message_entry
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | pda_message_entry:__init__                                     |     |
+
+## pda_npc_tab
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3301,6 +3897,8 @@ ___
 | pda_npc_tab:Reset                                              |     |
 | pda_npc_tab:Reset_data                                         |     |
 | pda_npc_tab:Update                                             |     |
+
+## pda_radio_tab
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3326,6 +3924,8 @@ ___
 | pda_radio_tab:SwitchChannel                                    |     |
 | pda_radio_tab:Update                                           |     |
 
+## pda_relations_tab
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | pda_relations_tab:__finalize__                                 |     |
@@ -3336,6 +3936,8 @@ ___
 | pda_relations_tab:autoupdate                                   |     |
 | pda_relations_tab:btn_to_text                                  |     |
 
+## pda_warfare_tab
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | pda_warfare_tab:__finalize__                                   |     |
@@ -3344,6 +3946,8 @@ ___
 | pda_warfare_tab:Reset                                          |     |
 | pda_warfare_tab:Update                                         |     |
 | pda_warfare_tab:btn_map                                        |     |
+
+## ph_button
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3354,16 +3958,22 @@ ___
 | ph_button:update                                               |     |
 | ph_button:use_callback                                         |     |
 
+## ph_force
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | ph_force:__init__                                              |     |
 | ph_force:reset_scheme                                          |     |
 | ph_force:update                                                |     |
 
+## ph_item_box
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | ph_item_box:__init__                                           |     |
 | ph_item_box:spawn_items                                        |     |
+
+## ph_on_death
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3371,6 +3981,8 @@ ___
 | ph_on_death:death_callback                                     |     |
 | ph_on_death:reset_scheme                                       |     |
 | ph_on_death:update                                             |     |
+
+## ph_on_hit
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3380,10 +3992,14 @@ ___
 | ph_on_hit:reset_scheme                                         |     |
 | ph_on_hit:update                                               |     |
 
+##position_node
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | position_node:__init__                                         |     |
 | position_node:select_best_vertex_id                            |     |
+
+## restrictor_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3399,13 +4015,19 @@ ___
 | restrictor_binder:save                                         |     |
 | restrictor_binder:update                                       |     |
 
+## save_item
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | save_item:__init__                                             |     |
 
+## scene_item
+ 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | scene_item:__init__                                            |     |
+
+## scenes_item_dialog
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3419,6 +4041,8 @@ ___
 | scenes_item_dialog:OnButton_create_clicked                     |     |
 | scenes_item_dialog:OnKeyboard                                  |     |
 
+## script_zone_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | script_zone_binder:__init__                                    |     |
@@ -3428,6 +4052,8 @@ ___
 | script_zone_binder:on_enter                                    |     |
 | script_zone_binder:on_exit                                     |     |
 | script_zone_binder:save                                        |     |
+
+## se_actor
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3445,6 +4071,8 @@ ___
 | se_actor:sim_available                                         |     |
 | se_actor:target_precondition                                   |     |
 
+## se_ammo
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_ammo:__init__                                               |     |
@@ -3455,6 +4083,8 @@ ___
 | se_ammo:on_unregister                                          |     |
 
 
+## se_artefact
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_artefact:__init__                                           |     |
@@ -3464,6 +4094,8 @@ ___
 | se_artefact:can_switch_online                                  |     |
 | se_artefact:on_register                                        |     |
 | se_artefact:on_unregister                                      |     |
+
+## se_car
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3476,6 +4108,8 @@ ___
 | se_car:on_register                                             |     |
 | se_car:on_unregister                                           |     |
 
+## se_detector
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_detector:__init__                                           |     |
@@ -3484,6 +4118,8 @@ ___
 | se_detector:can_switch_online                                  |     |
 | se_detector:on_register                                        |     |
 | se_detector:on_unregister                                      |     |
+
+## se_eatable
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3495,6 +4131,8 @@ ___
 | se_eatable:on_register                                         |     |
 | se_eatable:on_unregister                                       |     |
 
+## se_explosive
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_explosive:__init__                                          |     |
@@ -3504,12 +4142,16 @@ ___
 | se_explosive:on_register                                       |     |
 | se_explosive:on_unregister                                     |     |
 
+## se_grenade
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_grenade:__init__                                            |     |
 | se_grenade:can_switch_online                                   |     |
 | se_grenade:on_register                                         |     |
 | se_grenade:on_unregister                                       |     |
+
+## se_heli
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3522,6 +4164,8 @@ ___
 | se_heli:on_register                                            |     |
 | se_heli:on_unregister                                          |     |
 
+## se_helmet
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_helmet:__init__                                             |     |
@@ -3531,6 +4175,8 @@ ___
 | se_helmet:on_register                                          |     |
 | se_helmet:on_unregister                                        |     |
 
+## se_invbox
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_invbox:__init__                                             |     |
@@ -3539,6 +4185,8 @@ ___
 | se_invbox:can_switch_online                                    |     |
 | se_invbox:on_register                                          |     |
 | se_invbox:on_unregister                                        |     |
+
+## se_item
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3550,6 +4198,8 @@ ___
 | se_item:on_unregister                                          |     |
 | se_item:switch_online                                          |     |
 
+## se_item_torch
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_item_torch:__init__                                         |     |
@@ -3558,6 +4208,8 @@ ___
 | se_item_torch:can_switch_online                                |     |
 | se_item_torch:on_register                                      |     |
 | se_item_torch:on_unregister                                    |     |
+
+## se_lamp
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3569,6 +4221,8 @@ ___
 | se_lamp:on_register                                            |     |
 | se_lamp:on_unregister                                          |     |
 
+## se_level_changer
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_level_changer:__init__                                      |     |
@@ -3578,6 +4232,8 @@ ___
 | se_level_changer:on_unregister                                 |     |
 
 
+## se_mgun
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_mgun:__init__                                               |     |
@@ -3586,6 +4242,8 @@ ___
 | se_mgun:can_switch_online                                      |     |
 | se_mgun:on_register                                            |     |
 | se_mgun:on_unregister                                          |     |
+
+## se_monster
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3602,6 +4260,8 @@ ___
 | se_monster:switch_online                                       |     |
 | se_monster:update                                              |     |
 
+## se_outfit
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_outfit:__init__                                             |     |
@@ -3611,6 +4271,8 @@ ___
 | se_outfit:on_register                                          |     |
 | se_outfit:on_unregister                                        |     |
 
+## se_pda
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_pda:__init__                                                |     |
@@ -3619,6 +4281,8 @@ ___
 | se_pda:can_switch_online                                       |     |
 | se_pda:on_register                                             |     |
 | se_pda:on_unregister                                           |     |
+
+## se_physic
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3630,6 +4294,8 @@ ___
 | se_physic:on_register                                          |     |
 | se_physic:on_unregister                                        |     |
 
+## se_restrictor
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_restrictor:__init__                                         |     |
@@ -3637,6 +4303,8 @@ ___
 | se_restrictor:on_register                                      |     |
 | se_restrictor:on_unregister                                    |     |
 | se_restrictor:switch_online                                    |     |
+
+## se_smart_cover
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3649,10 +4317,14 @@ ___
 | se_smart_cover:on_unregister                                   |     |
 | se_smart_cover:update                                          |     |
 
+## se_smart_terrain
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_smart_terrain:evaluate_prior                                |     |
 | se_smart_terrain:try_respawn                                   |     |
+
+## se_stalker
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3670,12 +4342,16 @@ ___
 | se_stalker:switch_online                                       |     |
 | se_stalker:update                                              |     |
 
+## se_trader
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_trader:__init__                                             |     |
 | se_trader:keep_saved_data_anyway                               |     |
 | se_trader:on_register                                          |     |
 | se_trader:on_unregister                                        |     |
+
+##  se_weapon
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3686,6 +4362,8 @@ ___
 | se_weapon:on_register                                          |     |
 | se_weapon:on_unregister                                        |     |
 
+## se_weapon_automatic_shotgun
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_weapon_automatic_shotgun:__init__                           |     |
@@ -3694,6 +4372,8 @@ ___
 | se_weapon_automatic_shotgun:can_switch_online                  |     |
 | se_weapon_automatic_shotgun:on_register                        |     |
 | se_weapon_automatic_shotgun:on_unregister                      |     |
+
+## se_weapon_magazined
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3704,6 +4384,8 @@ ___
 | se_weapon_magazined:on_register                                |     |
 | se_weapon_magazined:on_unregister                              |     |
 
+## se_weapon_magazined_w_gl
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_weapon_magazined_w_gl:__init__                              |     |
@@ -3712,6 +4394,8 @@ ___
 | se_weapon_magazined_w_gl:can_switch_online                     |     |
 | se_weapon_magazined_w_gl:on_register                           |     |
 | se_weapon_magazined_w_gl:on_unregister                         |     |
+
+## se_weapon_shotgun
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3722,6 +4406,8 @@ ___
 | se_weapon_shotgun:on_register                                  |     |
 | se_weapon_shotgun:on_unregister                                |     |
 
+## se_zone_anom
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_zone_anom:STATE_Read                                        |     |
@@ -3730,6 +4416,8 @@ ___
 | se_zone_anom:on_register                                       |     |
 | se_zone_anom:on_unregister                                     |     |
 | se_zone_anom:update                                            |     |
+
+## se_zone_torrid
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3740,6 +4428,8 @@ ___
 | se_zone_torrid:on_unregister                                   |     |
 | se_zone_torrid:update                                          |     |
 
+## se_zone_visua
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | se_zone_visual:STATE_Read                                      |     |
@@ -3749,9 +4439,13 @@ ___
 | se_zone_visual:on_unregister                                   |     |
 | se_zone_visual:update                                          |     |
 
+## set_list_text
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | set_list_text:__init__                                         |     |
+
+## signal_light_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3769,6 +4463,8 @@ ___
 | signal_light_binder:stop                                       |     |
 | signal_light_binder:stop_light                                 |     |
 | signal_light_binder:update                                     |     |
+
+## sim_squad_scripted
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3823,6 +4519,8 @@ ___
 | sim_squad_scripted:target_precondition                         |     |
 | sim_squad_scripted:update                                      |     |
 
+## simulation_board
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | simulation_board:__init__                                      |     |
@@ -3842,6 +4540,8 @@ ___
 | simulation_board:stop_sim                                      |     |
 | simulation_board:unregister_smart                              |     |
 
+## smart_cover_binder
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | smart_cover_binder:__init__                                    |     |
@@ -3854,6 +4554,8 @@ ___
 | smart_terrain_binder:net_spawn                                 |     |
 | smart_terrain_binder:update                                    |     |
 
+## snd_source
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | snd_source:__init__                                            |     |
@@ -3862,6 +4564,8 @@ ___
 | snd_source:reset_scheme                                        |     |
 | snd_source:save                                                |     |
 | snd_source:update                                              |     |
+
+## sound_manager
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3874,6 +4578,8 @@ ___
 | sound_manager:unregister_npc                                   |     |
 | sound_manager:update                                           |     |
 
+## state_manager
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | state_manager:__init__                                         |     |
@@ -3881,11 +4587,15 @@ ___
 | state_manager:set_state                                        |     |
 | state_manager:update                                           |     |
 
+## static_pp
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | static_pp:__init__                                             |     |
 | static_pp:count                                                |     |
 | static_pp:point                                                |     |
+
+## stereo_sound
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3898,6 +4608,8 @@ ___
 | stereo_sound:set_volume                                        |     |
 | stereo_sound:stop                                              |     |
 | stereo_sound:update                                            |     |
+
+## trader_object_binder
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3913,6 +4625,8 @@ ___
 | trader_object_binder:save_state                                |     |
 | trader_object_binder:update                                    |     |
 
+## ui_companion_row
+
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | ui_companion_row:__init__                                      |     |
@@ -3920,6 +4634,8 @@ ___
 | ui_dosimeter:Update                                            |     |
 | ui_dosimeter:__finalize__                                      |     |
 | ui_dosimeter:__init__                                          |     |
+
+## zone_sound
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
