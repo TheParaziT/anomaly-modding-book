@@ -3,31 +3,31 @@ ___
 
 ## About
 
-| Method Name                                                    |     |
-| -------------------------------------------------------------- | --- |
-| CAbuseManager:SetAbuseRate                                     |     |
-| CAbuseManager:__init__                                         |     |
-| CAbuseManager:addAbuse                                         |     |
-| CAbuseManager:abused                                           |     |
-| CAbuseManager:clearAbuse                                       |     |
-| CAbuseManager:disableAbuse                                     |     |
-| CAbuseManager:enableAbuse                                      |     |
-| CAbuseManager:update                                           |     |
-| CCampManager:__init__                                          |     |
-| CCampManager:get_camp_action                                   |     |
-| CCampManager:get_director                                      |     |
-| CCampManager:get_npc_role                                      |     |
-| CCampManager:register_npc                                      |     |
-| CCampManager:set_next_state                                    |     |
-| CCampManager:set_story                                         |     |
-| CCampManager:unregister_npc                                    |     |
-| CCampManager:update                                            |     |
-| CCover_manager:__init__                                        |     |
-| CCover_manager:calculate_covers                                |     |
-| CCover_manager:load                                            |     |
-| CCover_manager:register_squad                                  |     |
-| CCover_manager:save                                            |     |
-| CCover_manager:unregister_squad                                |     |
+| Method Name                     |     |
+| ------------------------------- | --- |
+| CAbuseManager:SetAbuseRate      |     |
+| CAbuseManager:__init__          |     |
+| CAbuseManager:addAbuse          |     |
+| CAbuseManager:abused            |     |
+| CAbuseManager:clearAbuse        |     |
+| CAbuseManager:disableAbuse      |     |
+| CAbuseManager:enableAbuse       |     |
+| CAbuseManager:update            |     |
+| CCampManager:__init__           |     |
+| CCampManager:get_camp_action    |     |
+| CCampManager:get_director       |     |
+| CCampManager:get_npc_role       |     |
+| CCampManager:register_npc       |     |
+| CCampManager:set_next_state     |     |
+| CCampManager:set_story          |     |
+| CCampManager:unregister_npc     |     |
+| CCampManager:update             |     |
+| CCover_manager:__init__         |     |
+| CCover_manager:calculate_covers |     |
+| CCover_manager:load             |     |
+| CCover_manager:register_squad   |     |
+| CCover_manager:save             |     |
+| CCover_manager:unregister_squad |     |
 
 ## CDeimos
 
@@ -156,8 +156,6 @@ ___
 
 ## Cwound_manager
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | Cwound_manager:__init__                                        |     |
@@ -172,8 +170,6 @@ ___
 | Cwound_manager:update                                          |     |
 
 ## DynamicNewsManager
-
-##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -273,8 +269,6 @@ ___
 
 ## ItemProcessor
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | ItemProcessor:Create_Item                                      |     |
@@ -287,8 +281,6 @@ ___
 | ItemProcessor:update                                           |     |
 
 ## LightEditor
-
-##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -356,8 +348,6 @@ ___
 
 ## PatrolManager
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | PatrolManager:__init__                                         |     |
@@ -373,8 +363,6 @@ ___
 | PatrolManager:update                                           |     |
 
 ## Phantom
-
-##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -439,8 +427,6 @@ ___
 
 ## UIBelt
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UIBelt:__finalize__                                            |     |
@@ -451,8 +437,6 @@ ___
 | UIBelt:Update                                                  |     |
 
 ## UICellContainer
-
-##
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -474,9 +458,7 @@ ___
 | UICellContainer:GetCell_SEC                                    |     |
 | UICellContainer:GetCell_Selected                               |     |
 | UICellContainer:GetID                                          |     |
-| UICellContainer:GetObj 
-##
-                                        |     |
+| UICellContainer:GetObj                                         |     |
 | UICellContainer:GetSortMethod                                  |     |
 | UICellContainer:Grow                                           |     |
 | UICellContainer:InitControls                                   |     |
@@ -516,8 +498,6 @@ ___
 
 ## UICellItem
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICellItem:AddChild                                            |     |
@@ -551,8 +531,6 @@ ___
 
 ## UICellProperties
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICellProperties:__finalize__                                  |     |
@@ -570,34 +548,32 @@ ___
 
 ## UICellProperties_item
 
-##
-
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
 | UICellProperties_item:__finalize__                             |     |
 | UICellProperties_item:__init__                                 |     |
 
-##
+## UICompanionInv
 
-| Method Name                                                    |     |
-| -------------------------------------------------------------- | --- |
-| UICompanionInv:__finalize__                                    |     |
-| UICompanionInv:__init__                                        |     |
-| UICompanionInv:Close                                           |     |
-| UICompanionInv:Delay                                           |     |
-| UICompanionInv:InitCallBacks                                   |     |
-| UICompanionInv:InitControls                                    |     |
-| UICompanionInv:InitInventoryCells                              |     |
-| UICompanionInv:OnBtn_GiveAll                                   |     |
-| UICompanionInv:OnBtn_TakeAll                                   |     |
-| UICompanionInv:OnInvClicked_comp                               |     |
-| UICompanionInv:OnInvClicked_player                             |     |
-| UICompanionInv:OnKeyboard                                      |     |
-| UICompanionInv:Reset                                           |     |
-| UICompanionInv:ResetWeight                                     |     |
-| UICompanionInv:SetHint                                         |     |
-| UICompanionInv:SetMsg                                          |     |
-| UICompanionInv:Update                                          |     |
+| Method Name                        |     |
+| ---------------------------------- | --- |
+| UICompanionInv:__finalize__        |     |
+| UICompanionInv:__init__            |     |
+| UICompanionInv:Close               |     |
+| UICompanionInv:Delay               |     |
+| UICompanionInv:InitCallBacks       |     |
+| UICompanionInv:InitControls        |     |
+| UICompanionInv:InitInventoryCells  |     |
+| UICompanionInv:OnBtn_GiveAll       |     |
+| UICompanionInv:OnBtn_TakeAll       |     |
+| UICompanionInv:OnInvClicked_comp   |     |
+| UICompanionInv:OnInvClicked_player |     |
+| UICompanionInv:OnKeyboard          |     |
+| UICompanionInv:Reset               |     |
+| UICompanionInv:ResetWeight         |     |
+| UICompanionInv:SetHint             |     |
+| UICompanionInv:SetMsg              |     |
+| UICompanionInv:Update              |     |
 
 ## UICompanionList
 
@@ -2363,14 +2339,14 @@ ___
 | act_kill_wounded:initialize                                    |     |
 | act_kill_wounded:reset                                         |     |
 
-##
+## act_state_mgr_animation_start
 
-| Method Name                                                    |     |
-| -------------------------------------------------------------- | --- |
-| act_state_mgr_animation_start:__init__                         |     |
-| act_state_mgr_animation_start:execute                          |     |
-| act_state_mgr_animation_start:finalize                         |     |
-| act_state_mgr_animation_start:initialize                       |     |
+| Method Name                              |     |
+| ---------------------------------------- | --- |
+| act_state_mgr_animation_start:__init__   |     |
+| act_state_mgr_animation_start:execute    |     |
+| act_state_mgr_animation_start:finalize   |     |
+| act_state_mgr_animation_start:initialize |     |
 
 ## ct_state_mgr_animation_stop
 
@@ -2991,9 +2967,12 @@ ___
 
 ## debug_ui_advanced
 
-| debug_ui_advanced:__finalize__                                 |     |
-| debug_ui_advanced:__init__                                     |     |
-| debug_ui_advanced:InitControls                                 |     |
+| Method Name                    |     |
+| ------------------------------ | --- |
+| debug_ui_advanced:__finalize__ |     |
+| debug_ui_advanced:__init__     |     |
+| debug_ui_advanced:InitControls |     |
+
 
 ## debug_ui_attach
 
@@ -3206,23 +3185,23 @@ ___
 | evaluator_wounded_exist:evaluate                               |     |
 | evaluator_wounded_exist:find_valid_target                      |     |
 
-##
+## eva_gather_itm
 
-| Method Name                                                    |     |
-| -------------------------------------------------------------- | --- |
-| eva_gather_itm:__init__                                        |     |
-| eva_gather_itm:evaluate                                        |     |
-| eva_gather_itm:find_valid_item                                 |     |
+| Method Name                    |     |
+| ------------------------------ | --- |
+| eva_gather_itm:__init__        |     |
+| eva_gather_itm:evaluate        |     |
+| eva_gather_itm:find_valid_item |     |
 
-##
+## eva_kill_wounded
 
-| Method Name                                                    |     |
-| -------------------------------------------------------------- | --- |
-| eva_kill_wounded:__init__                                      |     |
-| eva_kill_wounded:evaluate                                      |     |
-| eva_kill_wounded:find_target                                   |     |
+| Method Name                  |     |
+| ---------------------------- | --- |
+| eva_kill_wounded:__init__    |     |
+| eva_kill_wounded:evaluate    |     |
+| eva_kill_wounded:find_target |     |
 
-##
+## Eva state *needs work*
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
@@ -3992,7 +3971,7 @@ ___
 | ph_on_hit:reset_scheme                                         |     |
 | ph_on_hit:update                                               |     |
 
-##position_node
+## position_node
 
 | Method Name                                                    |     |
 | -------------------------------------------------------------- | --- |
