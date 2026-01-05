@@ -1,7 +1,8 @@
+# Scripting API
 
 ___
 
-## About
+## List
 
 | Method Name                     |     |
 | ------------------------------- | --- |
