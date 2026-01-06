@@ -160,6 +160,53 @@ p .glossary-term-tooltip {
   }
 }
 
+/* Стили для 3D просмотрщика */
+.model-viewer-container {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Плавное изменение темы */
+.model-viewer-container[data-theme="dark"] {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.model-viewer-container[data-theme="light"] {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер для модели в темной теме */
+[data-theme="dark"] .model-viewer-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Контейнер для модели в светлой теме */
+[data-theme="light"] .model-viewer-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Индикатор загрузки для темной темы */
+[data-theme="dark"] .model-loading {
+  backdrop-filter: blur(10px);
+}
+
+/* Индикатор загрузки для светлой темы */
+[data-theme="light"] .model-loading {
+  backdrop-filter: blur(5px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .model-viewer-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-viewer-container {
+    height: 300px;
+  }
+}
+
 /* Scrollbar styling (Chromium/WebKit) */
 *::-webkit-scrollbar {
   width: 10px;
