@@ -27,6 +27,10 @@ ___
       <td>Described Version</td>
       <td>0.564</td>
     </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>[DeepWiki](https://deepwiki.com/TheParaziT/Evaluation-Function-Constructor)</td>
+    </tr>
   </tbody>
 </table>
 

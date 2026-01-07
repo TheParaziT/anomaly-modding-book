@@ -256,7 +256,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'scriptingapiSidebar',
           position: 'left',
-          label: 'Scripting API',
+          label: 'Scripting Docs',
           className: 'navbar-item-with-icon navbar-scripting-api-item',
         },
         {
@@ -294,7 +294,7 @@ const config: Config = {
             { label: 'Resources', to: '/docs/resources' },
             { label: 'Modding Tools', to: '/docs/modding-tools' },
             { label: 'Engine API', to: '/docs/engine-api' },
-            { label: 'Scripting API', to: '/docs/scripting-api' },
+            { label: 'Scripting Docs', to: '/docs/scripting-docs' },
           ],
         },
         {
