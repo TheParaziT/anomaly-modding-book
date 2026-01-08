@@ -11,6 +11,11 @@ draft: false
 
 ___
 
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+
 ## Release build
 
 | Command | Command description | Command's argument | Note |

@@ -1,7 +1,0 @@
----
-draft: false
----
-# Shaders
-
-___
-

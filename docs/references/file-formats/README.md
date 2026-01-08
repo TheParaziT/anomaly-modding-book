@@ -6,6 +6,11 @@ draft: false
 
 ___
 
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+
 ## About
 
 This section describes the extensions that are found in the game files and the SDK.

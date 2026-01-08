@@ -1,6 +1,0 @@
----
-draft: false
----
-# Materials
-
-___

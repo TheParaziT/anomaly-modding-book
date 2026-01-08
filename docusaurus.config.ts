@@ -340,7 +340,7 @@ const config: Config = {
 
     docs: {
       sidebar: {
-        hideable: false, // false until i fix width hidden-sidebar
+        hideable: true, // false until i fix width hidden-sidebar
         autoCollapseCategories: true,
       },
     },

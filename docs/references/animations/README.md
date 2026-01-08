@@ -1,7 +1,0 @@
----
-draft: false
----
-# Animations
-
-___
-

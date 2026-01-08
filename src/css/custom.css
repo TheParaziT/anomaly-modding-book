@@ -1,12 +1,3 @@
-@import url(sidebar-reference-icons.css);
-@import url(sidebar-resources-icons.css);
-@import url(sidebar-tutorials-icons.css);
-@import url(sidebar-engine-api-icons.css);
-@import url(sidebar-modding-tools-icons.css);
-@import url(sidebar-scripting-api-icons.css);
-@import url(sidebar-getting-started-icons.css);
-@import url(sidebar-for-contributors-icons.css);
-
 @import url(header-info.css);
 @import url(header-need-to-know.css);
 
@@ -155,7 +146,7 @@ p .glossary-term-tooltip {
 @media (display-mode: picture-in-picture) {
   .pip-button-container,
   .pipButton,
-  button[aria-label*="PiP"] {
+  button[aria-label*='PiP'] {
     display: none !important;
   }
 }
@@ -166,31 +157,31 @@ p .glossary-term-tooltip {
 }
 
 /* Плавное изменение темы */
-.model-viewer-container[data-theme="dark"] {
+.model-viewer-container[data-theme='dark'] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.model-viewer-container[data-theme="light"] {
+.model-viewer-container[data-theme='light'] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Контейнер для модели в темной теме */
-[data-theme="dark"] .model-viewer-container {
+[data-theme='dark'] .model-viewer-container {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 /* Контейнер для модели в светлой теме */
-[data-theme="light"] .model-viewer-container {
+[data-theme='light'] .model-viewer-container {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 /* Индикатор загрузки для темной темы */
-[data-theme="dark"] .model-loading {
+[data-theme='dark'] .model-loading {
   backdrop-filter: blur(10px);
 }
 
 /* Индикатор загрузки для светлой темы */
-[data-theme="light"] .model-loading {
+[data-theme='light'] .model-loading {
   backdrop-filter: blur(5px);
 }
 
@@ -237,7 +228,6 @@ p .glossary-term-tooltip {
 .card,
 .cardContainer,
 .theme-doc-toc-desktop,
-.theme-doc-sidebar-container,
 .navbar,
 .footer {
   border: 1px solid rgba(123, 210, 26, 0.08);
@@ -287,17 +277,6 @@ a:hover {
 a:focus-visible {
   outline: 2px dashed rgba(123, 210, 26, 0.7);
   outline-offset: 2px;
-}
-
-/* Sidebar: compact spacing and active item accent */
-.menu__list-item > .menu__link--active,
-.menu__list-item-collapsible--active {
-  background: rgba(123, 210, 26, 0.08);
-  border-left: 3px solid rgba(123, 210, 26, 0.6);
-}
-
-.menu__link:hover {
-  background: rgba(123, 210, 26, 0.06);
 }
 
 /* Tables: subtle row separators */
@@ -472,46 +451,6 @@ table tbody tr + tr td {
 .hero__title {
   letter-spacing: 0.5px;
   text-transform: none;
-}
-
-/* Sidebar icons for each page */
-.menu__link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.menu__link::before {
-  content: '';
-  width: 1rem;
-  height: 1rem;
-  display: inline-block;
-  background-color: currentColor;
-  opacity: 0.85;
-  mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg')) no-repeat
-    center / contain;
-  -webkit-mask: var(--sidebar-icon, url('https://api.iconify.design/mdi:file-document.svg'))
-    no-repeat center / contain;
-  flex-shrink: 0;
-}
-
-/* Prevent SVG icons from appearing in code blocks */
-code *::before,
-code *::after,
-pre *::before,
-pre *::after,
-.prism-code *::before,
-.prism-code *::after,
-.theme-code-block *::before,
-.theme-code-block *::after {
-  display: none !important;
-}
-
-@media (min-width: 997px) {
-  .collapseSidebarButton_PEFL {
-    border: 0px;
-  }
 }
 
 .code-block {

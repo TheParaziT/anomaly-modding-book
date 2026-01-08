@@ -23,3 +23,7 @@ When working with the X-Ray Engine, various crashes may occur. Here you can find
 - `Line` - Line in File where the error occurred
 - `Description` - Possible problem description
 - `Arguments` - Argument causing the error
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

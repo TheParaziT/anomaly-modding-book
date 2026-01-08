@@ -346,3 +346,7 @@ Unique abilitys for mutants. Each mutant may have its own individual abilities, 
 |---|---|---|---|
 | anti_aim_effectors | Existence of effectors |  |  |
 | anti_aim_animation | Dodge animation |  |  |
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

@@ -16,3 +16,7 @@ Parameters of the weapon are set for each sample in a separate [*.ltx](../../../
 - \[wpn_name] - Main, it sets most of the parameters (for NPC and 3rd-person view).
 
 - \[wpn_name_hud] - Secondary, where you set first-person view parameters only.
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
