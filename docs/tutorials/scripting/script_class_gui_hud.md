@@ -167,15 +167,12 @@ function MyGUI:InitControls()
 	
 	self.my_text = xml:InitTextWnd("background:text", self.my_wnd)
 	self.my_text:SetText("My text here")
-	
-	self.some_butten = xml:InitCheck("btn", self)
-	self.some_button:Show(true)
 end
 ```
 
-Setting the interaction area of your GUI is the first step. Every UI element placed outise of this area cannot be interacted with. Therefore
-it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution is, the engine will always
-translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
+Setting the interaction area of your GUI using `SetWndRect()` is the first step. Every UI element placed outside of this area cannot be
+interacted with. Therefore it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution
+is, the engine will always translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
 `self.xml = ScriptXmlInit()`calls an instance of the engine class `CUIXmlInit`, responsible for creating any of the available UI elements.
 `xml:ParseFile()` receives the name of your xml file that stores properties of the UI elements you create, such as position, size, textures,
 text formatting, color etc. Without this xml file you're GUI won't work.
@@ -190,10 +187,36 @@ such as `SetText()` or `Show()`. A detailed description of these elements and th
 A UI element creation method receives the following arguments:
 
 - the path to the UI element info in your xml file, e.g. `"background"`
-- the parent UI element
+- the parent UI element or, if none exists, the class instance itself (`self`)
+
+
+### Parents and children
 
 Setting the parent has a direct influence on how UI elements behave. If you change the visibility or position of the parent, this will also affect
 all its children.
+
+Consider the following example. We create a simple window that contains text and a trackbar. We want to control both position and visiblilty of these
+UI element via the window that contains them:
+
+```LUA
+function MyGUI:CreateWindow()
+	self.wnd = xml:InitStatic("parent_window", self)
+	self.wnd:Show(false) -- sets the window invisible
+	
+	self.text = xml:InitTextWindow("parent_window:text_block", self.wnd)
+	self.text:SetText("This is our text window.")
+	
+	self.track = xml:InitTrackBar("bar", self.text)
+end
+```
+
+As you can see we pass `self.wnd` as the parent of text window and `self.text` as the parent of the trackbar. You can ignore the structure of the
+xml info path. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
+has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
+`self.wnd`), when the GUI opens not just `self.wnd` but all three elements will be invisible.
+ 
+
+### Self???
 
 "What is this 'self'?" you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
 `self.my_wnd` is the same as writing `MyGUI.my_wnd`. Everything you declare with `self` can be accessed from anywhere within your GUI class. Don't
@@ -210,7 +233,7 @@ Consider the following example. We create a simple button and want to execute a 
 ```LUA
 function MyGUI:CreateButton()
 	self.btn = xml:Init3tButton("wnd:btn", self.wnd) -- creates button
-	self.btn:TextControl:SetText("button text") 	 -- let's us display text on the button
+	self.btn:TextControl():SetText("button text") 	 -- let's us display text on the button
 
 	self:Register(self.btn, "button_exec_func") 	 -- pass the UI element and assign a unique ID
 	self:AddCallback("button_exec_func", ui_events.BUTTON_CLICKED, self.OnButton, self)
@@ -280,7 +303,214 @@ For example pressing and releasing a key, `OnKeyboard()` is called twice and rec
 value respectively.
 
 
-# Useful stuff, tipps and tricks (Put this at the end of the tutorial!)
+# UI elements and their methods
+
+This following lists contain all UI elements available in the game. Please forgive me for not being able to provide complete info about
+what each UI element does.
+
+All methods in this list are called as methods of `SctiptXmlInit()`.
+
+- `InitSpinText(string, CUIWindow*)`		- 
+- `InitTab(string, CUIWindow*)`				- used for creating compley menus with multiple tabs, see Stalker CoP options menu for reference
+- `InitStatic(string, CUIWindow*)`			- creates basic window that can contains any other UI element
+- `InitSleepStatic(string, CUIWindow*)`		- 
+- `InitTextWnd(string, CUIWindow*)`			- creates a text window that allows for various formatting options
+- `InitSpinFlt(string, CUIWindow*)`			- unused
+- `InitProgressBar(string, CUIWindow*)`		- creates progress bar as used for health, stamina, Psy health etc.
+- `InitSpinNum(string, CUIWindow*)`			- 
+- `InitMapList(string, CUIWindow*)`			- Multiplayer, unsued
+- `ParseFile(string)`						- reads UI element info from xml file
+- `InitCDkey(string, CUIWindow*)`			- unused
+- `InitListBox(string, CUIWindow*)`			- creates a list with strings, see properties menu in inventory for reference
+- `InitKeyBinding(string, CUIWindow*)`		- creates a prompt window for setting a keybind
+- `InitMMShniaga(string, CUIWindow*)`		- creates a vertical button list with the magnifying stip UI element that exists in main and pause menu
+- `InitWindow(string, number, CUIWindow*)`	- creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference
+- `InitEditBox(string, CUIWindow*)`			- creates a prompt window that allows to change a value, see Hud Editor for reference
+- `InitCheck(string, CUIWindow*)`			- creates an ON/OFF button
+- `InitScrollView(string, CUIWindow*)`		- creates a window with a scrollbar and up/down arrows for navigation
+- `InitMPPlayerName(string, CUIWindow*)`	- unused
+- `InitTrackBar(string, CUIWindow*)`		- creates a slider that can be used to change a value
+- `InitMapInfo(string, CUIWindow*)`			- unused
+- `InitServerList(string, CUIWindow*)`		- unused
+- `InitComboBox(string, CUIWindow*)`		- creates a dropdown menu
+- `InitFrameLine(string, CUIWindow*)`		- creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free
+- `Init3tButton(string, CUIWindow*)`		- creates a simple button
+- `InitAnimStatic(string, CUIWindow*)`		- 
+- `InitFrame(string, CUIWindow*)`			- creates a textures UI element whose frame texture elements don't get distorted when scaling the element itself
+
+
+These UI elements are called from different classes.
+
+`CUIMessageBox()`
+- `InitMessageBox(string)`			- creates a message box with buttons, similar to the 'Discard changes?' window in options menu
+
+
+These UI elements are created in Lua. They are prefabricated, always have a certain structure and are called from utils_ui.script, see utils_ui.script for reference.
+
+- `UICellContainer()`					- creates a container with 'cells', similar to how items are displayed in inventory
+- `UICellItem()`						- creates a single item cell
+- `UIInfoItem()`						- creates a window with info about an item, similar to the info window that pops up when hovering above an item in inventory
+- `UIInfoUpgr()`						- creates the upgrade interface for items like weapons
+- `UICellProperties()`					- creates a dropdown menu, can be filled with options, similar to props window when right clicking on an item in inventory
+- `UICellPropertiesItem()`				- creates an entry for a UICellProperties window
+- `UIHint()`							- creates a hint simple window that can contains any text, similar to hint texts appearing when hovering options in options menu
+
+
+The following lists provide info about the most important and most frequently used methods for UI elements. Keep in mind that many UI elements
+can use the same methods, refer to lua_help.script for detailed info about which UI elements can use which methods. The methods listed here are
+sorted primarily by purpose but also by UI element type.
+
+**General / called on GUI class**
+- `ShowDialog(bool)`			- shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden
+- `HideDialog()`				- closes GUI
+- `AllowMovement(bool)`			- if set to true, moving around is possible while the GUI is active, similar to inventory
+- `AllowCursor(bool)`			- if set to false, no cursor will be available for the GUI
+- `AllowCenterCursor(bool)`		- if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed
+- `AllowWorkInPause(bool)`		- if set to true, the GUI stays active when pausing the game
+
+**Commonly used**
+- `IsShown()`					- returns current visibility state of the UI element as boolean value
+- `Show(bool)`					- sets visibility of the UI element
+- `IsAutoDelete()`				- checks AutoDelete state of the UI element, returns boolean value
+- `SetAutoDelete(bool)`			- if set to true, the UI element will automatically be hidden when opening the GUI
+- `Enable(bool)`				- if set to false, any interaction with the UI element is disabled
+- `IsEnabled()`					- checks interaction state of the UI element, returns boolean value
+- `GetWndPos()` 				- returns a 2D vector of the top left corner position of the UI element
+- `SetWndPos(vector2)`			- sets position of the top left corner of the UI element
+- `SetWndRect(Frect)`			- sets position and size of the area where mouse event are registered
+- `GetWidth()`					- returns a the width of the UI element as number
+- `GetHeight()`					- returns a the height of the UI element as number
+- `SetWndSize(vector2)`			- sets width and height of the UI element
+- `AttachChild(CUIWindow*)`		- sets a UI element as the child of some other UI element
+- `DetachChild(CUIWindow*)`		- removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed
+
+**Textures**
+- `InitTexture(string)`			- sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"`
+- `InitTextureEx(string, string)` - sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and a shader path e.g. `"hud\\p3d"`
+- `GetTextureRect()`			- returns Frect containg position and size info about the area containing the texture CHECK!!!
+- `SetTextureRect(Frect)` 		- sets position and size of the area containing the texture
+- `SetStretchTexture(bool)`		- controls whether or not a button texture will be stretched when button size is not equal to texture size
+- `GetTextureColor()`			- returns color of a texture as a number
+- `SetTextureColor(number)`		- sets color of a texture, receives a number. Changing color works best for bright textures, changing Alpha works for all textures.
+- `EnableHeading(bool)`			- enabled a static to be rotated
+- `GetHeading()`				- returns rotation of the UI element in radians
+- `SetHeading(number)`			- sets rotation of the UI element in radians
+- `GetConstHeading()`			- returns const heading state of the UI element WHAT IS CONSTHEADING???
+- `SetConstHeading(bool)`		- if set to false, UI elements rotates when its parent UI element rotates, otherwise it's not affected
+- `SetColorAnimation(string)`	- creates animated color change for a texture CHECK!!!
+- `ResetColorAnimation(string)`	- resets color animation
+- `RemoveColorAnimation(string)` - removes color animation
+
+**Text**
+- `GetText()`					- returns string that a text element is currently displaying
+- `SetText(string)`				- sets text of a UI element
+- `SetTextST(string)`			- sets text of a UI element using a string ID, for text stored in xml file
+- `TextControl()`				- access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")`
+- `SetTextOffset(x, y)`			- sets position of the text relative to its text UI element, even allows to set position outside its text UI element
+- `GetTextColor()`				- return the text color as a number
+- `SetTextColor(number)`		- sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))`
+- `GetFont()`					- returns the current font used by the text
+- `SetFont(CGameFont*)`			- sets text font, see chapter 'Useful stuff, tipps and tricks' for reference
+- `SetTextAlignment(number)` 	- sets horizontal text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
+- `SetVTextAlignment(number)`	- sets vertical text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
+- `SetTextComplexMode(bool)`	- if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered
+- `SetEllipsis(bool)`			- if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false!
+- `AdjustWidthToText(bool)`		- if set to true, the text UI element's width will be set to fit the height of a text block
+- `AdjustHeightToText(bool)`	- if set to true, the text UI element's height will be set to fit the height of a text block
+
+**Buttons**
+- `GetCheck()`					- returns current state of a (check) button
+- `SetCheck(bool)`				- sets current state of a (check) button
+- `SetDependControl(CUIWindow*)` - synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with
+
+**Scrollviews**
+- `AddWindow(CUIWindow*, bool)`	- adds a UI element to the scrollview, the flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in xml file.
+- `RemoveWindow(CUIWIndow*)`	- removes a UI element from the scrollview
+- `Clear()`						- removes all UI elements from the scrollview
+- `ScrollToBegin()`				- scrolls to the top of the scrollview
+- `ScrollToEnd()`				- scrolls to the bottom of the scrollview
+- `GetMinScrollPos()`			- returns the lowest scroll position as a number
+- `GetMaxScrollPos()`			- returns the highest scroll position as a number
+- `GetCurrentScrollPos()`		- returns current scroll position as a number
+- `SetScrollPos(number)`		- sets current scroll position
+- `SetFixedScrollBar(bool)`		- controls whether the scrollbar is always visible CHECK!!!
+
+**Trackbars**
+- `GetCheck()`					- apparently unused
+- `SetCheck(bool)`				- apparently unused
+- `GetIValue()`					- returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files
+- `SetIValue(number)`			- sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files, a passed float will be rounded to the next lowest integer
+- `GetFValue()`					- returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer
+- `SetFValue(number)`			- sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer
+- `SetStep(number)`				- sets the step size when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer
+- `GetInvert()`					- returns invert state of the trackbar as a boolean value
+- `SetInvert()`					- sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa
+- `SetOptIBounds(min, max)`		- sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in xml files, passed floats will be rounded to the next lowest integers
+- `SetOptFBounds(min, max)`		- sets min/max value of the trackbar
+- `SetCurrentValue(number)`		- sets the current trackbar value
+
+
+**UI callback flags**
+
+UI callbacks can be accessed via `ui_events.CALLBACK_NAME_HERE` as seen in previous chapters. Here is a list of all available UI callbacks
+exposed to Lua.
+
+CUIWindow / General:
+- `const WINDOW_LBUTTON_DOWN = 0`
+- `const WINDOW_RBUTTON_DOWN = 1`
+- `const WINDOW_LBUTTON_UP = 3`
+- `const WINDOW_RBUTTON_UP = 4
+- `const WINDOW_MOUSE_MOVE = 6`
+- `const WINDOW_LBUTTON_DB_CLICK = 9`
+- `const WINDOW_KEY_PRESSED = 10`
+- `const WINDOW_KEY_RELEASED = 11`
+- `WINDOW_KEYBOARD_CAPTURE_LOST = 14`
+
+CUIButton / CUI3tButton:
+- `const BUTTON_CLICKED = 17`
+- `const BUTTON_DOWN = 18`
+
+CUITabControl:
+- `const TAB_CHANGED = 19`
+
+CUICheckButton:
+- `const CHECK_BUTTON_SET = 20`
+- `const CHECK_BUTTON_RESET = 21`
+
+CUIRadioButton:
+- `const RADIOBUTTON_SET = 22`
+
+CUIScrollBox:
+- `const SCROLLBOX_MOVE = 30`
+
+CUIScrollView:
+- `const SCROLLBAR_VSCROLL = 31`
+- `const SCROLLBAR_HSCROLL = 32`
+
+CUIListBox:
+- `const LIST_ITEM_CLICKED = 35`
+- `const LIST_ITEM_SELECT = 36`
+
+UIPropertiesBox:
+- `const PROPERTY_CLICKED = 38`
+
+CUIMessageBox:
+- `const MESSAGE_BOX_OK_CLICKED = 39`
+- `const MESSAGE_BOX_YES_CLICKED = 40´
+- `const MESSAGE_BOX_QUIT_GAME_CLICKED = 42`
+- `const MESSAGE_BOX_QUIT_WIN_CLICKED = 41`
+- `const MESSAGE_BOX_NO_CLICKED = 43`
+- `const MESSAGE_BOX_CANCEL_CLICKED = 44`
+- `const MESSAGE_BOX_COPY_CLICKED = 45`
+
+CUIAnimationBase:
+- `const EDIT_TEXT_COMMIT = 71`
+
+CMainMenu:
+- `MAIN_MENU_RELOADED = 76`
+
+
+# Useful stuff, tipps and tricks
 
 Finally I'd like to share some info about a bunch of small QoL features, useful functions and nice-to-know's that make life a little easier.
 
@@ -359,155 +589,3 @@ self.text_wnd:SetVTextAlignment(2) -- expects integer value 0, 1 or 2
 Let's say we store UI element property info or text in an xml file and want to change something. When changing UI info we simply save the file,
 reload the save and open our GUI. The changes will be visible. Unfortunately this is not possible when changing text. In this case we have to
 restart the game.
-
-
-# UI elements and their methods
-
-This following lists contain all UI elements available in the game. Please forgive me for not being able to provide complete info about
-what each UI element does.
-
-All methods in this list are called as methods of `SctiptXmlInit()`.
-
-- `InitSpinText(string, CUIWindow*)`		- 
-- `InitTab(string, CUIWindow*)`				- used for creating compley menus with multiple tabs, see Stalker CoP options menu for reference
-- `InitStatic(string, CUIWindow*)`			- creates basic window that can contains any other UI element
-- `InitSleepStatic(string, CUIWindow*)`		- 
-- `InitTextWnd(string, CUIWindow*)`			- creates a text window that allows for various formatting options
-- `InitSpinFlt(string, CUIWindow*)`			- 
-- `InitProgressBar(string, CUIWindow*)`		- creates progress bar as used for health, stamina, Psy health etc.
-- `InitSpinNum(string, CUIWindow*)`			- 
-- `InitMapList(string, CUIWindow*)`			- Multiplayer, unsued
-- `ParseFile(string)`						- reads UI element info from xml file
-- `InitCDkey(string, CUIWindow*)`			- unused
-- `InitListBox(string, CUIWindow*)`			- creates a list with strings, see properties menu in inventory for reference
-- `InitKeyBinding(string, CUIWindow*)`		- creates a prompt window for setting a keybind
-- `InitMMShniaga(string, CUIWindow*)`		- creates a vertical button list with the magnifying stip UI element that exists in main and pause menu
-- `InitWindow(string, number, CUIWindow*)`	- creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference
-- `InitEditBox(string, CUIWindow*)`			- creates a prompt window that allows to change a value, see Hud Editor for reference
-- `InitCheck(string, CUIWindow*)`			- creates an ON/OFF button
-- `InitScrollView(string, CUIWindow*)`		- creates a window with scrollbar and up/down arrows for navigation
-- `InitMPPlayerName(string, CUIWindow*)`	- unused
-- `InitTrackBar(string, CUIWindow*)`		- creates a slider that can be used to change a value
-- `InitMapInfo(string, CUIWindow*)`			- 
-- `InitServerList(string, CUIWindow*)`		- unused
-- `InitComboBox(string, CUIWindow*)`		- creates a dropdown menu
-- `InitFrameLine(string, CUIWindow*)`		- creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free
-- `Init3tButton(string, CUIWindow*)`		- creates a simple button
-- `InitAnimStatic(string, CUIWindow*)`		- 
-- `InitFrame(string, CUIWindow*)`			- creates a textures UI element whose frame texture elements don't get distorted when scaling the element itself
-
-Thiese list contains UI elements that are called from different classes.
-
-`CUIMessageBox()`
-- `InitMessageBox`				- creates a message box with buttons, similar to the 'Discard changes?' window in options menu
-
-
-
-
-
-The following list provides info about the most important and most frequently used methods for UI elements. Keep in mind that many UI elements
-can use the same methods, refer to lua_help.script for detailed info about which UI elements use which methods. The methods listed here are
-sorted primarily by purpose.
-
-**General / called on GUI class**
-- `ShowDialog(bool)`			- shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden
-- `HideDialog()`				- closes GUI
-- `AllowMovement(bool)`			- if set to true, moving around is possible while the GUI is active, similar to inventory
-- `AllowCursor(bool)`			- if set to false, no cursor will be available for the GUI
-- `AllowCenterCursor(bool)`		- if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed
-- `AllowWorkInPause(bool)`		- if set to true, the GUI stays active when pausing the game
-
-
-**Commonly used**
-- `IsShown()`					- returns current visibility state of the UI element as boolean value
-- `Show(bool)`					- sets visibility of the UI element
-- `IsAutoDelete()`				- checks AutoDelete state of the UI element, returns boolean value
-- `SetAutoDelete(bool)`			- if set to true, the UI element will automatically be hidden when opening the GUI
-- `Enable(bool)`				- if set to false, any interaction with the UI element is disabled
-- `IsEnabled()`					- checks interaction state of the UI element, returns boolean value
-- `GetWndPos()` 				- returns a 2D vector of the top left corner position of the UI element
-- `SetWndPos(vector2)`			- sets position of the top left corner of the UI element
-- `SetWndRect(Frect)`			- sets position and size of the area where mouse event are registered
-- `GetWidth()`					- returns a the width of the UI element as number
-- `GetHeight()`					- returns a the height of the UI element as number
-- `SetWndSize(vector2)`			- sets width and height of the UI element
-- `AttachChild(CUIWindow*)`		- sets a UI element as the child of some other UI element
-- `DetachChild(CUIWindow*)`		- removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed
-
-** Textures**
-- `InitTexture(string)`			- sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"`
-- `InitTextureEx(string, string)` - sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and a shader path e.g. `"hud\\p3d"`
-- `GetTextureRect()`			- returns Frect containg position and size info about the area containing the texture CHECK!!!
-- `SetTextureRect(Frect)` 		- sets position and size of the area containing the texture
-- `SetStretchTexture(bool)`		- controls whether or not a button texture will be stretched when button size is not equal to texture size
-- `GetTextureColor()`			- returns color of a texture as a number
-- `SetTextureColor(number)`		- sets color of a texture, receives a number. Changing color works best for bright textures, changing Alpha works for all textures.
-- `EnableHeading(bool)`			- enabled a static to be rotated
-- `GetHeading()`				- returns rotation of the UI element in radians
-- `SetHeading(number)`			- sets rotation of the UI element in radians
-- `GetConstHeading()`			- returns const heading state of the UI element WHAT IS CONSTHEADING???
-- `SetConstHeading(bool)`		- if set to false, UI elements rotates when its parent UI element rotates, otherwise it's not affected
-- `SetColorAnimation(string)`	- creates animated color change for a texture CHECK!!!
-- `ResetColorAnimation(string)`	- resets color animation
-- `RemoveColorAnimation(string)` - removes color animation
-
-**Text**
-- `GetText()`					- returns string that a text element is currently displaying
-- `SetText(string)`				- sets text of a UI element
-- `SetTextST(string)`			- sets text of a UI element using a string ID, for text stored in xml file
-- `TextControl()`				- access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")`
-- `SetTextOffset(x, y)`			- sets position of the text relative to its text UI element, even allows to set position outside its text UI element
-- `GetTextColor()`				- return the text color as a number
-- `SetTextColor(number)`		- sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))`
-- `GetFont()`					- returns the current font used by the text
-- `SetFont(CGameFont*)`			- sets text font, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetTextAlignment(number)` 	- sets horizontal text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetVTextAlignment(number)`	- sets vertical text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetTextComplexMode(bool)`	- if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered
-- `SetEllipsis(bool)`			- if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false!
-- `AdjustWidthToText(bool)`		- if set to true, the text UI element's width will be set to fit the height of a text block
-- `AdjustHeightToText(bool)`	- if set to true, the text UI element's height will be set to fit the height of a text block
-
-
-
-**Buttons**
-- `GetCheck()`					- returns current state of a (check) button
-- `SetCheck(bool)`				- sets current state of a (check) button
-- `SetDependControl(CUIWindow*)` - synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with
-
-**Scrollviews**
-
-
-
-
-**UI callback flags**
-UI callbacks can be accessed via `ui_events.CALLBACK_NAME_HERE` as seen in previous chapters. Here is a list of all available UI callbacks.
-
-- `const BUTTON_CLICKED = 17`
-- `const BUTTON_DOWN = 18`
-- `const CHECK_BUTTON_RESET = 21`
-- `const CHECK_BUTTON_SET = 20`
-- `const EDIT_TEXT_COMMIT = 71`
-- `const LIST_ITEM_CLICKED = 35`
-- `const LIST_ITEM_SELECT = 36`
-- `const MESSAGE_BOX_CANCEL_CLICKED = 44`
-- `const MESSAGE_BOX_COPY_CLICKED = 45`
-- `const MESSAGE_BOX_NO_CLICKED = 43`
-- `const MESSAGE_BOX_OK_CLICKED = 39`
-- `const MESSAGE_BOX_QUIT_GAME_CLICKED = 42`
-- `const MESSAGE_BOX_QUIT_WIN_CLICKED = 41`
-- `const MESSAGE_BOX_YES_CLICKED = 40´
-- `const PROPERTY_CLICKED = 38`
-- `const RADIOBUTTON_SET = 22`
-- `const SCROLLBAR_HSCROLL = 32`
-- `const SCROLLBAR_VSCROLL = 31`
-- `const SCROLLBOX_MOVE = 30`
-- `const TAB_CHANGED = 19`
-- `const WINDOW_KEY_PRESSED = 10`
-- `const WINDOW_KEY_RELEASED = 11`
-- `const WINDOW_LBUTTON_DB_CLICK = 9`
-- `const WINDOW_LBUTTON_DOWN = 0`
-- `const WINDOW_LBUTTON_UP = 3`
-- `const WINDOW_MOUSE_MOVE = 6`
-- `const WINDOW_RBUTTON_DOWN = 1`
-- `const WINDOW_RBUTTON_UP = 4`
