@@ -46,7 +46,7 @@
     "react-dom": "^19.2.3",
     "spectrogram": "^0.0.7",
     "three": "^0.182.0",
-    "typedoc-plugin-mdn-links": "^5.0.10",
+    "typedoc-plugin-mdn-links": "^5.1.1",
     "typedoc-plugin-rename-defaults": "^0.7.3",
     "wavesurfer.js": "^7.12.1"
   },
