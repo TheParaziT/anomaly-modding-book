@@ -477,9 +477,9 @@ TEST
 **Buttons**
 ---
 function:
-	- `GetCheck()`
-	- `SetCheck(bool)`
-	- `SetDependControl(CUIWindow*)`
+	- GetCheck()
+	- SetCheck(bool)
+	- SetDependControl(CUIWindow*)
 purpose:
 	- returns current state of a (check) button
 	- sets current state of a (check) button
