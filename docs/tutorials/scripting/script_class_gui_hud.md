@@ -402,6 +402,9 @@ can use the same methods, refer to *lua_help.script* for detailed info about whi
 sorted primarily by purpose but also by UI element type.
 
 **General / called on GUI class**
+
+| Function | Purpose |
+|----------|---------|
 - `ShowDialog(bool)`			- shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden
 - `HideDialog()`				- closes GUI
 - `AllowMovement(bool)`			- if set to true, moving around is possible while the GUI is active, similar to inventory
@@ -414,6 +417,9 @@ sorted primarily by purpose but also by UI element type.
 - `GetHolder()`					- returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases
 
 **Commonly used**
+
+| Function | Purpose |
+|----------|---------|
 - `IsShown()`					- returns current visibility state of the UI element as boolean value
 - `Show(bool)`					- sets visibility of the UI element
 - `IsAutoDelete()`				- checks AutoDelete state of the UI element, returns boolean value
@@ -434,6 +440,9 @@ sorted primarily by purpose but also by UI element type.
 - `ResetPPMode()`				- resets PP mode
 
 **Textures**
+
+| Function | Purpose |
+|----------|---------|
 - `InitTexture(string)`			- sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"`
 - `InitTextureEx(string, string)` - sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and a shader path e.g. `"hud\\p3d"`
 - `GetTextureRect()`			- returns Frect containg position and size info about the area containing the texture CHECK!!!
@@ -451,6 +460,9 @@ sorted primarily by purpose but also by UI element type.
 - `RemoveColorAnimation(string)` - removes color animation
 
 **Text**
+
+| Function | Purpose |
+|----------|---------|
 - `GetText()`					- returns string that a text element is currently displaying
 - `SetText(string)`				- sets text of a UI element
 - `SetTextST(string)`			- sets text of a UI element using a string ID, for text stored in xml file
@@ -467,13 +479,7 @@ sorted primarily by purpose but also by UI element type.
 - `AdjustWidthToText(bool)`		- if set to true, the text UI element's width will be set to fit the height of a text block
 - `AdjustHeightToText(bool)`	- if set to true, the text UI element's height will be set to fit the height of a text block
 
-**Buttons**
-- `GetCheck()`					- returns current state of a (check) button
-- `SetCheck(bool)`				- sets current state of a (check) button
-- `SetDependControl(CUIWindow*)` - synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with
-
-
-TEST
+  
 **Buttons**
 
 | Function | Purpose |
@@ -484,6 +490,9 @@ TEST
 
 
 **Scrollviews**
+
+| Function | Purpose |
+|----------|---------|
 - `AddWindow(CUIWindow*, bool)`	- adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in xml file.
 - `RemoveWindow(CUIWIndow*)`	- removes a UI element from the scrollview
 - `Clear()`						- removes all UI elements from the scrollview
@@ -496,18 +505,21 @@ TEST
 - `SetFixedScrollBar(bool)`		- controls whether the scrollbar is always visible CHECK!!!
 
 **Trackbars**
-- `GetCheck()`					- apparently unused
-- `SetCheck(bool)`				- apparently unused
-- `GetIValue()`					- returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files
-- `SetIValue(number)`			- sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files, a passed float will be rounded to the next lowest integer
-- `GetFValue()`					- returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer
-- `SetFValue(number)`			- sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer
-- `SetStep(number)`				- sets the step size when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer
-- `GetInvert()`					- returns invert state of the trackbar as a boolean value
-- `SetInvert()`					- sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa
-- `SetOptIBounds(min, max)`		- sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in xml files, passed floats will be rounded to the next lowest integers
-- `SetOptFBounds(min, max)`		- sets min/max value of the trackbar
-- `SetCurrentValue(number)`		- sets the current trackbar value
+
+| Function | Purpose |
+|----------|---------|
+| `GetCheck()` | apparently unused |
+| `SetCheck(bool)` | apparently unused |
+| `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files |
+| `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files, a passed float will be rounded to the next lowest integer |
+| `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
+| `SetFValue(number)` | sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
+| `SetStep(number)` | sets the step size when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
+| `GetInvert()` | returns invert state of the trackbar as a boolean value |
+| `SetInvert()` | sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa |
+| `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in xml files, passed floats will be rounded to the next lowest integers |
+| `SetOptFBounds(number, number)` | sets min/max value of the trackbar |
+| `SetCurrentValue(number)` | sets the current trackbar value |
 
 
 ###UI Callback Event IDs
