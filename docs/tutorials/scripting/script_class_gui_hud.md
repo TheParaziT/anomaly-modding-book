@@ -475,17 +475,12 @@ sorted primarily by purpose but also by UI element type.
 
 TEST
 **Buttons**
----
-function:
-	- GetCheck()
-	- SetCheck(bool)
-	- SetDependControl(CUIWindow*)
-purpose:
-	- returns current state of a (check) button
-	- sets current state of a (check) button
-	- synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with
----
 
+| Function | Purpose |
+|----------|---------|
+| `GetCheck()` | returns current state of a check button |
+| `SetCheck(bool)` | sets current state of a check button |
+| `SetDependControl(CUIWindow*)` | synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with |
 
 
 **Scrollviews**
