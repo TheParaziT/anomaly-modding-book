@@ -315,27 +315,28 @@ All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 
 | Function | Purpose |
 |----------|---------|
-| `InitTab(string, CUIWindow*)` | used for creating compley menus with multiple tabs, see Stalker CoP options menu for reference |
-| `InitStatic(string, CUIWindow*)` | creates basic window that can contains any other UI element |
-| `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
-| `InitProgressBar(string, CUIWindow*)` | creates progress bar as used for health, stamina, Psy health etc. |
-| `InitListBox(string, CUIWindow*)` | creates a list with strings, see properties menu in inventory for reference |
-| `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
-| `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
 | `InitWindow(string, number, CUIWindow*)` | creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference |
-| `InitEditBox(string, CUIWindow*)` | creates a prompt window that allows to change a value, see Hud Editor for reference |
+| `InitStatic(string, CUIWindow*)` | creates basic window that can contains any other UI element |
+| `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
+| `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
+| `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
+| `Init3tButton(string, CUIWindow*)` | creates a simple button |
 | `InitCheck(string, CUIWindow*)` | creates an ON/OFF button |
 | `InitScrollView(string, CUIWindow*)` | creates a window with a scrollbar and up/down arrows for navigation |
 | `InitTrackBar(string, CUIWindow*)` | creates a slider that can be used to change a value |
+| `InitProgressBar(string, CUIWindow*)` | creates progress bar as used for health, stamina, Psy health etc. |
+| `InitListBox(string, CUIWindow*)` | creates a list with strings, see properties menu in inventory for reference |
 | `InitComboBox(string, CUIWindow*)` | creates a dropdown menu |
-| `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
-| `Init3tButton(string, CUIWindow*)` | creates a simple button |
-| `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
+| `InitEditBox(string, CUIWindow*)` | creates a prompt window that allows to change a value, see Hud Editor for reference |
+| `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
+| `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
+| `InitTab(string, CUIWindow*)` | used for creating complex menus with multiple tabs, see Stalker CoP options menu for reference |
 | `InitAnimStatic(string, CUIWindow*)` | CHECK!!! |
 | `InitSleepStatic(string, CUIWindow*)` | unused/methods not exposed to Lua |
 | `InitSpinText(string, CUIWindow*)` | unused/methods not exposed to Lua | 
 | `InitSpinFlt(string, CUIWindow*)` | unused/methods not exposed to Lua |
 | `InitSpinNum(string, CUIWindow*)` | unused/methods not exposed to Lua |
+| `InitCustomSpin(string, CUIWindow*)` | unused/methods not exposed to Lua |
 | `InitMapList(string, CUIWindow*)` | unsued |
 | `InitCDkey(string, CUIWindow*)` | unused |
 | `InitMPPlayerName(string, CUIWindow*)` | unused |
@@ -343,7 +344,7 @@ All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 | `InitServerList(string, CUIWindow*)` | unused |
 
   
-These methods are for (manual) parsing of your UI element info xml file.
+These methods allow (manual) parsing of your UI element info xml file. Keep in mind that default index = 0.
 
 | Function | Purpose |
 |----------|---------|
@@ -353,13 +354,13 @@ These methods are for (manual) parsing of your UI element info xml file.
 | `GetNodesNum(string, number, string)` | counts how many nodes with the specified node name exist as children of the node specified with path and index, receives path, index and node name, if no path is passed the whole xml is parsed, if no tag name is parsed all child nodes are counted, returns node count as number |
 | `NavigateToNode(string, number)` | navigates to node defined with path and index |
 | `NavigateToNode_ByAttribute(string, string, number)` | searches xml file for a node with tag name that contains an attribute with the attibute name and a value, receives node name, attribute name and attribute value |
-| `NavigateToNode_ByPath(string, index, string, string, string)` | searches xml file for a node with tag name that contains an attribute with the attibute name |
-| `` |
-| `` |
-| `` |
+| `NavigateToNode_ByPath(string, index, string, string, string)` | searches xml file for a node specified by tag name and index that contains an attribute with the attibute name based on certain atribute-value pattern, receives node name, index, tag name, attribute name and attribute-value pattern |
+| `NavigateToRoot()` | navigates to root node of the UI element info structure in xml file |
+| `ReadValue(string, number)` | reads the value of the node specified by path and index, only used for simple node structures like `<width>123</width>`, receives path and index |
+| `ReadAttribute(string, number, string)` | reads the value of an attribute specified by tag name in a node specified by path and index, receives path and index and tag name|
 
 
-These UI elements are called from different classes.
+These UI elements are called from different classes or are created by calling their respective class.
 
 `CUIMessageBox()`
 
@@ -367,22 +368,19 @@ These UI elements are called from different classes.
 |----------|---------|
 | `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in options menu |
 
-`CUITabControl()`	- This class is used to create a menu that allows switching between multiple tabs.
-
 | Function | Purpose |
 |----------|---------|
-| `AddItem(string, string, vector2, vector2)` | adds a tab button, receives the button text, texture path, position vector and size vector |
-| `AddItem(CUITabButton*)` | adds a tab button, receives a tab button UI element |
-| `RemoveAll()` | removes all tab buttons |
-| `GetActiveId()` | returns ID of active tab as a string |
-| `GetTabsCount` | returns tab count as number |
-| `SetActiveTab(string)` | sets the tab with the passed ID as active tab |
-| `GetButtonById(string)` | returns the UI element with the passed tab button ID |
-| `GetEnabled()` | returns tab (button) interaction state as a boolean value |
-| `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
-| `CUITabButton()` | creates a tab button instance, not usable on its own! |
+| `CUITabControl()` | create a bar that allows switching between multiple tabs, has to filled with tab `CUITabButton` instances |
+| `CUITabButton()` | MAYBE REMOVE creates a tab button instance, not usable on its own! |
+| `CUIListBoxItem()` | creates a listbox item that can be added to a listbox |
+| `` | |
+| `` | |
+| `` | |
 
-These UI elements are created in Lua. They are prefabricated, always have a certain structure and are called from *utils_ui.script*, see *utils_ui.script* for reference.
+
+
+These UI elements are created in Lua. They are prefabricated and always have a certain structure but can be customized to certain degree.
+You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
 
 | Function | Purpose |
 |----------|---------|
@@ -413,7 +411,7 @@ The following lists provide info about the most important and most frequently us
 can use the same methods, refer to *lua_help.script* for detailed info about which UI elements can use which methods. The methods listed here are
 sorted primarily by purpose but also by UI element type.
 
-**General / called on GUI class**
+### General / Called on GUI Class
 
 | Function | Purpose |
 |----------|---------|
@@ -428,7 +426,7 @@ sorted primarily by purpose but also by UI element type.
 | `Dispatch()` | unused, event based Callback function that opened multiplayer menu in main menu |
 | `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases |
 
-**Commonly used**
+### Commonly Used
 
 | Function | Purpose |
 |----------|---------|
@@ -451,7 +449,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetPPMode(bool)` | PostProcessing mode, used for the magnifier element in main/pause menu |
 | `ResetPPMode()` | resets PP mode |
 
-**Textures**
+### Textures
 
 | Function | Purpose |
 |----------|---------|
@@ -471,7 +469,7 @@ sorted primarily by purpose but also by UI element type.
 | `ResetColorAnimation(string)` | resets color animation |
 | `RemoveColorAnimation(string)` | removes color animation |
 
-**Text**
+### Text
 
 | Function | Purpose |
 |----------|---------|
@@ -492,7 +490,7 @@ sorted primarily by purpose but also by UI element type.
 | `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of a text block |
 
   
-**Buttons**
+### Buttons
 
 | Function | Purpose |
 |----------|---------|
@@ -501,7 +499,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetDependControl(CUIWindow*)` | synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with |
 
 
-**Scrollviews**
+### Scrollview
 
 | Function | Purpose |
 |----------|---------|
@@ -516,7 +514,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetScrollPos(number)` | sets current scroll position |
 | `SetFixedScrollBar(bool)` CHECK!!! | controls whether the scrollbar is always visible CHECK!!! |
 
-**Trackbars**
+### Trackbars
 
 | Function | Purpose |
 |----------|---------|
@@ -533,7 +531,71 @@ sorted primarily by purpose but also by UI element type.
 | `GetCheck()` | apparently unused |
 | `SetCheck(bool)` | apparently unused |
 
-### UI Callback Event IDs
+### Listboxes
+
+| Function | Purpose |
+|----------|---------|
+| `ShowSelectedItem(bool)` | sets visibility of the listbox |
+| `RemoveAll()` | removes all items of the listbox |
+| `GetSize()` | returns listbox item count as a number |
+| `GetSelectedItem()` | returns the `CUIListBoxItem` instance of the selected listbox item or nil if no item is selected |
+| `GetSelectedIndex()` | returns ID of the selected listbox item or 4294967295 if no item is selected |
+| `SetSelectedIndex(number)` | sets listbox item with the specified ID as selected, receives ID as a number |
+| `SetItemHeight(number)` | sets height of each listbox item, receives the height as number |
+| `GetItemHeight()` | return height of each listbox item as a number |
+| `GetItemByID(number)` | returns the `CUIListBoxItem` instance of the listbox item with the specified ID or nil if no item with this ID exists, receives ID as number |
+| `GetItem(number)` | same as `GetItemByIndex()` |
+| `RemoveItem(CUIWindow*)` | removes a `CUIListBoxItem` from the listbox, receives a `CUIListBoxItem` instance |
+| `AddTextItem(string)` | adds an item to the listbox, receives a string ID or a default string |
+| `AddExistingItem(CUIWindow*)` | adds an existing `CUIListBoxItem` instance to the listbox, use if you have created a `CUIListBoxItem` inctance manually |
+| `CUIListBoxItem(number)` | creates an instance of a listbox item, receives item height |
+
+These methods are called on a `CUIListBoxItem` instance.
+
+| Function | Purpose |
+|----------|---------|
+| `GetTextItem()` | returns the `CUITextWnd` instance of the listbox item |
+| `AddTextField(string, number)` | adds a `CUITextWindow` instance to the listbox item that displays text, receives text as a string and width as a number |
+| `AddIconField(number)` | adds a `CUIStatic` instance to the listbox item, can be used to display textures, images etc., receives width as a number |
+| `SetTextColor(number)` | sets color of the text displayed in the listbox item, receives a number |
+
+
+### Comboboxes
+
+A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call the respective methods on both elements.
+
+| Function | Purpose |
+|----------|---------|
+| `SetVertScroll(bool)` | if set to true, scrolling the combobox is enabled CHECK!!! |
+| `SetListLength(number)` | sets the amount of elements in the combobox, receives an integer |
+| `CurrentID()` | returns the ID of the currently selected combobox item as a number |
+| `disable_id(number)` | disables the combobox item with the specified ID, receives ID an integer |
+| `enable_id(number)` | enables the combobox item with the specified ID, receives ID an integer |
+| `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text as string and an options value as an integer |
+| `GetText()` | returns the `CUITextWnd` instance of the combobox item that's currently shown in the selection window |
+| `GetTextOf(number)` | returns the `CUITextWnd` instance of the combobox item with the specified ID, receives ID as an integer |
+| `SetText(string)` | sets the text in the selection window, receives text as a string |
+| `ClearList()` | removes all combobox entries and the text in the selection window |
+| `SetCurrentOptValue()` | updates the combobox items and their values with current options value CHECK!!! |
+| `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
+| `SetCurrentIdx()` | returns the ID of the selected combobox item as a number |
+
+
+### TabControl
+
+| Function | Purpose |
+|----------|---------|
+| `AddItem(string, string, vector2, vector2)` | adds a tab button, receives the button text, texture path, position vector and size vector |
+| `AddItem(CUITabButton*)` | adds a tab button, receives a tab button UI element |
+| `RemoveAll()` | removes all tab buttons |
+| `GetActiveId()` | returns ID of active tab as a string |
+| `GetTabsCount()` | returns tab count as number |
+| `SetActiveTab(string)` | sets the tab with the passed ID as active tab |
+| `GetButtonById(string)` | returns the UI element with the passed tab button ID |
+| `GetEnabled()` | returns tab (button) interaction state as a boolean value |
+| `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
+
+## UI Callback Event IDs
 
 UI callbacks event IDs can be accessed via `ui_events.CALLBACK_NAME_HERE` as seen in previous chapters. Here is a list of all available UI callback event IDs
 exposed to Lua.
