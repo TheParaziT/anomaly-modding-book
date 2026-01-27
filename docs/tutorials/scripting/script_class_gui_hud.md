@@ -405,79 +405,79 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-- `ShowDialog(bool)`			- shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden
-- `HideDialog()`				- closes GUI
-- `AllowMovement(bool)`			- if set to true, moving around is possible while the GUI is active, similar to inventory
-- `AllowCursor(bool)`			- if set to false, no cursor will be available for the GUI
-- `AllowCenterCursor(bool)`		- if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed
-- `AllowWorkInPause(bool)`		- if set to true, the GUI stays active when pausing the game
-- `Update()`					- general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per second, use with care!
-- `OnKeyboard()`				- tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs'
-- `Dispatch()`					- unused, event based Callback function that opened multiplayer menu in main menu
-- `GetHolder()`					- returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases
+| `ShowDialog(bool)` | shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden |
+| `HideDialog()` | closes GUI |
+| `AllowMovement(bool)` | if set to true, moving around is possible while the GUI is active, similar to inventory |
+| `AllowCursor(bool)` | if set to false, no cursor will be available for the GUI |
+| `AllowCenterCursor(bool)` | if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed |
+| `AllowWorkInPause(bool)` | if set to true, the GUI stays active when pausing the game |
+| `Update()` | general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per second, use with care! |
+| `OnKeyboard()` | tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs' |
+| `Dispatch()` | unused, event based Callback function that opened multiplayer menu in main menu |
+| `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases |
 
 **Commonly used**
 
 | Function | Purpose |
 |----------|---------|
-- `IsShown()`					- returns current visibility state of the UI element as boolean value
-- `Show(bool)`					- sets visibility of the UI element
-- `IsAutoDelete()`				- checks AutoDelete state of the UI element, returns boolean value
-- `SetAutoDelete(bool)`			- if set to true, the UI element will automatically be hidden when opening the GUI
-- `Enable(bool)`				- if set to false, any interaction with the UI element is disabled
-- `IsEnabled()`					- checks interaction state of the UI element, returns boolean value
-- `GetWndPos()` 				- returns a 2D vector of the top left corner position of the UI element
-- `SetWndPos(vector2)`			- sets position of the top left corner of the UI element
-- `SetWndRect(Frect)`			- sets position and size of the area where mouse event are registered
-- `GetWidth()`					- returns a the width of the UI element as number
-- `GetHeight()`					- returns a the height of the UI element as number
-- `SetWndSize(vector2)`			- sets width and height of the UI element
-- `AttachChild(CUIWindow*)`		- sets a UI element as the child of some other UI element
-- `DetachChild(CUIWindow*)`		- removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed
-- `WindowName()`				- returns the string assigned as a name to a UI element
-- `SetWindowName(string)`		- assigns a string as a name to a UI element
-- `SetPPMode(bool)`				- PostProcessing mode, used for the magnifier element in main/pause menu
-- `ResetPPMode()`				- resets PP mode
+| `IsShown()` | returns current visibility state of the UI element as boolean value |
+| `Show(bool)` | sets visibility of the UI element |
+| `IsAutoDelete()` | checks AutoDelete state of the UI element, returns boolean value |
+| `SetAutoDelete(bool)` | if set to true, the UI element will automatically be hidden when opening the GUI |
+| `Enable(bool)` | if set to false, any interaction with the UI element is disabled |
+| `IsEnabled()` | checks interaction state of the UI element, returns boolean value |
+| `GetWndPos()` | returns a 2D vector of the top left corner position of the UI element |
+| `SetWndPos(vector2)` | sets position of the top left corner of the UI element |
+| `SetWndRect(Frect)` | sets position and size of the area where mouse event are registered |
+| `GetWidth()` | returns a the width of the UI element as number |
+| `GetHeight()` | returns a the height of the UI element as number |
+| `SetWndSize(vector2)` | sets width and height of the UI element |
+| `AttachChild(CUIWindow*)` | sets a UI element as the child of some other UI element |
+| `DetachChild(CUIWindow*)` | removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed |
+| `WindowName()` | returns the string assigned as a name to a UI element |
+| `SetWindowName(string)` | assigns a string as a name to a UI element |
+| `SetPPMode(bool)` | PostProcessing mode, used for the magnifier element in main/pause menu |
+| `ResetPPMode()` | resets PP mode |
 
 **Textures**
 
 | Function | Purpose |
 |----------|---------|
-- `InitTexture(string)`			- sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"`
-- `InitTextureEx(string, string)` - sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and a shader path e.g. `"hud\\p3d"`
-- `GetTextureRect()`			- returns Frect containg position and size info about the area containing the texture CHECK!!!
-- `SetTextureRect(Frect)` 		- sets position and size of the area containing the texture
-- `SetStretchTexture(bool)`		- controls whether or not a button texture will be stretched when button size is not equal to texture size
-- `GetTextureColor()`			- returns color of a texture as a number
-- `SetTextureColor(number)`		- sets color of a texture, receives a number. Changing color works best for bright textures, changing Alpha works for all textures.
-- `EnableHeading(bool)`			- enabled a static to be rotated
-- `GetHeading()`				- returns rotation of the UI element in radians
-- `SetHeading(number)`			- sets rotation of the UI element in radians
-- `GetConstHeading()`			- returns const heading state of the UI element WHAT IS CONSTHEADING???
-- `SetConstHeading(bool)`		- if set to false, UI elements rotates when its parent UI element rotates, otherwise it's not affected
-- `SetColorAnimation(string)`	- creates animated color change for a texture CHECK!!!
-- `ResetColorAnimation(string)`	- resets color animation
-- `RemoveColorAnimation(string)` - removes color animation
+| `InitTexture(string)` | sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"` |
+| `InitTextureEx(string, string)` | sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and the shader path `"hud\\p3d"` |
+| `GetTextureRect()` CHECK!!! | returns Frect containg position and size info about the area containing the texture CHECK!!! |
+| `SetTextureRect(Frect)` | sets position and size of the area containing the texture |
+| `SetStretchTexture(bool)` | controls whether or not a button texture will be stretched when button size is not equal to texture size |
+| `GetTextureColor()` | returns color of a texture as a number |
+| `SetTextureColor(number)` | sets color of a texture, receives a number. Changing color works best for bright textures, changing Alpha works for all textures. |
+| `EnableHeading(bool)` | enabled a static to be rotated |
+| `GetHeading()` | returns rotation of the UI element in radians |
+| `SetHeading(number)` | sets rotation of the UI element in radians |
+| `GetConstHeading()` | returns const heading state of the UI element WHAT IS CONSTHEADING??? |
+| `SetConstHeading(bool)` | if set to false, UI elements rotates when its parent UI element rotates, otherwise it's not affected |
+| `SetColorAnimation(string)` CHECK!!! | creates animated color change for a texture CHECK!!! |
+| `ResetColorAnimation(string)` | resets color animation |
+| `RemoveColorAnimation(string)` | removes color animation |
 
 **Text**
 
 | Function | Purpose |
 |----------|---------|
-- `GetText()`					- returns string that a text element is currently displaying
-- `SetText(string)`				- sets text of a UI element
-- `SetTextST(string)`			- sets text of a UI element using a string ID, for text stored in xml file
-- `TextControl()`				- access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")`
-- `SetTextOffset(x, y)`			- sets position of the text relative to its text UI element, even allows to set position outside its text UI element
-- `GetTextColor()`				- return the text color as a number
-- `SetTextColor(number)`		- sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))`
-- `GetFont()`					- returns the current font used by the text
-- `SetFont(CGameFont*)`			- sets text font, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetTextAlignment(number)` 	- sets horizontal text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetVTextAlignment(number)`	- sets vertical text alignment, see chapter 'Useful stuff, tipps and tricks' for reference
-- `SetTextComplexMode(bool)`	- if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered
-- `SetEllipsis(bool)`			- if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false!
-- `AdjustWidthToText(bool)`		- if set to true, the text UI element's width will be set to fit the height of a text block
-- `AdjustHeightToText(bool)`	- if set to true, the text UI element's height will be set to fit the height of a text block
+| `GetText()` | returns string that a text element is currently displaying |
+| `SetText(string)` | sets text of a UI element |
+| `SetTextST(string)` | sets text of a UI element using a string ID, for text stored in xml file |
+| `TextControl()` | access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")` |
+| `SetTextOffset(x, y)` | sets position of the text relative to its text UI element, even allows to set position outside its text UI element |
+| `GetTextColor()` | return the text color as a number |
+| `SetTextColor(number)` | sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))` |
+| `GetFont()` | returns the current font used by the text |
+| `SetFont(CGameFont*)` | sets text font, see chapter 'Useful stuff, tipps and tricks' for reference |
+| `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Useful stuff, tipps and tricks' for reference |
+| `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Useful stuff, tipps and tricks' for reference |
+| `SetTextComplexMode(bool)` | if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered |
+| `SetEllipsis(bool)` | if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false! |
+| `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the height of a text block |
+| `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of a text block |
 
   
 **Buttons**
@@ -493,23 +493,21 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-- `AddWindow(CUIWindow*, bool)`	- adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in xml file.
-- `RemoveWindow(CUIWIndow*)`	- removes a UI element from the scrollview
-- `Clear()`						- removes all UI elements from the scrollview
-- `ScrollToBegin()`				- scrolls to the top of the scrollview
-- `ScrollToEnd()`				- scrolls to the bottom of the scrollview
-- `GetMinScrollPos()`			- returns the lowest scroll position as a number
-- `GetMaxScrollPos()`			- returns the highest scroll position as a number
-- `GetCurrentScrollPos()`		- returns current scroll position as a number
-- `SetScrollPos(number)`		- sets current scroll position
-- `SetFixedScrollBar(bool)`		- controls whether the scrollbar is always visible CHECK!!!
+| `AddWindow(CUIWindow*, bool)`	| adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in xml file |
+| `RemoveWindow(CUIWIndow*)` | removes a UI element from the scrollview |
+| `Clear()` | removes all UI elements from the scrollview |
+| `ScrollToBegin()` | scrolls to the top of the scrollview |
+| `ScrollToEnd()` | scrolls to the bottom of the scrollview |
+| `GetMinScrollPos()` | returns the lowest scroll position as a number |
+| `GetMaxScrollPos()` | returns the highest scroll position as a number |
+| `GetCurrentScrollPos()` | returns current scroll position as a number |
+| `SetScrollPos(number)` | sets current scroll position |
+| `SetFixedScrollBar(bool)` CHECK!!! | controls whether the scrollbar is always visible CHECK!!! |
 
 **Trackbars**
 
 | Function | Purpose |
 |----------|---------|
-| `GetCheck()` | apparently unused |
-| `SetCheck(bool)` | apparently unused |
 | `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files |
 | `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files, a passed float will be rounded to the next lowest integer |
 | `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
@@ -520,9 +518,10 @@ sorted primarily by purpose but also by UI element type.
 | `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in xml files, passed floats will be rounded to the next lowest integers |
 | `SetOptFBounds(number, number)` | sets min/max value of the trackbar |
 | `SetCurrentValue(number)` | sets the current trackbar value |
+| `GetCheck()` | apparently unused |
+| `SetCheck(bool)` | apparently unused |
 
-
-###UI Callback Event IDs
+### UI Callback Event IDs
 
 UI callbacks event IDs can be accessed via `ui_events.CALLBACK_NAME_HERE` as seen in previous chapters. Here is a list of all available UI callback event IDs
 exposed to Lua.
