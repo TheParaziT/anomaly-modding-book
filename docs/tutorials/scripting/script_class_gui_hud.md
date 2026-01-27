@@ -301,7 +301,7 @@ end
 
 `key` is the index of the key press that's received, `keyboard_action` is a UI callback event ID whose value depends on what key event happened.
 For example pressing and releasing a key, `OnKeyboard()` is called twice and receives a `WINDOW_KEY_PRESSED` and `WINDOW_KEY_RELEASED` event ID
-value respectively.
+value respectively. By using appropriate conditions you have very precise control over your code flow.
 
   
 # UI Elements and their Methods
@@ -313,74 +313,86 @@ what each UI element does.
 
 All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 
-- `InitSpinText(string, CUIWindow*)`		- 
-- `InitTab(string, CUIWindow*)`				- used for creating compley menus with multiple tabs, see Stalker CoP options menu for reference
-- `InitStatic(string, CUIWindow*)`			- creates basic window that can contains any other UI element
-- `InitSleepStatic(string, CUIWindow*)`		- unused
-- `InitTextWnd(string, CUIWindow*)`			- creates a text window that allows for various formatting options
-- `InitSpinFlt(string, CUIWindow*)`			- unused
-- `InitProgressBar(string, CUIWindow*)`		- creates progress bar as used for health, stamina, Psy health etc.
-- `InitSpinNum(string, CUIWindow*)`			- unused
-- `InitMapList(string, CUIWindow*)`			- unsued
-- `InitCDkey(string, CUIWindow*)`			- unused
-- `InitListBox(string, CUIWindow*)`			- creates a list with strings, see properties menu in inventory for reference
-- `InitKeyBinding(string, CUIWindow*)`		- creates a prompt window for setting a keybind
-- `InitMMShniaga(string, CUIWindow*)`		- creates a vertical button list with the magnifying stip UI element that exists in main and pause menu
-- `InitWindow(string, number, CUIWindow*)`	- creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference
-- `InitEditBox(string, CUIWindow*)`			- creates a prompt window that allows to change a value, see Hud Editor for reference
-- `InitCheck(string, CUIWindow*)`			- creates an ON/OFF button
-- `InitScrollView(string, CUIWindow*)`		- creates a window with a scrollbar and up/down arrows for navigation
-- `InitMPPlayerName(string, CUIWindow*)`	- unused
-- `InitTrackBar(string, CUIWindow*)`		- creates a slider that can be used to change a value
-- `InitMapInfo(string, CUIWindow*)`			- unused
-- `InitServerList(string, CUIWindow*)`		- unused
-- `InitComboBox(string, CUIWindow*)`		- creates a dropdown menu
-- `InitFrameLine(string, CUIWindow*)`		- creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free
-- `Init3tButton(string, CUIWindow*)`		- creates a simple button
-- `InitAnimStatic(string, CUIWindow*)`		- 
-- `InitFrame(string, CUIWindow*)`			- creates a UI element whose frame texture elements don't get distorted when scaling the element itself
+| Function | Purpose |
+|----------|---------|
+| `InitTab(string, CUIWindow*)` | used for creating compley menus with multiple tabs, see Stalker CoP options menu for reference |
+| `InitStatic(string, CUIWindow*)` | creates basic window that can contains any other UI element |
+| `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
+| `InitProgressBar(string, CUIWindow*)` | creates progress bar as used for health, stamina, Psy health etc. |
+| `InitListBox(string, CUIWindow*)` | creates a list with strings, see properties menu in inventory for reference |
+| `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
+| `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
+| `InitWindow(string, number, CUIWindow*)` | creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference |
+| `InitEditBox(string, CUIWindow*)` | creates a prompt window that allows to change a value, see Hud Editor for reference |
+| `InitCheck(string, CUIWindow*)` | creates an ON/OFF button |
+| `InitScrollView(string, CUIWindow*)` | creates a window with a scrollbar and up/down arrows for navigation |
+| `InitTrackBar(string, CUIWindow*)` | creates a slider that can be used to change a value |
+| `InitComboBox(string, CUIWindow*)` | creates a dropdown menu |
+| `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
+| `Init3tButton(string, CUIWindow*)` | creates a simple button |
+| `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
+| `InitAnimStatic(string, CUIWindow*)` | CHECK!!! |
+| `InitSleepStatic(string, CUIWindow*)` | unused/methods not exposed to Lua |
+| `InitSpinText(string, CUIWindow*)` | unused/methods not exposed to Lua | 
+| `InitSpinFlt(string, CUIWindow*)` | unused/methods not exposed to Lua |
+| `InitSpinNum(string, CUIWindow*)` | unused/methods not exposed to Lua |
+| `InitMapList(string, CUIWindow*)` | unsued |
+| `InitCDkey(string, CUIWindow*)` | unused |
+| `InitMPPlayerName(string, CUIWindow*)` | unused |
+| `InitMapInfo(string, CUIWindow*)` | unused |
+| `InitServerList(string, CUIWindow*)` | unused |
 
   
 These methods are for (manual) parsing of your UI element info xml file.
 
-- `ParseFile(string)`						- reads UI element info from xml file from standard path `"gamedata\\configs\\ui"`, receives xml file name as string
-- `ParseDirFile(string, string)`			- same as `ParseFile()` but allows to set a custom directory path e.g `"gamedata\\configs\\ui\\my_gui"`, receives custom path as 2. argument
-- `NodeExist(string, number)`				- checks whether a node exists, receives node path and its index (in case there are several nodes with the same name, otherwise can be ignored), returns a boolean value
-- `GetNodesNum(string, number, string)`		- counts how many nodes with the specified node name exist as children of the node specified with path and index, receives path, index and node name, if no path is passed the whole xml is parsed, if no tag name is parsed all child nodes are counted, returns node count as number
-- `NavigateToNode(string, number)`			- navigates to node defined with path and index
-- `NavigateToNode_ByAttribute(string, string, number)` - searches xml file for a node with tag name that contains an attribute with the attibute name and a value, receives node name, attribute name and attribute value
-- `NavigateToNode_ByPath(string, index, string, string, string)` - searches xml file for a node with tag name that contains an attribute with the attibute name
-- ``
-- ``
-- ``
+| Function | Purpose |
+|----------|---------|
+| `ParseFile(string)` | reads UI element info from xml file from standard path `"gamedata\\configs\\ui"`, receives xml file name as string |
+| `ParseDirFile(string, string)` | same as `ParseFile()` but allows to set a custom directory path e.g `"gamedata\\configs\\ui\\my_gui"`, receives custom path as 2. argument |
+| `NodeExist(string, number)` | checks whether a node exists, receives node path and its index (in case there are several nodes with the same name, otherwise can be ignored), returns a boolean value |
+| `GetNodesNum(string, number, string)` | counts how many nodes with the specified node name exist as children of the node specified with path and index, receives path, index and node name, if no path is passed the whole xml is parsed, if no tag name is parsed all child nodes are counted, returns node count as number |
+| `NavigateToNode(string, number)` | navigates to node defined with path and index |
+| `NavigateToNode_ByAttribute(string, string, number)` | searches xml file for a node with tag name that contains an attribute with the attibute name and a value, receives node name, attribute name and attribute value |
+| `NavigateToNode_ByPath(string, index, string, string, string)` | searches xml file for a node with tag name that contains an attribute with the attibute name |
+| `` |
+| `` |
+| `` |
 
 
 These UI elements are called from different classes.
 
 `CUIMessageBox()`
-- `InitMessageBox(string)`	- creates a message box with buttons, similar to the 'Discard changes?' window in options menu
 
-`CUITabControl()`	- This is used to create a menu that allows switching between multiple tabs.
-- `AddItem(string, string, vector2, vector2)`	- adds a tab button, receives the button text, texture path, position vector and size vector 
-- `AddItem(CUITabButton*)`	- adds a tab button, receives a tab button UI element
-- `RemoveAll()`				- removes all tab buttons
-- `GetActiveId()`			- returns ID of active tab as a string
-- `GetTabsCount`			- returns tab count as number
-- `SetActiveTab(string)`	- sets the tab with the passed ID as active tab 
-- `GetButtonById(string)`	- returns the UI element with the passed tab button ID
-- `GetEnabled()`			- returns tab (button) interaction state as a boolean value
-- `SetEnabled(bool)`		- sets tab (button) interaction state, when set to false interaction with this tab is disabled
-- `CUITabButton()`			- creates a tab button instance, not usable on its own!
+| Function | Purpose |
+|----------|---------|
+| `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in options menu |
+
+`CUITabControl()`	- This class is used to create a menu that allows switching between multiple tabs.
+
+| Function | Purpose |
+|----------|---------|
+| `AddItem(string, string, vector2, vector2)` | adds a tab button, receives the button text, texture path, position vector and size vector |
+| `AddItem(CUITabButton*)` | adds a tab button, receives a tab button UI element |
+| `RemoveAll()` | removes all tab buttons |
+| `GetActiveId()` | returns ID of active tab as a string |
+| `GetTabsCount` | returns tab count as number |
+| `SetActiveTab(string)` | sets the tab with the passed ID as active tab |
+| `GetButtonById(string)` | returns the UI element with the passed tab button ID |
+| `GetEnabled()` | returns tab (button) interaction state as a boolean value |
+| `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
+| `CUITabButton()` | creates a tab button instance, not usable on its own! |
 
 These UI elements are created in Lua. They are prefabricated, always have a certain structure and are called from *utils_ui.script*, see *utils_ui.script* for reference.
 
-- `UICellContainer()`					- creates a container with 'cells', similar to how items are displayed in inventory
-- `UICellItem()`						- creates a single item cell
-- `UIInfoItem()`						- creates a window with info about an item, similar to the info window that pops up when hovering above an item in inventory
-- `UIInfoUpgr()`						- creates the upgrade interface for items like weapons
-- `UICellProperties()`					- creates a dropdown menu, can be filled with options, similar to props window when right clicking on an item in inventory
-- `UICellPropertiesItem()`				- creates an entry for a UICellProperties window
-- `UIHint()`							- creates a hint simple window that can contains any text, similar to hint texts appearing when hovering options in options menu
+| Function | Purpose |
+|----------|---------|
+| `UICellContainer()` | creates a container with 'cells', similar to how items are displayed in inventory |
+| `UICellItem()` | creates a single item cell |
+| `UIInfoItem()` | creates a window with info about an item, similar to the info window that pops up when hovering above an item in inventory |
+| `UIInfoUpgr()` | creates the upgrade interface for items like weapons |
+| `UICellProperties()` | creates a dropdown menu, can be filled with options, similar to props window when right clicking on an item in inventory |
+| `UICellPropertiesItem()` | creates an entry for a UICellProperties window |
+| `UIHint()` | creates a hint simple window that can contains any text, similar to hint texts appearing when hovering options in options menu |
 
 You can use them in your GUI like this:
 
@@ -405,8 +417,8 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-| `ShowDialog(bool)` | shows GUI, shows cursor by default, bool controls whether HUD indicators will be hidden |
-| `HideDialog()` | closes GUI |
+| `ShowDialog(bool)` | shows GUI, shows cursor by default, boolean flag controls whether HUD indicators will be hidden |
+| `HideDialog()` | closes GUI, cursor disappears, player controls are fully regained |
 | `AllowMovement(bool)` | if set to true, moving around is possible while the GUI is active, similar to inventory |
 | `AllowCursor(bool)` | if set to false, no cursor will be available for the GUI |
 | `AllowCenterCursor(bool)` | if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed |
@@ -620,7 +632,7 @@ self.text_wnd:SetTextST("some_string_id")
 
 **Fonts**
 
-We can access various fonts from scripts using these global functions:
+You can access various fonts from scripts using these global functions:
 
 - `GetFontSmall()`
 - `GetFontMedium()`
@@ -633,9 +645,20 @@ We can access various fonts from scripts using these global functions:
 - `GetFontGraffiti32Russian()`
 - `GetFontGraffiti50Russian()`
 
+Use them like this:
+```LUA
+self.text:SetFont(GetFontMedium())
+
+-- or alternatively
+
+local font_medium = GetFontMedium()
+self.text:SetFont(font_medium)
+```
+
+  
 **Text alignment**
 
-We can set horizontal and vertical text alignment. This is often more convenient then having to set the text UI element position manually
+You can set horizontal and vertical text alignment. This is often more convenient then having to set the text UI element position manually
 to get the desired result. There are three different modes each to choose from:
 
 horizontal:
