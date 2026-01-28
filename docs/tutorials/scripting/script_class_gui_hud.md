@@ -18,24 +18,28 @@ ___
 
 ## Introduction
 
-Graphical user interfaces (GUI) and heads up displays (HUD) are essential parts of any game. While GUIs let the player interact
-with certain gameplay mechanics (e.g. trader inventories, NPC dialog windows, options menu), the purpose of HUDs is to provide the player
-with essential info such as player health, stamina or ammo. However, looking at their code it goes to show that GUIs and HUDs
+Graphical user interfaces essential parts of every game. Generally GUIs can be put into two distict categories:
+
+1. GUIs that let the player interact with certain game mechanics via mouse and/or keyboard such as trader inventories, NPC dialog windows, options menu etc.
+
+2. GUIs that provide the player with essential information such as player health, stamina, ammo etc, but without offering direct interaction
+
+To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and and type 2 as "HUD" throughout this tutorial. Based on this
+distiction, it's clear that GUIs and HUDs have a fundamentally different character/purpose. However, looking at their code it goes to show that GUIs and HUDs
 are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD.
 
   
 ## Code Basics
 
-Apart from a few exceptions, GUIs and HUDs can be created entirely in Lua scripts and are treated as engine simulated classes since
-Lua itself doesn't provide a native class system unlike C++. However, they work extensively with engine class methods, more details
-about this later.
+Apart from a few exceptions, GUIs and HUDs can be created entirely in Lua scripts. However, they work extensively with engine class methods,
+more details about this later.
 
-From now on the term "GUI" will be written synonym for both GUI and HUD if not expressed otherwise.
+From now on the term "GUI" will be used synonym for both GUI and HUD if not expressed otherwise.
 
   
 ### Creating a GUI
 
-To create a GUI you need essential functions.
+To create a GUI you need these essential functions.
 
 ```LUA
 class "MyGUI" (CUIScriptWnd)	-- 1
@@ -45,7 +49,7 @@ function MyGUI:__init() super() -- 2
 end
 
 function MyGUI:__finalize()		-- 3
-	-- your code
+	-- your code (optional)
 end
 
 function MyGUI:Update()			-- 4
@@ -54,57 +58,74 @@ function MyGUI:Update()			-- 4
 end
 ```
 
-1. Creates a class with the name "MyGUI" but the class can have any name. It is common style to start each word of the class name and its
-methods with a capital letter but that's up to you.
+1. Creates a class with the name "MyGUI". Your GUI class can have any name that has not already been used anywhere else.
 
-2. This function is called once when your GUI class instance is created. In this function you can execute any code that only needs to be
-executed once like e.g. creating static UI elements.
+2. Called once when your GUI class instance is created. In this function you can execute any code that only needs to be
+executed once like e.g. creating static/fundamental UI elements like the main window of your GUI.
 
-3. This function is called when your GUI is destroyed and necessary in order to prevent Lua from potentially interacting with a GUI that
-doesn't exist anymore on the engine side. This happens when the game is interrupted by a level transition or when loading a save.
+3. Called when your GUI is destroyed and necessary in order to prevent Lua from potentially interacting with a GUI that
+doesn't exist anymore on the engine side. The call happens when the game is interrupted by a level transition or when loading a save.
 
-4. This function is called about 4 times per frame (I don't know why). If you have any dynamic UI elements that need to update time based
-(as opposed to event based) e.g. progress bars you're probably gonna put the respective code here. Never forget to add `CUIScriptWnd.Update(self)`,
+4. Called about 4 times per frame (I don't know why). If you have any dynamic UI elements that need to update time based (as opposed to event
+based) e.g. progress bars you're probably gonna put the respective code here. Never forget to add `CUIScriptWnd.Update(self)`,
 otherwise none of your UI elements will work properly! Also better avoid putting performance heavy code here if possible or throttle the
 code execution using timers. ;)
 
-  
-### How do I call my GUI?
+As you can see, the functions 2, 3 and 4 are called with this pattern: `YourClassName:SomeClassFunction()`. Adding new functions
+to your class follows the same pattern. It is common style to start each word of the name of the class and all its functions with a capital
+letter but that's up to you. Just make sure that these four functions shown above are written as shown in the example.
 
-Just as with other engine classes exposed to Lua you can call an instance of you CUI class with the following code:
+  
+### How do I show my GUI on Screen?
+
+Just like with other engine classes exposed to Lua you can call an instance of you CUI class with the following code:
 
 ```LUA
+GUI = nil
+
 function show_ui()
 	if GUI == nil then
 		GUI = MyGUI() -- calls instance of your GUI class
 	end
 	
-	if GUI and not GUI:IsShown() then -- only show the GUI if it is NOT shown yet
-		GUI:ShowDialog(true) -- show the GUI dialog, mouse cursor appears on screen
-		Register_UI("MyGUI", "your_script_name", GUI)
+	if GUI and not GUI:IsShown() then -- only show the GUI if it is NOT active yet
+		GUI:ShowDialog(true) 		  -- shows the GUI dialog, mouse cursor appears on screen, all user inputs are passed to the GUI
+		Register_UI("MyGUI", "my_script_name", GUI)
 	end
 end
 ```
 
-You may want to declare "GUI" as a global variable in your script in order to be able to access it from other scripts. Keep in mind that
-when a GUI is active you usually cannot move the player. This restriction can be bypassed though. Notice that Register_UI creates and
-entry in a global table in *_g.script*.
+It is recommened to declare `GUI` as a global variable in your script in order to be able to access your GUI from other scripts. Keep in mind that when
+calling your GUI using `GUI:ShowDialog(true)` you usually cannot move the character but you change that behavior, see chapter 'Control of UI Elements'
+for reference. Also make sure to check whether your GUI is already active. You don't want to have more than one instance active at a time, otherwise
+you WILL break your GUI and probably the game as well.
 
-For HUDs this example function looks a little different:
+For HUDs the example function looks a little different:
 
 ```LUA
+HUD = nil
+
 function show_hud()
 	if HUD == nil then
 		HUD = MyHUD() -- calls instance of your HUD class
 	end
 	
 	if HUD and not HUD:IsShown() then
-		get_hud():AddDialogToRender(MyHUD) -- adds HUD to the screen
+		get_hud():AddDialogToRender(HUD) -- renders HUD to screen
+		Register_UI("MyHUD", "my_script_name", HUD)
 	end
 end
 ```
 
-Unlike with GUIs you always retain full control over the actor when having an active HUD instance.
+Unlike with GUIs, when using `get_hud():AddDialogToRender(MyHUD)` by default you always retain full control over the character while your HUD instance
+is active. This function call does nothing more than adding your HUD to the render pipeline. As you can see, the way you tell the engine to show your GUI
+controls whether the GUI is interactive (that's why it's called `ShowDialog`) or behaves like a HUD.
+`Register_UI()` has two purposes:
+
+1. It fires `GUI_on_show` callback when you show your GUI.
+
+2. It adds your GUI to the global tables `_GUIs` and `_GUIsInstances` in *_g.script* which are used to have control over all active GUIs in the game
+like e.g. hiding or even destroying all of them at once, see *_g.script* for reference.
 
   
 ### How do I close my GUI?
@@ -115,7 +136,7 @@ Closing a GUI dialog works like this:
 function close_ui()
 	if GUI and GUI:IsShown() then
 		GUI:HideDialog() -- closes GUI dialog, mouse cursor disappears
-		Unregister_UI("UI_Attachments")
+		Unregister_UI("MyGUI")
 		GUI = nil -- optional, destroys GUI instance
 	end
 end
@@ -127,14 +148,18 @@ For HUDs the code looks like this:
 function close_hud()
 	if HUD and HUD:IsShown() then
 		get_hud():RemoveDialogToRender(HUD)
+		Unregister_UI("MyHUD")
 		HUD = nil -- optional, destroys HUD instance
 	end
 end
 ```
 
+`Unregister_UI` fires the `GUI_on_hide` callback and removes your GUI from the global tables `_GUIs` and `_GUIsInstances` mentioned in the
+previous chapter.
+
 Whether or not you set `GUI`/`HUD` to nil depends on the use case of your GUI. If you set it to nil your class instance will be destroyed.
 Calling a new instance will create a completely new GUI, `__init()` is called again, your GUI structure is rebuild from scratch. Otherwise
-your GUI instance persists and when calling it you skip rebuilding its fundamental structure.
+your GUI instance persists and when calling it `__init()` will be skipped.
 Keep in mind that when transitioning to another level or loading a save, all GUIs and their references will be destroyed. But be careful!
 It is strongly advised to always close your GUI automatically when the game is interrupted by any loading sequences. Otherwise the game
 can crash! In order to prevent such crashes simply use a callback like this:
@@ -148,8 +173,8 @@ end
   
 ## Building the GUI Structure
 
-In order to interact with a GUI there are a bunch of UI elements such as buttons and sliders or the window that contains these elements.
-But of course these elements have to be created manually. To build your GUI call a function when `__init()` is executed:
+In order to interact with a GUI there exists bunch of different UI elements such as buttons and sliders or the window that contains these elements.
+But of course these elements have to be added manually. To build your GUI call a function when `__init()` is executed:
 
 ```LUA
 function MyGUI:__init() super()
@@ -157,7 +182,7 @@ function MyGUI:__init() super()
 end
 
 function MyGUI:InitControls()
-	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets position (x,y) and size (h,w) of the dialog window
+	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets position and size (left, top, right, bottom) of the dialog window
 	self:SetAutoDelete(true)
 	
 	self.xml = CScriptXmlInit()
@@ -175,20 +200,25 @@ Setting the interaction area of your GUI using `SetWndRect()` is the first step.
 interacted with. Therefore it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution
 is, the engine will always translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
 `self.xml = CScriptXmlInit()`calls an instance of the engine class `CUIXmlInit`, responsible for creating any of the available UI elements.
-`xml:ParseFile()` receives the name of your xml file that stores properties of the UI elements you create, such as position, size, textures,
-text formatting, color etc. Without this xml file you're GUI won't work.
+`xml:ParseFile()` receives the name of your xml file that stores properties of the UI elements your GUI uses such as position, size, textures,
+text formatting, color etc. Without this xml file your GUI won't work.
 
-`InitStatic()` creates a simple static window that can contain any other UI element.
-`InitTextWnd()` creates a window that can display text.
-`InitCheck()` creates an ON/OFF button.
+So what UI elements are created in the example above?
+
+- `InitStatic()` creates a simple static window that can contain any other UI element.
+- `InitTextWnd()` creates a window that can display text.
+- `InitCheck()` creates an ON/OFF button.
 
 There are many more UI elements which can be found in *lua_help.script*. Additionally the file lists all methods available to these UI elements
 such as `SetText()` or `Show()`. A detailed description of these elements and their methods can be found in chapter 'UI elements and their methods'.
 
-A UI element creation method receives the following arguments:
+A UI element creation method like e.g. `InitStatic()` usually receives the following arguments:
 
 - the path to the UI element info in your xml file, e.g. `"background"`
 - the parent UI element or, if none exists, the class instance itself (`self`)
+
+Calling `InitControls()` in `__init()` is recommended if the GUI structure needs to be built only once and stays the same after that. If instead you
+need a more dynamic structure you can call `InitControls()` from outside your class instead of calling it in `__init`.
 
   
 ### Parents and Children
@@ -211,52 +241,63 @@ function MyGUI:CreateWindow()
 end
 ```
 
-As you can see we pass `self.wnd` as the parent of text window and `self.text` as the parent of the trackbar. You can ignore the structure of the
+As you can see we pass `self.wnd` as the parent of the text window and `self.text` as the parent of the trackbar. You can ignore the structure of the
 xml info path. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
 has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
 `self.wnd`), when the GUI opens not just `self.wnd` but all three elements will be invisible.
- 
+
   
 ### Self???
 
-"What is this 'self'?" you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
+"What is 'self'?", you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
 `self.my_wnd` is the same as writing `MyGUI.my_wnd`. Everything you declare with `self` can be accessed from anywhere within your GUI class. Don't
 confuse `self.` with `self:` though. When calling a class method such as `self:InitControls()` you always use ':' instead of '.'. Keep in mind that
 calling a class member from outside your GUI class requires class access via the variable `GUI`/`HUD`, e.g. `GUI.some_value` or `GUI:DoSomething()`.
-`self.some_value` or `self:DoSomething()` won't work here.
+`self.some_value` or `self:DoSomething()` won't work here. ALWAYS pay close attention to when to use which symbol. If you use the wrong one, the
+game either crashes or your GUI just won't work and trust me, finding this tiny little syntax error in your code can be annoying AF!
 
   
 ## UI Callbacks
 
 Like with anything in programming you need to tell the computer what to do when a UI element is interacted with. That's where UI callbacks come into play.
-Consider the following example. We create a simple button and want to execute a function when pressing it:
+Consider the following example. We create two simple buttons and want to execute two functions when pressing them:
 
 ```LUA
 function MyGUI:CreateButton()
-	self.btn = xml:Init3tButton("wnd:btn", self.wnd) -- creates button
-	self.btn:TextControl():SetText("button text") 	 -- let's us display text on the button
+	self.btn_a = xml:Init3tButton("wnd:btn_a", self.wnd) -- creates button
+	self.btn_a:TextControl():SetText("button text 1") 	 -- displays text on the button
 
-	self:Register(self.btn, "button_exec_func") 	 -- pass the UI element and assign a unique ID
-	self:AddCallback("button_exec_func", ui_events.BUTTON_CLICKED, self.OnButton, self)
+	self.btn_b = xml:Init3tButton("wnd:btn_b", self.wnd)
+	self.btn_b:TextControl():SetText("button text 2")
+	
+	self:Register(self.btn_a, "do_this")	-- pass the UI element and assign a unique ID
+	self:AddCallback("to_this", ui_events.BUTTON_CLICKED, self.OnButton_One, self)
+	
+	self:Register(self.btn_b, "do_that")
+	self:AddCallback("to_that", ui_events.BUTTON_CLICKED, self.OnButton_Two, self)
 end
 
-function MyGUI:OnButton()
+function MyGUI:OnButton_One()
+	-- your code
+end
+
+function MyGUI:OnButton_Two()
 	-- your code
 end
 ```
 
-The methods `Register()` and `AddCallback()` are provided by the engine and always available to your GUI. `Register()` assigns the ID we've passed
-to the button. `AddCallback()` then receives the following arguments:
+The methods `Register()` and `AddCallback()` are provided by the engine and always available to your GUI. `Register()` assigns a unique ID to the button.
+`AddCallback()` then receives the following arguments:
 
-- the unique ID defined in `Register()`, this way the callback knows which button has to be pressed in order for it to fire
+- the unique ID passed to `Register()`, this way game knows which button fires which callback
 - the callback event ID that determines what interaction event has to happen in order for the callback to fire
 - the function that will be executed when the callback fires. Note that here we pass the function as a member of your GUI class
 and don't execute it, hence using `self.`, not `self:`.
 - a reference to your GUI class instance
 
-Next, we consider a more advanced example. Let's say we have three buttons and want to create Callbacks for them. But instead of having a separate
-function per button, we want use the same function but execute different code depending on the button we have pressed. By default `AddCallback()`
-does not allow us to pass arguments to a function but we can use a simple trick, a wrapper function:
+Next, we consider a more advanced example. Let's say we have three buttons and want to create callbacks for them. But instead of having a separate
+function per button, we want use the same function but execute different code depending on the value we have pressed. By default `AddCallback()`
+does not allow to pass arguments to a function but we can use a simple trick, a wrapper function:
 
 ```LUA
 function MyGUI:CreateCheck()
@@ -289,7 +330,7 @@ can be found in chapter 'UI elements and their methods'.
   
 ## Key Inputs
 
-Usually when tracking key inputs you use the callback "on_key_press". When a GUI is active this callback does not work (not true for HUDs). For this
+Usually when tracking key inputs you use the callback "on_key_press". When a GUI is active this callback usually does not work (not true for HUDs). For this
 reason the engine provides a GUI specific callback function. It doesn't have to be registered unlike regular callbacks and works out of the box.
 It looks like this:
 
@@ -300,23 +341,24 @@ end
 ```
 
 `key` is the index of the key press that's received, `keyboard_action` is a UI callback event ID whose value depends on what key event happened.
-For example pressing and releasing a key, `OnKeyboard()` is called twice and receives a `WINDOW_KEY_PRESSED` and `WINDOW_KEY_RELEASED` event ID
+For example when pressing and releasing a key, `OnKeyboard()` is called twice and receives a `WINDOW_KEY_PRESSED` and `WINDOW_KEY_RELEASED` event ID
 value respectively. By using appropriate conditions you have very precise control over your code flow.
 
   
 # UI Elements and their Methods
 
-## Creating a UI Element
-
 This following lists contain all UI elements available in the game. Please forgive me for not being able to provide complete info about
-what each UI element does.
+what each UI element does. Disclaimer: Despite having researched carefully some function descriptions may be incomplete or incorrect.
+
+
+## Creating a UI Element
 
 All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 
 | Function | Purpose |
 |----------|---------|
 | `InitWindow(string, number, CUIWindow*)` | creates a separate window (for temporary use) that can be interacted with, see properties menu in inventory for reference |
-| `InitStatic(string, CUIWindow*)` | creates basic window that can contains any other UI element |
+| `InitStatic(string, CUIWindow*)` | creates basic window that can contain any other UI element |
 | `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
 | `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
 | `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
@@ -417,12 +459,14 @@ sorted primarily by purpose but also by UI element type.
 |----------|---------|
 | `ShowDialog(bool)` | shows GUI, shows cursor by default, boolean flag controls whether HUD indicators will be hidden |
 | `HideDialog()` | closes GUI, cursor disappears, player controls are fully regained |
+| `Update()` | general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per frame, use with care! |
+| `OnKeyboard(number, number)` | tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs' |
+| `Register(CUIWindow*, string)` | registers a UI element to make callbacks work, receives the UI element instance and a unique ID as a string |
+| `AddCallback(string, number, functor, CUIWindow*)` | creates a callback for a UI element to perform certain actions based on the UI callback event ID, receives a UI element ID, a UI callback event ID, a functor to execute, the parent GUI class instance |
 | `AllowMovement(bool)` | if set to true, moving around is possible while the GUI is active, similar to inventory |
 | `AllowCursor(bool)` | if set to false, no cursor will be available for the GUI |
 | `AllowCenterCursor(bool)` | if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed |
 | `AllowWorkInPause(bool)` | if set to true, the GUI stays active when pausing the game |
-| `Update()` | general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per second, use with care! |
-| `OnKeyboard()` | tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs' |
 | `Dispatch()` | unused, event based callback function that opened multiplayer menu in main menu |
 | `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases |
 
@@ -445,8 +489,10 @@ sorted primarily by purpose but also by UI element type.
 | `SetWndSize(vector2)` | sets width and height of the UI element |
 | `AttachChild(CUIWindow*)` | sets a UI element as the child of some other UI element |
 | `DetachChild(CUIWindow*)` | removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed |
-| `WindowName()` | returns the string assigned as a name to a UI element |
-| `SetWindowName(string)` | assigns a string as a name to a UI element |
+| `WindowName()` | returns the string assigned to a UI element when registering it using `Register()` |
+| `SetWindowName(string)` | assigns a string as a name to a UI element, similar to  |
+| `FocusReceiveTime()` | returns inital delay time for a UI element to receive inputs as a number, no real use cases |
+| `GetAbsoluteRect()` | returns position and size of the `CUIWindow` instance the method is called on as an Frect (left, top, right, bottom) |
 | `SetPPMode(bool)` | PostProcessing mode, used for the magnifier element in main/pause menu |
 | `ResetPPMode()` | resets PP mode |
 
@@ -461,7 +507,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetTextureRect(Frect)` | sets position and size of the area containing the texture |
 | `SetStretchTexture(bool)` | controls whether or not a button texture will be stretched when button size is not equal to texture size |
 | `GetTextureColor()` | returns color of a texture as a number |
-| `SetTextureColor(number)` | sets color of a texture, receives a number. Changing color works best for bright textures, changing Alpha works for all textures. |
+| `SetTextureColor(number)` | sets color of a texture, receives a number |
 | `EnableHeading(bool)` | enabled a static to be rotated |
 | `GetHeading()` | returns rotation of the UI element in radians |
 | `SetHeading(number)` | sets rotation of the UI element in radians |
@@ -707,7 +753,7 @@ local over_wnd = self.wnd:IsCursorOverWindow()
 
 **GetCursorPosition() / SetCursorPosition()**
 
-Global functions not tied to GUI classes, can be called as is. This is an example form *utils_ui.script*:
+Global functions not tied to GUI classes, can be called as is. This is an example from *utils_ui.script*:
 
 ```LUA
 local pos = GetCursorPosition() -- because ShowDialog moves mouse cursor to center
@@ -717,7 +763,8 @@ SetCursorPosition(pos)
 
 **SetTextST()**
 
-Let's say we have stored our text in an xml file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text we use:
+Let's say you have stored your text in an xml file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
+would you use:
 
 ```LUA
 local str = game.translate_string("some_string_id")
@@ -729,6 +776,9 @@ With `SetTextST()` you can skip the string ID to string conversion and instead p
 ```LUA
 self.text_wnd:SetTextST("some_string_id")
 ```
+
+This not only more compact but also more a little faster in terms of execution time.
+
 
 **Fonts**
 
@@ -771,14 +821,14 @@ vertical:
 - `const valCenter = 1`
 - `const valBottom = 2`
 
-We can use them like this, here the text will be aligned left and at the bottom of our UI element:
+You can use them like this, in the example the text will be aligned left and at the bottom of our UI element:
 
 ```LUA
 self.text_wnd:SetTextAlignment(0) -- expects integer value 0, 1 or 2
 self.text_wnd:SetVTextAlignment(2) -- expects integer value 0, 1 or 2
 ```
 
-**Setting a Color**
+**Setting a color**
 
 When working with a GUIs you may want to set or change a given color of certain UI elements dynamically. Methods that change colors always
 receive a single number as their input argument. "But why a single number, what am I supposed to pass here???" Don't worry, the engine got
@@ -788,11 +838,20 @@ you covered. Just use this little function:
 local clr = GetARGB(123, 123, 123, 123) -- Alpha, Red, Green, Blue (range: 0 - 255)
 ```
 
-This function converts your A,R,G,B values to a single number or in other words maps the 8 bit color channels to a D3DCOLOR.
+This function converts your A,R,G,B values to a single number or in other words maps the 8 bit color channel values to a D3DCOLOR. Setting
+a color works best for text but it works for textures too. When using a plain white texture the color changes will be visible the most. For
+darker textures changing the color has a similar effect to changing the texture's Hue.
 
 
-**Changing UI element properties or text in an xml file**
+**Changing files while the game runs**
 
-Let's say we store UI element property info or text in an xml file and want to change something. When changing UI info we simply save the file,
-reload the save and open our GUI. The changes will be visible. Unfortunately this is not possible when changing text. In this case we have to
-restart the game.
+Besides script files it is possible to edit certain GUI related files and see the changes in-game WITHOUT having to restart it. Just save the
+file and reload the game/save. This works as long as you edit the file content, NOT the file name or its location. Such files include:
+
+- xml files that contain UI element info
+- texture files
+
+Unfortunately this doesn't work for all GUI related files. You have to restart the game when editing the following files:
+
+- xml files that store text
+- texture description files
