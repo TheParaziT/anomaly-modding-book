@@ -326,7 +326,7 @@ All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 | `InitTrackBar(string, CUIWindow*)` | creates a slider that can be used to change a value |
 | `InitProgressBar(string, CUIWindow*)` | creates progress bar as used for health, stamina, Psy health etc. |
 | `InitListBox(string, CUIWindow*)` | creates a list with strings, see properties menu in inventory for reference |
-| `InitComboBox(string, CUIWindow*)` | creates a dropdown menu |
+| `InitComboBox(string, CUIWindow*)` | creates a dropdown menu, see e.g. SMAA settings in options menu for reference |
 | `InitEditBox(string, CUIWindow*)` | creates a prompt window that allows to change a value, see Hud Editor for reference |
 | `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
 | `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
@@ -362,22 +362,20 @@ These methods allow (manual) parsing of your UI element info xml file. Keep in m
 
 These UI elements are called from different classes or are created by calling their respective class.
 
-`CUIMessageBox()`
-
 | Function | Purpose |
 |----------|---------|
-| `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in options menu |
-
-| Function | Purpose |
-|----------|---------|
-| `CUITabControl()` | create a bar that allows switching between multiple tabs, has to filled with tab `CUITabButton` instances |
+| `CUITabControl()` | create a bar that allows switching between multiple tabs, has to be filled with tab `CUITabButton` instances |
 | `CUITabButton()` | MAYBE REMOVE creates a tab button instance, not usable on its own! |
 | `CUIListBoxItem()` | creates a listbox item that can be added to a listbox |
 | `` | |
 | `` | |
 | `` | |
 
+`CUIMessageBox()`
 
+| Function | Purpose |
+|----------|---------|
+| `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in options menu |
 
 These UI elements are created in Lua. They are prefabricated and always have a certain structure but can be customized to certain degree.
 You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
@@ -401,6 +399,7 @@ self.item_info = utils_ui.UIItemInfo(self, 500)
 In this example an info window for items is created. We pass the GUI instance as the parent of this UI element and a hover pop up delay time in ms. What arguments you
 have to pass depends on the UI element you call.
 
+
   
 ## Control of UI Elements
 
@@ -410,6 +409,7 @@ Most GUIs have a dynamic nature after all.
 The following lists provide info about the most important and most frequently used methods to control UI elements. Keep in mind that many UI elements
 can use the same methods, refer to *lua_help.script* for detailed info about which UI elements can use which methods. The methods listed here are
 sorted primarily by purpose but also by UI element type.
+
 
 ### General / Called on GUI Class
 
@@ -423,8 +423,9 @@ sorted primarily by purpose but also by UI element type.
 | `AllowWorkInPause(bool)` | if set to true, the GUI stays active when pausing the game |
 | `Update()` | general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per second, use with care! |
 | `OnKeyboard()` | tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs' |
-| `Dispatch()` | unused, event based Callback function that opened multiplayer menu in main menu |
+| `Dispatch()` | unused, event based callback function that opened multiplayer menu in main menu |
 | `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases |
+
 
 ### Commonly Used
 
@@ -449,6 +450,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetPPMode(bool)` | PostProcessing mode, used for the magnifier element in main/pause menu |
 | `ResetPPMode()` | resets PP mode |
 
+
 ### Textures
 
 | Function | Purpose |
@@ -468,6 +470,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetColorAnimation(string)` CHECK!!! | creates animated color change for a texture CHECK!!! |
 | `ResetColorAnimation(string)` | resets color animation |
 | `RemoveColorAnimation(string)` | removes color animation |
+
 
 ### Text
 
@@ -514,6 +517,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetScrollPos(number)` | sets current scroll position |
 | `SetFixedScrollBar(bool)` CHECK!!! | controls whether the scrollbar is always visible CHECK!!! |
 
+
 ### Trackbars
 
 | Function | Purpose |
@@ -531,6 +535,25 @@ sorted primarily by purpose but also by UI element type.
 | `GetCheck()` | apparently unused |
 | `SetCheck(bool)` | apparently unused |
 
+
+### Progressbars
+
+| Function | Purpose |
+|----------|---------|
+| `SetProgressPos(number)` | sets the current position of the progressbar, receives a number between 0 and 1 |
+| `GetProgressPos()` | returns current position of the progressbar as a number |
+| `GetRange_min()` | returns min value the progressbar can display as a number |
+| `GetRange_max()` | returns max value the progressbar can display as a number |
+| `SetRange(number, number)` | sets min an max values of a progressbar |
+| `ShowBackground(bool)` | if set to true the background texture behind the actual bar will be visible |
+| `SetColor(number)` | sets the color of the progressbar |
+| `UseColor(bool)` | controls whether the progressbar uses different colors |
+| `SetMinColor(number)` | sets the color displayed at the lowest progressbar value |
+| `SetMiggleColor(number)` | sets the color displayed when the progressbar value reaches 50% |
+| `SetMaxColor(number)` | sets the color displayed at the hightest progressbar value |
+| `GetProgressStatic()` | returns the `CUIStatic` that resembles the actual bar |
+
+
 ### Listboxes
 
 | Function | Purpose |
@@ -543,12 +566,12 @@ sorted primarily by purpose but also by UI element type.
 | `SetSelectedIndex(number)` | sets listbox item with the specified ID as selected, receives ID as a number |
 | `SetItemHeight(number)` | sets height of each listbox item, receives the height as number |
 | `GetItemHeight()` | return height of each listbox item as a number |
-| `GetItemByID(number)` | returns the `CUIListBoxItem` instance of the listbox item with the specified ID or nil if no item with this ID exists, receives ID as number |
-| `GetItem(number)` | same as `GetItemByIndex()` |
+| `GetItemByIndex(number)` | returns the `CUIListBoxItem` instance of the listbox item with the specified ID or nil if no item with this ID exists, receives ID as number |
+| `GetItem(number)` | generalized version of `GetItemByIndex()`, can also access other elements of the UI object e.g. the `CUIScrollView` instance the listbox is made of |
 | `RemoveItem(CUIWindow*)` | removes a `CUIListBoxItem` from the listbox, receives a `CUIListBoxItem` instance |
 | `AddTextItem(string)` | adds an item to the listbox, receives a string ID or a default string |
 | `AddExistingItem(CUIWindow*)` | adds an existing `CUIListBoxItem` instance to the listbox, use if you have created a `CUIListBoxItem` inctance manually |
-| `CUIListBoxItem(number)` | creates an instance of a listbox item, receives item height |
+| `CUIListBoxItem(number)` | MOVE SOMEWHERE ELSE creates an instance of a listbox item, receives item height |
 
 These methods are called on a `CUIListBoxItem` instance.
 
@@ -572,13 +595,26 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `disable_id(number)` | disables the combobox item with the specified ID, receives ID an integer |
 | `enable_id(number)` | enables the combobox item with the specified ID, receives ID an integer |
 | `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text as string and an options value as an integer |
-| `GetText()` | returns the `CUITextWnd` instance of the combobox item that's currently shown in the selection window |
-| `GetTextOf(number)` | returns the `CUITextWnd` instance of the combobox item with the specified ID, receives ID as an integer |
+| `GetText()` | returns the text that's currently shown in the selection window |
+| `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID as an integer |
 | `SetText(string)` | sets the text in the selection window, receives text as a string |
 | `ClearList()` | removes all combobox entries and the text in the selection window |
 | `SetCurrentOptValue()` | updates the combobox items and their values with current options value CHECK!!! |
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
 | `SetCurrentIdx()` | returns the ID of the selected combobox item as a number |
+
+
+### Editboxes
+
+Hint: Editboxes work with `CUICustomEdit` objects internally.
+
+| Function | Purpose |
+|----------|---------|
+| `SetText(string)` | sets currently displayed text of the editbox |
+| `GetText()` | currently displayed text of the editbox as a string |
+| `CaptureFocus(bool)` | if set to true all keyboard inputs will be captured by the editbox |
+| `SetNextFocusCapturer(CUICustomEdit*)` | sets the passed `CUIEditBox` instance as the next object to receive keyboard inputs when changing focus |
+| `InitTexture(string)` | sets the texture of the editbox, receives a texture file path |
 
 
 ### TabControl
@@ -594,6 +630,8 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `GetButtonById(string)` | returns the UI element with the passed tab button ID |
 | `GetEnabled()` | returns tab (button) interaction state as a boolean value |
 | `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
+
+
 
 ## UI Callback Event IDs
 
@@ -657,7 +695,7 @@ CMainMenu:
   
 # Useful stuff, tipps and tricks
 
-Finally I'd like to share some info about a bunch of small QoL features, useful functions and nice-to-know's that make life a little easier.
+Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier.
 
 **IsCursorOverWindow()**
 
@@ -667,7 +705,7 @@ This is called as a method of a UI element and returns a bool:
 local over_wnd = self.wnd:IsCursorOverWindow()
 ```
 
-**GetCursorPosition() / SetCursorPosition(vector2)**
+**GetCursorPosition() / SetCursorPosition()**
 
 Global functions not tied to GUI classes, can be called as is. This is an example form *utils_ui.script*:
 
@@ -739,6 +777,19 @@ We can use them like this, here the text will be aligned left and at the bottom 
 self.text_wnd:SetTextAlignment(0) -- expects integer value 0, 1 or 2
 self.text_wnd:SetVTextAlignment(2) -- expects integer value 0, 1 or 2
 ```
+
+**Setting a Color**
+
+When working with a GUIs you may want to set or change a given color of certain UI elements dynamically. Methods that change colors always
+receive a single number as their input argument. "But why a single number, what am I supposed to pass here???" Don't worry, the engine got
+you covered. Just use this little function:
+
+```LUA
+local clr = GetARGB(123, 123, 123, 123) -- Alpha, Red, Green, Blue (range: 0 - 255)
+```
+
+This function converts your A,R,G,B values to a single number or in other words maps the 8 bit color channels to a D3DCOLOR.
+
 
 **Changing UI element properties or text in an xml file**
 
