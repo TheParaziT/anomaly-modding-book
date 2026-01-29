@@ -348,7 +348,7 @@ value respectively. By using appropriate conditions you have very precise contro
 # UI Elements and their Methods
 
 This following lists contain all UI elements available in the game. Please forgive me for not being able to provide complete info about
-what each UI element does. Disclaimer: Despite having researched carefully some function descriptions may be incomplete or incorrect.
+what each UI element does. Disclaimer: Despite having researched carefully some lists or function descriptions may be incomplete or incorrect.
 
 
 ## Creating a UI Element
@@ -810,10 +810,10 @@ self.btn_start = xml:Init3tButton("main_wnd:btn_start", self.main)
 self.btn_settings = xml:Init3tButton("btn_settings", self.main)
 ```
 
-Both buttons are children of the `self.main` but one button info is enclosed by the tags `main_wnd` while the other is not. This may look a bit confusing
+Both buttons are children of the `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
 but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
 choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree but that's up to you.
-A info tree structure scheme can look like this:
+An info tree structure scheme can look like this:
 
 ```XML
 <w>
@@ -851,13 +851,44 @@ or like this:
 </w>
 ```
 
-It makes no difference as long as you feed the UI element init functions the correct info path. Disclaimer: Despite having researched carefully some lists 
-or info descriptions may be incomplete or incorrect.
+It makes no difference as long as you feed the UI element init functions the correct info path.
+
+
+## Texture Descriptions - A Necessary Evil
+
+In one of the example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary`
+instead. Why is that? Well, it makes sense to save multiple textures in one .dds file instead of having a single file for every tiny little
+icon. But how do we know which texture is where in the file and how do we access it? That's where texture descriptions files help are helpful.
+A texture description file is an XML file that assings an ID to each texture and stores information about its size and position. Here is an excerpt
+of the file that stores the button texture used in the example in the previous chapter:
+
+```XML
+<w>
+	<file name="ui\ui_common"> -- texture file path
+		.
+		. -- skipped entries
+		.
+		<texture id="ui_button_ordinary_d" x="0" y="86" width="117" height="29" />  -- disabled state
+		<texture id="ui_button_ordinary_e" x="0" y="115" width="117" height="29" /> -- enabled state
+		<texture id="ui_button_ordinary_h" x="0" y="144" width="117" height="29" /> -- hovered state
+		<texture id="ui_button_ordinary_t" x="0" y="173" width="117" height="29" /> -- pressed state
+		.
+		. -- skipped entries
+		.
+	</file>
+</w>
+```
+
+As you can see a texture description entry starts with the tage name `file` followed by the texture path it describes. As for the button texture, 4
+different textures are stored which resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with different textures, not
+shaders or anything. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the
+textures properly. As for your UI info XML file, it's enough to store the "base name" of the texture -> `ui_button_ordinary`.
 
 
 ## XML Parameters for UI Elements
 
-These lists contain all mandatory and optional XML info parameters for each UI element.
+These lists contain all mandatory and optional XML info parameters for each UI element. Disclaimer: Despite having researched carefully some lists 
+or info descriptions may be incomplete or incorrect.
 
 
 # Useful stuff, tipps and tricks
