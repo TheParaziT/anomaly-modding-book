@@ -755,8 +755,9 @@ some are optional, see chapter 'XML Parameters for UI Elements' for reference. T
 </w> -- closing tag
 ```
 
-What you write in these base tags doesn't matter. All that matters is that they exist, have the same name, and that the closing tag contains `/`.
-All data you add is enclosed in these two tags. The same is true for any other pair of tags you add. Let's add some data:
+How you name these base tags doesn't matter. All that matters is that they exist, have the same name and the closing tag contains `/`. All data you store
+is enclosed in these two tags. The same is true for any other pair of tags you add. If XML your file has a syntax typo the game usually crashes with an error
+message hinting to an error in your file. Let's add some data:
 
 ```XML
 <w>
@@ -766,19 +767,20 @@ All data you add is enclosed in these two tags. The same is true for any other p
 </w>
 ```
 
-Here we describe the size and position of a window of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the
+Here we describe the size and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the
 upper left corner of the window, `width` and `height` tell us that the window expands 300 px to the right and 200 px downwards. If these numbers were
 negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture for the
 window by storing the texture path. This is where the `stretch` parameter comes into play. It controls whether the texture will scale according to the
 window dimensions (`stretch="1"`) or keep its own dimenstions instead (`stretch="0"`) e.g. 100x200 px.
 
-This info structure reflects in your script as follows:
+The info structure shown above can be used in your script as follows:
 
 ```LUA
 self.main = xml:InitStatic("main_wnd", self) -- pass tag name here
 ```
 
-Thats's all, nothing as simple as that. Let's add two buttons:
+You simply pass the path to the tag name a string. Since `main_wnd` is at the 1. level of the tree the path is the tag name itself. Keep in mind that
+the base tag `<w>` is never included in any path. Thats's all, nothing as simple as that. Let's add two buttons:
 
 ```XML
 <w>
@@ -786,14 +788,14 @@ Thats's all, nothing as simple as that. Let's add two buttons:
 		<texture>ui\my_gui\background.dds</texture>
 		
 		<btn_start x="2" y="3" width="68" height="24" stretch="1">
-			<texture>ui_button_ordinary</texture>
-			<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
+			<texture>ui_button_ordinary</texture> -- button texture
+			<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/> -- button text info
 		</btn_start>
 	</main_wnd>
 	
 	<btn_settings x="75" y="3" width="68" height="24" stretch="1">
-		<texture>ui_button_ordinary</texture>
-		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
+		<texture>ui_button_ordinary</texture> -- button texture
+		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/> -- button text info
 	</btn_settings>
 </w>
 ```
