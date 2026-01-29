@@ -185,13 +185,13 @@ function MyGUI:InitControls()
 	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets position and size (left, top, right, bottom) of the dialog window
 	self:SetAutoDelete(true)
 	
-	self.xml = CScriptXmlInit()
-	local xml = self.xml -- just so you don't have to write self.xml everytime
-	xml:ParseFile("my_xml_gui_structure.xml")
+	self.XML = CScriptXMLInit()
+	local XML = self.XML -- just so you don't have to write self.XML everytime
+	XML:ParseFile("my_XML_gui_structure.XML")
 	
-	self.my_wnd = xml:InitStatic("background", self)
+	self.my_wnd = XML:InitStatic("background", self)
 	
-	self.my_text = xml:InitTextWnd("background:text", self.my_wnd)
+	self.my_text = XML:InitTextWnd("background:text", self.my_wnd)
 	self.my_text:SetText("My text here")
 end
 ```
@@ -199,9 +199,9 @@ end
 Setting the interaction area of your GUI using `SetWndRect()` is the first step. Every UI element placed outside of this area cannot be
 interacted with. Therefore it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution
 is, the engine will always translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
-`self.xml = CScriptXmlInit()`calls an instance of the engine class `CUIXmlInit`, responsible for creating any of the available UI elements.
-`xml:ParseFile()` receives the name of your xml file that stores properties of the UI elements your GUI uses such as position, size, textures,
-text formatting, color etc. Without this xml file your GUI won't work.
+`self.XML = CScriptXMLInit()`calls an instance of the engine class `CUIXMLInit`, responsible for creating any of the available UI elements.
+`XML:ParseFile()` receives the name of your XML file that stores properties of the UI elements your GUI uses such as position, size, textures,
+text formatting, color etc. Without this XML file your GUI won't work.
 
 So what UI elements are created in the example above?
 
@@ -214,7 +214,7 @@ such as `SetText()` or `Show()`. A detailed description of these elements and th
 
 A UI element creation method like e.g. `InitStatic()` usually receives the following arguments:
 
-- the path to the UI element info in your xml file, e.g. `"background"`
+- the path to the UI element info in your XML file, e.g. `"background"`
 - the parent UI element or, if none exists, the class instance itself (`self`)
 
 Calling `InitControls()` in `__init()` is recommended if the GUI structure needs to be built only once and stays the same after that. If instead you
@@ -231,18 +231,18 @@ UI element via the window that contains them:
 
 ```LUA
 function MyGUI:CreateWindow()
-	self.wnd = xml:InitStatic("parent_window", self)
+	self.wnd = XML:InitStatic("parent_window", self)
 	self.wnd:Show(false) -- sets the window invisible
 	
-	self.text = xml:InitTextWindow("parent_window:text_block", self.wnd)
+	self.text = XML:InitTextWindow("parent_window:text_block", self.wnd)
 	self.text:SetText("This is our text window.")
 	
-	self.track = xml:InitTrackBar("bar", self.text)
+	self.track = XML:InitTrackBar("bar", self.text)
 end
 ```
 
 As you can see we pass `self.wnd` as the parent of the text window and `self.text` as the parent of the trackbar. You can ignore the structure of the
-xml info path. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
+XML info path. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
 has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
 `self.wnd`), when the GUI opens not just `self.wnd` but all three elements will be invisible.
 
@@ -264,10 +264,10 @@ Consider the following example. We create two simple buttons and want to execute
 
 ```LUA
 function MyGUI:CreateButton()
-	self.btn_a = xml:Init3tButton("wnd:btn_a", self.wnd) -- creates button
+	self.btn_a = XML:Init3tButton("wnd:btn_a", self.wnd) -- creates button
 	self.btn_a:TextControl():SetText("button text 1") 	 -- displays text on the button
 
-	self.btn_b = xml:Init3tButton("wnd:btn_b", self.wnd)
+	self.btn_b = XML:Init3tButton("wnd:btn_b", self.wnd)
 	self.btn_b:TextControl():SetText("button text 2")
 	
 	self:Register(self.btn_a, "do_this")	-- pass the UI element and assign a unique ID
@@ -304,7 +304,7 @@ function MyGUI:CreateCheck()
 	self.btn = {}
 	
 	for i = 1,3 do
-		self.btn[i] = xml:InitCheck("wnd:check_"..i, self.wnd)
+		self.btn[i] = XML:InitCheck("wnd:check_"..i, self.wnd)
 		self.btn[i]:TextControl:SetText("check button text "..i)
 
 		self:Register(self.btn, "button_exec_func_"..i)
@@ -353,7 +353,7 @@ what each UI element does. Disclaimer: Despite having researched carefully some 
 
 ## Creating a UI Element
 
-All methods in the next two lists are called as methods of `CScriptXmlInit()`.
+All methods in the next two lists are called as methods of `CScriptXMLInit()`.
 
 | Function | Purpose |
 |----------|---------|
@@ -386,19 +386,19 @@ All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 | `InitServerList(string, CUIWindow*)` | unused |
 
   
-These methods allow (manual) parsing of your UI element info xml file. Keep in mind that default index = 0.
+These methods allow (manual) parsing of your UI element info XML file. Keep in mind that default index = 0.
 
 | Function | Purpose |
 |----------|---------|
-| `ParseFile(string)` | reads UI element info from xml file from standard path `"gamedata\\configs\\ui"`, receives xml file name as string |
-| `ParseDirFile(string, string)` | same as `ParseFile()` but allows to set a custom directory path e.g `"gamedata\\configs\\ui\\my_gui"`, receives custom path as 2. argument |
-| `NodeExist(string, number)` | checks whether a node exists, receives node path and its index (in case there are several nodes with the same name, otherwise can be ignored), returns a boolean value |
-| `GetNodesNum(string, number, string)` | counts how many nodes with the specified node name exist as children of the node specified with path and index, receives path, index and node name, if no path is passed the whole xml is parsed, if no tag name is parsed all child nodes are counted, returns node count as number |
-| `NavigateToNode(string, number)` | navigates to node defined with path and index |
-| `NavigateToNode_ByAttribute(string, string, number)` | searches xml file for a node with tag name that contains an attribute with the attibute name and a value, receives node name, attribute name and attribute value |
-| `NavigateToNode_ByPath(string, index, string, string, string)` | searches xml file for a node specified by tag name and index that contains an attribute with the attibute name based on certain atribute-value pattern, receives node name, index, tag name, attribute name and attribute-value pattern |
-| `NavigateToRoot()` | navigates to root node of the UI element info structure in xml file |
-| `ReadValue(string, number)` | reads the value of the node specified by path and index, only used for simple node structures like `<width>123</width>`, receives path and index |
+| `ParseFile(string)` | reads UI element info from XML file (string) from standard path `"gamedata\\configs\\ui"` |
+| `ParseDirFile(string, string)` | same as `ParseFile()` but allows to set a custom directory path e.g `"gamedata\\configs\\ui\\my_gui"`. receives custom path as 2. argument |
+| `NodeExist(string, number)` | checks whether a node exists, receives node path and its index (in case there are several nodes with the same name, otherwise can be ignored). returns boolean value |
+| `GetNodesNum(string, number, string)` | counts how many nodes with the specified node name exist as children of the node specified with path and index, if no path is passed the whole XML is parsed, if no tag name is parsed all child nodes are counted. receives path (string), index (integer) and node name (string). returns node count as number |
+| `NavigateToNode(string, number)` | navigates to node defined with path (string) and index (integer) |
+| `NavigateToNode_ByAttribute(string, string, number)` | searches XML file for a node with tag name (string) that contains an attribute with the attibute name (string) and a value (integer) |
+| `NavigateToNode_ByPath(string, index, string, string, string)` | searches XML file for a node specified by path (string), index (number) and tag name (string) that contains an attribute with the attibute name (string) based on certain attribute-value pattern (string) |
+| `NavigateToRoot()` | navigates to root node of the UI element info structure in XML file |
+| `ReadValue(string, number)` | reads the value of the node specified by path (string) and index (index), only used for simple node structures like `<width>123</width>` |
 | `ReadAttribute(string, number, string)` | reads the value of an attribute specified by tag name in a node specified by path and index, receives path and index and tag name|
 
 
@@ -430,7 +430,7 @@ You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
 | `UIInfoUpgr()` | creates the upgrade interface for items like weapons |
 | `UICellProperties()` | creates a dropdown menu, can be filled with options, similar to props window when right clicking on an item in inventory |
 | `UICellPropertiesItem()` | creates an entry for a UICellProperties window |
-| `UIHint()` | creates a hint simple window that can contains any text, similar to hint texts appearing when hovering options in options menu |
+| `UIHint()` | creates a hint simple window that can contains any text, similar to hint texts appearing when hovering settings in settings menu |
 
 You can use them in your GUI like this:
 
@@ -524,7 +524,7 @@ sorted primarily by purpose but also by UI element type.
 |----------|---------|
 | `GetText()` | returns string that a text element is currently displaying |
 | `SetText(string)` | sets text of a UI element |
-| `SetTextST(string)` | sets text of a UI element using a string ID, for text stored in xml file |
+| `SetTextST(string)` | sets text of a UI element using a string ID, for text stored in XML file |
 | `TextControl()` | access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")` |
 | `SetTextOffset(x, y)` | sets position of the text relative to its text UI element, even allows to set position outside its text UI element |
 | `GetTextColor()` | return the text color as a number |
@@ -552,7 +552,7 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-| `AddWindow(CUIWindow*, bool)`	| adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in xml file |
+| `AddWindow(CUIWindow*, bool)`	| adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in XML file |
 | `RemoveWindow(CUIWIndow*)` | removes a UI element from the scrollview |
 | `Clear()` | removes all UI elements from the scrollview |
 | `ScrollToBegin()` | scrolls to the top of the scrollview |
@@ -568,14 +568,14 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-| `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files |
-| `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in xml files, a passed float will be rounded to the next lowest integer |
+| `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files |
+| `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files, a passed float will be rounded to the next lowest integer |
 | `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
 | `SetFValue(number)` | sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
 | `SetStep(number)` | sets the step size when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
 | `GetInvert()` | returns invert state of the trackbar as a boolean value |
 | `SetInvert()` | sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa |
-| `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in xml files, passed floats will be rounded to the next lowest integers |
+| `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in XML files, passed floats will be rounded to the next lowest integers |
 | `SetOptFBounds(number, number)` | sets min/max value of the trackbar |
 | `SetCurrentValue(number)` | sets the current trackbar value |
 | `GetCheck()` | apparently unused |
@@ -638,9 +638,9 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `SetVertScroll(bool)` | if set to true, scrolling the combobox is enabled CHECK!!! |
 | `SetListLength(number)` | sets the amount of elements in the combobox, receives an integer |
 | `CurrentID()` | returns the ID of the currently selected combobox item as a number |
-| `disable_id(number)` | disables the combobox item with the specified ID, receives ID an integer |
-| `enable_id(number)` | enables the combobox item with the specified ID, receives ID an integer |
-| `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text as string and an options value as an integer |
+| `disable_id(number)` | disables the combobox item with the specified ID, receives ID (integer) |
+| `enable_id(number)` | enables the combobox item with the specified ID, receives ID (integer) |
+| `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text (string) and options value (integer) |
 | `GetText()` | returns the text that's currently shown in the selection window |
 | `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID as an integer |
 | `SetText(string)` | sets the text in the selection window, receives text as a string |
@@ -738,7 +738,126 @@ CUIAnimationBase:
 CMainMenu:
 - `MAIN_MENU_RELOADED = 76`
 
-  
+
+# UI Info XML File Structure
+
+## The Basic Structure
+
+As mentioned in the beginning, a GUI needs a file that describes its UI elements. This information is stored in an XML file and has a tree like
+structure with branches and subbranches. In general every UI element can be described with a number of certain parameters. Some of them are mandatory,
+some are optional, see chapter 'XML Parameters for UI Elements' for reference. The basic structure of an XML file always looks like this:
+
+```XML
+<w> -- opening tag
+	
+	your UI element info here
+
+</w> -- closing tag
+```
+
+What you write in these base tags doesn't matter. All that matters is that they exist, have the same name, and that the closing tag contains `/`.
+All data you add is enclosed in these two tags. The same is true for any other pair of tags you add. Let's add some data:
+
+```XML
+<w>
+	<main_wnd x="120" y="200" width="300" height="200" stretch="1">
+		<texture>ui\my_gui\background.dds</texture>
+	</main_wnd>
+</w>
+```
+
+Here we describe the size and position of a window of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the
+upper left corner of the window, `width` and `height` tell us that the window expands 300 px to the right and 200 px downwards. If these numbers were
+negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture for the
+window by storing the texture path. This is where the `stretch` parameter comes into play. It controls whether the texture will scale according to the
+window dimensions (`stretch="1"`) or keep its own dimenstions instead (`stretch="0"`) e.g. 100x200 px.
+
+This info structure reflects in your script as follows:
+
+```LUA
+self.main = xml:InitStatic("main_wnd", self) -- pass tag name here
+```
+
+Thats's all, nothing as simple as that. Let's add two buttons:
+
+```XML
+<w>
+	<main_wnd x="120" y="200" width="300" height="200" stretch="1">
+		<texture>ui\my_gui\background.dds</texture>
+		
+		<btn_start x="2" y="3" width="68" height="24" stretch="1">
+			<texture>ui_button_ordinary</texture>
+			<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
+		</btn_start>
+	</main_wnd>
+	
+	<btn_settings x="75" y="3" width="68" height="24" stretch="1">
+		<texture>ui_button_ordinary</texture>
+		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
+	</btn_settings>
+</w>
+```
+
+In the script you write:
+
+```LUA
+self.main = xml:InitStatic("main_wnd", self)
+
+self.btn_start = xml:Init3tButton("main_wnd:btn_start", self.main)
+
+self.btn_settings = xml:Init3tButton("btn_settings", self.main)
+```
+
+Both buttons are children of the `self.main` but one button info is enclosed by the tags `main_wnd` while the other is not. This may look a bit confusing
+but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
+choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree but that's up to you.
+A info tree structure scheme can look like this:
+
+```XML
+<w>
+	wnd
+		text
+		btn
+		btn
+		wnd
+			list
+			btn
+			text
+			text
+		wnd
+		wnd
+			trackbar
+</w>
+```
+
+or like this:
+
+```XML
+<w>
+	wnd
+	text
+	btn
+	btn
+	wnd
+	list
+	btn
+	text
+	text
+	wnd
+	wnd
+	trackbar
+</w>
+```
+
+It makes no difference as long as you feed the UI element init functions the correct info path. Disclaimer: Despite having researched carefully some lists 
+or info descriptions may be incomplete or incorrect.
+
+
+## XML Parameters for UI Elements
+
+These lists contain all mandatory and optional XML info parameters for each UI element.
+
+
 # Useful stuff, tipps and tricks
 
 Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier.
@@ -763,7 +882,7 @@ SetCursorPosition(pos)
 
 **SetTextST()**
 
-Let's say you have stored your text in an xml file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
+Let's say you have stored your text in an XML file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
 would you use:
 
 ```LUA
@@ -848,10 +967,10 @@ darker textures changing the color has a similar effect to changing the texture'
 Besides script files it is possible to edit certain GUI related files and see the changes in-game WITHOUT having to restart it. Just save the
 file and reload the game/save. This works as long as you edit the file content, NOT the file name or its location. Such files include:
 
-- xml files that contain UI element info
+- XML files that contain UI element info
 - texture files
 
 Unfortunately this doesn't work for all GUI related files. You have to restart the game when editing the following files:
 
-- xml files that store text
+- XML files that store text
 - texture description files
