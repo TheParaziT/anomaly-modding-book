@@ -532,9 +532,9 @@ sorted primarily by purpose but also by UI element type.
 | `GetTextColor()` | return the text color as a number |
 | `SetTextColor(number)` | sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))` |
 | `GetFont()` | returns the current font used by the text |
-| `SetFont(CGameFont*)` | sets text font, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
-| `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
-| `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
+| `SetFont(CGameFont*)` | sets text font, see chapter 'Fonts, Colors and Text Alignment' for reference |
+| `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Fonts, Colors and Text Alignment' for reference |
+| `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Fonts, Colors and Text Alignment' for reference |
 | `SetTextComplexMode(bool)` | if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered |
 | `SetEllipsis(bool)` | if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false! |
 | `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the height of a text block |
@@ -1005,7 +1005,7 @@ Hints:
 | `accel` | primary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
 | `accel_ext` | secondary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
 
-Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Useful Stuff, Tipps and Tricks' for reference.
+Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys for Buttons' for reference.
 
 **Child Nodes**
 
@@ -1214,7 +1214,7 @@ self.text_wnd:SetTextST("some_string_id")
 This not only more compact but also more a little faster in terms of execution time.
 
 
-### Fonts and Colors and Text Alignment
+### Fonts, Colors and Text Alignment
 
 You can access various fonts from scripts using these global functions:
 
@@ -1283,7 +1283,8 @@ the mouse. In your UI element info XML file add the following parameter to your 
 </some_btn>
 ```
 
-The assigned key needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. Then in your script add the following line to `OnKeyboard()`:
+The assigned key needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. You can even assign a secondary hotkey using the
+parameter `accel_ext`. Then in your script add the following line to `OnKeyboard()`:
 
 ```LUA
 function MyGUI:OnKeyboard(key, keyboard_action)
