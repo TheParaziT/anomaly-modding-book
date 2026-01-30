@@ -776,8 +776,15 @@ The basic structure of an XML file used for GUIs always looks like this:
 ```
 
 How you name these base tags doesn't matter. All that matters is that they exist, have the same name and the closing tag contains `/`. All data you store
-is enclosed in these two tags. The same is true for any other pair of tags you add. If XML your file has a syntax typo the game usually crashes with an error
-message hinting to an error in your file. Let's add some data:
+is enclosed in these two tags. The same is true for any other pair of tags you add. It is possible to close a node with `/>` instead of `</abc>` if the
+node contains no child nodes:
+
+```XML
+<some_info info here />
+```
+
+This works in most cases but there are exceptions to this. If your XML file has a syntax typo the game usually crashes with an error message hinting to
+an error in your file. Let's add some data:
 
 ```XML
 <w>
@@ -831,7 +838,8 @@ self.btn_settings = xml:Init3tButton("btn_settings", self.main)
 ```
 
 The syntax of the UI info path generally follows this pattern: `[tag]:[child tag]:[child child tag]...`. Since `main_wnd` is the parent info tag of 
-`btn_start` the info path is `main_wnd:btn_start`.
+`btn_start` the info path is `main_wnd:btn_start`. If you pass an incorrect path that leads to nowhere the game crashes with a message saying that
+no node could be found.
 
 Both buttons are children of the `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
 but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
@@ -935,8 +943,7 @@ or incorrect.
 
 | Parameter | Purpose |
 |-----------|---------|
-| `x` | x position of the UI element on screen |
-| `y` | y position of the UI element on screen |
+| `x`/`y` | x/y position of the UI element on screen |
 | `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
 | `height` | height of the UI element, how far it expands downwards, if value is <0 the window expands upwards |
 | `stretch` | if set to 1 the used texture will be scaled to the UI element size |
@@ -974,16 +981,11 @@ or incorrect.
 | Parameter | Purpose |
 |-----------|---------|
 | `font` | sets the font of the text: e.g. `letterica16` |
-| `r` | red color channel: range 0 - 255 |
-| `g` | green color channel: range 0 - 255 |
-| `b` | blue color channel: range 0 - 255 |
-| `a` | alpha color channel: range 0 - 255 |
+| `r`/`g`/`b`/`a` | red/green/blue/alpha color channel: range 0 - 255 |
 | `color` | can be used to store the preset text color, accepts a color ID, see *color_defs.xml* for reference |
 | `align` | horizontal text alignment: `l` left, `c` center, `r` right  |
 | `vert_align` | vertical text alignment: `t` top, `c` center, `b` bottom |
 | `complex_mode` | if set to 1 multiline rendering will be enabled |
-| `` |  |
-| `` |  |
 
 
 ### Buttons
@@ -1004,6 +1006,26 @@ or incorrect.
 | `text_color` | stores state dependend text colors of a button, accepts the child nodes `d`, `e`, `h`, `t` |
 | `d`/`e`/`h`/`t` | child nodes for storing text color info for the disabled/enabled/hovered/pressed state of a button |
 
+**Example**
+
+```XML
+<btn_start x="20" y="10" width="50" height="20" stretch="1" frame_mode="0" hint="ui_btn_start_hint">
+	<texture>
+		<texture_d>ui_button_ordinary_d</texture_d>
+		<texture_e>ui_button_ordinary_e</texture_e>
+		<texture_h>ui_button_ordinary_h</texture_h>
+		<texture_t>ui_button_ordinary_t</texture_t>
+	</texture>
+	<text font="graffiti22" align="c">ui_btn_start</text> -- button text ID can be stored here too!
+	<text_color>
+		<e r="240" g="217" b="182"/>
+		<t r="0" g="0" b="0"/>
+		<d r="135" g="123" b="116"/>
+		<h r="0" g="0" b="0"/>
+	</text_color>
+</btn_start>
+```
+
 
 ### Scrollview
 
@@ -1020,6 +1042,12 @@ or incorrect.
 | `always_show_scroll` | if set to 1 the scrollbar is always visible even if there is nothing to scroll |
 | `can_select` | controls whether the scrollview content is selectable, internal flag for `CUIListBox` and `CUICombobox` |
 
+**Example**
+
+```XML
+<scroll x="4" y="158" width="292" height="340" right_ident="0" left_ident="0" top_indent="5" bottom_indent="5" vert_interval="0" always_show_scroll="1"/>
+```
+
 ### Trackbars
 
 | Parameter | Purpose |
@@ -1035,12 +1063,8 @@ or incorrect.
 |-----------|---------|
 | `horz` | if set to one the progressbar will work in horizontal mode |
 | `mode` | sets the work mode of the progressbar, accepts `horz`, `vert`, `back`, `down` |
-| `min` | sets the minimum value |
-| `max` | sets the maximum value | CHECK THESE 3!!!
-| `pos` | sets the initial value |
-| `inertion` | ??? |
-| `` |  |
-| `` |  |
+| `min`/`max`/`pos` | sets the min/max possible and initial value, range 0 - 1 |
+| `inertion` | controls how fast the progressbar reacts to a (sudden) value change, range 0 - 1 |
 
 **Child Nodes**
 
@@ -1051,6 +1075,19 @@ or incorrect.
 | `min_color` | stores a color for the lowest progressbar value |
 | `mddle_color` | stores a color for the middle progressbar value |
 | `max_color` | stores a color for the hightest progressbar value |
+
+**Example**
+
+```XML
+<power_bar x="369" y="416" width="60" height="6" horz="1" min="0" max="1" pos="0" inertion="0.2">
+	<progress stretch="1">
+		<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
+	</progress>
+		<min_color r="196" g="18" b="18"/>
+		<middle_color r="255" g="255" b="118"/>
+		<max_color r="107" g="207" b="119"/>
+</power_bar>
+```
 
 
 ### Listboxes
@@ -1091,9 +1128,8 @@ or incorrect.
 | `max_symb_count` | maximum number of symbols allowed |
 | `num_only` | allows only numbers |
 | `read_only` | no input mode |
-| `file_name_mode` | ??? |
-| `password` | ??? |
-| `` |  |
+| `file_name_mode` | disables any keys that input letters |
+| `password` | if set to 1 every character will be displayed as `*` |
 
 
 ### Tabcontrol
