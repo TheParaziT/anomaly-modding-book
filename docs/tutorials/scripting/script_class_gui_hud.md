@@ -20,7 +20,7 @@ ___
 
 Graphical user interfaces essential parts of every game. Generally GUIs can be put into two distict categories:
 
-1. GUIs that let the player interact with certain game mechanics via mouse and/or keyboard such as trader inventories, NPC dialog windows, options menu etc.
+1. GUIs that let the player interact with certain game mechanics via mouse and/or keyboard such as trader inventories, NPC dialog windows, options menu etc
 
 2. GUIs that provide the player with essential information such as player health, stamina, ammo etc, but without offering direct interaction
 
@@ -361,6 +361,7 @@ All methods in the next two lists are called as methods of `CScriptXMLInit()`.
 | `InitStatic(string, CUIWindow*)` | creates basic window that can contain any other UI element |
 | `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
 | `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
+| `InitHint` | creates a hint window that can slowly fade in and out |
 | `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
 | `Init3tButton(string, CUIWindow*)` | creates a simple button |
 | `InitCheck(string, CUIWindow*)` | creates an ON/OFF button |
@@ -373,7 +374,7 @@ All methods in the next two lists are called as methods of `CScriptXMLInit()`.
 | `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
 | `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
 | `InitTab(string, CUIWindow*)` | used for creating complex menus with multiple tabs, see Stalker CoP options menu for reference |
-| `InitAnimStatic(string, CUIWindow*)` | CHECK!!! |
+| `InitAnimStatic(string, CUIWindow*)` | unused/methods not exposed to Lua, creates a window that can display an animated icon |
 | `InitSleepStatic(string, CUIWindow*)` | unused/methods not exposed to Lua |
 | `InitSpinText(string, CUIWindow*)` | unused/methods not exposed to Lua | 
 | `InitSpinFlt(string, CUIWindow*)` | unused/methods not exposed to Lua |
@@ -561,7 +562,7 @@ sorted primarily by purpose but also by UI element type.
 | `GetMaxScrollPos()` | returns the highest scroll position as a number |
 | `GetCurrentScrollPos()` | returns current scroll position as a number |
 | `SetScrollPos(number)` | sets current scroll position |
-| `SetFixedScrollBar(bool)` CHECK!!! | controls whether the scrollbar is always visible CHECK!!! |
+| `SetFixedScrollBar(bool)` | controls whether the scrollbar is always visible even if there is nothing to scroll |
 
 
 ### Trackbars
@@ -572,7 +573,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files, a passed float will be rounded to the next lowest integer |
 | `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
 | `SetFValue(number)` | sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
-| `SetStep(number)` | sets the step size when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
+| `SetStep(number)` | sets the value increment/decrement when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
 | `GetInvert()` | returns invert state of the trackbar as a boolean value |
 | `SetInvert()` | sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa |
 | `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in XML files, passed floats will be rounded to the next lowest integers |
@@ -598,6 +599,13 @@ sorted primarily by purpose but also by UI element type.
 | `SetMiggleColor(number)` | sets the color displayed when the progressbar value reaches 50% |
 | `SetMaxColor(number)` | sets the color displayed at the hightest progressbar value |
 | `GetProgressStatic()` | returns the `CUIStatic` that resembles the actual bar |
+
+
+### Hints
+| Function | Purpose |
+|----------|---------|
+| `SetHintText(string)` | sets the text to be displayed |
+| `GetHintText()` | returns the hint text as a string |
 
 
 ### Listboxes
@@ -741,11 +749,23 @@ CMainMenu:
 
 # UI Info XML File Structure
 
+As mentioned in the beginning, a GUI works with a file that describes its UI elements. This information is stored in an XML file and has a tree like
+structure with branches and subbranches. In general every UI element can be described with a number of certain parameters but none of them are
+mandatory. "Then why use them in the first place?" Well, every time you create a UI element the engine executes a bunch of code to read all the stored
+info, whether or not you actually store any parameters. If instead you decided to set all these parameters in scripts your code would:
+
+1. get bloated with a lot of functions
+
+2. take longer to build the GUI because it has to execute all that code beside the engine doing what it does anyway
+
+So storing basic parameters in the xml file makes your code more efficient on the one hand and keeps it cleaner on the other. Apart from that storing
+UI element info externally is useful if you need a certain UI element with a prefabricated structure many times in your GUI e.g. check buttons. instead
+of writing the same code over and over again you can simply create a template and read its structure from the XML file.
+
+
 ## The Basic Structure
 
-As mentioned in the beginning, a GUI needs a file that describes its UI elements. This information is stored in an XML file and has a tree like
-structure with branches and subbranches. In general every UI element can be described with a number of certain parameters. Some of them are mandatory,
-some are optional, see chapter 'XML Parameters for UI Elements' for reference. The basic structure of an XML file always looks like this:
+The basic structure of an XML file used for GUIs always looks like this:
 
 ```XML
 <w> -- opening tag
@@ -810,6 +830,9 @@ self.btn_start = xml:Init3tButton("main_wnd:btn_start", self.main)
 self.btn_settings = xml:Init3tButton("btn_settings", self.main)
 ```
 
+The syntax of the UI info path generally follows this pattern: `[tag]:[child tag]:[child child tag]...`. Since `main_wnd` is the parent info tag of 
+`btn_start` the info path is `main_wnd:btn_start`.
+
 Both buttons are children of the `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
 but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
 choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree but that's up to you.
@@ -856,15 +879,16 @@ It makes no difference as long as you feed the UI element init functions the cor
 
 ## Texture Descriptions - A Necessary Evil
 
-In one of the example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary`
-instead. Why is that? Well, it makes sense to save multiple textures in one .dds file instead of having a single file for every tiny little
-icon. But how do we know which texture is where in the file and how do we access it? That's where texture descriptions files help are helpful.
-A texture description file is an XML file that assings an ID to each texture and stores information about its size and position. Here is an excerpt
-of the file that stores the button texture used in the example in the previous chapter:
+In one example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary` instead.
+Why is that? Well, it makes sense to save multiple textures in one .dds file instead of having a single file for every tiny little icon. But how
+do we know which texture is where in the file and how do we access it? That's where texture descriptions files help us out. A texture description
+file is an XML file that assings an ID to each texture and stores information about its size and position. Texture description files are stored in
+*gamedata/configs/ui/textures_descr* and can have any name but it makes sense to give them a name similar to that of the texture file they describe.
+Here is an excerpt of the file *ui_common.xml* that stores the button texture used in the example in the previous chapter:
 
 ```XML
 <w>
-	<file name="ui\ui_common"> -- texture file path
+	<file name="ui\ui_common"> -- texture file path, ".dds" is not required here
 		.
 		. -- skipped entries
 		.
@@ -879,16 +903,225 @@ of the file that stores the button texture used in the example in the previous c
 </w>
 ```
 
-As you can see a texture description entry starts with the tage name `file` followed by the texture path it describes. As for the button texture, 4
-different textures are stored which resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with different textures, not
-shaders or anything. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the
-textures properly. As for your UI info XML file, it's enough to store the "base name" of the texture -> `ui_button_ordinary`.
+As you can see a texture description entry starts with the tage name `file` followed by the path to the texture it describes. As for the button texture,
+4 different textures are stored which resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with different textures, not
+shaders or anything else. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the
+textures properly. As for your UI info XML file, it's enough to store the "base name" of the texture -> `ui_button_ordinary`. But if you wanna store them
+explicitely you use the following structure for your button info:
+
+```
+XML
+<btn_start x="2" y="3" width="68" height="24" stretch="1">
+	<texture>
+		<texture_d>ui_button_ordinary_d</texture_d>
+		<texture_e>ui_button_ordinary_e</texture_e>
+		<texture_h>ui_button_ordinary_h</texture_h>
+		<texture_t>ui_button_ordinary_t</texture_t>
+	</texture>
+		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
+	</btn_start>
+</btn_start>
+```
 
 
 ## XML Parameters for UI Elements
 
-These lists contain all mandatory and optional XML info parameters for each UI element. Disclaimer: Despite having researched carefully some lists 
-or info descriptions may be incomplete or incorrect.
+These lists contain all mandatory and optional XML info parameters for each UI element. Additionally child nodes with a prefined tag name that are only
+usable with certain UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete
+or incorrect.
+
+
+### Commonly Used
+
+| Parameter | Purpose |
+|-----------|---------|
+| `x` | x position of the UI element on screen |
+| `y` | y position of the UI element on screen |
+| `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
+| `height` | height of the UI element, how far it expands downwards, if value is <0 the window expands upwards |
+| `stretch` | if set to 1 the used texture will be scaled to the UI element size |
+| `alignment` | if used and set to "c" the window's reference point for positioning will move to its center |
+| `` |  |
+
+**Child Nodes**
+
+| Tag Name | Purpose |
+|----------|---------|
+| `texture` | stores path for the texture used by the UI element, accepts a texture path, a texture ID or texture child nodes |
+| `texture_offset` | stores a texture offset with parameters `x` and `y` |
+| `text` | stores text formatting info |
+| `window_name` | stores the ID used to register an interactive UI element using `Register()` |
+
+
+### Textures
+| Parameter | Purpose |
+|-----------|---------|
+| `heading` | if set to 1 texture rotation is enabled |
+| `heading_angle` | sets the initial rotation angle of the texture |
+| `shader` | stores the shader path `hud\p3d`, use with textures on a 3D model |
+| `light_anim` | stores the path to a light animation |
+| `la_cyclic` | if set to 1 the light anim will be played on repeat |
+| `la_text` | ??? |
+| `la_texture` | ??? | DO THESE BELONG HERE???
+| `la_alpha` | ??? |
+| `xform_anim` | ??? |
+| `xform_anim_cyclic` | ??? |
+| `` |  |
+| `` |  |
+
+### Text
+
+| Parameter | Purpose |
+|-----------|---------|
+| `font` | sets the font of the text: e.g. `letterica16` |
+| `r` | red color channel: range 0 - 255 |
+| `g` | green color channel: range 0 - 255 |
+| `b` | blue color channel: range 0 - 255 |
+| `a` | alpha color channel: range 0 - 255 |
+| `color` | can be used to store the preset text color, accepts a color ID, see *color_defs.xml* for reference |
+| `align` | horizontal text alignment: `l` left, `c` center, `r` right  |
+| `vert_align` | vertical text alignment: `t` top, `c` center, `b` bottom |
+| `complex_mode` | if set to 1 multiline rendering will be enabled |
+| `` |  |
+| `` |  |
+
+
+### Buttons
+
+| Parameter | Purpose |
+|-----------|---------|
+| `frame_mode` | if set to 1 the button will work in frameline mode WHAT IS THAT??? |
+| `vertical` | apparently unused |
+| `hint` | stores a string ID for text to be displayed when hovering over the button |
+| `accel` | ??? |
+| `accel_ext` | ??? |
+
+**Child Nodes**
+
+| Tag name | Purpose |
+|----------|---------|
+| `texture_d`/`_e`/`_h`/`_t` | child nodes for storing texture IDs info for the disabled/enabled/hovered/pressed state of a button, useful for inserting custom textures |
+| `text_color` | stores state dependend text colors of a button, accepts the child nodes `d`, `e`, `h`, `t` |
+| `d`/`e`/`h`/`t` | child nodes for storing text color info for the disabled/enabled/hovered/pressed state of a button |
+
+
+### Scrollview
+
+| Parameter | Purpose |
+|-----------|---------|
+| `right_ident` | creates an empty space on the left side scrollview content |
+| `left_ident` | creates an empty space on the right side scrollview content |
+| `top_indent` | creates an empty space above the first item in the scrollview |
+| `bottom_indent` | creates an empty space below the last item in the scrollview |
+| `vert_interval` | size of the vertical gab between scrollview items |
+| `inverse_dir` | if set to 1 the scrollview starts at the bottom item position |
+| `scroll_profile` | sets the style of the scrollview control elements, accepts a node tag name, see *scroll_bar.xml* for reference |
+| `flip_vert` | inverts the scrollview item order if set to 1 |
+| `always_show_scroll` | if set to 1 the scrollbar is always visible even if there is nothing to scroll |
+| `can_select` | controls whether the scrollview content is selectable, internal flag for `CUIListBox` and `CUICombobox` |
+
+### Trackbars
+
+| Parameter | Purpose |
+|-----------|---------|
+| `is_integer` | controls whether the value set with the trackbar is an integer |
+| `invert` | if set to 1 moving the slider to the left increases the value |
+| `step` | sets the value increment/decrement when moving the slider on the trackbar |
+
+
+### Progressbars
+
+| Parameter | Purpose |
+|-----------|---------|
+| `horz` | if set to one the progressbar will work in horizontal mode |
+| `mode` | sets the work mode of the progressbar, accepts `horz`, `vert`, `back`, `down` |
+| `min` | sets the minimum value |
+| `max` | sets the maximum value | CHECK THESE 3!!!
+| `pos` | sets the initial value |
+| `inertion` | ??? |
+| `` |  |
+| `` |  |
+
+**Child Nodes**
+
+| Tag name | Purpose |
+|----------|---------|
+| `progress` | stores info for a `CUIProgressBar` |
+| `background` | stores info about the background of a `CUIProgressBar` |
+| `min_color` | stores a color for the lowest progressbar value |
+| `mddle_color` | stores a color for the middle progressbar value |
+| `max_color` | stores a color for the hightest progressbar value |
+
+
+### Listboxes
+
+| Parameter | Purpose |
+|-----------|---------|
+| `item_height` | height of the listbox items |
+
+**Child Nodes**
+
+| Tag name | Purpose |
+|----------|---------|
+| `font` | stores text font info of a `CUIListBox` and `CUICombobox` |
+| `properties_box` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts the params `complex_mode` and `line_wrap` |
+
+
+### Comboboxes
+
+| Parameter | Purpose |
+|-----------|---------|
+| `item_height` | height of the listbox items |
+| `list_length` | sets the number of item in the combobox |
+| `always_show_scroll` | if set to 1 the scrollbar is always visible in the combobox's list even if there is nothing to scroll |
+
+**Child Nodes**
+
+| Tag name | Purpose |
+|----------|---------|
+| `list_font` | stores the text font info of the combobox's list items |
+| `text_color` | stores state dependend text color info for the disabled/enabled state of a combobox (item), accepts child nodes `d`/`e` |
+| `d`/`e` | child nodes for storing text color info for the disabled/enabled state of a combobox (item) |
+
+
+### Editboxes
+
+| Parameter | Purpose |
+|-----------|---------|
+| `max_symb_count` | maximum number of symbols allowed |
+| `num_only` | allows only numbers |
+| `read_only` | no input mode |
+| `file_name_mode` | ??? |
+| `password` | ??? |
+| `` |  |
+
+
+### Tabcontrol
+
+| Parameter | Purpose |
+|-----------|---------|
+| `button` | ??? |
+| `radio` | ??? |
+| `id` | ??? |
+| `` |  |
+
+
+### Animated Static
+
+The `CUIAnimatedStatic` uses textures that store the individual animation frames.
+
+| Parameter | Purpose |
+|-----------|---------|
+| `x_offset` | x offset position relative to parent UI element CHECK!!! |
+| `y_offset` | y offset position relative to parent UI element CHECK!!! |
+| `frames` | number of frames the animation consists of |
+| `duration` | time the animation lasts in ms |
+| `columns` | number of columns the frame texture has |
+| `frame_width` | width of a frame in the texture |
+| `frame_height` | height of a frame in the texture |
+| `cyclic` | if set to 1 the animation will play on repeat |
+| `autoplay` | if set to one, the anim will start playing automatically when creating the anim static |
+
 
 
 # Useful stuff, tipps and tricks
