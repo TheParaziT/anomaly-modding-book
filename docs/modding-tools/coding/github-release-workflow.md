@@ -18,7 +18,9 @@ showDescription={true}
 
 ## Workflow definition
 
-Create a file `.github/workflows/main.yml` in your repository with the following content:
+Create a file `.github/workflows/main.yml` in your repository or alternatively go to "Actions" tab, on the left click "New workflow", then above the search bar click on "set up a workflow yourself" link.
+
+After completing one of the above steps, add the following content into the file:
 
 ```yaml
 name: Create Release with 7z Archive
@@ -48,11 +50,11 @@ jobs:
         run: |
           mkdir -p build_temp
           rsync -av \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.gitattributes' \
-            --exclude='README.md' \
-            --exclude='version' \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.gitattributes' \
+            --exclude 'README.md' \
+            --exclude 'version' \
             ./* build_temp/
       
           echo "? files to build:"
