@@ -26,7 +26,8 @@ Graphical user interfaces essential parts of every game. Generally GUIs can be p
 
 To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and and type 2 as "HUD" throughout this tutorial. Based on this
 distiction, it's clear that GUIs and HUDs have a fundamentally different character/purpose. However, looking at their code it goes to show that GUIs and HUDs
-are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD.
+are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD and how to handle UI element XML info. Furthermore it provides
+detailed info about the functions commonly used in GUIs.
 
   
 ## Code Basics
@@ -531,9 +532,9 @@ sorted primarily by purpose but also by UI element type.
 | `GetTextColor()` | return the text color as a number |
 | `SetTextColor(number)` | sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))` |
 | `GetFont()` | returns the current font used by the text |
-| `SetFont(CGameFont*)` | sets text font, see chapter 'Useful stuff, tipps and tricks' for reference |
-| `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Useful stuff, tipps and tricks' for reference |
-| `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Useful stuff, tipps and tricks' for reference |
+| `SetFont(CGameFont*)` | sets text font, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
+| `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
+| `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Useful Stuff, Tipps and Tricks' for reference |
 | `SetTextComplexMode(bool)` | if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered |
 | `SetEllipsis(bool)` | if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false! |
 | `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the height of a text block |
@@ -750,15 +751,15 @@ CMainMenu:
 # UI Info XML File Structure
 
 As mentioned in the beginning, a GUI works with a file that describes its UI elements. This information is stored in an XML file and has a tree like
-structure with branches and subbranches. In general every UI element can be described with a number of certain parameters but none of them are
+node structure with branches and subbranches. In general every UI element can be described with a number of certain parameters but none of them are
 mandatory. "Then why use them in the first place?" Well, every time you create a UI element the engine executes a bunch of code to read all the stored
 info, whether or not you actually store any parameters. If instead you decided to set all these parameters in scripts your code would:
 
-1. get bloated with a lot of functions
+1. get bloated with a lot of functions in order to get your GUI look and behave the way you want it to
 
-2. take longer to build the GUI because it has to execute all that code beside the engine doing what it does anyway
+2. take longer to build the GUI because it has to execute all that code beside the engine trying to do the exact same thing for you
 
-So storing basic parameters in the xml file makes your code more efficient on the one hand and keeps it cleaner on the other. Apart from that storing
+So storing basic parameters in the xml file makes your code more efficient on the one hand and keeps it shorter/cleaner on the other. Apart from that storing
 UI element info externally is useful if you need a certain UI element with a prefabricated structure many times in your GUI e.g. check buttons. instead
 of writing the same code over and over again you can simply create a template and read its structure from the XML file.
 
@@ -776,11 +777,13 @@ The basic structure of an XML file used for GUIs always looks like this:
 ```
 
 How you name these base tags doesn't matter. All that matters is that they exist, have the same name and the closing tag contains `/`. All data you store
-is enclosed in these two tags. The same is true for any other pair of tags you add. It is possible to close a node with `/>` instead of `</abc>` if the
-node contains no child nodes:
+is enclosed in these two tags. The same is true for any other pair of tags you add for a node. It is possible to close a node with `/>` instead of `</abc>`
+if the node contains no child nodes:
 
 ```XML
-<some_info info here />
+<w>
+	<some_info info here />
+</w>
 ```
 
 This works in most cases but there are exceptions to this. If your XML file has a syntax typo the game usually crashes with an error message hinting to
@@ -794,20 +797,20 @@ an error in your file. Let's add some data:
 </w>
 ```
 
-Here we describe the size and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the
-upper left corner of the window, `width` and `height` tell us that the window expands 300 px to the right and 200 px downwards. If these numbers were
-negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture for the
-window by storing the texture path. This is where the `stretch` parameter comes into play. It controls whether the texture will scale according to the
-window dimensions (`stretch="1"`) or keep its own dimenstions instead (`stretch="0"`) e.g. 100x200 px.
+Here we describe the size and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the upper left corner
+of the window, `width` and `height` tell us that the window expands 300 px to the right and 200 px downwards (in the virtual screen space with dimensions
+1024x768). If these numbers were negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have
+defined a texture for the window by storing the texture path. This is where the `stretch` parameter comes into play. It controls whether the texture will
+scale with the window dimensions accordingly (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
 
 The info structure shown above can be used in your script as follows:
 
 ```LUA
-self.main = xml:InitStatic("main_wnd", self) -- pass tag name here
+self.main = xml:InitStatic("main_wnd", self) -- pass node tag name here
 ```
 
-You simply pass the path to the tag name a string. Since `main_wnd` is at the 1. level of the tree the path is the tag name itself. Keep in mind that
-the base tag `<w>` is never included in any path. Thats's all, nothing as simple as that. Let's add two buttons:
+You simply pass the path to the node tag name as a string. Since `main_wnd` is at the 1. level of the node tree the path is the tag name itself. Keep in mind
+that the base tag `<w>` is never included in any path. Thats's all, nothing as simple as that. Let's add two buttons:
 
 ```XML
 <w>
@@ -827,7 +830,7 @@ the base tag `<w>` is never included in any path. Thats's all, nothing as simple
 </w>
 ```
 
-In the script you write:
+In the script you add:
 
 ```LUA
 self.main = xml:InitStatic("main_wnd", self)
@@ -841,7 +844,7 @@ The syntax of the UI info path generally follows this pattern: `[tag]:[child tag
 `btn_start` the info path is `main_wnd:btn_start`. If you pass an incorrect path that leads to nowhere the game crashes with a message saying that
 no node could be found.
 
-Both buttons are children of the `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
+Both buttons are children of `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
 but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
 choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree but that's up to you.
 An info tree structure scheme can look like this:
@@ -890,9 +893,9 @@ It makes no difference as long as you feed the UI element init functions the cor
 In one example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary` instead.
 Why is that? Well, it makes sense to save multiple textures in one .dds file instead of having a single file for every tiny little icon. But how
 do we know which texture is where in the file and how do we access it? That's where texture descriptions files help us out. A texture description
-file is an XML file that assings an ID to each texture and stores information about its size and position. Texture description files are stored in
+file is an XML file that assigns an ID to each texture and stores information about its size and position. Texture description files are stored in
 *gamedata/configs/ui/textures_descr* and can have any name but it makes sense to give them a name similar to that of the texture file they describe.
-Here is an excerpt of the file *ui_common.xml* that stores the button texture used in the example in the previous chapter:
+Here is an excerpt of the file *ui_common.xml* that stores the button texture reference used in the example in the previous chapter:
 
 ```XML
 <w>
@@ -911,11 +914,11 @@ Here is an excerpt of the file *ui_common.xml* that stores the button texture us
 </w>
 ```
 
-As you can see a texture description entry starts with the tage name `file` followed by the path to the texture it describes. As for the button texture,
-4 different textures are stored which resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with different textures, not
-shaders or anything else. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the
-textures properly. As for your UI info XML file, it's enough to store the "base name" of the texture -> `ui_button_ordinary`. But if you wanna store them
-explicitely you use the following structure for your button info:
+As you can see a texture description entry starts with the node tage name `file` followed by the path to the texture it describes. The file actually stores 4
+different button texture references in *ui_common.dds*. Why 4? They resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with
+different textures, not shaders or anything else. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary
+for the engine to handle the textures properly. For your UI info XML file it's enough to store the "base name" of the textures -> `ui_button_ordinary`.
+But if you wanna store them explicitely you can use the following structure for your button info:
 
 ```
 XML
@@ -931,12 +934,13 @@ XML
 </btn_start>
 ```
 
+This allows you to replace one of the texture references with a custom one if desired.
+
 
 ## XML Parameters for UI Elements
 
-These lists contain all mandatory and optional XML info parameters for each UI element. Additionally child nodes with a prefined tag name that are only
-usable with certain UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete
-or incorrect.
+These lists contain all XML info parameters for each UI element. Additionally all child nodes with a prefined tag name that are only usable with certain
+UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete or incorrect.
 
 
 ### Commonly Used
@@ -946,35 +950,38 @@ or incorrect.
 | `x`/`y` | x/y position of the UI element on screen |
 | `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
 | `height` | height of the UI element, how far it expands downwards, if value is <0 the window expands upwards |
-| `stretch` | if set to 1 the used texture will be scaled to the UI element size |
+| `stretch` | if set to 1 the used texture will be scaled to fit the UI element size |
 | `alignment` | if used and set to "c" the window's reference point for positioning will move to its center |
-| `` |  |
 
 **Child Nodes**
 
 | Tag Name | Purpose |
 |----------|---------|
-| `texture` | stores path for the texture used by the UI element, accepts a texture path, a texture ID or texture child nodes |
-| `texture_offset` | stores a texture offset with parameters `x` and `y` |
+| `texture` | stores the texture reference used by the UI element, accepts a texture path, texture ID or texture child nodes |
+| `texture_offset` | stores a texture offset position with parameters `x` and `y` |
 | `text` | stores text formatting info |
 | `window_name` | stores the ID used to register an interactive UI element using `Register()` |
 
 
 ### Textures
+
 | Parameter | Purpose |
 |-----------|---------|
 | `heading` | if set to 1 texture rotation is enabled |
 | `heading_angle` | sets the initial rotation angle of the texture |
 | `shader` | stores the shader path `hud\p3d`, use with textures on a 3D model |
-| `light_anim` | stores the path to a light animation |
+| `light_anim` | stores the name to a light anim |
 | `la_cyclic` | if set to 1 the light anim will be played on repeat |
-| `la_text` | ??? |
-| `la_texture` | ??? | DO THESE BELONG HERE???
-| `la_alpha` | ??? |
-| `xform_anim` | ??? |
-| `xform_anim_cyclic` | ??? |
-| `` |  |
-| `` |  |
+| `la_text` | if set to 1 the light anim affects text |
+| `la_texture` | if set to 1 the light anim affects the texture |
+| `la_alpha` | if set to 1 only the alpha channel will be affected by the light anim |
+| `xform_anim` | stores the name of an xform anim |
+| `xform_anim_cyclic` | if set to 1 the xform anim will be played on repeat |
+
+Hints:
+- A light anim is an animation for UI elements that can animate element color.
+- An xform anim is an animtion for UI elements that can animate element position, scale and rotation.
+
 
 ### Text
 
@@ -992,11 +999,13 @@ or incorrect.
 
 | Parameter | Purpose |
 |-----------|---------|
-| `frame_mode` | if set to 1 the button will work in frameline mode WHAT IS THAT??? |
+| `frame_mode` | if set to 1 the button will work in frameline mode |
 | `vertical` | apparently unused |
 | `hint` | stores a string ID for text to be displayed when hovering over the button |
-| `accel` | ??? |
-| `accel_ext` | ??? |
+| `accel` | primary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
+| `accel_ext` | secondary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
+
+Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Useful Stuff, Tipps and Tricks' for reference.
 
 **Child Nodes**
 
@@ -1160,9 +1169,11 @@ The `CUIAnimatedStatic` uses textures that store the individual animation frames
 
 
 
-# Useful stuff, tipps and tricks
+# Useful Stuff, Tipps and Tricks
 
 Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier.
+
+### Mouse Specific Functions
 
 **IsCursorOverWindow()**
 
@@ -1182,9 +1193,11 @@ self:ShowDialog()
 SetCursorPosition(pos)
 ```
 
+### Better than game.translate_string
+
 **SetTextST()**
 
-Let's say you have stored your text in an XML file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
+Imagine you have stored your text in an XML file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
 would you use:
 
 ```LUA
@@ -1201,7 +1214,7 @@ self.text_wnd:SetTextST("some_string_id")
 This not only more compact but also more a little faster in terms of execution time.
 
 
-**Fonts**
+### Fonts and Colors and Text Alignment
 
 You can access various fonts from scripts using these global functions:
 
@@ -1226,9 +1239,6 @@ local font_medium = GetFontMedium()
 self.text:SetFont(font_medium)
 ```
 
-  
-**Text alignment**
-
 You can set horizontal and vertical text alignment. This is often more convenient then having to set the text UI element position manually
 to get the desired result. There are three different modes each to choose from:
 
@@ -1242,16 +1252,14 @@ vertical:
 - `const valCenter = 1`
 - `const valBottom = 2`
 
-You can use them like this, in the example the text will be aligned left and at the bottom of our UI element:
+Use them like this, in the example the text will be aligned left and at the bottom of our UI element:
 
 ```LUA
 self.text_wnd:SetTextAlignment(0) -- expects integer value 0, 1 or 2
 self.text_wnd:SetVTextAlignment(2) -- expects integer value 0, 1 or 2
 ```
 
-**Setting a color**
-
-When working with a GUIs you may want to set or change a given color of certain UI elements dynamically. Methods that change colors always
+When working with GUIs you may want to set or change a given color of certain UI elements dynamically. Methods that change colors always
 receive a single number as their input argument. "But why a single number, what am I supposed to pass here???" Don't worry, the engine got
 you covered. Just use this little function:
 
@@ -1264,7 +1272,35 @@ a color works best for text but it works for textures too. When using a plain wh
 darker textures changing the color has a similar effect to changing the texture's Hue.
 
 
-**Changing files while the game runs**
+### Hotkeys for Buttons
+
+It is possible to assign a keybind to a `CUI3tButton` as a hotkey. When pressing the hotkey the button is triggered as if you pressed it using
+the mouse. In your UI element info XML file add the following parameter to your button info:
+
+```XML
+<some_btn ... accel="kSpace"> -- assigns spacebar as hotkey
+	...
+</some_btn>
+```
+
+The assigned key needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. Then in your script add the following line to `OnKeyboard()`:
+
+```LUA
+function MyGUI:OnKeyboard(key, keyboard_action)
+
+	local res = CUIScriptWnd.OnKeyboard(self,key,keyboard_action) -- catches the key input
+	
+	if res then -- optional check
+		...
+	end
+end
+```
+
+`CUIScriptWnd.OnKeyboard(self,key,keyboard_action)` catches the key input and passes it to the button which has the hotkey assigned if the pressed key
+matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen.
+
+
+### Changing Files on Runtime
 
 Besides script files it is possible to edit certain GUI related files and see the changes in-game WITHOUT having to restart it. Just save the
 file and reload the game/save. This works as long as you edit the file content, NOT the file name or its location. Such files include:
