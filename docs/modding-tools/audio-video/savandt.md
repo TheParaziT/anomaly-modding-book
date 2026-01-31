@@ -18,34 +18,24 @@ draft: false
 
 ___
 
-## Info {#info}
+## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={["nat_vac"]}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>1.1.7</td>
-    </tr>
-    <tr>
-      <td>Official Site</td>
-      <td>[Official Site](https://www.metacognix.com/files/stlkrsoc/)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Sound Attribute Viewer And Tweaker",
+    version: "1.1.7",
+    developers: ["nat_vac"],
+    previewImage: "/img/savandt.png",
+    website: "https://www.metacognix.com/files/stlkrsoc/",
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Utility designed to simplify working with X-Ray Engine sound files in [*.ogg](../../references/file-formats/audio-video/ogg.md) format.
-
-![editor centered](assets/images/savandt.png)
 
 ## Features
 

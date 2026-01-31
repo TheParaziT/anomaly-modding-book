@@ -14,37 +14,26 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['redpandaprojects', 'vaierok']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[4.4](https://github.com/VaIeroK/XrayExportTool/releases/tag/4.4)</td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [Ap-pro forum
-        topic](https://ap-pro.ru/forums/topic/3577-object-editor-v44/)
-      </td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/VaIeroK/XrayExportTool)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/VaIeroK/XrayExportTool)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Modified OGF Editor by ValeroK",
+    version: "4.4",
+    developers: ['redpandaprojects', 'vaierok'],
+    previewImage: "/img/ogf-editor-by-valerok.png",
+    forum: [
+      "https://ap-pro.ru/forums/topic/3577-object-editor-v44/",
+    ],
+    documentation: [
+      "https://deepwiki.com/VaIeroK/XrayExportTool",
+    ],
+    repository: [
+      "https://github.com/VaIeroK/XrayExportTool",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 

@@ -1,0 +1,541 @@
+/* ProgramDescription.module.css */
+.programDescription {
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.programDescription.compact {
+  font-size: 0.9rem;
+}
+
+.tableContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.tableContainer.noPreview {
+  grid-template-columns: 1fr !important;
+}
+
+/* Превью */
+.previewCell {
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.previewSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--ifm-background-color);
+}
+
+.previewImage {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Основная таблица */
+.infoTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.infoTable tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  transition: background-color 0.2s ease;
+}
+
+.infoTable tr:last-child {
+  border-bottom: none;
+}
+
+.cellLabel {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: var(--ifm-color-emphasis-50);
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 600;
+  vertical-align: auto;
+  width: 140px;
+  border-right: 1px solid var(--ifm-color-emphasis-100);
+  white-space: nowrap;
+}
+
+.cellValue {
+  padding: 0.75rem 1rem;
+  color: var(--ifm-color-emphasis-900);
+  vertical-align: top;
+}
+
+/* Основная информация */
+.mainInfoRow .cellValue {
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary-lightest),
+    var(--ifm-color-emphasis-50)
+  );
+}
+
+.programHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.programName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+/* Версия */
+.version {
+  display: inline-flex;
+  align-items: baseline;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.versionNoLink {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.versionLink {
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.versionLink:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.versionContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.versionMain {
+  font-weight: 600;
+}
+
+.versionSub {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.versionDate {
+  font-style: italic;
+}
+
+/* Стили для иконки CustomLink внутри версии */
+.versionLink svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.versionLink:hover svg {
+  opacity: 1;
+}
+
+/* Лицензия и платформы */
+.licenseCode {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9rem;
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-900);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.platformsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.platformItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+}
+
+.platformIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.platformText {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 500;
+}
+
+/* Ссылки с использованием CustomLink */
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.customLinkItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customLinkItem:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Стили для иконок внутри CustomLink */
+.customLinkItem svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.linkText {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Списки (дополнения, исправления) */
+.listRow .cellValue {
+  padding: 0.5rem 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listItem {
+  padding: 0;
+  margin: 0;
+}
+
+.listItemContent {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+}
+
+.listItem:last-child .listItemContent {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.listItemTitle {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 0.125rem;
+}
+
+.listItemTitle a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.listItemTitle a:hover {
+  text-decoration: underline;
+}
+
+.addonLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.addonLink:hover {
+  text-decoration: underline;
+}
+
+/* Стили для иконок в дополнениях */
+.addonLink svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+.listItemDescription {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+/* Исправления */
+
+.fixTitle {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.fixTitle a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.fixDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.fixMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.fixVersion {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  white-space: nowrap;
+}
+
+.fixLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.fixLink:hover {
+  text-decoration: underline;
+}
+
+/* Стили для иконок в исправлениях */
+.fixLink svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 0.125rem;
+  vertical-align: middle;
+}
+
+/* Разработчики */
+.developersRow .cellValue {
+  padding: 0.75rem 1rem;
+}
+
+.developersContainer {
+  padding: 0.5rem 0;
+}
+
+/* Кнопка "Показать больше" */
+.showMoreButton {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.showMoreButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Десктопная версия */
+@media (min-width: 768px) {
+  .tableContainer {
+    grid-template-columns: auto 1fr;
+  }
+
+  .previewCell {
+    padding: 1rem;
+    border-right: 1px solid var(--ifm-color-emphasis-200);
+    border-bottom: none;
+    max-width: 300px;
+  }
+
+  .previewSection {
+    max-height: none;
+    height: 100%;
+  }
+
+  .previewImage {
+    max-height: none;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cellLabel {
+    width: 160px;
+  }
+
+  .tableContainer.noPreview .cellLabel {
+    width: 140px;
+  }
+
+  .customLinkItem {
+    max-width: 400px;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 767px) {
+  .programDescription {
+    border-radius: 6px;
+  }
+
+  .infoTable {
+    font-size: 0.9rem;
+  }
+
+  .cellLabel,
+  .cellValue {
+    padding: 0.625rem;
+    display: block;
+    width: 100%;
+    border-right: none;
+  }
+
+  .cellLabel {
+    background: var(--ifm-color-emphasis-100);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    font-size: 0.9rem;
+  }
+
+  .cellValue {
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  }
+
+  .infoTable tr {
+    display: block;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .infoTable tr:last-child .cellValue {
+    border-bottom: none;
+  }
+
+  .programHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .versionContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
+  }
+
+  .fixMeta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .platformsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .platformItem {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .previewSection {
+    max-height: 200px;
+  }
+
+  .previewImage {
+    max-height: 180px;
+  }
+
+  .linkText {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Адаптивные стили для иконок CustomLink на мобильных */
+  .customLinkItem svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .versionLink svg {
+    width: 12px;
+    height: 12px;
+  }
+}

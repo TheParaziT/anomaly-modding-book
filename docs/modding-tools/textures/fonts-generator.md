@@ -14,36 +14,28 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['ogsr_team']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[1.14](https://github.com/OGSR/Fonts_generator/releases/tag/1.14)</td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/OGSR/Fonts_generator)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/OGSR/Fonts_generator)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Fonts Generator",
+    version: "1.14",
+    versionUrl: "https://github.com/OGSR/Fonts_generator/releases/tag/1.14",
+    developers: ["ogsr_team"],
+    previewImage: "/img/fonts-generator.png",
+    repository: [
+      "https://github.com/OGSR/Fonts_generator",
+    ],
+    documentation: [
+      "https://deepwiki.com/OGSR/Fonts_generator",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Fonts Generator is a Windows-based toolset for generating bitmap fonts compatible with the X-Ray Engine. The system converts TrueType/OpenType fonts into game-ready assets consisting of *.dds texture files and \*.ini coordinate configuration files.
-
-![bump-generator centered](assets/images/fonts-generator.png)
 
 ## Functionality
 

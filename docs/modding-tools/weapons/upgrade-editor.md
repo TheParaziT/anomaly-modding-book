@@ -12,26 +12,22 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['gunslinger_mod_team']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/gunslingermod/upgrades_editor)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/gunslingermod/upgrades_editor)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Upgrade Editor",
+    developers: ["gunslinger_mod_team"],
+    previewImage: "/img/upgrades-editor.png",
+    repository: [
+      "https://github.com/gunslingermod/upgrades_editor",
+    ],
+    documentation: [
+      "https://deepwiki.com/gunslingermod/upgrades_editor",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
@@ -40,8 +36,6 @@ The editor was created for Gunslinger Mod so some parameters will be incompatibl
 :::
 
 Visual editor that makes it relatively quick and easy to create weapon upgrade schemes
-
-![editor centered](assets/images/upgrades-editor.png)
 
 ## Features
 

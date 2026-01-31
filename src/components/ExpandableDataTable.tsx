@@ -184,7 +184,7 @@ const ExpandableDataTable: React.FC<ExpandableDataTableProps> = ({
                         className={`${styles.expandIcon} ${isExpanded ? styles.rotated : ''}`}
                         aria-hidden="true"
                       >
-                        ▼
+                        ►
                       </span>
                       {item.title}
                     </div>

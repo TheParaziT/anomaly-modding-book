@@ -14,32 +14,24 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={["sin!"]}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <td>Download</td>
-      <td>[Yandex Disk](https://disk.yandex.ru/d/Dcyo0Nt3A3b5g)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "OGG Editor",
+    version: "2.0",
+    developers: ["sin!"],
+    previewImage: "/img/ogg-editor.png",
+    download: [
+      "https://disk.yandex.ru/d/Dcyo0Nt3A3b5g",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Utility for quickly view and edit audio comments in [*.ogg](../../references/file-formats/audio-video/ogg.md) files already converted through the SDK without having to open the SDK.
-
-![editor centered](assets/images/ogg-editor.png)
 
 ## Functionality
 

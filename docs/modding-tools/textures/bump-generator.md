@@ -13,40 +13,28 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['i_love_kfc']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>
-        [0.1](https://gitlab.com/i-love-kfc/bump-generator/-/releases/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B7)
-      </td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3740-bump-generator)
-      </td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitLab](https://gitlab.com/i-love-kfc/bump-generator)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Bump Generator",
+    version: "0.1",
+    versionUrl: "https://gitlab.com/i-love-kfc/bump-generator/-/releases/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B7",
+    developers: ["i_love_kfc"],
+    previewImage: "/img/bump-generator.png",
+    forum: [
+      "https://ap-pro.ru/forums/topic/3740-bump-generator",
+    ],
+    repository: [
+      "https://gitlab.com/i-love-kfc/bump-generator",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 A simple [*_bump.dds](../../references/file-formats/textures/bump.md) and [*_bump#.dds](../../references/file-formats/textures/bump_hash.md) texture generator from normal maps with the ability to use specular maps, also, is capable of generating *_bump#.dds for ready-made "green" \*_bumps.dds.
-
-![bump-generator centered](assets/images/bump-generator.png)
 
 ## Features
 

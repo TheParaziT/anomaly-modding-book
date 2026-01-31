@@ -13,22 +13,20 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td>UmYeahNo</td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>Version from 28/07/25</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Stalker Bump Gen Tool",
+    version: "2025-07-28",
+    versionType: "date",
+    developers: ["UmYeahNo"],
+    previewImage: "/img/bump-gen-tool.png",
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
-
-![alt text](assets/images/bump-gen-tool.png)
 
 This tool is designed for simultaneous processing of one or more sets of textures. A set of textures (e.g., \*_normal.tga, \*_specular.tga, \*_height.tga). The tool identifies each complete set of textures by its name. Then it processes each set, generating the appropriate (\*_bump.dds, \*_bump.thm) and (\*_bump#.dds, \*_bump#.thm). Supports up to 8K identical or mixed texture input formats. (\*.tga, \*.png, \*.tiff, \*.dds). You don't need to run the program separately for each complete set of textures.
 

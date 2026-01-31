@@ -13,42 +13,30 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['mortany', 'vaierok']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[4.1](https://github.com/VaIeroK/OGF-tool/releases/tag/4.1)</td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3549-ogfdmdetailsobj-editor-v41/)
-      </td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/VaIeroK/OGF-tool)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/VaIeroK/XrayExportTool)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Modified OGF Editor by ValeroK",
+    version: "4.1",
+    developers: ['mortany', 'vaierok'],
+    previewImage: "/img/ogf-editor-by-valerok.png",
+    forum: [
+      "https://ap-pro.ru/forums/topic/3549-ogfdmdetailsobj-editor-v41/",
+    ],
+    documentation: [
+      "https://deepwiki.com/VaIeroK/XrayExportTool",
+    ],
+    repository: [
+      "https://github.com/VaIeroK/OGF-tool",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Tool for working with [*.ogf](../../references/file-formats/models/ogf.md) and [*.dm](../../references/file-formats/models/dm.md) format
-
-![ogf-editor centered](assets/images/ogf-editor-by-valerok.png)
 
 ## Features
 
