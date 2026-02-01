@@ -18,13 +18,13 @@ ___
 
 ## Introduction
 
-Graphical user interfaces essential parts of every game. Generally GUIs can be put into two distict categories:
+Graphical user interfaces essential parts of every game. Generally GUIs can be separated into two distict categories:
 
 1. GUIs that let the player interact with certain game mechanics via mouse and/or keyboard such as trader inventories, NPC dialog windows, options menu etc
 
 2. GUIs that provide the player with essential information such as player health, stamina, ammo etc, but without offering direct interaction
 
-To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and and type 2 as "HUD" throughout this tutorial. Based on this
+To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and type 2 as "HUD" throughout this tutorial. Based on this
 distiction, it's clear that GUIs and HUDs have a fundamentally different character/purpose. However, looking at their code it goes to show that GUIs and HUDs
 are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD and how to handle UI element XML info. Furthermore it provides
 detailed info about the functions commonly used in GUIs.
@@ -40,7 +40,7 @@ From now on the term "GUI" will be used synonym for both GUI and HUD if not expr
   
 ### Creating a GUI
 
-To create a GUI you need these essential functions.
+To create a GUI you need these essential functions:
 
 ```LUA
 class "MyGUI" (CUIScriptWnd)	-- 1
@@ -62,7 +62,8 @@ end
 1. Creates a class with the name "MyGUI". Your GUI class can have any name that has not already been used anywhere else.
 
 2. Called once when your GUI class instance is created. In this function you can execute any code that only needs to be
-executed once like e.g. creating static/fundamental UI elements like the main window of your GUI.
+executed once like e.g. creating static/fundamental UI elements like the main window of your GUI. Attention: the function name uses
+TWO underscores `__`!
 
 3. Called when your GUI is destroyed and necessary in order to prevent Lua from potentially interacting with a GUI that
 doesn't exist anymore on the engine side. The call happens when the game is interrupted by a level transition or when loading a save.
@@ -70,11 +71,11 @@ doesn't exist anymore on the engine side. The call happens when the game is inte
 4. Called about 4 times per frame (I don't know why). If you have any dynamic UI elements that need to update time based (as opposed to event
 based) e.g. progress bars you're probably gonna put the respective code here. Never forget to add `CUIScriptWnd.Update(self)`,
 otherwise none of your UI elements will work properly! Also better avoid putting performance heavy code here if possible or throttle the
-code execution using timers. ;)
+code execution using timers. ;) Attention: the function names uses TWO underscores `__`!
 
 As you can see, the functions 2, 3 and 4 are called with this pattern: `YourClassName:SomeClassFunction()`. Adding new functions
 to your class follows the same pattern. It is common style to start each word of the name of the class and all its functions with a capital
-letter but that's up to you. Just make sure that these four functions shown above are written as shown in the example.
+letter but that's up to you. Just make sure that these four functions are written as shown above.
 
   
 ### How do I show my GUI on Screen?
@@ -96,8 +97,8 @@ function show_ui()
 end
 ```
 
-It is recommened to declare `GUI` as a global variable in your script in order to be able to access your GUI from other scripts. Keep in mind that when
-calling your GUI using `GUI:ShowDialog(true)` you usually cannot move the character but you change that behavior, see chapter 'Control of UI Elements'
+It is recommened to declare `GUI` as a global variable in your script so that it is accessable from other scripts. Keep in mind that when calling
+your GUI using `GUI:ShowDialog(true)` you usually cannot move the character but you can change that behavior, see chapter 'Control of UI Elements'
 for reference. Also make sure to check whether your GUI is already active. You don't want to have more than one instance active at a time, otherwise
 you WILL break your GUI and probably the game as well.
 
@@ -123,7 +124,7 @@ is active. This function call does nothing more than adding your HUD to the rend
 controls whether the GUI is interactive (that's why it's called `ShowDialog`) or behaves like a HUD.
 `Register_UI()` has two purposes:
 
-1. It fires `GUI_on_show` callback when you show your GUI.
+1. It fires the `GUI_on_show` callback when executed.
 
 2. It adds your GUI to the global tables `_GUIs` and `_GUIsInstances` in *_g.script* which are used to have control over all active GUIs in the game
 like e.g. hiding or even destroying all of them at once, see *_g.script* for reference.
@@ -136,7 +137,7 @@ Closing a GUI dialog works like this:
 ```LUA
 function close_ui()
 	if GUI and GUI:IsShown() then
-		GUI:HideDialog() -- closes GUI dialog, mouse cursor disappears
+		GUI:HideDialog() -- closes GUI dialog, mouse cursor disappears, full control over character regained
 		Unregister_UI("MyGUI")
 		GUI = nil -- optional, destroys GUI instance
 	end
@@ -174,8 +175,8 @@ end
   
 ## Building the GUI Structure
 
-In order to interact with a GUI there exists bunch of different UI elements such as buttons and sliders or the window that contains these elements.
-But of course these elements have to be added manually. To build your GUI call a function when `__init()` is executed:
+In order to build and interact with a GUI there exists bunch of different UI elements such as buttons and sliders or the window that contains
+these elements. But of course these elements have to be added manually. To build your GUI call a function when `__init()` is executed:
 
 ```LUA
 function MyGUI:__init() super()
@@ -186,13 +187,13 @@ function MyGUI:InitControls()
 	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets position and size (left, top, right, bottom) of the dialog window
 	self:SetAutoDelete(true)
 	
-	self.XML = CScriptXMLInit()
-	local XML = self.XML -- just so you don't have to write self.XML everytime
-	XML:ParseFile("my_XML_gui_structure.XML")
+	self.xml = CScriptXmlInit()
+	local xml = self.xml -- just so you don't have to write 'self.xml' everytime
+	xml:ParseFile("my_gui_structure.xml")
 	
-	self.my_wnd = XML:InitStatic("background", self)
+	self.my_wnd = xml:InitStatic("background", self)
 	
-	self.my_text = XML:InitTextWnd("background:text", self.my_wnd)
+	self.my_text = xml:InitTextWnd("background:text", self.my_wnd)
 	self.my_text:SetText("My text here")
 end
 ```
@@ -200,8 +201,8 @@ end
 Setting the interaction area of your GUI using `SetWndRect()` is the first step. Every UI element placed outside of this area cannot be
 interacted with. Therefore it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution
 is, the engine will always translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
-`self.XML = CScriptXMLInit()`calls an instance of the engine class `CUIXMLInit`, responsible for creating any of the available UI elements.
-`XML:ParseFile()` receives the name of your XML file that stores properties of the UI elements your GUI uses such as position, size, textures,
+`self.xml = CScriptXmlInit()`calls an instance of the engine class `CUIXmlInit`, responsible for creating any of the available UI elements.
+`xml:ParseFile()` receives the name of your XML file that stores properties of the UI elements your GUI uses such as position, size, textures,
 text formatting, color etc. Without this XML file your GUI won't work.
 
 So what UI elements are created in the example above?
@@ -211,12 +212,12 @@ So what UI elements are created in the example above?
 - `InitCheck()` creates an ON/OFF button.
 
 There are many more UI elements which can be found in *lua_help.script*. Additionally the file lists all methods available to these UI elements
-such as `SetText()` or `Show()`. A detailed description of these elements and their methods can be found in chapter 'UI elements and their methods'.
+such as `SetText()` or `Show()`. A detailed description of these elements and their methods can be found in chapter 'UI elements and their Methods'.
 
 A UI element creation method like e.g. `InitStatic()` usually receives the following arguments:
 
 - the path to the UI element info in your XML file, e.g. `"background"`
-- the parent UI element or, if none exists, the class instance itself (`self`)
+- the parent UI element or, if none exists, the GUI class instance itself (`self`)
 
 Calling `InitControls()` in `__init()` is recommended if the GUI structure needs to be built only once and stays the same after that. If instead you
 need a more dynamic structure you can call `InitControls()` from outside your class instead of calling it in `__init`.
@@ -228,7 +229,7 @@ Setting the parent has a direct influence on how UI elements behave. If you chan
 all its children.
 
 Consider the following example. We create a simple window that contains text and a trackbar. We want to control both position and visiblilty of these
-UI element via the window that contains them:
+UI elements via the window that contains them:
 
 ```LUA
 function MyGUI:CreateWindow()
@@ -236,23 +237,23 @@ function MyGUI:CreateWindow()
 	self.wnd:Show(false) -- sets the window invisible
 	
 	self.text = XML:InitTextWindow("parent_window:text_block", self.wnd)
-	self.text:SetText("This is our text window.")
+	self.text:SetText("Our text window displays this text.")
 	
 	self.track = XML:InitTrackBar("bar", self.text)
 end
 ```
 
 As you can see we pass `self.wnd` as the parent of the text window and `self.text` as the parent of the trackbar. You can ignore the structure of the
-XML info path. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
+XML info path for now. It has nothing to with how parent/child relations between UI elements a created. Now what happens here? As you can see `self.wnd`
 has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
-`self.wnd`), when the GUI opens not just `self.wnd` but all three elements will be invisible.
+`self.wnd`), by default not just `self.wnd` but all three elements will be invisible.
 
-  
+
 ### Self???
 
 "What is 'self'?", you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
 `self.my_wnd` is the same as writing `MyGUI.my_wnd`. Everything you declare with `self` can be accessed from anywhere within your GUI class. Don't
-confuse `self.` with `self:` though. When calling a class method such as `self:InitControls()` you always use ':' instead of '.'. Keep in mind that
+confuse `self.` with `self:` though. When calling a class method such as `self:InitControls()` you always use `:` instead of `.`. Keep in mind that
 calling a class member from outside your GUI class requires class access via the variable `GUI`/`HUD`, e.g. `GUI.some_value` or `GUI:DoSomething()`.
 `self.some_value` or `self:DoSomething()` won't work here. ALWAYS pay close attention to when to use which symbol. If you use the wrong one, the
 game either crashes or your GUI just won't work and trust me, finding this tiny little syntax error in your code can be annoying AF!
@@ -278,11 +279,11 @@ function MyGUI:CreateButton()
 	self:AddCallback("to_that", ui_events.BUTTON_CLICKED, self.OnButton_Two, self)
 end
 
-function MyGUI:OnButton_One()
+function MyGUI:OnButton_One() -- called when pressing button A
 	-- your code
 end
 
-function MyGUI:OnButton_Two()
+function MyGUI:OnButton_Two() -- called when pressing button B
 	-- your code
 end
 ```
@@ -308,7 +309,7 @@ function MyGUI:CreateCheck()
 		self.btn[i] = XML:InitCheck("wnd:check_"..i, self.wnd)
 		self.btn[i]:TextControl:SetText("check button text "..i)
 
-		self:Register(self.btn, "button_exec_func_"..i)
+		self:Register(self.btn[i], "button_exec_func_"..i)
 		
 		local _wrapper = function(self.wnd) -- pass parent UI element here
 			self:OnCheck(i)
@@ -325,8 +326,8 @@ end
 As you can see, instead of passing the class method directly we pass the wrapper function that itself calls the class method with a passed argument.
 With a wrapper function you can pass as many arguments as you want.
 
-Callbacks are not limited to be used with buttons only. There are a bunch of different callbacks for all kinds of UI elements. A full list of callbacks
-can be found in chapter 'UI elements and their methods'.
+Callbacks are not limited to be used with buttons only. There are a bunch of different callbacks for all kinds of UI elements. A full list of callback
+event IDs can be found in chapter 'UI Callback Event IDs'.
 
   
 ## Key Inputs
@@ -348,13 +349,13 @@ value respectively. By using appropriate conditions you have very precise contro
   
 # UI Elements and their Methods
 
-This following lists contain all UI elements available in the game. Please forgive me for not being able to provide complete info about
-what each UI element does. Disclaimer: Despite having researched carefully some lists or function descriptions may be incomplete or incorrect.
+This following lists contain all UI elements available in the game. Disclaimer: Despite having researched carefully some lists or function descriptions
+may be incomplete or incorrect.
 
 
 ## Creating a UI Element
 
-All methods in the next two lists are called as methods of `CScriptXMLInit()`.
+All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 
 | Function | Purpose |
 |----------|---------|
@@ -362,19 +363,19 @@ All methods in the next two lists are called as methods of `CScriptXMLInit()`.
 | `InitStatic(string, CUIWindow*)` | creates basic window that can contain any other UI element |
 | `InitFrame(string, CUIWindow*)` | creates a UI element whose frame texture elements don't get distorted when scaling the element itself |
 | `InitFrameLine(string, CUIWindow*)` | creates a UI element similar to InitFrame() but without a center section, can be used to scale separating elements like lines/bars distortion-free |
-| `InitHint` | creates a hint window that can slowly fade in and out |
+| `InitHint` | creates a hint window that can fade in and out automatically |
 | `InitTextWnd(string, CUIWindow*)` | creates a text window that allows for various formatting options |
 | `Init3tButton(string, CUIWindow*)` | creates a simple button |
 | `InitCheck(string, CUIWindow*)` | creates an ON/OFF button |
 | `InitScrollView(string, CUIWindow*)` | creates a window with a scrollbar and up/down arrows for navigation |
-| `InitTrackBar(string, CUIWindow*)` | creates a slider that can be used to change a value |
-| `InitProgressBar(string, CUIWindow*)` | creates progress bar as used for health, stamina, Psy health etc. |
+| `InitTrackBar(string, CUIWindow*)` | creates a trackbar that can be used to change a value |
+| `InitProgressBar(string, CUIWindow*)` | creates a progress bar as used for health, stamina, psy health etc. |
 | `InitListBox(string, CUIWindow*)` | creates a list with strings, see properties menu in inventory for reference |
-| `InitComboBox(string, CUIWindow*)` | creates a dropdown menu, see e.g. SMAA settings in options menu for reference |
+| `InitComboBox(string, CUIWindow*)` | creates a dropdown menu, see e.g. SMAA settings in settings menu for reference |
 | `InitEditBox(string, CUIWindow*)` | creates a prompt window that allows to change a value, see Hud Editor for reference |
 | `InitKeyBinding(string, CUIWindow*)` | creates a prompt window for setting a keybind |
 | `InitMMShniaga(string, CUIWindow*)` | creates a vertical button list with the magnifying stip UI element that exists in main and pause menu |
-| `InitTab(string, CUIWindow*)` | used for creating complex menus with multiple tabs, see Stalker CoP options menu for reference |
+| `InitTab(string, CUIWindow*)` | used for creating complex menus with multiple tabs, see Stalker CoP settings menu for reference |
 | `InitAnimStatic(string, CUIWindow*)` | unused/methods not exposed to Lua, creates a window that can display an animated icon |
 | `InitSleepStatic(string, CUIWindow*)` | unused/methods not exposed to Lua |
 | `InitSpinText(string, CUIWindow*)` | unused/methods not exposed to Lua | 
@@ -388,40 +389,31 @@ All methods in the next two lists are called as methods of `CScriptXMLInit()`.
 | `InitServerList(string, CUIWindow*)` | unused |
 
   
-These methods allow (manual) parsing of your UI element info XML file. Keep in mind that default index = 0.
+These methods allow (manual) parsing of your UI element info XML file and are called on an instance of `ScriptXmlInit()`. Keep in mind that default index = 0.
 
 | Function | Purpose |
 |----------|---------|
 | `ParseFile(string)` | reads UI element info from XML file (string) from standard path `"gamedata\\configs\\ui"` |
-| `ParseDirFile(string, string)` | same as `ParseFile()` but allows to set a custom directory path e.g `"gamedata\\configs\\ui\\my_gui"`. receives custom path as 2. argument |
+| `ParseDirFile(string, string)` | same as `ParseFile()` but allows to pass a custom file path e.g `"gamedata\\configs\\ui\\my_gui"` as 2. argument |
 | `NodeExist(string, number)` | checks whether a node exists, receives node path and its index (in case there are several nodes with the same name, otherwise can be ignored). returns boolean value |
-| `GetNodesNum(string, number, string)` | counts how many nodes with the specified node name exist as children of the node specified with path and index, if no path is passed the whole XML is parsed, if no tag name is parsed all child nodes are counted. receives path (string), index (integer) and node name (string). returns node count as number |
+| `GetNodesNum(string, number, string)` | counts how many nodes with the specified node tag name exist as children of the node specified with path and index, if no path is passed the whole XML is parsed, if no tag name is passed all child nodes are counted. receives path (string), index (integer) and tag name (string). returns node count as number |
 | `NavigateToNode(string, number)` | navigates to node defined with path (string) and index (integer) |
 | `NavigateToNode_ByAttribute(string, string, number)` | searches XML file for a node with tag name (string) that contains an attribute with the attibute name (string) and a value (integer) |
 | `NavigateToNode_ByPath(string, index, string, string, string)` | searches XML file for a node specified by path (string), index (number) and tag name (string) that contains an attribute with the attibute name (string) based on certain attribute-value pattern (string) |
 | `NavigateToRoot()` | navigates to root node of the UI element info structure in XML file |
-| `ReadValue(string, number)` | reads the value of the node specified by path (string) and index (index), only used for simple node structures like `<width>123</width>` |
-| `ReadAttribute(string, number, string)` | reads the value of an attribute specified by tag name in a node specified by path and index, receives path and index and tag name|
+| `ReadValue(string, number)` | reads the value of the node specified by path (string) and index (index), only used for simple node structures like `<texture>tex_name_here</texture>` |
+| `ReadAttribute(string, number, string)` | reads the value of an attribute specified by name in a node specified by path and index, receives path (string), index (integer) and attribute name (string) |
 
 
 These UI elements are called from different classes or are created by calling their respective class.
 
 | Function | Purpose |
 |----------|---------|
-| `CUITabControl()` | create a bar that allows switching between multiple tabs, has to be filled with tab `CUITabButton` instances |
-| `CUITabButton()` | MAYBE REMOVE creates a tab button instance, not usable on its own! |
-| `CUIListBoxItem()` | creates a listbox item that can be added to a listbox |
-| `` | |
-| `` | |
-| `` | |
+| `CUITabControl()` | creates a window that allows switching between multiple tabs, has to be filled with tab `CUITabButton` instances |
+| `CUIMessageBox()` | handles message boxes |
 
-`CUIMessageBox()`
 
-| Function | Purpose |
-|----------|---------|
-| `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in options menu |
-
-These UI elements are created in Lua. They are prefabricated and always have a certain structure but can be customized to certain degree.
+These UI elements are handled in Lua. They are prefabricated and always have a certain structure but can be customized to a certain degree.
 You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
 
 | Function | Purpose |
@@ -430,9 +422,9 @@ You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
 | `UICellItem()` | creates a single item cell |
 | `UIInfoItem()` | creates a window with info about an item, similar to the info window that pops up when hovering above an item in inventory |
 | `UIInfoUpgr()` | creates the upgrade interface for items like weapons |
-| `UICellProperties()` | creates a dropdown menu, can be filled with options, similar to props window when right clicking on an item in inventory |
-| `UICellPropertiesItem()` | creates an entry for a UICellProperties window |
-| `UIHint()` | creates a hint simple window that can contains any text, similar to hint texts appearing when hovering settings in settings menu |
+| `UICellProperties()` | creates a dropdown menu, can be filled with options that execute various functions, similar to props window when right clicking on an item in inventory |
+| `UICellPropertiesItem()` | creates an entry for a `UICellProperties` window |
+| `UIHint()` | creates a simple hint window that can contain any text, similar to hint texts appearing when hovering settings in settings menu |
 
 You can use them in your GUI like this:
 
@@ -440,8 +432,8 @@ You can use them in your GUI like this:
 self.item_info = utils_ui.UIItemInfo(self, 500)
 ```
 
-In this example an info window for items is created. We pass the GUI instance as the parent of this UI element and a hover pop up delay time in ms. What arguments you
-have to pass depends on the UI element you call.
+In this example an info window for items is created. You pass your GUI instance as the parent of this UI element and a hover pop up delay time in ms. What arguments you
+have to pass in general depends on the UI element you use.
 
 
   
@@ -460,43 +452,52 @@ sorted primarily by purpose but also by UI element type.
 | Function | Purpose |
 |----------|---------|
 | `ShowDialog(bool)` | shows GUI, shows cursor by default, boolean flag controls whether HUD indicators will be hidden |
-| `HideDialog()` | closes GUI, cursor disappears, player controls are fully regained |
-| `Update()` | general update function to put all kinds of code to control time dependent UI element behavior, called about 4 times per frame, use with care! |
+| `HideDialog()` | closes GUI, cursor disappears, character controls are fully regained |
+| `Update()` | general update function to execute all kinds of code to control time dependent UI element behavior, called about 4 times per frame, use with care! |
 | `OnKeyboard(number, number)` | tracks key presses, returns key ID and UI element callback event ID as numbers, see chapter 'UI Callback Event IDs' |
 | `Register(CUIWindow*, string)` | registers a UI element to make callbacks work, receives the UI element instance and a unique ID as a string |
-| `AddCallback(string, number, functor, CUIWindow*)` | creates a callback for a UI element to perform certain actions based on the UI callback event ID, receives a UI element ID, a UI callback event ID, a functor to execute, the parent GUI class instance |
+| `AddCallback(string, number, functor, CUIWindow*)` | creates a callback for a UI element to perform certain actions based on the callback event ID, receives a UI element ID, a callback event ID, a functor to execute, the parent UI element class instance |
 | `AllowMovement(bool)` | if set to true, moving around is possible while the GUI is active, similar to inventory |
-| `AllowCursor(bool)` | if set to false, no cursor will be available for the GUI |
-| `AllowCenterCursor(bool)` | if set to true, the cursor will always show up in the center of the screen, otherwise it starts at the last position when the GUI was closed |
-| `AllowWorkInPause(bool)` | if set to true, the GUI stays active when pausing the game |
-| `Dispatch()` | unused, event based callback function that opened multiplayer menu in main menu |
-| `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no real use cases |
+| `AllowCursor(bool)` | if set to false, the cursor is not usable in the GUI and becomes invisible |
+| `AllowCenterCursor(bool)` | if set to true, the cursor always shows up in the center of the screen (default behavior), otherwise it starts at the last position when the GUI was closed |
+| `AllowWorkInPause(bool)` | if set to true, the GUI is still usable when pausing the game loop (e.g with `device():pause(true)`, NOT when pausing the game so that pause menu pops up!) |
+| `Dispatch()` | unused, event based callback function that was used to open multiplayer menu in main menu |
+| `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no obvious use |
 
 
 ### Commonly Used
 
 | Function | Purpose |
 |----------|---------|
-| `IsShown()` | returns current visibility state of the UI element as boolean value |
 | `Show(bool)` | sets visibility of the UI element |
+| `IsShown()` | returns current visibility state of the UI element as boolean value |
+| `SetAutoDelete(bool)` | if set to true, the UI element will be destroyed automatically when removed from the GUI structure |
 | `IsAutoDelete()` | checks AutoDelete state of the UI element, returns boolean value |
-| `SetAutoDelete(bool)` | if set to true, the UI element will automatically be hidden when opening the GUI |
 | `Enable(bool)` | if set to false, any interaction with the UI element is disabled |
 | `IsEnabled()` | checks interaction state of the UI element, returns boolean value |
-| `GetWndPos()` | returns a 2D vector of the top left corner position of the UI element |
 | `SetWndPos(vector2)` | sets position of the top left corner of the UI element |
+| `GetWndPos()` | returns a 2D vector of the top left corner position of the UI element |
 | `SetWndRect(Frect)` | sets position and size of the area where mouse event are registered |
-| `GetWidth()` | returns a the width of the UI element as number |
-| `GetHeight()` | returns a the height of the UI element as number |
+| `GetAbsoluteRect(Frect)` | returns position and size of the UI element, for info about how to use it see hint below |
 | `SetWndSize(vector2)` | sets width and height of the UI element |
-| `AttachChild(CUIWindow*)` | sets a UI element as the child of some other UI element |
-| `DetachChild(CUIWindow*)` | removes child state of UI element with respect to its parent. If the element has no parent and there is reference to that element it will be destroyed |
-| `WindowName()` | returns the string assigned to a UI element when registering it using `Register()` |
-| `SetWindowName(string)` | assigns a string as a name to a UI element, similar to  |
-| `FocusReceiveTime()` | returns inital delay time for a UI element to receive inputs as a number, no real use cases |
-| `GetAbsoluteRect()` | returns position and size of the `CUIWindow` instance the method is called on as an Frect (left, top, right, bottom) |
-| `SetPPMode(bool)` | PostProcessing mode, used for the magnifier element in main/pause menu |
+| `GetWidth()` | returns width of the UI element as number |
+| `GetHeight()` | returns height of the UI element as number |
+| `AttachChild(CUIWindow*)` | sets a UI element as the child of some other UI element/adds it to the GUI structure |
+| `DetachChild(CUIWindow*)` | removes a UI element from its parent/the GUI structure |
+| `SetWindowName(string)` | assigns a string as a name to a UI element is used to register callbacks using `AddCallback()` |
+| `WindowName()` | returns the string assigned to a UI element when registering it using `Register()` or when setting callbacks |
+| `FocusReceiveTime()` | returns inital delay time for a UI element to receive inputs as a number, has no obvious use |
+| `SetPPMode(bool)` | PostProcessing mode, apparently used for the magnifier element in main/pause menu |
 | `ResetPPMode()` | resets PP mode |
+
+Hint: This is how `GetAbsoluteRect()` is used:
+
+```Lua
+local rect = Frect()
+self.wnd:GetAbsoluteRect(rect) -- pass rect here
+
+local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect values
+```
 
 
 ### Textures
@@ -505,34 +506,35 @@ sorted primarily by purpose but also by UI element type.
 |----------|---------|
 | `InitTexture(string)` | sets texture of the UI element, receives a texture path e.g. `"ui\\my_gui\\background.dds"` |
 | `InitTextureEx(string, string)` | sets texture of the UI element placed on a 3D model e.g. display of dosimeter, receives a texture path and the shader path `"hud\\p3d"` |
-| `GetTextureRect()` CHECK!!! | returns Frect containg position and size info about the area containing the texture CHECK!!! |
-| `SetTextureRect(Frect)` | sets position and size of the area containing the texture |
+| `SetTextureRect(Frect)` | sets position and size of the area containing the texture, receives an Frect |
+| `GetTextureRect()` | returns Frect containing position and size info about the area containing the texture |
 | `SetStretchTexture(bool)` | controls whether or not a button texture will be stretched when button size is not equal to texture size |
-| `GetTextureColor()` | returns color of a texture as a number |
+| `GetTextureColor()` | returns color of a texture as a number, default value resembles A = R = G = B = 255 |
 | `SetTextureColor(number)` | sets color of a texture, receives a number |
 | `EnableHeading(bool)` | enabled a static to be rotated |
-| `GetHeading()` | returns rotation of the UI element in radians |
 | `SetHeading(number)` | sets rotation of the UI element in radians |
-| `GetConstHeading()` | returns const heading state of the UI element WHAT IS CONSTHEADING??? |
+| `GetHeading()` | returns rotation of the UI element in radians |
 | `SetConstHeading(bool)` | if set to false, UI elements rotates when its parent UI element rotates, otherwise it's not affected |
-| `SetColorAnimation(string)` CHECK!!! | creates animated color change for a texture CHECK!!! |
-| `ResetColorAnimation(string)` | resets color animation |
-| `RemoveColorAnimation(string)` | removes color animation |
+| `GetConstHeading()` | returns const heading state of the UI element |
+| `SetColorAnimation(string, number, number)` | creates animated color change for a texture, receives color anim name, number resembling set flags and start delay time in ms, see cahpter 'Color Animations' for reference |
+| `ResetColorAnimation()` | resets color animation |
+| `RemoveColorAnimation()` | removes color animation |
+
 
 
 ### Text
 
 | Function | Purpose |
 |----------|---------|
-| `GetText()` | returns string that a text element is currently displaying |
 | `SetText(string)` | sets text of a UI element |
 | `SetTextST(string)` | sets text of a UI element using a string ID, for text stored in XML file |
-| `TextControl()` | access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText("text")` |
-| `SetTextOffset(x, y)` | sets position of the text relative to its text UI element, even allows to set position outside its text UI element |
-| `GetTextColor()` | return the text color as a number |
+| `GetText()` | returns string that a text element is currently displaying |
+| `TextControl()` | access text formating methods for certain UI elements, use like this: `self.btn:TextControl():SetText()` |
+| `SetTextOffset(x, y)` | sets position of the text relative to its text UI element, even allows to set position outside of its text UI element |
 | `SetTextColor(number)` | sets text color, use like this: `self.text:SetTextColor(GetARGB(255, 110, 110, 50))` |
-| `GetFont()` | returns the current font used by the text |
+| `GetTextColor()` | returns text color as a number |
 | `SetFont(CGameFont*)` | sets text font, see chapter 'Fonts, Colors and Text Alignment' for reference |
+| `GetFont()` | returns the current font used by the text |
 | `SetTextAlignment(number)` | sets horizontal text alignment, see chapter 'Fonts, Colors and Text Alignment' for reference |
 | `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Fonts, Colors and Text Alignment' for reference |
 | `SetTextComplexMode(bool)` | if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered |
@@ -561,8 +563,8 @@ sorted primarily by purpose but also by UI element type.
 | `ScrollToEnd()` | scrolls to the bottom of the scrollview |
 | `GetMinScrollPos()` | returns the lowest scroll position as a number |
 | `GetMaxScrollPos()` | returns the highest scroll position as a number |
-| `GetCurrentScrollPos()` | returns current scroll position as a number |
 | `SetScrollPos(number)` | sets current scroll position |
+| `GetCurrentScrollPos()` | returns current scroll position as a number |
 | `SetFixedScrollBar(bool)` | controls whether the scrollbar is always visible even if there is nothing to scroll |
 
 
@@ -570,18 +572,18 @@ sorted primarily by purpose but also by UI element type.
 
 | Function | Purpose |
 |----------|---------|
-| `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files |
 | `SetIValue(number)` | sets the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files, a passed float will be rounded to the next lowest integer |
-| `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
+| `GetIValue()` | returns the current trackbar value as a number, use if trackbar mode `is_integer="1"` in XML files |
 | `SetFValue(number)` | sets the current trackbar value as a number, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
+| `GetFValue()` | returns the current trackbar value as a number, if trackbar mode `is_integer="1"` this returns an integer |
 | `SetStep(number)` | sets the value increment/decrement when moving the slider on the trackbar, if trackbar mode `is_integer="1"` the passed value will be rounded to the next lowest integer |
-| `GetInvert()` | returns invert state of the trackbar as a boolean value |
 | `SetInvert()` | sets invert state of the trackbar, if set to true moving the slider to the left increases the value instead of decreasing it and vice versa |
+| `GetInvert()` | returns invert state of the trackbar as a boolean value |
 | `SetOptIBounds(number, number)` | sets min/max value of the trackbar, use if trackbar mode `is_integer="1"` in XML files, passed floats will be rounded to the next lowest integers |
 | `SetOptFBounds(number, number)` | sets min/max value of the trackbar |
 | `SetCurrentValue(number)` | sets the current trackbar value |
-| `GetCheck()` | apparently unused |
 | `SetCheck(bool)` | apparently unused |
+| `GetCheck()` | apparently unused |
 
 
 ### Progressbars
@@ -590,9 +592,9 @@ sorted primarily by purpose but also by UI element type.
 |----------|---------|
 | `SetProgressPos(number)` | sets the current position of the progressbar, receives a number between 0 and 1 |
 | `GetProgressPos()` | returns current position of the progressbar as a number |
+| `SetRange(number, number)` | sets min an max values of a progressbar |
 | `GetRange_min()` | returns min value the progressbar can display as a number |
 | `GetRange_max()` | returns max value the progressbar can display as a number |
-| `SetRange(number, number)` | sets min an max values of a progressbar |
 | `ShowBackground(bool)` | if set to true the background texture behind the actual bar will be visible |
 | `SetColor(number)` | sets the color of the progressbar |
 | `UseColor(bool)` | controls whether the progressbar uses different colors |
@@ -611,6 +613,8 @@ sorted primarily by purpose but also by UI element type.
 
 ### Listboxes
 
+To be used with `CUIListBoxItem()` which creates a listbox item that can be added to a listbox.
+
 | Function | Purpose |
 |----------|---------|
 | `ShowSelectedItem(bool)` | sets visibility of the listbox |
@@ -626,7 +630,6 @@ sorted primarily by purpose but also by UI element type.
 | `RemoveItem(CUIWindow*)` | removes a `CUIListBoxItem` from the listbox, receives a `CUIListBoxItem` instance |
 | `AddTextItem(string)` | adds an item to the listbox, receives a string ID or a default string |
 | `AddExistingItem(CUIWindow*)` | adds an existing `CUIListBoxItem` instance to the listbox, use if you have created a `CUIListBoxItem` inctance manually |
-| `CUIListBoxItem(number)` | MOVE SOMEWHERE ELSE creates an instance of a listbox item, receives item height |
 
 These methods are called on a `CUIListBoxItem` instance.
 
@@ -650,9 +653,9 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `disable_id(number)` | disables the combobox item with the specified ID, receives ID (integer) |
 | `enable_id(number)` | enables the combobox item with the specified ID, receives ID (integer) |
 | `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text (string) and options value (integer) |
+| `SetText(string)` | sets the text in the selection window, receives text as a string |
 | `GetText()` | returns the text that's currently shown in the selection window |
 | `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID as an integer |
-| `SetText(string)` | sets the text in the selection window, receives text as a string |
 | `ClearList()` | removes all combobox entries and the text in the selection window |
 | `SetCurrentOptValue()` | updates the combobox items and their values with current options value CHECK!!! |
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
@@ -674,17 +677,26 @@ Hint: Editboxes work with `CUICustomEdit` objects internally.
 
 ### TabControl
 
+To be used with `CUITabButton()` which creates a tab button instance, not usable on its own!
+
 | Function | Purpose |
 |----------|---------|
 | `AddItem(string, string, vector2, vector2)` | adds a tab button, receives the button text, texture path, position vector and size vector |
 | `AddItem(CUITabButton*)` | adds a tab button, receives a tab button UI element |
 | `RemoveAll()` | removes all tab buttons |
+| `SetActiveTab(string)` | sets the tab with the passed ID as active tab |
 | `GetActiveId()` | returns ID of active tab as a string |
 | `GetTabsCount()` | returns tab count as number |
-| `SetActiveTab(string)` | sets the tab with the passed ID as active tab |
 | `GetButtonById(string)` | returns the UI element with the passed tab button ID |
-| `GetEnabled()` | returns tab (button) interaction state as a boolean value |
 | `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
+| `GetEnabled()` | returns tab (button) interaction state as a boolean value |
+
+
+### Messageboxes
+
+| Function | Purpose |
+|----------|---------|
+| `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in settings menu |
 
 
 
@@ -942,6 +954,8 @@ This allows you to replace one of the texture references with a custom one if de
 These lists contain all XML info parameters for each UI element. Additionally all child nodes with a prefined tag name that are only usable with certain
 UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete or incorrect.
 
+Hint: the most parameters are boolean and accept 0 or 1 as their value.
+
 
 ### Commonly Used
 
@@ -968,19 +982,18 @@ UI elements are listed as well. Disclaimer: Despite having researched carefully 
 | Parameter | Purpose |
 |-----------|---------|
 | `heading` | if set to 1 texture rotation is enabled |
-| `heading_angle` | sets the initial rotation angle of the texture |
+| `heading_angle` | sets the initial rotation angle in radians of the texture |
 | `shader` | stores the shader path `hud\p3d`, use with textures on a 3D model |
-| `light_anim` | stores the name to a light anim |
-| `la_cyclic` | if set to 1 the light anim will be played on repeat |
-| `la_text` | if set to 1 the light anim affects text |
-| `la_texture` | if set to 1 the light anim affects the texture |
-| `la_alpha` | if set to 1 only the alpha channel will be affected by the light anim |
-| `xform_anim` | stores the name of an xform anim |
+| `light_anim` | stores the name of a color animation |
+| `la_cyclic` | if set to 1 the color anim will be played on repeat |
+| `la_text` | if set to 1 the color anim affects text |
+| `la_texture` | if set to 1 the color anim affects the texture |
+| `la_alpha` | if set to 1 only the alpha channel will be affected by the color anim |
+| `xform_anim` | stores the name of an xform animation |
 | `xform_anim_cyclic` | if set to 1 the xform anim will be played on repeat |
 
 Hints:
-- A light anim is an animation for UI elements that can animate element color.
-- An xform anim is an animtion for UI elements that can animate element position, scale and rotation.
+- An xform animation is an animtion for UI elements that can animate element position, scale and rotation.
 
 
 ### Text
@@ -1270,6 +1283,93 @@ local clr = GetARGB(123, 123, 123, 123) -- Alpha, Red, Green, Blue (range: 0 - 2
 This function converts your A,R,G,B values to a single number or in other words maps the 8 bit color channel values to a D3DCOLOR. Setting
 a color works best for text but it works for textures too. When using a plain white texture the color changes will be visible the most. For
 darker textures changing the color has a similar effect to changing the texture's Hue.
+If you want to get or set a certain color value of a given color you can use these functions:
+
+```Lua
+-- getters, pass a D3DCOLOR value
+-- returns a color channel value (range 0 - 255)
+ClrGetA(number)
+ClrGetR(number)
+ClrGetG(number)
+ClrGetB(number)
+
+-- setters, pass a D3DCOLOR value and the value of the color channel you want to change (range 0 - 255)
+-- returns a D3DCOLOR value
+ClrSetA(number, number)
+ClrSetR(number, number)
+ClrSetG(number, number)
+ClrSetB(number, number)
+```
+
+
+### Color Animations
+
+Color animations are useful to create dynamic color effects like fades and blinking effects. Color animations can be used with `CUIStatic` instances.
+You can a color animation using the following code:
+
+```Lua
+self.background:SetColorAnimation("ui_slow_blinking", 9, 1000) -- color anim name, flag value, start delay in ms
+```
+
+These are all color animation flags you can set:
+
+- `LA_CYCLIC` = 1
+- `LA_ONLYALPHA` = 2
+- `LA_TEXTCOLOR` = 4
+- `LA_TEXTURECOLOR` = 8
+
+Setting the flags your color anim needs works by summing up the flag values. In the example above the color anim receives the flags `LA_CYCLIC` and
+`LA_TEXTURECOLOR`: 1 + 8 = 9. Setting `LA_TEXTCOLOR` or `LA_TEXTURECOLOR` is absolutely necessary for the color anim to work, otherwise the game
+crashes! The number 1000 means that the color animation starts 1000 ms after the anim has been set. If your `CUIStatic` instance displays text using
+`self.background:TextControl():SetText()` you can use the flag `LA_TEXTCOLOR` to animate the text color.
+
+This is a list of all color animations that exist in the game. All color animations have been tested with the flags `LA_CYCLIC` and
+`LA_TEXTURECOLOR` on a texture with A/R/G/B = 255/255/150/140, a pink shade that's usually not represented in the game to make any color changes
+visible. The appearance descriptions represent the effect visible with these flags. 'slow'/'medium'/'fast' describe the blinking speed. Note that
+some color animations are very similar in appearance.
+
+| Function | Appearance |
+|----------|---------|
+| `asus_logo_01` | medium blinking with fading from full transparent to full opaque and back, long pause at full opaque, sets color to black |
+| `det_on_off` | medium blinking with fading from base color to black |
+| `hud_hit_mark` | slow blinking with fading from full opaque to full transparent, instant jump to full opaque, sets color to red |
+| `hud_target` | sets color to black |
+| `intro_1` | slow blinking from black to full transparent, long pause at black |
+| `map_spot_rel` | fast blinking between full opaque and full transparent, sets color to black |
+| `map_spot_secrets` | low FPs style medium blinking from full transparent to full opaque, sets color to black |
+| `mm_flicker_01` | slow blinking between full opaque and full transparent, sets color to black |
+| `mm_flicker_02` | very slow blinking between full opaque and full transparent, sets color to black |
+| `monster_claws` | fast blinking with fading from full opaque to full transparent, instant jump to full opaque, sets color to red |
+| `pri_a28_phrase_2` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
+| `ui_blinking_1` | medium blinking with fading between full opaque and half transparent + black color, small color pulse at highest transparency |
+| `ui_btn_hint` | medium blinking with fading from full transparent to full opaque, instant jump to full transparent, sets color to black |
+| `ui_claws_animation` | ??? |
+| `ui_fast_blinking_alpha` | fast blinking with fading effect from opaque to half transparent, instant jump to full opaque |
+| `ui_medium_blinking_alpha` | medium blinking with fading effect from opaque to half transparent, instant jump to full opaque |
+| `ui_slow_blinking_alpha` | slow blinking with fading effect from opaque to half transparent, instant jump to full opaque |
+| `ui_slow_blinking` | medium blinking with fading effect between opaque and half transparent + black color |
+| `ui_too_slow_blinking` | slow blinking with fading effect between opaque and half transparent + black color |
+| `ui_too_slow_blinking_1` | slow blinking with fading effect between half transparent and almost full transparent |
+| `ui_main_msgs` | ??? |
+| `ui_main_msgs_short` | slow blinking with fading effect from opaque to full transparent, instant jump to full opaque |
+| `ui_map_area_anim` | medium blinking with fading effect from full transparent to opaque, instant jump to full transparent |
+| `ui_minimap_enemy` | blinking that alternates between fading between opaque and full transparent and changing color brightness, sets color to red |
+| `ui_minimap_friend` | sets color to green |
+| `ui_minimap_neutral` | sets color to orange |
+| `ui_mm_mp_srvinfo` | medium blinking with dafing from full transparent to full opaque, instant jump to full transparent, sets color to black |
+| `ui_mp_chat` | VERY slow blinking with fading effect from opaque to full transparent while also fading color to black, instant jump to full opaque |
+| `ui_mp_award_reward` | slow blinking with fading from full opaque to full transparent, longer pause at full opaque |
+| `ui_mp_minimap_af_enemy` | blinking with fading between opaque and full transparent, short pause at full opaque, sets color to red |
+| `ui_mp_minimap_af_friend` | blinking with fading between opaque and full transparent, short pause at full opaque, sets color to green |
+| `ui_mp_minimap_af_neutral` | blinking with fading between opaque and full transparent, short pause at full opaque |
+| `ui_new_jobs` | ??? |
+| `ui_pda_contacts` | fast on/off blinking without a fading effect, every 5. on blink has a short pause |
+| `ui_tesk_description` | slow blinking with fading from full transparent to full opaque, longer pause at full opaque, sets color to black |
+| `ui_task_selected` | medium blinking with fading between blue and turquoise |
+| `new_task_highlight_00` | medium blinking with fading between almost full trnsparent and half transparent |
+| `tutor_rad_sign_clr` | medium blinking with fading between half transparent and full transparent, sets color to light blue |
+| `zat_a1_phrase_1` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
+| `zat_a1_phrase_2` | low FPS style slow blinking from full transparent to full opaque, long pause at full opaque |
 
 
 ### Hotkeys for Buttons
