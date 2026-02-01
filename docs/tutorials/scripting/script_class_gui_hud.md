@@ -539,8 +539,8 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetVTextAlignment(number)` | sets vertical text alignment, see chapter 'Fonts, Colors and Text Alignment' for reference |
 | `SetTextComplexMode(bool)` | if set to true, text continues on new line when reaching the border of a text UI element, also any formatting in the text will be considered |
 | `SetEllipsis(bool)` | if set to true, text that doesn't fit inside its text UI element will be cut off and replaced with "..". Only works if text complex mode is set to false! |
-| `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the height of a text block |
-| `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of a text block |
+| `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the width of the text block |
+| `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of the text block |
 
   
 ### Buttons
@@ -647,7 +647,7 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 
 | Function | Purpose |
 |----------|---------|
-| `SetVertScroll(bool)` | if set to true, scrolling the combobox is enabled CHECK!!! |
+| `SetVertScroll(bool)` | controls whether the scrollbar is always visible even if there is nothing to scroll |
 | `SetListLength(number)` | sets the amount of elements in the combobox, receives an integer |
 | `CurrentID()` | returns the ID of the currently selected combobox item as a number |
 | `disable_id(number)` | disables the combobox item with the specified ID, receives ID (integer) |
@@ -657,7 +657,7 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `GetText()` | returns the text that's currently shown in the selection window |
 | `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID as an integer |
 | `ClearList()` | removes all combobox entries and the text in the selection window |
-| `SetCurrentOptValue()` | updates the combobox items and their values with current options value CHECK!!! |
+| `SetCurrentOptValue()` | updates the combobox items and their values with current engine options value, usable when the UI element is bound to an engine option, see chapter 'CUIOptionsItem' for reference |
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
 | `SetCurrentIdx()` | returns the ID of the selected combobox item as a number |
 
@@ -763,15 +763,15 @@ CMainMenu:
 # UI Info XML File Structure
 
 As mentioned in the beginning, a GUI works with a file that describes its UI elements. This information is stored in an XML file and has a tree like
-node structure with branches and subbranches. In general every UI element can be described with a number of certain parameters but none of them are
-mandatory. "Then why use them in the first place?" Well, every time you create a UI element the engine executes a bunch of code to read all the stored
-info, whether or not you actually store any parameters. If instead you decided to set all these parameters in scripts your code would:
+node structure with branches and subbranches. In general every UI element can be described with a number of certain parameters (also called attributes)
+but none of them are mandatory. "Then why use them in the first place?" Well, every time you create a UI element the engine executes a bunch of code to
+read all the stored info, whether or not you actually store any attributes. If instead you decided to set all these attributes in scripts your code would:
 
 1. get bloated with a lot of functions in order to get your GUI look and behave the way you want it to
 
 2. take longer to build the GUI because it has to execute all that code beside the engine trying to do the exact same thing for you
 
-So storing basic parameters in the xml file makes your code more efficient on the one hand and keeps it shorter/cleaner on the other. Apart from that storing
+So storing basic attributes in the xml file makes your code more efficient on the one hand and keeps it shorter/cleaner on the other. Apart from that storing
 UI element info externally is useful if you need a certain UI element with a prefabricated structure many times in your GUI e.g. check buttons. instead
 of writing the same code over and over again you can simply create a template and read its structure from the XML file.
 
@@ -809,11 +809,12 @@ an error in your file. Let's add some data:
 </w>
 ```
 
-Here we describe the size and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the upper left corner
-of the window, `width` and `height` tell us that the window expands 300 px to the right and 200 px downwards (in the virtual screen space with dimensions
-1024x768). If these numbers were negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have
-defined a texture for the window by storing the texture path. This is where the `stretch` parameter comes into play. It controls whether the texture will
-scale with the window dimensions accordingly (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
+The entries `x`, `y`, `width` and `height` are the attributes. Their value is always noted in quotation marks `""`. In this example we describe the size
+and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the upper left corner of the window, `width`
+and `height` tell us that the window expands 300 px to the right and 200 px downwards (in the virtual screen space with dimensions 1024x768). If these
+numbers were negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture
+for the window by storing the texture path. This is where the `stretch` attribute comes into play. It controls whether the texture will scale with the
+window dimensions accordingly (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
 
 The info structure shown above can be used in your script as follows:
 
@@ -949,17 +950,17 @@ XML
 This allows you to replace one of the texture references with a custom one if desired.
 
 
-## XML Parameters for UI Elements
+## XML Attributes for UI Elements
 
-These lists contain all XML info parameters for each UI element. Additionally all child nodes with a prefined tag name that are only usable with certain
+These lists contain all XML info attributes for each UI element. Additionally all child nodes with a prefined tag name that are only usable with certain
 UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete or incorrect.
 
-Hint: the most parameters are boolean and accept 0 or 1 as their value.
+Hint: the most attributes are boolean and accept 0 or 1 as their value.
 
 
 ### Commonly Used
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `x`/`y` | x/y position of the UI element on screen |
 | `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
@@ -972,14 +973,14 @@ Hint: the most parameters are boolean and accept 0 or 1 as their value.
 | Tag Name | Purpose |
 |----------|---------|
 | `texture` | stores the texture reference used by the UI element, accepts a texture path, texture ID or texture child nodes |
-| `texture_offset` | stores a texture offset position with parameters `x` and `y` |
+| `texture_offset` | stores a texture offset position with attributes `x` and `y` |
 | `text` | stores text formatting info |
 | `window_name` | stores the ID used to register an interactive UI element using `Register()` |
 
 
 ### Textures
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `heading` | if set to 1 texture rotation is enabled |
 | `heading_angle` | sets the initial rotation angle in radians of the texture |
@@ -998,7 +999,7 @@ Hints:
 
 ### Text
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `font` | sets the font of the text: e.g. `letterica16` |
 | `r`/`g`/`b`/`a` | red/green/blue/alpha color channel: range 0 - 255 |
@@ -1010,7 +1011,7 @@ Hints:
 
 ### Buttons
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `frame_mode` | if set to 1 the button will work in frameline mode |
 | `vertical` | apparently unused |
@@ -1051,7 +1052,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Scrollview
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `right_ident` | creates an empty space on the left side scrollview content |
 | `left_ident` | creates an empty space on the right side scrollview content |
@@ -1072,7 +1073,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Trackbars
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `is_integer` | controls whether the value set with the trackbar is an integer |
 | `invert` | if set to 1 moving the slider to the left increases the value |
@@ -1081,7 +1082,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Progressbars
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `horz` | if set to one the progressbar will work in horizontal mode |
 | `mode` | sets the work mode of the progressbar, accepts `horz`, `vert`, `back`, `down` |
@@ -1114,7 +1115,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Listboxes
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `item_height` | height of the listbox items |
 
@@ -1128,7 +1129,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Comboboxes
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `item_height` | height of the listbox items |
 | `list_length` | sets the number of item in the combobox |
@@ -1145,7 +1146,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Editboxes
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
 | `max_symb_count` | maximum number of symbols allowed |
 | `num_only` | allows only numbers |
@@ -1156,22 +1157,26 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 ### Tabcontrol
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
-| `button` | ??? |
-| `radio` | ??? |
-| `id` | ??? |
-| `` |  |
+| `radio` | controls whether `CUITabButton` or a `CUIRadioButton` is created |
+| `id` | the ID assigned to the button |
+
+**Child Nodes**
+
+| Tag name | Purpose |
+|----------|---------|
+| `button` | creates a `CUITabButton` instance, store multiple node entries to create multiple tab buttons, internally a `CUI3tButton` is created for visual representation of the tab button so you can store corresponding UI element info attributes |
 
 
 ### Animated Static
 
 The `CUIAnimatedStatic` uses textures that store the individual animation frames.
 
-| Parameter | Purpose |
+| Attribute | Purpose |
 |-----------|---------|
-| `x_offset` | x offset position relative to parent UI element CHECK!!! |
-| `y_offset` | y offset position relative to parent UI element CHECK!!! |
+| `x_offset` | x offset position relative to parent UI element |
+| `y_offset` | y offset position relative to parent UI element |
 | `frames` | number of frames the animation consists of |
 | `duration` | time the animation lasts in ms |
 | `columns` | number of columns the frame texture has |
@@ -1181,12 +1186,38 @@ The `CUIAnimatedStatic` uses textures that store the individual animation frames
 | `autoplay` | if set to one, the anim will start playing automatically when creating the anim static |
 
 
+### Optionsitem
+
+A `CUIOptionsItem` was an important part of many UI elements such as `CUICheckButton`, `CUITabControl`, `CUIEditBox`, `CUITrackBar` and `CUIComboBox`.
+It is used to bind a UI element to an engine option. This way you can execute console commands directly by interacting with a UI element. Be aware That
+this is more of a legacy feature. With all the engine functions that are exposed to Lua we can easily reproduce the same behavior entirely in scripts!
+
+To make use of this feature, you have to add the child node `options_item` to the info node of the UI element that is supposed to use it:
+
+```XML
+trackbar_time x="10" y="10" width="70" height="20" stretch="1">
+	<options_item entry="time_factor" group="sleep" depend="runtime"/>
+</trackbar_time>
+```
+
+In this example the trackbar will change the game's time factor on runtime when changing its value.
+
+| Attribute | Purpose |
+|-----------|---------|
+| `entry` | name of a console command cvar |
+| `group` | an ID (string) the UI element is assigned to, you can assign UI elements that control similar options to the same group, only important on the engine side for efficient options handling |
+| `depend` | controls how the game reacts to the UI element interaction, accepts `vid`, `snd`, `restart` and `runtime` |
+| `vid` | restarts the game's sound output system |
+| `snd` | restarts the game's video render system |
+| `restart` | unused, apparently used to restart the core engine systems |
+| `runtime` | applies new value on UI element interaction |
+
 
 # Useful Stuff, Tipps and Tricks
 
 Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier.
 
-### Mouse Specific Functions
+## Mouse Specific Functions
 
 **IsCursorOverWindow()**
 
@@ -1206,7 +1237,7 @@ self:ShowDialog()
 SetCursorPosition(pos)
 ```
 
-### Better than game.translate_string
+## Better than game.translate_string
 
 **SetTextST()**
 
@@ -1227,7 +1258,28 @@ self.text_wnd:SetTextST("some_string_id")
 This not only more compact but also more a little faster in terms of execution time.
 
 
-### Fonts, Colors and Text Alignment
+## Keep Windows in Frame
+
+Imagine you want a window to appear at or around the cursor position. How do you make sure it always appears within a given frame without adding
+extra code that handles this check? Well, there is an engine function that does exactly that:
+
+```LUA
+self.ref -- reference window, can also be the GUI instance itself (self)
+self.wnd -- some window you want to position around the cursor within the frame of the reference window
+
+local window_rect = Frect()
+self.ref:GetAbsoluteRect(window_rect)
+
+local border = 10 -- safety dead zone width within window_rect
+local dx16pos = 100 -- correction offset for 16x9 screen resolution
+
+FitInRect(self.wnd, window_rect, border, dx16pos)
+```
+
+This function is commonly used to position UI elements such as hint windows correctly.
+
+
+## Fonts, Colors and Text Alignment
 
 You can access various fonts from scripts using these global functions:
 
@@ -1302,10 +1354,10 @@ ClrSetB(number, number)
 ```
 
 
-### Color Animations
+## Color Animations
 
 Color animations are useful to create dynamic color effects like fades and blinking effects. Color animations can be used with `CUIStatic` instances.
-You can a color animation using the following code:
+You can set a color animation using the following code:
 
 ```Lua
 self.background:SetColorAnimation("ui_slow_blinking", 9, 1000) -- color anim name, flag value, start delay in ms
@@ -1318,8 +1370,8 @@ These are all color animation flags you can set:
 - `LA_TEXTCOLOR` = 4
 - `LA_TEXTURECOLOR` = 8
 
-Setting the flags your color anim needs works by summing up the flag values. In the example above the color anim receives the flags `LA_CYCLIC` and
-`LA_TEXTURECOLOR`: 1 + 8 = 9. Setting `LA_TEXTCOLOR` or `LA_TEXTURECOLOR` is absolutely necessary for the color anim to work, otherwise the game
+Setting the flags that your color anim needs works by summing up the flag values. In the example above the color anim receives the flags `LA_CYCLIC`
+and `LA_TEXTURECOLOR`: 1 + 8 = 9. Setting `LA_TEXTCOLOR` or `LA_TEXTURECOLOR` is absolutely necessary for the color anim to work, otherwise the game
 crashes! The number 1000 means that the color animation starts 1000 ms after the anim has been set. If your `CUIStatic` instance displays text using
 `self.background:TextControl():SetText()` you can use the flag `LA_TEXTCOLOR` to animate the text color.
 
@@ -1372,10 +1424,10 @@ some color animations are very similar in appearance.
 | `zat_a1_phrase_2` | low FPS style slow blinking from full transparent to full opaque, long pause at full opaque |
 
 
-### Hotkeys for Buttons
+## Hotkeys for Buttons
 
 It is possible to assign a keybind to a `CUI3tButton` as a hotkey. When pressing the hotkey the button is triggered as if you pressed it using
-the mouse. In your UI element info XML file add the following parameter to your button info:
+the mouse. In your UI element info XML file add the following attribute to your button info:
 
 ```XML
 <some_btn ... accel="kSpace"> -- assigns spacebar as hotkey
@@ -1384,7 +1436,7 @@ the mouse. In your UI element info XML file add the following parameter to your 
 ```
 
 The assigned key needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. You can even assign a secondary hotkey using the
-parameter `accel_ext`. Then in your script add the following line to `OnKeyboard()`:
+attribute `accel_ext`. Then in your script add the following line to `OnKeyboard()`:
 
 ```LUA
 function MyGUI:OnKeyboard(key, keyboard_action)
@@ -1401,7 +1453,7 @@ end
 matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen.
 
 
-### Changing Files on Runtime
+## Changing Files on Runtime
 
 Besides script files it is possible to edit certain GUI related files and see the changes in-game WITHOUT having to restart it. Just save the
 file and reload the game/save. This works as long as you edit the file content, NOT the file name or its location. Such files include:
