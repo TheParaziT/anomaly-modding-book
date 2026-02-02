@@ -436,7 +436,7 @@ In this example an info window for items is created. You pass your GUI instance 
 have to pass in general depends on the UI element you use.
 
 
-  
+
 ## Control of UI Elements
 
 Once you have created your UI elements you want to control them, change their appearance, change numbers and text, show or hide certain things, make them become alive so to speak.
@@ -509,8 +509,8 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetTextureRect(Frect)` | sets position and size of the area containing the texture, receives an Frect |
 | `GetTextureRect()` | returns Frect containing position and size info about the area containing the texture |
 | `SetStretchTexture(bool)` | controls whether or not a button texture will be stretched when button size is not equal to texture size |
-| `GetTextureColor()` | returns color of a texture as a number, default value resembles A = R = G = B = 255 |
 | `SetTextureColor(number)` | sets color of a texture, receives a number |
+| `GetTextureColor()` | returns color of a texture as a number, default value resembles A = R = G = B = 255 |
 | `EnableHeading(bool)` | enabled a static to be rotated |
 | `SetHeading(number)` | sets rotation of the UI element in radians |
 | `GetHeading()` | returns rotation of the UI element in radians |
@@ -556,9 +556,9 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 
 | Function | Purpose |
 |----------|---------|
-| `AddWindow(CUIWindow*, bool)`	| adds a UI element to the scrollview, the boolean flag controls the auto delete state of that UI element. UI elements are added vertically if not set otherwise in XML file |
-| `RemoveWindow(CUIWIndow*)` | removes a UI element from the scrollview |
-| `Clear()` | removes all UI elements from the scrollview |
+| `AddWindow(CUIWindow*, bool)`	| adds an item to the scrollview, the boolean flag controls the auto delete state of that UI element |
+| `RemoveWindow(CUIWIndow*)` | removes an item from the scrollview |
+| `Clear()` | removes all item from the scrollview |
 | `ScrollToBegin()` | scrolls to the top of the scrollview |
 | `ScrollToEnd()` | scrolls to the bottom of the scrollview |
 | `GetMinScrollPos()` | returns the lowest scroll position as a number |
@@ -590,16 +590,16 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 
 | Function | Purpose |
 |----------|---------|
-| `SetProgressPos(number)` | sets the current position of the progressbar, receives a number between 0 and 1 |
+| `SetProgressPos(number)` | sets the current position of the progressbar |
 | `GetProgressPos()` | returns current position of the progressbar as a number |
-| `SetRange(number, number)` | sets min an max values of a progressbar |
+| `SetRange(number, number)` | sets possible min an max values of a progressbar |
 | `GetRange_min()` | returns min value the progressbar can display as a number |
 | `GetRange_max()` | returns max value the progressbar can display as a number |
 | `ShowBackground(bool)` | if set to true the background texture behind the actual bar will be visible |
 | `SetColor(number)` | sets the color of the progressbar |
 | `UseColor(bool)` | controls whether the progressbar uses different colors |
 | `SetMinColor(number)` | sets the color displayed at the lowest progressbar value |
-| `SetMiggleColor(number)` | sets the color displayed when the progressbar value reaches 50% |
+| `SetMiddleColor(number)` | sets the color displayed when the progressbar value reaches 50% |
 | `SetMaxColor(number)` | sets the color displayed at the hightest progressbar value |
 | `GetProgressStatic()` | returns the `CUIStatic` that resembles the actual bar |
 
@@ -621,11 +621,11 @@ To be used with `CUIListBoxItem()` which creates a listbox item that can be adde
 | `RemoveAll()` | removes all items of the listbox |
 | `GetSize()` | returns listbox item count as a number |
 | `GetSelectedItem()` | returns the `CUIListBoxItem` instance of the selected listbox item or nil if no item is selected |
+| `SetSelectedIndex(number)` | sets listbox item with the specified ID as selected, receives ID (number) |
 | `GetSelectedIndex()` | returns ID of the selected listbox item or 4294967295 if no item is selected |
-| `SetSelectedIndex(number)` | sets listbox item with the specified ID as selected, receives ID as a number |
-| `SetItemHeight(number)` | sets height of each listbox item, receives the height as number |
+| `SetItemHeight(number)` | sets height of each listbox item, receives height (number) |
 | `GetItemHeight()` | return height of each listbox item as a number |
-| `GetItemByIndex(number)` | returns the `CUIListBoxItem` instance of the listbox item with the specified ID or nil if no item with this ID exists, receives ID as number |
+| `GetItemByIndex(number)` | returns the `CUIListBoxItem` instance of the listbox item with the specified ID or nil if no item with this ID exists, receives ID (number) |
 | `GetItem(number)` | generalized version of `GetItemByIndex()`, can also access other elements of the UI object e.g. the `CUIScrollView` instance the listbox is made of |
 | `RemoveItem(CUIWindow*)` | removes a `CUIListBoxItem` from the listbox, receives a `CUIListBoxItem` instance |
 | `AddTextItem(string)` | adds an item to the listbox, receives a string ID or a default string |
@@ -636,8 +636,8 @@ These methods are called on a `CUIListBoxItem` instance.
 | Function | Purpose |
 |----------|---------|
 | `GetTextItem()` | returns the `CUITextWnd` instance of the listbox item |
-| `AddTextField(string, number)` | adds a `CUITextWindow` instance to the listbox item that displays text, receives text as a string and width as a number |
-| `AddIconField(number)` | adds a `CUIStatic` instance to the listbox item, can be used to display textures, images etc., receives width as a number |
+| `AddTextField(string, number)` | adds a `CUITextWindow` instance to the listbox item that displays text, receives text (string) and width (number) |
+| `AddIconField(number)` | adds a `CUIStatic` instance to the listbox item, can be used to display textures, images etc., receives width (number) |
 | `SetTextColor(number)` | sets color of the text displayed in the listbox item, receives a number |
 
 
@@ -655,7 +655,7 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `AddItem(string, number)` | adds a combobox item to the combobox, receives displayed text (string) and options value (integer) |
 | `SetText(string)` | sets the text in the selection window, receives text as a string |
 | `GetText()` | returns the text that's currently shown in the selection window |
-| `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID as an integer |
+| `GetTextOf(number)` | returns the text displayed on the combobox item with the specified ID, returns `""` if ID is greater than item count, receives ID (integer) |
 | `ClearList()` | removes all combobox entries and the text in the selection window |
 | `SetCurrentOptValue()` | updates the combobox items and their values with current engine options value, usable when the UI element is bound to an engine option, see chapter 'CUIOptionsItem' for reference |
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
@@ -760,7 +760,7 @@ CMainMenu:
 - `MAIN_MENU_RELOADED = 76`
 
 
-# UI Info XML File Structure
+# The UI Info XML File
 
 As mentioned in the beginning, a GUI works with a file that describes its UI elements. This information is stored in an XML file and has a tree like
 node structure with branches and subbranches. In general every UI element can be described with a number of certain parameters (also called attributes)
@@ -772,8 +772,8 @@ read all the stored info, whether or not you actually store any attributes. If i
 2. take longer to build the GUI because it has to execute all that code beside the engine trying to do the exact same thing for you
 
 So storing basic attributes in the xml file makes your code more efficient on the one hand and keeps it shorter/cleaner on the other. Apart from that storing
-UI element info externally is useful if you need a certain UI element with a prefabricated structure many times in your GUI e.g. check buttons. instead
-of writing the same code over and over again you can simply create a template and read its structure from the XML file.
+UI element info externally is useful if you need a certain UI element with a predefined structure many times in your GUI e.g. check buttons. Instead of writing
+the same code over and over again you can simply create a template and read its structure from the XML file.
 
 
 ## The Basic Structure
@@ -813,8 +813,8 @@ The entries `x`, `y`, `width` and `height` are the attributes. Their value is al
 and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the upper left corner of the window, `width`
 and `height` tell us that the window expands 300 px to the right and 200 px downwards (in the virtual screen space with dimensions 1024x768). If these
 numbers were negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture
-for the window by storing the texture path. This is where the `stretch` attribute comes into play. It controls whether the texture will scale with the
-window dimensions accordingly (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
+for the window by storing the texture path. This is where the `stretch` attribute comes into play. It controls whether the texture will scale according
+to the window dimensions (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
 
 The info structure shown above can be used in your script as follows:
 
@@ -837,8 +837,8 @@ that the base tag `<w>` is never included in any path. Thats's all, nothing as s
 	</main_wnd>
 	
 	<btn_settings x="75" y="3" width="68" height="24" stretch="1">
-		<texture>ui_button_ordinary</texture> -- button texture
-		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/> -- button text info
+		<texture>ui_button_ordinary</texture>
+		<text font="letterica16" r="250" g="255" b="255" a="255" align="c" vert_align="c"/>
 	</btn_settings>
 </w>
 ```
@@ -853,7 +853,7 @@ self.btn_start = xml:Init3tButton("main_wnd:btn_start", self.main)
 self.btn_settings = xml:Init3tButton("btn_settings", self.main)
 ```
 
-The syntax of the UI info path generally follows this pattern: `[tag]:[child tag]:[child child tag]...`. Since `main_wnd` is the parent info tag of 
+The syntax of the UI info path generally follows this pattern: `tag:child_tag:child_child_tag:...`. Since `main_wnd` is the parent info tag name of 
 `btn_start` the info path is `main_wnd:btn_start`. If you pass an incorrect path that leads to nowhere the game crashes with a message saying that
 no node could be found.
 
@@ -873,7 +873,7 @@ An info tree structure scheme can look like this:
 			btn
 			text
 			text
-		wnd
+	wnd
 		wnd
 			trackbar
 </w>
@@ -927,11 +927,11 @@ Here is an excerpt of the file *ui_common.xml* that stores the button texture re
 </w>
 ```
 
-As you can see a texture description entry starts with the node tage name `file` followed by the path to the texture it describes. The file actually stores 4
-different button texture references in *ui_common.dds*. Why 4? They resemble the 4 button states disabled/enabled/hovered/pressed. Yes, this is handled with
-different textures, not shaders or anything else. Interesting, isn't it? Don't be confused by the `_d`/`_e`/`_h`/`_t` suffixes. These are necessary
-for the engine to handle the textures properly. For your UI info XML file it's enough to store the "base name" of the textures -> `ui_button_ordinary`.
-But if you wanna store them explicitely you can use the following structure for your button info:
+As you can see a texture description entry starts with the node tage name `file` followed by the attibute `name` that stores the path to the texture
+it describes. The file actually stores 4 different button texture references in *ui_common.dds*. Why 4? They resemble the 4 button states disabled/
+enabled/hovered/pressed. Yes, this is handled with different textures, not shaders or anything else. Interesting, isn't it? Don't be confused by the
+`_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the textures properly. For your UI info XML file it's enough to store the
+"base name" of the textures -> `ui_button_ordinary`. But if you wanna store them explicitely you can use the following structure for your button info:
 
 ```
 XML
@@ -947,32 +947,33 @@ XML
 </btn_start>
 ```
 
-This allows you to replace one of the texture references with a custom one if desired.
+This allows you to replace one of the texture references with a custom one if desired. To sum this chapter up: whenever you want to use a texture stored
+in a multi texture .dds file, you have to store its ID that is listed in the corresponding texture description XML file.
 
 
 ## XML Attributes for UI Elements
 
-These lists contain all XML info attributes for each UI element. Additionally all child nodes with a prefined tag name that are only usable with certain
+These lists contain all XML info attributes for each UI element. Additionally all child nodes with a predefined tag name that are only usable with certain
 UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete or incorrect.
 
-Hint: the most attributes are boolean and accept 0 or 1 as their value.
+Hint: most attributes are boolean flags and accept 0 or 1 as their value.
 
 
 ### Commonly Used
 
 | Attribute | Purpose |
 |-----------|---------|
-| `x`/`y` | x/y position of the UI element on screen |
+| `x`/`y` | x/y position of the UI element relative to its parent UI element, absolute screen position if parent is GUI class instance itself (`self`) |
 | `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
 | `height` | height of the UI element, how far it expands downwards, if value is <0 the window expands upwards |
 | `stretch` | if set to 1 the used texture will be scaled to fit the UI element size |
-| `alignment` | if used and set to "c" the window's reference point for positioning will move to its center |
+| `alignment` | if used and set to "c" the window's reference point for positioning will be to its center instead of the upper left corner |
 
 **Child Nodes**
 
 | Tag Name | Purpose |
 |----------|---------|
-| `texture` | stores the texture reference used by the UI element, accepts a texture path, texture ID or texture child nodes |
+| `texture` | stores the texture reference used by the UI element, accepts a texture path, texture ID and texture child nodes |
 | `texture_offset` | stores a texture offset position with attributes `x` and `y` |
 | `text` | stores text formatting info |
 | `window_name` | stores the ID used to register an interactive UI element using `Register()` |
@@ -984,7 +985,7 @@ Hint: the most attributes are boolean and accept 0 or 1 as their value.
 |-----------|---------|
 | `heading` | if set to 1 texture rotation is enabled |
 | `heading_angle` | sets the initial rotation angle in radians of the texture |
-| `shader` | stores the shader path `hud\p3d`, use with textures on a 3D model |
+| `shader` | stores the shader path `hud\p3d`, use with textures attached to a 3D model |
 | `light_anim` | stores the name of a color animation |
 | `la_cyclic` | if set to 1 the color anim will be played on repeat |
 | `la_text` | if set to 1 the color anim affects text |
@@ -1016,8 +1017,8 @@ Hints:
 | `frame_mode` | if set to 1 the button will work in frameline mode |
 | `vertical` | apparently unused |
 | `hint` | stores a string ID for text to be displayed when hovering over the button |
-| `accel` | primary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
-| `accel_ext` | secondary key assigned to a button to tigger it by keypress, accepts a string like `kSPACE` or `kG` |
+| `accel` | primary key assigned to a button to tigger it by keypress (hotkey feature), accepts a string like `kSPACE` or `kG` |
+| `accel_ext` | secondary key assigned to a button to tigger it by keypress (hotkey feature), accepts a string like `kSPACE` or `kG` |
 
 Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys for Buttons' for reference.
 
@@ -1058,10 +1059,10 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `left_ident` | creates an empty space on the right side scrollview content |
 | `top_indent` | creates an empty space above the first item in the scrollview |
 | `bottom_indent` | creates an empty space below the last item in the scrollview |
-| `vert_interval` | size of the vertical gab between scrollview items |
+| `vert_interval` | sets the size of the vertical gab between scrollview items |
 | `inverse_dir` | if set to 1 the scrollview starts at the bottom item position |
 | `scroll_profile` | sets the style of the scrollview control elements, accepts a node tag name, see *scroll_bar.xml* for reference |
-| `flip_vert` | inverts the scrollview item order if set to 1 |
+| `flip_vert` | if set to 1 the scrollview item order is inverted |
 | `always_show_scroll` | if set to 1 the scrollbar is always visible even if there is nothing to scroll |
 | `can_select` | controls whether the scrollview content is selectable, internal flag for `CUIListBox` and `CUICombobox` |
 
@@ -1075,7 +1076,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 | Attribute | Purpose |
 |-----------|---------|
-| `is_integer` | controls whether the value set with the trackbar is an integer |
+| `is_integer` | controls whether the value set with the trackbar is treated as an integer |
 | `invert` | if set to 1 moving the slider to the left increases the value |
 | `step` | sets the value increment/decrement when moving the slider on the trackbar |
 
@@ -1084,9 +1085,9 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 | Attribute | Purpose |
 |-----------|---------|
-| `horz` | if set to one the progressbar will work in horizontal mode |
+| `horz` | if set to 1 the progressbar will work in horizontal mode |
 | `mode` | sets the work mode of the progressbar, accepts `horz`, `vert`, `back`, `down` |
-| `min`/`max`/`pos` | sets the min/max possible and initial value, range 0 - 1 |
+| `min`/`max`/`pos` | sets the min/max possible and initial value |
 | `inertion` | controls how fast the progressbar reacts to a (sudden) value change, range 0 - 1 |
 
 **Child Nodes**
@@ -1094,9 +1095,9 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | Tag name | Purpose |
 |----------|---------|
 | `progress` | stores info for a `CUIProgressBar` |
-| `background` | stores info about the background of a `CUIProgressBar` |
+| `background` | stores texture info about the background of a `CUIProgressBar` |
 | `min_color` | stores a color for the lowest progressbar value |
-| `mddle_color` | stores a color for the middle progressbar value |
+| `mddle_color` | stores a color for when the progressbar value reaches 50% |
 | `max_color` | stores a color for the hightest progressbar value |
 
 **Example**
@@ -1124,7 +1125,8 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | Tag name | Purpose |
 |----------|---------|
 | `font` | stores text font info of a `CUIListBox` and `CUICombobox` |
-| `properties_box` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts the params `complex_mode` and `line_wrap` |
+| `properties_box` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts the child node `list` |
+| `list` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts params `complex_mode` and `line_wrap` |
 
 
 ### Comboboxes
@@ -1159,7 +1161,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 
 | Attribute | Purpose |
 |-----------|---------|
-| `radio` | controls whether `CUITabButton` or a `CUIRadioButton` is created |
+| `radio` | controls whether a `CUITabButton` or a `CUIRadioButton` is created |
 | `id` | the ID assigned to the button |
 
 **Child Nodes**
@@ -1188,7 +1190,7 @@ The `CUIAnimatedStatic` uses textures that store the individual animation frames
 
 ### Optionsitem
 
-A `CUIOptionsItem` was an important part of many UI elements such as `CUICheckButton`, `CUITabControl`, `CUIEditBox`, `CUITrackBar` and `CUIComboBox`.
+A `CUIOptionsItem` was/is an important part of many UI elements such as `CUICheckButton`, `CUITabControl`, `CUIEditBox`, `CUITrackBar` and `CUIComboBox`.
 It is used to bind a UI element to an engine option. This way you can execute console commands directly by interacting with a UI element. Be aware That
 this is more of a legacy feature. With all the engine functions that are exposed to Lua we can easily reproduce the same behavior entirely in scripts!
 
@@ -1221,7 +1223,7 @@ Finally I'd like to share some info about a few small QoL features, useful funct
 
 **IsCursorOverWindow()**
 
-This is called as a method of a UI element and returns a bool:
+This is called as a method of a UI element and returns a boolean value:
 
 ```LUA
 local over_wnd = self.wnd:IsCursorOverWindow()
@@ -1255,10 +1257,10 @@ With `SetTextST()` you can skip the string ID to string conversion and instead p
 self.text_wnd:SetTextST("some_string_id")
 ```
 
-This not only more compact but also more a little faster in terms of execution time.
+This not only more compact but also a slightly faster in terms of execution time.
 
 
-## Keep Windows in Frame
+## Keeping Windows in Frame
 
 Imagine you want a window to appear at or around the cursor position. How do you make sure it always appears within a given frame without adding
 extra code that handles this check? Well, there is an engine function that does exactly that:
@@ -1334,23 +1336,25 @@ local clr = GetARGB(123, 123, 123, 123) -- Alpha, Red, Green, Blue (range: 0 - 2
 
 This function converts your A,R,G,B values to a single number or in other words maps the 8 bit color channel values to a D3DCOLOR. Setting
 a color works best for text but it works for textures too. When using a plain white texture the color changes will be visible the most. For
-darker textures changing the color has a similar effect to changing the texture's Hue.
-If you want to get or set a certain color value of a given color you can use these functions:
+darker textures changing the color has a similar effect to changing the texture's Hue. If you want to get or set a certain color value of a
+given color you can use these functions:
 
 ```Lua
+local clr = GetARGB(255, 0, 0, 180)
+
 -- getters, pass a D3DCOLOR value
 -- returns a color channel value (range 0 - 255)
-ClrGetA(number)
-ClrGetR(number)
-ClrGetG(number)
-ClrGetB(number)
+local A = ClrGetA(number)
+local R = ClrGetR(number)
+local G = ClrGetG(number)
+local B = ClrGetB(number)
 
 -- setters, pass a D3DCOLOR value and the value of the color channel you want to change (range 0 - 255)
 -- returns a D3DCOLOR value
-ClrSetA(number, number)
-ClrSetR(number, number)
-ClrSetG(number, number)
-ClrSetB(number, number)
+clr = ClrSetA(number, number)
+clr = ClrSetR(number, number)
+clr = ClrSetG(number, number)
+clr = ClrSetB(number, number)
 ```
 
 
@@ -1382,27 +1386,34 @@ some color animations are very similar in appearance.
 
 | Function | Appearance |
 |----------|---------|
-| `asus_logo_01` | medium blinking with fading from full transparent to full opaque and back, long pause at full opaque, sets color to black |
+| `asus_logo_01` | fading from full transparent to full opaque and back, long pause at full opaque, sets color to black |
+| `buy_menu_info` | fading from full transparent to full opaque and back, pause at full opaque, sets color to black |
+| `credits_vis` | slow fading between full transparent to full opaque, short pause at full opaque, sets color to black |
+| `credits_vis_sub` | similar to `credits_vis` |
+| `credits_head` | medium blinking with fading between full transparent and full opaque, instant jump to full transparent, sets color to black |
 | `det_on_off` | medium blinking with fading from base color to black |
+| `flare_lanim_idle` | fading from orange to red to base color to black |
+| `flare_lanim_showing` | fading from black to base color to orange to yellow |
 | `hud_hit_mark` | slow blinking with fading from full opaque to full transparent, instant jump to full opaque, sets color to red |
 | `hud_target` | sets color to black |
 | `intro_1` | slow blinking from black to full transparent, long pause at black |
+| `la_hud1` | medium blinking between red to base color |
 | `map_spot_rel` | fast blinking between full opaque and full transparent, sets color to black |
 | `map_spot_secrets` | low FPs style medium blinking from full transparent to full opaque, sets color to black |
 | `mm_flicker_01` | slow blinking between full opaque and full transparent, sets color to black |
 | `mm_flicker_02` | very slow blinking between full opaque and full transparent, sets color to black |
 | `monster_claws` | fast blinking with fading from full opaque to full transparent, instant jump to full opaque, sets color to red |
+| `outro_la` | slow blinking from full transparent to full opaque, sets color to black |
 | `pri_a28_phrase_2` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
 | `ui_blinking_1` | medium blinking with fading between full opaque and half transparent + black color, small color pulse at highest transparency |
 | `ui_btn_hint` | medium blinking with fading from full transparent to full opaque, instant jump to full transparent, sets color to black |
-| `ui_claws_animation` | ??? |
 | `ui_fast_blinking_alpha` | fast blinking with fading effect from opaque to half transparent, instant jump to full opaque |
 | `ui_medium_blinking_alpha` | medium blinking with fading effect from opaque to half transparent, instant jump to full opaque |
 | `ui_slow_blinking_alpha` | slow blinking with fading effect from opaque to half transparent, instant jump to full opaque |
 | `ui_slow_blinking` | medium blinking with fading effect between opaque and half transparent + black color |
 | `ui_too_slow_blinking` | slow blinking with fading effect between opaque and half transparent + black color |
 | `ui_too_slow_blinking_1` | slow blinking with fading effect between half transparent and almost full transparent |
-| `ui_main_msgs` | ??? |
+| `ui_main_msgs` | slow blinking with very slow fading from full opaque to full transparent, instant jump to full opaque, short pause at full opaque |
 | `ui_main_msgs_short` | slow blinking with fading effect from opaque to full transparent, instant jump to full opaque |
 | `ui_map_area_anim` | medium blinking with fading effect from full transparent to opaque, instant jump to full transparent |
 | `ui_minimap_enemy` | blinking that alternates between fading between opaque and full transparent and changing color brightness, sets color to red |
@@ -1414,11 +1425,13 @@ some color animations are very similar in appearance.
 | `ui_mp_minimap_af_enemy` | blinking with fading between opaque and full transparent, short pause at full opaque, sets color to red |
 | `ui_mp_minimap_af_friend` | blinking with fading between opaque and full transparent, short pause at full opaque, sets color to green |
 | `ui_mp_minimap_af_neutral` | blinking with fading between opaque and full transparent, short pause at full opaque |
-| `ui_new_jobs` | ??? |
 | `ui_pda_contacts` | fast on/off blinking without a fading effect, every 5. on blink has a short pause |
 | `ui_tesk_description` | slow blinking with fading from full transparent to full opaque, longer pause at full opaque, sets color to black |
 | `ui_task_selected` | medium blinking with fading between blue and turquoise |
 | `new_task_highlight_00` | medium blinking with fading between almost full trnsparent and half transparent |
+| `test_la_color` | medium blinking with fading between half transparent + base color and full opaque + blue |
+| `test_la_fade_in` | fading from half transparent + black color to full opaque to base color |
+| `test_la_fade_in_long` | fading from full opaque + black color to full transparent, instant jump to full opaque + black, longer pause at full transparent |
 | `tutor_rad_sign_clr` | medium blinking with fading between half transparent and full transparent, sets color to light blue |
 | `zat_a1_phrase_1` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
 | `zat_a1_phrase_2` | low FPS style slow blinking from full transparent to full opaque, long pause at full opaque |
@@ -1441,16 +1454,17 @@ attribute `accel_ext`. Then in your script add the following line to `OnKeyboard
 ```LUA
 function MyGUI:OnKeyboard(key, keyboard_action)
 
-	local res = CUIScriptWnd.OnKeyboard(self,key,keyboard_action) -- catches the key input
+	local res = CUIScriptWnd.OnKeyboard(self, key, keyboard_action) -- catches the key input
 	
-	if res then -- optional check
-		...
-	end
+	if res then return end -- safety check to prevent potential crashes e.g. when a certain key press closes your GUI
+	
+	-- your code
 end
 ```
 
 `CUIScriptWnd.OnKeyboard(self,key,keyboard_action)` catches the key input and passes it to the button which has the hotkey assigned if the pressed key
-matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen.
+matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen. If the key press was indeed used by the
+engine the function returns `true`.
 
 
 ## Changing Files on Runtime
