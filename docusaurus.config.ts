@@ -176,7 +176,8 @@ const config: Config = {
         light: 'rgba(240, 240, 240, 0.9)',
         dark: 'rgba(50, 50, 50, 0.9)',
       },
-      config: {},
+      config: {
+      },
     },
 
     colorMode: {

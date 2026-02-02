@@ -293,7 +293,7 @@ if __name__ == "__main__":
 
 Данное действие можно сделать с помощью следующих программ
 
-### Via Texassemble
+### Via [Texassemble](https://github.com/microsoft/DirectXTex/wiki/Texassemble)
 
 ```bash
 texassemble cube -o cubemap.dds lobbyxpos.jpg lobbyxneg.jpg lobbyypos.jpg lobbyyneg.jpg lobbyzpos.jpg lobbyzneg.jpg
@@ -301,7 +301,7 @@ texassemble cube -o cubemap.dds lobbyxpos.jpg lobbyxneg.jpg lobbyypos.jpg lobbyy
 
 ## Convert to DDS Cube Map
 
-### Via NVIDIA Texture Tool Exporter
+### Via [NVIDIA Texture Tool Exporter](https://developer.nvidia.com/texture-tools-exporter)
 
 Достаточно просто перенести drag-and-drop'ом текстуру, выбрать Cube Map, настроить ее и экспортировать
 

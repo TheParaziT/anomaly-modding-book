@@ -13,32 +13,25 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['i_love_kfc']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[1.5](https://gitlab.com/i-love-kfc/thm-editor/-/releases/1.5)</td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitLab](https://gitlab.com/i-love-kfc/thm-editor)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "THM Editor",
+    version: "1.5",
+    versionUrl: "https://gitlab.com/i-love-kfc/thm-editor/-/releases/1.5",
+    developers: ["i_love_kfc"],
+    previewImage: "/img/thm-editor-by-i-love-kfc.png",
+    repository: [
+      "https://gitlab.com/i-love-kfc/thm-editor",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Utility for editing [*.thm](../../references/file-formats/textures/thm.md) files without the need to use the SDK
-
-![thm-editor centered](assets/images/thm-editor-by-i-love-kfc.png)
 
 ## Features
 

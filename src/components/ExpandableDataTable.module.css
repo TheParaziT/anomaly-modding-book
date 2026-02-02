@@ -1,7 +1,6 @@
-/* table-styles.module.css */
-
 table {
   display: table;
+  margin-bottom: 0;
 }
 
 .dataTableContainer {

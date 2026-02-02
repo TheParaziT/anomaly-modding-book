@@ -14,18 +14,16 @@ ___
 
 ## Info
 
-<table>
-<tbody>
-    <tr>
-        <td>Program Developer</td>
-        <td>V2V</td>
-    </tr>
-    <tr>
-        <td>Described Version</td>
-        <td>0.30</td>
-    </tr>
-    </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "ffmpeg2theora",
+    version: "0.30",
+    developers: ["V2V"],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 

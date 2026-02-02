@@ -13,42 +13,32 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['mortany', 'vaierok']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[1.2](https://github.com/VaIeroK/Omf-Editor/releases/tag/1.2)</td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3550-omf-editor-v12)
-      </td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/VaIeroK/Omf-Editor)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/VaIeroK/Omf-Editor)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Modified Omf Editor by ValeroK",
+    version: "1.2",
+    versionUrl: "https://github.com/VaIeroK/Omf-Editor/releases/tag/1.2",
+    previewImage: "/img/omf-editor-by-valerok.png",
+    developers: ["mortany", "vaierok"],
+    supportedPlatforms: ["Windows"],
+    repository: [
+      "https://github.com/VaIeroK/Omf-Editor",
+    ],
+    documentation: [
+      "https://deepwiki.com/VaIeroK/Omf-Editor",
+    ],
+    forum: [
+      "https://ap-pro.ru/forums/topic/3550-omf-editor-v12",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 Modified tool for working with [*.omf](../../references/file-formats/animations/omf.md) format.
-
-![editor centered](assets/images/omf-editor-by-valerok.png)
 
 ## Features
 

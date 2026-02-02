@@ -106,7 +106,7 @@ ___
 - [Notepad++](https://notepad-plus-plus.org/downloads/)
 - [Visual Studio Code](https://code.visualstudio.com/) or [VSCodium](https://vscodium.com/)
   - [LTX Support Extension by AziatkaVictor](https://marketplace.visualstudio.com/items?itemName=AziatkaVictor.ltx-support) - adds support for the logic syntax from S.T.A.L.K.E.R. CoP
-- [GitHub release workflow](coding/github-release-workflow.md) - a GitHub Action that automates the process of building and releasing mods for S.T.A.L.K.E.R. Anomaly directly from a GitHub repository.
+- [GitHub release workflow](../tutorials/addons/github-release-workflow.md) - a GitHub Action that automates the process of building and releasing mods for S.T.A.L.K.E.R. Anomaly directly from a GitHub repository.
 
 ___
 

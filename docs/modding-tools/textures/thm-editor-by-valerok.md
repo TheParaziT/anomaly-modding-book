@@ -13,42 +13,31 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['i_love_kfc','vaierok']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>[1.1](https://github.com/VaIeroK/THM-Editor/releases/tag/1.1)</td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [Ap-pro forum topic](https://ap-pro.ru/forums/topic/3551-thm-editor-v10)
-      </td>
-    </tr>
-    <tr>
-      <td>Source Code</td>
-      <td>[GitHub](https://github.com/VaIeroK/THM-Editor)</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/VaIeroK/THM-Editor)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Modified THM Editor by ValeroK",
+    version: "1.1",
+    versionUrl: "https://github.com/VaIeroK/THM-Editor/releases/tag/1.1",
+    developers: ["i_love_kfc", "vaierok"],
+    previewImage: "/img/thm-editor-by-valerok.png",
+    forum: [
+      "https://ap-pro.ru/forums/topic/3551-thm-editor-v10",
+    ],
+    repository: [
+      "https://github.com/VaIeroK/THM-Editor",
+    ],
+    documentation: [
+      "https://deepwiki.com/VaIeroK/THM-Editor",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
 The [THM Editor](thm-editor-by-i-love-kfc.md) from i-love-kfc was taken as the basis, finalized and fixed. Allows you to work with [.thm](../../references/file-formats/textures/thm.md) files.
-
-![thm-editor-by-valerok centered](assets/images/thm-editor-by-valerok.png)
 
 ## Features
 

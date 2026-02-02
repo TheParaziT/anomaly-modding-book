@@ -36,9 +36,13 @@ ___
 
 ## Концепция
 
-Основная концепция данного подхода лежит в том, дабы сохранить оригинальные трансляции костей (в их изначальной Bind позе). При импорте вы увидите, что кости могут быть повернуты хаотично, но технически это правильно.
+Основная концепция данного подхода лежит в том, дабы сохранить оригинальные трансляции костей (в их изначальной Bind позе). 
 
 :::info
+При импорте вы увидите, что кости могут быть повернуты хаотично, но технически это правильно.
+
+![alt text](assets/images/example.png)
+
 Так происходит из-за того, что изначально они были сделаны Max или Maya
 :::
 
@@ -52,28 +56,142 @@ ___
 
 ```mermaid
 flowchart LR;
-    Deform-->|Copy Transform|Intelayer-->|Chilf Of|Control;
+    Deform-->|Copy Transform|Interlayer-->|Chilf Of|Control;
 ```
 
 ## Пример
 
-Давайте возьмем скелет сталкера
+### Import
 
-Импортируйте его в Blender
+### Deform bones
 
-Я создал и переимновал 3 группы костей
+Давайте возьмем скелет сталкера и импортируем его в Blender
 
-Дублирую кости и размещаю их в нужные коллекции для удобства
 
-У коллекции костей Interlayer у каждой кости НЕ должно быть родителя
+#### Creating collections
 
-Переименовываю две коллекции костей для удобства
+Я создал и переимновал 3 коллеции костей
 
-У двух коллецией костей убрал галочку Deform
+![alt text](assets/gifs/creating-bone-collection.gif)
 
-Беру деформационную кость и через Copy Transform модификатор прикрепляю ее к кости Interlayer. Далее кость Interlayer прикрепляю к Control кости
+#### Duplicate bones
+
+Дублирую кости, размещаю их в нужные коллекции для удобства и удаляю в ненужной коллеции
+
+![alt text](assets/gifs/duplicate-bones.gif)
+
+### Interlayer bones
+
+#### Delete parents and deform checkmark
+
+У коллекции костей Interlayer у каждой кости НЕ должно быть родителя и они НЕ должны быть Deform
+
+![alt text](assets/gifs/delete-parents-and-deform.gif)
 
 :::tip
+Чтобы быстро массово отредактировать кости (отключить, включить галочки, удалить родителей) у выделенных костей можно зажать клавишу ALT
+:::
+
+#### Rename bones
+
+Переименовываю дубликат костей находящийся в коллеции Interlayer в _INTRLR для удобства
+
+![alt text](assets/gifs/rename-bones.gif)
+
+:::tip
+Чтобы быстро переименовать все выделенные кости можно воспользоваться функцией Bone Rename (F3 -> Bone Rename)
+:::info
+Обычно к сдублированным костям прибовляется суффикс .001
+:::
+
+#### Connect Deform and Interlayer bones
+
+После того, как наши Interlayer кости готовы, то можно начать прикреплять их к деформационным костям
+
+Беру деформационную кость в Pose Mode и через Copy Transform модификатор прикрепляю ее к кости Interlayer. Так нужно сделать со всеми костями!
+
+
+
+
+:::info
+Благодаря этому, Deform кости не будут двигаться, а будут копировать трансляции Intrerlayer кости к которой прикреплена. Данная цепочка поможет в дальнейшем.
+:::
+
+:::tip
+```python
+import bpy
+
+def add_copy_transforms_constraint():
+    # Проверяем активный объект
+    if bpy.context.active_object is None:
+        print("Нет активного объекта")
+        return
+    
+    obj = bpy.context.active_object
+    
+    # Проверяем, что активный объект - арматура
+    if obj.type != 'ARMATURE':
+        print("Активный объект не является арматурой")
+        return
+    
+    # Проверяем режим редактирования/позы
+    if bpy.context.mode not in ['EDIT_ARMATURE', 'POSE']:
+        print("Перейдите в режим Edit или Pose mode")
+        return
+    
+    # Получаем список выбранных костей
+    selected_bones = []
+    
+    if bpy.context.mode == 'EDIT_ARMATURE':
+        selected_bones = [b.name for b in obj.data.edit_bones if b.select]
+    elif bpy.context.mode == 'POSE':
+        selected_bones = [b.name for b in obj.pose.bones if b.bone.select]
+    
+    if not selected_bones:
+        print("Нет выбранных костей")
+        return
+    
+    # Для каждой выбранной кости
+    for bone_name in selected_bones:
+        # Получаем pose кость
+        pose_bone = obj.pose.bones.get(bone_name)
+        
+        if not pose_bone:
+            continue
+        
+        # Создаем имя кости-цели с суффиксом _INTRLR
+        target_bone_name = f"{bone_name}_INTRLR"
+        
+        # Проверяем существует ли кость-цель
+        if target_bone_name not in obj.pose.bones:
+            print(f"Кость-цель {target_bone_name} не найдена для кости {bone_name}")
+            continue
+        
+        # Добавляем constraint
+        constraint = pose_bone.constraints.new(type='COPY_TRANSFORMS')
+        constraint.name = f"Copy Transforms_{bone_name}"
+        constraint.target = obj  # Устанавливаем арматуру как target
+        constraint.subtarget = target_bone_name  # Устанавливаем кость-цель
+        
+        # Дополнительные настройки (опционально)
+        constraint.target_space = 'WORLD'
+        constraint.owner_space = 'WORLD'
+        constraint.mix_mode = 'REPLACE'
+        
+        print(f"Добавлен constraint для кости {bone_name} -> {target_bone_name}")
+
+# Запускаем функцию
+add_copy_transforms_constraint()
+```
+:::
+
+### Control bones
+
+#### Connect Interlayer and Control bones
+
+Deform и Interlayer кости закреплены, осталось лишь закрепить Interlayer и Control кости
+
+:::info
 Из-за подобной иэрархии костей нам открывается возможность распологать Control кости как хотим. Поэтому им можно менять трансляции под ваши нужды.
 :::
 

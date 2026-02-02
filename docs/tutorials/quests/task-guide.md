@@ -255,7 +255,7 @@ There are many ways to start the task using that technique, but the two importan
 
 1. To execute a script function in a dialog, you use `<action>namespace.function</action>` inside a phrase of a dialog.  
 
-    ```xml title="gamedata/configs/gameplay/my_task_dialogs.xml"
+    ```xml title="gamedata/configs/gameplay/my_task_dialogs.xml" 
     <dialog id="my_dialog_id">
             <phrase_list>
                 <phrase id="0"> <!-- actor -->

@@ -13,26 +13,20 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td><Authors
-          authors={['gsc_game_world']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>0.564</td>
-    </tr>
-    <tr>
-      <td>Documentation</td>
-      <td>[DeepWiki](https://deepwiki.com/TheParaziT/Evaluation-Function-Constructor)</td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "Evaluation Function Constructor",
+    version: "0.564",
+    developers: ["gsc_game_world"],
+    supportedPlatforms: ["Windows"],
+    documentation: [
+      "https://deepwiki.com/TheParaziT/Evaluation-Function-Constructor",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 

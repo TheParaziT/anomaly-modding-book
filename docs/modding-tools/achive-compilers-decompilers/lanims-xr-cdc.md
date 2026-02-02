@@ -11,28 +11,19 @@ ___
 
 ## Info
 
-<table>
-  <tbody>
-    <tr>
-      <td>Program Developer</td>
-      <td>      <Authors
-          authors={['kd']}
-          size="small"
-          showTitle={false}
-        /></td>
-    </tr>
-    <tr>
-      <td>Described Version</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <td>Discussion Forum</td>
-      <td>
-        [AMK Forum](https://www.amk-team.ru/forum/topic/11568-universal-acdc-i-drugie-perl-skripty/)
-      </td>
-    </tr>
-  </tbody>
-</table>
+import ProgramDescription from '@site/src/components/ProgramDescription';
+
+<ProgramDescription 
+  program={{
+    name: "lanims_xr_cdc",
+    version: "0.2",
+    developers: ["kd"],
+    forum: [
+      "https://www.amk-team.ru/forum/topic/11568-universal-acdc-i-drugie-perl-skripty/",
+    ],
+  }}
+  maxAddonsToShow={2}
+/>
 
 ## About
 
