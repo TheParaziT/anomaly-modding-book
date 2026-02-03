@@ -10,7 +10,7 @@ draft: false
 ___
 
 <Authors
-  authors={["PrivatePirate97"]}
+  authors={["privatepirate97"]}
   size="medium"
   showTitle={true}
   showDescription={true}
@@ -29,7 +29,6 @@ distiction, it's clear that GUIs and HUDs have a fundamentally different charact
 are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD and how to handle UI element XML info. Furthermore it provides
 detailed info about the functions commonly used in GUIs.
 
-  
 ## Code Basics
 
 Apart from a few exceptions, GUIs and HUDs can be created entirely in Lua scripts. However, they work extensively with engine class methods,
@@ -37,7 +36,6 @@ more details about this later.
 
 From now on the term "GUI" will be used synonym for both GUI and HUD if not expressed otherwise.
 
-  
 ### Creating a GUI
 
 To create a GUI you need these essential functions:
@@ -77,7 +75,6 @@ As you can see, the functions 2, 3 and 4 are called with this pattern: `YourClas
 to your class follows the same pattern. It is common style to start each word of the name of the class and all its functions with a capital
 letter but that's up to you. Just make sure that these four functions are written as shown above.
 
-  
 ### How do I show my GUI on Screen?
 
 Just like with other engine classes exposed to Lua you can call an instance of you CUI class with the following code:
@@ -129,7 +126,6 @@ controls whether the GUI is interactive (that's why it's called `ShowDialog`) or
 2. It adds your GUI to the global tables `_GUIs` and `_GUIsInstances` in *_g.script* which are used to have control over all active GUIs in the game
 like e.g. hiding or even destroying all of them at once, see *_g.script* for reference.
 
-  
 ### How do I close my GUI?
 
 Closing a GUI dialog works like this:
@@ -172,7 +168,6 @@ function on_game_start()
 end
 ```
 
-  
 ## Building the GUI Structure
 
 In order to build and interact with a GUI there exists bunch of different UI elements such as buttons and sliders or the window that contains
@@ -222,7 +217,6 @@ A UI element creation method like e.g. `InitStatic()` usually receives the follo
 Calling `InitControls()` in `__init()` is recommended if the GUI structure needs to be built only once and stays the same after that. If instead you
 need a more dynamic structure you can call `InitControls()` from outside your class instead of calling it in `__init`.
 
-  
 ### Parents and Children
 
 Setting the parent has a direct influence on how UI elements behave. If you change the visibility or position of the parent, this will also affect
@@ -248,7 +242,6 @@ XML info path for now. It has nothing to with how parent/child relations between
 has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
 `self.wnd`), by default not just `self.wnd` but all three elements will be invisible.
 
-
 ### Self???
 
 "What is 'self'?", you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
@@ -258,7 +251,6 @@ calling a class member from outside your GUI class requires class access via the
 `self.some_value` or `self:DoSomething()` won't work here. ALWAYS pay close attention to when to use which symbol. If you use the wrong one, the
 game either crashes or your GUI just won't work and trust me, finding this tiny little syntax error in your code can be annoying AF!
 
-  
 ## UI Callbacks
 
 Like with anything in programming you need to tell the computer what to do when a UI element is interacted with. That's where UI callbacks come into play.
@@ -329,7 +321,6 @@ With a wrapper function you can pass as many arguments as you want.
 Callbacks are not limited to be used with buttons only. There are a bunch of different callbacks for all kinds of UI elements. A full list of callback
 event IDs can be found in chapter 'UI Callback Event IDs'.
 
-  
 ## Key Inputs
 
 Usually when tracking key inputs you use the callback "on_key_press". When a GUI is active this callback usually does not work (not true for HUDs). For this
@@ -346,12 +337,10 @@ end
 For example when pressing and releasing a key, `OnKeyboard()` is called twice and receives a `WINDOW_KEY_PRESSED` and `WINDOW_KEY_RELEASED` event ID
 value respectively. By using appropriate conditions you have very precise control over your code flow.
 
-  
 # UI Elements and their Methods
 
 This following lists contain all UI elements available in the game. Disclaimer: Despite having researched carefully some lists or function descriptions
 may be incomplete or incorrect.
-
 
 ## Creating a UI Element
 
@@ -388,7 +377,6 @@ All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 | `InitMapInfo(string, CUIWindow*)` | unused |
 | `InitServerList(string, CUIWindow*)` | unused |
 
-  
 These methods allow (manual) parsing of your UI element info XML file and are called on an instance of `ScriptXmlInit()`. Keep in mind that default index = 0.
 
 | Function | Purpose |
@@ -404,14 +392,12 @@ These methods allow (manual) parsing of your UI element info XML file and are ca
 | `ReadValue(string, number)` | reads the value of the node specified by path (string) and index (index), only used for simple node structures like `<texture>tex_name_here</texture>` |
 | `ReadAttribute(string, number, string)` | reads the value of an attribute specified by name in a node specified by path and index, receives path (string), index (integer) and attribute name (string) |
 
-
 These UI elements are called from different classes or are created by calling their respective class.
 
 | Function | Purpose |
 |----------|---------|
 | `CUITabControl()` | creates a window that allows switching between multiple tabs, has to be filled with tab `CUITabButton` instances |
 | `CUIMessageBox()` | handles message boxes |
-
 
 These UI elements are handled in Lua. They are prefabricated and always have a certain structure but can be customized to a certain degree.
 You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
@@ -435,8 +421,6 @@ self.item_info = utils_ui.UIItemInfo(self, 500)
 In this example an info window for items is created. You pass your GUI instance as the parent of this UI element and a hover pop up delay time in ms. What arguments you
 have to pass in general depends on the UI element you use.
 
-
-
 ## Control of UI Elements
 
 Once you have created your UI elements you want to control them, change their appearance, change numbers and text, show or hide certain things, make them become alive so to speak.
@@ -445,7 +429,6 @@ Most GUIs have a dynamic nature after all.
 The following lists provide info about the most important and most frequently used methods to control UI elements. Keep in mind that many UI elements
 can use the same methods, refer to *lua_help.script* for detailed info about which UI elements can use which methods. The methods listed here are
 sorted primarily by purpose but also by UI element type.
-
 
 ### General / Called on GUI Class
 
@@ -463,7 +446,6 @@ sorted primarily by purpose but also by UI element type.
 | `AllowWorkInPause(bool)` | if set to true, the GUI is still usable when pausing the game loop (e.g with `device():pause(true)`, NOT when pausing the game so that pause menu pops up!) |
 | `Dispatch()` | unused, event based callback function that was used to open multiplayer menu in main menu |
 | `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no obvious use |
-
 
 ### Commonly Used
 
@@ -490,7 +472,7 @@ sorted primarily by purpose but also by UI element type.
 | `SetPPMode(bool)` | PostProcessing mode, apparently used for the magnifier element in main/pause menu |
 | `ResetPPMode()` | resets PP mode |
 
-Hint: This is how `GetAbsoluteRect()` is used:
+:::info This is how `GetAbsoluteRect()` is used
 
 ```Lua
 local rect = Frect()
@@ -499,6 +481,7 @@ self.wnd:GetAbsoluteRect(rect) -- pass rect here
 local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect values
 ```
 
+:::
 
 ### Textures
 
@@ -520,8 +503,6 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `ResetColorAnimation()` | resets color animation |
 | `RemoveColorAnimation()` | removes color animation |
 
-
-
 ### Text
 
 | Function | Purpose |
@@ -542,7 +523,6 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the width of the text block |
 | `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of the text block |
 
-  
 ### Buttons
 
 | Function | Purpose |
@@ -550,7 +530,6 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `GetCheck()` | returns current state of a check button |
 | `SetCheck(bool)` | sets current state of a check button |
 | `SetDependControl(CUIWindow*)` | synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with |
-
 
 ### Scrollview
 
@@ -566,7 +545,6 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetScrollPos(number)` | sets current scroll position |
 | `GetCurrentScrollPos()` | returns current scroll position as a number |
 | `SetFixedScrollBar(bool)` | controls whether the scrollbar is always visible even if there is nothing to scroll |
-
 
 ### Trackbars
 
@@ -585,7 +563,6 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetCheck(bool)` | apparently unused |
 | `GetCheck()` | apparently unused |
 
-
 ### Progressbars
 
 | Function | Purpose |
@@ -603,13 +580,12 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetMaxColor(number)` | sets the color displayed at the hightest progressbar value |
 | `GetProgressStatic()` | returns the `CUIStatic` that resembles the actual bar |
 
-
 ### Hints
+
 | Function | Purpose |
 |----------|---------|
 | `SetHintText(string)` | sets the text to be displayed |
 | `GetHintText()` | returns the hint text as a string |
-
 
 ### Listboxes
 
@@ -640,7 +616,6 @@ These methods are called on a `CUIListBoxItem` instance.
 | `AddIconField(number)` | adds a `CUIStatic` instance to the listbox item, can be used to display textures, images etc., receives width (number) |
 | `SetTextColor(number)` | sets color of the text displayed in the listbox item, receives a number |
 
-
 ### Comboboxes
 
 A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call the respective methods on both elements.
@@ -661,7 +636,6 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
 | `SetCurrentIdx()` | returns the ID of the selected combobox item as a number |
 
-
 ### Editboxes
 
 Hint: Editboxes work with `CUICustomEdit` objects internally.
@@ -673,7 +647,6 @@ Hint: Editboxes work with `CUICustomEdit` objects internally.
 | `CaptureFocus(bool)` | if set to true all keyboard inputs will be captured by the editbox |
 | `SetNextFocusCapturer(CUICustomEdit*)` | sets the passed `CUIEditBox` instance as the next object to receive keyboard inputs when changing focus |
 | `InitTexture(string)` | sets the texture of the editbox, receives a texture file path |
-
 
 ### TabControl
 
@@ -691,14 +664,11 @@ To be used with `CUITabButton()` which creates a tab button instance, not usable
 | `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
 | `GetEnabled()` | returns tab (button) interaction state as a boolean value |
 
-
 ### Messageboxes
 
 | Function | Purpose |
 |----------|---------|
 | `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in settings menu |
-
-
 
 ## UI Callback Event IDs
 
@@ -706,6 +676,7 @@ UI callbacks event IDs can be accessed via `ui_events.CALLBACK_NAME_HERE` as see
 exposed to Lua.
 
 CUIWindow / General:
+
 - `const WINDOW_LBUTTON_DOWN = 0`
 - `const WINDOW_RBUTTON_DOWN = 1`
 - `const WINDOW_LBUTTON_UP = 3`
@@ -717,34 +688,43 @@ CUIWindow / General:
 - `WINDOW_KEYBOARD_CAPTURE_LOST = 14`
 
 CUIButton / CUI3tButton:
+
 - `const BUTTON_CLICKED = 17`
 - `const BUTTON_DOWN = 18`
 
 CUITabControl:
+
 - `const TAB_CHANGED = 19`
 
 CUICheckButton:
+
 - `const CHECK_BUTTON_SET = 20`
 - `const CHECK_BUTTON_RESET = 21`
 
 CUIRadioButton:
+
 - `const RADIOBUTTON_SET = 22`
 
 CUIScrollBox:
+
 - `const SCROLLBOX_MOVE = 30`
 
 CUIScrollView:
+
 - `const SCROLLBAR_VSCROLL = 31`
 - `const SCROLLBAR_HSCROLL = 32`
 
 CUIListBox:
+
 - `const LIST_ITEM_CLICKED = 35`
 - `const LIST_ITEM_SELECT = 36`
 
 UIPropertiesBox:
+
 - `const PROPERTY_CLICKED = 38`
 
 CUIMessageBox:
+
 - `const MESSAGE_BOX_OK_CLICKED = 39`
 - `const MESSAGE_BOX_YES_CLICKED = 40`
 - `const MESSAGE_BOX_QUIT_GAME_CLICKED = 42`
@@ -754,11 +734,12 @@ CUIMessageBox:
 - `const MESSAGE_BOX_COPY_CLICKED = 45`
 
 CUIAnimationBase:
+
 - `const EDIT_TEXT_COMMIT = 71`
 
 CMainMenu:
-- `MAIN_MENU_RELOADED = 76`
 
+- `MAIN_MENU_RELOADED = 76`
 
 # The UI Info XML File
 
@@ -774,7 +755,6 @@ read all the stored info, whether or not you actually store any attributes. If i
 So storing basic attributes in the xml file makes your code more efficient on the one hand and keeps it shorter/cleaner on the other. Apart from that storing
 UI element info externally is useful if you need a certain UI element with a predefined structure many times in your GUI e.g. check buttons. Instead of writing
 the same code over and over again you can simply create a template and read its structure from the XML file.
-
 
 ## The Basic Structure
 
@@ -900,7 +880,6 @@ or like this:
 
 It makes no difference as long as you feed the UI element init functions the correct info path.
 
-
 ## Texture Descriptions - A Necessary Evil
 
 In one example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary` instead.
@@ -933,8 +912,7 @@ enabled/hovered/pressed. Yes, this is handled with different textures, not shade
 `_d`/`_e`/`_h`/`_t` suffixes. These are necessary for the engine to handle the textures properly. For your UI info XML file it's enough to store the
 "base name" of the textures -> `ui_button_ordinary`. But if you wanna store them explicitely you can use the following structure for your button info:
 
-```
-XML
+```XML
 <btn_start x="2" y="3" width="68" height="24" stretch="1">
 	<texture>
 		<texture_d>ui_button_ordinary_d</texture_d>
@@ -950,7 +928,6 @@ XML
 This allows you to replace one of the texture references with a custom one if desired. To sum this chapter up: whenever you want to use a texture stored
 in a multi texture .dds file, you have to store its ID that is listed in the corresponding texture description XML file.
 
-
 ## XML Attributes for UI Elements
 
 These lists contain all XML info attributes for each UI element. Additionally all child nodes with a predefined tag name that are only usable with certain
@@ -958,14 +935,13 @@ UI elements are listed as well. Disclaimer: Despite having researched carefully 
 
 Hint: most attributes are boolean flags and accept 0 or 1 as their value.
 
-
 ### Commonly Used
 
 | Attribute | Purpose |
 |-----------|---------|
 | `x`/`y` | x/y position of the UI element relative to its parent UI element, absolute screen position if parent is GUI class instance itself (`self`) |
-| `width` | width of the UI element, how far it expands to the right, if value is <0 the window expands to the left |
-| `height` | height of the UI element, how far it expands downwards, if value is <0 the window expands upwards |
+| `width` | width of the UI element, how far it expands to the right, if value is \< 0 the window expands to the left |
+| `height` | height of the UI element, how far it expands downwards, if value is \< 0 the window expands upwards |
 | `stretch` | if set to 1 the used texture will be scaled to fit the UI element size |
 | `alignment` | if used and set to "c" the window's reference point for positioning will be to its center instead of the upper left corner |
 
@@ -977,7 +953,6 @@ Hint: most attributes are boolean flags and accept 0 or 1 as their value.
 | `texture_offset` | stores a texture offset position with attributes `x` and `y` |
 | `text` | stores text formatting info |
 | `window_name` | stores the ID used to register an interactive UI element using `Register()` |
-
 
 ### Textures
 
@@ -995,8 +970,8 @@ Hint: most attributes are boolean flags and accept 0 or 1 as their value.
 | `xform_anim_cyclic` | if set to 1 the xform anim will be played on repeat |
 
 Hints:
-- An xform animation is an animtion for UI elements that can animate element position, scale and rotation.
 
+- An xform animation is an animtion for UI elements that can animate element position, scale and rotation.
 
 ### Text
 
@@ -1008,7 +983,6 @@ Hints:
 | `align` | horizontal text alignment: `l` left, `c` center, `r` right  |
 | `vert_align` | vertical text alignment: `t` top, `c` center, `b` bottom |
 | `complex_mode` | if set to 1 multiline rendering will be enabled |
-
 
 ### Buttons
 
@@ -1050,7 +1024,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 </btn_start>
 ```
 
-
 ### Scrollview
 
 | Attribute | Purpose |
@@ -1079,7 +1052,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `is_integer` | controls whether the value set with the trackbar is treated as an integer |
 | `invert` | if set to 1 moving the slider to the left increases the value |
 | `step` | sets the value increment/decrement when moving the slider on the trackbar |
-
 
 ### Progressbars
 
@@ -1113,7 +1085,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 </power_bar>
 ```
 
-
 ### Listboxes
 
 | Attribute | Purpose |
@@ -1127,7 +1098,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `font` | stores text font info of a `CUIListBox` and `CUICombobox` |
 | `properties_box` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts the child node `list` |
 | `list` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts params `complex_mode` and `line_wrap` |
-
 
 ### Comboboxes
 
@@ -1145,7 +1115,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `text_color` | stores state dependend text color info for the disabled/enabled state of a combobox (item), accepts child nodes `d`/`e` |
 | `d`/`e` | child nodes for storing text color info for the disabled/enabled state of a combobox (item) |
 
-
 ### Editboxes
 
 | Attribute | Purpose |
@@ -1155,7 +1124,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `read_only` | no input mode |
 | `file_name_mode` | disables any keys that input letters |
 | `password` | if set to 1 every character will be displayed as `*` |
-
 
 ### Tabcontrol
 
@@ -1169,7 +1137,6 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | Tag name | Purpose |
 |----------|---------|
 | `button` | creates a `CUITabButton` instance, store multiple node entries to create multiple tab buttons, internally a `CUI3tButton` is created for visual representation of the tab button so you can store corresponding UI element info attributes |
-
 
 ### Animated Static
 
@@ -1186,7 +1153,6 @@ The `CUIAnimatedStatic` uses textures that store the individual animation frames
 | `frame_height` | height of a frame in the texture |
 | `cyclic` | if set to 1 the animation will play on repeat |
 | `autoplay` | if set to one, the anim will start playing automatically when creating the anim static |
-
 
 ### Optionsitem
 
@@ -1213,7 +1179,6 @@ In this example the trackbar will change the game's time factor on runtime when 
 | `snd` | restarts the game's video render system |
 | `restart` | unused, apparently used to restart the core engine systems |
 | `runtime` | applies new value on UI element interaction |
-
 
 # Useful Stuff, Tipps and Tricks
 
@@ -1259,7 +1224,6 @@ self.text_wnd:SetTextST("some_string_id")
 
 This not only more compact but also a slightly faster in terms of execution time.
 
-
 ## Keeping Windows in Frame
 
 Imagine you want a window to appear at or around the cursor position. How do you make sure it always appears within a given frame without adding
@@ -1280,7 +1244,6 @@ FitInRect(self.wnd, window_rect, border, dx16pos)
 
 This function is commonly used to position UI elements such as hint windows correctly.
 
-
 ## Fonts, Colors and Text Alignment
 
 You can access various fonts from scripts using these global functions:
@@ -1297,6 +1260,7 @@ You can access various fonts from scripts using these global functions:
 - `GetFontGraffiti50Russian()`
 
 Use them like this:
+
 ```LUA
 self.text:SetFont(GetFontMedium())
 
@@ -1310,11 +1274,13 @@ You can set horizontal and vertical text alignment. This is often more convenien
 to get the desired result. There are three different modes each to choose from:
 
 horizontal:
+
 - `const alLeft = 0`
 - `const alRight = 1`
 - `const alCenter = 2`
 
 vertical:
+
 - `const valTop = 0`
 - `const valCenter = 1`
 - `const valBottom = 2`
@@ -1356,7 +1322,6 @@ clr = ClrSetR(number, number)
 clr = ClrSetG(number, number)
 clr = ClrSetB(number, number)
 ```
-
 
 ## Color Animations
 
@@ -1436,7 +1401,6 @@ some color animations are very similar in appearance.
 | `zat_a1_phrase_1` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
 | `zat_a1_phrase_2` | low FPS style slow blinking from full transparent to full opaque, long pause at full opaque |
 
-
 ## Hotkeys for Buttons
 
 It is possible to assign a keybind to a `CUI3tButton` as a hotkey. When pressing the hotkey the button is triggered as if you pressed it using
@@ -1465,7 +1429,6 @@ end
 `CUIScriptWnd.OnKeyboard(self,key,keyboard_action)` catches the key input and passes it to the button which has the hotkey assigned if the pressed key
 matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen. If the key press was indeed used by the
 engine the function returns `true`.
-
 
 ## Changing Files on Runtime
 

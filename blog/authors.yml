@@ -92,6 +92,12 @@ ghentuong:
     x: GhenTuong
     moddb: ghentuong
 
+privatepirate97:
+  name: PrivatePirate97
+  image_url: https://github.com/PrivatePirate97.png
+  socials:
+    github: PrivatePirate97
+
 lucy:
   name: Lucy
   image_url: https://github.com/xr-lucy.png
