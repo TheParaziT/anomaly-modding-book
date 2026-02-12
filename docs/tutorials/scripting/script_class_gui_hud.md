@@ -24,17 +24,16 @@ Graphical user interfaces essential parts of every game. Generally GUIs can be s
 
 2. GUIs that provide the player with essential information such as player health, stamina, ammo etc, but without offering direct interaction
 
-To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and type 2 as "HUD" throughout this tutorial. Based on this
-distiction, it's clear that GUIs and HUDs have a fundamentally different character/purpose. However, looking at their code it goes to show that GUIs and HUDs
-are very similar. This tutorial provides a brief overview of how to create a basic GUI or HUD and how to handle UI element XML info. Furthermore it provides
-detailed info about the functions commonly used in GUIs.
+To make the distiction between these two types clear, I am going to refer to type 1 as "GUI" and type 2 as "HUD" throughout this tutorial but
+use the term "GUI" synonym for both GUI and HUD if not expressed otherwise. Based on this distiction, it is clear that GUIs and HUDs have a
+fundamentally different character/purpose. However, looking at their code it goes to show that GUIs and HUDs are very similar. This tutorial
+provides a brief overview of how to create a basic GUI or HUD and how to handle UI element XML info. Furthermore it provides detailed info about
+the functions commonly used in GUIs.
 
 ## Code Basics
 
 Apart from a few exceptions, GUIs and HUDs can be created entirely in Lua scripts. However, they work extensively with engine class methods,
 more details about this later.
-
-From now on the term "GUI" will be used synonym for both GUI and HUD if not expressed otherwise.
 
 ### Creating a GUI
 
@@ -47,29 +46,30 @@ function MyGUI:__init() super() -- 2
 	-- your code
 end
 
-function MyGUI:__finalize()		-- 3
+function MyGUI:__finalize()	-- 3
 	-- your code (optional)
 end
 
-function MyGUI:Update()			-- 4
+function MyGUI:Update()		-- 4
 	CUIScriptWnd.Update(self)
 	-- your code
 end
 ```
 
-1. Creates a class with the name "MyGUI". Your GUI class can have any name that has not already been used anywhere else.
+1. Creates a class with the name "MyGUI". Your GUI class can have any name but it's wise to choose one that describes what your GUI does.
 
 2. Called once when your GUI class instance is created. In this function you can execute any code that only needs to be
 executed once like e.g. creating static/fundamental UI elements like the main window of your GUI. Attention: the function name uses
 TWO underscores `__`!
 
-3. Called when your GUI is destroyed and necessary in order to prevent Lua from potentially interacting with a GUI that
-doesn't exist anymore on the engine side. The call happens when the game is interrupted by a level transition or when loading a save.
+3. Called when your GUI is destroyed and necessary in order to prevent Lua from potentially interacting with a GUI that doesn't exist
+anymore on the engine side. The call happens when the game is interrupted by a level transition or when loading a save. Attention: the
+function name uses TWO underscores `__`!
 
 4. Called about 4 times per frame (I don't know why). If you have any dynamic UI elements that need to update time based (as opposed to event
 based) e.g. progress bars you're probably gonna put the respective code here. Never forget to add `CUIScriptWnd.Update(self)`,
 otherwise none of your UI elements will work properly! Also better avoid putting performance heavy code here if possible or throttle the
-code execution using timers. ;) Attention: the function names uses TWO underscores `__`!
+code execution using timers. ;)
 
 As you can see, the functions 2, 3 and 4 are called with this pattern: `YourClassName:SomeClassFunction()`. Adding new functions
 to your class follows the same pattern. It is common style to start each word of the name of the class and all its functions with a capital
@@ -94,7 +94,7 @@ function show_ui()
 end
 ```
 
-It is recommened to declare `GUI` as a global variable in your script so that it is accessable from other scripts. Keep in mind that when calling
+It is recommended to declare `GUI` as a global variable in your script so that it is accessible from other scripts. Keep in mind that when calling
 your GUI using `GUI:ShowDialog(true)` you usually cannot move the character but you can change that behavior, see chapter 'Control of UI Elements'
 for reference. Also make sure to check whether your GUI is already active. You don't want to have more than one instance active at a time, otherwise
 you WILL break your GUI and probably the game as well.
@@ -110,13 +110,13 @@ function show_hud()
 	end
 	
 	if HUD and not HUD:IsShown() then
-		get_hud():AddDialogToRender(HUD) -- renders HUD to screen
+		get_hud():AddDialogToRender(HUD) -- renders HUD on screen
 		Register_UI("MyHUD", "my_script_name", HUD)
 	end
 end
 ```
 
-Unlike with GUIs, when using `get_hud():AddDialogToRender(MyHUD)` by default you always retain full control over the character while your HUD instance
+Unlike with GUIs, when using `get_hud():AddDialogToRender(HUD)` by default you always retain full control over the character while your HUD instance
 is active. This function call does nothing more than adding your HUD to the render pipeline. As you can see, the way you tell the engine to show your GUI
 controls whether the GUI is interactive (that's why it's called `ShowDialog`) or behaves like a HUD.
 `Register_UI()` has two purposes:
@@ -168,10 +168,10 @@ function on_game_start()
 end
 ```
 
-## Building the GUI Structure
+### Building the GUI Structure
 
-In order to build and interact with a GUI there exists bunch of different UI elements such as buttons and sliders or the window that contains
-these elements. But of course these elements have to be added manually. To build your GUI call a function when `__init()` is executed:
+In order to build and interact with a GUI there are a bunch of different UI elements such as buttons and sliders or the window that contains
+these elements. But of course these elements have to be added and set up manually. To build your GUI call a function when `__init()` is executed:
 
 ```LUA
 function MyGUI:__init() super()
@@ -179,11 +179,11 @@ function MyGUI:__init() super()
 end
 
 function MyGUI:InitControls()
-	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets position and size (left, top, right, bottom) of the dialog window
+	self:SetWndRect(Frect():set(0,0, 1024, 768)) -- sets corner positions (left, top, right, bottom) of the dialog window
 	self:SetAutoDelete(true)
 	
 	self.xml = CScriptXmlInit()
-	local xml = self.xml -- just so you don't have to write 'self.xml' everytime
+	local xml = self.xml -- just so you don't have to write 'self.xml' every time
 	xml:ParseFile("my_gui_structure.xml")
 	
 	self.my_wnd = xml:InitStatic("background", self)
@@ -195,10 +195,10 @@ end
 
 Setting the interaction area of your GUI using `SetWndRect()` is the first step. Every UI element placed outside of this area cannot be
 interacted with. Therefore it is common to set the area to cover the whole screen. Keep in mind that no matter what your screen resolution
-is, the engine will always translate the resolution to a frame with size 1024x768 to handle any GUI related stuff.
+is, the engine will always translate the resolution to a virtual screen space with size 1024x768 to handle any GUI related stuff.
 `self.xml = CScriptXmlInit()`calls an instance of the engine class `CUIXmlInit`, responsible for creating any of the available UI elements.
 `xml:ParseFile()` receives the name of your XML file that stores properties of the UI elements your GUI uses such as position, size, textures,
-text formatting, color etc. Without this XML file your GUI won't work.
+text formatting, color etc. Without this XML file your GUI won't work. See chapter 'The UI Info XML File' for reference.
 
 So what UI elements are created in the example above?
 
@@ -206,8 +206,10 @@ So what UI elements are created in the example above?
 - `InitTextWnd()` creates a window that can display text.
 - `InitCheck()` creates an ON/OFF button.
 
-There are many more UI elements which can be found in *lua_help.script*. Additionally the file lists all methods available to these UI elements
-such as `SetText()` or `Show()`. A detailed description of these elements and their methods can be found in chapter 'UI elements and their Methods'.
+There are many more UI elements which can be found in *lua_help.script*. Additionally the file lists most methods available to these UI elements
+such as `SetText()` or `Show()`. But keep in mind that *lua_help.script* is outdated. Newer method additions can be found in *lua_help_ex.script*
+[LINK](https://github.com/themrdemonized/xray-monolith/blob/e0f8a825a326d7cb566d9fe9824255e23dcabe18/gamedata/scripts/lua_help_ex.script).
+A more complete list with detailed descriptions of these elements and their methods can be found in chapter 'UI elements and their Methods'.
 
 A UI element creation method like e.g. `InitStatic()` usually receives the following arguments:
 
@@ -217,13 +219,22 @@ A UI element creation method like e.g. `InitStatic()` usually receives the follo
 Calling `InitControls()` in `__init()` is recommended if the GUI structure needs to be built only once and stays the same after that. If instead you
 need a more dynamic structure you can call `InitControls()` from outside your class instead of calling it in `__init`.
 
+### Self???
+
+"What is 'self'?", you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
+`self.my_wnd` is the same as writing `MyGUI.my_wnd`. Everything you declare with `self` can be accessed from anywhere within your GUI class. Don't
+confuse `self.` with `self:` though. When calling a class method such as `self:InitControls()` you always use `:` instead of `.`. ALWAYS pay close
+attention to when to use which symbol. If you use the wrong one, the game either crashes or your GUI just won't work and trust me, finding this tiny
+little syntax error in your code can be annoying AF! Keep in mind that calling a class member from outside your GUI class requires class access via
+the variable `GUI`/`HUD`, e.g. `GUI.some_value` or `GUI:DoSomething()`. `self.some_value` or `self:DoSomething()` won't work here.
+
 ### Parents and Children
 
 Setting the parent has a direct influence on how UI elements behave. If you change the visibility or position of the parent, this will also affect
 all its children.
 
-Consider the following example. We create a simple window that contains text and a trackbar. We want to control both position and visiblilty of these
-UI elements via the window that contains them:
+Consider the following example. We create a simple window that contains text and a trackbar. We want to control both absolute position on screen and
+visiblilty of these UI elements via the window that contains them:
 
 ```LUA
 function MyGUI:CreateWindow()
@@ -242,16 +253,7 @@ XML info path for now. It has nothing to with how parent/child relations between
 has been set invisible. Since `self.text` is a child of `self.wnd` and `self.track` is a child of `self.text` (and therefore indrectly a child of
 `self.wnd`), by default not just `self.wnd` but all three elements will be invisible.
 
-### Self???
-
-"What is 'self'?", you may ask. Basically it's a shorter, more convenient way to reference your GUI class instance WITHIN your class.
-`self.my_wnd` is the same as writing `MyGUI.my_wnd`. Everything you declare with `self` can be accessed from anywhere within your GUI class. Don't
-confuse `self.` with `self:` though. When calling a class method such as `self:InitControls()` you always use `:` instead of `.`. Keep in mind that
-calling a class member from outside your GUI class requires class access via the variable `GUI`/`HUD`, e.g. `GUI.some_value` or `GUI:DoSomething()`.
-`self.some_value` or `self:DoSomething()` won't work here. ALWAYS pay close attention to when to use which symbol. If you use the wrong one, the
-game either crashes or your GUI just won't work and trust me, finding this tiny little syntax error in your code can be annoying AF!
-
-## UI Callbacks
+### UI Callbacks
 
 Like with anything in programming you need to tell the computer what to do when a UI element is interacted with. That's where UI callbacks come into play.
 Consider the following example. We create two simple buttons and want to execute two functions when pressing them:
@@ -283,15 +285,15 @@ end
 The methods `Register()` and `AddCallback()` are provided by the engine and always available to your GUI. `Register()` assigns a unique ID to the button.
 `AddCallback()` then receives the following arguments:
 
-- the unique ID passed to `Register()`, this way game knows which button fires which callback
+- the unique ID passed to `Register()`, this way the game knows which button fires which callback
 - the callback event ID that determines what interaction event has to happen in order for the callback to fire
-- the function that will be executed when the callback fires. Note that here we pass the function as a member of your GUI class
+- the function that will be executed when the callback fires. Note that here you pass the function as a member of your GUI class
 and don't execute it, hence using `self.`, not `self:`.
 - a reference to your GUI class instance
 
 Next, we consider a more advanced example. Let's say we have three buttons and want to create callbacks for them. But instead of having a separate
-function per button, we want use the same function but execute different code depending on the value we have pressed. By default `AddCallback()`
-does not allow to pass arguments to a function but we can use a simple trick, a wrapper function:
+function per button, we want use the same function but execute different code depending on the button we have pressed. On its own `AddCallback()`
+is not capable of passing arguments to a function but we can use a simple trick, a wrapper function:
 
 ```LUA
 function MyGUI:CreateCheck()
@@ -321,7 +323,7 @@ With a wrapper function you can pass as many arguments as you want.
 Callbacks are not limited to be used with buttons only. There are a bunch of different callbacks for all kinds of UI elements. A full list of callback
 event IDs can be found in chapter 'UI Callback Event IDs'.
 
-## Key Inputs
+### Key Inputs
 
 Usually when tracking key inputs you use the callback "on_key_press". When a GUI is active this callback usually does not work (not true for HUDs). For this
 reason the engine provides a GUI specific callback function. It doesn't have to be registered unlike regular callbacks and works out of the box.
@@ -337,12 +339,12 @@ end
 For example when pressing and releasing a key, `OnKeyboard()` is called twice and receives a `WINDOW_KEY_PRESSED` and `WINDOW_KEY_RELEASED` event ID
 value respectively. By using appropriate conditions you have very precise control over your code flow.
 
-# UI Elements and their Methods
+## UI Elements and their Methods
 
 This following lists contain all UI elements available in the game. Disclaimer: Despite having researched carefully some lists or function descriptions
 may be incomplete or incorrect.
 
-## Creating a UI Element
+### Creating a UI Element
 
 All methods in the next two lists are called as methods of `CScriptXmlInit()`.
 
@@ -415,22 +417,22 @@ You can call them from *utils_ui.script*, see *utils_ui.script* for reference.
 You can use them in your GUI like this:
 
 ```LUA
-self.item_info = utils_ui.UIItemInfo(self, 500)
+self.info_item = utils_ui.UIInfoItem(self, 500)
 ```
 
-In this example an info window for items is created. You pass your GUI instance as the parent of this UI element and a hover pop up delay time in ms. What arguments you
-have to pass in general depends on the UI element you use.
+In this example an info window for items is created. You pass your GUI instance as the parent of this UI element and a hover pop up delay time in ms.
+What arguments you have to pass in general depends on the UI element you use.
 
-## Control of UI Elements
+### Control of UI Elements
 
-Once you have created your UI elements you want to control them, change their appearance, change numbers and text, show or hide certain things, make them become alive so to speak.
-Most GUIs have a dynamic nature after all.
+Once you have created your UI elements you want to control them, change their appearance, change numbers and text, show or hide certain things, make
+them become alive so to speak. Most GUIs have a dynamic nature after all.
   
 The following lists provide info about the most important and most frequently used methods to control UI elements. Keep in mind that many UI elements
 can use the same methods, refer to *lua_help.script* for detailed info about which UI elements can use which methods. The methods listed here are
-sorted primarily by purpose but also by UI element type.
+sorted primarily by purpose and secondarily by UI element type.
 
-### General / Called on GUI Class
+#### General / Called on GUI Class
 
 | Function | Purpose |
 |----------|---------|
@@ -447,7 +449,7 @@ sorted primarily by purpose but also by UI element type.
 | `Dispatch()` | unused, event based callback function that was used to open multiplayer menu in main menu |
 | `GetHolder()` | returns the object that manages the GUI dialog (showing your GUI, showing cursor, hiding indicator etc.), has to be called AFTER the GUI dialog has started, has no obvious use |
 
-### Commonly Used
+#### Commonly Used
 
 | Function | Purpose |
 |----------|---------|
@@ -483,7 +485,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 
 :::
 
-### Textures
+#### Textures
 
 | Function | Purpose |
 |----------|---------|
@@ -503,7 +505,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `ResetColorAnimation()` | resets color animation |
 | `RemoveColorAnimation()` | removes color animation |
 
-### Text
+#### Text
 
 | Function | Purpose |
 |----------|---------|
@@ -523,7 +525,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `AdjustWidthToText(bool)` | if set to true, the text UI element's width will be set to fit the width of the text block |
 | `AdjustHeightToText(bool)` | if set to true, the text UI element's height will be set to fit the height of the text block |
 
-### Buttons
+#### Buttons
 
 | Function | Purpose |
 |----------|---------|
@@ -531,7 +533,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetCheck(bool)` | sets current state of a check button |
 | `SetDependControl(CUIWindow*)` | synchronizes the interaction state of another UI element to the button state. When the button state is OFF the assigned UI element is disabled i.e. cannot be interacted with |
 
-### Scrollview
+#### Scrollview
 
 | Function | Purpose |
 |----------|---------|
@@ -546,7 +548,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `GetCurrentScrollPos()` | returns current scroll position as a number |
 | `SetFixedScrollBar(bool)` | controls whether the scrollbar is always visible even if there is nothing to scroll |
 
-### Trackbars
+#### Trackbars
 
 | Function | Purpose |
 |----------|---------|
@@ -563,7 +565,7 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetCheck(bool)` | apparently unused |
 | `GetCheck()` | apparently unused |
 
-### Progressbars
+#### Progressbars
 
 | Function | Purpose |
 |----------|---------|
@@ -580,14 +582,14 @@ local x1, y1, x2, y2 = rect.x1, rect.y1, rect.x2, rect.y2 -- how to access Frect
 | `SetMaxColor(number)` | sets the color displayed at the hightest progressbar value |
 | `GetProgressStatic()` | returns the `CUIStatic` that resembles the actual bar |
 
-### Hints
+#### Hints
 
 | Function | Purpose |
 |----------|---------|
 | `SetHintText(string)` | sets the text to be displayed |
 | `GetHintText()` | returns the hint text as a string |
 
-### Listboxes
+#### Listboxes
 
 To be used with `CUIListBoxItem()` which creates a listbox item that can be added to a listbox.
 
@@ -616,7 +618,7 @@ These methods are called on a `CUIListBoxItem` instance.
 | `AddIconField(number)` | adds a `CUIStatic` instance to the listbox item, can be used to display textures, images etc., receives width (number) |
 | `SetTextColor(number)` | sets color of the text displayed in the listbox item, receives a number |
 
-### Comboboxes
+#### Comboboxes
 
 A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call the respective methods on both elements.
 
@@ -636,7 +638,7 @@ A combobox is a combination of a `CUITextWnd` and a `CUIListBox` so you can call
 | `SetCurrentIdx(number)` | sets the ID of the selected combobox item, receives and ID as a number |
 | `SetCurrentIdx()` | returns the ID of the selected combobox item as a number |
 
-### Editboxes
+#### Editboxes
 
 Hint: Editboxes work with `CUICustomEdit` objects internally.
 
@@ -648,7 +650,7 @@ Hint: Editboxes work with `CUICustomEdit` objects internally.
 | `SetNextFocusCapturer(CUICustomEdit*)` | sets the passed `CUIEditBox` instance as the next object to receive keyboard inputs when changing focus |
 | `InitTexture(string)` | sets the texture of the editbox, receives a texture file path |
 
-### TabControl
+#### TabControl
 
 To be used with `CUITabButton()` which creates a tab button instance, not usable on its own!
 
@@ -664,13 +666,13 @@ To be used with `CUITabButton()` which creates a tab button instance, not usable
 | `SetEnabled(bool)` | sets tab (button) interaction state, when set to false interaction with this tab is disabled |
 | `GetEnabled()` | returns tab (button) interaction state as a boolean value |
 
-### Messageboxes
+#### Messageboxes
 
 | Function | Purpose |
 |----------|---------|
 | `InitMessageBox(string)` | creates a message box with buttons, similar to the 'Discard changes?' window in settings menu |
 
-## UI Callback Event IDs
+### UI Callback Event IDs
 
 UI callbacks event IDs can be accessed via `ui_events.CALLBACK_NAME_HERE` as seen in previous chapters. Here is a list of all available UI callback event IDs
 exposed to Lua.
@@ -741,14 +743,14 @@ CMainMenu:
 
 - `MAIN_MENU_RELOADED = 76`
 
-# The UI Info XML File
+## The UI Info XML File
 
-As mentioned in the beginning, a GUI works with a file that describes its UI elements. This information is stored in an XML file and has a tree like
+As mentioned in the beginning, a GUI works with an XML file that describes its UI elements. The information stored in that file has a tree like
 node structure with branches and subbranches. In general every UI element can be described with a number of certain parameters (also called attributes)
 but none of them are mandatory. "Then why use them in the first place?" Well, every time you create a UI element the engine executes a bunch of code to
 read all the stored info, whether or not you actually store any attributes. If instead you decided to set all these attributes in scripts your code would:
 
-1. get bloated with a lot of functions in order to get your GUI look and behave the way you want it to
+1. get bloated with a lot of functions in order to get your GUI to look and behave the way you want it to
 
 2. take longer to build the GUI because it has to execute all that code beside the engine trying to do the exact same thing for you
 
@@ -756,7 +758,7 @@ So storing basic attributes in the xml file makes your code more efficient on th
 UI element info externally is useful if you need a certain UI element with a predefined structure many times in your GUI e.g. check buttons. Instead of writing
 the same code over and over again you can simply create a template and read its structure from the XML file.
 
-## The Basic Structure
+### The Basic Structure
 
 The basic structure of an XML file used for GUIs always looks like this:
 
@@ -778,8 +780,8 @@ if the node contains no child nodes:
 </w>
 ```
 
-This works in most cases but there are exceptions to this. If your XML file has a syntax typo the game usually crashes with an error message hinting to
-an error in your file. Let's add some data:
+This works in most cases but there are exceptions to this e.g. when a node stores a texture path. If your XML file has a syntax typo the game usually crashes
+with an error message hinting to an error in your file. Let's add some data:
 
 ```XML
 <w>
@@ -789,11 +791,11 @@ an error in your file. Let's add some data:
 </w>
 ```
 
-The entries `x`, `y`, `width` and `height` are the attributes. Their value is always noted in quotation marks `""`. In this example we describe the size
-and position of a `CUIStatic`, a simple window that displays a texture. `x` and `y` define the position of the upper left corner of the window, `width`
+In this example we describe the size and position of a `CUIStatic`, a simple window that displays a texture. The entries `x`, `y`, `width` and `height`
+are its attributes. Their values are always noted in quotation marks `""`.  `x` and `y` define the position of the upper left corner of the window, `width`
 and `height` tell us that the window expands 300 px to the right and 200 px downwards (in the virtual screen space with dimensions 1024x768). If these
 numbers were negative the window would expand to the upper left direction instead but it's uncommon to do that. As you can see we have defined a texture
-for the window by storing the texture path. This is where the `stretch` attribute comes into play. It controls whether the texture will scale according
+for the window by storing its file path. This is where the `stretch` attribute comes into play. It controls whether the texture will scale according
 to the window dimensions (`stretch="1"`) or keep its own dimensions instead (`stretch="0"`) e.g. 100x200 px.
 
 The info structure shown above can be used in your script as follows:
@@ -838,9 +840,9 @@ The syntax of the UI info path generally follows this pattern: `tag:child_tag:ch
 no node could be found.
 
 Both buttons are children of `self.main` but one button info is enclosed by the `main_wnd` tags while the other is not. This may look a bit confusing
-but this code is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's pure design
-choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree but that's up to you.
-An info tree structure scheme can look like this:
+but this structure is actually totally valid. As mentioned before the xml tree structure has absolutely no effect on the UI element hierarchy. It's
+pure design choice where you put which info. Of course it makes sense to resemble the UI element hierarchy in the XML info structure to some degree
+but that's up to you. An info tree structure scheme can look like this:
 
 ```XML
 <w>
@@ -880,11 +882,11 @@ or like this:
 
 It makes no difference as long as you feed the UI element init functions the correct info path.
 
-## Texture Descriptions - A Necessary Evil
+### Texture Descriptions - A Necessary Evil
 
 In one example in the previous chapter the button texture was not stored with a texture file path but with the ID `ui_button_ordinary` instead.
 Why is that? Well, it makes sense to save multiple textures in one .dds file instead of having a single file for every tiny little icon. But how
-do we know which texture is where in the file and how do we access it? That's where texture descriptions files help us out. A texture description
+do we know which texture is where in the file and how do we access it? That's where texture description files help us out. A texture description
 file is an XML file that assigns an ID to each texture and stores information about its size and position. Texture description files are stored in
 *gamedata/configs/ui/textures_descr* and can have any name but it makes sense to give them a name similar to that of the texture file they describe.
 Here is an excerpt of the file *ui_common.xml* that stores the button texture reference used in the example in the previous chapter:
@@ -928,14 +930,14 @@ enabled/hovered/pressed. Yes, this is handled with different textures, not shade
 This allows you to replace one of the texture references with a custom one if desired. To sum this chapter up: whenever you want to use a texture stored
 in a multi texture .dds file, you have to store its ID that is listed in the corresponding texture description XML file.
 
-## XML Attributes for UI Elements
+### XML Attributes for UI Elements
 
 These lists contain all XML info attributes for each UI element. Additionally all child nodes with a predefined tag name that are only usable with certain
 UI elements are listed as well. Disclaimer: Despite having researched carefully some lists or info descriptions may be incomplete or incorrect.
 
-Hint: most attributes are boolean flags and accept 0 or 1 as their value.
+Hint: most attributes act as boolean flags and accept 0 or 1 as their value.
 
-### Commonly Used
+#### Commonly Used
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -954,12 +956,12 @@ Hint: most attributes are boolean flags and accept 0 or 1 as their value.
 | `text` | stores text formatting info |
 | `window_name` | stores the ID used to register an interactive UI element using `Register()` |
 
-### Textures
+#### Textures
 
 | Attribute | Purpose |
 |-----------|---------|
 | `heading` | if set to 1 texture rotation is enabled |
-| `heading_angle` | sets the initial rotation angle in radians of the texture |
+| `heading_angle` | sets the initial rotation angle in degrees of the texture |
 | `shader` | stores the shader path `hud\p3d`, use with textures attached to a 3D model |
 | `light_anim` | stores the name of a color animation |
 | `la_cyclic` | if set to 1 the color anim will be played on repeat |
@@ -973,7 +975,7 @@ Hints:
 
 - An xform animation is an animtion for UI elements that can animate element position, scale and rotation.
 
-### Text
+#### Text
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -984,7 +986,7 @@ Hints:
 | `vert_align` | vertical text alignment: `t` top, `c` center, `b` bottom |
 | `complex_mode` | if set to 1 multiline rendering will be enabled |
 
-### Buttons
+#### Buttons
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1024,7 +1026,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 </btn_start>
 ```
 
-### Scrollview
+#### Scrollview
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1045,7 +1047,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 <scroll x="4" y="158" width="292" height="340" right_ident="0" left_ident="0" top_indent="5" bottom_indent="5" vert_interval="0" always_show_scroll="1"/>
 ```
 
-### Trackbars
+#### Trackbars
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1053,7 +1055,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `invert` | if set to 1 moving the slider to the left increases the value |
 | `step` | sets the value increment/decrement when moving the slider on the trackbar |
 
-### Progressbars
+#### Progressbars
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1085,7 +1087,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 </power_bar>
 ```
 
-### Listboxes
+#### Listboxes
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1099,7 +1101,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `properties_box` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts the child node `list` |
 | `list` | stores text formatting info of a `CUIListBox` and `CUICombobox`, accepts params `complex_mode` and `line_wrap` |
 
-### Comboboxes
+#### Comboboxes
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1115,7 +1117,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `text_color` | stores state dependend text color info for the disabled/enabled state of a combobox (item), accepts child nodes `d`/`e` |
 | `d`/`e` | child nodes for storing text color info for the disabled/enabled state of a combobox (item) |
 
-### Editboxes
+#### Editboxes
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1125,7 +1127,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 | `file_name_mode` | disables any keys that input letters |
 | `password` | if set to 1 every character will be displayed as `*` |
 
-### Tabcontrol
+#### Tabcontrol
 
 | Attribute | Purpose |
 |-----------|---------|
@@ -1138,7 +1140,7 @@ Hint: For more info about how to use `accel`/`accel_ext`, see chapter 'Hotkeys f
 |----------|---------|
 | `button` | creates a `CUITabButton` instance, store multiple node entries to create multiple tab buttons, internally a `CUI3tButton` is created for visual representation of the tab button so you can store corresponding UI element info attributes |
 
-### Animated Static
+#### Animated Static
 
 The `CUIAnimatedStatic` uses textures that store the individual animation frames.
 
@@ -1154,7 +1156,7 @@ The `CUIAnimatedStatic` uses textures that store the individual animation frames
 | `cyclic` | if set to 1 the animation will play on repeat |
 | `autoplay` | if set to one, the anim will start playing automatically when creating the anim static |
 
-### Optionsitem
+#### Optionsitem
 
 A `CUIOptionsItem` was/is an important part of many UI elements such as `CUICheckButton`, `CUITabControl`, `CUIEditBox`, `CUITrackBar` and `CUIComboBox`.
 It is used to bind a UI element to an engine option. This way you can execute console commands directly by interacting with a UI element. Be aware That
@@ -1180,15 +1182,16 @@ In this example the trackbar will change the game's time factor on runtime when 
 | `restart` | unused, apparently used to restart the core engine systems |
 | `runtime` | applies new value on UI element interaction |
 
-# Useful Stuff, Tipps and Tricks
+## Useful Stuff, Tips and Tricks
 
-Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier.
+Finally I'd like to share some info about a few small QoL features, useful functions and nice-to-know's that make life a little easier and allow more
+sophisticated GUI behavior.
 
-## Mouse Specific Functions
+### Mouse Specific Functions
 
 **IsCursorOverWindow()**
 
-This is called as a method of a UI element and returns a boolean value:
+This is called as a method of a UI element and returns true if the mouse cursor is hovering over the element:
 
 ```LUA
 local over_wnd = self.wnd:IsCursorOverWindow()
@@ -1201,14 +1204,14 @@ Global functions not tied to GUI classes, can be called as is. This is an exampl
 ```LUA
 local pos = GetCursorPosition() -- because ShowDialog moves mouse cursor to center
 self:ShowDialog()
-SetCursorPosition(pos)
+SetCursorPosition(pos) -- receives a vector2 with x and y coords
 ```
 
-## Better than game.translate_string
+### Better than game.translate_string
 
 **SetTextST()**
 
-Imagine you have stored your text in an XML file and want to set the text in GUI by using its string ID. Usually to convert a string ID to text
+Imagine you have stored your text in an XML file and want to use it in your GUI by using its string ID. Usually to convert a string ID to text
 would you use:
 
 ```LUA
@@ -1224,14 +1227,14 @@ self.text_wnd:SetTextST("some_string_id")
 
 This not only more compact but also a slightly faster in terms of execution time.
 
-## Keeping Windows in Frame
+### Keeping Windows in Frame
 
 Imagine you want a window to appear at or around the cursor position. How do you make sure it always appears within a given frame without adding
 extra code that handles this check? Well, there is an engine function that does exactly that:
 
 ```LUA
 self.ref -- reference window, can also be the GUI instance itself (self)
-self.wnd -- some window you want to position around the cursor within the frame of the reference window
+self.wnd -- some window you want to position around the cursor within the boundaries of the reference window
 
 local window_rect = Frect()
 self.ref:GetAbsoluteRect(window_rect)
@@ -1244,7 +1247,7 @@ FitInRect(self.wnd, window_rect, border, dx16pos)
 
 This function is commonly used to position UI elements such as hint windows correctly.
 
-## Fonts, Colors and Text Alignment
+### Fonts, Colors and Text Alignment
 
 You can access various fonts from scripts using these global functions:
 
@@ -1310,20 +1313,22 @@ local clr = GetARGB(255, 0, 0, 180)
 
 -- getters, pass a D3DCOLOR value
 -- returns a color channel value (range 0 - 255)
-local A = ClrGetA(number)
-local R = ClrGetR(number)
-local G = ClrGetG(number)
-local B = ClrGetB(number)
+local A = ClrGetA(clr) -- returns 255
+local R = ClrGetR(clr) -- returns 0
+local G = ClrGetG(clr) -- returns 0
+local B = ClrGetB(clr) -- returns 180
 
 -- setters, pass a D3DCOLOR value and the value of the color channel you want to change (range 0 - 255)
 -- returns a D3DCOLOR value
-clr = ClrSetA(number, number)
-clr = ClrSetR(number, number)
-clr = ClrSetG(number, number)
-clr = ClrSetB(number, number)
+clr = ClrSetA(clr, 200)
+clr = ClrSetR(clr, 10)
+clr = ClrSetG(clr, 10)
+clr = ClrSetB(clr, 100)
+
+--> new color is (200, 10, 10, 100)
 ```
 
-## Color Animations
+### Color Animations
 
 Color animations are useful to create dynamic color effects like fades and blinking effects. Color animations can be used with `CUIStatic` instances.
 You can set a color animation using the following code:
@@ -1347,10 +1352,10 @@ crashes! The number 1000 means that the color animation starts 1000 ms after the
 This is a list of all color animations that exist in the game. All color animations have been tested with the flags `LA_CYCLIC` and
 `LA_TEXTURECOLOR` on a texture with A/R/G/B = 255/255/150/140, a pink shade that's usually not represented in the game to make any color changes
 visible. The appearance descriptions represent the effect visible with these flags. 'slow'/'medium'/'fast' describe the blinking speed. Note that
-some color animations are very similar in appearance.
+some color animations have very similar effects.
 
 | Function | Appearance |
-|----------|---------|
+|----------|------------|
 | `asus_logo_01` | fading from full transparent to full opaque and back, long pause at full opaque, sets color to black |
 | `buy_menu_info` | fading from full transparent to full opaque and back, pause at full opaque, sets color to black |
 | `credits_vis` | slow fading between full transparent to full opaque, short pause at full opaque, sets color to black |
@@ -1401,7 +1406,11 @@ some color animations are very similar in appearance.
 | `zat_a1_phrase_1` | low FPS style slow blinking from full transparent to full opaque, very long pause at full opaque |
 | `zat_a1_phrase_2` | low FPS style slow blinking from full transparent to full opaque, long pause at full opaque |
 
-## Hotkeys for Buttons
+### utils_xml.script
+
+*utils_xml.script* offers many useful functions for handling UI elements, colors, text, icons, xml, etc. Definitely check it out!
+
+### Hotkeys for Buttons
 
 It is possible to assign a keybind to a `CUI3tButton` as a hotkey. When pressing the hotkey the button is triggered as if you pressed it using
 the mouse. In your UI element info XML file add the following attribute to your button info:
@@ -1412,15 +1421,13 @@ the mouse. In your UI element info XML file add the following attribute to your 
 </some_btn>
 ```
 
-The assigned key needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. You can even assign a secondary hotkey using the
-attribute `accel_ext`. Then in your script add the following line to `OnKeyboard()`:
+The assigned key value needs to have the pattern `k*`, `*` can be any keybind like `G`,`L` or `1`. You can even assign a secondary hotkey using the
+attribute `accel_ext`. Then, in your script add the following line to `OnKeyboard()`:
 
 ```LUA
 function MyGUI:OnKeyboard(key, keyboard_action)
 
 	local res = CUIScriptWnd.OnKeyboard(self, key, keyboard_action) -- catches the key input
-	
-	if res then return end -- safety check to prevent potential crashes e.g. when a certain key press closes your GUI
 	
 	-- your code
 end
@@ -1430,7 +1437,12 @@ end
 matches the hotkey. Make sure your button has a registered callback function, otherwise nothing will happen. If the key press was indeed used by the
 engine the function returns `true`.
 
-## Changing Files on Runtime
+### Overlaps and Visibility
+
+UI element creation order matters in terms of overlapping. The element that's created last will overlap all other elements. The order in which you set
+visibility states using `Show()` has no influence on that behavior at all.
+
+### Changing Files on Runtime
 
 Besides script files it is possible to edit certain GUI related files and see the changes in-game WITHOUT having to restart it. Just save the
 file and reload the game/save. This works as long as you edit the file content, NOT the file name or its location. Such files include:
