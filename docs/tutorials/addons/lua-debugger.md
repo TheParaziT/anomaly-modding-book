@@ -30,7 +30,7 @@ Always up-to-date instruction on the Modded Exes repository: [GitHub](https://gi
     * [`global.lua`](https://raw.githubusercontent.com/themrdemonized/xray-monolith/all-in-one-vs2022-wpo/gamedata/scripts/global.lua)
     * [`socket.lua`](https://raw.githubusercontent.com/themrdemonized/xray-monolith/all-in-one-vs2022-wpo/gamedata/scripts/socket.lua)
   * In VSCode, go to `Run and Debug` section and start debugging or press F5 key
-  * Return to the game and open in-game console with `~` key
+  * Return to the game and open in-game console with `~`
   * Type console command `lua_debug 1` in console and reload the save or start a new game
 
 There are several ways to enable debugger from the engine side:
