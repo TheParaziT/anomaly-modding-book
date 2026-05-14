@@ -129,7 +129,7 @@ Now, players should see an entry for "my_mod" in their MCM menu, with a single c
 
 These work very similarly to the way `ui_options` does. The only difference is that all instances of `ui_mm_` are renamed to `ui_mcm_`.
 
-MCM takes text strings from your mod's `gamedata/config/text/<eng or rus>` folder for display. The file itself does not have any special naming requirements, only that it must be a `.xml` file. You will need at minimum:
+MCM takes text strings from your mod's `gamedata/configs/text/<eng or rus>` folder for display. The file itself does not have any special naming requirements, only that it must be a `.xml` file. You will need at minimum:
 
 - One entry for the name of your mod in the MCM menu, with the ID `ui_mcm_menu_modname`
 - One entry per option item, with the prefix `ui_mcm_`, such as `ui_mcm_example`
@@ -708,61 +708,63 @@ end
 This is set up for the generic mcm.script example above.
 
 ```xml
-<string id="ui_mcm_menu_example_example">
-<text>Name of your mod as it appears in the MCM</text>
-</string>
-
-<string id="ui_mcm_title_example_example">
-<text>Text shown by any option with `text = "ui_mcm_title_example_example"`, which would be all of the slides</text>
-</string>
-
-<string id="ui_mcm_example_one_1check1">
-<text>Name of the 1check1 option</text>
-</string>
-
-<string id="ui_mcm_example_one_1check1_desc">
-<text>Tooltip of the 1check1 option</text>
-</string>
-
-<string id="ui_mcm_example_one_1keybind2">
-<text>Name of the 1keybind2 option</text>
-</string>
-
-<string id="ui_mcm_example_one_1keybind2_desc">
-<text>Tooltip of the 1keybind2 option</text>
-</string>
-
-<string id="ui_mcm_example_one_2slider1">
-<text>Name of the 2slider1 option</text>
-</string>
-
-<string id="ui_mcm_example_one_2slider1_desc">
-<text>Tooltip of the 2slider1 option</text>
-</string>
-
-<string id="ui_mcm_example_one_2radio2">
-<text>Name of the 2radio2 option</text>
-</string>
-
-<string id="ui_mcm_example_one_2radio2_desc">
-<text>Tooltip of the 2radio2 option</text>
-</string>
-
-<string id="ui_mcm_lst_3radio2_none">
-<text>Text for the 3radio2_none option</text>
-</string>
-
-<string id="ui_mcm_lst_3radio2_some">
-<text>Text for the 3radio2_some option</text>
-</string>
-
-<string id="ui_mcm_lst_3radio2_most">
-<text>Text for the 3radio2_most option</text>
-</string>
-
-<string id="ui_mcm_lst_3radio2_all">
-<text>Text for the 3radio2_all option</text>
-</string>
+<string_table>
+  <string id="ui_mcm_menu_example_example">
+  <text>Name of your mod as it appears in the MCM</text>
+  </string>
+  
+  <string id="ui_mcm_title_example_example">
+  <text>Text shown by any option with `text = "ui_mcm_title_example_example"`, which would be all of the slides</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_1check1">
+  <text>Name of the 1check1 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_1check1_desc">
+  <text>Tooltip of the 1check1 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_1keybind2">
+  <text>Name of the 1keybind2 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_1keybind2_desc">
+  <text>Tooltip of the 1keybind2 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_2slider1">
+  <text>Name of the 2slider1 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_2slider1_desc">
+  <text>Tooltip of the 2slider1 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_2radio2">
+  <text>Name of the 2radio2 option</text>
+  </string>
+  
+  <string id="ui_mcm_example_one_2radio2_desc">
+  <text>Tooltip of the 2radio2 option</text>
+  </string>
+  
+  <string id="ui_mcm_lst_3radio2_none">
+  <text>Text for the 3radio2_none option</text>
+  </string>
+  
+  <string id="ui_mcm_lst_3radio2_some">
+  <text>Text for the 3radio2_some option</text>
+  </string>
+  
+  <string id="ui_mcm_lst_3radio2_most">
+  <text>Text for the 3radio2_most option</text>
+  </string>
+  
+  <string id="ui_mcm_lst_3radio2_all">
+  <text>Text for the 3radio2_all option</text>
+  </string>
+</string_table>
 ```
 
 ## MCM Best Practices
